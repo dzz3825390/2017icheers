@@ -1,0 +1,684 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="iCheers愛酒窩">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+
+<title>iCheers愛酒窩-測試Step2</title>
+
+<style type="text/css">
+/*reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+  line-height: 1;
+}
+
+body{
+	font-size: 16px;
+	font-family: 'Arial','Microsoft JhengHei';
+}
+
+a, img{
+	outline: none;
+	border: none;
+	text-decoration: none;
+}
+
+/*未設寬度為支援電腦版信箱，支援度差*/
+.Header{
+	width: 960px;
+	background-color: #7a7a7a;
+}
+
+.Header td {
+	height: 50px;
+}
+
+.Header .logo{
+	width: 88px;
+	height: 40px;
+}
+
+.Space10{
+	width: 960px;
+}
+
+.Space10 td{
+	height: 10px;
+}
+
+.Space30{
+	width: 960px;
+}
+
+.Space30 td{
+	height: 30px;
+}
+
+.Space50{
+	width: 960px;
+}
+
+.Space50 td{
+	height: 50px;
+}
+
+
+
+.InfoArea{
+	width: 960px;
+	margin: 0 auto; 
+}
+
+.text{
+	width: 100%;
+	text-align: left;
+	font-size: 16px;
+	line-height: 24px;
+	color: #666;
+}
+
+.text_small{
+	width: 100%;
+	text-align: left;
+	font-size: 14px;
+	line-height: 20px;
+	color: #666;
+}
+
+.text_small a{
+	text-decoration: underline;
+	color: #666;
+	word-wrap: break-word;
+	text-justify:inter-word;
+}
+
+.text_notice{
+	width: 100%;
+	text-align: left;
+	font-size: 14px;
+	line-height: 20px;
+	color: #b00808;
+}
+
+.button{
+	width: calc(100% - 2rem);
+	margin: 0 auto; 
+}
+
+.button td{
+	height: 60px;
+}
+
+.button td a{
+	display: block;
+	width: 100%;
+	height: 60px;
+	font-size: 24px;
+	line-height: 60px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	background-color: #939334;
+}
+
+
+
+.Slogan{
+	width: 960px;
+	margin: 0 auto;
+}
+
+.Slogan img{
+	width: 303px;
+	height: 58px;
+}
+
+.ContactUs{
+	width: 960px;
+	margin: 0 auto;
+	background-color: #d9d9d9;
+	border: 16px solid #d9d9d9;
+}
+
+.ContactUsIcon{
+	width: 10%;
+}
+
+.ContactUsIcon img{
+	width: 17px;
+	height: 19px;
+}
+
+.ContactUsText{
+	width: 90%;
+	/*font-size: 16px;
+	line-height: 24px;
+	color: #666;*/
+}
+
+.ContactUsText tr td:first-child{
+	min-width: 80px;
+	vertical-align: top;
+}
+
+.Warning{
+	width: 960px;
+	background-color:#1b1b1b; 
+}
+
+.WarningText{
+	font-size: 14px;
+	color: #ffffff;
+	height: 40px;
+}		
+
+/*最低支援android系列360寬度*/
+/*header*/
+@media screen and (min-width: 360px){
+	.Header{
+		width: 100%;
+		background-color: #7a7a7a;
+	}
+
+	.Header td {
+		height: 50px;
+	}
+
+	.Header .logo{
+		width: 88px;
+		height: 40px;
+	}
+}
+
+@media screen and (min-width: 768px){
+	.Header td {
+		height: 70px;
+	}
+
+	.Header .logo{
+		width: 98px;
+		height: 43px;
+	}
+
+}
+
+/*header end*/
+
+/*space*/
+@media screen and (min-width: 360px){
+	.Space5{
+		width: 100%;
+	}
+
+	.Space5 td{
+		height: 5px;
+	}
+
+	.Space10{
+		width: 100%;
+	}
+
+	.Space10 td{
+		height: 10px;
+	}
+
+	.Space20{
+		width: 100%;
+	}
+
+	.Space20 td{
+		height: 20px;
+	}
+
+	.Space30{
+		width: 100%;
+	}
+
+	.Space30 td{
+		height: 30px;
+	}
+
+	.Space50{
+		width: 100%;
+	}
+
+	.Space50 td{
+		height: 50px;
+	}
+}
+
+@media screen and (min-width: 768px){
+
+	.Space5 td{
+		height: 10px;
+	}
+
+	.Space10 td{
+		height: 30px;
+	}
+
+	.Space20 td{
+		height: 30px;
+	}
+
+	.Space30 td{
+		height: 40px;
+	}
+
+	.Space50 td{
+		height: 60px;
+	}
+	
+}
+/*space end*/
+
+
+
+/*list之外文字*/
+
+@media screen and (min-width: 360px){
+	.InfoArea{
+		width: calc(100% - 2rem);
+		margin: 0 auto; 
+	}
+
+	.text{
+		width: 100%;
+		text-align: left;
+		font-size: 16px !important;
+		line-height: 24px !important;
+		color: #666;
+	}
+
+	.text_small{
+		width: 100%;
+		text-align: left;
+		font-size: 14px !important;
+		line-height: 20px !important;
+		color: #666;
+	}
+
+	.text_small a{
+		text-decoration: underline;
+		color: #666;
+		word-wrap: break-word;
+		text-justify:inter-word;
+ 	}
+
+	.text_notice{
+		width: 100%;
+		text-align: left;
+		font-size: 14px !important;
+		line-height: 20px !important;
+		color: #b00808;
+	}
+
+	.button{
+		width: calc(100% - 2rem);
+		margin: 0 auto; 
+	}
+
+	.button td{
+		height: 60px;
+	}
+
+	.button td a{
+		display: block;
+		width: 100%;
+		height: 60px;
+		font-size: 24px !important;
+		line-height: 60px !important;
+		text-align: center;
+		color: #fff;
+		font-weight: bold;
+		background-color: #939334;
+		white-space: nowrap;
+	}
+}
+
+@media screen and (min-width: 768px){
+	.InfoArea{
+		width: calc(100% - 40px);
+	}
+
+	.text{
+		font-size: 20px !important;
+		line-height: 28px !important;
+	}
+
+	.text_small{
+		font-size: 16px !important;
+	}
+
+	.text_notice{
+		font-size: 16px !important;
+		text-align: center;
+	}
+
+	.button{
+		width: 382px;
+		margin: 0 auto; 
+	}
+}
+
+@media screen and (min-width: 1366px){
+	.InfoArea{
+		width: calc(100% - 80px);
+	}
+}
+
+/*list之外文字 end*/
+
+/*slogan*/
+@media screen and (min-width: 360px){
+	.Slogan{
+		width: calc(100% - 2rem);
+		margin: 0 auto;
+	}
+
+	.Slogan img{
+		width: 303px;
+		height: 58px;
+	}
+
+}
+
+@media screen and (min-width: 768px){
+	.Slogan{
+		width: calc(100% - 40px);
+	}
+
+	.Slogan img{
+		width: 383px;
+		height: 73px;
+	}
+
+}
+
+@media screen and (min-width: 1366px){
+	.Slogan{
+		width: calc(100% - 80px);
+	}
+
+
+}
+/*slogan end*/
+
+/*contact us*/
+
+@media screen and (min-width: 360px){
+
+	.ContactUs{
+		width: 100%;
+		margin: 0 auto;
+		background-color: #d9d9d9;
+		border: 16px solid #d9d9d9;
+	}
+
+	.ContactUsIcon{
+		width: 10%;
+	}
+
+	.ContactUsIcon img{
+		width: 17px;
+		height: 19px;
+	}
+
+	.ContactUsText{
+		width: 90%;
+		font-size: 16px;
+		line-height: 24px;
+		color: #666;
+	}
+
+	.ContactUsText2{
+		font-size: 16px;
+		line-height: 24px;
+		color: #666;
+	}
+
+	.ContactUsText tr td:first-child{
+		min-width: 80px;
+		vertical-align: top;
+	}
+}
+
+@media screen and (min-width: 768px){
+
+	.ContactUs{
+		border: 25px solid #d9d9d9;
+	}
+
+	.ContactUsIcon{
+		width: 5%;
+	}
+
+	.ContactUsText{
+		width: 95%;
+		font-size: 20px;
+		line-height: 32px;
+	}
+
+	.ContactUsText2{
+		font-size: 20px;
+		line-height: 32px;
+	}
+
+	.ContactUsText tr td:first-child{
+		min-width: 100px;
+	}
+}
+
+@media screen and (min-width: 1366px){
+
+	.ContactUs{
+		border: 40px solid #d9d9d9;
+	}
+
+	.ContactUsIcon{
+		width: 2%;
+	}
+
+	.ContactUsText{
+		width: 98%;
+	}
+
+}
+
+/*contact us end*/
+
+/*warning*/
+@media screen and (min-width: 360px){
+
+	.Warning{
+		width: 100%;
+		background-color:#1b1b1b; 
+	}
+
+	.WarningText{
+		font-size: 14px;
+		color: #ffffff;
+		height: 40px;
+	}
+}
+
+@media screen and (min-width: 768px){
+
+	.WarningText{
+		font-size: 32px;
+		height: 80px;
+	}
+}
+
+@media screen and (min-width: 1366px){
+
+	.WarningText{
+		height: 100px;
+	}
+}
+/*warning end*/
+</style>
+
+</head>
+
+<!-- 內容請放這邊 -->
+<body>
+<!--灰底標題-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Header">
+  <tr>
+    <td align="center">
+		<img src="http://www.icheers.tw/iCheers/EDM/MobileTest/images/letter_logo.png" class="logo" />
+    </td>
+  </tr>
+</table>
+<!--灰底標題 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+
+<!--list前文字-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="InfoArea">
+  <tr>
+    <td align="center" class="text">
+		iCheers愛酒窩來信告知已經收到您的刷卡單，我們會盡速將您選購的商品送達指定配送地點，非常感謝您的支持！
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+
+<!--按鈕-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="button">
+  <tr>
+    <td align="center">
+		<a href="#" >我要查詢訂單</a>
+    </td>
+  </tr>
+</table>
+<!--按鈕-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space50">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--標語-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Slogan">
+  <tr>
+    <td align="center">
+		<img src="http://www.icheers.tw/iCheers/EDM/MobileTest/images/icheer_slogan.png" />
+    </td>
+  </tr>
+</table>
+<!--標語 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--聯絡我們-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="ContactUs">
+  <tr>
+    <td align="left" class="ContactUsIcon">
+		<img src="http://www.icheers.tw/iCheers/EDM/MobileTest/images/contactus_icon.png">
+    </td>
+    <td align="left" class="ContactUsText">
+		聯絡我們
+    </td>
+  </tr>
+  <tr>
+    <td align="left" class="ContactUsIcon">
+		
+    </td>
+    <td align="left" class="ContactUsText">
+    	<table border="0" cellpadding="0" cellspacing="0" align="left">
+    		<tr>
+    			<td class="ContactUsText2">服務專線：</td>
+    			<td class="ContactUsText2">02-2926-3667</td>
+    		</tr>
+    	</table>
+    </td>
+  </tr>
+  <tr>
+    <td align="left" class="ContactUsIcon">
+		
+    </td>
+    <td align="left" class="ContactUsText">
+    	<table border="0" cellpadding="0" cellspacing="0" align="left">
+    		<tr>
+    			<td class="ContactUsText2">服務時間：</td>
+    			<td class="ContactUsText2">星期一~五，9:00~12:00      
+                    13:00~18:00，國定假日除外</td>
+    		</tr>
+    	</table>
+    </td>
+  </tr><tr>
+    <td align="left" class="ContactUsIcon">
+		
+    </td>
+    <td align="left" class="ContactUsText">
+    	<table border="0" cellpadding="0" cellspacing="0" align="left">
+    		<tr>
+    			<td class="ContactUsText2">傳真電話：</td>
+    			<td class="ContactUsText2">02-2924-6220</td>
+    		</tr>
+    	</table>
+    </td>
+  </tr>
+</table>
+<!--聯絡我們 end-->
+
+<!--警語-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Warning">
+  <tr>
+    <td align="center" class="WarningText">
+		飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+    </td>
+  </tr>
+</table>
+<!--警語 end-->
+</body>
+</html>

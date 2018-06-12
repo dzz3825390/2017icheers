@@ -1,0 +1,459 @@
+//StoreColors
+$WineColor : #8e6681;
+$WhiskyColor : #e3a806;
+$BeerColor : #000000;
+
+//MainColors
+$NoticeColor : #b00808;
+$BorderColor : solid 1px #cccccc;
+$FastColor : #ef9c00;
+$PreorderColor : #0071bc;
+$NormalColor : #cf3448;
+$NormalColor-black : #4d4d4d;
+$SoldColor : #929091;
+
+//font color
+$TextColor: #666666;
+$TitleColor: #333333;
+$NoticeColor: #B00808;
+$QuoteColor: #c08f1a;
+
+//fontsize
+$PhoneTitleFontSize: 1.25rem;
+$PhoneSecondTitleFontSize: 1rem;
+$PhoneContentFontSize: 0.875rem;
+$PadTitleFontSize: 1.75rem;
+$PadSecondTitleFontSize: 1.5rem;
+$padContentFontSize: 1.25rem;
+
+//mediaquery size
+$PadWidth : 760px;
+$PadWidth-L : 1020px;
+$LargePadWidth: 1360px;
+
+@mixin pad-width() {
+	@media screen and (min-width: $PadWidth){
+		@content;
+	}
+}
+
+@mixin pad-width-l() {
+	@media screen and (min-width: $PadWidth-L){
+		@content;
+	}
+}
+
+@mixin large-pad-width() {
+	@media screen and (min-width: $LargePadWidth){
+		@content;
+	}
+}
+
+%SectionLayout {
+	padding:0 16px;
+	background-color: #fff;
+	position: relative;
+	@include pad-width{
+		padding: 0 20px;
+	}
+
+	@include large-pad-width{
+		padding: 0 40px;
+	}
+}
+
+
+//mediaquery padding
+$PhonePadding : 12px;
+$PadPadding : 20px;
+$LargePadPadding : 40px;
+
+
+//clearfix
+%clearfix{
+	content:'';
+	display:block;
+	clear: both;
+}
+
+%backgroundimagecover{
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+%backgroundimagecontain{
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+//Icons
+@mixin FastIcon ($IconWidth,$IconHeight) {
+	display: inline-block;
+	width: $IconWidth;
+	height: $IconHeight;
+	background-image: url(../images/fasticon_color.png);
+	background-size: cover;
+	@content;
+}
+
+@mixin NormalIcon ($IconWidth,$IconHeight) {
+	display: inline-block;
+	width: $IconWidth;
+	height: $IconHeight;
+	background-image: url(../images/normalicon_color.png);
+	background-size: cover;
+	@content;
+}
+
+@mixin PreorderIcon ($IconWidth,$IconHeight) {
+	display: inline-block;
+	width: $IconWidth;
+	height: $IconHeight;
+	background-image: url(../images/preordericon_color.png);
+	background-size: cover;
+	@content;
+}
+
+//bottle img oblique
+@mixin BottleImgOblique ($ImgSize) {
+	width: $ImgSize;
+	height: $ImgSize;
+	border: $BorderColor;
+	& img{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+//bottle name en
+@mixin BottleNameEN ($FontSize) {
+	font-size: $FontSize;
+	color: #666666;
+	@content;
+}
+
+//bottle name cn
+@mixin BottleNameCN ($FontSize) {
+	font-size: $FontSize;
+	color: #808080;
+	@content;
+}
+
+//bottle info
+@mixin BottleInfo ($FontSize,$SpanSpace) {
+	font-size: $FontSize;
+	color: #808080;
+	& span {
+		padding: 0 $SpanSpace;
+		border-left: $BorderColor;
+		float: left;
+	}
+
+	& span:first-child {
+		padding-left: 0;
+		border-left: none;
+	}
+	@content;
+}
+
+//bottle price
+@mixin BottlePrice ($FontSize,$FontColor) {
+	font-size: $FontSize;
+	color: $FontColor;
+	font-weight: bolder;
+	width: 100%;
+	float: right;
+	margin-top: 10px;
+	text-align: right;
+	@content;
+}
+
+//addcart price
+@mixin AddCartPrice ($PriceColor) {
+	display:inline-block;
+	float: left;
+	color: $PriceColor;
+	font-weight: bold;
+	height: 40px;
+	line-height: 40px;
+	font-size: 1.875rem;
+	margin-right: 0.75rem;
+	@include pad-width{
+		font-size: 2.25rem;
+	}
+}
+
+@mixin AddCartIcon ($IconColor,$IconImg) {
+	width: 40px;
+	height: 40px;
+	@include border-radius(4px);
+	float: left;
+	border: none;
+	background-color: $IconColor;
+	background-image: $IconImg;
+	@extend %backgroundimagecontain;
+}
+
+//Cart
+@mixin CartPrice ($Color) {
+	font-size: 1.75rem;
+	font-weight: bold;
+	color: $Color;
+	@include pad-width{
+		font-size: 2.15rem;
+	}
+}
+
+
+@mixin PriceAndCount () {
+	& .Count{
+		width: 100%;
+		float: left;
+		& .btn{
+			width: 40px;
+			height: 40px;
+			float:left;
+			margin-right: 0.5rem;
+			@include border-radius(4px);
+			border: 1px solid #93938c;
+			background-color: #93938c;
+			@extend %backgroundimagecontain;
+			&:active{
+				background-color:#7e7e78;
+			}
+			&:last-child{
+				margin-right:0;
+			}
+		}
+		& .fast{
+			background-color:#e8b85d;
+			border-color: #d8ab56;
+			&:active{
+				background-color:$FastColor;
+			}
+		}
+
+		& .preorder{
+			background-color:#67aad6;
+			border-color: #5b98bf;
+			&:active{
+				background-color:$PreorderColor;
+			}
+		}
+		& input[type=text]{
+			float:left;
+			margin-right: 0.5rem;
+			width: calc(100% - 86px - 1rem);
+			height: 40px;
+			border: $BorderColor;
+			@include border-radius(4px);
+			font-size: 1.375rem;
+			color: $TextColor;
+			font-weight: bold;
+			text-align:center;
+			line-hieght: 40px;
+			outline:none;
+		}
+	}
+	& .Subtotal{
+		margin-top: 0.75rem;
+		float:right; 
+		& span{
+			color: $TextColor;
+			font-size: 1rem;
+			font-weight: normal;
+		}
+	}
+	& .Normal{
+		@include CartPrice($NormalColor);
+	}
+	& .Fast{
+		@include CartPrice($FastColor);
+	}
+	& .Preorder{
+		@include CartPrice($PreorderColor);
+	}
+
+	& .Gift{
+		@include CartPrice($NormalColor-black);
+	}
+
+	@include pad-width{
+		& .Count{
+			width: 45%;
+		}
+		& .Subtotal{
+			text-align:right;
+			width: 55%;
+			margin-top: 0.7rem;
+		}
+	}
+}
+
+@mixin PriceAndCountChange () {
+	& .Count{
+		& input[type=text]{
+			border-color: $NoticeColor;
+			color: $NoticeColor;
+		}
+	}
+	& .Subtotal{
+		margin-top: 0.75rem;
+		float:right; 
+		& span{
+			color: $TextColor;
+			font-size: 1rem;
+			font-weight: normal;
+		}
+	}
+	& .Normal{
+		@include CartPrice($NormalColor);
+	}
+
+	& .NormalChange{
+		color: #fff;
+		background-color: $NormalColor;
+		padding: 8px;
+		& span{
+			color: #fff;
+			background-color: $NormalColor;
+		}
+	}
+	& .Fast{
+		@include CartPrice($FastColor);
+	}
+	& .FastChange{
+		color: #fff;
+		background-color: $FastColor;
+		padding: 8px;
+		& span{
+			color: #fff;
+			background-color: $FastColor;
+		}
+	}
+
+	& .Preorder{
+		@include CartPrice($PreorderColor);
+	}
+
+	& .PreorderChange{
+		color: #fff;
+		background-color: $PreorderColor;
+		padding: 8px;
+		& span{
+			color: #fff;
+			background-color: $PreorderColor;
+		}
+	}
+
+	& .Gift{
+		@include CartPrice($NormalColor-black);
+	}
+
+	@include pad-width{
+		& .Count{
+			width: 45%;
+		}
+		& .NormalChange{
+			width: 51%;
+			margin-top: 3.7rem;
+		}
+		& .FastChange{
+			width: 51%;
+			margin-top: 3.7rem;
+		}
+		& .PreorderChange{
+			width: 51%;
+			margin-top: 3.7rem;
+		}
+		
+	}
+}
+
+@mixin DottedLine () {
+	width: calc(100% - 2rem);
+	margin: 0 auto;
+	border-bottom: 1px dotted #cccccc;
+	@content;
+}
+
+@mixin SeparateLine () {
+	width: 100%;
+	height: 1px;
+	background-color: #cccccc;
+	@content;
+}
+
+//button
+@mixin Buttons ($BGcolor,$TextColor) {
+	padding: 0 1.25rem;
+	height: 40px;
+	line-height: 40px;
+	background-color: $BGcolor;
+	color: $TextColor;
+	font-size: 1.125rem;
+	text-align:center;
+	float:left;
+	margin-right: 5px;
+	@include border-radius(4px);
+	&:last-child{
+		margin-right: 0;
+	}
+}
+
+@mixin CloseBtn ($Color) {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	z-index: 999;
+	cursor: pointer;
+	&:before{
+		content: '';
+		display: block;
+		border-top: 1px solid $Color;
+		width: 25px;
+		height: 1px;
+		@include border-radius(1px);
+		background-color: $Color;
+		transform: rotate(45deg);
+		position: absolute;
+		top: 18px;
+		left: 8px;
+	}
+
+	&:after{
+		content: '';
+		display: block;
+		border-top: 1px solid $Color;
+		width: 25px;
+		height: 1px;
+		@include border-radius(1px);
+		background-color: $Color;
+		transform: rotate(-45deg);
+		position: absolute;
+		top: 18px;
+		left: 8px;
+	}
+}
+
+@mixin ConfirmBtn {
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 1.5rem;
+	@include border-radius(4px);
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	color: #fff;
+	background-color: #939334;
+	font-weight: bold;
+	font-size: 1.5rem;
+
+	@include pad-width{
+		width: 380px;
+	}
+}

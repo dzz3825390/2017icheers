@@ -1,0 +1,1475 @@
+@import "compass/css3";
+@import "mixin";
+
+.cart_large_title{
+	@extend %SectionLayout;
+	font-size: 1.625rem;
+	font-weight:bold;
+	padding-top: 1rem;
+	color:$TitleColor;
+	@include pad-width{
+		font-size: 2rem;
+		padding-top: 1.25rem;
+	}
+
+	@include large-pad-width{
+		padding-top: 2.5rem;
+	}
+}
+
+.cart_step_row{
+	margin-top: 10px;
+	@extend %SectionLayout;
+	&:after{
+		@extend %clearfix;
+	}
+
+	& .OneStep{
+		float: left;
+		width: calc((100% - 15px)/4);
+		border-top: 4px solid #bbbbbb;
+		margin-right: 5px;
+		&:last-child{
+			margin-right: 0;
+		}
+
+		& span{
+			width: 100%;
+			font-size: 0.875rem;
+			line-height: 1.2rem;
+			color: #bbbbbb;
+			text-align: center;
+			display: inline-block;
+		}
+	}
+
+	& .OneStep_active{
+		border-color: #8E6681;
+		& span{
+			color: #8E6681;
+			font-weight:bold;
+			font-style: italic;
+		}
+	}
+
+	@include pad-width{
+		margin-top: 1rem;
+		& .OneStep{
+			border-width: 6px;
+			& span{
+				font-size: 1.125rem;
+				line-height: 1.5rem;
+			}
+		}
+	}
+
+	@include large-pad-width{
+		margin-top: 1.25rem;
+		& .OneStep{
+			border-width: 8px;
+			& span{
+				font-size: 1.5rem;
+				line-height: 2rem;
+			}
+		}
+	}
+}
+
+.cart_list_layout{
+	@extend %SectionLayout;
+}
+
+.cart_list_OneBottle{
+	padding: 1rem 0 2rem 0;
+	border-bottom: $BorderColor;
+	position: relative;
+	&:after{
+		@extend %clearfix;
+	}
+
+	& .BottleImg{
+		width: 33%;
+		float: left;
+		@extend %backgroundimagecover;
+	}
+
+	& .BottleInfo{
+		width: calc(67% - 1px);
+		float:right;
+		& .Name_en{
+			font-size: 1.125rem;
+			color: $TitleColor;
+			height: 1.125rem;
+			overflow:hidden;
+			margin-top: 1rem;
+			font-weight: bold;
+		}
+
+		& .Name_cn{
+			font-size: $PhoneSecondTitleFontSize;
+			color: $TextColor;
+			line-height: 1.5rem;
+			max-height: 3rem;
+			overflow:hidden;
+			margin-top: 10px;
+		}
+
+		& .Info{
+			margin-top: 10px;
+			@include BottleInfo($PhoneContentFontSize,5px);
+			&:after{
+				@extend %clearfix;
+			}
+
+		}
+
+		& .Status{
+			margin-top: 15px;
+			&:after{
+				@extend %clearfix;
+			}
+
+			& div{
+				width: 60px;
+				height: 30px;
+				font-size: 14px;
+				text-align:center;
+				line-height: 30px;
+				color: $TextColor;
+				border: $BorderColor;
+				@include border-radius(4px);
+				background-color: #e9e9e9;
+				float: left;
+				margin-right: 3px;
+			}
+		}
+
+		& .Price{
+			margin-top: 1.5rem;
+			@include PriceAndCount;
+		}
+
+		& .PriceChangeFast{
+			@include PriceAndCountChange;
+			& .Count input[type=text]{
+				border-color:#EF9C00;
+				border-width:3px;
+				color: #EF9C00;
+			}
+			& .Count .fast{
+				background-color: #EF9C00;
+				border-color: #EF9C00;
+			}
+		}
+
+		& .PriceChangeNormal{
+			@include PriceAndCountChange;
+			& .Count input[type=text]{
+				border-color:$NormalColor;
+				border-width:3px;
+				color: $NormalColor;
+			}
+			& .Count .btn{
+				background-color: $NormalColor;
+				border-color: $NormalColor;
+			}
+		}
+
+		& .PriceChangePreorder{
+			@include PriceAndCountChange;
+			& .Count input[type=text]{
+				border-color:$PreorderColor;
+				border-width:3px;
+				color: $PreorderColor;
+			}
+			& .Count .btn{
+				background-color: $PreorderColor;
+				border-color: $PreorderColor;
+			}
+		}
+	}
+
+	& .btn_delete{
+		width: 40px;
+		height: 40px;
+		@extend %backgroundimagecontain;
+		background-image: url(../images/icon_delete.png);
+		position: absolute;
+		right: -10px;
+		bottom: 0;
+	}
+
+	@include pad-width{
+		& .BottleImg{
+			width: 40%;
+		}
+
+		& .BottleInfo{
+			width: calc(60% - 1px);
+			position:absolute;
+			bottom: 70px;
+			right: 0;
+			& .Name_en{
+				font-size: $PadTitleFontSize;
+				height: $PadTitleFontSize;
+			}
+
+			& .Name_cn{
+				font-size: $padContentFontSize;
+				height: $padContentFontSize;
+			}
+
+			& .Info span{
+				font-size:$padContentFontSize;
+				height: 1.05rem;
+				padding:0 12px;
+			}
+
+			& .Status div{
+				width: 80px;
+				height: 40px;
+				line-height: 40px;
+				font-size: $padContentFontSize;
+				margin-right: 5px;
+			}
+
+			& .Price{
+				& .Count{
+					width: 45%;
+				}
+
+				/*& .Subtotal{
+					text-align:right;
+					width: 55%;
+					margin-top: 0.7rem;
+				}*/
+			}
+
+		}
+	}
+
+	@include large-pad-width{
+		& .BottleImg{
+			background-size: contain;
+		}
+
+		& .BottleInfo{
+			width: 40%;
+			& .Info{
+				margin-top: 15px;
+			}
+
+			& .Status{
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+.cart_list_BottleSoldOut{
+	& .BottleImg{
+		opacity: 0.4;
+	}
+
+	& .BottleInfo{
+		& .Name_en{
+			color: #d9d9d9;
+		}
+
+		& .Name_cn{
+			color: #d9d9d9;
+		}
+
+		& .Info{
+			color: #d9d9d9;
+		}
+
+		& .Status div{
+			color: #d9d9d9;
+			border-color: #e6e6e6;
+			background: #f2f2f2;
+		}
+
+		& .Price{
+			& .Count .btn{
+				background-color: #f2f2f2;
+				border-color: #e6e6e6;
+			}
+
+			& .Count input[type=text]{
+				color: #d9d9d9;
+				border-color:#e6e6e6;
+			}
+
+			& .Subtotal{
+				color: #d9d9d9;
+				& span{
+					color: #d9d9d9;
+				}
+			}
+		}
+	}
+
+}
+
+.cart_list_OneBottle_unchange{
+	& .BottleImg{
+		opacity: 0.4;
+	}
+
+	& .BottleInfo{
+		& .Name_en{
+			color: #d9d9d9;
+		}
+
+		& .Name_cn{
+			color: #d9d9d9;
+		}
+
+		& .Info{
+			color: #d9d9d9;
+		}
+
+		& .Status div{
+			color: #d9d9d9;
+			border-color: #e6e6e6;
+			background: #f2f2f2;
+		}
+
+		& .Price{
+			& .Count .btn{
+				background-color: #f2f2f2;
+				border-color: #e6e6e6;
+			}
+
+			& .Count input[type=text]{
+				color: #d9d9d9;
+				border-color:#e6e6e6;
+			}
+
+			& .Subtotal{
+				color: #d9d9d9;
+				& span{
+					color: #d9d9d9;
+				}
+			}
+		}
+	}
+}
+
+.cart_list_layout .AllTitle_layout{
+	margin-top: 1rem;
+}
+
+.cart_list_OneGroup{
+	padding: 1.5rem 0 4rem 0;
+	border-bottom: $BorderColor;
+	position: relative;
+	&:after{
+		@extend %clearfix;
+	}
+
+	& .GroupBottle{
+		width: 100%;
+		&:after{
+			@extend %clearfix;
+		}
+
+		& .GroupBottleImg{
+			@include BottleImgOblique(110px);
+			float: left;
+			position: relative;
+			& .BottleNumber{
+				padding: 8px;
+				position: absolute;
+				left:0;
+				bottom: 0;
+				background-color: #666;
+				color: #fff;
+				font-size: 1rem;
+				font-weight: bold;
+			}
+		}
+
+		& .GroupBottleInfo{
+			width: calc(100% - 128px);
+			float:right;
+			& .Name_en{
+				@include BottleNameEN(1.125rem);
+				height: 1.5rem;
+				line-height: 1.55rem;
+				overflow:hidden;
+				font-weight: bold;
+				color: $TitleColor;
+			}
+
+			& .Name_cn{
+				@include BottleNameCN(1rem);
+				line-height: 1.5rem;
+				max-height: 3rem;
+				overflow:hidden;
+				color: $TextColor;
+				margin-top: 8px;
+			}
+
+			& .Info{
+				@include BottleInfo($PhoneContentFontSize,5px);
+				margin-top: 8px;
+			}
+		}
+
+	}
+
+	& .dottedline{
+		@include DottedLine;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	& .Status{
+		width: calc(100% - 128px);
+		margin-top: 15px;
+		margin-left: calc(112px + 1rem);
+		&:after{
+			@extend %clearfix;
+		}
+
+		& div{
+			width: 60px;
+			height: 30px;
+			font-size: 14px;
+			text-align:center;
+			line-height: 30px;
+			color: $TextColor;
+			border: $BorderColor;
+			@include border-radius(4px);
+			background-color: #e9e9e9;
+			float: left;
+			margin-right: 3px;
+		}
+	}
+
+	& .Price{
+		width: calc(100% - 128px);
+		margin-left: calc(112px + 1rem);
+		margin-top: 1.5rem;
+		@include PriceAndCount;
+	}
+
+	& .PriceChangeFast{
+		@include PriceAndCountChange;
+		& .Count input[type=text]{
+			border-color:#EF9C00;
+			border-width:3px;
+			color: #EF9C00;
+		}
+		& .Count .fast{
+			background-color: #EF9C00;
+			border-color: #EF9C00;
+		}
+	}
+
+	& .PriceChangeNormal{
+		@include PriceAndCountChange;
+		& .Count input[type=text]{
+			border-color:$NormalColor;
+			border-width:3px;
+			color: $NormalColor;
+		}
+		& .Count .btn{
+			background-color: $NormalColor;
+			border-color: $NormalColor;
+		}
+	}
+
+	& .PriceChangePreorder{
+		@include PriceAndCountChange;
+		& .Count input[type=text]{
+			border-color:$PreorderColor;
+			border-width:3px;
+			color: $PreorderColor;
+		}
+		& .Count .btn{
+			background-color: $PreorderColor;
+			border-color: $PreorderColor;
+		}
+	}
+
+	& .btn_delete{
+		width: 40px;
+		height: 40px;
+		@extend %backgroundimagecontain;
+		background-image: url(../images/icon_delete.png);
+		position: absolute;
+		right: -10px;
+		bottom: 0;
+	}
+
+	@include pad-width{
+		& .GroupBottle{
+			& .GroupBottleImg{
+				width:200px;
+				height:200px;
+				& .BottleNumber{
+					padding: 0.75rem;
+					font-size: 1.75rem;
+				}
+			}
+
+			& .GroupBottleInfo{
+				width: calc(100% - 228px);
+				& .Name_en{
+					font-size:1.75rem;
+					height: 2rem;
+					line-height:2rem;
+				}
+
+				& .Name_cn{
+					font-size:1.25rem;
+					margin-top: 1rem;
+					line-height: 1.625rem;
+					max-height: 3.25rem;
+				}
+
+				& .Info{
+					margin-top: 15px;
+					@include BottleInfo($padContentFontSize,10px);
+				}
+			}
+		}
+
+		& .Status{
+			width: calc(100% - 228px);
+			margin-left:230px;
+			& div{
+				width:80px;
+				height:40px;
+				margin-right: 5px;
+				line-height: 40px;
+				font-size: $padContentFontSize;
+			}
+		}
+
+		& .Price{
+			width: calc(100% - 228px);
+			margin-left: calc(212px + 1rem);
+		}
+	}
+
+	@include large-pad-width{
+		padding-top:0;
+		& .GroupBottle{
+			width: calc((100% - 5rem)/2 - 1px);
+			float:left;
+			margin-left: 2rem;
+			padding-right: 2rem;
+			margin-top: 2rem;
+			&:nth-child(2n+1){
+				margin-left:0;
+			}
+
+			& .GroupBottleImg{
+				width: 250px;
+			}
+
+			& .GroupBottleInfo{
+				width: calc(100% - 284px);
+				float:left;
+				margin-left:2rem;
+				& .Name_en{
+					height: auto;
+					line-height:2.2rem;
+					max-height: 4.4rem;
+				}
+			}
+		}
+
+		& .dottedline{
+			display:none;
+		}
+
+		& .Status{
+			width: calc(50% - 1px);
+			float:right;
+			margin-left:0;
+		}
+
+		& .Price{
+			width: calc(50% - 1px);
+			float:right;
+			margin-left:0;
+			& .Count{
+				width: 45%;
+			}
+
+			& .Subtotal{
+				width: 55%;
+			}
+		}
+
+	}
+}
+
+.cart_list_OneGroup_unchange{
+
+	& .GroupBottle{
+
+		& .GroupBottleImg{
+			opacity: 0.4;
+		}
+
+		& .GroupBottleInfo{
+
+			& .Name_en{
+				color: #d9d9d9;
+			}
+
+			& .Name_cn{
+				color: #d9d9d9;
+			}
+
+			& .Info{
+				color: #d9d9d9;
+			}
+		}
+
+	}
+
+	& .Status{
+		& div{
+			color: #d9d9d9;
+			border: #e6e6e6;
+			background-color: #f2f2f2;
+		}
+	}
+
+	& .Price{
+		& .Count .btn{
+			border-color: #e6e6e6;
+			background-color: #f2f2f2;
+		}
+
+		& .Count input[type=text]{
+			border-color: #e6e6e6;
+			color: #d9d9d9;
+		}
+
+		& .Subtotal{
+			color: #d9d9d9;
+			& span{
+				color: #d9d9d9;
+			}
+		}
+	}
+
+}
+
+.cart_list_OneGroup_soldout{
+	& .GroupBottle{
+
+		& .GroupBottleInfo{
+
+			& .Name_en{
+				text-decoration: line-through;
+			}
+
+			& .Name_cn{
+				text-decoration: line-through;
+			}
+		}
+
+	}
+
+
+	& .Price{
+		& .Count .btn{
+			border-color: #e6e6e6;
+			background-color: #f2f2f2;
+		}
+
+		& .Count input[type=text]{
+			border-color: #e6e6e6;
+			color: #d9d9d9;
+		}
+
+	}
+
+}
+
+.cart_list_OneBottle_soldout{
+	& .BottleInfo{
+		& .Name_en{
+			text-decoration:line-through;
+		}
+
+		& .Name_cn{
+			text-decoration:line-through;
+		}
+	}
+
+
+	& .BottleInfo .Price{
+		& .Count .btn{
+			border-color: #e6e6e6;
+			background-color: #f2f2f2;
+			&:active{
+				background-color: #f2f2f2;
+				border-color: #e6e6e6;
+			}
+		}
+
+		& .Count input[type=text]{
+			border-color: #e6e6e6;
+			color: #d9d9d9;
+		}
+	}
+	
+
+}
+
+.cart_list_EventNotice{
+	margin-top: 0.75rem;
+	& .text{
+		font-size:$PhoneContentFontSize;
+		color:$TextColor;
+		line-height: 1.3rem;
+		& span{
+			color:#B00808;
+		}
+	}
+	@include pad-width{
+		margin-top: 1rem;
+		& .text{
+			font-size: $padContentFontSize;
+			line-height: 2rem;
+		}
+	}
+}
+
+.cart_list_gift{
+	& .checkbox_layout{
+		position:absolute;
+		right: 0;
+		bottom: 3rem;
+	}
+
+	@include pad-width{
+		& .checkbox_layout{
+			bottom:1rem;
+		}
+	}
+}
+
+.cart_list_gift_unchecked{
+	& .BottleImg{
+		opacity: 0.4;
+	}
+
+	& .BottleInfo{
+		opacity: 0.4;
+	}
+}
+
+.cart_bouns_layout{
+	padding: 1rem;
+	margin-top: 1.25rem;
+	background-color: #d9d9d9;
+	& .LargeTitle{
+		font-size: 1.375rem;
+		color: $TitleColor;
+		margin-top: 2rem;
+		&:first-child{
+			margin-top:0;
+		}
+	}
+
+	& .LargeTitle_info{
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+		color: $TextColor;
+		margin-top: 5px;
+	}
+
+	& .OneItem_Row{
+		margin-top: 1rem;
+		&:after{
+			@extend %clearfix;
+		}
+
+		& .OneItem_title{
+			font-size:1.15rem;
+			font-weight:bold;
+			color:$TitleColor;
+			float:left;
+		}
+
+		& .OneItem_text{
+			font-size:1.15rem;
+			font-weight:bold;
+			color:$TitleColor;
+			float:right;
+			& span{
+				color:#B00808;
+				margin-right: 5px;
+			}
+		}
+	}
+
+	& .OneItem_Row_unchange{
+		& .OneItem_text{
+			& span{
+				color:#666666;
+			}
+		}
+	}
+
+	@include pad-width{
+		padding: 2rem 1.25rem;
+		margin-top: 1.5rem;
+		& .LargeTitle{
+			font-size: 1.875rem;
+			margin-top: 2.5rem;
+		}
+
+		& .LargeTitle_info{
+			font-size: 1.25rem;
+			line-height: 1.75rem;
+		}
+
+		& .OneItem_Row{
+			margin-top: 1.75rem;
+			& .OneItem_title{
+				font-size: 1.5rem;
+			}
+
+			& .OneItem_text{
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	@include pad-width{
+		padding: 4rem 2.5rem;
+	}
+}
+
+.cart_sum_layout{
+	margin-top: 1rem;
+	@extend %SectionLayout;
+	& .OneItem_Row{
+		margin-top: 1rem;
+		&:first-child{
+			margin-top:0;
+		}
+
+		&:after{
+			@extend %clearfix;
+		}
+
+		& .OneItem_title{
+			max-width: 50%;
+			font-size:1.15rem;
+			line-height: 1.5rem;
+			color:$TitleColor;
+			float:left;
+		}
+
+		& .OneItem_text{
+			max-width: 50%;
+			font-size:1.15rem;
+			line-height: 1.5rem;
+			color:$TitleColor;
+			float:right;
+		}
+
+		& .OneItem_Total{
+			max-width: 50%;
+			font-size:1.75rem;
+			color: $NoticeColor;
+			font-weight:bold;
+			float:right;
+		}
+	}
+
+	& .dottedline{
+		@include DottedLine;
+		margin-top: 1rem;
+	}
+
+	& .btn_row{
+		margin-top: 0.75rem;
+		float:right;
+		&:after{
+			@extend %clearfix;
+		}
+	}
+
+	@include pad-width{
+		margin-top: 3rem;
+		& .OneItem_Row{
+			margin-top: 3rem;
+			& .OneItem_title{
+				font-size:1.5rem;
+				line-height: 3rem;
+			}
+
+			& .OneItem_text{
+				font-size:1.5rem;
+				line-height: 2.25rem;
+			}
+
+			& .OneItem_Total{
+				font-size:2.25rem;
+			}
+		}
+		& .dottedline{
+			margin-top: 3.125rem;
+		}
+	}
+}
+
+.cart_Terms_layout{
+	margin-top: 1rem;
+	@extend %SectionLayout;
+}
+
+.cart_Terms_border{
+	padding: 1rem;
+	border: $BorderColor;
+	background-color: #f3f4f5;
+	@include border-radius(4px);
+	& .OneTerm{
+		margin-top: 0.75rem;
+		font-size: 0.75rem;
+		color: $TextColor;
+		line-height: 1.25rem;
+		&:first-child{
+			margin-top:0;
+		}
+		&:before{
+			content:'';
+			display:inline-block;
+			width: 5px;
+			height: 5px;
+			background-color: #666666;
+			@include border-radius(50%);
+			margin-right: 5px;
+			margin-top: 8px;
+			float:left;
+		}
+
+		&:after{
+			@extend %clearfix;
+		}
+
+		& a{
+			color: #666;
+		}
+	}
+
+	@include pad-width{
+		padding: 1.25rem;
+		& .OneTerm{
+			margin-top: 1rem;
+			font-size: 1rem;
+			line-height: 1.5rem;
+		}
+	}
+}
+
+.cart_YearCheck_layout{
+	margin-top: 1.5rem;
+	padding: 5px 0;
+	display:inline-block;
+	&:after{
+		@extend %clearfix;
+	}
+	& .checkbox_layout{
+		float:left;
+	}
+	& .cart_YearCheck_text{
+		float:left;
+		margin-left: 0.5rem;
+	}
+
+	& span{
+		display:block;
+		font-size: 1rem;
+		color: $TitleColor;
+	}
+
+	& span.large{
+		font-weight: bold;
+		font-size: 1.5rem;
+		
+	}
+
+	& span.small{
+		margin-top: 5px;
+	}
+	@include large-pad-width{
+		margin-top: 2.5rem;
+	}
+}
+
+.cart_YearCheck_btn{
+	@include ConfirmBtn;
+	width: calc(100% - 2rem);
+	cursor: pointer;
+}
+
+.cart_YearCheck_btn_unchecked{
+	opacity: 0.3;
+}
+
+//FreightInfo
+.FreightInfoRow{
+	margin-top: 5px;
+	font-size: 1.25rem;
+	line-height: 2rem;
+	font-weight: bold;
+	color: $TextColor;
+	&:after{
+		@extend %clearfix;
+	}
+
+	& div:first-child{
+		float:left;
+		& span{
+			color:$NoticeColor;
+		}
+	}
+
+	& div:last-child{
+		float:right;
+	}
+}
+
+.FreightInfo_notice{
+	font-size: 0.75rem;
+	line-height: 1.25rem;
+	color: $TextColor;
+	margin-top: 0.625rem;
+	@include large-pad-width{
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+}
+
+.DeliveryType_Fast{
+	background-color: $FastColor;
+	& .largeT{
+		color: #fff;
+		font-weight: bold;
+	}
+
+	& .secondT{
+		color: #fff;
+	}
+}
+
+.DeliveryType_Normal{
+	background-color: $NormalColor-black;
+	& .largeT{
+		color: #fff;
+		font-weight: bold;
+	}
+
+	& .secondT{
+		color: #fff;
+	}
+}
+
+.DeliveryType_Preorder{
+	background-color: $PreorderColor;
+	& .largeT{
+		color: #fff;
+		font-weight: bold;
+	}
+
+	& .secondT{
+		color: #fff;
+	}
+}
+
+.DeliveryType_bottomText{
+	margin-top: 1.25rem;
+	font-size: $PhoneContentFontSize;
+	line-height: 1.25rem;
+	color: $NoticeColor;
+}
+
+.DeliveryType_bottomLine_fast{
+	margin-top: 0.5rem;
+	width: 100%;
+	height: 16px;
+	background-color: $FastColor;
+}
+
+.DeliveryType_bottomLine_normal{
+	margin-top: 0.5rem;
+	width: 100%;
+	height: 16px;
+	background-color: $NormalColor-black;
+}
+
+.DeliveryType_bottomLine_preorder{
+	margin-top: 0.5rem;
+	width: 100%;
+	height: 16px;
+	background-color: $PreorderColor;
+}
+
+.cart_form_row{
+	margin-top:1.25rem;
+	&:after{
+		@extend %clearfix;
+	}
+	& .formTitle{
+		font-size: $PhoneSecondTitleFontSize;
+		color: $TextColor;
+	}
+	& input {
+		width: 100%;
+		height: 45px;
+		line-height: 46px;
+		padding: 0 0.5rem;
+		font-size: 1.125rem;
+		color: $TextColor;
+		margin-top: 0.5rem;
+		&::-webkit-input-placeholder { /* WebKit browsers */
+		    color: #999;
+		}
+		&::-moz-input-placeholder{
+			color: #999;
+		}
+		&:-moz-input-placeholder{
+			color: #999;
+		}
+		&:-ms-input-placeholder{
+			color: #999;
+		}
+	}
+
+	& .Radio_Sexual{
+		float:left;
+		padding: 0;
+		width: calc((100% - 0.5rem)/2);
+		height: 45px;
+		line-height: 45px;
+		font-size: 1.125rem;
+		text-align: center;
+		margin-left: 0.5rem;
+		margin-top: 0.5rem;
+		&:nth-child(2){
+			margin-left: 0;
+		}
+	}
+
+	& .Radio_Delivery{
+		float:left;
+		padding: 0;
+		width: calc((100% - 0.5rem)/2);
+		height: 45px;
+		line-height: 45px;
+		font-size: 1.125rem;
+		text-align: center;
+		margin-left: 0.5rem;
+		margin-top: 0.5rem;
+		&:nth-child(1){
+			margin-left: 0;
+		}
+	}
+
+	& .Radio_DeliveryTime{
+		float:left;
+		padding: 0;
+		width: 100%;
+		height: 45px;
+		line-height: 45px;
+		font-size: 1.125rem;
+		text-align: center;
+		margin-top: 0.5rem;
+		margin-left:0;
+	}
+
+	& .Radio_Payment{
+		padding: 0;
+		width: 100%;
+		height: 45px;
+		line-height: 45px;
+		font-size: 1.125rem;
+		text-align: center;
+		margin-top: 0.5rem;
+		margin-left:0;
+	}
+
+	& .Radio_invoice{
+		padding: 0;
+		width: 100%;
+		height: 45px;
+		line-height: 45px;
+		font-size: 1.125rem;
+		text-align: center;
+		margin-top: 0.5rem;
+		margin-left:0;
+	}
+
+	& .Radio_infotext{
+		font-size: $PhoneContentFontSize;
+		color: #999;
+		padding: 0 10px;
+		margin-top: 0.5rem;
+		margin-bottom: 1rem;
+		text-align: center;
+	}
+
+	& .NoticeText{
+		color: $NoticeColor;
+		font-size: $PhoneContentFontSize;
+		line-height: 1.25rem;
+		margin-top: 0.5rem;
+	}
+
+	& textarea{
+		width:100%;
+		height: 150px;
+		margin-top:0.5rem;
+		font-size: 1.25rem;
+		padding:10px;
+		line-height: 1.75rem;
+		color: $TextColor;
+		&::-webkit-teatarea-placeholder { /* WebKit browsers */
+		    color: #999;
+		}
+		&::-moz-teatarea-placeholder{
+			color: #999;
+		}
+		&:-moz-teatarea-placeholder{
+			color: #999;
+		}
+		&:-ms-teatarea-placeholder{
+			color: #999;
+		}
+	}
+
+	@include pad-width{
+		padding:0 88px;
+		margin-top: 2rem;
+		& .formTitle{
+			font-size: $padContentFontSize;
+		}
+
+		& input{
+			height:50px;
+			line-height: 50px;
+			font-size: 1.375rem;
+		}
+
+		& .RadioBox{
+			height: 50px;
+			line-height: 50px;
+			font-size: 1.375rem;
+		}
+
+		& .NoticeText{
+			font-size: $padContentFontSize;
+			line-height: 1.75rem;
+		}
+
+		& .Radio_infotext{
+			font-size: $padContentFontSize;
+			line-height: 1.75rem;
+		}
+	}
+
+	@include large-pad-width{
+		padding: 0 220px;
+	}
+}
+
+.form_delivery_noticeText{
+	margin-top:0;
+	@include pad-width{
+		padding: 0;
+	}
+}
+
+.form_phone{
+	& .center_text{
+		font-size: 1rem;
+		color: #999;
+		text-align: center;
+		margin-top: 1rem;
+	}
+
+	& .ZoneCode{
+		width: calc(80px - 1.5rem);
+		float: left;
+		height:auto;
+		font-size: 1.125rem;
+		margin-right: 0.5rem;
+		margin-top: 1rem;
+		& .dropdown_text{
+			font-size: 1.125rem;
+			height: 1.125rem;
+			line-height: 1.125rem;
+		}
+	}
+
+	& input.ZoneCodeinput[type=text]{
+		width: calc(100% - 82px - 0.5rem);
+		float: right;
+		margin-top: 1rem;
+	}
+
+	& input.ZoneCodeinput2[type=text]{
+		width: calc(100% - 82px - 0.5rem);
+		float: right;
+		margin-top: 1rem;
+	}
+
+	@include pad-width{
+		& .ZoneCode {
+			padding: 0.8rem;
+			& .dropdown_text{
+				font-size: 1.375rem;
+				height: 1.375rem;
+				line-height: 1.375rem;
+			}
+		}
+
+		& input.ZoneCodeinput[type=text]{
+			width: calc(100% - 85px - 0.5rem);
+		}
+
+		& input.ZoneCodeinput2[type=text]{
+			width: calc(100% - 85px - 0.5rem);
+		}
+	}
+
+}
+
+.form_Address{
+	& .dropdown{
+		width: calc(100% - 1.5rem - 2px);
+		margin-top: 0.5rem;
+		text-align: center;
+		
+		& .dropdown_text{
+			font-size: 1.125rem;
+			height: 18px;
+			line-height: 1.125rem;
+			& span{
+				display: inline-block;
+				height: 18px;
+				margin-top: 1px;
+			}
+		}
+	}
+}
+
+.form_invoice{
+	& .Radio_infotext{
+		text-align:left;
+	}
+}
+
+.payment_infotext{
+	margin-top:0.5rem;
+	font-size: $PhoneContentFontSize;
+	color: $TextColor;
+	line-height: 1.25rem;
+	& span{
+		display:inline-block;
+		color: $NoticeColor;
+		margin: 0 5px;
+		font-weight: bold;
+	}
+
+	@include pad-width{
+		font-size: $padContentFontSize;
+		line-height: 1.75rem;
+	}
+}
+
+.invoice_radiobox_layout{
+	margin: 1rem auto;
+	display: inline-block;
+	&:after{
+		@extend %clearfix;
+	}
+
+	& div.Radio_invoice_unit{
+		padding: 0.5rem;
+		width: 85px;
+		height: 85px;
+		border: $BorderColor;
+		color: #333;
+		font-size: 1.125rem;
+		line-height: 24px;
+		text-align: center;
+		float: left;
+		margin-left: 0.5rem;
+		@include border-radius(4px);
+		@include box-sizing(border-box);
+		&:first-child{
+			margin-left: 0;
+		}
+
+		&:before{
+			content:'';
+			height: 100%;
+			display:inline-block;
+			vertical-align: middle;
+		}
+
+		& span{
+			display:inline-block;
+			vertical-align:middle;
+			color: $TextColor;
+		}
+	}
+
+	@include pad-width{
+		& div.Radio_invoice_unit{
+			padding: 0.75rem;
+			width: 100px;
+			height: 100px;
+			font-size: 1.25rem;
+		}
+	}
+}
+
+.ReviseOrder_text{
+	padding: 0 16px;
+	font-size: $PhoneContentFontSize;
+	color: $TextColor;
+	line-height: 1.3rem;
+	margin-top: 0.875rem;
+	& span{
+		color: $NoticeColor;
+		text-decoration: underline;
+	}
+
+	@include pad-width{
+		padding: 0 20px;
+		font-size: $padContentFontSize;
+		line-height: 1.75rem;
+	}
+
+	@include large-pad-width{
+		padding: 0 40px;
+	}
+}
+
+.delete_text{
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	bottom: 0;
+	right: 28px;
+	color: #B00808;
+	font-size: 1rem;
+	text-align: right;
+}

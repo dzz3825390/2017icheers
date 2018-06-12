@@ -1,0 +1,383 @@
+.winelist_searchCondition_layout{
+	@extend %SectionLayout;
+	background-color: #666;
+	padding:1rem;
+	@include pad-width{
+		padding:1.25rem;
+	}
+
+	@include large-pad-width{
+		padding:32px 40px;
+	}
+}
+
+.winelist_searchCondition_Title{
+	color:#fff;
+	font-size:$PhoneTitleFontSize;
+	font-weight: bold;
+	@include pad-width{
+		font-size:$PadTitleFontSize;
+	}
+}
+
+.winelist_searchCondition_text{
+	margin-top: 0.75rem;
+	&:after{
+		@extend %clearfix;
+	}
+
+	& span{
+		font-size: $PhoneSecondTitleFontSize;
+		color: #f2f2f2;
+		float: left;
+		margin: 2px;
+		line-height: 1.5rem;
+		&:first-child{
+			margin-left: 0;
+		}
+	}
+
+	@include pad-width{
+		& span{
+			font-size: $padContentFontSize;
+		}
+	}
+
+
+}
+
+.winelist_searchCondition_filter{
+	@extend %SectionLayout;
+	padding: 1rem;
+	background-color: #f2f2f2;
+	border-bottom: $BorderColor;
+	border-bottom-style: dotted;
+
+	&:after{
+		@extend %clearfix;
+	}
+
+	& .checkbox_layout{
+		float: left;
+	}
+
+	& .dropdown{
+		width: 100px;
+		& .dropdown_option{
+			text-align: center;
+		}
+	}
+
+	@include pad-width{
+		padding: 1.25rem;
+
+		& .checkbox_layout{
+			float: right;
+			margin-right: 2rem;
+		}
+	}
+
+	@include large-pad-width{
+		padding:32px 40px;
+	}
+}
+
+.winelist_OneWine_layout{
+	@extend %SectionLayout;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	&:after{
+		@extend %clearfix;
+	}
+
+	& .seperateline{
+		margin: 1rem 0;
+		@include SeparateLine;
+	}
+}
+
+.winelist_OneWine_bottleImg{
+	float: left;
+	width: 23%;
+	@extend %backgroundimagecover;
+	@include pad-width{
+		width: 40%;
+	}
+
+	@include large-pad-width{
+		background-size: contain;
+	}
+}
+
+.winelist_OneWine_Info{
+	float: right;
+	width: calc(77% - 1rem);
+	position: relative;
+	padding-left: 1rem;
+	& .Name_En{
+		font-size: $PhoneTitleFontSize;
+		font-weight:bold;
+		color:$TitleColor;
+		line-height:1.875rem;
+		width: 100%;
+		height: 1.875rem;
+		overflow:hidden;
+		margin-top: 10px;
+	}
+
+	& .Name_Cn{
+		font-size: $PhoneSecondTitleFontSize;
+		color:$TextColor;
+		line-height:1.5rem;
+		width: 100%;
+		height: 1.5rem;
+		overflow:hidden;
+	}
+
+	& .bottle_info{
+		margin-top: 5px;
+		&:after{
+			@extend %clearfix;
+		}
+		& span{
+			float: left;
+		    display: inline-block;
+		    height: 0.8rem;
+		    font-size: $PhoneSecondTitleFontSize;
+		    color: #999999;
+		    padding: 0 5px;   
+		    border-right: solid 1px #cccccc;
+		    &:first-child{
+		    	padding-left:0;
+		    }
+		    &:last-child{
+		    	border-right:none;
+		    }
+		}
+	}
+
+	& .bottle_origin{
+		margin-top: 10px;
+		&:after{
+			@extend %clearfix;
+		}
+
+		& span{
+			float: left;
+			height: 1rem;
+			font-size: $PhoneSecondTitleFontSize;
+			color: #999;
+			padding-right:5px;
+		}
+
+	}
+
+	& .bottle_price{
+		margin-top: 1rem;
+		& .price_row{
+			margin-top: 1rem;
+			&:after{
+				@extend %clearfix;
+			}
+
+			&:first-child{
+				margin-top: 0;
+			}
+		}
+	}
+
+	
+
+	@include pad-width{
+		width: calc(60% - 1rem);
+		& .Name_En{
+			font-size: $PadTitleFontSize;
+			line-height:2.625rem;
+			height: 2.625rem;
+		}
+
+		& .Name_Cn{
+			font-size: $padContentFontSize;
+			line-height:1.875rem;
+			height: 1.875rem;
+		}
+
+		& .bottle_info{
+			margin-top: 10px;
+			& span{
+				font-size: $padContentFontSize;
+				height: 1rem;
+				padding: 0 10px;
+			}
+		}
+
+		& .bottle_origin{
+			margin-top: 20px;
+			& span{
+				font-size: $padContentFontSize;
+			}
+		}
+
+		& .bottle_price{
+			margin-top: 1.5rem;
+		}
+	}
+
+	@include large-pad-width{
+		margin-top: 10%;
+		/* & .WineInfo{
+			float:left;
+		}
+		
+		& .bottle_price{
+			float:right;
+		} */
+	}
+}
+
+.winelist_MoreInfo_BtnOpen{
+	padding: 8px 0;
+	&:after {
+		@extend %clearfix;
+	}
+	& div{
+		font-size: 1rem;
+		color: #666;
+		float: right;
+		& .arrow{
+			float: right;
+			@include transform(rotate(45deg)) ;
+			transform-origin: 70% 70%;
+			margin-left: 10px;
+			margin-right: 4px;
+			@include transition(transform 0.1s);
+		}
+	}
+}
+
+.winelist_MoreInfo{
+	float: right;
+	width: 100%;
+	@include pad-width{
+		margin-top: 1.5rem;	
+		width: calc(60% - 1rem);
+	}
+}
+
+.winelist_MoreInfo_BtnClose{
+	& div{
+		& .arrow{
+			@include transform(rotate(-135deg));
+		}
+	}
+}
+
+.winelist_allyear_extend{
+	padding: 1rem 0;
+	display: none;
+	& .OneYearRow{
+		width: calc(100% - 2rem);
+		padding:0 1rem;
+		height: 50px;
+		&:after{
+			@extend %clearfix;
+		}
+		& .bottle_info{
+			margin-top: calc((50px - 0.8rem)/2);
+			float: left;
+			& span{
+				float: left;
+			    display: inline-block;
+			    height: 0.8rem;
+			    font-size: 1rem;
+			    color: $TextColor;
+			    padding: 0 10px;
+			    border-right: solid 1px #cccccc;
+			    &:first-child{
+			    	padding-left:0;
+			    }
+			    &:last-child{
+			    	border-right:none;
+			    }
+			    & em{
+			    	font-size: 0.75rem;
+			    }
+			}
+
+			& span.capacity{
+				min-width: 42px;
+				text-align: center;
+			}
+		}
+
+		& .bottle_price{
+			float: right;
+			margin-top: calc((50px - 0.8rem)/2);
+			font-size: 1rem;
+			font-weight: bold;	
+		}
+
+		& .price_normal{
+			color: $NormalColor;
+			& .normalicon{
+				display: inline-block;
+			    width: 11px;
+			    height: 11px;
+			    background-image: url(../images/normalicon_color.png);
+			    background-size: cover;
+			    float: right;
+			    margin-top: 1px;
+			    margin-left: 5px;
+			}
+		}
+
+		& .price_preorder{
+			color: $PreorderColor;
+			& .preordericon{
+				display: inline-block;
+				width: 11px;
+				height: 11px;
+				background-image: url(../images/preordericon_color.png);
+				background-size: cover;
+				float: right;
+				margin-top: 2px;
+				margin-left: 5px;
+			}
+		}
+
+		& .price_fast{
+			color: $FastColor;
+			& .fasticon{
+				display: inline-block;
+				width: 9px;
+				height: 12px;
+				background-image: url(../images/fasticon_color.png);
+				background-size: cover;
+			}
+		}
+	}
+
+	& .ThisYear{
+		background-color: #f3f4f5;
+	}
+	& .dottedline{
+		@include DottedLine;
+	}
+
+	@include pad-width{
+		& .OneYearRow{
+			& .bottle_info{
+				& span{
+					font-size: $padContentFontSize;
+					height: 1rem;
+				}
+
+				& span.capacity{
+					min-width: 62px;
+					text-align: center;
+				}
+
+			}
+		}
+	}
+}

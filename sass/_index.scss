@@ -1,0 +1,655 @@
+@import "compass/css3";
+@import "mixin";
+
+.fourbanner_layout{
+	padding: $PhonePadding;
+	background-color: #efefef;
+	&:after{
+		@extend %clearfix;
+	}
+
+	@include pad-width{
+		padding: $PadPadding;
+	};
+
+	@include large-pad-width{
+		padding: $LargePadPadding;
+		background-color: #fff;
+	};
+}
+
+.onebanner{
+	width: 100%;
+	border: $BorderColor;
+	display: inline-block;
+	float: left;
+	margin-top: 12px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	&:first-child {
+		margin-top: 0;
+	}
+
+	@include large-pad-width{
+		width: calc((100% - 24px)/2);
+		margin-top: 0;
+		&:nth-child(odd){
+			margin-right: 20px;
+		}
+		&:nth-child(3){
+			margin-top: 20px;
+		}
+		&:nth-child(4){
+			margin-top: 20px;
+		}
+	};
+
+}
+
+.BottlesZone_layout{
+	padding: $PhonePadding;
+	padding-right: 0;
+	background-color: #fff;
+	position: relative;
+	margin-top: 1.5rem;
+	@include pad-width{
+		padding: $PadPadding;
+	}
+
+	@include large-pad-width{
+		margin-top: 1rem;
+		padding: $LargePadPadding;
+	}
+}
+
+.BottlesZone_onebottle{
+	width: 175px;
+	float: left;
+	margin-right: 12px;
+
+	& .bottle_img{
+		@include BottleImgOblique (173px){
+		};
+	}
+
+	& h3.bottle_name_en{
+		@include BottleNameEN (1rem) {
+			line-height: 1.375rem;
+			height:  2.7rem;
+			overflow: hidden;
+			margin-top: 5px;
+		};
+	}
+
+	& h3.bottle_name_cn{
+		@include BottleNameCN (0.875rem) {
+			line-height: 0.875rem;
+			height:  0.875rem;
+			overflow: hidden;
+			margin-top: 7px;
+		};
+	}
+
+	& .bottle_info{
+		@include BottleInfo (0.875rem,8px) {
+			line-height: 0.875rem;
+			height:  0.875rem;
+			overflow: hidden;
+			margin-top: 10px;
+		};
+
+		&:after{
+			@extend %clearfix;
+		}
+	}
+
+	& .bottle_price{
+		@include BottlePrice (1.25rem,$NormalColor) {
+		}
+
+		& .normalicon{
+			@include NormalIcon (13px,13px);
+			float: right;
+			margin-top: 2px;
+			margin-left: 5px; 
+		}
+
+		&:after{
+			@extend %clearfix;
+		}
+	}
+
+	& .bottle_price_fast{
+		@include BottlePrice (1.25rem,$FastColor) {
+
+		}
+		
+		& .fasticon{
+			@include FastIcon (11px,17px);
+		}
+	}
+
+	& .bottle_price_preorder{
+		@include BottlePrice (1.25rem,$PreorderColor) {
+		}
+		margin-top: 7px;
+		& .preordericon{
+			@include PreorderIcon (13px,13px);
+			float: right;
+			margin-top: 2px;
+			margin-left: 5px; 
+		}
+	}
+
+	@include pad-width{
+		width: 265px;
+		margin-right: 20px;
+		& .bottle_img{
+			@include BottleImgOblique (263px){
+			};
+		}
+
+		& h3.bottle_name_en{
+			@include BottleNameEN (1.375rem) {
+				line-height: 1.625rem;
+				height:  3.4rem;
+			};
+		}
+
+		& h3.bottle_name_cn{
+			@include BottleNameEN (1.25rem) {
+				line-height: 1.25rem;
+				height:  1.25rem;
+			};
+		}
+
+		& .bottle_info{
+			@include BottleInfo (1.25rem,10px) {
+				line-height: 1.25rem;
+				height:  1.25rem;
+				margin-top: 10px;
+			};
+		}
+
+		& .bottle_price{
+			@include BottlePrice (1.75rem,$NormalColor) {
+			}
+
+			& .normalicon{
+				@include NormalIcon (21px,21px);
+			}
+		}
+
+		& .bottle_price_fast{
+			@include BottlePrice (1.75rem,$FastColor) {
+			}
+
+			& .fasticon{
+				@include FastIcon (14px,21px);
+			}
+		}
+
+		& .bottle_price_preorder{
+			@include BottlePrice (1.75rem,$PreorderColor) {
+			}
+
+			& .preordericon{
+				@include PreorderIcon (21px,21px);
+			}
+		}
+	}
+}
+
+.FastZone_title{
+	color: $FastColor;
+	position: relative;
+	& .fasticon{
+		@include FastIcon (15px,22px) {
+
+		}
+	}
+	& .line{
+		background-color: $FastColor;
+	}
+
+	@include pad-width{
+		& .fasticon{
+			@include FastIcon (18px,27px) {
+
+			}
+		}
+	}
+}
+
+.FastZone_bottles_layout{
+	width: 100%;
+	height: 310px;
+	margin-top: 1rem;
+	overflow-x: scroll;
+	&:after{
+		@extend %clearfix;
+	}
+
+	@include pad-width{
+		height: 450px;
+	}
+}
+
+.PreorderZone_title{
+	color: $PreorderColor;
+	position: relative;
+	& .preordericon{
+		@include PreorderIcon (22px,22px) {
+
+		}
+	}
+	& .line{
+		background-color: $PreorderColor;
+	}
+
+	@include pad-width{
+		& .fasticon{
+			@include FastIcon (18px,27px) {
+
+			}
+		}
+	}
+}
+
+
+.NormalZone_title{
+	color: $NormalColor-black;
+	position: relative;
+	& .line{
+		background-color: $NormalColor-black;
+	}
+}
+
+.NormalZone_bottles_layout{
+	width: 100%;
+	height: 340px;
+	margin-top: 1rem;
+	overflow-x: scroll; 
+	&:after{
+		@extend %clearfix;
+	}
+
+	@include pad-width{
+		height: 480px;
+	}
+}
+
+.MemberOnly_layout{
+	width:100%;
+	height: 547px;
+	background-image:url(../images/memberonly_bg.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat:no-repeat;
+	position: relative;
+	margin-top: 1rem;
+	& .info_layout{
+		max-width: 70%;
+		position: absolute;
+		bottom: 45px;
+	}
+
+	& h3.bottle_name_en{
+		@include BottleNameEN (1rem) {
+			line-height: 1.375rem;
+			margin-top: 5px;
+		};
+	}
+
+	& .bottle_price{
+		@include BottlePrice (1.25rem,$NormalColor) {
+		}
+
+		& .normalicon{
+			@include NormalIcon (13px,13px);
+			float: right;
+			margin-top: 2px;
+			margin-left: 5px; 
+		}
+
+		&:after{
+			@extend %clearfix;
+		}
+	}
+
+	@include pad-width{
+		height: 1000px;
+		& .info_layout{
+			max-width: 50%;
+			bottom: 80px;
+		}
+
+		& h3.bottle_name_en{
+			@include BottleNameEN (1.375rem) {
+				line-height: 1.625rem;
+				margin-top: 5px;
+			};
+		}
+
+		& .bottle_price{
+			@include BottlePrice (1.75rem,$NormalColor) {
+			}
+
+			& .normalicon{
+				@include NormalIcon (21px,21px);
+				float: right;
+				margin-top: 1px;
+				margin-left: 7px; 
+			}
+
+		}
+
+	}
+}
+
+.Events_layout{
+	padding: $PhonePadding;
+	&:after{
+		@extend %clearfix;
+	}
+
+	@include pad-width{
+		padding: $PadPadding;
+	}
+
+	@include large-pad-width{
+		padding: $LargePadPadding;
+	}
+}
+
+.oneevent{
+	width: 100%;
+	border: $BorderColor;
+	margin-top: 12px;
+	& .EventImg{
+		width: 100%;
+		& img{
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	& .EventTitle{
+		padding: 0.75rem;
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+		color: #333333;
+	}
+
+	@include pad-width{
+		margin-top: 12px;
+		& .EventTitle{
+			padding: 1.25rem;
+			font-size: 1.75rem;
+			line-height: 2.5rem;
+		}
+	}
+
+	@include large-pad-width{
+		width: calc((100% - 24px)/2);
+		float: left;
+		margin-right: 20px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.PreorderZone_BottleImg{
+	width: 50%;
+	margin: 0 auto; 
+	margin-top: 1.5rem;
+	position:relative;
+	& img{
+		width: 100%;
+		height: auto;
+	}
+
+	@include large-pad-width{
+		width: 30%;
+		position: absolute;
+		left: 10%;
+	}
+}
+
+.PreorderZone_BottleInfo{
+	width: 70%;
+	margin: 1rem auto;
+	& h3.bottle_name_en{
+		@include BottleNameEN (1rem) {
+			line-height: 1.375rem;
+			height:  2.7rem;
+			overflow: hidden;
+			margin-top: 5px;
+		};
+	}
+
+	&:after{
+		@extend %clearfix;
+	}
+
+	& h3.bottle_name_cn{
+		@include BottleNameCN (0.875rem) {
+			line-height: 0.875rem;
+			height:  0.875rem;
+			overflow: hidden;
+			margin-top: 7px;
+		};
+	}
+
+	& .bottle_info{
+		@include BottleInfo (0.875rem,8px) {
+			line-height: 0.875rem;
+			height:  0.875rem;
+			overflow: hidden;
+			margin-top: 10px;
+		};
+
+		&:after{
+			@extend %clearfix;
+		}
+	}
+
+	& .bottle_price_preorder{
+		@include BottlePrice (1.25rem,$PreorderColor) {
+		}
+		margin-top: 7px;
+		& .preordericon{
+			@include PreorderIcon (13px,13px);
+			float: right;
+			margin-top: 2px;
+			margin-left: 5px; 
+		}
+	}
+
+	@include pad-width{
+		width: 60%;
+		& h3.bottle_name_en{
+			@include BottleNameEN (1.375rem) {
+				line-height: 1.625rem;
+				height:  3.5rem;
+			};
+		}
+
+		& h3.bottle_name_cn{
+			@include BottleNameEN (1.25rem) {
+				line-height: 1.25rem;
+				height:  1.25rem;
+			};
+		}
+
+		& .bottle_info{
+			@include BottleInfo (1.25rem,10px) {
+				line-height: 1.25rem;
+				height:  1.25rem;
+				margin-top: 10px;
+			};
+		}
+
+		& .bottle_price_preorder{
+			@include BottlePrice (1.75rem,$PreorderColor) {
+			}
+
+			& .preordericon{
+				@include PreorderIcon (21px,21px);
+			}
+		}
+	}
+
+	@include large-pad-width{
+		width: 50%;
+		position: absolute;
+		right: 6%;
+		margin-top: 20%;
+	}
+}
+
+.ArticleZone_layout{
+	padding: $PhonePadding;
+    background-color: #fff;
+    position: relative;
+    margin-top: 1.5rem;
+    &:after{
+		@extend %clearfix;
+	}
+
+	@include pad-width{
+		padding: $PadPadding;
+	}
+
+	@include large-pad-width{
+		padding: $LargePadPadding;
+	}
+}
+
+.Article_title{
+	color: $NormalColor-black;
+	position: relative;
+	& .line{
+		background-color: $NormalColor-black;
+	}
+}
+
+.Article_layout{
+	padding: 1rem 0; 
+	width:100%;
+	border-bottom: $BorderColor;
+	&:after{
+		@extend %clearfix;
+	}
+
+	&:last-child{
+		border-bottom: none;
+	}
+
+	& .Article_img{
+		& img{
+			border: $BorderColor;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	& h3.Article_title{
+		margin-top: 5px;
+	}
+
+	& h4.Article_second_title{
+		height: 1rem;
+		overflow: hidden;
+		margin-top: 5px;
+	}
+
+	& .Article_text{
+		font-size: 0.875rem;
+		line-height: 1.125rem;
+		height: 36px;
+		overflow: hidden;
+		color: #808080;
+		margin-top: 10px;
+		margin-bottom: 1rem;
+	}
+
+	& .Article_more{
+		font-size: 0.875rem;
+		margin-top: 1rem;
+		color: #666;
+		float: right;
+	}
+
+	@include pad-width{
+		padding: 1.5rem 0;
+		& h3.Article_title{
+			margin-top: 10px;
+		}
+
+		& h4.Article_second_title{
+			height: 1.625rem;
+			margin-top: 10px;
+		}
+
+		& .Article_text{
+			font-size: $padContentFontSize;
+			line-height: 1.75rem;
+			height: 56px;
+			margin-top: 20px;
+		}
+
+		& .Article_more{
+			font-size: $padContentFontSize;
+		}
+	}
+
+	@include large-pad-width{
+		width: calc((100% - 24px) / 2);
+		float: left;
+		margin-right: 20px;
+		border-bottom: none; 
+		&:last-child{
+			margin-right:0;	
+		} 
+	}
+}
+
+@keyframes LoadingBG {
+	0% {
+		background-color: #f4f5f3;
+	} 
+	50% {
+		background-color: #fff;
+	}
+	100% {
+		background-color: #f4f5f3;
+	}
+}
+
+.LoadingPage{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	background-color: #f4f5f3;
+	@include transition(transform 0.5s);
+	@include animation(LoadingBG 4s linear infinite);
+	& .logo{
+		width: 217px;
+		height: 128px;
+		background-image:url("../images/loading_logo.png");
+		@extend %backgroundimagecover;
+		margin: 0 auto;
+	}
+
+	@include pad-width{
+		& .logo{
+			width: 324px;
+			height: 192px;
+		}
+	}
+}

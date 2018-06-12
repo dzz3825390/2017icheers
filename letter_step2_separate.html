@@ -1,0 +1,3104 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="iCheers愛酒窩">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+
+<title>iCheers愛酒窩-測試Step2</title>
+
+<style type="text/css">
+/*reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+  line-height: 1;
+}
+
+body{
+	font-size: 16px;
+	font-family: 'Arial','Microsoft JhengHei';
+}
+
+a, img{
+	outline: none;
+	border: none;
+	text-decoration: none;
+}
+
+/*未設寬度為支援電腦版信箱，支援度差*/
+.Header{
+	width: 960px;
+	background-color: #7a7a7a;
+}
+
+.Header td {
+	height: 50px;
+}
+
+.Header .logo{
+	width: 88px;
+	height: 40px;
+}
+
+.Space10{
+	width: 960px;
+}
+
+.Space10 td{
+	height: 10px;
+}
+
+.Space30{
+	width: 960px;
+}
+
+.Space30 td{
+	height: 30px;
+}
+
+.Space40{
+	width: 960px;
+}
+.Space40 td{
+	height: 40px;
+}
+
+.ProgressBar{
+	width: 960px;
+	margin: 0 auto;
+}
+
+.ProgressBar_line{
+	width: 237px;
+	height: 4px;
+	background-color: #bbbbbb;
+}
+
+.ProgressBar_line_active_desktop{
+	width: 237px;
+	height: 4px;
+	background-color: #8e6681;
+}
+
+.ProgressBar_space{
+	width: 4px;
+	height: 4px;
+	background-color: #fff;
+}
+
+.ProgressBar_text{
+	width: 237px;
+	height: 26px;
+	font-size: 14px;
+	color: #bbbbbb;
+	line-height: 26px;
+}
+
+.ProgressBar_text_active_desktop{
+	width: 237px;
+	height: 26px;
+	font-size: 14px;
+	line-height: 26px;
+	color: #8e6681;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.InfoArea{
+	width: 960px;
+	margin: 0 auto; 
+}
+
+.text{
+	width: 100%;
+	text-align: left;
+	font-size: 16px;
+	line-height: 24px;
+	color: #666;
+}
+
+.text_small{
+	width: 100%;
+	text-align: left;
+	font-size: 14px;
+	line-height: 20px;
+	color: #666;
+}
+
+.text_small a{
+	text-decoration: underline;
+	color: #666;
+	word-wrap: break-word;
+	text-justify:inter-word;
+}
+
+.text_notice{
+	width: 100%;
+	text-align: left;
+	font-size: 14px;
+	line-height: 20px;
+	color: #b00808;
+}
+
+.button{
+	width: calc(100% - 2rem);
+	margin: 0 auto; 
+}
+
+.button td{
+	height: 60px;
+}
+
+.button td a{
+	display: block;
+	width: 100%;
+	height: 60px;
+	font-size: 24px;
+	line-height: 60px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	background-color: #939334;
+}
+
+.SetionTitle{
+	width:960px;
+	margin: 0 auto;
+	border: 16px solid;
+}
+
+.LargeTitle{
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 26px;
+}
+
+.SecondTitle{
+	color: #fff;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.SecondTitle a{
+	color: #fff;
+	text-decoration: underline;
+}
+
+.OneWine{
+	width: 960px;
+}
+
+.Name_EN{
+	font-size: 18px;
+	color: #333333;
+	font-weight: bold;
+	height: 26px;
+}
+
+.Name_CN{
+	font-size: 16px;
+	color: #666666;
+	height: 26px;
+}
+
+.WineInfo{
+	font-size: 14px;
+	color: #999999;
+	height: 20px;
+}
+
+.WineNumber{
+	font-size: 18px;
+	color: #666;
+	height: 26px;
+}
+
+.WinePrice{
+	font-size: 16px;
+	color: #666;
+}
+
+.WinePrice span{
+	display: inline-block;
+	margin-left: 5px;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.WinePrice span.GroupCount{
+	margin-right: 20px;
+	font-size: 24px;
+}
+
+.SeperateLine{
+	width: 960px;
+	background-color: #cccccc;
+	margin: 0 auto;
+}
+
+.SeperateLine td{
+	height: 1px;
+}
+
+.DottedLine{
+	width: 960px;
+	margin: 0 auto;
+	border-bottom: 1px dotted #cccccc;
+}
+
+.DottedLine td{
+	width: 100%;
+	height: 1px;
+}
+
+.DottedLine2{
+	width: 960px;
+	margin: 0 auto;
+	border-bottom: 1px dotted #808080;
+}
+
+.DottedLine2 td{
+	width: 100%;
+	height: 1px;
+}
+
+.ListSum{
+	width: 960px;
+	margin: 0 auto;
+	background-color: #d9d9d9;
+	border: 16px solid #d9d9d9;
+}
+
+.ListText{
+	width: 70%;
+	font-size: 18px;
+	line-height: 24px;
+	color: #333;
+}
+
+.ListPrice{
+	width: 30%;
+	font-size: 18px;
+	line-height: 24px;
+	color: #333;
+}
+
+.SumPrice{
+	width: 960px;
+	margin: 0 auto;
+}
+
+.SumPriceText{
+	font-size: 18px;
+	color: #333;
+	width: 70%
+}
+
+.SumPriceNumber{
+	width: 30%;
+	font-size: 28px;
+	font-weight: bold;
+	color: #b00808;
+}
+
+.Slogan{
+	width: 960px;
+	margin: 0 auto;
+}
+
+.Slogan img{
+	width: 303px;
+	height: 58px;
+}
+
+.ContactUs{
+	width: 960px;
+	margin: 0 auto;
+	background-color: #d9d9d9;
+	border: 16px solid #d9d9d9;
+}
+
+.ContactUsIcon{
+	width: 10%;
+}
+
+.ContactUsIcon img{
+	width: 17px;
+	height: 19px;
+}
+
+.ContactUsText{
+	width: 90%;
+	/*font-size: 16px;
+	line-height: 24px;
+	color: #666;*/
+}
+
+.ContactUsText tr td:first-child{
+	min-width: 80px;
+	vertical-align: top;
+}
+
+.Warning{
+	width: 960px;
+	background-color:#1b1b1b; 
+}
+
+.WarningText{
+	font-size: 14px;
+	color: #ffffff;
+	height: 40px;
+}
+
+.ColorLine{
+	width: 960px;
+	height: 16px;
+	margin: 0 auto;
+}			
+
+/*最低支援android系列360寬度*/
+/*header*/
+@media screen and (min-width: 360px){
+	.Header{
+		width: 100%;
+		background-color: #7a7a7a;
+	}
+
+	.Header td {
+		height: 50px;
+	}
+
+	.Header .logo{
+		width: 88px;
+		height: 40px;
+	}
+}
+
+@media screen and (min-width: 768px){
+	.Header td {
+		height: 70px;
+	}
+
+	.Header .logo{
+		width: 98px;
+		height: 43px;
+	}
+
+}
+
+/*header end*/
+
+/*space*/
+@media screen and (min-width: 360px){
+	.Space5{
+		width: 100%;
+	}
+
+	.Space5 td{
+		height: 5px;
+	}
+
+	.Space10{
+		width: 100%;
+	}
+
+	.Space10 td{
+		height: 10px;
+	}
+
+	.Space20{
+		width: 100%;
+	}
+
+	.Space20 td{
+		height: 20px;
+	}
+
+	.Space30{
+		width: 100%;
+	}
+
+	.Space30 td{
+		height: 30px;
+	}
+
+	.Space40{
+		width: 100%;
+	}
+
+	.Space40 td{
+		height: 40px;
+	}
+}
+
+@media screen and (min-width: 768px){
+
+	.Space5 td{
+		height: 10px;
+	}
+
+	.Space10 td{
+		height: 30px;
+	}
+
+	.Space20 td{
+		height: 30px;
+	}
+
+	.Space30 td{
+		height: 40px;
+	}
+
+	.Space40 td{
+		height: 50px;
+	}
+
+	
+}
+/*space end*/
+
+/*ProgressBar*/
+@media screen and (min-width: 360px){
+	.ProgressBar{
+		width: calc(100% - 2rem);
+		margin: 0 auto;
+	}
+
+	.ProgressBar_line{
+		width: calc((100% - 9px)/4);
+		height: 4px;
+		background-color: #bbbbbb;
+	}
+
+	.ProgressBar_line_active{
+		background-color: #8e6681;
+	}
+
+	.ProgressBar_space{
+		width: 3px;
+		height: 4px;
+		background-color: #fff;
+	}
+
+	.ProgressBar_text{
+		width: calc((100% - 9px)/4);
+		height: 26px;
+		font-size: 14px;
+		color: #bbbbbb;
+		line-height: 26px;
+	}
+
+	.ProgressBar_text_active{
+		color: #8e6681;
+		font-weight: bold;
+		font-style: italic;
+	}
+}
+
+@media screen and (min-width: 768px){
+	.ProgressBar{
+		width: calc(100% - 40px);
+	}
+
+	.ProgressBar_line{
+		width: calc((100% - 15px)/4);
+		height: 6px;
+	}
+
+	.ProgressBar_space{
+		width: 5px;
+		height: 6px;
+	}
+
+	.ProgressBar_text{
+		width: calc((100% - 15px)/4);
+		height: 32px;
+		font-size: 18px;
+		line-height: 32px;
+	}
+}
+
+@media screen and (min-width: 1366px){
+	.ProgressBar{
+		width: calc(100% - 80px);
+	}
+
+	.ProgressBar_line{
+		height: 8px;
+	}
+
+	.ProgressBar_space{
+		height: 8px;
+	}
+
+	.ProgressBar_text{
+		width: calc((100% - 15px)/4);
+		height: 40px;
+		font-size: 24px;
+		line-height: 40px;
+	}
+}
+/*ProgressBar end*/
+
+/*list之外文字*/
+
+@media screen and (min-width: 360px){
+	.InfoArea{
+		width: calc(100% - 2rem);
+		margin: 0 auto; 
+	}
+
+	.text{
+		width: 100%;
+		text-align: left;
+		font-size: 16px !important;
+		line-height: 24px !important;
+		color: #666;
+		white-space: nowrap;
+	}
+
+	.text_small{
+		width: 100%;
+		text-align: left;
+		font-size: 14px !important;
+		line-height: 20px !important;
+		color: #666;
+	}
+
+	.text_small a{
+		text-decoration: underline;
+		color: #666;
+		word-wrap: break-word;
+		text-justify:inter-word;
+ 	}
+
+	.text_notice{
+		width: 100%;
+		text-align: left;
+		font-size: 14px !important;
+		line-height: 20px !important;
+		color: #b00808;
+	}
+
+	.button{
+		width: calc(100% - 2rem);
+		margin: 0 auto; 
+	}
+
+	.button td{
+		height: 60px;
+	}
+
+	.button td a{
+		display: block;
+		width: 100%;
+		height: 60px;
+		font-size: 24px !important;
+		line-height: 60px !important;
+		text-align: center;
+		color: #fff;
+		font-weight: bold;
+		background-color: #939334;
+		white-space: nowrap;
+	}
+}
+
+@media screen and (min-width: 768px){
+	.InfoArea{
+		width: calc(100% - 40px);
+	}
+
+	.text{
+		font-size: 20px !important;
+		line-height: 28px !important;
+	}
+
+	.text_small{
+		font-size: 16px !important;
+	}
+
+	.text_notice{
+		font-size: 16px !important;
+		text-align: center;
+	}
+
+	.button{
+		width: 382px;
+		margin: 0 auto; 
+	}
+}
+
+@media screen and (min-width: 1366px){
+	.InfoArea{
+		width: calc(100% - 80px);
+	}
+}
+
+/*list之外文字 end*/
+/*list*/
+@media screen and (min-width: 360px){
+	.SetionTitle{
+		width: calc(100% - 2rem);
+		margin: 0 auto;
+		border: 16px solid;
+	}
+
+	.LargeTitle{
+		color: #fff;
+		font-size: 22px;
+		font-weight: bold;
+		line-height: 26px;
+	}
+
+	.LargeTitleGray{
+		color: #333333;
+		font-size: 22px;
+		line-height: 26px;
+	}
+
+	.SecondTitle{
+		color: #fff;
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+	.SecondTitle a{
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	.SecondTitleGray{
+		color: #666666;
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+	.OneWine{
+		width: calc(100% - 2rem);
+		margin: 0 auto;
+	}
+
+	.Name_EN{
+		font-size: 18px;
+		color: #333333;
+		font-weight: bold;
+		height: 26px;
+	}
+
+	.Name_CN{
+		font-size: 16px;
+		color: #666666;
+		height: 26px;
+	}
+
+	.WineInfo{
+		font-size: 14px;
+		color: #999999;
+		height: 20px;
+	}
+
+	.WineNumber{
+		font-size: 18px;
+		color: #666;
+		height: 26px;
+	}
+
+	.WinePrice{
+		font-size: 16px;
+		color: #666;
+	}
+
+	.WinePrice span{
+		display: inline-block;
+		margin-left: 5px;
+		font-size: 28px;
+		font-weight: bold;
+	}
+
+	.WinePrice span.GroupCount{
+		margin-right: 20px;
+		font-size: 24px;
+	}
+
+	.SeperateLine{
+		width: calc(100% - 2rem);
+		background-color: #cccccc;
+		margin: 0 auto;
+	}
+
+	.SeperateLine td{
+		height: 1px;
+	}
+
+	.DottedLine{
+		width: calc(100% - 2rem);
+		margin: 0 auto;
+		border-bottom: 1px dotted #cccccc;
+	}
+
+	.DottedLine td{
+		width: 100%;
+		height: 1px;
+	}
+
+	.DottedLine2{
+		width: calc(100% - 2rem);
+		margin: 0 auto;
+		border-bottom: 1px dotted #808080;
+	}
+
+	.DottedLine2 td{
+		width: 100%;
+		height: 1px;
+	}
+
+	.ListSum{
+		width: 100%;
+		margin: 0 auto;
+		background-color: #d9d9d9;
+		border: 16px solid #d9d9d9;
+	}
+
+	.ListText{
+		width: 70%;
+		font-size: 18px;
+		line-height: 24px;
+		color: #333;
+	}
+
+	.ListPrice{
+		width: 30%;
+		font-size: 18px;
+		line-height: 24px;
+		color: #333;
+	}
+
+	.SumPrice{
+		width: calc(100% - 2rem);
+		margin: 0 auto;
+	}
+
+	.SumPriceText{
+		font-size: 18px;
+		color: #333;
+		width: 70%
+	}
+
+	.SumPriceNumber{
+		width: 30%;
+		font-size: 28px;
+		font-weight: bold;
+		color: #b00808;
+	}
+
+	.ColorLine{
+		width: calc(100% - 2rem);
+		height: 16px;
+		margin: 0 auto;
+	}	
+}
+
+@media screen and (min-width: 768px){
+	.SetionTitle{
+		width: calc(100% - 40px);
+		border: 20px solid;
+	}
+
+	.SetionTitle .Space5 td{
+		height: 5px;
+	}
+
+	.LargeTitle{
+		font-size: 28px;
+		line-height: 34px;
+	}
+
+	.SecondTitle{
+		font-size: 20px;
+		line-height: 26px;
+	}
+
+	.LargeTitleGray{
+		font-size: 28px;
+		line-height: 34px;
+	}
+
+	.SecondTitleGray{
+		font-size: 20px;
+		line-height: 26px;
+	}
+
+	.OneWine{
+		width: calc(100% - 40px);
+	}
+
+	.Name_EN{
+		font-size: 28px;
+		height: 36px;
+	}
+
+	.Name_CN{
+		font-size: 20px;
+		height: 28px;
+	}
+
+	.WineInfo{
+		font-size: 20px;
+		height: 28px;
+	}
+
+	.WineNumber{
+		font-size: 24px;
+		height: 32px;
+	}
+
+	.WinePrice{
+		font-size: 20px;
+	}
+
+	.WinePrice span{
+		display: inline-block;
+		margin-left: 5px;
+		font-size: 36px;
+		font-weight: bold;
+	}
+
+	.WinePrice span.GroupCount{
+		margin-right: 20px;
+		font-size: 32px;
+	}
+
+	.SeperateLine{
+		width: calc(100% - 40px);
+	}
+
+	.DottedLine{
+		width: calc(100% - 4rem);
+	}
+
+	.DottedLine2{
+		width: calc(100% - 4rem);
+	}
+
+	.ListSum{
+		border: 25px solid #d9d9d9;
+	}
+
+	.ListText{
+		font-size: 24px;
+		line-height: 32px;
+	}
+
+	.ListPrice{
+		font-size: 24px;
+		line-height: 32px;
+	}
+
+	.SumPrice{
+		width: calc(100% - 40px);
+	}
+
+	.SumPriceText{
+		font-size: 24px;
+	}
+
+	.SumPriceNumber{
+		font-size: 36px;
+	}
+
+	.ColorLine{
+		width: calc(100% - 40px);
+	}	
+
+}
+
+@media screen and (min-width: 1366px){
+	.SetionTitle{
+		width: calc(100% - 80px);
+	}
+
+	.OneWine{
+		width: calc(100% - 80px);
+	}
+
+	.SeperateLine{
+		width: calc(100% - 80px);
+	}
+
+	.ListSum{
+		border: 40px solid #d9d9d9;
+	}
+
+	.SumPrice{
+		width: calc(100% - 80px);
+	}
+
+	.ColorLine{
+		width: calc(100% - 80px);
+	}	
+}
+
+/*list end*/
+
+/*slogan*/
+@media screen and (min-width: 360px){
+	.Slogan{
+		width: calc(100% - 2rem);
+		margin: 0 auto;
+	}
+
+	.Slogan img{
+		width: 303px;
+		height: 58px;
+	}
+
+}
+
+@media screen and (min-width: 768px){
+	.Slogan{
+		width: calc(100% - 40px);
+	}
+
+	.Slogan img{
+		width: 383px;
+		height: 73px;
+	}
+
+}
+
+@media screen and (min-width: 1366px){
+	.Slogan{
+		width: calc(100% - 80px);
+	}
+
+
+}
+/*slogan end*/
+
+/*contact us*/
+
+@media screen and (min-width: 360px){
+
+	.ContactUs{
+		width: 100%;
+		margin: 0 auto;
+		background-color: #d9d9d9;
+		border: 16px solid #d9d9d9;
+	}
+
+	.ContactUsIcon{
+		width: 10%;
+	}
+
+	.ContactUsIcon img{
+		width: 17px;
+		height: 19px;
+	}
+
+	.ContactUsText{
+		width: 90%;
+		font-size: 16px;
+		line-height: 24px;
+		color: #666;
+	}
+
+	.ContactUsText2{
+		font-size: 16px;
+		line-height: 24px;
+		color: #666;
+	}
+
+	.ContactUsText tr td:first-child{
+		min-width: 80px;
+		vertical-align: top;
+	}
+}
+
+@media screen and (min-width: 768px){
+
+	.ContactUs{
+		border: 25px solid #d9d9d9;
+	}
+
+	.ContactUsIcon{
+		width: 5%;
+	}
+
+	.ContactUsText{
+		width: 95%;
+		font-size: 20px;
+		line-height: 32px;
+	}
+
+	.ContactUsText2{
+		font-size: 20px;
+		line-height: 32px;
+	}
+
+	.ContactUsText tr td:first-child{
+		min-width: 100px;
+	}
+}
+
+@media screen and (min-width: 1366px){
+
+	.ContactUs{
+		border: 40px solid #d9d9d9;
+	}
+
+	.ContactUsIcon{
+		width: 2%;
+	}
+
+	.ContactUsText{
+		width: 98%;
+	}
+
+}
+
+/*contact us end*/
+
+/*warning*/
+@media screen and (min-width: 360px){
+
+	.Warning{
+		width: 100%;
+		background-color:#1b1b1b; 
+	}
+
+	.WarningText{
+		font-size: 14px;
+		color: #ffffff;
+		height: 40px;
+	}
+}
+
+@media screen and (min-width: 768px){
+
+	.WarningText{
+		font-size: 32px;
+		height: 80px;
+	}
+}
+
+@media screen and (min-width: 1366px){
+
+	.WarningText{
+		height: 100px;
+	}
+}
+/*warning end*/
+</style>
+
+</head>
+
+<!-- 內容請放這邊 -->
+<body>
+
+<!--灰底標題-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Header">
+  <tr>
+    <td align="center">
+		<img src="http://www.icheers.tw/iCheers/EDM/MobileTest/images/letter_logo.png" class="logo" />
+    </td>
+  </tr>
+</table>
+<!--灰底標題 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--進度條-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="ProgressBar">
+  <tr>
+    <td align="center" class="ProgressBar_line">
+		
+    </td>
+    <td align="center" class="ProgressBar_space">
+		
+    </td>
+    <td align="center" class="ProgressBar_line_active_desktop ProgressBar_line ProgressBar_line_active">
+		
+    </td>
+    <td align="center" class="ProgressBar_space">
+		
+    </td>
+    <td align="center" class="ProgressBar_line">
+		
+    </td>
+    <td align="center" class="ProgressBar_space">
+		
+    </td>
+    <td align="center" class="ProgressBar_line">
+		
+    </td>
+  </tr>
+  <tr>
+  	<td align="center" class="ProgressBar_text">
+		Step1
+    </td>
+    <td align="center" class="ProgressBar_space">
+		
+    </td>
+    <td align="center" class="ProgressBar_text_active_desktop ProgressBar_text ProgressBar_text_active">
+		Step2
+    </td>
+    <td align="center" class="ProgressBar_space">
+		
+    </td>
+    <td align="center" class="ProgressBar_text">
+		Step3
+    </td>
+    <td align="center" class="ProgressBar_space">
+		
+    </td>
+    <td align="center" class="ProgressBar_text">
+		Step4
+    </td>
+  </tr>
+</table>
+<!--進度條 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--list前文字-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="InfoArea">
+  <tr>
+    <td align="center" class="text">
+		感謝您對 iCheers愛酒窩的關愛，
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="InfoArea">
+  <tr>
+    <td align="center" class="text_notice">
+		請前往下一步填寫配送資訊，完成所有結帳流程才會幫您保留商品喔！
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--按鈕-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="button">
+  <tr>
+    <td align="center">
+		<a href="#" >下一步</a>
+    </td>
+  </tr>
+</table>
+<!--按鈕-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="InfoArea">
+  <tr>
+    <td align="center" class="text_small">
+		若您無法開啟下一步連結，可複製此連結於瀏覽器輸入網址：
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="InfoArea">
+  <tr>
+    <td align="center" class="text_small">
+		<a href="#">
+			http://www.icheers.tw/iCheers/Cart/cart_step3-20160905101521766/miles@airiti.com
+		</a>
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="InfoArea">
+  <tr>
+    <td align="center" class="text">
+		以下是您於YYYY/MM//DD所確認的商品明細：
+    </td>
+  </tr>
+</table>
+<!--list前文字 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+
+<!--快速到貨-->
+<!--快速到貨title-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SetionTitle" style="background-color: #ef9c00;border-color:#ef9c00;">
+	<tr>
+	    <td align="left" class="LargeTitle">
+			隔日到貨
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td align="left" class="SecondTitle">
+			<a href="#">到底有多快?</a>
+	    </td>
+    </tr>
+</table>
+<!--快速到貨title end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--一瓶酒-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="OneWine">
+  <tr>
+    <td class="Name_EN" align="left">
+		Jester Sangiovese Rosé
+    </td>
+  </tr>
+  <tr>
+    <td class="Name_CN" align="left">
+		米斗羅酒莊 名丑山吉歐維榭粉紅酒
+    </td>
+  </tr>
+  <tr>
+    <td class="WineInfo" align="left">
+		750ml&nbsp;|&nbsp;2017&nbsp;|&nbsp;法國
+    </td>
+  </tr>
+  <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+  <tr>
+    <td class="WineNumber" align="left">
+		數量：5
+    </td>
+  </tr>
+  <tr>
+    <td class="WinePrice" align="right">
+		小計<span>$ 1,115,678</span>
+    </td>
+  </tr>
+</table>
+<!--一瓶酒 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--line-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SeperateLine">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--line end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--一瓶酒-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="OneWine">
+  <tr>
+    <td class="Name_EN" align="left">
+		Jester Sangiovese Rosé
+    </td>
+  </tr>
+  <tr>
+    <td class="Name_CN" align="left">
+		米斗羅酒莊 名丑山吉歐維榭粉紅酒
+    </td>
+  </tr>
+  <tr>
+    <td class="WineInfo" align="left">
+		750ml&nbsp;|&nbsp;2017&nbsp;|&nbsp;法國
+    </td>
+  </tr>
+  <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+  <tr>
+    <td class="WineNumber" align="left">
+		數量：5
+    </td>
+  </tr>
+  <tr>
+    <td class="WinePrice" align="right">
+		小計<span>$ 1,115,678</span>
+    </td>
+  </tr>
+</table>
+<!--一瓶酒 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--line-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SeperateLine">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--line end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--區塊title-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SetionTitle" style="background-color: #f1e8d7;border-color:#f1e8d7;">
+	<tr>
+	    <td align="left" class="LargeTitleGray">
+			歡樂春節套組
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td align="left" class="SecondTitleGray">
+			波爾多超值組合優惠
+	    </td>
+    </tr>
+</table>
+<!--區塊title end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--組合酒-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="OneWine">
+    <tr>
+	    <td class="Name_EN" align="left">
+			Jester Sangiovese Rosé
+	    </td>
+    </tr>
+    <tr>
+	    <td class="Name_CN" align="left">
+			米斗羅酒莊 名丑山吉歐維榭粉紅酒
+	    </td>
+    </tr>
+    <tr>
+	    <td class="WineInfo" align="left">
+			750ml&nbsp;|&nbsp;2017&nbsp;|&nbsp;法國
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td class="WineNumber" align="left">
+			數量：5
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+  	<tr>
+	    <td align="center">
+			<table border="0" cellpadding="0" cellspacing="0" align="center" class="DottedLine">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+	    </td>
+  	</tr>
+  	<!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td class="Name_EN" align="left">
+			Jester Sangiovese Rosé
+	    </td>
+    </tr>
+    <tr>
+	    <td class="Name_CN" align="left">
+			米斗羅酒莊 名丑山吉歐維榭粉紅酒
+	    </td>
+    </tr>
+    <tr>
+	    <td class="WineInfo" align="left">
+			750ml&nbsp;|&nbsp;2017&nbsp;|&nbsp;法國
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td class="WineNumber" align="left">
+			數量：5
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+        <td class="WinePrice" align="right">
+			<span class="GroupCount">共&nbsp;1&nbsp;組</span>
+			小計
+			<span>$ 1,115,678</span>
+    	</td>
+    </tr>
+</table>
+<!--組合酒 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--line-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SeperateLine">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--line end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--底部色塊-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="ColorLine" style="background-color: #ef9c00;">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--底部色塊-->
+<!--快速到貨 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space40">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+
+<!--一般配送-->
+<!--一般配送title-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SetionTitle" style="background-color: #4d4d4d;border-color:#4d4d4d;">
+	<tr>
+	    <td align="left" class="LargeTitle">
+			一般配送
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td align="left" class="SecondTitle">
+			出貨時間：完成訂單+3天內
+	    </td>
+    </tr>
+</table>
+<!--一般配送title end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--一瓶酒-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="OneWine">
+  <tr>
+    <td class="Name_EN" align="left">
+		Jester Sangiovese Rosé
+    </td>
+  </tr>
+  <tr>
+    <td class="Name_CN" align="left">
+		米斗羅酒莊 名丑山吉歐維榭粉紅酒
+    </td>
+  </tr>
+  <tr>
+    <td class="WineInfo" align="left">
+		750ml&nbsp;|&nbsp;2017&nbsp;|&nbsp;法國
+    </td>
+  </tr>
+  <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+  <tr>
+    <td class="WineNumber" align="left">
+		數量：5
+    </td>
+  </tr>
+  <tr>
+    <td class="WinePrice" align="right">
+		小計<span>$ 1,115,678</span>
+    </td>
+  </tr>
+</table>
+<!--一瓶酒 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--line-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SeperateLine">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--line end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--一瓶酒-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="OneWine">
+  <tr>
+    <td class="Name_EN" align="left">
+		Jester Sangiovese Rosé
+    </td>
+  </tr>
+  <tr>
+    <td class="Name_CN" align="left">
+		米斗羅酒莊 名丑山吉歐維榭粉紅酒
+    </td>
+  </tr>
+  <tr>
+    <td class="WineInfo" align="left">
+		750ml&nbsp;|&nbsp;2017&nbsp;|&nbsp;法國
+    </td>
+  </tr>
+  <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+  <tr>
+    <td class="WineNumber" align="left">
+		數量：5
+    </td>
+  </tr>
+  <tr>
+    <td class="WinePrice" align="right">
+		小計<span>$ 1,115,678</span>
+    </td>
+  </tr>
+</table>
+<!--一瓶酒 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--line-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SeperateLine">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--line end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--區塊title-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SetionTitle" style="background-color: #d9d9d9;border-color:#d9d9d9;">
+	<tr>
+	    <td align="left" class="LargeTitleGray">
+			歡樂春節套組
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td align="left" class="SecondTitleGray">
+			波爾多超值組合優惠
+	    </td>
+    </tr>
+</table>
+<!--區塊title end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--組合酒-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="OneWine">
+    <tr>
+	    <td class="Name_EN" align="left">
+			Jester Sangiovese Rosé
+	    </td>
+    </tr>
+    <tr>
+	    <td class="Name_CN" align="left">
+			米斗羅酒莊 名丑山吉歐維榭粉紅酒
+	    </td>
+    </tr>
+    <tr>
+	    <td class="WineInfo" align="left">
+			750ml&nbsp;|&nbsp;2017&nbsp;|&nbsp;法國
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td class="WineNumber" align="left">
+			數量：5
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+  	<tr>
+	    <td align="center">
+			<table border="0" cellpadding="0" cellspacing="0" align="center" class="DottedLine">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+	    </td>
+  	</tr>
+  	<!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td class="Name_EN" align="left">
+			Jester Sangiovese Rosé
+	    </td>
+    </tr>
+    <tr>
+	    <td class="Name_CN" align="left">
+			米斗羅酒莊 名丑山吉歐維榭粉紅酒
+	    </td>
+    </tr>
+    <tr>
+	    <td class="WineInfo" align="left">
+			750ml&nbsp;|&nbsp;2017&nbsp;|&nbsp;法國
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td class="WineNumber" align="left">
+			數量：5
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+        <td class="WinePrice" align="right">
+        	<span class="GroupCount">共&nbsp;1&nbsp;組</span>
+			小計<span>$ 1,115,678</span>
+    	</td>
+    </tr>
+</table>
+<!--組合酒 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--line-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SeperateLine">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--line end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--底部色塊-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="ColorLine" style="background-color: #4d4d4d;">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--底部色塊-->
+<!--一般配送 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space40">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+
+<!--預訂商品-->
+<!--預訂商品title-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SetionTitle" style="background-color: #0071bc;border-color:#0071bc;">
+	<tr>
+	    <td align="left" class="LargeTitle">
+			預訂商品
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td align="left" class="SecondTitle">
+			預計到貨日：2015 年 8月
+	    </td>
+    </tr>
+</table>
+<!--預訂商品title end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--一瓶酒-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="OneWine">
+  <tr>
+    <td class="Name_EN" align="left">
+		Jester Sangiovese Rosé
+    </td>
+  </tr>
+  <tr>
+    <td class="Name_CN" align="left">
+		米斗羅酒莊 名丑山吉歐維榭粉紅酒
+    </td>
+  </tr>
+  <tr>
+    <td class="WineInfo" align="left">
+		750ml&nbsp;|&nbsp;2017&nbsp;|&nbsp;法國
+    </td>
+  </tr>
+  <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+  <tr>
+    <td class="WineNumber" align="left">
+		數量：5
+    </td>
+  </tr>
+  <tr>
+    <td class="WinePrice" align="right">
+		小計<span>$ 1,115,678</span>
+    </td>
+  </tr>
+</table>
+<!--一瓶酒 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--line-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SeperateLine">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--line end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--一瓶酒-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="OneWine">
+  <tr>
+    <td class="Name_EN" align="left">
+		Jester Sangiovese Rosé
+    </td>
+  </tr>
+  <tr>
+    <td class="Name_CN" align="left">
+		米斗羅酒莊 名丑山吉歐維榭粉紅酒
+    </td>
+  </tr>
+  <tr>
+    <td class="WineInfo" align="left">
+		750ml&nbsp;|&nbsp;2017&nbsp;|&nbsp;法國
+    </td>
+  </tr>
+  <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+  <tr>
+    <td class="WineNumber" align="left">
+		數量：5
+    </td>
+  </tr>
+  <tr>
+    <td class="WinePrice" align="right">
+		小計<span>$ 1,115,678</span>
+    </td>
+  </tr>
+</table>
+<!--一瓶酒 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--line-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SeperateLine">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--line end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--預訂商品title-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SetionTitle" style="background-color: #0071bc;border-color:#0071bc;">
+	<tr>
+	    <td align="left" class="LargeTitle">
+			預訂商品
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td align="left" class="SecondTitle">
+			預計到貨日：2015 年 5月
+	    </td>
+    </tr>
+</table>
+<!--預訂商品title end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--一瓶酒-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="OneWine">
+  <tr>
+    <td class="Name_EN" align="left">
+		Jester Sangiovese Rosé
+    </td>
+  </tr>
+  <tr>
+    <td class="Name_CN" align="left">
+		米斗羅酒莊 名丑山吉歐維榭粉紅酒
+    </td>
+  </tr>
+  <tr>
+    <td class="WineInfo" align="left">
+		750ml&nbsp;|&nbsp;2017&nbsp;|&nbsp;法國
+    </td>
+  </tr>
+  <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+  <tr>
+    <td class="WineNumber" align="left">
+		數量：5
+    </td>
+  </tr>
+  <tr>
+    <td class="WinePrice" align="right">
+		小計<span>$ 1,115,678</span>
+    </td>
+  </tr>
+</table>
+<!--一瓶酒 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--line-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SeperateLine">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--line end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--一瓶酒-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="OneWine">
+  <tr>
+    <td class="Name_EN" align="left">
+		Jester Sangiovese Rosé
+    </td>
+  </tr>
+  <tr>
+    <td class="Name_CN" align="left">
+		米斗羅酒莊 名丑山吉歐維榭粉紅酒
+    </td>
+  </tr>
+  <tr>
+    <td class="WineInfo" align="left">
+		750ml&nbsp;|&nbsp;2017&nbsp;|&nbsp;法國
+    </td>
+  </tr>
+  <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+  <tr>
+    <td class="WineNumber" align="left">
+		數量：5
+    </td>
+  </tr>
+  <tr>
+    <td class="WinePrice" align="right">
+		小計<span>$ 1,115,678</span>
+    </td>
+  </tr>
+</table>
+<!--一瓶酒 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--line-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SeperateLine">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--line end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--底部色塊-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="ColorLine" style="background-color: #0071bc;">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--底部色塊-->
+<!--預訂商品 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space40">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+
+<!--區塊title-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SetionTitle" style="background-color: #d9d9d9;border-color:#d9d9d9;">
+	<tr>
+	    <td align="left" class="LargeTitleGray">
+			iCheers 6月份限時贈送好禮
+	    </td>
+    </tr>
+</table>
+<!--區塊title end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--一瓶酒-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="OneWine">
+  <tr>
+    <td class="Name_EN" align="left">
+		Jester Sangiovese Rosé
+    </td>
+  </tr>
+  <tr>
+    <td class="Name_CN" align="left">
+		米斗羅酒莊 名丑山吉歐維榭粉紅酒
+    </td>
+  </tr>
+  <tr>
+    <td class="WineInfo" align="left">
+		750ml&nbsp;|&nbsp;2017&nbsp;|&nbsp;法國
+    </td>
+  </tr>
+  <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+  <tr>
+    <td class="WineNumber" align="left">
+		數量：5
+    </td>
+  </tr>
+  <tr>
+    <td class="WinePrice" align="right">
+		價值<span>$ 1,115,678</span>
+    </td>
+  </tr>
+</table>
+<!--一瓶酒 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--line-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SeperateLine">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--line end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--區塊title-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SetionTitle" style="background-color: #d9d9d9;border-color:#d9d9d9;">
+	<tr>
+	    <td align="left" class="LargeTitleGray">
+			會員消費送紅利
+	    </td>
+    </tr>
+</table>
+<!--區塊title end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--一瓶酒-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="OneWine">
+  <tr>
+    <td class="Name_EN" align="left">
+		紅利點數贈送
+    </td>
+  </tr>
+  <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td class="WinePrice" align="right">
+			<span>600</span>點
+	    </td>
+    </tr>
+</table>
+<!--一瓶酒 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--line-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SeperateLine">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--line end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+
+<!--區塊title-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SetionTitle" style="background-color: #d9d9d9;border-color:#d9d9d9;">
+	<tr>
+	    <td align="left" class="LargeTitleGray">
+			全館消費滿2000折300
+	    </td>
+    </tr>
+</table>
+<!--區塊title end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--一瓶酒-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="OneWine">
+  <tr>
+    <td class="Name_EN" align="left">
+		e-Coupon贈送
+    </td>
+  </tr>
+  <!--空白-->
+    <tr>
+    	<td>
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td class="WinePrice" align="right">
+			<span>1</span>張
+	    </td>
+    </tr>
+</table>
+<!--一瓶酒 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--line-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SeperateLine">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--line end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+
+<!--小計區-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="ListSum">
+    <tr>
+	    <td width="70%" align="left" class="ListText">
+			商品總額
+	    </td>
+	    <td width="30%" align="right" class="ListPrice">
+			$&nbsp;95,687
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td colspan="2">
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td align="center" colspan="2">
+			<table border="0" cellpadding="0" cellspacing="0" align="center" class="DottedLine2">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+	    </td>
+  	</tr>
+  	<!--空白-->
+    <tr>
+    	<td colspan="2">
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td width="70%" align="left" class="ListText">
+			iCheers夏日白酒節
+	    </td>
+	    <td width="30%" align="right" class="ListPrice">
+			-&nbsp;$&nbsp;500
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td colspan="2">
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td align="center" colspan="2">
+			<table border="0" cellpadding="0" cellspacing="0" align="center" class="DottedLine2">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+	    </td>
+  	</tr>
+  	<!--空白-->
+    <tr>
+    	<td colspan="2">
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td width="70%" align="left" class="ListText">
+			iCheers推薦任選3瓶限時優惠價3500元
+	    </td>
+	    <td width="30%" align="right" class="ListPrice">
+			-&nbsp;$&nbsp;500
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td colspan="2">
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td align="center" colspan="2">
+			<table border="0" cellpadding="0" cellspacing="0" align="center" class="DottedLine2">
+			  <tr>
+			    <td align="center">
+					
+			  </tr>
+			</table>
+	    </td>
+  	</tr>
+  	<!--空白-->
+    <tr>
+    	<td colspan="2">
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td width="70%" align="left" class="ListText">
+			e-Coupon優惠
+	    </td>
+	    <td width="30%" align="right" class="ListPrice">
+			-&nbsp;$&nbsp;300
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td colspan="2">
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td align="center" colspan="2">
+			<table border="0" cellpadding="0" cellspacing="0" align="center" class="DottedLine2">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+	    </td>
+  	</tr>
+  	<!--空白-->
+    <tr>
+    	<td colspan="2">
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td width="70%" align="left" class="ListText">
+			紅利折抵
+	    </td>
+	    <td width="30%" align="right" class="ListPrice">
+			-&nbsp;$&nbsp;50
+	    </td>
+    </tr>
+    <!--空白-->
+    <tr>
+    	<td colspan="2">
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td align="center" colspan="2">
+			<table border="0" cellpadding="0" cellspacing="0" align="center" class="DottedLine2">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+	    </td>
+  	</tr>
+  	<!--空白-->
+    <tr>
+    	<td colspan="2">
+    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space20">
+			  <tr>
+			    <td align="center">
+					
+			    </td>
+			  </tr>
+			</table>
+    	</td>
+    </tr>
+    <!--空白 end-->
+    <tr>
+	    <td width="70%" align="left" class="ListText">
+			運費
+	    </td>
+	    <td width="30%" align="right" class="ListPrice">
+			0
+	    </td>
+    </tr>
+</table>
+<!--小計區 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--總金額-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="SumPrice">
+  <tr>
+    <td align="left" class="SumPriceText">
+		總金額
+    </td>
+
+    <td align="right" class="SumPriceNumber">
+		$&nbsp;94,337
+    </td>
+  </tr>
+</table>
+<!--總金額 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--list後文字-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="InfoArea">
+  <tr>
+    <td align="center" class="text">
+		感謝您對 iCheers愛酒窩的關愛，
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="InfoArea">
+  <tr>
+    <td align="center" class="text_notice">
+		請前往下一步填寫配送資訊，完成所有結帳流程才會幫您保留商品喔！
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--按鈕-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="button">
+  <tr>
+    <td align="center">
+		<a href="#" >下一步</a>
+    </td>
+  </tr>
+</table>
+<!--按鈕-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="InfoArea">
+  <tr>
+    <td align="center" class="text_small">
+		若您無法開啟下一步連結，可複製此連結於瀏覽器輸入網址：
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="InfoArea">
+  <tr>
+    <td align="center" class="text_small">
+		<a href="#">
+			http://www.icheers.tw/iCheers/Cart/cart_step3-20160905101521766/miles@airiti.com
+		</a>
+    </td>
+  </tr>
+</table>
+<!--list後文字 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--標語-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Slogan">
+  <tr>
+    <td align="center">
+		<img src="http://www.icheers.tw/iCheers/EDM/MobileTest/images/icheer_slogan.png" />
+    </td>
+  </tr>
+</table>
+<!--標語 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--聯絡我們-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="ContactUs">
+  <tr>
+    <td align="left" class="ContactUsIcon">
+		<img src="http://www.icheers.tw/iCheers/EDM/MobileTest/images/contactus_icon.png">
+    </td>
+    <td align="left" class="ContactUsText">
+		聯絡我們
+    </td>
+  </tr>
+  <tr>
+    <td align="left" class="ContactUsIcon">
+		
+    </td>
+    <td align="left" class="ContactUsText">
+    	<table border="0" cellpadding="0" cellspacing="0" align="left">
+    		<tr>
+    			<td class="ContactUsText2">服務專線：</td>
+    			<td class="ContactUsText2">02-2926-3667</td>
+    		</tr>
+    	</table>
+    </td>
+  </tr>
+  <tr>
+    <td align="left" class="ContactUsIcon">
+		
+    </td>
+    <td align="left" class="ContactUsText">
+    	<table border="0" cellpadding="0" cellspacing="0" align="left">
+    		<tr>
+    			<td class="ContactUsText2">服務時間：</td>
+    			<td class="ContactUsText2">星期一~五，9:00~12:00      
+                    13:00~18:00，國定假日除外</td>
+    		</tr>
+    	</table>
+    </td>
+  </tr><tr>
+    <td align="left" class="ContactUsIcon">
+		
+    </td>
+    <td align="left" class="ContactUsText">
+    	<table border="0" cellpadding="0" cellspacing="0" align="left">
+    		<tr>
+    			<td class="ContactUsText2">傳真電話：</td>
+    			<td class="ContactUsText2">02-2924-6220</td>
+    		</tr>
+    	</table>
+    </td>
+  </tr>
+</table>
+<!--聯絡我們 end-->
+
+<!--警語-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Warning">
+  <tr>
+    <td align="center" class="WarningText">
+		飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+    </td>
+  </tr>
+</table>
+<!--警語 end-->
+</body>
+</html>

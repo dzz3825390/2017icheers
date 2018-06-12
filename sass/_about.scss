@@ -1,0 +1,886 @@
+@import "compass/css3";
+@import "mixin";
+
+.About_BG{
+	width:100%;
+	position: absolute;
+	z-index: 9999;
+	/*top:513px;*/
+	@include transition(top 0.3s);
+	display: none;
+}
+
+.About_BG_open{
+	top: 0;
+	display: block;
+}
+
+.About_Alltitle_layout{
+	margin-top: 1rem;
+	&:first-child{
+		margin-top:0;
+	}
+}
+
+.About_title{
+	position: relative;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #fff;
+	font-size: 1.5rem;
+	text-align: center;
+	font-weight: bold;
+	background-color: #666666;
+	@include box-shadow(0 1px 2px rgba(0,0,0,.3));
+	& .CloseBTN{
+		@include CloseBtn(#ffffff);
+	}
+
+	@include pad-width{
+		height: 60px;
+		line-height: 60px;
+		font-size: 1.75rem;
+		& .CloseBTN{
+			right: 10px;
+			top: 10px;
+		}
+	}
+}
+
+.About_Contain{
+	@include box-sizing(border-box);
+	width: 100%;
+	padding: $PhonePadding;
+	padding-bottom: 1.5rem;
+	background-color: #fbfbfb;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	& p{
+		font-size: $PhoneSecondTitleFontSize;
+		color: $TextColor;
+		line-height: 1.5rem;
+		margin-top: 1rem;
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+	@include pad-width{
+		padding: $PadPadding;
+		//cancel first .Alltitle margin-top
+		& .AllTitle_layout:first-child{
+			margin-top:0;
+		}
+
+		& p{
+			font-size: $padContentFontSize;
+			line-height: 1.75rem;
+		}
+	}
+
+	@include large-pad-width{
+		padding: $LargePadPadding;
+	}
+}
+
+.About_Contain_Quality{
+	background-color: #1c0f09;
+	padding-left:0;
+	padding-right: 0;
+}
+
+.About_SpecialQuote{
+	margin: 3.5rem auto;
+	&:after{
+		@extend %clearfix;
+	}
+	& .OneQuote{
+		margin-top: 3.5rem;
+	}
+
+	& .QuoteTitle{
+		font-size: $PhoneTitleFontSize;
+		color: $QuoteColor;
+		line-height: 1.75rem;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	& .QuoteText{
+		font-size: $PhoneSecondTitleFontSize;
+		color: $TextColor;
+		line-height: 1.5rem;
+		text-align: center;
+		margin-top: 0.5rem;
+	}
+
+	
+	& .OneQuote:nth-child(1){
+		margin-top: 0;
+	}
+
+	@include pad-width{
+		margin: 5rem auto;
+		& .OneQuote{
+			margin-top: 5rem;
+		}
+
+		& .QuoteTitle{
+			font-size: $PadTitleFontSize;
+			line-height: 2.5rem;
+		}
+
+		& .QuoteText{
+			font-size: $PadSecondTitleFontSize;
+			line-height: 2.25rem;
+		}
+	}
+
+	@include large-pad-width{
+		//set padding for get quote closer
+		padding: 0 6rem;
+		//cancel 2nd Quote margin-top
+		& .OneQuote:nth-child(2){
+			margin-top: 0;
+		}
+
+		& .OneQuote{
+			width: 50%;
+			height: 270px;
+			float: left;
+		}
+	}
+}
+
+.About_SpecialQuote_second{
+	@include large-pad-width{
+		padding: 0 2rem;
+
+		& .OneQuote{
+			width: 33.33%;
+			height: 150px;
+			float: left;
+		}
+
+		& .OneQuote:nth-child(3){
+			margin-top: 0;
+		}
+	}
+}
+
+.About_img{
+	width: 100%;
+	&:after{
+		@extend %clearfix;
+	}
+	& img{
+		width: 100%;
+		height: auto;
+		outline:none;
+		margin-top: 0.5rem;
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+
+	@include pad-width{
+		& img{
+			margin-top: 1.05rem;
+		}
+	}
+
+	@include large-pad-width{
+		& img{
+			margin-top: 0;
+			float:left;
+			width: calc((100% - 1rem)/3);
+			margin-left: 0.5rem;
+			&:first-child{
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+.About_BounsInfo{
+	margin: 3.5rem auto;
+	&:after{
+		@extend %clearfix;
+	}
+
+	& .OneInfo{
+		margin-top: 3.5rem;
+	}
+
+	& .icon{
+		width: 85px;
+		height: 85px;
+		margin: 0 auto;
+		@extend %backgroundimagecontain;
+	}
+
+	& .InfoTitle{
+		font-size: $PhoneTitleFontSize;
+		color: $TitleColor;
+		line-height: 1.75rem;
+		font-weight: bold;
+		text-align: center;
+		margin-top: 1rem;
+	}
+
+	& .InfoText{
+		font-size: $PhoneSecondTitleFontSize;
+		color: $TextColor;
+		line-height: 1.5rem;
+		text-align: center;
+		margin-top: 0.5rem;
+	}
+
+	& .InfoNotice{
+		font-size: $PhoneContentFontSize;
+		color: $NoticeColor;
+		line-height: 1.25rem;
+		text-align: center;
+		margin-top: 0.5rem;
+	}
+
+	@include pad-width{
+		margin: 5rem auto;
+		& .OneInfo{
+			margin-top: 5rem;
+		}
+
+		& .icon{
+			width: 100px;
+			height: 100px;
+		}
+
+		& .InfoTitle{
+			font-size: $PadTitleFontSize;
+			line-height: 2.5rem;
+		}
+
+		& .InfoText{
+			font-size: $PadSecondTitleFontSize;
+			line-height: 2.25rem;
+		}
+
+		& .InfoNotice{
+			font-size: $PadSecondTitleFontSize;
+			line-height: 2.25rem;
+		}
+	}
+
+	@include large-pad-width{
+		& .OneInfo{
+			width: 33.33%;
+			float:left;
+			margin-top:0;
+		}
+	}
+
+}
+
+.About_Bouns_table{
+	margin: 2rem 0;
+	& .Row{
+		padding: 1.5rem 0;
+		&:first-child{
+			padding-top:0;
+		}
+
+		& .MemberLevel{
+			&:after{
+				@extend %clearfix;
+			}
+
+			& div{
+				font-size: 1.25rem;
+				color: #333;
+				font-weight: bold;
+				&:first-child{
+					float: left;
+				}
+				&:last-child{
+					float: right;
+				}
+				& span{
+					color: $NoticeColor;
+				}
+
+				@include pad-width{
+					font-size: 1.75rem;
+				}
+			}
+		}
+
+		& .Info{
+			font-size: $PhoneContentFontSize;
+			color: $TextColor;
+			margin-top: 0.875rem;
+			@include pad-width{
+				font-size: $padContentFontSize;
+			}
+		}
+	}
+
+	& .DottedLine{
+		@include DottedLine;
+	}
+
+	@include large-pad-width{
+		padding: 0 8rem;
+	}
+}
+
+.About_DeliveryInfo{
+	&:after{
+		@extend %clearfix;
+	}
+
+	& .OneInfo{
+		margin-top: 2rem;
+		@include large-pad-width{
+			//width: 33.33%;
+			//float: left;
+			//padding: 2rem;
+			//@include box-sizing(border-box);
+			//margin-top: 0;
+			padding: 0 16rem;
+			margin-top: 5rem;
+			&:first-child{
+				margin-top: 1rem;
+			}
+		}
+	}
+
+	& .title{
+		height: 35px;
+		&:after{
+			@extend %clearfix;
+		}
+
+		& .icon{
+			width: 35px;
+			height: 35px;
+			@include border-radius(4px);
+			float: left;
+		}
+
+		& .Normal{
+			background-color: $NormalColor;
+			background-image: url(../images/addcart_icon_normal.png);
+			@extend %backgroundimagecover;
+		}
+
+		& .Fast{
+			background-color: $FastColor;
+			background-image: url(../images/addcart_icon_fast.png);
+			@extend %backgroundimagecover;
+		}
+
+		& .Preorder{
+			background-color: $PreorderColor;
+			background-image: url(../images/addcart_icon_preorder.png);
+			@extend %backgroundimagecover;
+		}
+
+		& .text{
+			font-size: 1.5rem;
+			font-weight: bold;
+			color: $TitleColor;
+			float: left;
+			line-height: 35px;
+			margin-left: 0.875rem;
+			@include pad-width{
+				font-size: 1.75rem;
+			}
+		}
+	}
+
+	& .explain{
+		font-size: $PhoneSecondTitleFontSize;
+		color: $TextColor;
+		margin-top: 1rem;
+		line-height: 1.5rem;
+		& span{
+			font-weight: bold;
+			color: $NoticeColor;
+			margin: 0 5px;
+		}
+
+		@include pad-width{
+			font-size: $padContentFontSize;
+			line-height: 1.75rem;
+		}
+	}
+
+	& .notice{
+		font-size: $PhoneContentFontSize;
+		color: $NoticeColor;
+		margin-top: 0.5rem;
+		line-height: 1.25rem;
+		@include pad-width{
+			font-size: $padContentFontSize;
+			line-height: 1.75rem;
+		}
+	}
+
+	& .exsample{
+		margin-top: 1.5rem;
+		& .exsample_title{
+			font-size: $PhoneSecondTitleFontSize;
+			color: $TitleColor;
+			font-weight: bold;
+			@include pad-width{
+				font-size: $padContentFontSize;
+			}
+		}
+
+		& .explain{
+			margin-top: 0.5rem;
+		}
+	}
+}
+
+.About_Newbie{
+	width: 288px;
+	padding: 20px;
+	border: 2px dashed #8E6681;
+	margin: 0 auto;
+	margin-top: 24px;
+	background-color: #fff;
+	@include border-radius(4px);
+	@include box-sizing(border-box);
+	&:first-child{
+		margin-top: 16px;
+	}
+
+	& .text{
+		font-size: 1.25rem;
+		color: #231815;
+		line-height: 1.875rem;
+		text-align: center;
+		& em{
+			font-size: 1.5rem;
+			color: #8E6681;
+			font-weight: bold;
+		}
+	}
+
+	& .notice{
+		font-size: 0.875rem;
+		color: $NoticeColor;
+		text-align: center;
+		margin-top: 5px;
+		line-height: 1.25rem;
+	}
+
+	@include pad-width{
+		width: 60%;
+		padding: 20px;
+		& .text{
+			font-size: 1.5rem;
+			line-height: 2.25rem;
+			& em{
+				font-size: 1.75rem;
+			}
+		}
+
+		& .notice{
+			font-size: 1rem;
+			line-height: 1.5rem;
+		}
+	}
+
+	@include large-pad-width{
+		width: 40%;
+	}
+}
+
+.About_Newbie_Arrow{
+	width: 30px;
+	height: 44px;
+	background-image: url(../images/icon_newbie_arrow.png);
+	@extend %backgroundimagecover;
+	margin: 0 auto;
+	margin-top: 24px;
+}
+
+.About_Newbie_CartIcons{
+	display:inline-block;
+	margin: 10px auto;
+	&:after{
+		@extend %clearfix;
+	}
+	& .CartIcons{
+		float: left;
+		margin-left: 1rem;
+		& .Normal{
+			@include AddCartIcon($NormalColor, url(../images/addcart_icon_normal.png));
+			width: 35px;
+			height: 35px;
+			float: none;
+			margin: 0 auto;
+		}
+
+		& .Fast{
+			@include AddCartIcon($FastColor, url(../images/addcart_icon_fast.png));
+			width: 35px;
+			height: 35px;
+			float: none;
+			margin: 0 auto;
+		}
+
+		& .Preorder{
+			@include AddCartIcon($PreorderColor, url(../images/addcart_icon_preorder.png));
+			width: 35px;
+			height: 35px;
+			float: none;
+			margin: 0 auto;
+		}
+
+		& .IconText{
+			font-size: 1rem;
+			color: #666;
+			text-align:center;
+			margin-top: 0.75rem;
+		}
+
+		&:first-child{
+			margin-left: 0;
+		}
+	}
+
+	@include pad-width{
+		& .CartIcons{
+			margin-left: 1.5rem;
+			& .Normal{
+				width: 45px;
+				height: 45px;
+			}
+			& .Fast{
+				width: 45px;
+				height: 45px;
+			}
+			& .Preorder{
+				width: 45px;
+				height: 45px;
+			}
+			& .IconText{
+				font-size: 1.25rem;
+			}
+		}
+		
+	}
+
+}
+
+.About_Newbie_mylist{
+	display: inline-block;
+	&:after{
+		@extend %clearfix;
+	}
+
+	& .MyListIcon{
+		width: 67px;
+		height: 67px;
+		background-image: url(../images/icon_newbie_mylist.png);
+		float:left;
+		margin-top: 10px;
+	}
+
+	& .text{
+		float: left;
+		margin-left: 10px;
+	}
+
+	@include pad-width{
+		& .MyListIcon{
+			margin-top: 18px;
+		}
+
+		& .text{
+			margin-left: 16px;
+		}
+	}
+}
+
+.About_Newbie_ConfirmBTN{
+	width: 192px;
+	height: 45px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	line-height: 45px;
+	background-color: #939334;
+	@include border-radius(4px);
+	margin: 10px auto;
+}
+
+.About_Newbie_mailicon{
+	width: 93px;
+	height: 62px;
+	background-image: url(../images/icon_newbie_mail.png);
+	margin: 10px auto;
+}
+
+.About_Quality_slogan{
+	font-size: 2.375rem;
+	line-height: 3.4rem;
+	font-weight: bold;
+	color: #fff;
+	letter-spacing: 1.5rem;
+	text-indent: 1.5rem;
+	text-align: center;
+	margin-top: 1.5rem;
+	&:nth-child(2){
+		margin-top: 0.25rem;
+	}
+
+	@include pad-width{
+		font-size: 3rem;
+		margin-top: 60px;
+		letter-spacing: 3.5rem;
+		text-indent: 3.5rem;
+		&:nth-child(2){
+			margin-top: 1rem;
+		}
+	}
+
+	@include large-pad-width{
+		font-size: 6rem;
+		line-height: 9rem;
+	}
+}
+
+.About_Quality_slogan_line{
+	width: 216px;
+	height: 1px;
+	background-color: #fff;
+	margin: 0 auto;
+	margin-top: 0.75rem;
+	@include pad-width{
+		width: 343px;
+		margin-top: 1.5rem;
+	}
+	@include large-pad-width{
+		width: 534px;
+	}
+}
+
+.About_Quality_slogan_text{
+	text-align: center;
+	font-size: 1.25rem;
+	color: #fff;
+	line-height: 2rem;
+	margin-top: 0.75rem;
+	@include pad-width{
+		font-size: 1.5rem;
+		margin-top: 1.5rem;
+		line-height: 2.25rem;
+	}
+
+	@include large-pad-width{
+		font-size: 2rem;
+		line-height: 3rem;
+	}
+}
+
+.About_Quality_text{
+	font-size: $PhoneContentFontSize;
+	color: rgba(#fff, 0.75);
+	line-height: 1.3rem;
+	width: calc(100% - 24px);
+	margin: 0 auto;
+	@include pad-width{
+		width: calc(100% - 40px);
+		font-size: $padContentFontSize;
+	}
+
+	@include large-pad-width{
+		width: calc(100% - 80px);
+	}
+}
+
+.About_Quality_text_afterSlogan{
+	margin-top: 40px;
+	@include pad-width{
+		margin-top: 80px;
+	}
+	@include large-pad-width{
+		margin-top: 120px;
+	}
+}
+
+.About_Quality_Icons_Bg{
+	padding: 20px 0;
+	margin-top: 1rem;
+	width: 100%;
+	background-image: url(../images/about_quality_icon_bg.jpg);
+	@extend %backgroundimagecover;
+	&:after{
+		@extend %clearfix;
+	}
+}
+
+.About_Quality_OneIcon{
+	width: 100%;
+	height: 395px;
+	background-color: rgba(#a46344, 0.2);
+	padding: 20px 0;
+	margin-top: 20px;
+	@include box-sizing(border-box);
+	&:first-child{
+		margin-top: 0;
+	}
+	& .IconImgBorder{
+		width: 118px;
+		height: 118px;
+		background-color: #be4919;
+		@include border-radius(50%);
+		@include box-shadow(0px 0px 7px rgba(#000, 0.9));
+		margin: 0 auto;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	& .text{
+		font-size: 1.25rem;
+		color: #ffc87a;
+		line-height: 1.75rem;
+		text-align:center;
+		margin-top: 20px;
+	}
+
+	& .img_quality_01{
+		width: 150px;
+		height: 133px;
+		margin: 0 auto;
+		margin-top: 20px;
+		display: block;
+	}
+
+	& .img_quality_02{
+		width: 189px;
+		height: 141px;
+		margin: 0 auto;
+		margin-top: 20px;
+		display: block;
+	}
+
+	& .img_quality_03{
+		width: 150px;
+		height: 133px;
+		margin: 0 auto;
+		margin-top: 20px;
+		display: block;
+	}
+
+	@include pad-width{
+		height: 435px;
+		padding: 40px 0;
+	}
+
+	@include large-pad-width{
+		float:left;
+		width: calc((100% - 6rem)/3);
+		margin-left: 1.5rem;
+		margin-top: 0;
+	}
+}
+
+.About_Storage_layout{
+	padding: 0 12px;
+	margin-top: 2.5rem;
+	@include pad-width{
+		padding: 0 20px;
+		margin-top: 5rem;
+	}
+
+	@include large-pad-width{
+		padding: 0 40px;
+		margin-top: 7rem;
+	}
+	& .Product{
+		font-size: 1.5rem;
+		color: #fff;
+		font-weight: bold;
+		@include pad-width{
+			font-size: 2rem;
+		}
+	}
+
+	& .Storage{
+		margin-top: 20px;
+		& .title{
+			font-size: $PhoneSecondTitleFontSize;
+			color: #fff;
+			@include pad-width{
+				font-size: $PadSecondTitleFontSize;
+			}
+		}
+
+		& .text{
+			font-size: $PhoneContentFontSize;
+			line-height: 1.35rem;
+			color: rgba(#fff, 0.9);
+			&:nth-child(2){
+				margin-top: 5px;
+			}
+			& span{
+				color: #ffff00;
+			}
+
+			@include pad-width{
+				font-size: $padContentFontSize;
+				line-height: 1.875rem;
+			}
+		}
+	}
+
+	& .DrinkTemp{
+		margin-top: 32px;
+		@include pad-width{
+			margin-top: 48px;
+		}
+		& .title{
+			font-size: $PhoneSecondTitleFontSize;
+			color: #fff;
+			@include pad-width{
+				font-size: $PadSecondTitleFontSize;
+			}
+		}
+
+		& .text{
+			font-size: $PhoneContentFontSize;
+			line-height: 1.35rem;
+			color: rgba(#fff, 0.9);
+			&:nth-child(2){
+				margin-top: 5px;
+			}
+			& strong{
+				margin-left: 5px;
+				font-weight: bold;
+			}
+			@include pad-width{
+				font-size: $padContentFontSize;
+				line-height: 1.875rem;
+			}
+		}
+	}
+
+	& .Whisky{
+		& .text{
+			& strong{
+				margin-left: 0;
+				color: #fff;
+			}
+			@include pad-width{
+				font-size: $padContentFontSize;
+				line-height: 1.875rem;
+			}
+		}
+	}
+}
