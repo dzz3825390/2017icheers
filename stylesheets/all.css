@@ -3050,6 +3050,17 @@ h2.detail_Name_cn {
   }
 }
 
+.detail_stockstatus {
+  font-size: 1rem;
+  color: #666;
+  text-align: right;
+}
+@media screen and (min-width: 760px) {
+  .detail_stockstatus {
+    font-size: 1.3rem;
+  }
+}
+
 .winelist_searchCondition_layout {
   background-color: #666;
   padding: 1rem;

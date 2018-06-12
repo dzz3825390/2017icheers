@@ -417,3 +417,13 @@ h2.detail_Name_cn{
 		}
 	}
 }
+
+//20180612 add stockstatus
+.detail_stockstatus{
+	font-size: 1rem;
+	color: #666;
+	text-align: right;
+	@include pad-width{
+		font-size: 1.3rem;
+	}
+}
