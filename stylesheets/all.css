@@ -3419,8 +3419,21 @@ h2.detail_Name_cn {
   display: inline-block;
   width: 9px;
   height: 12px;
+  margin-left: 3px;
   background-image: url(../images/fasticon_color.png);
   background-size: cover;
+}
+.winelist_allyear_extend .OneYearRow .price_soldout {
+  color: #929091;
+}
+.winelist_allyear_extend .OneYearRow .price_soldout .soldouticon {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-image: url(../images/soldouticon_color.png);
+  background-size: cover;
+  float: right;
+  margin-left: 3px;
 }
 .winelist_allyear_extend .ThisYear {
   background-color: #f3f4f5;
