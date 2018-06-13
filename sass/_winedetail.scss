@@ -132,6 +132,18 @@
 	&:after{
 		@extend %clearfix;
 	}
+
+	& .additional_purchase{
+		font-size:$PhoneSecondTitleFontSize;
+		color: $TextColor;
+		float: right;
+		margin-right: 12px;
+		margin-top: 14px;
+		@include pad-width{
+			font-size: $PadSecondTitleFontSize;
+			margin-top: 10px;
+		}
+	}
 }
 
 .detail_BasicInfo{

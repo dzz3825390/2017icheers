@@ -2769,6 +2769,19 @@ h4 {
   width: 100%;
   margin: 1rem 0;
 }
+.detail_price_row .additional_purchase {
+  font-size: 1rem;
+  color: #666666;
+  float: right;
+  margin-right: 12px;
+  margin-top: 14px;
+}
+@media screen and (min-width: 760px) {
+  .detail_price_row .additional_purchase {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+}
 
 @media screen and (min-width: 1360px) {
   .detail_BasicInfo {
