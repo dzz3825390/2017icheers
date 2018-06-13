@@ -6125,11 +6125,11 @@ h2.detail_Name_cn {
   display: inline-block;
 }
 .About_Newbie_mylist .MyListIcon {
-  width: 67px;
-  height: 67px;
+  width: 60px;
+  height: 72px;
   background-image: url(../images/icon_newbie_mylist.png);
   float: left;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 .About_Newbie_mylist .text {
   float: left;
