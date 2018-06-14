@@ -1429,7 +1429,15 @@
 		& span{
 			display:inline-block;
 			vertical-align:middle;
-			color: $TextColor;
+			color: #d9d9d9;
+		}
+	}
+
+	& div.Radio_invoice_unit.RadioBox_active{
+		border-color: #333;
+		border-width: 2px;
+		& span{
+			color: #333;
 		}
 	}
 

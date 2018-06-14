@@ -5532,7 +5532,14 @@ h2.detail_Name_cn {
 .invoice_radiobox_layout div.Radio_invoice_unit span {
   display: inline-block;
   vertical-align: middle;
-  color: #666666;
+  color: #d9d9d9;
+}
+.invoice_radiobox_layout div.Radio_invoice_unit.RadioBox_active {
+  border-color: #333;
+  border-width: 2px;
+}
+.invoice_radiobox_layout div.Radio_invoice_unit.RadioBox_active span {
+  color: #333;
 }
 @media screen and (min-width: 760px) {
   .invoice_radiobox_layout div.Radio_invoice_unit {
