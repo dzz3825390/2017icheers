@@ -49,7 +49,7 @@ a, img{
 /*未設寬度為支援電腦版信箱，支援度差*/
 .Header{
 	width: 960px;
-	background-color: #7a7a7a;
+	background-color: #fff;
 }
 
 .Header td {
@@ -98,7 +98,7 @@ a, img{
 .ProgressBar_line_active_desktop{
 	width: 237px;
 	height: 4px;
-	background-color: #8e6681;
+	background-color: #333;
 }
 
 .ProgressBar_space{
@@ -120,7 +120,7 @@ a, img{
 	height: 26px;
 	font-size: 14px;
 	line-height: 26px;
-	color: #8e6681;
+	color: #333;
 	font-weight: bold;
 	font-style: italic;
 }
@@ -323,6 +323,16 @@ a, img{
 	color: #b00808;
 }
 
+.footer_logo{
+	width: 960px;
+	margin: 0 auto;
+}
+
+.footer_logo img{
+	width: 166px;
+	height: 76px;
+}
+
 .Slogan{
 	width: 960px;
 	margin: 0 auto;
@@ -383,7 +393,7 @@ a, img{
 @media screen and (min-width: 360px){
 	.Header{
 		width: 100%;
-		background-color: #7a7a7a;
+		background-color: #fff;
 	}
 
 	.Header td {
@@ -493,7 +503,7 @@ a, img{
 	}
 
 	.ProgressBar_line_active{
-		background-color: #8e6681;
+		background-color: #333;
 	}
 
 	.ProgressBar_space{
@@ -511,7 +521,7 @@ a, img{
 	}
 
 	.ProgressBar_text_active{
-		color: #8e6681;
+		color: #333;
 		font-weight: bold;
 		font-style: italic;
 	}
@@ -962,6 +972,41 @@ a, img{
 
 /*list end*/
 
+/*footer_logo*/
+@media screen and (min-width: 360px){
+	.footer_logo{
+		width: calc(100% - 2rem);
+		margin: 0 auto;
+	}
+
+	.footer_logo img{
+		width: 166;
+		height: 76px;
+	}
+
+}
+
+@media screen and (min-width: 768px){
+	.footer_logo{
+		width: calc(100% - 40px);
+	}
+
+	.footer_logo img{
+		width: 166px;
+		height: 76px;
+	}
+
+}
+
+@media screen and (min-width: 1366px){
+	.footer_logo{
+		width: calc(100% - 80px);
+	}
+
+
+}
+/*footer_logo end*/
+
 /*slogan*/
 @media screen and (min-width: 360px){
 	.Slogan{
@@ -1121,13 +1166,13 @@ a, img{
 <table border="0" cellpadding="0" cellspacing="0" align="center" class="Header">
   <tr>
     <td align="center">
-		<img src="http://www.icheers.tw/iCheers/EDM/MobileTest/images/letter_logo.png" class="logo" />
+		<img src="http://www.icheers.tw/iCheers/EDM/MobileTest/images/letter_logo_color.png" class="logo" />
     </td>
   </tr>
 </table>
 <!--灰底標題 end-->
 <!--空白-->
-<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
   <tr>
     <td align="center">
 		
@@ -3012,6 +3057,24 @@ a, img{
   </tr>
 </table>
 <!--list後文字 end-->
+<!--空白-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
+  <tr>
+    <td align="center">
+		
+    </td>
+  </tr>
+</table>
+<!--空白-->
+<!--logo-->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="footer_logo">
+  <tr>
+    <td align="center">
+		<img src="http://www.icheers.tw/iCheers/EDM/MobileTest/images/letter_logo_large.png" />
+    </td>
+  </tr>
+</table>
+<!--logo end-->
 <!--空白-->
 <table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
   <tr>
