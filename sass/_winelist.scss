@@ -118,9 +118,9 @@
 		font-size: $PhoneTitleFontSize;
 		font-weight:bold;
 		color:$TitleColor;
-		line-height:1.875rem;
+		line-height:1.5rem;
 		width: 100%;
-		height: 1.875rem;
+		max-height: 3rem;
 		overflow:hidden;
 		margin-top: 10px;
 	}
