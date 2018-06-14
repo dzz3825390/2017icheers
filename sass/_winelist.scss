@@ -192,14 +192,15 @@
 		width: calc(60% - 1rem);
 		& .Name_En{
 			font-size: $PadTitleFontSize;
-			line-height:2.625rem;
-			height: 2.625rem;
+			line-height:2.3rem;
+			max-height: 5.25rem;
 		}
 
 		& .Name_Cn{
 			font-size: $padContentFontSize;
 			line-height:1.875rem;
 			height: 1.875rem;
+			margin-top: 10px;
 		}
 
 		& .bottle_info{

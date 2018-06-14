@@ -99,7 +99,8 @@
 		& .Name_en{
 			font-size: 1.125rem;
 			color: $TitleColor;
-			height: 1.125rem;
+			line-height: 1.5rem;
+			max-height: 3rem;
 			overflow:hidden;
 			margin-top: 1rem;
 			font-weight: bold;
@@ -109,9 +110,9 @@
 			font-size: $PhoneSecondTitleFontSize;
 			color: $TextColor;
 			line-height: 1.5rem;
-			max-height: 3rem;
+			max-height: 1.5rem;
 			overflow:hidden;
-			margin-top: 10px;
+			margin-top: 5px;
 		}
 
 		& .Info{
@@ -145,7 +146,7 @@
 		}
 
 		& .Price{
-			margin-top: 1.5rem;
+			margin-top: 1rem;
 			@include PriceAndCount;
 		}
 
@@ -211,12 +212,13 @@
 			right: 0;
 			& .Name_en{
 				font-size: $PadTitleFontSize;
-				height: $PadTitleFontSize;
+				line-height: 2.1rem;
+				max-height: 4.2rem;
 			}
 
 			& .Name_cn{
 				font-size: $padContentFontSize;
-				height: $padContentFontSize;
+				height: 1.5rem;
 			}
 
 			& .Info span{
@@ -396,8 +398,8 @@
 			float:right;
 			& .Name_en{
 				@include BottleNameEN(1.125rem);
-				height: 1.5rem;
-				line-height: 1.55rem;
+				max-height: 3rem;
+				line-height: 1.5rem;
 				overflow:hidden;
 				font-weight: bold;
 				color: $TitleColor;
@@ -406,7 +408,7 @@
 			& .Name_cn{
 				@include BottleNameCN(1rem);
 				line-height: 1.5rem;
-				max-height: 3rem;
+				max-height: 1.5rem;
 				overflow:hidden;
 				color: $TextColor;
 				margin-top: 8px;

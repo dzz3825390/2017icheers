@@ -3286,13 +3286,14 @@ h2.detail_Name_cn {
   }
   .winelist_OneWine_Info .Name_En {
     font-size: 1.75rem;
-    line-height: 2.625rem;
-    height: 2.625rem;
+    line-height: 2.3rem;
+    max-height: 5.25rem;
   }
   .winelist_OneWine_Info .Name_Cn {
     font-size: 1.25rem;
     line-height: 1.875rem;
     height: 1.875rem;
+    margin-top: 10px;
   }
   .winelist_OneWine_Info .bottle_info {
     margin-top: 10px;
@@ -3562,7 +3563,8 @@ h2.detail_Name_cn {
 .cart_list_OneBottle .BottleInfo .Name_en {
   font-size: 1.125rem;
   color: #333333;
-  height: 1.125rem;
+  line-height: 1.5rem;
+  max-height: 3rem;
   overflow: hidden;
   margin-top: 1rem;
   font-weight: bold;
@@ -3571,9 +3573,9 @@ h2.detail_Name_cn {
   font-size: 1rem;
   color: #666666;
   line-height: 1.5rem;
-  max-height: 3rem;
+  max-height: 1.5rem;
   overflow: hidden;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 .cart_list_OneBottle .BottleInfo .Info {
   margin-top: 10px;
@@ -3608,7 +3610,7 @@ h2.detail_Name_cn {
   margin-right: 3px;
 }
 .cart_list_OneBottle .BottleInfo .Price {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 .cart_list_OneBottle .BottleInfo .Price .Count {
   width: 100%;
@@ -4058,11 +4060,12 @@ h2.detail_Name_cn {
   }
   .cart_list_OneBottle .BottleInfo .Name_en {
     font-size: 1.75rem;
-    height: 1.75rem;
+    line-height: 2.1rem;
+    max-height: 4.2rem;
   }
   .cart_list_OneBottle .BottleInfo .Name_cn {
     font-size: 1.25rem;
-    height: 1.25rem;
+    height: 1.5rem;
   }
   .cart_list_OneBottle .BottleInfo .Info span {
     font-size: 1.25rem;
@@ -4206,8 +4209,8 @@ h2.detail_Name_cn {
 .cart_list_OneGroup .GroupBottle .GroupBottleInfo .Name_en {
   font-size: 1.125rem;
   color: #666666;
-  height: 1.5rem;
-  line-height: 1.55rem;
+  max-height: 3rem;
+  line-height: 1.5rem;
   overflow: hidden;
   font-weight: bold;
   color: #333333;
@@ -4216,7 +4219,7 @@ h2.detail_Name_cn {
   font-size: 1rem;
   color: #808080;
   line-height: 1.5rem;
-  max-height: 3rem;
+  max-height: 1.5rem;
   overflow: hidden;
   color: #666666;
   margin-top: 8px;
