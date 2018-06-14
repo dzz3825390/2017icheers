@@ -1477,6 +1477,14 @@ h4{
 		border: 2px solid #8e6681;
 	}
 
+	//20180614 add noticetext sample
+	& .PopWindow_noticetext{
+		color: $NoticeColor;
+		font-size: 14px;
+		margin-top: 5px;
+		line-height: 21px;
+	}
+
 	@include pad-width{
 		padding: 2rem;
 	}

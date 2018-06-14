@@ -1769,6 +1769,12 @@ h4 {
   background-color: #fff;
   border: 2px solid #8e6681;
 }
+.PopWindow_content .PopWindow_noticetext {
+  color: #B00808;
+  font-size: 14px;
+  margin-top: 5px;
+  line-height: 21px;
+}
 @media screen and (min-width: 760px) {
   .PopWindow_content {
     padding: 2rem;
