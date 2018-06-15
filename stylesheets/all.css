@@ -5606,6 +5606,24 @@ h2.detail_Name_cn {
   text-align: right;
 }
 
+.section_additional_purchase {
+  padding: 0 16px;
+  background-color: #fff;
+  position: relative;
+  margin-top: 2rem;
+}
+
+.section_additional_purchase .DottedLine {
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+  border-bottom: 1px dotted #cccccc;
+  margin: 1rem auto;
+}
+
+.section_additional_purchase .AddPriceProduct:not(:first-child) {
+  margin-top: 2rem;
+}
+
 .About_BG {
   width: 100%;
   position: absolute;

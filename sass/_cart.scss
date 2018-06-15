@@ -1483,3 +1483,20 @@
 	font-size: 1rem;
 	text-align: right;
 }
+
+//20180615 add new additional_purchase section(replace old one)
+.section_additional_purchase{
+	padding: 0 16px;
+    background-color: #fff;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.section_additional_purchase .DottedLine{
+	@include DottedLine;
+	margin: 1rem auto;
+}
+
+.section_additional_purchase .AddPriceProduct:not(:first-child){
+	margin-top: 2rem;
+}
