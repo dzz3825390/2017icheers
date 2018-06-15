@@ -1634,3 +1634,7 @@ h4{
 	}
 }
 
+//20180615 add signup btn at bounsinfo window
+.SignUp_btn{
+	@include ConfirmBtn;
+}
