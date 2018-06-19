@@ -2901,7 +2901,7 @@ h2.detail_Name_cn {
 .detail_bottle_info span:first-child {
   padding-left: 0;
 }
-.detail_bottle_info span:last-child {
+.detail_bottle_info span:not(:first-child) {
   border-right: none;
 }
 @media screen and (min-width: 760px) {
@@ -2911,6 +2911,14 @@ h2.detail_Name_cn {
     line-height: 1.625rem;
     padding: 0 16px;
   }
+}
+.detail_bottle_info label.others {
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.2rem;
+  height: 1.2rem;
+  color: #999;
+  text-decoration: underline;
 }
 
 .detail_saletext {

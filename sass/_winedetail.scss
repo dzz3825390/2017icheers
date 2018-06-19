@@ -204,7 +204,7 @@ h2.detail_Name_cn{
 			padding-left: 0;
 		}
 
-		&:last-child{
+		&:not(:first-child){
 			border-right: none;
 		}
 
@@ -214,6 +214,15 @@ h2.detail_Name_cn{
 			line-height: 1.625rem;
 			padding: 0 16px;
 		}
+	}
+
+	& label.others{
+		display: inline-block;
+		font-size: 0.875rem;
+		line-height: 1.2rem;
+		height: 1.2rem;
+		color: #999;
+		text-decoration: underline;
 	}
 }
 
