@@ -949,7 +949,7 @@ h4 {
   height: 40px;
   border-bottom: solid 1px #cccccc;
   position: absolute;
-  right: 52px;
+  left: 56px;
   top: 3px;
 }
 .SideMenu_SearchInput input {
@@ -991,6 +991,11 @@ h4 {
   top: 50px;
   left: 0;
   background-color: #d9d9d9;
+}
+@media screen and (min-width: 760px) {
+  .SideMenu_Detail {
+    top: 70px;
+  }
 }
 
 .SideMenu_Detail_Title {

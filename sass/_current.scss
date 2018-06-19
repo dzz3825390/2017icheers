@@ -782,7 +782,7 @@ h4{
 	height: 40px;
 	border-bottom: $BorderColor;
 	position: absolute;
-	right: 52px;
+	left: 56px;
 	top: 3px;
 	&:after{
 		@extend %clearfix;
@@ -830,6 +830,9 @@ h4{
 	top: 50px;
 	left: 0;
 	background-color: #d9d9d9;
+	@include pad-width{
+		top: 70px;
+	}
 }
 
 .SideMenu_Detail_Title{
