@@ -6347,6 +6347,8 @@ h2.detail_Name_cn {
 
 .About_Quality_text_afterSlogan {
   margin-top: 40px;
+  line-height: 1.875rem;
+  text-align: center;
 }
 @media screen and (min-width: 760px) {
   .About_Quality_text_afterSlogan {
