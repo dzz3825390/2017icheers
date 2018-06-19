@@ -311,6 +311,12 @@ h2.detail_Name_cn{
 		line-height: 1.5rem;
 		color: $TextColor;
 		margin-top: 5px;
+
+		& a{
+			color: $TextColor;
+			display: inline-block;
+			margin: 3px 0;
+		}
 	}
 
 	& .ratebox{
