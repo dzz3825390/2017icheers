@@ -3533,6 +3533,10 @@ h2.detail_Name_cn {
   }
 }
 
+.cart_header {
+  border-color: #909090;
+}
+
 .cart_large_title {
   font-size: 1.625rem;
   font-weight: bold;
@@ -3572,10 +3576,10 @@ h2.detail_Name_cn {
   display: inline-block;
 }
 .cart_step_row .OneStep_active {
-  border-color: #8E6681;
+  border-color: #333333;
 }
 .cart_step_row .OneStep_active span {
-  color: #8E6681;
+  color: #333333;
   font-weight: bold;
   font-style: italic;
 }

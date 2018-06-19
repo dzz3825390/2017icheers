@@ -1,6 +1,11 @@
 @import "compass/css3";
 @import "mixin";
 
+//20180619 add cart header style
+.cart_header{
+	border-color: #909090;
+}
+
 .cart_large_title{
 	@extend %SectionLayout;
 	font-size: 1.625rem;
@@ -44,9 +49,9 @@
 	}
 
 	& .OneStep_active{
-		border-color: #8E6681;
+		border-color: #333333;
 		& span{
-			color: #8E6681;
+			color: #333333;
 			font-weight:bold;
 			font-style: italic;
 		}
