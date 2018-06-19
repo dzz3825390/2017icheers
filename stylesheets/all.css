@@ -943,6 +943,31 @@ h4 {
   }
 }
 
+.SideMenu_SignOutBTN {
+  width: 28px;
+  height: 14px;
+  right: 13px;
+  top: calc(36px / 2);
+  cursor: pointer;
+  position: absolute;
+}
+.SideMenu_SignOutBTN a {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.875rem;
+  color: #666;
+}
+@media screen and (min-width: 760px) {
+  .SideMenu_SignOutBTN {
+    width: 40px;
+    height: 20px;
+    top: calc(50px / 2);
+  }
+  .SideMenu_SignOutBTN a {
+    font-size: 1.2rem;
+  }
+}
+
 .SideMenu_SearchInput {
   width: calc(100% - 111px);
   width: -webkit-calc(100% - 111px);
