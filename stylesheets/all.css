@@ -3174,6 +3174,11 @@ h2.detail_Name_cn {
   color: #666;
   font-size: 1.25rem;
 }
+@media screen and (min-width: 760px) {
+  .ratebox_outside {
+    max-width: 40%;
+  }
+}
 
 .winelist_searchCondition_layout {
   background-color: #666;

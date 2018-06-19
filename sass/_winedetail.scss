@@ -486,4 +486,8 @@ h2.detail_Name_cn{
 		    font-size: 1.25rem;
 	    }
     }
+
+    @include pad-width{
+    	max-width: 40%;
+    }
 }
