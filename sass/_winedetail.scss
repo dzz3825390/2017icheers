@@ -79,42 +79,27 @@
 	color: #fff;
 }
 
-.detail_bottleImg_rating{
+.detail_bottleImg_winetag{
 	position: absolute;
+	top: 16px;
 	left: 0;
-	top: 0;
+	& img{
+		width: 113px;
+		height: auto;
+		display: block;
+		border: 1px solid #cccccc;
+		cursor: point;
+	}
 
 	@include pad-width{
-		top: 25px;
-	}
-
-	& .rate_text{
-		font-size: 1.35rem;
-		color: $TextColor;
-		font-weight: bold;
-		margin-top: 10px;
-		@include pad-width{
-			font-size: 1.75rem;
-		}
-
-		@include large-pad-width{
-			font-size: 2rem;
+		top: 20px;
+		& img{
+			width: 200px;
 		}
 	}
 
-	& img{
-		width: 4rem;
-		height: auto;
-		margin-top: 5px;
-		@include pad-width{
-			width: 6.25rem;
-			margin-top: 15px;
-		}
-
-		@include large-pad-width{
-			width: 7rem;
-			margin-top: 15px;
-		}
+	@include large-pad-width{
+		top: 40px;
 	}
 }
 
@@ -505,4 +490,15 @@ h2.detail_Name_cn{
     @include pad-width{
     	max-width: 40%;
     }
+}
+
+.Popwindow_winetag{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	& img{
+		width:100%;
+		max-width: 500px;
+		height: auto;
+	}
 }

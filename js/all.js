@@ -442,6 +442,12 @@ $(document).ready(function(){
 		PopWindow('#SignInWindow',intBrowserH,intBrowserW);	
 	});
 
+	//wine tag
+	$('.detail_bottleImg_winetag').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#WineTagWindow',intBrowserH,intBrowserW);	
+	});
+
 	//PopWindow關閉
 	$('#black_BG02 .CloseBTN').click(function(){
 		//隱藏黑底
