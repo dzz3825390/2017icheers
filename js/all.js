@@ -359,12 +359,12 @@ $(document).ready(function(){
 	
 	
 	//radiobox active切換 
-	$('.PopWindow_RadioBox').click(function(){
+	/*$('.PopWindow_RadioBox').click(function(){
 		var GroupName = $(this).attr('name');
 		var GroupSelect = $('.RadioBox' + '[name=' + GroupName + ']');
 		GroupSelect.removeClass('PopWindow_RadioBox_active');
 		$(this).addClass('PopWindow_RadioBox_active');
-	});
+	});*/
 
 	//新手上路、品質宣言等視窗高度設定
 	if (intBrowserW < 768) {
@@ -425,6 +425,17 @@ $(document).ready(function(){
 		PopWindow('#MailWindow1',intBrowserH,intBrowserW);	
 	});
 
+	$('#PaymentCheck').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#MailWindow2',intBrowserH,intBrowserW);	
+	});
+
+	$('#BackToPaymentCheck').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		$('#MailWindow2 .CloseBTN').click();
+		PopWindow('#MailWindow1',intBrowserH,intBrowserW);	
+	});
+
 	//會員登入
 	$('.SideMenu_SignInBTN').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
@@ -460,6 +471,13 @@ function Radiobox (self) {
 	var GroupSelect = $('.RadioBox' + '[name=' + GroupName + ']');
 	GroupSelect.removeClass('RadioBox_active');
 	$(self).addClass('RadioBox_active');
+}
+
+function PopWindowRadiobox (self) {
+	var GroupName = $(self).attr('name');
+	var GroupSelect = $('.PopWindow_RadioBox' + '[name=' + GroupName + ']');
+	GroupSelect.removeClass('PopWindow_RadioBox_active');
+	$(self).addClass('PopWindow_RadioBox_active');
 }
 
 

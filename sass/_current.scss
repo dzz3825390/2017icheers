@@ -1452,6 +1452,12 @@ h4{
 		cursor: pointer;
 	}
 
+	& .Popwindow_ConfirmBtnGray{
+		margin-top: 2rem;
+		@include ConfirmBtnGray;
+		cursor: pointer;
+	}
+
 	& .AddMember{
 		width: 100%;
 		margin-top: 1.25rem;

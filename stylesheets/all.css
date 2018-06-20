@@ -1748,6 +1748,28 @@ h4 {
     width: 380px;
   }
 }
+.PopWindow_content .Popwindow_ConfirmBtnGray {
+  margin-top: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  background-color: #999999;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 760px) {
+  .PopWindow_content .Popwindow_ConfirmBtnGray {
+    width: 380px;
+  }
+}
 .PopWindow_content .AddMember {
   width: 100%;
   margin-top: 1.25rem;
