@@ -439,7 +439,8 @@ $(document).ready(function(){
 	//會員登入
 	$('.SideMenu_SignInBTN').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
-		PopWindow('#SignInWindow',intBrowserH,intBrowserW);	
+		PopWindow('#SignInWindow',intBrowserH,intBrowserW);
+		$('body').off('touchmove.preventScroll');	
 	});
 
 	//wine tag
