@@ -3234,9 +3234,22 @@ h2.detail_Name_cn {
   font-size: 1.25rem;
   font-weight: bold;
 }
+.winelist_searchCondition_Title .winelist_searchCondition_clearBtn {
+  float: right;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 6px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin-top: -2px;
+}
 @media screen and (min-width: 760px) {
   .winelist_searchCondition_Title {
     font-size: 1.75rem;
+  }
+  .winelist_searchCondition_Title .winelist_searchCondition_clearBtn {
+    font-size: 1rem;
+    padding: 10px;
   }
 }
 

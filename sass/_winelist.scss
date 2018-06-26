@@ -15,8 +15,23 @@
 	color:#fff;
 	font-size:$PhoneTitleFontSize;
 	font-weight: bold;
+	//20180626 add clear condition btn style
+	& .winelist_searchCondition_clearBtn{
+		float:right;
+		color: #fff;
+		font-size: 0.75rem;
+		padding: 6px;
+		border:1px solid #fff;
+		border-radius: 5px;
+		margin-top: -2px;
+	}
+
 	@include pad-width{
 		font-size:$PadTitleFontSize;
+		& .winelist_searchCondition_clearBtn{
+			font-size: 1rem;
+			padding: 10px;
+		}
 	}
 }
 
