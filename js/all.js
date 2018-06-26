@@ -471,6 +471,26 @@ $(document).ready(function(){
 		$(window).on('touchstart.HeaderShow',HeaderShow())
 	});
 
+	//20180626 add search input auto complete show/close
+	$('.SideMenu_SearchInput input').on('keyup',function(){
+		var isEmpty = $(this).val();
+		if (isEmpty == ''){
+			$('.SideMenu_AutoComplete').removeClass('SideMenu_AutoComplete_show');
+		} else{
+			$('.SideMenu_AutoComplete').addClass('SideMenu_AutoComplete_show');
+		}	
+	})
+
+	//close auto complete when click/touch result
+	$('.OneResult').click(function(){
+		$('.SideMenu_AutoComplete').removeClass('SideMenu_AutoComplete_show');
+	});
+
+	//close auto complete when blur input
+	$('.SideMenu_SearchInput input').on('blur',function(){
+		$('.SideMenu_AutoComplete').removeClass('SideMenu_AutoComplete_show');
+	});
+
 });
 
 function Radiobox (self) {
