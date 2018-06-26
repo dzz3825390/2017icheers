@@ -28,6 +28,7 @@
 
 	@include pad-width{
 		font-size:$PadTitleFontSize;
+		//20180626 add clear condition btn style
 		& .winelist_searchCondition_clearBtn{
 			font-size: 1rem;
 			padding: 10px;
