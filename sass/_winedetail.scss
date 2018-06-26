@@ -383,6 +383,13 @@ h2.detail_Name_cn{
 	border-bottom: 1px dotted #cccccc;
 }
 
+//20180626 add see all product btn style
+.detail_MoreInfo_seeallBtn{
+	margin-top: 8px;
+	float: none;
+	display: inline-block;
+}
+
 .detail_GroupProduct_layout{
 	@extend %SectionLayout;
 	margin-top: 2rem;
@@ -502,3 +509,5 @@ h2.detail_Name_cn{
 		height: auto;
 	}
 }
+
+

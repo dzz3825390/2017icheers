@@ -3096,6 +3096,12 @@ h2.detail_Name_cn {
   border-bottom: 1px dotted #cccccc;
 }
 
+.detail_MoreInfo_seeallBtn {
+  margin-top: 8px;
+  float: none;
+  display: inline-block;
+}
+
 .detail_GroupProduct_layout {
   margin-top: 2rem;
 }
