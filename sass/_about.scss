@@ -756,12 +756,16 @@
 		margin-top: 20px;
 	}
 
-	& .img_quality_01{
-		width: 150px;
-		height: 133px;
-		margin: 0 auto;
+	& .img_quality_01_zone{
 		margin-top: 20px;
-		display: block;
+		padding: 0 10%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	& .img_quality_01{
+		width: 140px;
+		height: auto;
 	}
 
 	& .img_quality_02{
@@ -783,6 +787,16 @@
 	@include pad-width{
 		height: 435px;
 		padding: 40px 0;
+
+		& .img_quality_01_zone{
+			padding: 0 30%;
+		}
+	}
+
+	@include pad-width-l{
+		& .img_quality_01_zone{
+			padding: 0 35%;
+		}
 	}
 
 	@include large-pad-width{
@@ -790,6 +804,10 @@
 		width: calc((100% - 6rem)/3);
 		margin-left: 1.5rem;
 		margin-top: 0;
+
+		& .img_quality_01_zone{
+			padding: 0 12%;
+		}
 	}
 }
 

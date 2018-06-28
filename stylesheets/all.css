@@ -6526,12 +6526,15 @@ h2.detail_Name_cn {
   text-align: center;
   margin-top: 20px;
 }
-.About_Quality_OneIcon .img_quality_01 {
-  width: 150px;
-  height: 133px;
-  margin: 0 auto;
+.About_Quality_OneIcon .img_quality_01_zone {
   margin-top: 20px;
-  display: block;
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+}
+.About_Quality_OneIcon .img_quality_01 {
+  width: 140px;
+  height: auto;
 }
 .About_Quality_OneIcon .img_quality_02 {
   width: 189px;
@@ -6552,6 +6555,14 @@ h2.detail_Name_cn {
     height: 435px;
     padding: 40px 0;
   }
+  .About_Quality_OneIcon .img_quality_01_zone {
+    padding: 0 30%;
+  }
+}
+@media screen and (min-width: 1020px) {
+  .About_Quality_OneIcon .img_quality_01_zone {
+    padding: 0 35%;
+  }
 }
 @media screen and (min-width: 1360px) {
   .About_Quality_OneIcon {
@@ -6559,6 +6570,9 @@ h2.detail_Name_cn {
     width: calc((100% - 6rem)/3);
     margin-left: 1.5rem;
     margin-top: 0;
+  }
+  .About_Quality_OneIcon .img_quality_01_zone {
+    padding: 0 12%;
   }
 }
 
