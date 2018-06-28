@@ -415,15 +415,28 @@ $(document).ready(function(){
 	});
 
 	//分批出貨確認
-	$('#YearCheckBtn').click(function(){
-		BodyScrollTopY = $(window).scrollTop();
-		PopWindow('#SeparateCheckWindow',intBrowserH,intBrowserW);
+	//20180628 fix checkseparate flow
+	$('#NotSeparate').click(function(){
+		$('#SeparateCheckSetion').hide();
+		$('#YearCheckSetion').slideDown('fast',function(){
+			var YearCheckWidth = $('.cart_YearCheck_layout').width();
+		    var YearCheckPositionX = (intBrowserW - YearCheckWidth)/2;
+		    $('.cart_YearCheck_layout').css('margin-left',YearCheckPositionX);
+		    $('#YearCheckSetion').animate({
+		    	'opacity':1
+		    },'slow');
+		});
 	});
 
-	$('#ConfirmBtn01').click(function(){
+	$('#YearCheckBtn').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#MailWindow1',intBrowserH,intBrowserW);
+	});
+
+	/*$('#ConfirmBtn01').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
 		PopWindow('#MailWindow1',intBrowserH,intBrowserW);	
-	});
+	});*/
 
 	$('#PaymentCheck').click(function(){
 		BodyScrollTopY = $(window).scrollTop();

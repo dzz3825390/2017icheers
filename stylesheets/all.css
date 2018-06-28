@@ -74,7 +74,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 }
 
-.clearfix:after, .footer:after, .SideMenu_SearchRow:after, .SideMenu_SearchInput:after, .SideMenu_Detail_list2 span:after, .SideMenu_RecentView:after, .OneWine:after, .OneWine .info .bottle_info:after, .checkbox_layout:after, .pagination_layout .pagination:after, .fourbanner_layout:after, .BottlesZone_onebottle .bottle_info:after, .BottlesZone_onebottle .bottle_price:after, .FastZone_bottles_layout:after, .NormalZone_bottles_layout:after, .MemberOnly_layout .bottle_price:after, .Events_layout:after, .PreorderZone_BottleInfo:after, .PreorderZone_BottleInfo .bottle_info:after, .ArticleZone_layout:after, .Article_layout:after, .detail_bottleImg_status_layout:after, .detail_price_row:after, .detail_MoreInfo_layout:after, .detail_MoreInfo_BtnOpen:after, .detail_GroupProduct_layout:after, .detail_introduce_layout:after, .winelist_searchCondition_text:after, .winelist_searchCondition_filter:after, .winelist_OneWine_layout:after, .winelist_OneWine_Info .bottle_info:after, .winelist_OneWine_Info .bottle_origin:after, .winelist_OneWine_Info .bottle_price .price_row:after, .winelist_MoreInfo_BtnOpen:after, .winelist_allyear_extend .OneYearRow:after, .cart_step_row:after, .cart_list_OneBottle:after, .cart_list_OneBottle .BottleInfo .Info:after, .cart_list_OneBottle .BottleInfo .Status:after, .cart_list_OneGroup:after, .cart_list_OneGroup .GroupBottle:after, .cart_list_OneGroup .Status:after, .cart_bouns_layout .OneItem_Row:after, .cart_sum_layout .OneItem_Row:after, .cart_sum_layout .btn_row:after, .cart_Terms_border .OneTerm:after, .cart_YearCheck_layout:after, .FreightInfoRow:after, .cart_form_row:after, .invoice_radiobox_layout:after, .About_SpecialQuote:after, .About_img:after, .About_BounsInfo:after, .About_Bouns_table .Row .MemberLevel:after, .About_DeliveryInfo:after, .About_DeliveryInfo .title:after, .About_Newbie_CartIcons:after, .About_Newbie_mylist:after, .About_Quality_Icons_Bg:after {
+.clearfix:after, .footer:after, .SideMenu_SearchRow:after, .SideMenu_SearchInput:after, .SideMenu_Detail_list2 span:after, .SideMenu_RecentView:after, .OneWine:after, .OneWine .info .bottle_info:after, .checkbox_layout:after, .pagination_layout .pagination:after, .fourbanner_layout:after, .BottlesZone_onebottle .bottle_info:after, .BottlesZone_onebottle .bottle_price:after, .FastZone_bottles_layout:after, .NormalZone_bottles_layout:after, .MemberOnly_layout .bottle_price:after, .Events_layout:after, .PreorderZone_BottleInfo:after, .PreorderZone_BottleInfo .bottle_info:after, .ArticleZone_layout:after, .Article_layout:after, .detail_bottleImg_status_layout:after, .detail_price_row:after, .detail_MoreInfo_layout:after, .detail_MoreInfo_BtnOpen:after, .detail_GroupProduct_layout:after, .detail_introduce_layout:after, .winelist_searchCondition_text:after, .winelist_searchCondition_filter:after, .winelist_OneWine_layout:after, .winelist_OneWine_Info .bottle_info:after, .winelist_OneWine_Info .bottle_origin:after, .winelist_OneWine_Info .bottle_price .price_row:after, .winelist_MoreInfo_BtnOpen:after, .winelist_allyear_extend .OneYearRow:after, .cart_step_row:after, .cart_list_OneBottle:after, .cart_list_OneBottle .BottleInfo .Info:after, .cart_list_OneBottle .BottleInfo .Status:after, .cart_list_OneGroup:after, .cart_list_OneGroup .GroupBottle:after, .cart_list_OneGroup .Status:after, .cart_bouns_layout .OneItem_Row:after, .cart_sum_layout .OneItem_Row:after, .cart_sum_layout .btn_row:after, .cart_Terms_border .OneTerm:after, .cart_SeparateCheck_layout:after, .cart_YearCheck_layout:after, .FreightInfoRow:after, .cart_form_row:after, .invoice_radiobox_layout:after, .About_SpecialQuote:after, .About_img:after, .About_BounsInfo:after, .About_Bouns_table .Row .MemberLevel:after, .About_DeliveryInfo:after, .About_DeliveryInfo .title:after, .About_Newbie_CartIcons:after, .About_Newbie_mylist:after, .About_Quality_Icons_Bg:after {
   content: '';
   display: block;
   clear: both;
@@ -5242,6 +5242,63 @@ h2.detail_Name_cn {
     font-size: 1rem;
     line-height: 1.5rem;
   }
+}
+
+.cart_SeparateCheck_layout {
+  margin-top: 1.5rem;
+  padding: 0 16px;
+  display: inline-block;
+}
+.cart_SeparateCheck_layout .cart_SeparateCheck_text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #333333;
+}
+.cart_SeparateCheck_layout .cart_SeparateCheck_text span.fast {
+  color: #ef9c00;
+}
+.cart_SeparateCheck_layout .cart_SeparateCheck_text span.preorder {
+  color: #0071bc;
+}
+.cart_SeparateCheck_layout .cart_SeparateCheck_noticetext {
+  font-size: 0.875rem;
+  color: #666666;
+  line-height: 1.25rem;
+}
+.cart_SeparateCheck_layout .cart_SeparateCheck_noticetext:before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background-color: #666666;
+  display: inline-block;
+  float: left;
+  margin-top: 8px;
+  margin-right: 5px;
+  margin-left: 5px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.cart_SeparateCheck_layout .cart_SeparateCheck_noticetext.red {
+  color: #B00808;
+}
+.cart_SeparateCheck_layout .cart_SeparateCheck_noticetext.red:before {
+  background-color: #B00808;
+}
+.cart_SeparateCheck_layout .cart_SeparateCheck_btn {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  background-color: #939334;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin-top: 1rem;
 }
 
 .cart_YearCheck_layout {

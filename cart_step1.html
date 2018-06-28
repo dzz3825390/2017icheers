@@ -115,9 +115,10 @@
 		    });
 
 		    //年齡確認置中
-		    var YearCheckWidth = $('.cart_YearCheck_layout').width();
+		    //20180628 cancel senter YearCheck
+		    /*var YearCheckWidth = $('.cart_YearCheck_layout').width();
 		    var YearCheckPositionX = (intBrowserW - YearCheckWidth)/2;
-		    $('.cart_YearCheck_layout').css('margin-left',YearCheckPositionX);
+		    $('.cart_YearCheck_layout').css('margin-left',YearCheckPositionX);*/
 
 		    
 		    //年齡確認
@@ -1673,21 +1674,39 @@
 	</div>
 	<!--須知 end-->
 
-	<!--check-->
-	<div class="cart_YearCheck_layout">
-		<div class="checkbox_layout">
-			<label class="checkbox">
-				<input type="checkbox">
-				<span class="checked"></span>
-			</label>
+	<!--20180628 add separate delivery part-->
+	<div class="cart_SeparateCheck_layout" id="SeparateCheckSetion">
+		<div class="cart_SeparateCheck_text">您的清單內有<span class="fast">快速到貨</span>&nbsp;/&nbsp;一般&nbsp;/&nbsp;<span class="preorder">預定商品</span>，請問是否分批出貨？</div>
+		<div class="cart_SeparateCheck_noticetext">
+			分批出貨限同一地址。
 		</div>
-		<div class="cart_YearCheck_text"> 
-			<span class="large">我已年滿18歲</span>
-			<span class="small">並詳細閱讀與同意上述條款</span>
+		<div class="cart_SeparateCheck_noticetext">
+			單次出貨商品總額未滿$1500，需酌收運費$200。
 		</div>
+		<div class="cart_SeparateCheck_noticetext red">
+			預訂商品若為不同到貨日期，也將分批出貨。
+		</div>
+		<div class="cart_SeparateCheck_btn" id="NotSeparate">不用了，謝謝</div>
+		<div class="cart_SeparateCheck_btn">我要分批出貨</div>
 	</div>
-	<div class="cart_YearCheck_btn cart_YearCheck_btn_unchecked" id="YearCheckBtn">
-		送出確認信
+	<!--20180628 add separate delivery part end-->
+	<!--check-->
+	<div style="display: none;opacity: 0;" id="YearCheckSetion">
+		<div class="cart_YearCheck_layout">
+			<div class="checkbox_layout">
+				<label class="checkbox">
+					<input type="checkbox">
+					<span class="checked"></span>
+				</label>
+			</div>
+			<div class="cart_YearCheck_text"> 
+				<span class="large">我已年滿18歲</span>
+				<span class="small">並詳細閱讀與同意上述條款</span>
+			</div>
+		</div>
+		<div class="cart_YearCheck_btn cart_YearCheck_btn_unchecked" id="YearCheckBtn">
+			送出確認信
+		</div>
 	</div>
 	<!--check end-->
 
@@ -1804,6 +1823,8 @@
 	<!--運費說明 end-->
 
 	<!--分批出貨check-->
+	<!--20180628 delete window-->
+	<!--
 	<div class="PopWindow_layout" id="SeparateCheckWindow">
 		<div class="PopWindow_title">
 			分批出貨
@@ -1815,7 +1836,8 @@
 			<div class="Popwindow_ConfirmBtn" id="ConfirmBtn01">不用了，謝謝</div>
 			<div class="Popwindow_ConfirmBtn">我要分批出貨</div>
 		</div>
-	</div>
+	</div>-->
+	<!--20180628 delete window-->
 	<!--分批出貨check end-->
 	
 	<!--發送確認信1 範本-->
