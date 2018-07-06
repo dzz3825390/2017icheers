@@ -504,6 +504,15 @@ $(document).ready(function(){
 		$('.SideMenu_AutoComplete').removeClass('SideMenu_AutoComplete_show');
 	});
 
+	//quality jump to no storage solution
+	$('.NoStorageInHouse').click(function(){
+		//find About_Contain_Quality scroll height
+		var ScrollPosition = $('.About_Contain_Quality')[0].scrollHeight ;
+		$('.About_Contain_Quality').animate({
+			scrollTop: ScrollPosition
+		},500);
+	});
+
 });
 
 function Radiobox (self) {

@@ -6652,11 +6652,39 @@ h2.detail_Name_cn {
 .About_Storage_layout .Product {
   font-size: 1.5rem;
   color: #fff;
+  line-height: 2rem;
   font-weight: bold;
 }
 @media screen and (min-width: 760px) {
   .About_Storage_layout .Product {
     font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+.About_Storage_layout .NoStorageInHouse {
+  font-size: 1.25rem;
+  color: #fff;
+  text-decoration: underline;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.About_Storage_layout .NoStorageInHouse:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/icon_quality_hand.svg);
+  float: left;
+  margin-right: 6px;
+}
+@media screen and (min-width: 760px) {
+  .About_Storage_layout .NoStorageInHouse {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .About_Storage_layout .NoStorageInHouse:before {
+    width: 25px;
+    height: 25px;
   }
 }
 .About_Storage_layout .Storage {
@@ -6717,6 +6745,10 @@ h2.detail_Name_cn {
   margin-left: 5px;
   font-weight: bold;
 }
+.About_Storage_layout .DrinkTemp .text b {
+  margin-right: 5px;
+  font-weight: bold;
+}
 @media screen and (min-width: 760px) {
   .About_Storage_layout .DrinkTemp .text {
     font-size: 1.25rem;
@@ -6732,4 +6764,25 @@ h2.detail_Name_cn {
     font-size: 1.25rem;
     line-height: 1.875rem;
   }
+}
+.About_Storage_layout .slogan {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #fff;
+  font-weight: bold;
+  text-align: left;
+}
+.About_Storage_layout .slogan span {
+  color: #ef9c00;
+  margin-left: 5px;
+}
+.About_Storage_layout .slogan span:after {
+  content: '';
+  display: inline-block;
+  width: 13px;
+  height: 20px;
+  background-image: url(../images/fasticon_color.png);
+  background-size: cover;
+  margin-right: 5px;
+  margin-left: 5px;
 }

@@ -826,9 +826,37 @@
 	& .Product{
 		font-size: 1.5rem;
 		color: #fff;
+		line-height: 2rem;
 		font-weight: bold;
 		@include pad-width{
 			font-size: 2rem;
+			line-height: 2.5rem;
+		}
+	}
+
+	& .NoStorageInHouse{
+		font-size: 1.25rem;
+		color: #fff;
+		text-decoration: underline;
+		margin-top: 1rem;
+		cursor:pointer;
+		&:before{
+			content: '';
+			display:block;
+			width: 20px;
+			height: 20px;
+			background-image: url(../images/icon_quality_hand.svg);
+			float:left;
+			margin-right: 6px;
+		}
+
+		@include pad-width{
+			font-size: 1.5rem;
+			line-height: 2rem;
+			&:before{
+				width: 25px;
+				height: 25px;
+			}
 		}
 	}
 
@@ -884,6 +912,11 @@
 				margin-left: 5px;
 				font-weight: bold;
 			}
+
+			& b{
+				margin-right: 5px;
+				font-weight: bold;
+			}
 			@include pad-width{
 				font-size: $padContentFontSize;
 				line-height: 1.875rem;
@@ -900,6 +933,28 @@
 			@include pad-width{
 				font-size: $padContentFontSize;
 				line-height: 1.875rem;
+			}
+		}
+	}
+
+	& .slogan{
+		font-size: 1.5rem;
+		line-height: 2rem;
+		color: #fff;
+		font-weight: bold;
+		text-align: left;
+		& span{
+			color: $FastColor;
+			margin-left: 5px;
+			&:after{
+				content:'';
+				display: inline-block;
+				width: 13px;
+				height: 20px;
+				background-image: url(../images/fasticon_color.png);
+				background-size: cover;
+				margin-right: 5px;
+				margin-left: 5px;
 			}
 		}
 	}
