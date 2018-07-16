@@ -165,13 +165,9 @@ header {
 
 .black_BG {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   z-index: 999;
-  /*top:0;
-  left: 0;
-  right: 0;
-  bottom: 0;*/
 }
 
 #black_BG02 {
@@ -185,7 +181,6 @@ span.arrow {
   border-radius: 2px;
   display: inline-block;
   padding: 4px;
-  display: inline-block;
 }
 
 /***arrow end***/
@@ -969,12 +964,12 @@ h4 {
 }
 
 .SideMenu_SearchInput {
-  width: calc(100% - 111px);
-  width: -webkit-calc(100% - 111px);
+  width: calc(100% - 70px);
+  width: -webkit-calc(100% - 70px);
   height: 40px;
   border-bottom: solid 1px #cccccc;
   position: absolute;
-  left: 56px;
+  left: 10px;
   top: 3px;
 }
 .SideMenu_SearchInput input {
@@ -995,8 +990,9 @@ h4 {
   width: 18px;
   height: 18px;
   background-image: url(../images/search_icon.png);
-  float: right;
-  margin-top: 14px;
+  position: absolute;
+  top: calc((100% - 18px)/2 + 2px);
+  right: 5px;
 }
 @media screen and (min-width: 760px) {
   .SideMenu_SearchInput {
@@ -1080,10 +1076,10 @@ h4 {
 .SideMenu_Detail_list {
   width: calc(100% - 30px);
   padding: 0 15px;
-  height: 40px;
+  height: 45px;
   font-size: 1rem;
   color: #666;
-  line-height: 40px;
+  line-height: 45px;
   margin-top: 1px;
   background-color: #ededed;
   position: relative;
@@ -1112,10 +1108,15 @@ h4 {
   position: absolute;
   right: 15px;
   top: 14px;
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -moz-transition: -moz-transform 0.5s;
+  -o-transition: -o-transform 0.5s;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transform-origin: 70% 70%;
 }
 @media screen and (min-width: 760px) {
   .SideMenu_Detail_list .arrow {
@@ -1200,6 +1201,42 @@ h4 {
 
 .SideMenu_Detail_Title_condition {
   background-color: #666666;
+}
+
+.SideMenu_Detail_list_Layer {
+  width: 100%;
+  display: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.SideMenu_Detail_list_Layer .SideMenu_Detail_list {
+  width: 100%;
+  background: #f2f2f2;
+  padding-left: 2rem;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.SideMenu_Detail_list_Layer .SideMenu_Detail_list:active {
+  background: #e0e0e0;
+}
+.SideMenu_Detail_list_Layer > .SideMenu_Detail_list_Layer {
+  padding-left: 1rem;
+}
+.SideMenu_Detail_list_Layer > .SideMenu_Detail_list_layeropen {
+  background: #e0e0e0;
+}
+
+.SideMenu_Detail_list_layeropen {
+  background: #e0e0e0;
+  font-style: italic;
+}
+.SideMenu_Detail_list_layeropen > span.arrow {
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
 }
 
 /***side menu end***/
@@ -2016,6 +2053,53 @@ h4 {
   .SignUp_btn {
     width: 380px;
   }
+}
+
+.SideMenuCloseBtn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 999;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 999;
+  cursor: pointer;
+}
+.SideMenuCloseBtn:before {
+  content: '';
+  display: block;
+  border-top: 1px solid #ffffff;
+  width: 25px;
+  height: 1px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  background-color: #ffffff;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 18px;
+  left: 8px;
+}
+.SideMenuCloseBtn:after {
+  content: '';
+  display: block;
+  border-top: 1px solid #ffffff;
+  width: 25px;
+  height: 1px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  background-color: #ffffff;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 18px;
+  left: 8px;
 }
 
 .fourbanner_layout {
@@ -3303,6 +3387,24 @@ h2.detail_Name_cn {
 }
 .winelist_searchCondition_text span:first-child {
   margin-left: 0;
+}
+.winelist_searchCondition_text span.OneCondition {
+  cursor: pointer;
+}
+.winelist_searchCondition_text span.OneCondition:after {
+  display: block;
+  content: 'x';
+  color: #cccccc;
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  text-align: center;
+  float: right;
+  margin: 3px 5px 0 5px;
+  border: 1px solid #cccccc;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }
 @media screen and (min-width: 760px) {
   .winelist_searchCondition_text span {

@@ -53,6 +53,23 @@
 		}
 	}
 
+	& span.OneCondition{
+		cursor:pointer;
+		&:after{
+			display:block;
+			content:'x';
+			color: #cccccc;
+			width: 14px;
+			height: 14px;
+			line-height: 14px;
+			text-align: center;
+			float:right;
+			margin: 3px 5px 0 5px;
+			border: 1px solid #cccccc;
+			@include border-radius(3px);
+		}
+	}
+
 	@include pad-width{
 		& span{
 			font-size: $padContentFontSize;
