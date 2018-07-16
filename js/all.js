@@ -179,7 +179,23 @@ $(document).ready(function(){
 			$(document).scrollTop(BrowserScrollHeight);
 		}	
 	});
+	//SideMenu Close click the close btn
+	$('.SideMenuCloseBtn').click(function(){
+		$('.SideMenu_layout').animate({
+			'left':"-" + SideMenuWidth + "px"
+		},100);
+		$('#black_BG').fadeOut(200);
+		$('body').off('touchmove.preventScroll');
+		$('body').css({
+			'overflow':'auto',
+			'height':'100%'
+		});
+		$(document).scrollTop(BrowserScrollHeight);
+
+	});
+
 	//SideMenu關閉 點back按鈕
+	/*
 	$('.SideMenu_BackBTN').click(function(){
 		//檢查this在第幾層
 		var MenuLevel = parseInt($(this).attr('layer'));
@@ -244,9 +260,10 @@ $(document).ready(function(){
 		}
 
 		
-	});
+	});*/
 
 	//Menu前後層
+	/*
 	$('.SideMenu_Detail_list').click(function(){
 		//檢查this在第幾層
 		var MenuLevel = $(this).parent().attr('id');
@@ -310,7 +327,20 @@ $(document).ready(function(){
 
 		}
 	});
+	*/
 
+	//SideMenu open next layer
+	$('.SideMenu_Detail_list').click(function(){
+		var hasNextLayer = $(this).next().hasClass('SideMenu_Detail_list_Layer');
+		var isNextLayerOpen = $(this).hasClass('SideMenu_Detail_list_layeropen');
+		if (hasNextLayer && !isNextLayerOpen) {
+			$(this).addClass('SideMenu_Detail_list_layeropen');
+			$(this).next().slideDown('fast');
+		} else if (hasNextLayer && isNextLayerOpen) {
+			$(this).removeClass('SideMenu_Detail_list_layeropen');
+			$(this).next().slideUp('fast');
+		}
+	});
 
 	//SideMenu 展開更多
 	$('.SideMenu_Detail_list_more').click(function(){
