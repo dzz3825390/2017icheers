@@ -917,15 +917,6 @@ function AboutPopWindow(name,intBrowserH,intBrowserW){
 			'top':ShowWindowHeight
 		});
 
-		//新手上路 Icon說明置中
-		var NewbieIconsWidth = $('.About_Newbie_CartIcons').width();
-		var NewbieBorderWidth = $('.About_Newbie').width();
-		var NewbieIconsPositionX = (NewbieBorderWidth - NewbieIconsWidth) /2;
-		$('.About_Newbie_CartIcons').css('margin-left',NewbieIconsPositionX);
-		//新手上路 我的清單說明置中
-		var NewbieMyListWidth = $('.About_Newbie_mylist').width();
-		var NewbieMyListPositionX = (NewbieBorderWidth - NewbieMyListWidth)/2;
-		$('.About_Newbie_mylist').css('margin-left',NewbieMyListPositionX);
 		ShowWindow.css('top','0');
 	},200);
 	

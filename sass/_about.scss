@@ -508,14 +508,12 @@
 }
 
 .About_Newbie_CartIcons{
-	display:inline-block;
+	display:block;
+	width: 90%;
 	margin: 10px auto;
-	&:after{
-		@extend %clearfix;
-	}
+	display: flex;
+	justify-content: space-between;
 	& .CartIcons{
-		float: left;
-		margin-left: 1rem;
 		& .Normal{
 			@include AddCartIcon($NormalColor, url(../images/addcart_icon_normal.png));
 			width: 35px;
@@ -546,15 +544,11 @@
 			text-align:center;
 			margin-top: 0.75rem;
 		}
-
-		&:first-child{
-			margin-left: 0;
-		}
 	}
 
 	@include pad-width{
+		width: 75%;
 		& .CartIcons{
-			margin-left: 1.5rem;
 			& .Normal{
 				width: 45px;
 				height: 45px;

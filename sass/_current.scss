@@ -64,13 +64,9 @@ header{
 
 .black_BG{
 	width: 100%;
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0,0,0,0.7);
 	position: absolute;
 	z-index: 999;
-	/*top:0;
-	left: 0;
-	right: 0;
-	bottom: 0;*/
 }
 
 #black_BG02{
@@ -91,7 +87,7 @@ span.arrow{
   	border-radius: 2px;
   	display: inline-block;
   	padding: 4px;
-  	display: inline-block;
+
 }
 
 /***arrow end***/
@@ -801,12 +797,12 @@ h4{
 }
 
 .SideMenu_SearchInput{
-	width: calc(100% - 111px);
-	width: -webkit-calc(100% - 111px);
+	width: calc(100% - 70px);
+	width: -webkit-calc(100% - 70px);
 	height: 40px;
 	border-bottom: $BorderColor;
 	position: absolute;
-	left: 56px;
+	left: 10px;
 	top: 3px;
 	&:after{
 		@extend %clearfix;
@@ -832,8 +828,9 @@ h4{
 		height: 18px;
 		background-image: url(../images/search_icon.png);
 		@extend %backgroundimagecover;
-		float: right;
-		margin-top: 14px;
+		position: absolute;
+		top: calc((100% - 18px)/2 + 2px);
+		right: 5px;
 	}
 
 	@include pad-width{
@@ -908,10 +905,10 @@ h4{
 .SideMenu_Detail_list{
 	width: calc(100% - 30px);
 	padding: 0 15px;
-	height: 40px;
+	height: 45px;
 	font-size: 1rem;
 	color: #666;
-	line-height: 40px;
+	line-height: 45px;
 	margin-top: 1px;
 	background-color: #ededed;
 	position:relative;
@@ -938,7 +935,9 @@ h4{
 		position: absolute;
 		right: 15px;
 		top: 14px;
-		@include transform(rotate(-45deg)) ;
+		@include transform(rotate(45deg)) ;
+		@include transition(transform 0.5s);
+		transform-origin: 70% 70%;
 		@include pad-width{
 			padding: 5px;
 			top: 19px;
@@ -1025,6 +1024,38 @@ h4{
 
 .SideMenu_Detail_Title_condition{
 	background-color: #666666;
+}
+
+.SideMenu_Detail_list_Layer{
+	width: 100%;
+	display:none;
+	@include box-sizing(border-box);
+	& .SideMenu_Detail_list{
+		width: 100%;
+		background: #f2f2f2;
+		padding-left:2rem;
+		@include box-sizing(border-box);
+		&:active{
+			background: #e0e0e0;
+		}
+	}
+
+	&>.SideMenu_Detail_list_Layer{
+		padding-left: 1rem;
+	}
+
+	&>.SideMenu_Detail_list_layeropen{
+		background: #e0e0e0;
+	}
+}
+
+//for layer open 
+.SideMenu_Detail_list_layeropen{
+	background: #e0e0e0;
+	font-style:italic;
+	&>span.arrow{
+		@include transform(rotate(-135deg));
+	}
 }
 
 
@@ -1702,4 +1733,21 @@ h4{
 //20180615 add signup btn at bounsinfo window
 .SignUp_btn{
 	@include ConfirmBtn;
+}
+
+//20180713 add SideMenuCloseBtn stye
+.SideMenuCloseBtn{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 999;
+    cursor: pointer;
+	@include CloseBtn(#ffffff);
+}
+
+.FlexBoxCenter{
+	display:flex;
+	justify-content: center;
 }
