@@ -74,13 +74,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 }
 
-.clearfix:after, .footer:after, .SideMenu_SearchRow:after, .SideMenu_SearchInput:after, .SideMenu_Detail_list2 span:after, .SideMenu_RecentView:after, .OneWine:after, .OneWine .info .bottle_info:after, .checkbox_layout:after, .pagination_layout .pagination:after, .fourbanner_layout:after, .BottlesZone_onebottle .bottle_info:after, .BottlesZone_onebottle .bottle_price:after, .FastZone_bottles_layout:after, .NormalZone_bottles_layout:after, .MemberOnly_layout .bottle_price:after, .Events_layout:after, .PreorderZone_BottleInfo:after, .PreorderZone_BottleInfo .bottle_info:after, .ArticleZone_layout:after, .Article_layout:after, .detail_bottleImg_status_layout:after, .detail_price_row:after, .detail_MoreInfo_layout:after, .detail_MoreInfo_BtnOpen:after, .detail_GroupProduct_layout:after, .detail_introduce_layout:after, .winelist_searchCondition_text:after, .winelist_searchCondition_filter:after, .winelist_OneWine_layout:after, .winelist_OneWine_Info .bottle_info:after, .winelist_OneWine_Info .bottle_origin:after, .winelist_OneWine_Info .bottle_price .price_row:after, .winelist_MoreInfo_BtnOpen:after, .winelist_allyear_extend .OneYearRow:after, .cart_step_row:after, .cart_list_OneBottle:after, .cart_list_OneBottle .BottleInfo .Info:after, .cart_list_OneBottle .BottleInfo .Status:after, .cart_list_OneGroup:after, .cart_list_OneGroup .GroupBottle:after, .cart_list_OneGroup .Status:after, .cart_bouns_layout .OneItem_Row:after, .cart_sum_layout .OneItem_Row:after, .cart_sum_layout .btn_row:after, .cart_Terms_border .OneTerm:after, .cart_SeparateCheck_layout:after, .cart_YearCheck_layout:after, .FreightInfoRow:after, .cart_form_row:after, .invoice_radiobox_layout:after, .About_SpecialQuote:after, .About_img:after, .About_BounsInfo:after, .About_Bouns_table .Row .MemberLevel:after, .About_DeliveryInfo:after, .About_DeliveryInfo .title:after, .About_Newbie_mylist:after, .About_Quality_Icons_Bg:after {
+.clearfix:after, .footer:after, .SideMenu_SearchRow:after, .SideMenu_SearchInput:after, .SideMenu_Detail_list2 span:after, .SideMenu_RecentView:after, .OneWine:after, .OneWine .info .bottle_info:after, .checkbox_layout:after, .pagination_layout .pagination:after, .fourbanner_layout:after, .BottlesZone_onebottle .bottle_info:after, .BottlesZone_onebottle .bottle_price:after, .FastZone_bottles_layout:after, .NormalZone_bottles_layout:after, .MemberOnly_layout .bottle_price:after, .Events_layout:after, .PreorderZone_BottleInfo:after, .PreorderZone_BottleInfo .bottle_info:after, .ArticleZone_layout:after, .Article_layout:after, .GoToDesktop .option:after, .detail_bottleImg_status_layout:after, .detail_price_row:after, .detail_MoreInfo_layout:after, .detail_MoreInfo_BtnOpen:after, .detail_GroupProduct_layout:after, .detail_introduce_layout:after, .winelist_searchCondition_text:after, .winelist_searchCondition_filter:after, .winelist_OneWine_layout:after, .winelist_OneWine_Info .bottle_info:after, .winelist_OneWine_Info .bottle_origin:after, .winelist_OneWine_Info .bottle_price .price_row:after, .winelist_MoreInfo_BtnOpen:after, .winelist_allyear_extend .OneYearRow:after, .cart_step_row:after, .cart_list_OneBottle:after, .cart_list_OneBottle .BottleInfo .Info:after, .cart_list_OneBottle .BottleInfo .Status:after, .cart_list_OneGroup:after, .cart_list_OneGroup .GroupBottle:after, .cart_list_OneGroup .Status:after, .cart_bouns_layout .OneItem_Row:after, .cart_sum_layout .OneItem_Row:after, .cart_sum_layout .btn_row:after, .cart_Terms_border .OneTerm:after, .cart_SeparateCheck_layout:after, .cart_YearCheck_layout:after, .FreightInfoRow:after, .cart_form_row:after, .invoice_radiobox_layout:after, .About_SpecialQuote:after, .About_img:after, .About_BounsInfo:after, .About_Bouns_table .Row .MemberLevel:after, .About_DeliveryInfo:after, .About_DeliveryInfo .title:after, .About_Newbie_mylist:after, .About_Quality_Icons_Bg:after {
   content: '';
   display: block;
   clear: both;
 }
 
-.icheers_slogan, .footer_option .icon, .SideMenu_SignInBTN, .SideMenu_SearchInput .search_icon, .SideMenu_RecentView .icon, .OneWine .img-s, .LoadingPage .logo, .winelist_OneWine_bottleImg, .cart_list_OneBottle .BottleImg, .About_DeliveryInfo .title .Normal, .About_DeliveryInfo .title .Fast, .About_DeliveryInfo .title .Preorder, .About_Newbie_Arrow, .About_Quality_Icons_Bg {
+.icheers_slogan, .footer_option .icon, .SideMenu_SignInBTN, .SideMenu_SearchInput .search_icon, .SideMenu_RecentView .icon, .OneWine .img-s, .LoadingPage .logo, .GoToDesktop .icon, .winelist_OneWine_bottleImg, .cart_list_OneBottle .BottleImg, .About_DeliveryInfo .title .Normal, .About_DeliveryInfo .title .Fast, .About_DeliveryInfo .title .Preorder, .About_Newbie_Arrow, .About_Quality_Icons_Bg, .icon_sidemenu {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2836,6 +2836,56 @@ h4 {
   .LoadingPage .logo {
     width: 324px;
     height: 192px;
+  }
+}
+
+.GoToDesktop {
+  width: 100%;
+  height: 45px;
+  padding: 0 10%;
+  background-color: #dddddd;
+  display: flex;
+  justify-content: space-between;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.GoToDesktop .option {
+  cursor: pointer;
+}
+.GoToDesktop .icon {
+  background-size: 100%;
+  width: 17px;
+  height: 45px;
+  margin-right: 0.75rem;
+  float: left;
+}
+.GoToDesktop .text {
+  ont-size: 1rem;
+  height: 45px;
+  line-height: 45px;
+  color: #666;
+  float: left;
+}
+@media screen and (min-width: 760px) {
+  .GoToDesktop {
+    height: 70px;
+    padding: 0 25%;
+  }
+  .GoToDesktop .icon {
+    height: 70px;
+    width: 24px;
+    margin-right: 1rem;
+  }
+  .GoToDesktop .text {
+    font-size: 1.25rem;
+    height: 70px;
+    line-height: 70px;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .GoToDesktop {
+    padding: 0 35%;
   }
 }
 
@@ -6888,4 +6938,19 @@ h2.detail_Name_cn {
   background-size: cover;
   margin-right: 5px;
   margin-left: 5px;
+}
+
+.icon_sidemenu {
+  width: 26px;
+  height: 16px;
+  margin-left: 5px;
+  display: inline-block;
+  background-image: url(../images/icon_sidemenu.png);
+}
+@media screen and (min-width: 760px) {
+  .icon_sidemenu {
+    width: 30px;
+    height: 20px;
+    margin-left: 8px;
+  }
 }

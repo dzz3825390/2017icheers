@@ -419,6 +419,11 @@ $(document).ready(function(){
 		AboutPopWindow(AboutID,intBrowserH,intBrowserW);
 	});
 
+	//top newbie
+	$('#Newbie_top').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		AboutPopWindow('#AboutWindow_Newbie',intBrowserH,intBrowserW);
+	});
 
 	$('.About_BG .CloseBTN').click(function(){
 		var CloseWindowID = '#' + $(this).parent().parent().attr('id');

@@ -953,3 +953,17 @@
 		}
 	}
 }
+
+.icon_sidemenu{
+	width: 26px;
+	height: 16px;
+	margin-left: 5px;
+	display:inline-block;
+	background-image: url(../images/icon_sidemenu.png);
+	@extend %backgroundimagecover;
+	@include pad-width{
+		width: 30px;
+		height: 20px;
+		margin-left: 8px;
+	}
+}
