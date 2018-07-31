@@ -1801,6 +1801,13 @@ h4 {
   box-sizing: border-box;
   overflow: hidden;
 }
+.PopWindow_content .Popwindow_form .keepaccount {
+  margin-top: 8px;
+}
+.PopWindow_content .Popwindow_form .keepaccount span {
+  color: #999;
+  font-size: 0.875rem;
+}
 .PopWindow_content .Popwindow_ConfirmBtn {
   margin-top: 2rem;
   width: 100%;

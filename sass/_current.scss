@@ -1507,6 +1507,14 @@ h4{
 			@include box-sizing(border-box);
 			overflow: hidden;
 		}
+
+		& .keepaccount{
+			margin-top: 8px;
+			& span{
+				color: #999;
+				font-size: $PhoneContentFontSize;
+			}
+		}
 	}
 
 	& .Popwindow_ConfirmBtn{
