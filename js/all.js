@@ -491,6 +491,13 @@ $(document).ready(function(){
 		$('body').off('touchmove.preventScroll');	
 	});
 
+	//No letter
+	$('#Noletter').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#NoletterWindow',intBrowserH,intBrowserW);
+		$('body').off('touchmove.preventScroll');	
+	});
+
 	//wine tag
 	$('.detail_bottleImg_winetag').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
