@@ -34,6 +34,8 @@ $(document).ready(function(){
 		    intBrowserW = document.body.clientWidth;
 		    intBrowserH = document.body.clientHeight;
 		}
+	//8/23
+	var WindowInnerHeight = window.innerHeight;
 
 	$(window).on('resize',function(){
 		setTimeout(function(){
@@ -75,7 +77,8 @@ $(document).ready(function(){
 
 
 	//捲動時header動作
-	HeaderShow();
+	//8/23
+	HeaderShow(intBrowserW,WindowInnerHeight);
 
 	//SideMenu高度
 	$('.SideMenu_Detail').each(function(){
@@ -599,7 +602,7 @@ function DisableScroll(){
 		$(window).off('touchstart.HeaderShow');
 	});
 }
-
+/*
 function EnableScroll(){
 	$('body').css({
 		'height':'100%',
@@ -607,8 +610,8 @@ function EnableScroll(){
 	});
 	$('body').off('touchstart.preventScroll');
 	$(window).on('touchstart.HeaderShow',HeaderShow());
-}
-
+}*/
+/*
 function HeaderShow(){
 	//瀏覽器內容寬度
 	var intBrowserW = 0;
@@ -864,6 +867,62 @@ function HeaderShow(){
 			}
 		}
 		 
+	});
+}
+*/
+//8/23
+function HeaderShow(WindowWidth,WindowHeight){
+	var timer;
+
+	$(window).resize(function(){
+
+		window.clearTimeout(timer);
+
+		timer = window.setTimeout(function() {
+            //先判斷當前位置，如果已經在TOP高度則TOP回歸原位
+			var ScrollTop = $(document).scrollTop();
+			//取得resize後瀏覽器內容高度
+			NewWindowHeight = window.innerHeight;
+
+			var isNavBarShow = NewWindowHeight - WindowHeight;
+
+			//phone
+			if (WindowWidth < 768){
+				//網址列出現，header show
+				if (isNavBarShow === 0) {
+
+					var isTopShow = $('.header').position().top;
+			        //先看header是否show 已show則不動作
+			        if (isTopShow == 0){
+			        	//不動作
+			        }
+			        //先看header是否show 沒show就header下滑
+			        else {
+			        	$('.header').css({
+			        		'top':'-56px',
+			        		'position':'fixed',
+							'z-index':'99'
+			        	});
+			        	$('.header').animate({
+			        		'top':'0'
+			        	},300);	
+			        }
+				}
+				else {
+					$('.header').css({
+			        	'position':'fixed',
+						'z-index':'-99'
+			        });
+			        $('.content_layout').css('margin-top','56px');
+			        $('.header').animate({
+			        	'top':'-56px'
+			        },300);	
+				}
+			}
+
+
+      	}, 100);
+
 	});
 }
 

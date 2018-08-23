@@ -333,6 +333,7 @@ span.more{
 .content_layout{
 	width: 100%;
 	background-color:#ffffff;
+	@include transform(translate3d(0,0,0));
 }
 
 .content_bottle_scrollX{
