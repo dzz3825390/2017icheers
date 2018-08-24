@@ -672,13 +672,13 @@ h4 {
 }
 
 .footer_option_row {
-  display: inline-block;
+  display: flex;
+  justify-content: space-around;
 }
 
 .footer_option {
   padding: 0 1rem;
-  margin-right: 1rem;
-  float: left;
+  display: flex;
   cursor: pointer;
 }
 .footer_option:last-child {
