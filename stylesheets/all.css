@@ -2046,6 +2046,29 @@ h4 {
   background-color: #000;
 }
 
+.Sake .header {
+  border-color: #d8d2ba;
+}
+.Sake .SideMenu_BackBTN .open.uarr .navicon {
+  background: #6d6a60;
+}
+.Sake .SideMenu_BackBTN .open.uarr .navicon:before {
+  background: #6d6a60;
+}
+.Sake .SideMenu_BackBTN .open.uarr .navicon:after {
+  background: #6d6a60;
+}
+.Sake .SideMenu_Detail_Title {
+  background-color: #d8d2ba;
+  color: #6d6552;
+}
+.Sake .SideMenu_Detail_Title.SideMenu_Detail_Title_condition {
+  background-color: #666666;
+}
+.Sake .pagination_layout a.active {
+  background-color: #d8d2ba;
+}
+
 .SignUp_btn {
   width: 100%;
   margin: 0 auto;

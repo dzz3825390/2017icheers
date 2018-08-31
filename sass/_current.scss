@@ -1740,6 +1740,35 @@ h4{
 	}
 }
 
+.Sake{
+	& .header{
+		border-color: #d8d2ba;
+	}
+
+	& .SideMenu_BackBTN .open.uarr .navicon{
+		background:#6d6a60;
+		&:before{
+			background:#6d6a60;
+		}
+		&:after{
+			background:#6d6a60;
+		}
+	}
+
+	& .SideMenu_Detail_Title{
+		background-color:#d8d2ba;
+		color: #6d6552;
+	}
+
+	& .SideMenu_Detail_Title.SideMenu_Detail_Title_condition{
+		background-color:#666666;
+	}
+
+	& .pagination_layout a.active{
+		background-color: #d8d2ba;
+	}
+}
+
 //20180615 add signup btn at bounsinfo window
 .SignUp_btn{
 	@include ConfirmBtn;
