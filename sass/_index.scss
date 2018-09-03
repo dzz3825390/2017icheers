@@ -201,6 +201,29 @@
 	}
 }
 
+.FastZone_morebottle{
+	padding: 16px;
+	background: #cccccc;
+	@include box-sizing(border-box);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	& .text{
+		font-size: $PhoneTitleFontSize;
+		line-height: 2rem;
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	@include pad-width{
+		& .text{
+			font-size: $PadTitleFontSize;
+			line-height: 3.5rem;
+		}
+	}
+}
+
 .FastZone_title{
 	color: $FastColor;
 	position: relative;

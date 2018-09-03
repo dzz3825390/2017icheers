@@ -2400,6 +2400,30 @@ h4 {
   }
 }
 
+.FastZone_morebottle {
+  padding: 16px;
+  background: #cccccc;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.FastZone_morebottle .text {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  color: #fff;
+  text-decoration: underline;
+}
+@media screen and (min-width: 760px) {
+  .FastZone_morebottle .text {
+    font-size: 1.75rem;
+    line-height: 3.5rem;
+  }
+}
+
 .FastZone_title {
   color: #ef9c00;
   position: relative;

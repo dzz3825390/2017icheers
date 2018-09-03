@@ -197,140 +197,7 @@ $(document).ready(function(){
 
 	});
 
-	//SideMenu關閉 點back按鈕
-	/*
-	$('.SideMenu_BackBTN').click(function(){
-		//檢查this在第幾層
-		var MenuLevel = parseInt($(this).attr('layer'));
 
-		switch (MenuLevel) {
-
-			//第1層
-			case 1:
-
-			$('.SideMenu_layout').animate({
-				'left':"-" + SideMenuWidth + "px"
-			},100);
-			$('#black_BG').fadeOut(200);
-			$('body').off('touchmove.preventScroll');
-			$('body').css({
-				'overflow':'auto',
-				'height':'100%'
-			});
-			$(document).scrollTop(BrowserScrollHeight);
-
-
-			break;
-
-			case 2:
-
-			//先解除停止預設scroll設定
-			$('.SideMenu_layout').off('touchmove.preventMenuScroll');
-
-			//第2層滑出
-			$('.SideMenu_layout').scrollTop(0);
-			SideMenuL1.css('display','block');
-			SideMenuL2.animate({
-				'left':SideMenuWidth + "px"
-			},100,function(){
-				SideMenuL2.css('display','none');
-			});
-			
-			//back按鈕層數-1
-			$('.SideMenu_BackBTN').attr('layer','1');
-
-			break;
-
-			case 3:
-
-			//先解除停止預設scroll設定
-			$('.SideMenu_layout').off('touchmove.preventMenuScroll');
-
-			//第3層滑出
-			$('.SideMenu_layout').scrollTop(0);
-			SideMenuL2.css('display','block');
-			SideMenuL3.animate({
-				'left':SideMenuWidth + "px"
-			},100,function(){
-				SideMenuL3.css('display','none');
-			});
-
-			//back按鈕層數-1
-			$('.SideMenu_BackBTN').attr('layer','2');
-
-			break;
-
-		}
-
-		
-	});*/
-
-	//Menu前後層
-	/*
-	$('.SideMenu_Detail_list').click(function(){
-		//檢查this在第幾層
-		var MenuLevel = $(this).parent().attr('id');
-		var intMenuLevel = 0;
-		for (i = 0; i < MenuLevel.length; i++){
-			var isNumber = parseInt(MenuLevel.charAt(i));
-			if (isNumber != NaN) {
-				intMenuLevel = isNumber;
-			}
-		}
-		
-		switch(intMenuLevel){
-
-			//第一層
-			case 1:
-			//先解除停止預設scroll設定
-			$('.SideMenu_layout').off('touchmove.preventMenuScroll');
-			//第2層進入
-			$('.SideMenu_layout').scrollTop(0);
-			SideMenuL2.css('display','block');
-			SideMenuL2.animate({
-				'left':'0'
-			},100);
-
-			var MenuHeight = SideMenuL2.height();
-
-			SideMenuL1.css('display','none');
-			SideMenuL3.css('display','none');
-
-			//back按鈕層數+1
-			$('.SideMenu_BackBTN').attr('layer','2');
-
-			break;
-
-			case 2:
-
-			//先解除停止預設scroll設定
-			$('.SideMenu_layout').off('touchmove.preventMenuScroll');
-
-			//第3層進入
-			SideMenuL3.css('display','block');
-			$('.SideMenu_layout').scrollTop(0);
-			SideMenuL3.animate({
-				'left':'0'
-			},100);
-
-			var MenuHeight = SideMenuL3.height();
-
-			SideMenuL1.css('display','none');
-			SideMenuL2.css('display','none');
-
-			//back按鈕層數+1
-			$('.SideMenu_BackBTN').attr('layer','3');
-
-			break;
-
-			case 3:
-			//去詳目頁
-
-			break;
-
-		}
-	});
-	*/
 
 	//SideMenu open next layer
 	$('.SideMenu_Detail_list').click(function(){
@@ -389,15 +256,9 @@ $(document).ready(function(){
 	});
 
 	
-	
-	
-	//radiobox active切換 
-	/*$('.PopWindow_RadioBox').click(function(){
-		var GroupName = $(this).attr('name');
-		var GroupSelect = $('.RadioBox' + '[name=' + GroupName + ']');
-		GroupSelect.removeClass('PopWindow_RadioBox_active');
-		$(this).addClass('PopWindow_RadioBox_active');
-	});*/
+	//fast zone see more height setting
+	var FastZoneMoreBottleHeight = $('.FastZone_onebottle').height();
+	$('.FastZone_morebottle').css('height',FastZoneMoreBottleHeight);
 
 	//新手上路、品質宣言等視窗高度設定
 	if (intBrowserW < 768) {
