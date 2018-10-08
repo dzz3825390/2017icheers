@@ -1084,6 +1084,16 @@ h4{
 	}
 }
 
+.addcart_normal_withtext{
+	float: right;
+	& span{
+		@include AddCartPrice ($NormalColor);
+	}
+	& button{
+		@include AddCartIconWithText ($NormalColor,url(../images/addcart_icon_normal.png));
+	}
+}
+
 .addcart_fast{
 	float: right;
 	& span{
@@ -1091,6 +1101,16 @@ h4{
 	}
 	& button{
 		@include AddCartIcon ($FastColor,url(../images/addcart_icon_fast.png));
+	}
+}
+
+.addcart_fast_withtext{
+	float: right;
+	& span{
+		@include AddCartPrice ($FastColor);
+	}
+	& button{
+		@include AddCartIconWithText ($FastColor,url(../images/addcart_icon_fast.png));
 	}
 }
 
@@ -1104,6 +1124,17 @@ h4{
 	}
 }
 
+.addcart_preorder_withtext{
+	float: right;
+	& span{
+		@include AddCartPrice ($PreorderColor);
+	}
+	& button{
+		@include AddCartIconWithText ($PreorderColor,url(../images/addcart_icon_preorder.png));
+	}
+
+}
+
 .addcart_soldout{
 	float: right;
 	& span{
@@ -1111,6 +1142,16 @@ h4{
 	}
 	& button{
 		@include AddCartIcon ($SoldColor,url(../images/addcart_icon_soldout.png));
+	}
+}
+
+.addcart_soldout_withtext{
+	float: right;
+	& span{
+		@include AddCartPrice ($SoldColor);
+	}
+	& button{
+		@include AddCartIconWithText ($SoldColor,url(../images/addcart_icon_soldout.png));
 	}
 }
 

@@ -196,6 +196,30 @@ $LargePadPadding : 40px;
 	@extend %backgroundimagecontain;
 }
 
+@mixin AddCartIconWithText ($IconColor,$IconImg) {
+	width: auto;
+	height: 40px;
+	font-size: 1rem;
+	line-height: 40px;
+	color: #fff;
+	padding-left: 12px;
+	font-family: 'Arial','Microsoft JhengHei';
+	@include border-radius(4px);
+	float: left;
+	border: none;
+	background-color: $IconColor;
+	&:after{
+		content:'';
+		display:block;
+		width: 35px;
+		height: 35px;
+		margin-right: -5px;
+		float: right;
+		background-image: $IconImg;
+		@extend %backgroundimagecontain;
+	}
+}
+
 //Cart
 @mixin CartPrice ($Color) {
 	font-size: 1.75rem;
