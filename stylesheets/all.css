@@ -3251,13 +3251,14 @@ h4 {
     margin-top: 10px;
   }
 }
-.detail_price_row .origin_price {
+
+.origin_price {
   font-size: 1rem;
   color: #d9d9d9;
   text-decoration: line-through;
-  float: right;
-  margin-right: 12px;
+  text-align: right;
   margin-top: 14px;
+  margin-bottom: -12px;
 }
 
 @media screen and (min-width: 1360px) {
