@@ -122,7 +122,7 @@ textarea {
   background-color: #fff;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="tel"] {
   outline: none;
   border: solid 1px #cccccc;
   -moz-border-radius: 4px;
@@ -1934,6 +1934,19 @@ h4 {
   text-align: center;
 }
 .PopWindow_content .Popwindow_form input[type=text] {
+  width: 100%;
+  padding: 0 10px;
+  height: 40px;
+  border: solid 1px #cccccc;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.PopWindow_content .Popwindow_form input[type=tel] {
   width: 100%;
   padding: 0 10px;
   height: 40px;
