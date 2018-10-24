@@ -1,0 +1,285 @@
+.winery_intro{
+	& img{
+		width: 100%;
+		height: auto;
+		margin-top: 20px;
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+
+	& .LargeTitle{
+		margin-top: 1.25rem;
+		padding: 0 1rem;
+		& .LargeTitle_en{
+			width: 100%;
+			color:#000;
+			font-size: 2rem;
+			font-weight: bold;
+		}
+
+		& .LargeTitle_cn{
+			width: 100%;
+			color: #2a2a2a;
+			font-size: 2rem;
+			font-weight: bold;
+			margin-top: 10px;
+		}
+	}
+
+	& .Region{
+		margin-top: 12px;
+		height: 34px;
+		@extend %clearfix;
+		& .flags{
+			width: 34px;
+			height: 34px;
+			float: left;
+			@extend %backgroundimagecover
+		}
+
+		& .text{
+			font-size: 1.25rem;
+			line-height: 34px;
+			color: #666;
+			float: left;
+			margin-left: 10px;
+		}
+	}
+
+	& .Paragraph{
+		margin-top: 20px;
+		padding: 0 1rem;
+		& p{
+			font-size: 1.125rem;
+			color: #666;
+			line-height: 1.7rem;
+			margin-top: 16px;
+		}
+
+		& .SmallTitle{
+			font-size: 1.5rem;
+			color: #000;
+			font-weight: bold;
+			line-height: 2.25rem;
+			font-style: normal; 
+		}
+
+		& .SmallTitle+p{
+			margin-top: 5px;
+		}
+
+	}
+
+	& .btn_more{
+		width: 160px;
+		height: 60px;
+		background-color: #939334;
+		margin-top: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: #fff;
+		line-height: 60px;
+		text-align: center;
+		@include border-radius(4px);
+		cursor:pointer;
+	}
+
+	@include pad-width{
+		& img{
+			display:none;
+		}
+
+		& .LargeTitle{
+			padding: 1.25rem;
+			margin-top:0;
+			background-color: #ededed;
+			border-left: 10px solid #333;
+			& .LargeTitle_en{
+				font-size: 2.25rem;
+			}
+			& .LargeTitle_cn{
+				font-size: 2.25rem;
+			}
+		}
+
+		& .Region{
+			& .text{
+				font-size: 1.5rem;
+			}
+		}
+
+		& .Paragraph{
+			padding: 0 1.25rem;
+			& p{
+				font-size: 1.5rem;
+				line-height: 2.5rem;
+
+			}
+			& .SmallTitle{
+				font-size: 2rem;
+				line-height: 3rem;
+			}
+
+		}
+
+		& .btn_more{
+			display:none;
+		}
+	}
+
+	@include large-pad-width{
+		& .LargeTitle{
+			padding: 1.25rem;
+			padding-left: 2rem;
+			border-left: 12px solid #333;
+		}
+
+		& .Paragraph{
+			padding: 0 2.5rem;
+		}
+	}
+}
+
+.Bottles_count{
+	width: 100%;
+	height: 90px;
+	background-color: #666;
+	padding: 0 1rem;
+	margin-top: 40px;
+	font-size: 1.5rem;
+	font-weight: bold;
+	line-height: 90px;
+	color: #fff;
+	@include box-sizing(border-box);
+	@include pad-width{
+		font-size: 2rem;
+		padding: 0 1.25rem;
+	}
+	@include large-pad-width{
+		padding: 0 2.5rem;
+	}
+}
+
+.NormalZone_otherwinery_layout{
+	width: 100%;
+    height: 240px;
+    margin-top: 1rem;
+    overflow-x: scroll;
+    @include pad-width{
+    	height: 325px;
+    }
+}
+
+.WineryIntroZone_onewinery{
+	width: 300px;
+    float: left;
+    margin-right: 12px;
+
+    & .winery_img{
+    	width: 300px;
+    	border: solid 1px #cccccc;
+    	& img{
+    		width: 100%;
+    		height: auto;
+    		display:block;
+    	}
+    }
+
+    & h3.WineryNameEn{
+    	width: 300px;
+    	font-size: 1rem;
+    	color: #333;
+    	height: 1.5rem;
+    	overflow: hidden;
+    	margin-top: 8px;
+    }
+
+    & h3.WineryNameCn{
+		width: 300px;
+    	font-size: 1rem;
+    	color: #333;
+    	height: 1.5rem;
+    	overflow: hidden;
+    }
+
+    & .WineryRegion{
+    	margin-top: 8px;
+		height: 24px;
+		@extend %clearfix;
+		& .flags{
+			width: 24px;
+			height: 24px;
+			float: left;
+			@extend %backgroundimagecover;
+		}
+
+		& .text{
+			font-size: 0.875rem;
+			line-height: 24px;
+			color: #666;
+			float: left;
+			margin-left: 10px;
+		}
+    }
+
+    @include pad-width{
+    	width: 400px;
+    	margin-right: 20px;
+    	& .winery_img{
+    		width:400px;
+    	}
+
+    	& h3.WineryNameEn{
+    		font-size: 1.25rem;
+    		height: 2rem;
+    	}
+
+    	& h3.WineryNameCn{
+    		font-size: 1.25rem;
+    		height: 2rem;
+    	}
+
+    	& .WineryRegion{
+    		height: 32px;
+    		& .flags{
+    			width: 32px;
+    			height: 32px;
+    		}
+
+    		& .text{
+    			font-size: 1rem;
+    			line-height: 32px;
+    		}
+    	}
+
+
+    }
+}
+
+.WineryImg_pad{
+	display:none;
+	@include pad-width{
+		width:100%;
+		display:block;
+		padding:$PadPadding;
+		background: #f3f4f5;
+		@include box-sizing(border-box);
+		overflow-x:scroll;
+	}
+	
+}
+
+.WineryImg_pad_scrollX{
+	display:flex;
+	align-items: center;	
+	& img{
+		width: 400px;
+		height: auto;
+		border:1px solid #cccccc;
+		margin-right:1rem;
+	}
+}
+

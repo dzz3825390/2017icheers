@@ -63,6 +63,22 @@ $(document).ready(function(){
 		$(this).css('width',BottleScrollWidth);
 	});
 
+	//計算酒莊scroll欄的寬度
+	$('.content_winery_scrollX').each(function(){
+		var WineryNumber = $(this).children().length;
+		var SingleWineryWidth = $(this).children().eq(0).outerWidth(true);
+		var WineryScrollWidth = SingleWineryWidth*WineryNumber;
+		$(this).css('width',WineryScrollWidth);
+	});
+
+	//計算pad以上酒莊圖scroll欄的寬度
+	$('.WineryImg_pad_scrollX').each(function(){
+		var WineryNumber = $(this).children().length;
+		var SingleWineryWidth = $(this).children().eq(0).outerWidth(true);
+		var WineryScrollWidth = SingleWineryWidth*WineryNumber;
+		$(this).css('width',WineryScrollWidth);
+	});
+
 	//icheers info置中設定 高度設定
 	var iCheersInfoWidth = $('.iCheers_info').width();
 	var iCheersInfoPositionX = (intBrowserW - iCheersInfoWidth) / 2;  
