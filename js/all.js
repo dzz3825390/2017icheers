@@ -247,25 +247,57 @@ $(document).ready(function(){
 	$('.dropdown').click(function(){
 		//check open
 		var isShow = $(this).hasClass('dropdown_show');
-
+		var DropdownExtend = $(this).find('.dropdown_extend');
 		if (isShow) {
 
 		} else {
 			$(this).addClass('dropdown_show');
-			$(this).find('.dropdown_extend').css('display','block');
-			$(window).on('touchstart.checkclick',function(e){
+			DropdownExtend.css('display','block');
+			var isDropdownExtendScroll = false;
+			//set isDropdownExtendScroll = true for check is dropdown scroll
+			DropdownExtend.scroll(function(){
+				isDropdownExtendScroll = true;
+				//console.log(isDropdownExtendScroll);
+				//console.log('scroll');
+			});
+			$(window).on('touchend.checkclick',function(e){
+				//須改js偵測是否為scroll 若操作方法為scroll則不關閉下拉選單
+				//使用變數承接e.target系列以便於巢狀內使用
 				var isOption = e.target.className;
+				var OptionText = e.target.innerHTML;
+				var EventTarget = $(e.target);
+				
+				//100毫秒後執行判斷，避免過快執行
+				setTimeout(function(){
+					//console.log(isDropdownExtendScroll);
+					if (isDropdownExtendScroll) {
+						//console.log('hi');
+						isDropdownExtendScroll = false;
+					} else {
+						$('.dropdown').removeClass('dropdown_show');
+						$('.dropdown_extend').css('display','none');
+						if (isOption == 'dropdown_option') {
+							EventTarget.parent().parent().find('.dropdown_text span').text(OptionText);
+							
+						} else {
+							
+						}
+						isDropdownExtendScroll = false;
+						$(window).off('touchend.checkclick');
+					}
+				},100);
+
+				/*
 				$('.dropdown').removeClass('dropdown_show');
 				$('.dropdown_extend').css('display','none');
 				if (isOption == 'dropdown_option') {
 					var OptionText = e.target.innerHTML;
 					$(e.target).parent().parent().find('.dropdown_text span').text(OptionText);
 				} else {
-					//$('.dropdown').removeClass('dropdown_show');
-					//$('.dropdown_extend').css('display','none');
-				}
 
-				$(window).off('touchstart.checkclick');
+				}*/
+
+				
 			});
 		}
 
