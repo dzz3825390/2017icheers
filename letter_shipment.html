@@ -1,1269 +1,669 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="iCheers愛酒窩">
-<meta name="format-detection" content="telephone=no">
-<meta name="format-detection" content="address=no">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>iCheers愛酒窩-測試Step2</title>
-
+<title>出貨通知信</title> 
 <style type="text/css">
-/*reset*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-}
-
-html {
-  line-height: 1;
-}
-
-body{
-	font-size: 16px;
-	font-family: 'Arial','Microsoft JhengHei';
-}
-
-a, img{
-	outline: none;
-	border: none;
-	text-decoration: none;
-}
-
-/*未設寬度為支援電腦版信箱，支援度差*/
-.Header{
-	width: 960px;
-	background-color: #7a7a7a;
-}
-
-.Header td {
-	height: 50px;
-}
-
-.Header .logo{
-	width: 88px;
-	height: 40px;
-}
-
-.Space10{
-	width: 960px;
-}
-
-.Space10 td{
-	height: 10px;
-}
-
-.Space30{
-	width: 960px;
-}
-
-.Space30 td{
-	height: 30px;
-}
-
-.ProgressBar{
-	width: 960px;
-	margin: 0 auto;
-}
-
-.ProgressBar_line{
-	width: 237px;
-	height: 4px;
-	background-color: #bbbbbb;
-}
-
-.ProgressBar_line_active_desktop{
-	width: 237px;
-	height: 4px;
-	background-color: #8e6681;
-}
-
-.ProgressBar_space{
-	width: 4px;
-	height: 4px;
-	background-color: #fff;
-}
-
-.ProgressBar_text{
-	width: 237px;
-	height: 26px;
-	font-size: 14px;
-	color: #bbbbbb;
-	line-height: 26px;
-}
-
-.ProgressBar_text_active_desktop{
-	width: 237px;
-	height: 26px;
-	font-size: 14px;
-	line-height: 26px;
-	color: #8e6681;
-	font-weight: bold;
-	font-style: italic;
-}
-
-.InfoArea{
-	width: 960px;
-	margin: 0 auto; 
-}
-
-.text{
-	width: 100%;
-	text-align: left;
-	font-size: 16px;
-	line-height: 24px;
-	color: #666;
-}
-
-.text_small{
-	width: 100%;
-	text-align: left;
-	font-size: 14px;
-	line-height: 20px;
-	color: #666;
-}
-
-.text_small a{
-	text-decoration: underline;
-	color: #666;
-	word-wrap: break-word;
-	text-justify:inter-word;
-}
-
-.text_notice{
-	width: 100%;
-	text-align: left;
-	font-size: 14px;
-	line-height: 20px;
-	color: #b00808;
-}
-
-.button{
-	width: calc(100% - 2rem);
-	margin: 0 auto; 
-}
-
-.button td{
-	height: 60px;
-}
-
-.button td a{
-	display: block;
-	width: 100%;
-	height: 60px;
-	font-size: 24px;
-	line-height: 60px;
-	text-align: center;
-	color: #fff;
-	font-weight: bold;
-	background-color: #939334;
-}
-
-.SetionTitle{
-	width:960px;
-	margin: 0 auto;
-	border: 16px solid;
-}
-
-.LargeTitle{
-	color: #fff;
-	font-size: 22px;
-	font-weight: bold;
-	line-height: 26px;
-}
-
-.SecondTitle{
-	color: #fff;
-	font-size: 16px;
-	line-height: 20px;
-}
-
-.OneWine{
-	width: 960px;
-}
-
-.Name_EN{
-	font-size: 18px;
-	color: #333333;
-	font-weight: bold;
-	height: 26px;
-}
-
-.Name_CN{
-	font-size: 16px;
-	color: #666666;
-	height: 26px;
-}
-
-.WineInfo{
-	font-size: 14px;
-	color: #999999;
-	height: 20px;
-}
-
-.WineNumber{
-	font-size: 18px;
-	color: #666;
-	height: 26px;
-}
-
-.WinePrice{
-	font-size: 16px;
-	color: #666;
-}
-
-.WinePrice span{
-	display: inline-block;
-	margin-left: 5px;
-	font-size: 28px;
-	font-weight: bold;
-}
-
-.SeperateLine{
-	width: 960px;
-	background-color: #cccccc;
-	margin: 0 auto;
-}
-
-.SeperateLine td{
-	height: 1px;
-}
-
-.DottedLine{
-	width: 960px;
-	margin: 0 auto;
-	border-bottom: 1px dotted #cccccc;
-}
-
-.DottedLine td{
-	width: 100%;
-	height: 1px;
-}
-
-.DottedLine2{
-	width: 960px;
-	margin: 0 auto;
-	border-bottom: 1px dotted #808080;
-}
-
-.DottedLine2 td{
-	width: 100%;
-	height: 1px;
-}
-
-.ListSum{
-	width: 960px;
-	margin: 0 auto;
-	background-color: #d9d9d9;
-	border: 16px solid #d9d9d9;
-}
-
-.ListText{
-	width: 70%;
-	font-size: 18px;
-	line-height: 24px;
-	color: #333;
-}
-
-.ListPrice{
-	width: 30%;
-	font-size: 18px;
-	line-height: 24px;
-	color: #333;
-}
-
-.SumPrice{
-	width: 960px;
-	margin: 0 auto;
-}
-
-.SumPriceText{
-	font-size: 18px;
-	color: #333;
-	width: 70%
-}
-
-.SumPriceNumber{
-	width: 30%;
-	font-size: 28px;
-	font-weight: bold;
-	color: #b00808;
-}
-
-.Slogan{
-	width: 960px;
-	margin: 0 auto;
-}
-
-.Slogan img{
-	width: 303px;
-	height: 58px;
-}
-
-.ContactUs{
-	width: 960px;
-	margin: 0 auto;
-	background-color: #d9d9d9;
-	border: 16px solid #d9d9d9;
-}
-
-.ContactUsIcon{
-	width: 10%;
-}
-
-.ContactUsIcon img{
-	width: 17px;
-	height: 19px;
-}
-
-.ContactUsText{
-	width: 90%;
-	/*font-size: 16px;
-	line-height: 24px;
-	color: #666;*/
-}
-
-.ContactUsText tr td:first-child{
-	min-width: 80px;
-	vertical-align: top;
-}
-
-.Warning{
-	width: 960px;
-	background-color:#1b1b1b; 
-}
-
-.WarningText{
-	font-size: 14px;
-	color: #ffffff;
-	height: 40px;
-}		
-
-/*最低支援android系列360寬度*/
-/*header*/
-@media screen and (min-width: 360px){
-	.Header{
-		width: 100%;
-		background-color: #7a7a7a;
-	}
-
-	.Header td {
-		height: 50px;
-	}
-
-	.Header .logo{
-		width: 88px;
-		height: 40px;
-	}
-}
-
-@media screen and (min-width: 768px){
-	.Header td {
-		height: 70px;
-	}
-
-	.Header .logo{
-		width: 98px;
-		height: 43px;
-	}
-
-}
-
-/*header end*/
-
-/*space*/
-@media screen and (min-width: 360px){
-	.Space5{
-		width: 100%;
-	}
-
-	.Space5 td{
-		height: 5px;
-	}
-
-	.Space10{
-		width: 100%;
-	}
-
-	.Space10 td{
-		height: 10px;
-	}
-
-	.Space20{
-		width: 100%;
-	}
-
-	.Space20 td{
-		height: 20px;
-	}
-
-	.Space30{
-		width: 100%;
-	}
-
-	.Space30 td{
-		height: 30px;
-	}
-
-	/*.Space50{
-		width: 100%;
-	}
-
-	.Space50 td{
-		height: 50px;
-	}*/
-}
-
-@media screen and (min-width: 768px){
-
-	.Space5 td{
-		height: 10px;
-	}
-
-	.Space10 td{
-		height: 30px;
-	}
-
-	.Space20 td{
-		height: 30px;
-	}
-
-	.Space30 td{
-		height: 40px;
-	}
-
-	
-}
-/*space end*/
-
-/*ProgressBar*/
-@media screen and (min-width: 360px){
-	.ProgressBar{
-		width: calc(100% - 2rem);
-		margin: 0 auto;
-	}
-
-	.ProgressBar_line{
-		width: calc((100% - 9px)/4);
-		height: 4px;
-		background-color: #bbbbbb;
-	}
-
-	.ProgressBar_line_active{
-		background-color: #8e6681;
-	}
-
-	.ProgressBar_space{
-		width: 3px;
-		height: 4px;
-		background-color: #fff;
-	}
-
-	.ProgressBar_text{
-		width: calc((100% - 9px)/4);
-		height: 26px;
-		font-size: 14px;
-		color: #bbbbbb;
-		line-height: 26px;
-	}
-
-	.ProgressBar_text_active{
-		color: #8e6681;
-		font-weight: bold;
-		font-style: italic;
-	}
-}
-
-@media screen and (min-width: 768px){
-	.ProgressBar{
-		width: calc(100% - 40px);
-	}
-
-	.ProgressBar_line{
-		width: calc((100% - 15px)/4);
-		height: 6px;
-	}
-
-	.ProgressBar_space{
-		width: 5px;
-		height: 6px;
-	}
-
-	.ProgressBar_text{
-		width: calc((100% - 15px)/4);
-		height: 32px;
-		font-size: 18px;
-		line-height: 32px;
-	}
-}
-
-@media screen and (min-width: 1366px){
-	.ProgressBar{
-		width: calc(100% - 80px);
-	}
-
-	.ProgressBar_line{
-		height: 8px;
-	}
-
-	.ProgressBar_space{
-		height: 8px;
-	}
-
-	.ProgressBar_text{
-		width: calc((100% - 15px)/4);
-		height: 40px;
-		font-size: 24px;
+    /* CLIENT-SPECIFIC STYLES */
+    body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+    table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+    img{-ms-interpolation-mode: bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+    /* RESET STYLES */
+    img{border: 0; height: auto;  outline: none; text-decoration: none;display: block;}
+    table{border-collapse: collapse !important;}
+    body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}
+
+    /* iOS BLUE LINKS */
+    a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+    }
+
+    p{
+    	margin:0;
+    }
+
+
+    /* MOBILE STYLES */
+    @media screen and (max-width: 525px) {
+
+        /* ALLOWS FOR FLUID TABLES */
+        .wrapper {
+          width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+        .mobile-hide {
+          display: none !important;
+        }
+
+        .img-max {
+          max-width: 100% !important;
+          width: 100% !important;
+          height: auto !important;
+        }
+
+        /* FULL-WIDTH TABLES */
+        .responsive-table {
+          width: 100% !important;
+        }
+
+        /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+        .padding {
+          padding: 10px 5% 15px 5% !important;
+        }
+
+        .padding-meta {
+          padding: 30px 5% 0px 5% !important;
+          text-align: center;
+        }
+
+        .no-padding {
+          padding: 0 !important;
+        }
+
+        .section-padding {
+          padding: 50px 15px 50px 15px !important;
+        }
+
+        /* ADJUST BUTTONS ON MOBILE */
+        .mobile-button-container {
+            margin: 0 auto;
+            width: 100% !important;
+        }
+
+        .mobile-button {
+            padding: 15px !important;
+            border: 0 !important;
+            font-size: 16px !important;
+            display: block !important;
+        }
+
+    }
+
+    /* ANDROID CENTER FIX */
+    div[style*="margin: 16px 0;"] { margin: 0 !important; }
+
+    .Img{
+    	width: 600px;
+    	height: auto;
+    }
+
+    @media screen and (min-width: 320px){
+		.Img{
+			width: 100%;
+		}
+    }
+
+    .text_normal{
+    	margin: 0;
+    	font-size: 20px;
+    	font-family: serif;
+		line-height: 34px;
+		color: #202020;
+    }
+
+	.text_notice{
+    	margin: 0;
+    	margin-top: 10px;
+    	font-size: 16px;
+    	font-family: serif;
+		line-height: 30px;
+		color: #b81919;
+    }
+
+    .text_warning{
+    	margin: 0;
+    	font-size: 24px;
+    	font-family: "Arial","微軟正黑體";
+		line-height: 30px;
+		color: #fff;
+    }
+
+    .small_title_red{
+    	margin: 0;
+    	font-size: 28px;
+    	font-family: serif;
 		line-height: 40px;
-	}
-}
-/*ProgressBar end*/
-
-/*list之外文字*/
-
-@media screen and (min-width: 360px){
-	.InfoArea{
-		width: calc(100% - 2rem);
-		margin: 0 auto; 
-	}
-
-	.text{
-		width: 100%;
-		text-align: left;
-		font-size: 16px !important;
-		line-height: 24px !important;
-		color: #666;
-	}
-
-	.text_small{
-		width: 100%;
-		text-align: left;
-		font-size: 14px !important;
-		line-height: 20px !important;
-		color: #666;
-	}
-
-	.text_small a{
-		text-decoration: underline;
-		color: #666;
-		word-wrap: break-word;
-		text-justify:inter-word;
- 	}
-
-	.text_notice{
-		width: 100%;
-		text-align: left;
-		font-size: 14px !important;
-		line-height: 20px !important;
-		color: #b00808;
-	}
-
-	.button{
-		width: calc(100% - 2rem);
-		margin: 0 auto; 
-	}
-
-	.button td{
-		height: 60px;
-	}
-
-	.button td a{
-		display: block;
-		width: 100%;
-		height: 60px;
-		font-size: 24px !important;
-		line-height: 60px !important;
-		text-align: center;
-		color: #fff;
+		color: #e5173e;
 		font-weight: bold;
-		background-color: #939334;
-		white-space: nowrap;
-	}
-}
+		margin-top: 30px;
+    }
 
-@media screen and (min-width: 768px){
-	.InfoArea{
-		width: calc(100% - 40px);
-	}
-
-	.text{
-		font-size: 20px !important;
-		line-height: 28px !important;
-	}
-
-	.text_small{
-		font-size: 16px !important;
-	}
-
-	.text_notice{
-		font-size: 16px !important;
-		text-align: center;
-	}
-
-	.button{
-		width: 382px;
-		margin: 0 auto; 
-	}
-}
-
-@media screen and (min-width: 1366px){
-	.InfoArea{
-		width: calc(100% - 80px);
-	}
-}
-
-/*list之外文字 end*/
-/*list*/
-@media screen and (min-width: 360px){
-	.SetionTitle{
-		width: calc(100% - 2rem);
-		margin: 0 auto;
-		border: 16px solid;
-	}
-
-	.LargeTitle{
-		color: #fff;
-		font-size: 22px;
+    .small_title_blue{
+    	margin: 0;
+    	font-size: 28px;
+    	font-family: serif;
+		line-height: 40px;
+		color: #0c3f7d;
 		font-weight: bold;
-		line-height: 26px;
-	}
+		margin-top: 30px;
+    }
 
-	.LargeTitleGray{
-		color: #333333;
-		font-size: 22px;
-		line-height: 26px;
-	}
-
-	.SecondTitle{
-		color: #fff;
-		font-size: 16px;
-		line-height: 20px;
-	}
-
-	.SecondTitleGray{
-		color: #666666;
-		font-size: 16px;
-		line-height: 20px;
-	}
-
-	.OneWine{
-		width: calc(100% - 2rem);
-		margin: 0 auto;
-	}
-
-	.Name_EN{
-		font-size: 18px;
-		color: #333333;
+    .small_title_black{
+    	margin: 0;
+    	font-size: 28px;
+    	font-family: serif;
+		line-height: 40px;
+		color: #000;
 		font-weight: bold;
-		height: 26px;
-	}
+		margin-top: 30px;
+    }
+
+    .wine_name{
+    	font-family: serif;
+    	display: block;
+    	font-size: 28px;
+    	line-height: 40px;
+    	color: #097cc5;
+    	font-weight: bold;
+    	text-decoration: underline;
+    }
+
+    .wine_info{
+    	margin: 0;
+    	font-family: serif;
+    	font-size: 18px;
+    	line-height: 30px;
+    	color: #333333;
+    	margin-top: 18px;
+    }
+
+    .wine_priceavg{
+    	margin: 0;
+    	font-family: serif;
+    	font-size: 18px;
+    	line-height: 30px;
+    	color: #333333;
+    }
+
+    .wine_price{
+    	margin: 0;
+    	font-family: serif;
+    	display: block;
+    	font-size: 24px;
+    	line-height: 40px;
+    	color: #393939;
+    	text-decoration: underline;
+    	margin-top: 12px;
+    }
+
+    .wine_price a{
+    	color: #393939;
+    }
+
+    .wine_note{
+    	margin: 0;
+    	font-family: serif;
+    	font-size: 18px;
+    	line-height: 24px;
+    	color: #666666;
+    	font-style: italic;
+    	margin-top: 12px;
+    }
+
+    .seeprev{
+    	font-family: "Arial","微軟正黑體";
+    	font-size: 18px;
+    	height: 60px;
+    	
+    }
+
+    .seeprev a{
+    	color: #097cc5;
+    }
 
-	.Name_CN{
-		font-size: 16px;
-		color: #666666;
-		height: 26px;
-	}
 
-	.WineInfo{
-		font-size: 14px;
-		color: #999999;
-		height: 20px;
-	}
-
-	.WineNumber{
-		font-size: 18px;
-		color: #666;
-		height: 26px;
-	}
-
-	.WinePrice{
-		font-size: 16px;
-		color: #666;
-	}
-
-	.WinePrice span{
-		display: inline-block;
-		margin-left: 5px;
-		font-size: 28px;
-		font-weight: bold;
-	}
-
-	.SeperateLine{
-		width: calc(100% - 2rem);
-		background-color: #cccccc;
-		margin: 0 auto;
-	}
-
-	.SeperateLine td{
-		height: 1px;
-	}
-
-	.DottedLine{
-		width: calc(100% - 2rem);
-		margin: 0 auto;
-		border-bottom: 1px dotted #cccccc;
-	}
-
-	.DottedLine td{
-		width: 100%;
-		height: 1px;
-	}
-
-	.DottedLine2{
-		width: calc(100% - 2rem);
-		margin: 0 auto;
-		border-bottom: 1px dotted #808080;
-	}
-
-	.DottedLine2 td{
-		width: 100%;
-		height: 1px;
-	}
-
-	.ListSum{
-		width: 100%;
-		margin: 0 auto;
-		background-color: #d9d9d9;
-		border: 16px solid #d9d9d9;
-	}
-
-	.ListText{
-		width: 70%;
-		font-size: 18px;
-		line-height: 24px;
-		color: #333;
-	}
-
-	.ListPrice{
-		width: 30%;
-		font-size: 18px;
-		line-height: 24px;
-		color: #333;
-	}
-
-	.SumPrice{
-		width: calc(100% - 2rem);
-		margin: 0 auto;
-	}
-
-	.SumPriceText{
-		font-size: 18px;
-		color: #333;
-		width: 70%
-	}
-
-	.SumPriceNumber{
-		width: 30%;
-		font-size: 28px;
-		font-weight: bold;
-		color: #b00808;
-	}	
-}
-
-@media screen and (min-width: 768px){
-	.SetionTitle{
-		width: calc(100% - 40px);
-		border: 20px solid;
-	}
-
-	.SetionTitle .Space5 td{
-		height: 5px;
-	}
-
-	.LargeTitle{
-		font-size: 28px;
-		line-height: 34px;
-	}
-
-	.SecondTitle{
-		font-size: 20px;
-		line-height: 26px;
-	}
-
-	.LargeTitleGray{
-		font-size: 28px;
-		line-height: 34px;
-	}
-
-	.SecondTitleGray{
-		font-size: 20px;
-		line-height: 26px;
-	}
-
-	.OneWine{
-		width: calc(100% - 40px);
-	}
-
-	.Name_EN{
-		font-size: 28px;
-		height: 36px;
-	}
-
-	.Name_CN{
-		font-size: 20px;
-		height: 28px;
-	}
-
-	.WineInfo{
-		font-size: 20px;
-		height: 28px;
-	}
-
-	.WineNumber{
-		font-size: 24px;
-		height: 32px;
-	}
-
-	.WinePrice{
-		font-size: 20px;
-	}
-
-	.WinePrice span{
-		display: inline-block;
-		margin-left: 5px;
-		font-size: 36px;
-		font-weight: bold;
-	}
-
-	.SeperateLine{
-		width: calc(100% - 40px);
-	}
-
-	.DottedLine{
-		width: calc(100% - 4rem);
-	}
-
-	.DottedLine2{
-		width: calc(100% - 4rem);
-	}
-
-	.ListSum{
-		border: 25px solid #d9d9d9;
-	}
-
-	.ListText{
-		font-size: 24px;
-		line-height: 32px;
-	}
-
-	.ListPrice{
-		font-size: 24px;
-		line-height: 32px;
-	}
-
-	.SumPrice{
-		width: calc(100% - 40px);
-	}
-
-	.SumPriceText{
-		font-size: 24px;
-	}
-
-	.SumPriceNumber{
-		font-size: 36px;
-	}	
-
-}
-
-@media screen and (min-width: 1366px){
-	.SetionTitle{
-		width: calc(100% - 80px);
-	}
-
-	.OneWine{
-		width: calc(100% - 80px);
-	}
-
-	.SeperateLine{
-		width: calc(100% - 80px);
-	}
-
-	.ListSum{
-		border: 40px solid #d9d9d9;
-	}
-
-	.SumPrice{
-		width: calc(100% - 80px);
-	}
-}
-
-/*list end*/
-
-/*slogan*/
-@media screen and (min-width: 360px){
-	.Slogan{
-		width: calc(100% - 2rem);
-		margin: 0 auto;
-	}
-
-	.Slogan img{
-		width: 303px;
-		height: 58px;
-	}
-
-}
-
-@media screen and (min-width: 768px){
-	.Slogan{
-		width: calc(100% - 40px);
-	}
-
-	.Slogan img{
-		width: 383px;
-		height: 73px;
-	}
-
-}
-
-@media screen and (min-width: 1366px){
-	.Slogan{
-		width: calc(100% - 80px);
-	}
-
-
-}
-/*slogan end*/
-
-/*contact us*/
-
-@media screen and (min-width: 360px){
-
-	.ContactUs{
-		width: 100%;
-		margin: 0 auto;
-		background-color: #d9d9d9;
-		border: 16px solid #d9d9d9;
-	}
-
-	.ContactUsIcon{
-		width: 10%;
-	}
-
-	.ContactUsIcon img{
-		width: 17px;
-		height: 19px;
-	}
-
-	.ContactUsText{
-		width: 90%;
-		font-size: 16px;
-		line-height: 24px;
-		color: #666;
-	}
-
-	.ContactUsText2{
-		font-size: 16px;
-		line-height: 24px;
-		color: #666;
-	}
-
-	.ContactUsText tr td:first-child{
-		min-width: 80px;
-		vertical-align: top;
-	}
-}
-
-@media screen and (min-width: 768px){
-
-	.ContactUs{
-		border: 25px solid #d9d9d9;
-	}
-
-	.ContactUsIcon{
-		width: 5%;
-	}
-
-	.ContactUsText{
-		width: 95%;
-		font-size: 20px;
-		line-height: 32px;
-	}
-
-	.ContactUsText2{
-		font-size: 20px;
-		line-height: 32px;
-	}
-
-	.ContactUsText tr td:first-child{
-		min-width: 100px;
-	}
-}
-
-@media screen and (min-width: 1366px){
-
-	.ContactUs{
-		border: 40px solid #d9d9d9;
-	}
-
-	.ContactUsIcon{
-		width: 2%;
-	}
-
-	.ContactUsText{
-		width: 98%;
-	}
-
-}
-
-/*contact us end*/
-
-/*warning*/
-@media screen and (min-width: 360px){
-
-	.Warning{
-		width: 100%;
-		background-color:#1b1b1b; 
-	}
-
-	.WarningText{
-		font-size: 14px;
-		color: #ffffff;
-		height: 40px;
-	}
-}
-
-@media screen and (min-width: 768px){
-
-	.WarningText{
-		font-size: 32px;
-		height: 80px;
-	}
-}
-
-@media screen and (min-width: 1366px){
-
-	.WarningText{
-		height: 100px;
-	}
-}
-/*warning end*/
 </style>
-
 </head>
+<body style="margin: 0 !important; padding: 0 !important; ">
 
-<!-- 內容請放這邊 -->
-<body>
+<!-- HIDDEN PREHEADER TEXT -->
+<div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+	感謝您對iCheers愛酒窩的支持並承蒙選購，您的商品會以宅配方式送達您所指定的配送地點，屆時宅配人員將與您電話聯繫 ，謝謝！
+</div>
 
-<!--灰底標題-->
-<table border="0" cellpadding="0" cellspacing="0" align="center" class="Header">
-  <tr>
-    <td align="center">
-		<img src="http://www.icheers.tw/iCheers/EDM/MobileTest/images/letter_logo.png" class="logo" />
-    </td>
-  </tr>
-</table>
-<!--灰底標題 end-->
-<!--空白-->
-<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
-  <tr>
-    <td align="center">
-		
-    </td>
-  </tr>
-</table>
-<!--空白-->
+<!-- HEADER -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
 
-<!--list前文字-->
-<table border="0" cellpadding="0" cellspacing="0" align="center" class="InfoArea">
-  <tr>
-    <td align="center" class="text">
-		感謝您對 iCheers愛酒窩的支持並承蒙選購，您的商品會以宅配方式送達您所指定的配送地點，屆時宅配人員將與您電話聯繫 ，謝謝！
-    </td>
-  </tr>
-  <!--空白-->
+    <!-- Logo勿動 : BEGIN -->
     <tr>
-    	<td>
-    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
-			  <tr>
-			    <td align="center">
-					
-			    </td>
-			  </tr>
-			</table>
+        <td bgcolor="#F4F4F4" align="center">
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background: #FFF;" class="wrapper" height="130">
+                <tr>
+                    <td align="center" style="padding: 15px 0;" class="logo">
+                        <a href="https://www.icheers.tw/iCheers/" target="_blank">
+                            <img alt="iCheers愛酒窩"
+                            src="https://www.icheers.tw/EDM/vipeaper/images/logo.png?123456" width="180" 
+                            height="auto" style="display: block; color: #ffffff;" border="0">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
+    </tr>
+    <!-- Logo勿動 : END -->
+    <!--灰線勿動-->
+    <tr>
+    	<td bgcolor="#f4f4f4" align="center">
+    		<!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;background: #aaaaaa;" class="wrapper">
+                 <tr>
+                    <td aria-hidden="true" height="5" style="font-size: 0px; line-height: 0px;">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
     	</td>
     </tr>
-    <!--空白 end-->
+    <!--灰線勿動-->
+
+    <!--行銷文字 copy start-->
     <tr>
-	    <td align="center" class="text">
-			訂單編號：<b>XXXXXXXXXXXXX</b>
-	    </td>
+    	<td bgcolor="#f4f4f4" align="center">
+    		<!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;background: #fff;" class="wrapper">
+                 <tr>
+                    <td style="padding: 24px;">
+                    	<!--文字段落 copy start-->
+                        <p style="font-size: 20px;line-height: 30px;font-family: 'Microsoft JhengHei';color: #666666;">
+                        	親愛的會員您好：
+                        </p>
+                        <!--文字段落 copy end-->
+                        <!--文字段落 copy start-->
+                        <p style="font-size: 20px;line-height: 30px;font-family: 'Microsoft JhengHei';color: #666666;margin-top:10px;">
+                        	感謝您的支持並承蒙選購，商品預計於<b style="color: #333;">隔日*（指定配送日除外）</b>送達您所指定的地點，物流公司會盡量依照您的需求日期與時段配送，但有可能因<b style="color: #333;">路況及天候考量</b>作調整，屆時再請留意收貨並維持低溫保存商品，謝謝！
+                        </p>
+                        <!--文字段落 copy end-->
+                        <!--文字段落 copy start-->
+                        <p style="font-size: 20px;line-height: 30px;font-family: 'Microsoft JhengHei';color: #666666;margin-top:20px;">
+                            宅配追蹤單號：
+                        </p>
+                        <!--文字段落 copy end-->
+                        <!--文字段落 copy start-->
+                        <p style="font-size: 20px;line-height: 30px;font-family: 'Microsoft JhengHei';color: #666666;">
+                            <a href="#" style="font-family: 'Arial'; color:#168ec0;font-weight:bold;">XXXX-XXXX-XXXX</a>、
+                        </p>
+                        <!--文字段落 copy end-->
+                        <!--文字段落 copy start-->
+                        <p style="font-size: 20px;line-height: 30px;font-family: 'Microsoft JhengHei';color: #666666;">
+                            <a href="#" style="font-family: 'Arial'; color:#168ec0;font-weight:bold;">XXXX-XXXX-XXXX</a>、
+                        </p>
+                        <!--文字段落 copy end-->
+                        <!--文字段落 copy start-->
+                        <p style="font-size: 20px;line-height: 30px;font-family: 'Microsoft JhengHei';color: #666666;">
+                            <a href="#" style="font-family: 'Arial'; color:#168ec0;font-weight:bold;">XXXX-XXXX-XXXX</a>
+                        </p>
+                        <!--文字段落 copy end-->
+                        <!--文字段落 copy start-->
+                        <p style="font-size: 20px;line-height: 30px;font-family: 'Microsoft JhengHei';color: #666666;margin-top:12px;">
+                            出貨單號： 
+                        </p>
+                        <!--文字段落 copy end-->
+                        <!--文字段落 copy start-->
+                        <p style="font-size: 20px;line-height: 30px;font-family: 'Microsoft JhengHei';color: #666666;">
+                            <b style="font-family: 'Arial','Microsoft JhengHei';color:#333;">W18102600015-01 快速到貨</b> 
+                        </p>
+                        <!--文字段落 copy end-->
+                        <!--文字段落 copy start-->
+                        <p style="font-size: 20px;line-height: 30px;font-family: 'Microsoft JhengHei';color: #666666;margin-top:12px;">
+                            出貨時間：
+                        </p>
+                        <!--文字段落 copy end-->
+                        <!--文字段落 copy start-->
+                        <p style="font-size: 20px;line-height: 30px;font-family: 'Microsoft JhengHei';color: #666666;">
+                            <b style="font-family: 'Arial','Microsoft JhengHei';color:#333;">YYYY/MM/DD 預計於隔日*（指定配送日除外）送達</b>
+                        </p>
+                        <!--文字段落 copy end-->
+                        <!--文字段落 copy start-->
+                        <p style="font-size: 14px;line-height: 26px;font-family: 'Microsoft JhengHei';color: #666666;margin-top:8px;">
+                            *如遇周六補班或國定假日，將會順延一天收到貨（物流周日與國定假日不配送）。
+                        </p>
+                        <!--文字段落 copy end-->
+                        <!--文字段落 copy start-->
+                        <p style="font-size: 20px;line-height: 30px;font-family: 'Microsoft JhengHei';color: #666666;margin-top:20px;">
+                            iCheers愛酒窩非常重視酒品品質，請將收到的酒品妥善保存，詳見<a href="https://www.icheers.tw/iCheers/Content/HTML/qualityGarentee.html" target="_blank" style="font-family: 'Microsoft JhengHei';color: #168ec0;">品質宣言</a>，若未保存得當（譬如請人代收卻未保持低溫等因素），恕不接受退換貨。
+                        </p>
+                        <!--文字段落 copy end-->
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+    	</td>
     </tr>
+    <!--行銷文字 copy end-->
+
+
     <!--空白-->
     <tr>
-    	<td>
-    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
-			  <tr>
-			    <td align="center">
-					
-			    </td>
-			  </tr>
-			</table>
-    	</td>
+        <td bgcolor="#f4f4f4" align="center">
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;background: #fff;" class="wrapper">
+                 <tr>
+                    <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px;">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
     </tr>
     <!--空白 end-->
+
+    <!--圖區 copy start-->
     <tr>
-	    <td align="center" class="text">
-			訂購時間：<b>YYYY/MM/DD HH:MM:SS</b>
-	    </td>
+        <td bgcolor="#F4F4F4"  align="center" >
+           <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+                
+            <![endif]-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background: #FFF;" class="wrapper">
+                <tr>
+                    <td align="center">
+                        <!--更改圖片說明與圖片網址--> 
+                        <img alt="shipment"
+                                src="https://www.icheers.tw/iCheers/Content/images/letter_shipment_m.jpg" style="color: #ffffff;" border="0"  class="Img">
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+
+        </td>
     </tr>
+    <!-- 圖區 copy END -->
+
     <!--空白-->
     <tr>
-    	<td>
-    		<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space5">
-			  <tr>
-			    <td align="center">
-					
-			    </td>
-			  </tr>
-			</table>
-    	</td>
+        <td bgcolor="#f4f4f4" align="center">
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;background: #fff;" class="wrapper">
+                 <tr>
+                    <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px;">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
     </tr>
     <!--空白 end-->
-    <tr>
-	    <td align="center" class="text">
-			XX追蹤單號：<b>XXXXXXXXXXXXX</b>
-	    </td>
-    </tr>
-</table>
-<!--空白-->
-<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space10">
-  <tr>
-    <td align="center">
-		
-    </td>
-  </tr>
-</table>
-<!--空白-->
-<!--20180706 add refund info-->
-<table border="0" cellpadding="0" cellspacing="0" align="center" class="InfoArea">
-  <tr>
-    <td align="center" class="text">
-		iCheers愛酒窩非常重視酒品品質，請將收到的酒品妥善保存，詳見<a href="#" style="color: #666;text-decoration: underline;font-weight: bold;">品質宣言</a>，若未保存得當（譬如請人代收卻未保持低溫等因素），恕不接受退換貨。
-    </td>
-  </tr>
-</table>
-<!--空白-->
-<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
-  <tr>
-    <td align="center">
-		
-    </td>
-  </tr>
-</table>
-<!--空白 end-->
-<!--20180706 add refund info end-->
-<!--按鈕-->
-<table border="0" cellpadding="0" cellspacing="0" align="center" class="button">
-  <tr>
-    <td align="center">
-		<a href="#" >我要查詢訂單</a>
-    </td>
-  </tr>
-</table>
-<!--按鈕-->
-<!--空白-->
-<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
-  <tr>
-    <td align="center">
-		
-    </td>
-  </tr>
-</table>
-<!--空白-->
-<!--標語-->
-<table border="0" cellpadding="0" cellspacing="0" align="center" class="Slogan">
-  <tr>
-    <td align="center">
-		<img src="http://www.icheers.tw/iCheers/EDM/MobileTest/images/icheer_slogan.png" />
-    </td>
-  </tr>
-</table>
-<!--標語 end-->
-<!--空白-->
-<table border="0" cellpadding="0" cellspacing="0" align="center" class="Space30">
-  <tr>
-    <td align="center">
-		
-    </td>
-  </tr>
-</table>
-<!--空白-->
-<!--聯絡我們-->
-<table border="0" cellpadding="0" cellspacing="0" align="center" class="ContactUs">
-  <tr>
-    <td align="left" class="ContactUsIcon">
-		<img src="http://www.icheers.tw/iCheers/EDM/MobileTest/images/contactus_icon.png">
-    </td>
-    <td align="left" class="ContactUsText">
-		聯絡我們
-    </td>
-  </tr>
-  <tr>
-    <td align="left" class="ContactUsIcon">
-		
-    </td>
-    <td align="left" class="ContactUsText">
-    	<table border="0" cellpadding="0" cellspacing="0" align="left">
-    		<tr>
-    			<td class="ContactUsText2">服務專線：</td>
-    			<td class="ContactUsText2">02-2926-3667</td>
-    		</tr>
-    	</table>
-    </td>
-  </tr>
-  <tr>
-    <td align="left" class="ContactUsIcon">
-		
-    </td>
-    <td align="left" class="ContactUsText">
-    	<table border="0" cellpadding="0" cellspacing="0" align="left">
-    		<tr>
-    			<td class="ContactUsText2">服務時間：</td>
-    			<td class="ContactUsText2">星期一~五，9:00~12:00      
-                    13:00~18:00，國定假日除外</td>
-    		</tr>
-    	</table>
-    </td>
-  </tr><tr>
-    <td align="left" class="ContactUsIcon">
-		
-    </td>
-    <td align="left" class="ContactUsText">
-    	<table border="0" cellpadding="0" cellspacing="0" align="left">
-    		<tr>
-    			<td class="ContactUsText2">傳真電話：</td>
-    			<td class="ContactUsText2">02-2924-6220</td>
-    		</tr>
-    	</table>
-    </td>
-  </tr>
-</table>
-<!--聯絡我們 end-->
 
-<!--警語-->
-<table border="0" cellpadding="0" cellspacing="0" align="center" class="Warning">
-  <tr>
-    <td align="center" class="WarningText">
-		飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
-    </td>
-  </tr>
+    <!--圖區 copy start-->
+    <tr>
+        <td bgcolor="#F4F4F4"  align="center" >
+           <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+                
+            <![endif]-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background: #FFF;" class="wrapper">
+                <tr>
+                    <td align="center">
+                        <!--更改圖片說明與圖片網址--> 
+                        <img alt="讓你窩在家就能享受美酒"
+                                src="https://www.icheers.tw/iCheers/Content/images/letter_slogan.png" style="color: #ffffff;display: block;" border="0" width="212" height="auto">
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+
+        </td>
+    </tr>
+    <!-- 圖區 copy END -->
+
+    <!--空白-->
+    <tr>
+        <td bgcolor="#f4f4f4" align="center">
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;background: #fff;" class="wrapper">
+                 <tr>
+                    <td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px;">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
+    </tr>
+    <!--空白 end-->
+
+    <!--灰線勿動-->
+    <tr>
+        <td bgcolor="#f4f4f4" align="center">
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;background: #8e6681;" class="wrapper">
+                 <tr>
+                    <td aria-hidden="true" height="5" style="font-size: 0px; line-height: 0px;">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
+    </tr>
+    <!--灰線勿動-->
+
+    <!--空白-->
+    <tr>
+        <td bgcolor="#f4f4f4" align="center">
+            <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;background: #fff;" class="wrapper">
+                 <tr>
+                    <td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px;">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
+    </tr>
+    <!--空白 end-->
+
+    <!--icheers info 勿動-->
+    <tr>
+    	<td bgcolor="#f4f4f4" align="center">
+    		<!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="max-width: 600px;background-color: #fff;" class="responsive-table">
+                <tr>
+                    <td style="padding: 0px; font-family:'微軟正黑體'; text-align: center; color: #888888;">
+                        <p style=" color:#454545;font-size:15px;font-size:1.0rem;line-height: 23px;margin: 10px;">
+                            <span>
+                                <img src="https://www.icheers.tw/iCheers/EDM/vipeaper/images/fot_img_1.png" height="auto" width="20" style="display: inline;"> 服務時間 </span><br>
+                                星期一至星期五-9:00~18:00<br><span style="font-size: 13px;font-family: '微軟正黑體';">(國定假日除外)</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0px ; font-family:'微軟正黑體'; text-align: center; color: #888888;">
+                        <p style=" color:#454545;font-size:15px;font-size:1.0rem;line-height: 23px;margin: 10px;">
+                            <span>
+                                <img src="https://www.icheers.tw/iCheers/EDM/vipeaper/images/fot_img_3.png" height="auto" width="20"  style="display: inline;"> 客服信箱 </span><br>
+                                <a href="mailto:service@icheers.tw"
+                                style="color: #2098DE;color: inherit !important; text-decoration: none !important;font-size:16px;font-size:1.0rem;">service@icheers.tw</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0px ; font-family:'微軟正黑體'; text-align: center; color: #888888;" >
+                        <p style=" color:#454545;font-size:15px;font-size:1.0rem;line-height: 23px;margin: 10px;">
+                            <span>
+                                <img src="https://www.icheers.tw/iCheers/EDM/vipeaper/images/fot_img_2.png" height="auto" width="20"  style="display: inline;"> 客服專線 </span><br>
+                                <a href="tel:0229263667" style="color: #156e9c;">02-2926-3667<a></p>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0px; font-family: '微軟正黑體'; text-align: center; color: #888888;">
+                        <p style=" color:#454545;font-size:15px;font-size:1.0rem;line-height: 23px;margin: 10px;">
+                            <span>
+                                <img src="https://www.icheers.tw/iCheers/EDM/vipeaper/images/fot_img_4.png" height="auto" width="20"  style="display: inline;"> 傳真電話 </span><br>
+                                02-2924-6220</p>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+    	</td>
+    </tr>
+	<!--icheers info 勿動 end-->
+
+	<!--系統信提醒 勿動-->
+	<tr>
+    	<td bgcolor="#f4f4f4" align="center">
+    		<!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;background: #fff;" class="wrapper">
+                 <tr>
+                    <td style="padding:24px;padding-top: 0;" align="center">
+                    	
+                        <p class="text_notice" style="font-family:'微軟正黑體';">
+                        	Copyright © 2018 iCheers.tw
+							<br />
+                        	All Rights Reserved
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+    	</td>
+    </tr>
+	<!--系統信提醒 勿動 end-->
+    <!--要貼到 web upload的從這裡開始複製結束-->
+
+	<!--警語 勿動-->
+	<tr>
+    	<td bgcolor="#f4f4f4" align="center">
+    		<!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;background: #000;" class="wrapper">
+                 <tr>
+                    <td style="padding: 24px;" align="center">
+                    	
+                        <p class="text_warning" style="font-family: '微軟正黑體';">
+                        	飲酒過量有害健康&nbsp;禁止酒駕
+                        	<br />
+                        	未滿十八歲禁止飲酒
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+    	</td>
+    </tr>
+	<!--警語 勿動 end-->
+
 </table>
-<!--警語 end-->
+
 </body>
 </html>
