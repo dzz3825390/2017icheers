@@ -620,6 +620,19 @@
 	margin: 10px auto;
 }
 
+.About_Newbie_link{
+	font-size: 1rem;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 16px;
+	& a{
+		color: #e98b00;
+	}
+	@include pad-width{
+		font-size: 1.25rem;
+	}
+}
+
 .About_Quality_slogan{
 	font-size: 2.375rem;
 	line-height: 3.4rem;
