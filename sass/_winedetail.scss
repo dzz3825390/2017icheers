@@ -193,6 +193,10 @@ h2.detail_Name_cn{
 			border-right: none;
 		}
 
+		&:only-child{
+			border-right: none;
+		}
+
 		@include pad-width{
 			height: 1.6rem;
 			font-size: 1.625rem;
