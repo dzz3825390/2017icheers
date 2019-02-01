@@ -1690,6 +1690,9 @@ h4 {
 .OneWine .info .bottle_info span:last-child {
   border-right: none;
 }
+.OneWine .info .bottle_info span:only-child {
+  border-right: none;
+}
 @media screen and (min-width: 760px) {
   .OneWine {
     margin-top: 30px;
