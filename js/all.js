@@ -164,6 +164,12 @@ $(document).ready(function(){
 			'height':intBrowserH
 		});
 
+		//wapper高度
+		$('.wapper').css({
+			'overflow':'hidden',
+			'height':intBrowserH
+		});
+
 		//黑底高度
 		$('#black_BG').css({
 			'height':intBrowserH,
@@ -195,6 +201,10 @@ $(document).ready(function(){
 				'overflow':'auto',
 				'height':'100%'
 			});
+			$('.wapper').css({
+				'overflow':'auto',
+				'height':'100%'
+			});
 			$(document).scrollTop(BrowserScrollHeight);
 		}	
 	});
@@ -206,6 +216,10 @@ $(document).ready(function(){
 		$('#black_BG').fadeOut(200);
 		$('body').off('touchmove.preventScroll');
 		$('body').css({
+			'overflow':'auto',
+			'height':'100%'
+		});
+		$('.wapper').css({
 			'overflow':'auto',
 			'height':'100%'
 		});
