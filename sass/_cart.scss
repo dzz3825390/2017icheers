@@ -1322,6 +1322,15 @@
 		}
 	}
 
+	& a{
+		display: inline-block;
+		margin: 0.5rem 0;
+		color: #666;
+		text-decoration: underline;
+		width: 100%;
+		text-align: center;
+	}
+
 	@include pad-width{
 		padding:0 88px;
 		margin-top: 2rem;
@@ -1464,22 +1473,20 @@
 
 .invoice_radiobox_layout{
 	margin: 1rem auto;
-	display: inline-block;
-	&:after{
-		@extend %clearfix;
-	}
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
 
 	& div.Radio_invoice_unit{
 		padding: 0.5rem;
-		width: 85px;
-		height: 85px;
+		width: 80px;
+		height: 80px;
 		border: $BorderColor;
 		color: #333;
-		font-size: 1.125rem;
+		font-size: 1rem;
 		line-height: 24px;
 		text-align: center;
-		float: left;
-		margin-left: 0.5rem;
+		margin-left: 0.3rem;
 		@include border-radius(4px);
 		@include box-sizing(border-box);
 		&:first-child{

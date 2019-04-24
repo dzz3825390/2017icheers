@@ -74,7 +74,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 }
 
-.clearfix:after, .footer:after, .SideMenu_SearchRow:after, .SideMenu_SearchInput:after, .SideMenu_Detail_list2 span:after, .SideMenu_RecentView:after, .OneWine:after, .OneWine .info .bottle_info:after, .checkbox_layout:after, .pagination_layout .pagination:after, .fourbanner_layout:after, .BottlesZone_onebottle .bottle_info:after, .BottlesZone_onebottle .bottle_price:after, .FastZone_bottles_layout:after, .NormalZone_bottles_layout:after, .MemberOnly_layout .bottle_price:after, .Events_layout:after, .PreorderZone_BottleInfo:after, .PreorderZone_BottleInfo .bottle_info:after, .ArticleZone_layout:after, .Article_layout:after, .GoToDesktop .option:after, .detail_bottleImg_status_layout:after, .detail_price_row:after, .detail_MoreInfo_layout:after, .detail_MoreInfo_BtnOpen:after, .detail_GroupProduct_layout:after, .detail_introduce_layout:after, .winelist_searchCondition_text:after, .winelist_searchCondition_filter:after, .winelist_OneWine_layout:after, .winelist_OneWine_Info .bottle_info:after, .winelist_OneWine_Info .bottle_origin:after, .winelist_OneWine_Info .bottle_price .price_row:after, .winelist_MoreInfo_BtnOpen:after, .winelist_allyear_extend .OneYearRow:after, .cart_step_row:after, .cart_list_OneBottle:after, .cart_list_OneBottle .BottleInfo .Info:after, .cart_list_OneBottle .BottleInfo .Status:after, .cart_list_OneGroup:after, .cart_list_OneGroup .GroupBottle:after, .cart_list_OneGroup .Status:after, .cart_bouns_layout .OneItem_Row:after, .cart_sum_layout .OneItem_Row:after, .cart_sum_layout .btn_row:after, .cart_Terms_border .OneTerm:after, .cart_SeparateCheck_layout:after, .cart_YearCheck_layout:after, .FreightInfoRow:after, .cart_form_row:after, .invoice_radiobox_layout:after, .About_SpecialQuote:after, .About_img:after, .About_BounsInfo:after, .About_Bouns_table .Row .MemberLevel:after, .About_DeliveryInfo:after, .About_DeliveryInfo .title:after, .About_Newbie_mylist:after, .About_Quality_Icons_Bg:after, .winery_intro .Region, .WineryIntroZone_onewinery .WineryRegion {
+.clearfix:after, .footer:after, .SideMenu_SearchRow:after, .SideMenu_SearchInput:after, .SideMenu_Detail_list2 span:after, .SideMenu_RecentView:after, .OneWine:after, .OneWine .info .bottle_info:after, .checkbox_layout:after, .pagination_layout .pagination:after, .fourbanner_layout:after, .BottlesZone_onebottle .bottle_info:after, .BottlesZone_onebottle .bottle_price:after, .FastZone_bottles_layout:after, .NormalZone_bottles_layout:after, .MemberOnly_layout .bottle_price:after, .Events_layout:after, .PreorderZone_BottleInfo:after, .PreorderZone_BottleInfo .bottle_info:after, .ArticleZone_layout:after, .Article_layout:after, .GoToDesktop .option:after, .detail_bottleImg_status_layout:after, .detail_price_row:after, .detail_MoreInfo_layout:after, .detail_MoreInfo_BtnOpen:after, .detail_GroupProduct_layout:after, .detail_introduce_layout:after, .winelist_searchCondition_text:after, .winelist_searchCondition_filter:after, .winelist_OneWine_layout:after, .winelist_OneWine_Info .bottle_info:after, .winelist_OneWine_Info .bottle_origin:after, .winelist_OneWine_Info .bottle_price .price_row:after, .winelist_MoreInfo_BtnOpen:after, .winelist_allyear_extend .OneYearRow:after, .cart_step_row:after, .cart_list_OneBottle:after, .cart_list_OneBottle .BottleInfo .Info:after, .cart_list_OneBottle .BottleInfo .Status:after, .cart_list_OneGroup:after, .cart_list_OneGroup .GroupBottle:after, .cart_list_OneGroup .Status:after, .cart_bouns_layout .OneItem_Row:after, .cart_sum_layout .OneItem_Row:after, .cart_sum_layout .btn_row:after, .cart_Terms_border .OneTerm:after, .cart_SeparateCheck_layout:after, .cart_YearCheck_layout:after, .FreightInfoRow:after, .cart_form_row:after, .About_SpecialQuote:after, .About_img:after, .About_BounsInfo:after, .About_Bouns_table .Row .MemberLevel:after, .About_DeliveryInfo:after, .About_DeliveryInfo .title:after, .About_Newbie_mylist:after, .About_Quality_Icons_Bg:after, .winery_intro .Region, .WineryIntroZone_onewinery .WineryRegion {
   content: '';
   display: block;
   clear: both;
@@ -5988,6 +5988,14 @@ h2.detail_Name_cn {
 .cart_form_row textarea:-ms-teatarea-placeholder {
   color: #999;
 }
+.cart_form_row a {
+  display: inline-block;
+  margin: 0.5rem 0;
+  color: #666;
+  text-decoration: underline;
+  width: 100%;
+  text-align: center;
+}
 @media screen and (min-width: 760px) {
   .cart_form_row {
     padding: 0 88px;
@@ -6117,19 +6125,20 @@ h2.detail_Name_cn {
 
 .invoice_radiobox_layout {
   margin: 1rem auto;
-  display: inline-block;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
 .invoice_radiobox_layout div.Radio_invoice_unit {
   padding: 0.5rem;
-  width: 85px;
-  height: 85px;
+  width: 80px;
+  height: 80px;
   border: solid 1px #cccccc;
   color: #333;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 24px;
   text-align: center;
-  float: left;
-  margin-left: 0.5rem;
+  margin-left: 0.3rem;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;

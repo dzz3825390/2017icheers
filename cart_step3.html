@@ -107,7 +107,8 @@
 		    $('.Radio_invoice_unit').on('click',function(){
 		   		var isSelfClick = $(this).hasClass('RadioBox_active')
 		   		if (!isSelfClick) {
-		   			var AnotherAddress = $(this).prop('id');
+		   			//其他配送地址 打開/收合
+		   			var AnotherAddress = $(this).attr('id');
 		   			if (AnotherAddress == 'invoice_AnotherAddress_2') {
 		   				Radiobox(this);
 		   				$(this).parent().next().slideDown(300);
@@ -116,8 +117,6 @@
 		   				$(this).parent().next().slideDown(300);
 		   			}
 		   			else {
-		   				//20180614 delete slideup
-		   				//$(this).parent().next().slideUp(300);
 		   				Radiobox(this);
 		   			}
 		   			
@@ -135,6 +134,18 @@
 		    	} else {
 		    		Radiobox(this);
 		    		$('#Form_AnotherAddress').slideUp(300);
+		    	}
+		    });
+
+		    //電子發票、捐贈發票其他 打開/收合
+		    $('.Radio_invoice_unit').on('click',function () {
+		    	var isActive = $(this).hasClass('RadioBox_active');
+		    	if (isActive && $(this).attr('id') == 'invoice_donate_other') {
+		    		$('.invoice_donate_other_input').slideDown(300);
+		    	} else if (isActive && $(this).attr('id') == 'electroic_invoice'){
+		    		$('.electroic_invoice_input').slideDown(300);
+		    	} else {
+		    		$('.invoice_donate_other_input').slideUp(300);
 		    	}
 		    });
 
@@ -158,7 +169,7 @@
 		   		var isSelfClick = $(this).hasClass('RadioBox_active')
 		   		if (!isSelfClick) {
 		   			Radiobox(this);
-		   			$('.invoice_AnotherAddress').css('display','none');
+		   			$('.invoice_hide').css('display','none');
 		   			$('.Radio_invoice_unit').removeClass('RadioBox_active');
 		   			$('.Radio_invoice').next().css('display','none');
 		   			$(this).next().slideDown(300);
@@ -1256,18 +1267,27 @@
 			<div class="RadioBox Radio_invoice" name='invoice'>捐贈發票</div>
 			<div>
 				<div class="invoice_radiobox_layout">
-					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>伊甸社會福利基金會</span></div>
-					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>創世基金會</span></div>
-					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>陽光基金會</span></div>
+					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>伊甸<br/>基金會</span></div>
+					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>創世<br/>基金會</span></div>
+					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>陽光<br/>基金會</span></div>
+					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1" id="invoice_donate_other"><span>其他</span></div>
 				</div>
+				<div class="invoice_donate_other_input invoice_hide" style="display: none;">
+					<div class="cart_form_row">
+						<input type="text" placeholder="請輸入機構代碼">
+						<a href="#">機構代碼查詢</a>
+					</div>
+				</div>
+				
 				<div class="Radio_infotext">依據法令規定，已捐贈發票無法索回，若需要退換貨，該發票將予以作廢。</div>
 			</div>
 			<div class="RadioBox Radio_invoice" name='invoice'>二聯式發票</div>
 			<div class="invoice_radiobox_layout">
 				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2"><span>隨商品寄出</span></div>
 				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="invoice_AnotherAddress_2"><span>發票分開寄出</span></div>
+				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice"><span>電子<br/>發票</span></div>
 			</div>
-			<div class="invoice_AnotherAddress" style="display: none;">
+			<div class="invoice_AnotherAddress invoice_hide" style="display: none;">
 				<div class="cart_form_row">
 						<div class="formTitle">發票收件人姓名</div>
 						<input type='text' />
@@ -1303,6 +1323,16 @@
 						</div>
 					</div>
 					<input type='text' placeholder="請輸入地址" />
+				</div>
+			</div>
+			<div class="electroic_invoice_input invoice_hide" style="display: none;">
+				<div class="cart_form_row">
+					<div class="formTitle">手機載具</div>
+					<input type='text' />
+				</div>
+				<div class="cart_form_row">
+					<div class="formTitle">自然人憑證載具</div>
+					<input type='text' />
 				</div>
 			</div>
 			<div class="RadioBox Radio_invoice" name='invoice'>三聯式發票</div>
