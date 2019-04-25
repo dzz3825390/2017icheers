@@ -141,11 +141,16 @@
 		    $('.Radio_invoice_unit').on('click',function () {
 		    	var isActive = $(this).hasClass('RadioBox_active');
 		    	if (isActive && $(this).attr('id') == 'invoice_donate_other') {
+		    		$('.invoice_hide').css('display','none');
 		    		$('.invoice_donate_other_input').slideDown(300);
-		    	} else if (isActive && $(this).attr('id') == 'electroic_invoice'){
-		    		$('.electroic_invoice_input').slideDown(300);
+		    	} else if (isActive && $(this).attr('id') == 'electroic_invoice_phone'){
+		    		$('.invoice_hide').css('display','none');
+		    		$('.electroic_invoice_input_phone').slideDown(300);
+		    	} else if (isActive && $(this).attr('id') == 'electroic_invoice_idcard'){
+		    		$('.invoice_hide').css('display','none');
+		    		$('.electroic_invoice_input_idcard').slideDown(300);
 		    	} else {
-		    		$('.invoice_donate_other_input').slideUp(300);
+		    		
 		    	}
 		    });
 
@@ -1281,11 +1286,12 @@
 				
 				<div class="Radio_infotext">依據法令規定，已捐贈發票無法索回，若需要退換貨，該發票將予以作廢。</div>
 			</div>
-			<div class="RadioBox Radio_invoice" name='invoice'>二聯式發票</div>
+			<div class="RadioBox Radio_invoice" name='invoice'>二聯式電子發票</div>
 			<div class="invoice_radiobox_layout">
 				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2"><span>隨商品寄出</span></div>
 				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="invoice_AnotherAddress_2"><span>發票分開寄出</span></div>
-				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice"><span>電子<br/>發票</span></div>
+				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_phone"><span>手機<br/>條碼</span></div>
+				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_idcard"><span>自然人<br/>憑證</span></div>
 			</div>
 			<div class="invoice_AnotherAddress invoice_hide" style="display: none;">
 				<div class="cart_form_row">
@@ -1325,17 +1331,19 @@
 					<input type='text' placeholder="請輸入地址" />
 				</div>
 			</div>
-			<div class="electroic_invoice_input invoice_hide" style="display: none;">
+			<div class="electroic_invoice_input_phone invoice_hide" style="display: none;">
 				<div class="cart_form_row">
-					<div class="formTitle">手機載具</div>
-					<input type='text' />
-				</div>
-				<div class="cart_form_row">
-					<div class="formTitle">自然人憑證載具</div>
+					<div class="formTitle">手機條碼</div>
 					<input type='text' />
 				</div>
 			</div>
-			<div class="RadioBox Radio_invoice" name='invoice'>三聯式發票</div>
+			<div class="electroic_invoice_input_idcard invoice_hide" style="display: none;">
+				<div class="cart_form_row">
+					<div class="formTitle">自然人憑證條碼</div>
+					<input type='text' />
+				</div>
+			</div>
+			<div class="RadioBox Radio_invoice" name='invoice'>三聯式電子發票</div>
 			<div class="invoice_radiobox_layout">
 				<div class="RadioBox Radio_invoice_unit" name="invoice_unit3"><span>隨商品寄出</span></div>
 				<div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_AnotherAddress_3"><span>發票分開寄出</span></div>
