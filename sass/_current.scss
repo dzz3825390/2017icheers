@@ -1851,3 +1851,17 @@ h4{
 	display:flex;
 	justify-content: center;
 }
+
+//20190610 add announcement style
+
+.Announcement{
+	font-size: 1rem;
+	color: #B00808;
+	margin: 10px 0;
+	padding: 0 16px;
+	line-height: 1.5rem;
+	@include pad-width{
+		font-size: 1.25rem;
+		line-height: 2rem;
+	}
+}

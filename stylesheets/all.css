@@ -2338,6 +2338,20 @@ h4 {
   justify-content: center;
 }
 
+.Announcement {
+  font-size: 1rem;
+  color: #B00808;
+  margin: 10px 0;
+  padding: 0 16px;
+  line-height: 1.5rem;
+}
+@media screen and (min-width: 760px) {
+  .Announcement {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+}
+
 .fourbanner_layout {
   padding: 12px;
   background-color: #efefef;
