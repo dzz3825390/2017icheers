@@ -114,7 +114,7 @@
 		   				$(this).parent().next().slideDown(300);
 		   			} else if (AnotherAddress == 'invoice_AnotherAddress_3') {
 		   				Radiobox(this);
-		   				$(this).parent().next().slideDown(300);
+		   				$(this).parent().parent().next().slideDown(300);
 		   			}
 		   			else {
 		   				Radiobox(this);
@@ -1344,11 +1344,7 @@
 				</div>
 			</div>
 			<div class="RadioBox Radio_invoice" name='invoice'>三聯式電子發票</div>
-			<div class="invoice_radiobox_layout">
-				<div class="RadioBox Radio_invoice_unit" name="invoice_unit3"><span>隨商品寄出</span></div>
-				<div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_AnotherAddress_3"><span>發票分開寄出</span></div>
-			</div>
-			<div class="invoice_AnotherAddress" style="display: none;">
+			<div class="invoice_hide">
 				<div class="cart_form_row">
 						<div class="formTitle">發票抬頭</div>
 						<input type='text' />
@@ -1357,6 +1353,14 @@
 						<div class="formTitle">統一編號</div>
 						<input type='text' />
 				</div>
+				<div class="invoice_radiobox_layout">
+					<div class="RadioBox Radio_invoice_unit" name="invoice_unit3"><span>隨商品寄出</span></div>
+					<div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_AnotherAddress_3"><span>發票分開寄出</span></div>
+				</div>
+			</div>
+			
+			<div class="invoice_AnotherAddress invoice_hide" style="display: none;">
+				
 				<div class="cart_form_row">
 						<div class="formTitle">發票收件人姓名</div>
 						<input type='text' />

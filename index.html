@@ -28,7 +28,21 @@
 	  </script>
 	![endif]-->
 	<script type="text/javascript">
+		/*detect Webview*/
+		/*
+		function isWebview() {
+		    var useragent = navigator.userAgent;
+		    var rules = ['WebView','(iPhone|iPod|iPad)(?!.*Safari\/)','Android.*(wv|\.0\.0\.0)'];
+		    var regex = new RegExp(`(${rules.join('|')})`, 'ig');
+		    return Boolean(useragent.match(regex));
+		}*/
+
 		$(document).ready(function(){
+			/*強迫使用瀏覽器app開啟*/
+			/*
+			if (isWebview()){
+				location.href = location.href + '?openExternalBrowser=1';
+			}*/
 			
 			var intBrowserW = 0;
 
