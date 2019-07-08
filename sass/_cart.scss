@@ -1331,6 +1331,15 @@
 		text-align: center;
 	}
 
+	& .checkbox_text{
+		width: calc(100% - 47px - 0.75rem);
+		font-size: $PhoneTitleFontSize;
+		line-height: 1.75rem;
+		color: $TextColor;
+		float: left;
+		margin-left: 0.75rem;
+	}
+
 	@include pad-width{
 		padding:0 88px;
 		margin-top: 2rem;

@@ -2338,6 +2338,11 @@ h4 {
   justify-content: center;
 }
 
+.FlexBoxCenter-v {
+  display: flex;
+  align-items: center;
+}
+
 .Announcement {
   font-size: 1rem;
   color: #B00808;
@@ -6010,6 +6015,14 @@ h2.detail_Name_cn {
   text-decoration: underline;
   width: 100%;
   text-align: center;
+}
+.cart_form_row .checkbox_text {
+  width: calc(100% - 47px - 0.75rem);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: #666666;
+  float: left;
+  margin-left: 0.75rem;
 }
 @media screen and (min-width: 760px) {
   .cart_form_row {

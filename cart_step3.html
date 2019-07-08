@@ -207,6 +207,18 @@
 
 		   	//年齡確認視窗
 		   	PopWindow('#AgeConfrimWindow',intBrowserH,intBrowserW);
+
+		   	//加購紙袋
+		   	$('.add_paperbag').click(function(){
+		    	var isChecked = $(this).find('input[type=checkbox]').prop('checked');
+		    	//console.log(isChecked);
+		    	if (isChecked) {
+		    		$(this).next().slideDown();
+		    		
+		    	} else {
+		    		$(this).next().css('display','none');
+		    	}
+		    });
 		   
 
 		  
@@ -1076,7 +1088,7 @@
 			</div>
 			<input type='text' placeholder="請輸入地址" />
 			<div class="NoticeText">
-				離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。
+				離島冷藏宅配訂單將統一收取200元運費，恕無法提供滿額免運費優惠，還請見諒，謝謝！
 			</div>
 		</div>
 	</section>
@@ -1164,16 +1176,53 @@
 				</div>
 				<input type='text' placeholder="請輸入地址" />
 			</div>
-			<div class="cart_form_row">
-				<div class="formTitle">希望配送時段</div>
-				<div class="RadioBox Radio_DeliveryTime" name='deliverytime'>08~13 時</div>
-				<div class="RadioBox Radio_DeliveryTime" name='deliverytime'>14~18 時</div>
-				<div class="RadioBox Radio_DeliveryTime" name='deliverytime'>皆可</div>
+		</div>
+		<div class="cart_form_row">
+			<div class="formTitle">希望配送時段</div>
+			<div class="RadioBox Radio_DeliveryTime" name='deliverytime'>上午 (08~13 時)</div>
+			<div class="RadioBox Radio_DeliveryTime" name='deliverytime'>下午 (14~18 時)</div>
+			<div class="RadioBox Radio_DeliveryTime" name='deliverytime'>皆可</div>
+		</div>
+		<div class="cart_form_row FlexBoxCenter-v">
+			<div class="checkbox_layout" >
+				<label class="checkbox">
+					<input type="checkbox">
+					<span class="checked"></span>
+				</label>
 			</div>
-			<div class="cart_form_row">
-				<div class="formTitle">備註</div>
-				<textarea placeholder="可指定到貨日，但國定假日及周日恕無法配送喔！"></textarea>
+			<div class="checkbox_text">我不介意用舊但堅固的紙箱出貨，大家一起環保護地球。</div>
+		</div>
+		<div class="cart_form_row FlexBoxCenter-v add_paperbag">
+			<div class="checkbox_layout">
+				<label class="checkbox">
+					<input type="checkbox">
+					<span class="checked"></span>
+				</label>
 			</div>
+			<div class="checkbox_text">我想加購iCheers愛酒窩提袋。</div>
+		</div>
+		<div class="cart_list_OneBottle" style="display: none;">
+			<div class="BottleImg" style="background-image: url(&quot;images/bottle.jpg&quot;); height: 271.2px;"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">iCheers Paper Wine Bag (for single bottle)</div>
+				<div class="Name_cn">iCheers愛酒窩提袋(單入)</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/icon_minus.png);"></div>
+						<input type="text" value="1">
+						<div class="btn" style="background-image:url(images/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Normal">
+						<span>小計</span>
+						$15
+					</div>
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+		</div>
+		<div class="cart_form_row">
+			<div class="formTitle">備註</div>
+			<textarea placeholder="可指定到貨日，但國定假日及周日恕無法配送喔！"></textarea>
 		</div>
 		
 	</section>
