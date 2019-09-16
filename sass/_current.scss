@@ -27,7 +27,7 @@ textarea{
 	background-color: #fff;
 }
 
-input[type="text"],input[type="password"],input[type="tel"]{
+input[type="text"],input[type="password"],input[type="tel"],input[type="datetime-local"]{
 	outline: none;
 	border: $BorderColor;
 	@include border-radius(4px);
@@ -1514,6 +1514,9 @@ h4{
 			font-size: 1rem;
 			color: $TextColor;
 			text-align: center;
+			& span {
+				color:$NoticeColor;
+			}
 		}
 
 		& input[type=text]{
@@ -1526,6 +1529,9 @@ h4{
 			font-size: 1.5rem;
 			font-weight: bold;
 			margin-top: 1rem;
+			&:placeholder{
+				font-weight: normal;
+			}
 		}
 
 		& input[type=tel]{
@@ -1551,6 +1557,18 @@ h4{
 			font-weight: bold;
 			margin-top: 1rem;
 		}
+		
+		& input[type=datetime-local]{
+			width: 100%;
+			padding: 0 10px;
+			height: 40px;
+			border: $BorderColor;
+			@include border-radius(4px);
+			background-color: #fff;
+			font-size: 1.5rem;
+			margin-top: 1rem;
+		}
+
 		.forget{
 			margin-top: 0.75rem;
 		}

@@ -122,7 +122,7 @@ textarea {
   background-color: #fff;
 }
 
-input[type="text"], input[type="password"], input[type="tel"] {
+input[type="text"], input[type="password"], input[type="tel"], input[type="datetime-local"] {
   outline: none;
   border: solid 1px #cccccc;
   -moz-border-radius: 4px;
@@ -1944,6 +1944,9 @@ h4 {
   color: #666666;
   text-align: center;
 }
+.PopWindow_content .Popwindow_form .title span {
+  color: #B00808;
+}
 .PopWindow_content .Popwindow_form input[type=text] {
   width: 100%;
   padding: 0 10px;
@@ -1956,6 +1959,9 @@ h4 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-top: 1rem;
+}
+.PopWindow_content .Popwindow_form input[type=text]:placeholder {
+  font-weight: normal;
 }
 .PopWindow_content .Popwindow_form input[type=tel] {
   width: 100%;
@@ -1981,6 +1987,18 @@ h4 {
   background-color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
+  margin-top: 1rem;
+}
+.PopWindow_content .Popwindow_form input[type=datetime-local] {
+  width: 100%;
+  padding: 0 10px;
+  height: 40px;
+  border: solid 1px #cccccc;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 1.5rem;
   margin-top: 1rem;
 }
 .PopWindow_content .Popwindow_form .forget {
@@ -5972,6 +5990,16 @@ h2.detail_Name_cn {
   margin-top: 0.5rem;
   margin-left: 0;
 }
+.cart_form_row .Radio_remittance {
+  padding: 0;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  font-size: 1.125rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-left: 0;
+}
 .cart_form_row .Radio_infotext {
   font-size: 0.875rem;
   color: #999;
@@ -6151,6 +6179,25 @@ h2.detail_Name_cn {
   }
 }
 
+.remittance_infotext {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #999;
+  line-height: 1.25rem;
+}
+.remittance_infotext span {
+  display: inline-block;
+  color: #B00808;
+  margin: 0 5px;
+  font-weight: bold;
+}
+@media screen and (min-width: 760px) {
+  .remittance_infotext {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
 .invoice_radiobox_layout {
   margin: 1rem auto;
   display: flex;
@@ -6255,6 +6302,10 @@ h2.detail_Name_cn {
 
 .section_additional_purchase .AddPriceProduct:not(:first-child) {
   margin-top: 2rem;
+}
+
+.Radio_remittance_extend {
+  margin-bottom: 16px;
 }
 
 .About_BG {

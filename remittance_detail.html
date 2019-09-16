@@ -136,6 +136,18 @@
 
 		    PopWindow('#RemittanceDetail',intBrowserH,intBrowserW);
 
+		    //另行配送地址展開/收合
+		    $('.Radio_remittance').on('click',function(){
+		    	var Transfer = $(this).attr('id');
+		    	if (Transfer == 'Transfer') {
+		    		Radiobox(this);
+		    		$('#Transfer_Input').slideDown(300);
+		    	} else {
+		    		Radiobox(this);
+		    		$('#Transfer_Input').slideUp(300);
+		    	}
+		    });
+
 		    		   	
 		});
 
@@ -1772,16 +1784,29 @@
 			<div class="PopWindow_content_text">訂單編號：XXXXXXXXX </div>
 			<div class="PopWindow_content_text">應付總額：$ <span>45,678</span> </div>
 			<div class="Popwindow_form">
-				<div class="title">匯款人姓名</div>
+				<div class="title">匯款人姓名<span>*</span></div>
 				<input type="text" />
 			</div>
 			<div class="Popwindow_form">
-				<div class="title">銀行名稱</div>
+				<div class="title">銀行名稱<span>*</span></div>
 				<input type="text" />
 			</div>
 			<div class="Popwindow_form">
-				<div class="title">帳號後五碼</div>
-				<input type="text" />
+				<div class="title">匯款時間</div>
+				<input type="datetime-local" />
+			</div>
+			<div class="Popwindow_form">
+				<div class="title">匯款方式<span>*</span></div>
+				<div class="remittance_infotext">
+					「轉帳」請務必提供後5碼，以利核帳。 到銀行櫃台存款沒有後5碼，則選擇「臨櫃存現」即可。 
+				</div>
+				<div class="cart_form_row">
+					<div class="RadioBox Radio_remittance" name="remittance" id="Transfer">轉帳</div>
+					<div class="Radio_remittance_extend" style="display: none;" id="Transfer_Input">
+						<input type="text" placeholder="請輸入後5碼" />
+					</div>
+					<div class="RadioBox Radio_remittance" name="remittance">臨櫃存現</div>
+				</div>
 			</div>
 			<div class="Popwindow_ConfirmBtn">確認送出</div>
 		</div>
