@@ -378,9 +378,11 @@ h2.LargeTitle{
 
 .SmallTitle{
 	font-size: 1.125rem;
+	line-height: 1.5rem;
 	font-style: oblique;
 	color: #666666;
 	margin-top: 10px;
+	padding-right: 10px;
 	@include pad-width{
 		margin-top: 1rem;
 		font-size: 1.375rem;

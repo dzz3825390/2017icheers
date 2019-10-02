@@ -506,9 +506,11 @@ h2.LargeTitle .line {
 
 .SmallTitle {
   font-size: 1.125rem;
+  line-height: 1.5rem;
   font-style: oblique;
   color: #666666;
   margin-top: 10px;
+  padding-right: 10px;
 }
 @media screen and (min-width: 760px) {
   .SmallTitle {
