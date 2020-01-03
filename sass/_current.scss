@@ -45,6 +45,9 @@ header{
 	height: 50px;
 	background: linear-gradient(#ffffff 70%, #f2f2f2);
 	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	border-bottom: 6px solid $WineColor;
 	& h1 {
 		position: absolute;
@@ -257,27 +260,21 @@ span.more{
 /***logo***/
 
 .logo{
-	width: 83px;
-	height: 38px;
-	margin: 0 auto;
-	&>svg {
-		margin-top: 6px;
-	}
+	width: 95px;
+	height: 41px;
+	display: inline-block;
+	background-image: url('../images/iCheers_logo_m.svg');
+	@extend %backgroundimagecover;
 
 	@include pad-width{
-		width: 98px;
-		height: 43px;
-		&>svg {
-			margin-top: 15px;
-		}
+		width: 110px;
+		height: 47px;
+		margin-top: 15px;
 	}
 
 	@include large-pad-width{
 		width: 140px;
-		height: 62px;
-		&>svg {
-			margin-top: 11px;
-		}
+		height: 60px;
 	}
 }
 
