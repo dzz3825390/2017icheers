@@ -1004,10 +1004,6 @@ h4{
 	color: #666;
 	line-height: 40px;
 	margin-top: 10px;
-	margin-bottom: 50px;
-	@include pad-width{
-		margin-bottom: 90px;
-	}
 	&:after{
 		@extend %clearfix;
 	}
@@ -1021,6 +1017,36 @@ h4{
 		float: left;
 		margin-top: 10px;
 		margin-right: 10px;
+	}
+}
+
+.SideMenu_GotoDesktop{
+	width: calc(100% - 30px);
+	padding: 0 15px;
+	height: 40px;
+	font-size: 1rem;
+	color: #666;
+	line-height: 40px;
+	margin-top: 10px;
+	margin-bottom: 50px;
+	@include pad-width{
+		margin-bottom: 90px;
+	}
+	&:after{
+		@extend %clearfix;
+	}
+
+	& .icon{
+		display: inline-block;
+		width: 21px;
+		height: 17px;
+		background-image:url(../images/desktop_icon.png);
+		@extend %backgroundimagecover;
+		float: left;
+		margin-top: 10px;
+		margin-right: 10px;
+		padding: 0 3px;
+		background-size: contain; 
 	}
 }
 
@@ -1885,4 +1911,13 @@ h4{
 		font-size: 1.25rem;
 		line-height: 2rem;
 	}
+}
+
+.DownArrow{
+	border: solid black;
+	border-width: 0 2px 2px 0;
+  	display: inline-block;
+  	padding: 5px;
+  	transform: rotate(45deg);
+  	-webkit-transform: rotate(45deg);
 }

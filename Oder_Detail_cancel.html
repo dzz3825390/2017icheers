@@ -37,6 +37,21 @@
 		    return Boolean(useragent.match(regex));
 		}*/
 
+		function SearchConditionExtend() {
+			//check extend or not
+		    var IsExtend = $('.Order_SearchCondition_layout').hasClass('Order_SearchCondition_Open');
+		    //extneded
+		    if (IsExtend) {
+		    	//do nothing
+		    } 
+		    //not extend
+		    else {
+		    	$('.Order_SearchCondition_layout').addClass('Order_SearchCondition_Open');
+		    	$('.Order_SearchCondition_Extend').slideDown();
+		    	$('.Order_SearchCondition_layout').unbind('click');
+		    }
+		}
+
 		$(document).ready(function(){
 			/*強迫使用瀏覽器app開啟*/
 			/*
@@ -58,43 +73,24 @@
 				    intBrowserH = document.body.clientHeight;
 				}
 
-			//loading page sample
 			$('body').css('height',intBrowserH);
 			$('.wapper').css({
 				'height':intBrowserH,
-				'overflow-y':'hidden'
+				'overflow-y':'scroll'
 			})
-			$('.LoadingPage').css('height',intBrowserH);
-			var LoadingLogoHeight = $('.LoadingPage').children().height();
-			var LoadingLogoPositionY = (intBrowserH - LoadingLogoHeight) /2;
-			$('.LoadingPage').children().css('margin-top',LoadingLogoPositionY);
 
-			setTimeout(function(){
-				$('.LoadingPage').css('transform','scale(1.15)');
-				$('.LoadingPage').fadeOut(300,function(){
-					$('body').css('height','auto');
-					$('.wapper').css({
-						'height':'auto',
-						'overflow-y':'scroll'
-					});
-				});
-			},5100);
+			//content最小高度設定
+
+			if (intBrowserW < 768) {
+				$('.Member .content_layout').css('min-height',intBrowserH - 56);
+			} else if (intBrowserW < 1366) {
+				$('.Member .content_layout').css('min-height',intBrowserH - 226);
+			} else {
+				$('.Member .content_layout').css('min-height',intBrowserH - 90);
+			}
 
 
-			var BannerHeight = $('.onebanner').width() / 2;
-			$('.onebanner').css('height',BannerHeight);
 
-		    //鑽石白銀文字置中
-		    var MemberOnlyInfoWidth = $('.info_layout').width();
-		    var MemberOnlyPositionX = (intBrowserW - MemberOnlyInfoWidth) / 2;
-
-		    $('.info_layout').css('left',MemberOnlyPositionX);
-
-		    //預訂區高度設定
-		    if (intBrowserW > 1340){
-		    	 var PreorderZoneHeight = $('.PreorderZone_BottleImg').outerHeight(true) + 40;
-		    	$('.PreorderZone').css('height',PreorderZoneHeight);
-		    }
 
 		    //視窗關閉
 		    $('.CloseBTN').on('touchend',function(){
@@ -110,28 +106,35 @@
 		    	//window重新綁定HeaderShow事件
 		    	$(window).on('touchstart.HeaderShow',HeaderShow())
 		    });
+
+		    $('.BTN_Order_Detail_extend').click(function(){
+		    	//check isExtend
+		    	var IsExtend = $('.Order_Detail_extend').hasClass('Extend');
+
+		    	if (IsExtend) {
+		    		$('.Order_Detail_extend').removeClass('Extend');
+		    	} else {
+		    		$('.Order_Detail_extend').addClass('Extend');
+		    	}
+		    });
+
 		   
-		   
+
+		   	
 		});
 
 
 	</script>
 </head>
-<body>
+<body class="Member">
 
 <!--假body-->
 <div class="wapper">
 
-<!--loading page sample-->
-<div class="LoadingPage">
-	<div class="logo"></div>
-</div>
-<!--loading page sample end-->
-
 <!--header-->
 <div class="header">
 	<header>
-		<h1>iCheers 愛酒窩 葡萄酒館</h1>
+		<h1>iCheers 愛酒窩 訂單查詢</h1>
 	</header>
 	<!--side menu-->
 	<div class="menuBTN">
@@ -156,476 +159,225 @@
 </div>
 <!--header end-->
 
+
 <!--content-->
 <div class="content_layout">
-	<!--go to desktop and newbie-->
-	<div class="GoToDesktop">
-		<div class="option" id="Newbie_top">
-			<div class="icon" style="background-image: url(images/icon_newbie.png);"></div>
-			<div class="text">新手上路</div>
+	<div class="OrderInfo_top">
+		<span class="OrderNumber">W19112500016 </span>
+		<span class="OrderPayment">$&nbsp;123,237,568</span>
+	</div>
+	<div class="Order_Detail_layout">
+		<div class="Order_Info_Row Order_Status">
+			<div class="OneStatus Status_Cancel">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					取消訂單
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
 		</div>
-		<div class="option" id="Order_progress">
-			<div class="icon" style="background-image: url(images/icon_orderprogress.png);"></div>
-			<div class="text">訂單查詢</div>
+		<div class="Order_Info_Row">
+			<div class="TitleBox StatusNormal">
+				<div class="largeT">
+					一般配送
+				</div>
+				<div class="secondT">
+					完成訂單後3-5個工作天內可收到商品
+				</div>
+			</div>
+		</div>
+		<div class="Order_Info_Row">
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+		</div>
+		<!--組合商品-->
+		<div class="Order_Info_Row">
+			<div class="TitleBox">
+				<div class="largeT">
+					歡樂春節套組
+				</div>
+				<div class="secondT">
+					波爾多超值組合優惠
+				</div>
+			</div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="DottedLine"></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice"><b>共&nbsp;1&nbsp;組&nbsp;&nbsp;</b>小計<b>$123,456,789</b></div>
 		</div>
 	</div>
-	<!--go to desktop and newbie end-->
-	<!--4個BN-->
-	<section class="fourbanner_layout">
-		<div class="onebanner" style="background-image: url(images/b1.jpg);">
-		</div>
-		<div class="onebanner" style="background-image: url(images/b2.jpg);">
-		</div>
-		<div class="onebanner" style="background-image: url(images/b-beer.jpg);">
-		</div>
-		<div class="onebanner" style="background-image: url(images/b4.jpg);">
-		</div>
-		
-	</section>
-	<!--4個BN end-->
-	<!--隔日到貨-->
-	<section class="BottlesZone_layout">
-		<h2 class="LargeTitle FastZone_title">
-			<div class="text">
-				<span>隔日到貨</span>
-				<span class="fasticon"></span>
-				<!--20180626 delete text-->
+	<div class="BTN_Order_Detail_extend">展開商品明細<i></i></div>
+	<div class="Order_Detail_layout Order_Detail_extend">
+		<!--加價購-->
+		<div class="Order_Info_Row">
+			<div class="TitleBox">
+				<div class="largeT">
+					Raúl Peréz 任選六瓶8折加999元再送電動刮鬍刀
+				</div>
 			</div>
-			<span class="line"></span>
-		</h2>
-		<div class="FastZone_bottles_layout" id="FastBottleScroll">
-			<div class="content_bottle_scrollX">
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle FastZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price_fast">
-						$1,350
-						<span class="fasticon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle FastZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price_fast">
-						$1,350
-						<span class="fasticon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle FastZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price_fast">
-						$1,350
-						<span class="fasticon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle FastZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price_fast">
-						$1,350
-						<span class="fasticon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle FastZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price_fast">
-						$1,350
-						<span class="fasticon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--看更多-->
-				<!--連結加在整塊上-->
-				<div class="BottlesZone_onebottle FastZone_morebottle">
-					<div class="text">查看所有<br />快速到貨</div>
-				</div>
-				<!--看更多 end-->
-			</div>
-		</div>
-	</section>
-	<!--隔日到貨 end-->
-	<!--本周特價-->
-	<section class="BottlesZone_layout">
-		<h2 class="LargeTitle NormalZone_title">
-			<div class="text">
-				<span>本周特價</span>
-			</div>
-			<span class="line"></span>
-		</h2>
-		<div class="NormalZone_bottles_layout" id="OnSalesBottleScroll">
-			<div class="content_bottle_scrollX">
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle NormalZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price">
-						$1,350
-						<span class="normalicon"></span>
-					</div>
-					<div class="bottle_price_preorder">
-						$1,350
-						<span class="preordericon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle NormalZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price">
-						$1,350
-						<span class="normalicon"></span>
-					</div>
-					<div class="bottle_price_preorder">
-						$1,350
-						<span class="preordericon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle NormalZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price">
-						$1,350
-						<span class="normalicon"></span>
-					</div>
-					<div class="bottle_price_preorder">
-						$1,350
-						<span class="preordericon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle NormalZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price">
-						$1,350
-						<span class="normalicon"></span>
-					</div>
-					<div class="bottle_price_preorder">
-						$1,350
-						<span class="preordericon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle NormalZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price">
-						$1,350
-						<span class="normalicon"></span>
-					</div>
-					<div class="bottle_price_preorder">
-						$1,350
-						<span class="preordericon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle NormalZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price">
-						$1,350
-						<span class="normalicon"></span>
-					</div>
-					<div class="bottle_price_preorder">
-						$1,350
-						<span class="preordericon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-			</div>
-		</div>
-	</section>
-	<!--本周特價 end-->
-	<!--4個BN-->
-	<section class="fourbanner_layout">
-		<div class="onebanner" style="background-image: url(images/b-vip.jpg);">
-		</div>
-		<div class="onebanner" style="background-image: url(images/b5.jpg);">
-		</div>
-		<div class="onebanner" style="background-image: url(images/b6.jpg);">
-		</div>
-		<div class="onebanner" style="background-image: url(images/b7.jpg);">
-		</div>
-		
-	</section>
-	<!--4個BN end-->
-	<!--鑽石白銀-->
-	<section class="MemberOnly_layout">
-		<div class="info_layout">
-			<h3 class="bottle_name_en">Armand Rousseau Chambertin 2011</h3>
-			<div class="bottle_price">
-				$1,350
-				<span class="normalicon"></span>
-			</div>
-		</div>
-	</section>
-	<!--鑽石白銀 end-->
-	<!--活動專區-->
-	<section class="Events_layout">
-		<!--一個活動-->
-		<div class="oneevent">
-			<div class="EventImg">
-				<img src="images/events1.jpg" />
-			</div>
-			<div class="EventTitle">2011波爾多現貨熱賣中</div>
-		</div>
-		<!--一個活動 end-->
-		<!--一個活動-->
-		<div class="oneevent">
-			<div class="EventImg">
-				<img src="images/events2.jpg" />
-			</div>
-			<div class="EventTitle">12月份混搭成箱優惠</div>
-		</div>
-		<!--一個活動 end-->
-	</section>
-	<!--活動專區-->
-	<!--預訂專區-->
-	<section class="BottlesZone_layout PreorderZone">
-		<h2 class="LargeTitle PreorderZone_title">
-			<div class="text">
-				<span>預訂專區</span>
-				<span class="preordericon"></span>
-			</div>
-			<span class="line"></span>
-		</h2>
-		<div class="SmallTitle">
-			連日本當地都難入手
-		</div>
-		<div class="PreorderZone_BottleImg">
-			<img src="images/bottle.jpg"/>
-		</div>
-		<div class="PreorderZone_BottleInfo">
-			<h3 class="bottle_name_en">
-				Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-			</h3>
-			<h3 class="bottle_name_cn">
-				風車磨坊特級村莊「大卡園」紅酒
-			</h3>
-			<div class="bottle_info">
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
 				<span>2017</span>
-				<span>750 ml</span>
-				<span>RP&nbsp;95</span>
+				<span>750ml</span>
+				<span>法國</span>
 			</div>
-			<div class="bottle_price_preorder">
-				$1,350
-				<span class="preordericon"></span>
+			<div class="WineCount">
+				數量：5
 			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+			<div class="SolidLine"></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
 		</div>
-	</section>
-	<!--預訂專區 end-->
-	<!--文章/專欄-->
-	<section class="ArticleZone_layout">
-		<h2 class="LargeTitle Article_title">
-			<div class="text">
-				<span>精選文章</span>
+		<!--任選-->
+		<div class="Order_Info_Row">
+			<div class="TitleBox">
+				<div class="largeT">
+					iCheers推薦任選3瓶限時優惠價3500元
+				</div>
 			</div>
-			<span class="line"></span>
-		</h2>
-		<!--一個文章-->
-		<div class="Article_layout">
-			<div class="Article_img">
-				<img src="images/article02.jpg" />
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
 			</div>
-			<h3 class="Article_title">精彩十年 Dog Point</h3>
-			<h4 class="Article_second_title">【解眾神之渴專欄】</h4>
-			<div class="Article_text">2015年的版的《Hugh Johnson’s Pocket Wine Book》將本莊評為三星，其實筆者認為有Q四星的最高水準；我...</div>
-			<div class="Article_more">More&nbsp;></div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+			<div class="SolidLine"></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
 		</div>
-		<!--一個文章 end-->
-		<!--一個文章-->
-		<div class="Article_layout">
-			<div class="Article_img">
-				<img src="images/article02.jpg" />
+		<!--預訂-->
+		<div class="Order_Info_Row">
+			<div class="TitleBox">
+				<div class="largeT">
+					預訂商品
+				</div>
+				<div class="secondT">
+					預計 2019 年 5 月到貨
+				</div>
 			</div>
-			<h3 class="Article_title">精彩十年 Dog Point</h3>
-			<h4 class="Article_second_title">【解眾神之渴專欄】</h4>
-			<div class="Article_text">2015年的版的《Hugh Johnson’s Pocket Wine Book》將本莊評為三星，其實筆者認為有Q四星的最高水準；我...</div>
-			<div class="Article_more">More&nbsp;></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+			<div class="SolidLine"></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
 		</div>
-		<!--一個文章 end-->
-	</section>
-	<!--文章/專欄 end-->
+		<!--贈品-->
+		<div class="Order_Info_Row">
+			<div class="TitleBox">
+				<div class="largeT">
+					iCheers 6月份限時贈送好禮
+				</div>
+			</div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+			<div class="SolidLine"></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+		</div>
+	</div>
+	<div class="Order_Detail_layout">
+		<div class="Order_Info_Row">
+			<div class="Info_Title">收貨資訊</div>
+			<div class="Info_Text">劉學涵</div>
+			<div class="Info_SmallText">0910-000-344</div>
+			<div class="Info_SmallText">新北市永和區成功路一段80號15樓</div>
+			<div class="Info_SmallText">希望於上午時段(8-13時)配達</div>
+			<div class="Info_SmallText">附提袋6個</div>
+		</div>
+		<div class="Order_Info_Row">
+			<div class="Info_Title">發票寄送</div>
+			<div class="Info_Text">二聯式發票-隨商品寄出</div>
+		</div>
+	</div>
 </div>
 <!--content end-->
-
-<!--icheers info-->
-<div class="iCheers_info_layout">
-	<div class="iCheers_info">
-		<div class="iCheers_info_option" style="background-image: url(images/icheersInfo_delivery_info.jpg);">
-			<span>滿額免運</span>
-		</div>
-		<div class="iCheers_info_option" style="background-image: url(images/icheersInfo_qualityGarentee.jpg);" id="Quality">
-			<span>品質宣言</span>
-		</div>
-		<div class="iCheers_info_option" style="background-image: url(images/icheersInfo_delivery_info2.jpg);" id="DeliveryInfo">
-			<span>到貨時間</span>
-		</div>
-		<div class="iCheers_info_option" style="background-image: url(images/icheersInfo_bouns.jpg);" id="BounsInfo">
-			<span>紅利好康</span>
-		</div>
-		<div class="iCheers_info_option" style="background-image: url(images/icheersInfo_aboutus.jpg);" id="AboutUs">
-			<span>關於我們</span>
-		</div>
-		<div class="iCheers_info_option" style="background-image: url(images/icheersInfo_contactus.jpg);">
-			<span>加入我們</span>
-		</div>
-	</div>
-</div>
-<!--icheers info end-->
-
-<div class="separateline info_separateline"></div>
-
-<div class="icheers_slogan"></div>
 
 <div class="footer">
 	<div class="footer_option_row">
@@ -639,6 +391,7 @@
 		</div>
 	</div>
 </div>
+
 
 <div class="warning">
 	飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
@@ -1384,10 +1137,6 @@
 			<div class="SideMenu_RecentView">
 				<span class="icon"></span>
 				近期瀏覽
-			</div>
-			<div class="SideMenu_GotoDesktop">
-				<span class="icon"></span>
-				切換為電腦版
 			</div>
 		</div>
 		<!--第一層-->

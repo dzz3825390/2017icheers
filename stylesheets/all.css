@@ -74,13 +74,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 }
 
-.clearfix:after, .footer:after, .SideMenu_SearchRow:after, .SideMenu_SearchInput:after, .SideMenu_Detail_list2 span:after, .SideMenu_RecentView:after, .OneWine:after, .OneWine .info .bottle_info:after, .checkbox_layout:after, .pagination_layout .pagination:after, .fourbanner_layout:after, .BottlesZone_onebottle .bottle_info:after, .BottlesZone_onebottle .bottle_price:after, .FastZone_bottles_layout:after, .NormalZone_bottles_layout:after, .MemberOnly_layout .bottle_price:after, .Events_layout:after, .PreorderZone_BottleInfo:after, .PreorderZone_BottleInfo .bottle_info:after, .ArticleZone_layout:after, .Article_layout:after, .GoToDesktop .option:after, .detail_bottleImg_status_layout:after, .detail_price_row:after, .detail_MoreInfo_layout:after, .detail_MoreInfo_BtnOpen:after, .detail_GroupProduct_layout:after, .detail_introduce_layout:after, .winelist_searchCondition_text:after, .winelist_searchCondition_filter:after, .winelist_OneWine_layout:after, .winelist_OneWine_Info .bottle_info:after, .winelist_OneWine_Info .bottle_origin:after, .winelist_OneWine_Info .bottle_price .price_row:after, .winelist_MoreInfo_BtnOpen:after, .winelist_allyear_extend .OneYearRow:after, .cart_step_row:after, .cart_list_OneBottle:after, .cart_list_OneBottle .BottleInfo .Info:after, .cart_list_OneBottle .BottleInfo .Status:after, .cart_list_OneGroup:after, .cart_list_OneGroup .GroupBottle:after, .cart_list_OneGroup .Status:after, .cart_bouns_layout .OneItem_Row:after, .cart_sum_layout .OneItem_Row:after, .cart_sum_layout .btn_row:after, .cart_Terms_border .OneTerm:after, .cart_SeparateCheck_layout:after, .cart_YearCheck_layout:after, .FreightInfoRow:after, .cart_form_row:after, .About_SpecialQuote:after, .About_img:after, .About_BounsInfo:after, .About_Bouns_table .Row .MemberLevel:after, .About_DeliveryInfo:after, .About_DeliveryInfo .title:after, .About_Newbie_mylist:after, .About_Quality_Icons_Bg:after, .winery_intro .Region, .WineryIntroZone_onewinery .WineryRegion {
+.clearfix:after, .footer:after, .SideMenu_SearchRow:after, .SideMenu_SearchInput:after, .SideMenu_Detail_list2 span:after, .SideMenu_RecentView:after, .SideMenu_GotoDesktop:after, .OneWine:after, .OneWine .info .bottle_info:after, .checkbox_layout:after, .pagination_layout .pagination:after, .fourbanner_layout:after, .BottlesZone_onebottle .bottle_info:after, .BottlesZone_onebottle .bottle_price:after, .FastZone_bottles_layout:after, .NormalZone_bottles_layout:after, .MemberOnly_layout .bottle_price:after, .Events_layout:after, .PreorderZone_BottleInfo:after, .PreorderZone_BottleInfo .bottle_info:after, .ArticleZone_layout:after, .Article_layout:after, .GoToDesktop .option:after, .detail_bottleImg_status_layout:after, .detail_price_row:after, .detail_MoreInfo_layout:after, .detail_MoreInfo_BtnOpen:after, .detail_GroupProduct_layout:after, .detail_introduce_layout:after, .winelist_searchCondition_text:after, .winelist_searchCondition_filter:after, .winelist_OneWine_layout:after, .winelist_OneWine_Info .bottle_info:after, .winelist_OneWine_Info .bottle_origin:after, .winelist_OneWine_Info .bottle_price .price_row:after, .winelist_MoreInfo_BtnOpen:after, .winelist_allyear_extend .OneYearRow:after, .cart_step_row:after, .cart_list_OneBottle:after, .cart_list_OneBottle .BottleInfo .Info:after, .cart_list_OneBottle .BottleInfo .Status:after, .cart_list_OneGroup:after, .cart_list_OneGroup .GroupBottle:after, .cart_list_OneGroup .Status:after, .cart_bouns_layout .OneItem_Row:after, .cart_sum_layout .OneItem_Row:after, .cart_sum_layout .btn_row:after, .cart_Terms_border .OneTerm:after, .cart_SeparateCheck_layout:after, .cart_YearCheck_layout:after, .FreightInfoRow:after, .cart_form_row:after, .About_SpecialQuote:after, .About_img:after, .About_BounsInfo:after, .About_Bouns_table .Row .MemberLevel:after, .About_DeliveryInfo:after, .About_DeliveryInfo .title:after, .About_Newbie_mylist:after, .About_Quality_Icons_Bg:after, .winery_intro .Region, .WineryIntroZone_onewinery .WineryRegion, .Order_SearchCondition_form_row:after, .Order_Detail_layout .Order_Info_Row .WineInfo:after {
   content: '';
   display: block;
   clear: both;
 }
 
-.logo, .icheers_slogan, .footer_option .icon, .SideMenu_SignInBTN, .SideMenu_SearchInput .search_icon, .SideMenu_RecentView .icon, .OneWine .img-s, .LoadingPage .logo, .GoToDesktop .icon, .winelist_OneWine_bottleImg, .cart_list_OneBottle .BottleImg, .About_DeliveryInfo .title .Normal, .About_DeliveryInfo .title .Fast, .About_DeliveryInfo .title .Preorder, .About_Newbie_Arrow, .About_Quality_Icons_Bg, .icon_sidemenu, .winery_intro .Region .flags, .WineryIntroZone_onewinery .WineryRegion .flags {
+.logo, .icheers_slogan, .footer_option .icon, .SideMenu_SignInBTN, .SideMenu_SearchInput .search_icon, .SideMenu_RecentView .icon, .SideMenu_GotoDesktop .icon, .OneWine .img-s, .LoadingPage .logo, .GoToDesktop .icon, .winelist_OneWine_bottleImg, .cart_list_OneBottle .BottleImg, .About_DeliveryInfo .title .Normal, .About_DeliveryInfo .title .Fast, .About_DeliveryInfo .title .Preorder, .About_Newbie_Arrow, .About_Quality_Icons_Bg, .icon_sidemenu, .winery_intro .Region .flags, .WineryIntroZone_onewinery .WineryRegion .flags {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1186,12 +1186,6 @@ h4 {
   color: #666;
   line-height: 40px;
   margin-top: 10px;
-  margin-bottom: 50px;
-}
-@media screen and (min-width: 760px) {
-  .SideMenu_RecentView {
-    margin-bottom: 90px;
-  }
 }
 .SideMenu_RecentView .icon {
   display: inline-block;
@@ -1201,6 +1195,33 @@ h4 {
   float: left;
   margin-top: 10px;
   margin-right: 10px;
+}
+
+.SideMenu_GotoDesktop {
+  width: calc(100% - 30px);
+  padding: 0 15px;
+  height: 40px;
+  font-size: 1rem;
+  color: #666;
+  line-height: 40px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+@media screen and (min-width: 760px) {
+  .SideMenu_GotoDesktop {
+    margin-bottom: 90px;
+  }
+}
+.SideMenu_GotoDesktop .icon {
+  display: inline-block;
+  width: 21px;
+  height: 17px;
+  background-image: url(../images/desktop_icon.png);
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 0 3px;
+  background-size: contain;
 }
 
 .SideMenu_Detail_Title_condition {
@@ -2372,6 +2393,15 @@ h4 {
   }
 }
 
+.DownArrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
 .fourbanner_layout {
   padding: 12px;
   background-color: #efefef;
@@ -3150,8 +3180,12 @@ h4 {
   margin-right: 0.75rem;
   float: left;
 }
+.GoToDesktop .option#Order_progress .icon {
+  width: 27px;
+  height: 45px;
+}
 .GoToDesktop .text {
-  ont-size: 1rem;
+  font-size: 1rem;
   height: 45px;
   line-height: 45px;
   color: #666;
@@ -3166,6 +3200,10 @@ h4 {
     height: 70px;
     width: 24px;
     margin-right: 1rem;
+  }
+  .GoToDesktop .option#Order_progress .icon {
+    width: 36px;
+    height: 70px;
   }
   .GoToDesktop .text {
     font-size: 1.25rem;
@@ -7574,4 +7612,759 @@ h2.detail_Name_cn {
   height: auto;
   border: 1px solid #cccccc;
   margin-right: 1rem;
+}
+
+.Member .header {
+  border-color: #7d7d7d;
+}
+
+.Order_SearchCondition_layout {
+  width: 100%;
+  background-color: #d9d9d9;
+  cursor: pointer;
+  position: fixed;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 1020px) {
+  .Order_SearchCondition_layout {
+    width: 40vw;
+    background-color: #ededed;
+    left: 0;
+  }
+}
+
+.Order_SearchCondition_CloseTitle {
+  font-size: 1.25rem;
+  color: #333;
+  padding: 10px;
+  padding-bottom: 0;
+  text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 1020px) {
+  .Order_SearchCondition_CloseTitle {
+    display: none;
+  }
+}
+
+.Order_SearchCondition_DownArrow {
+  width: 100%;
+  padding: 5px;
+  padding-bottom: 13px;
+  background-color: #d9d9d9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.Order_SearchCondition_DownArrow span {
+  display: inline-block;
+}
+@media screen and (min-width: 1020px) {
+  .Order_SearchCondition_DownArrow {
+    display: none;
+  }
+}
+
+.Order_SearchCondition_Open.Order_SearchCondition_layout {
+  background-color: #ededed;
+}
+.Order_SearchCondition_Open .Order_SearchCondition_CloseTitle {
+  display: none;
+}
+.Order_SearchCondition_Open .Order_SearchCondition_DownArrow {
+  padding: 10px;
+  padding-top: 19px;
+  cursor: pointer;
+}
+.Order_SearchCondition_Open .Order_SearchCondition_DownArrow .DownArrow {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.Order_SearchCondition_Extend {
+  padding: 1.25rem 16px;
+  display: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 760px) {
+  .Order_SearchCondition_Extend {
+    padding: 1.5rem 20px;
+  }
+}
+@media screen and (min-width: 1020px) {
+  .Order_SearchCondition_Extend {
+    display: block;
+    width: 100%;
+  }
+}
+
+.Order_SearchCondition_form_row {
+  margin-top: 1.25rem;
+}
+.Order_SearchCondition_form_row:first-child {
+  margin-top: 0;
+}
+.Order_SearchCondition_form_row .formTitle {
+  font-size: 1rem;
+  color: #666666;
+}
+.Order_SearchCondition_form_row input {
+  width: 100%;
+  height: 45px;
+  line-height: 46px;
+  padding: 0 0.5rem;
+  font-size: 1.125rem;
+  color: #666666;
+  margin-top: 0.5rem;
+}
+.Order_SearchCondition_form_row input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #999;
+}
+.Order_SearchCondition_form_row input::-moz-input-placeholder {
+  color: #999;
+}
+.Order_SearchCondition_form_row input:-moz-input-placeholder {
+  color: #999;
+}
+.Order_SearchCondition_form_row input:-ms-input-placeholder {
+  color: #999;
+}
+
+.form_Order .dropdown {
+  width: calc(100% - 1.5rem - 2px);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+.form_Order .dropdown .dropdown_text {
+  font-size: 1.125rem;
+  height: 18px;
+  line-height: 1.125rem;
+}
+.form_Order .dropdown .dropdown_text span {
+  display: inline-block;
+  height: 18px;
+  margin-top: 1px;
+}
+
+.form_DeliveryStatus .dropdown {
+  width: calc(100% - 1.5rem - 2px);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+.form_DeliveryStatus .dropdown .dropdown_text {
+  font-size: 1.125rem;
+  height: 18px;
+  line-height: 1.125rem;
+}
+.form_DeliveryStatus .dropdown .dropdown_text span {
+  display: inline-block;
+  height: 18px;
+  margin-top: 1px;
+}
+
+.form_OrderDate {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.form_OrderDate .formTitle {
+  width: 100%;
+}
+.form_OrderDate input[type="date"] {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: solid 1px #cccccc;
+  width: calc((100% - 2rem)/2);
+}
+.form_OrderDate span {
+  color: #666;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.Order_SearchCondition_btn {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  background-color: #939334;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin-top: 2.5rem;
+}
+
+.OrderList_layout {
+  width: 100%;
+  padding: 12px;
+  padding-top: 70px;
+  padding-bottom: 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 760px) {
+  .OrderList_layout {
+    padding: 20px;
+    padding-top: 70px;
+    padding-bottom: 20px;
+  }
+}
+@media screen and (min-width: 1020px) {
+  .OrderList_layout {
+    width: 60vw;
+    position: fixed;
+    right: 0;
+    padding-top: 0;
+    overflow: scroll;
+  }
+}
+
+.OneOrder {
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-bottom: 16px;
+  margin-top: 20px;
+  border-bottom: solid 1px #cccccc;
+}
+
+.OrderNumber_title {
+  font-size: 1rem;
+  color: #666;
+}
+
+.Row_OrderNumber {
+  width: 100%;
+  margin-top: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.OrderNumber {
+  width: 65%;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #8e6681;
+  line-height: 2.5rem;
+}
+
+.OrderStatus {
+  display: flex;
+  align-items: center;
+}
+.OrderStatus span {
+  display: inline-block;
+}
+.OrderStatus .DeliveryTimeStatus {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 4px;
+}
+.OrderStatus .DeliveryTimeStatus.normal {
+  background-color: #4d4d4d;
+  padding: 7px 10px;
+}
+.OrderStatus .DeliveryTimeStatus.separate {
+  background-color: #4d4d4d;
+  padding: 7px 10px;
+}
+.OrderStatus .DeliveryTimeStatus.fast {
+  background-color: #ef9c00;
+  padding: 7px 10px;
+}
+.OrderStatus .DeliveryTimeStatus.preorder {
+  background-color: #0071bc;
+  padding: 7px 10px;
+}
+.OrderStatus .DeliveryStatus {
+  font-size: 1.125rem;
+}
+.OrderStatus .DeliveryStatus.delivered {
+  color: #a6a6a6;
+}
+.OrderStatus .DeliveryStatus.not_deliver {
+  color: #cd0d0d;
+  font-weight: bold;
+}
+.OrderStatus .DeliveryStatus.delivering {
+  color: #cd0d0d;
+  font-weight: bold;
+}
+.OrderStatus .DeliveryStatus.cancel {
+  color: #a6a6a6;
+}
+
+.Row_DateAndCost {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.Row_DateAndCost span {
+  display: inline-block;
+  font-size: 1.25rem;
+  color: #666666;
+}
+
+.OrderInfo_top {
+  width: 100%;
+  height: 60px;
+  padding: 0 16px;
+  background-color: #e6e6e6;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.OrderInfo_top span {
+  display: inline-block;
+}
+.OrderInfo_top .OrderNumber {
+  font-size: 1.625rem;
+  font-weight: bold;
+  color: #8e6681;
+}
+.OrderInfo_top .OrderPayment {
+  font-size: 1.125rem;
+  color: #cf3448;
+}
+@media screen and (min-width: 760px) {
+  .OrderInfo_top {
+    padding: 0 40px;
+  }
+  .OrderInfo_top .OrderPayment {
+    font-size: 1.5rem;
+  }
+}
+
+.Order_Detail_layout {
+  padding: 12px;
+  padding-top: 60px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.Order_Detail_layout:last-child {
+  padding-top: 0;
+  padding-bottom: 20px;
+}
+.Order_Detail_layout .Order_Info_Row {
+  width: 100%;
+  padding: 16px 0;
+  border-bottom: solid 1px #cccccc;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.Order_Detail_layout .Order_Info_Row .Info_Title {
+  font-size: 1rem;
+  color: #999999;
+  margin-top: 5px;
+}
+.Order_Detail_layout .Order_Info_Row .Info_Text {
+  font-size: 1.25rem;
+  color: #333333;
+  line-height: 1.75rem;
+  margin-top: 8px;
+}
+.Order_Detail_layout .Order_Info_Row .Info_Text a {
+  text-decoration: underline;
+  color: #097cc5;
+}
+.Order_Detail_layout .Order_Info_Row .Info_Text span {
+  float: right;
+}
+.Order_Detail_layout .Order_Info_Row .Info_SmallText {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.5rem;
+  margin-top: 8px;
+}
+.Order_Detail_layout .Order_Info_Row .Info_SmallText + .Info_SmallText {
+  margin-top: 3px;
+}
+.Order_Detail_layout .Order_Info_Row .WineName_En {
+  font-size: 1.125rem;
+  color: #333333;
+  line-height: 1.5rem;
+  max-height: 3rem;
+  overflow: hidden;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.Order_Detail_layout .Order_Info_Row .WineName_Cn {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.5rem;
+  max-height: 1.5rem;
+  overflow: hidden;
+  margin-top: 5px;
+}
+.Order_Detail_layout .Order_Info_Row .WineInfo {
+  margin-top: 5px;
+  font-size: 0.875rem;
+  color: #808080;
+}
+.Order_Detail_layout .Order_Info_Row .WineInfo span {
+  padding: 0 5px;
+  border-left: solid 1px #cccccc;
+  float: left;
+}
+.Order_Detail_layout .Order_Info_Row .WineInfo span:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+.Order_Detail_layout .Order_Info_Row .WineCount {
+  margin-top: 16px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #666;
+}
+.Order_Detail_layout .Order_Info_Row .WinePrice {
+  text-align: right;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #666;
+  margin-top: 20px;
+}
+.Order_Detail_layout .Order_Info_Row .WinePrice b {
+  font-weight: bold;
+  margin-left: 5px;
+  font-size: 1.25rem;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox {
+  padding: 1rem;
+  margin-top: 1rem;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #d9d9d9;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox .largeT {
+  font-size: 1.25rem;
+  color: #333333;
+  line-height: 1.75rem;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox .secondT {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.5rem;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox .secondT a {
+  color: #fff;
+  text-decoration: underline;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox + .Info_Title {
+  margin-top: 20px;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox.StatusFast {
+  background-color: #ef9c00;
+  margin-bottom: 1rem;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox.StatusFast .largeT {
+  color: #fff;
+  font-weight: bold;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox.StatusFast .secondT {
+  color: #fff;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox.StatusNormal {
+  background-color: #4d4d4d;
+  margin-bottom: 1rem;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox.StatusNormal .largeT {
+  color: #fff;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox.StatusNormal .secondT {
+  color: #fff;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox.StatusPreorder {
+  background-color: #0071bc;
+  margin-bottom: 1rem;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox.StatusPreorder .largeT {
+  color: #fff;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox.StatusPreorder .secondT {
+  color: #fff;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox.Fast {
+  background-color: #f1e8d7;
+}
+.Order_Detail_layout .Order_Info_Row .TitleBox.Preorder {
+  background-color: #cbdeea;
+}
+.Order_Detail_layout .Order_Info_Row .DottedLine {
+  width: calc(100% - 2rem);
+  border-top: 1px dotted #cccccc;
+  margin: 1.5rem 1rem;
+}
+.Order_Detail_layout .Order_Info_Row .SolidLine {
+  width: 100%;
+  border-top: 1px solid #cccccc;
+  margin: 1.5rem 0;
+}
+.Order_Detail_layout .Order_Status {
+  display: flex;
+  justify-content: flex-start;
+}
+.Order_Detail_layout .Order_Status .OneStatus {
+  width: 28%;
+}
+.Order_Detail_layout .Order_Status .OneStatus.Status_FinishOrder span {
+  width: 60%;
+  height: 60%;
+  background-image: url("../images/icon_member_finishorder.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.Order_Detail_layout .Order_Status .OneStatus.Status_Transfer span {
+  width: 75%;
+  height: 75%;
+  background-image: url("../images/icon_member_finishtransfer.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.Order_Detail_layout .Order_Status .OneStatus.Status_Creditcard span {
+  width: 73%;
+  height: 73%;
+  background-image: url("../images/icon_member_finishcreditcard.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.Order_Detail_layout .Order_Status .OneStatus.Status_FinishCash span {
+  width: 73%;
+  height: 73%;
+  background-image: url("../images/icon_member_finishcash.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.Order_Detail_layout .Order_Status .OneStatus.Status_Delivery span {
+  width: 60%;
+  height: 60%;
+  background-image: url("../images/icon_member_delivery.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.Order_Detail_layout .Order_Status .OneStatus.Status_Delivering span {
+  width: 60%;
+  height: 60%;
+  background-image: url("../images/icon_member_delivering.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.Order_Detail_layout .Order_Status .OneStatus.Status_Collect span {
+  width: 70%;
+  height: 70%;
+  background-image: url("../images/icon_member_collecting.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.Order_Detail_layout .Order_Status .OneStatus.Status_Cancel span {
+  width: 65%;
+  height: 65%;
+  background-image: url("../images/icon_member_cancelorder.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.Order_Detail_layout .Order_Status .OneStatus.Status_active span {
+  background-position: center bottom;
+}
+.Order_Detail_layout .Order_Status .OneStatus.Status_active .Status_icon {
+  background-color: #8e6681;
+}
+.Order_Detail_layout .Order_Status .OneStatus.Status_active .Status_text {
+  color: #333333;
+}
+.Order_Detail_layout .Order_Status .OneStatus.Status_active .Status_date {
+  color: #333333;
+}
+.Order_Detail_layout .Order_Status .StatusDottedLine {
+  width: 8%;
+  height: 4px;
+  background-image: url("../images/icon_member_dottedline.png");
+  background-size: contain;
+  background-repeat: repeat;
+  margin-top: 44px;
+  border-top: none;
+}
+.Order_Detail_layout .Order_Status .Status_icon {
+  width: 88px;
+  height: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #cccccc;
+}
+.Order_Detail_layout .Order_Status .Status_text {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 1.15rem;
+  color: #959595;
+}
+.Order_Detail_layout .Order_Status .Status_date {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: #959595;
+}
+.Order_Detail_layout .btn_edit {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  background-color: #939334;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 760px) {
+  .Order_Detail_layout .btn_edit {
+    width: 380px;
+  }
+}
+.Order_Detail_layout.Order_Detail_extend {
+  padding-top: 0;
+  padding-bottom: 20px;
+  transition: max-height 0.5s ease-in;
+  max-height: 0;
+  overflow: hidden;
+}
+.Order_Detail_layout.Extend {
+  max-height: 99999px;
+}
+@media screen and (min-width: 760px) {
+  .Order_Detail_layout {
+    padding: 40px;
+    padding-top: 60px;
+  }
+  .Order_Detail_layout .Order_Status {
+    justify-content: center;
+  }
+  .Order_Detail_layout .Order_Status .OneStatus {
+    width: 15%;
+  }
+  .Order_Detail_layout .Order_Status .Status_icon {
+    width: 95px;
+    height: 95px;
+  }
+  .Order_Detail_layout .StatusDottedLine {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .Order_Detail_layout .Order_Info_Row .WineName_En {
+    font-size: 1.75rem;
+    line-height: 2.1rem;
+    max-height: 4.2rem;
+  }
+  .Order_Detail_layout .Order_Info_Row .WineName_Cn {
+    font-size: 1.25rem;
+    height: 1.5rem;
+  }
+  .Order_Detail_layout .Order_Info_Row .WineInfo {
+    margin-top: 10px;
+  }
+  .Order_Detail_layout .Order_Info_Row .WineInfo span {
+    font-size: 1.25rem;
+    height: 1.05rem;
+    padding: 0 12px;
+  }
+  .Order_Detail_layout .Order_Info_Row .WineCount {
+    font-size: 1.25rem;
+  }
+  .Order_Detail_layout .Order_Info_Row .WinePrice b {
+    font-size: 2rem;
+  }
+  .Order_Detail_layout .Order_Info_Row .TitleBox {
+    padding: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .Order_Detail_layout .Order_Info_Row .TitleBox .largeT {
+    font-size: 1.75rem;
+    line-height: 2.6rem;
+  }
+  .Order_Detail_layout .Order_Info_Row .TitleBox .secondT {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.BTN_Order_Detail_extend {
+  display: inline-block;
+  margin-left: 16px;
+  margin-top: 20px;
+  border: 1px solid #494949;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 1.375rem;
+  line-height: 1.375rem;
+  font-weight: bold;
+  color: #494949;
+  padding: 11px 12px 8px 12px;
+}
+.BTN_Order_Detail_extend i {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #494949;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 3px;
+  transform: rotate(-90deg);
+  transition: transform 0.5s;
+}
+.BTN_Order_Detail_extend.Extend i {
+  transform: rotate(0deg);
+}
+@media screen and (min-width: 760px) {
+  .BTN_Order_Detail_extend {
+    margin-left: 40px;
+  }
 }
