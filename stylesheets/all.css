@@ -8368,3 +8368,48 @@ h2.detail_Name_cn {
     margin-left: 40px;
   }
 }
+
+@media screen and (min-width: 1020px) {
+  .OrderList_nodata_layout {
+    width: 70vw;
+    left: 15vw;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.OrderList_nodata {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.OrderList_nodata .OrderList_nodata_text {
+  width: 100%;
+  font-size: 20px;
+  color: #999;
+  text-align: center;
+  margin-top: 15px;
+}
+.OrderList_nodata .OrderList_nodata_text:first-child {
+  margin-top: 0;
+}
+.OrderList_nodata .OrderList_nodata_img {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}
+.OrderList_nodata .OrderList_nodata_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+@media screen and (min-width: 760px) {
+  .OrderList_nodata .OrderList_nodata_text {
+    font-size: 24px;
+  }
+  .OrderList_nodata .OrderList_nodata_img img {
+    width: 80%;
+  }
+}
