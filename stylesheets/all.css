@@ -545,6 +545,8 @@ h4 {
   background-color: #fff;
   position: relative;
   margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 @media screen and (min-width: 760px) {
   .iCheers_info_layout {
@@ -558,8 +560,10 @@ h4 {
 }
 
 .iCheers_info {
-  position: absolute;
   width: 302px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 @media screen and (min-width: 760px) {
   .iCheers_info {
@@ -579,12 +583,10 @@ h4 {
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
-  float: left;
   margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
   cursor: pointer;
-}
-.iCheers_info_option:nth-child(odd) {
-  margin-right: 30px;
 }
 .iCheers_info_option span {
   display: block;
@@ -601,19 +603,14 @@ h4 {
     width: 199px;
     height: 199px;
   }
-  .iCheers_info_option:nth-child(odd) {
-    margin-right: 140px;
-  }
   .iCheers_info_option span {
     font-size: 1.75rem;
   }
 }
 @media screen and (min-width: 1360px) {
-  .iCheers_info_option:nth-child(2n) {
-    margin-right: 140px;
-  }
-  .iCheers_info_option:nth-child(3n) {
-    margin-right: 0;
+  .iCheers_info_option {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
@@ -647,6 +644,40 @@ h4 {
 @media screen and (min-width: 1360px) {
   .icheers_slogan {
     margin: 64px auto;
+  }
+}
+
+.iCheers_service_time {
+  width: 100%;
+  text-align: center;
+  margin: 40px 0;
+}
+.iCheers_service_time .title {
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: bold;
+  margin-top: 30px;
+}
+.iCheers_service_time .text {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 8px;
+  line-height: 1.5rem;
+}
+.iCheers_service_time .text a {
+  color: #666;
+}
+@media screen and (min-width: 760px) {
+  .iCheers_service_time {
+    margin: 60px 0;
+  }
+  .iCheers_service_time .title {
+    font-size: 1.75rem;
+  }
+  .iCheers_service_time .text {
+    font-size: 1.25rem;
+    margin-top: 12px;
+    line-height: 2rem;
   }
 }
 
@@ -7848,6 +7879,7 @@ h2.detail_Name_cn {
   padding-bottom: 16px;
   margin-top: 20px;
   border-bottom: solid 1px #cccccc;
+  cursor: pointer;
 }
 
 .OrderNumber_title {
