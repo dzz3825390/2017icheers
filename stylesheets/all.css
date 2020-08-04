@@ -2358,6 +2358,11 @@ h4 {
   align-items: center;
 }
 
+.FlexBoxCenter-vstart {
+  display: flex;
+  align-items: flex-start;
+}
+
 .Announcement {
   font-size: 1rem;
   color: #B00808;
