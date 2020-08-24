@@ -414,6 +414,8 @@ h4{
 	background-color: #fff;
 	position: relative;
 	margin-bottom: 30px;
+	display: flex;
+	justify-content: center;
 	@include pad-width{
 		padding: $PadPadding;
 	}
@@ -424,14 +426,17 @@ h4{
 }
 
 .iCheers_info{
-	position:absolute;
 	width: 302px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 	@include pad-width{
 		width: 540px;
 	}
 
 	@include large-pad-width{
 		width: 877px;
+
 	}
 }
 
@@ -442,12 +447,10 @@ h4{
 	background-repeat:no-repeat;
 	background-position:center;
 	position: relative;
-	float: left;
 	margin-top: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
 	cursor: pointer;
-	&:nth-child(odd){
-		margin-right: 30px;
-	}
 	& span{
 		display: block;
 		width: 100%;
@@ -462,22 +465,14 @@ h4{
 	@include pad-width{
 		width: 199px;
 		height: 199px;
-		&:nth-child(odd){
-			margin-right: 140px;
-		}
 		& span{
 			font-size: 1.75rem;
 		}
 	}
 
 	@include large-pad-width{
-		&:nth-child(2n){
-			margin-right: 140px;
-		}
-
-		&:nth-child(3n){
-			margin-right:0;
-		}
+		margin-left: 20px;
+		margin-right: 20px;
 	}
 }
 
@@ -505,6 +500,41 @@ h4{
 
 	@include large-pad-width{
 		margin: 64px auto;
+	}
+}
+
+.iCheers_service_time{
+	width: 100%;
+	text-align: center;
+	margin: 40px 0;
+	& .title{
+		font-size: 1.25rem;
+		color: #333;
+		font-weight: bold;
+		margin-top: 30px;
+	}
+
+	& .text{
+		font-size: 1rem;
+		color: #666;
+		margin-top: 8px;
+		line-height: 1.5rem;
+		& a{
+			color: #666;
+		}
+	}
+
+	@include pad-width{
+		margin: 60px 0;
+		& .title{
+			font-size: 1.75rem;
+		}
+
+		& .text{
+			font-size: 1.25rem;
+			margin-top: 12px;
+			line-height: 2rem;
+		}
 	}
 }
 
@@ -1004,10 +1034,6 @@ h4{
 	color: #666;
 	line-height: 40px;
 	margin-top: 10px;
-	margin-bottom: 50px;
-	@include pad-width{
-		margin-bottom: 90px;
-	}
 	&:after{
 		@extend %clearfix;
 	}
@@ -1021,6 +1047,36 @@ h4{
 		float: left;
 		margin-top: 10px;
 		margin-right: 10px;
+	}
+}
+
+.SideMenu_GotoDesktop{
+	width: calc(100% - 30px);
+	padding: 0 15px;
+	height: 40px;
+	font-size: 1rem;
+	color: #666;
+	line-height: 40px;
+	margin-top: 10px;
+	margin-bottom: 50px;
+	@include pad-width{
+		margin-bottom: 90px;
+	}
+	&:after{
+		@extend %clearfix;
+	}
+
+	& .icon{
+		display: inline-block;
+		width: 21px;
+		height: 17px;
+		background-image:url(../images/desktop_icon.png);
+		@extend %backgroundimagecover;
+		float: left;
+		margin-top: 10px;
+		margin-right: 10px;
+		padding: 0 3px;
+		background-size: contain; 
 	}
 }
 
@@ -1890,4 +1946,13 @@ h4{
 		font-size: 1.25rem;
 		line-height: 2rem;
 	}
+}
+
+.DownArrow{
+	border: solid black;
+	border-width: 0 2px 2px 0;
+  	display: inline-block;
+  	padding: 5px;
+  	transform: rotate(45deg);
+  	-webkit-transform: rotate(45deg);
 }

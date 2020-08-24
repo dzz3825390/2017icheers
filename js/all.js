@@ -79,12 +79,6 @@ $(document).ready(function(){
 		$(this).css('width',WineryScrollWidth);
 	});
 
-	//icheers info置中設定 高度設定
-	var iCheersInfoWidth = $('.iCheers_info').width();
-	var iCheersInfoPositionX = (intBrowserW - iCheersInfoWidth) / 2;  
-	$('.iCheers_info').css('left',iCheersInfoPositionX);   
-	var iCheersInfoHeight = $('.iCheers_info').height();
-	$('.iCheers_info_layout').css('height',iCheersInfoHeight);
 
 	//footer選項置中
 	var FooterOptionWidth = $('.footer_option_row').width();

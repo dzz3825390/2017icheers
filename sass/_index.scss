@@ -702,8 +702,13 @@
     	float:left;
 	}
 
+	& .option#Order_progress .icon{
+		width: 27px;
+		height: 45px;
+	}
+
 	& .text{
-		ont-size: 1rem;
+		font-size: 1rem;
     	height: 45px;
     	line-height: 45px;
     	color: #666;
@@ -717,6 +722,11 @@
 			height: 70px;
 			width: 24px;
 			margin-right: 1rem;
+		}
+
+		& .option#Order_progress .icon{
+			width: 36px;
+			height: 70px;
 		}
 		& .text{
 			font-size: 1.25rem;

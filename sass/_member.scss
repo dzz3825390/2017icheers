@@ -1,0 +1,831 @@
+@import "compass/css3";
+@import "mixin";
+
+.Member .header{
+	border-color: #7d7d7d;
+}
+
+.Order_SearchCondition_layout{
+	width: 100%;
+	background-color: #d9d9d9;
+	cursor: pointer;
+	position: fixed;
+	@include box-sizing(border-box);
+	@include pad-width-l{
+		width: 40vw;
+		background-color: #ededed;
+		left: 0;
+	}
+}
+
+.Order_SearchCondition_CloseTitle{
+	font-size: 1.25rem;
+	color: #333;
+	padding: 10px;
+	padding-bottom: 0;
+	text-align: center;
+	@include box-sizing(border-box);
+	@include pad-width-l{
+		display: none;
+	}
+}
+
+.Order_SearchCondition_DownArrow{
+	width: 100%;
+	padding: 5px;
+	padding-bottom: 13px;
+	background-color: #d9d9d9;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include box-sizing(border-box);
+	& span{
+		display: inline-block;
+	}
+
+	@include pad-width-l{
+		display: none;
+	}
+}
+
+.Order_SearchCondition_Open{
+	&.Order_SearchCondition_layout{
+		background-color: #ededed;
+	}
+
+	& .Order_SearchCondition_CloseTitle{
+		display: none;
+	}
+
+	& .Order_SearchCondition_DownArrow{
+		padding: 10px;
+		padding-top: 19px; 
+		cursor: pointer;
+		& .DownArrow{
+			transform: rotate(-135deg);
+  			-webkit-transform: rotate(-135deg);
+		} 
+	}
+}
+
+
+.Order_SearchCondition_Extend{
+	padding: 1.25rem 16px;
+	display: none;
+	@include box-sizing(border-box);
+	@include pad-width{
+		padding: 1.5rem 20px;
+	}
+	@include pad-width-l{
+		display: block;
+		width: 100%;
+	}
+}
+
+.Order_SearchCondition_form_row{
+	margin-top:1.25rem;
+	&:after{
+		@extend %clearfix;
+	}
+
+	&:first-child{
+		margin-top: 0;
+	}
+	& .formTitle{
+		font-size: $PhoneSecondTitleFontSize;
+		color: $TextColor;
+	}
+	& input {
+		width: 100%;
+		height: 45px;
+		line-height: 46px;
+		padding: 0 0.5rem;
+		font-size: 1.125rem;
+		color: $TextColor;
+		margin-top: 0.5rem;
+		&::-webkit-input-placeholder { /* WebKit browsers */
+		    color: #999;
+		}
+		&::-moz-input-placeholder{
+			color: #999;
+		}
+		&:-moz-input-placeholder{
+			color: #999;
+		}
+		&:-ms-input-placeholder{
+			color: #999;
+		}
+	}
+}
+
+.form_Order{
+	& .dropdown{
+		width: calc(100% - 1.5rem - 2px);
+		margin-top: 0.5rem;
+		text-align: center;
+		
+		& .dropdown_text{
+			font-size: 1.125rem;
+			height: 18px;
+			line-height: 1.125rem;
+			& span{
+				display: inline-block;
+				height: 18px;
+				margin-top: 1px;
+			}
+		}
+	}
+}
+
+.form_DeliveryStatus{
+	& .dropdown{
+		width: calc(100% - 1.5rem - 2px);
+		margin-top: 0.5rem;
+		text-align: center;
+		
+		& .dropdown_text{
+			font-size: 1.125rem;
+			height: 18px;
+			line-height: 1.125rem;
+			& span{
+				display: inline-block;
+				height: 18px;
+				margin-top: 1px;
+			}
+		}
+	}
+}
+
+.form_OrderDate{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	& .formTitle{
+		width: 100%;
+	}
+	& input[type="date"]{
+		@include border-radius(4px);
+		@include box-sizing(border-box);
+		border: solid 1px #cccccc;
+		width: calc((100% - 2rem)/2);
+	}
+
+	& span{
+		color: #666;
+		margin-top: 0.5rem;
+		display: inline-block;
+	}
+}
+
+.Order_SearchCondition_btn{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	color: #fff;
+	background-color: #939334;
+	font-weight: bold;
+	font-size: 1.5rem;
+	cursor: pointer;
+	@include border-radius(4px);
+	margin-top: 2.5rem;
+}
+
+.OrderList_layout{
+	width: 100%;
+	padding: $PhonePadding;
+	padding-top: 70px;
+	padding-bottom: 20px;
+	@include box-sizing(border-box);
+	@include pad-width{
+		padding: $PadPadding;
+		padding-top: 70px;
+		padding-bottom: 20px;
+	}
+
+	@include pad-width-l{
+		width: 60vw;
+		position: fixed;
+		right: 0;
+		padding-top: 0;
+		overflow: scroll;
+	}
+}
+
+.OneOrder{
+	width: 100%;
+	@include box-sizing(border-box);
+	padding-bottom: 16px;
+	margin-top: 20px;
+	border-bottom: $BorderColor;
+	cursor: pointer;
+}
+
+.OrderNumber_title{
+	font-size: 1rem;
+	color: #666;
+}
+
+.Row_OrderNumber{
+	width: 100%;
+	margin-top: 5px;
+	@include box-sizing(border-box);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.OrderNumber{
+	width: 65%;
+	font-size: 1.75rem;
+	font-weight: bold;
+	color: #8e6681;
+	line-height: 2.5rem;
+}
+
+.OrderStatus{
+	display: flex;
+	align-items: center;
+	& span{
+		display: inline-block;
+	}
+
+	& .DeliveryTimeStatus{
+		margin-right: 10px;
+		font-size: 14px;
+		color: #fff;
+		border-radius: 4px;
+		&.normal{
+			background-color: #4d4d4d;
+			padding: 7px 10px;	
+		}
+
+		&.separate{
+			background-color: #4d4d4d;
+			padding: 7px 10px;	
+		}
+
+		&.fast{
+			background-color: #ef9c00;
+			padding: 7px 10px;
+		}
+		
+		&.preorder{
+			background-color: #0071bc;
+			padding: 7px 10px;
+		}
+
+	}
+
+	& .DeliveryStatus{
+		font-size: 1.125rem;
+		&.delivered{
+			color: #a6a6a6;
+		}
+
+		&.not_deliver{
+			color: #cd0d0d;
+			font-weight: bold;
+		}
+
+		&.delivering{
+			color: #cd0d0d;
+			font-weight: bold;
+		}
+
+		&.cancel{
+			color: #a6a6a6;
+		}
+	}
+}
+
+.Row_DateAndCost{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 8px;
+	& span{
+		display: inline-block;
+		font-size: 1.25rem;
+		color: #666666;
+	}
+}
+
+.OrderInfo_top{
+	width: 100%;
+	height: 60px;
+	padding: 0 16px;
+	background-color: #e6e6e6;
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@include box-sizing(border-box);
+	& span{
+		display: inline-block;
+	}
+
+	& .OrderNumber{
+		font-size: 1.625rem;
+		font-weight: bold;
+    	color: #8e6681;
+	}
+
+	& .OrderPayment{
+		font-size: 1.125rem;
+    	color: #cf3448;
+	}
+
+	@include pad-width{
+		padding: 0 40px;
+
+		& .OrderPayment{
+			font-size: 1.5rem;
+		}
+	}
+}
+
+.Order_Detail_layout{
+	padding: $PhonePadding;
+	padding-top: 60px;
+	@include box-sizing(border-box);
+	&:last-child{
+		padding-top:0;
+		padding-bottom:20px;
+	}
+	& .Order_Info_Row{
+		width: 100%;
+		padding: 16px 0;
+		border-bottom: $BorderColor;
+		@include box-sizing(border-box);
+		& .Info_Title{
+			font-size: 1rem;
+			color: #999999;
+			margin-top: 5px;
+		}
+
+		& .Info_Text{
+			font-size: 1.25rem;
+			color: #333333;
+			line-height: 1.75rem;
+			margin-top: 8px;
+			& a {
+				text-decoration: underline;
+				color: #097cc5;
+			}
+
+			& span{
+				float: right;
+			}
+		}
+
+		& .Info_SmallText{
+			font-size: 1rem;
+			color: #666666;
+			line-height: 1.5rem;
+			margin-top: 8px;
+			&+.Info_SmallText{
+				margin-top: 3px;
+			}
+		}
+
+		& .WineName_En{
+			font-size: 1.125rem;
+			color: $TitleColor;
+			line-height: 1.5rem;
+			max-height: 3rem;
+			overflow:hidden;
+			margin-top: 1rem;
+			font-weight: bold;
+		}
+
+		& .WineName_Cn{
+			font-size: $PhoneSecondTitleFontSize;
+			color: $TextColor;
+			line-height: 1.5rem;
+			max-height: 1.5rem;
+			overflow:hidden;
+			margin-top: 5px;
+		}
+
+		& .WineInfo{
+			margin-top: 5px;
+			@include BottleInfo($PhoneContentFontSize,5px);
+			&:after{
+				@extend %clearfix;
+			}
+		}
+
+		& .WineCount{
+			margin-top: 16px;
+			font-size: 1.125rem;
+			line-height: 1.5rem;
+			color: #666;
+		}
+
+		& .WinePrice{
+			text-align: right;
+			font-size: 1rem;
+			line-height: 1.5rem;
+			color: #666;
+			margin-top: 20px;
+			& b{
+				font-weight: bold;
+				margin-left: 5px;
+				font-size: 1.25rem;
+			}
+		}
+
+		& .TitleBox{
+			padding: 1rem;
+			margin-top: 1rem;
+			@include box-sizing(border-box);
+			background-color: #d9d9d9;
+			& .largeT{
+				font-size: 1.25rem;
+			    color: #333333;
+			    line-height: 1.75rem;
+			}
+
+			& .secondT{
+				font-size: 1rem;
+			    color: #666666;
+			    line-height: 1.5rem;
+			    & a{
+			    	color: #fff;
+			    	text-decoration: underline;
+			    }
+			}
+
+			&+.Info_Title{
+				margin-top: 20px;
+			}
+
+			&.StatusFast{
+				background-color: #ef9c00;
+				margin-bottom: 1rem;
+				& .largeT{
+					color: #fff;
+					font-weight: bold;
+				}
+
+				& .secondT{
+					color: #fff;
+				}
+			}
+
+			&.StatusNormal{
+				background-color: #4d4d4d;
+				margin-bottom: 1rem;
+				& .largeT{
+					color: #fff;
+				}
+
+				& .secondT{
+					color: #fff;
+				}
+			}
+
+			&.StatusPreorder{
+				background-color: #0071bc;
+				margin-bottom: 1rem;
+				& .largeT{
+					color: #fff;
+				}
+
+				& .secondT{
+					color: #fff;
+				}
+			}
+
+			&.Fast{
+				background-color: #f1e8d7;
+			}
+
+			&.Preorder{
+				background-color: #cbdeea;
+			}
+		}
+
+		.DottedLine{
+			width: calc(100% - 2rem);
+			border-top: 1px dotted #cccccc;
+			margin: 1.5rem 1rem;
+		}
+
+		.SolidLine{
+			width: 100%;
+			border-top: 1px solid #cccccc;
+			margin: 1.5rem 0;
+		}
+
+	}
+
+	& .Order_Status{
+		display: flex;
+		justify-content: flex-start;
+		& .OneStatus{
+			width: 28%;
+			&.Status_FinishOrder span{
+				width: 60%;
+				height: 60%;
+				background-image: url('../images/icon_member_finishorder.png');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center top;
+			}
+
+			&.Status_Transfer span{
+				width: 75%;
+				height: 75%;
+				background-image: url('../images/icon_member_finishtransfer.png');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center top;
+			}
+
+			&.Status_Creditcard span{
+				width: 73%;
+				height: 73%;
+				background-image: url('../images/icon_member_finishcreditcard.png');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center top;
+			}
+
+			&.Status_FinishCash span{
+				width: 73%;
+				height: 73%;
+				background-image: url('../images/icon_member_finishcash.png');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center top;
+			}
+
+			&.Status_Delivery span{
+				width: 60%;
+				height: 60%;
+				background-image: url('../images/icon_member_delivery.png');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center top;
+			}
+
+			&.Status_Delivering span{
+				width: 60%; 
+				height: 60%;
+				background-image: url('../images/icon_member_delivering.png');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center top;
+			}
+
+			&.Status_Collect span{
+				width: 70%;
+				height: 70%; 
+				background-image: url('../images/icon_member_collecting.png');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center top;
+			}
+
+			&.Status_Cancel span{
+				width: 65%;
+				height: 65%; 
+				background-image: url('../images/icon_member_cancelorder.png');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center top;
+			}
+
+			&.Status_active{
+				& span{
+					background-position: center bottom;
+				}
+
+				& .Status_icon{
+					background-color: #8e6681;
+				}
+
+				& .Status_text{
+					color: #333333;
+				}
+
+				& .Status_date{
+					color: #333333;
+				}
+			}
+		}
+
+
+
+		& .StatusDottedLine{
+			width: 8%;
+			height: 4px;
+			background-image: url('../images/icon_member_dottedline.png');
+			background-size:contain;
+			background-repeat: repeat;
+			margin-top: 44px;
+			border-top: none;
+		}
+
+		& .Status_icon{
+			width: 88px;
+			height: 88px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+			border-radius: 50%;
+			background-color: #cccccc;
+		}
+
+		& .Status_text{
+			text-align: center;
+			margin-top: 12px;
+			font-size: 1.15rem;
+			color: #959595;
+		}
+
+		& .Status_date{
+			text-align: center;
+			margin-top: 8px;
+			font-size: 0.75rem;
+			color: #959595;
+		}
+
+	}
+
+	& .btn_edit{
+		@include ConfirmBtn;
+		cursor: pointer;
+	}
+
+	&.Order_Detail_extend{
+		padding-top: 0;
+		padding-bottom: 20px;
+		transition: max-height 0.5s ease-in;
+		max-height: 0;
+		overflow: hidden;
+	}
+
+	&.Extend{
+		max-height: 99999px;
+	}
+
+	@include pad-width{
+		padding: 40px;
+		padding-top: 60px;
+		& .Order_Status{
+			justify-content: center;
+			& .OneStatus{
+				width: 15%;
+			}
+
+			& .Status_icon{
+				width:95px;
+				height: 95px;
+			}
+		}
+
+		& .StatusDottedLine{
+			margin-left: 1rem;
+			margin-right: 1rem;
+		}
+
+		& .Order_Info_Row{
+			& .WineName_En{
+				font-size: 1.75rem;
+			    line-height: 2.1rem;
+			    max-height: 4.2rem;
+			}
+
+			& .WineName_Cn{
+				font-size: 1.25rem;
+    			height: 1.5rem;
+			}
+
+			& .WineInfo{
+				margin-top: 10px;
+				& span{
+					font-size: 1.25rem;
+    				height: 1.05rem;
+    				padding: 0 12px;
+				}	
+			}
+
+			& .WineCount{
+				font-size: 1.25rem;
+			}
+
+			& .WinePrice b{
+				font-size: 2rem;
+			}
+
+			& .TitleBox{
+			    padding: 1.25rem;
+    			margin-top: 2.5rem;
+
+    			& .largeT{
+    				font-size: 1.75rem;
+    				line-height: 2.6rem;
+    			}
+
+    			& .secondT{
+  				    font-size: 1.5rem;
+    				line-height: 2rem;
+    			}
+			}
+		}
+	}
+}
+
+.BTN_Order_Detail_extend{
+	display: inline-block;
+	margin-left: 16px;
+	margin-top: 20px;
+	border: 1px solid #494949;
+	cursor: pointer;
+	border-radius: 3px;
+	font-size: 1.375rem;
+	line-height: 1.375rem;
+	font-weight: bold;
+	color: #494949;
+	padding:11px 12px 8px 12px;
+
+	& i{
+		width: 0; 
+  		height: 0; 
+  		border-left: 7px solid transparent;
+  		border-right: 7px solid transparent;
+		border-top: 7px solid #494949;
+		display: inline-block;
+		margin-left: 5px;
+		margin-bottom: 3px;
+		transform: rotate(-90deg);
+		transition: transform 0.5s;
+	}
+
+	&.Extend{
+		& i{
+			transform: rotate(0deg);
+		}
+	}
+
+	@include pad-width{
+		margin-left: 40px;
+	}
+}
+
+.OrderList_nodata_layout{
+	@include pad-width-l{
+		width: 70vw;
+		left: 15vw;
+		display: flex;
+		align-items: center;
+	}
+}
+
+.OrderList_nodata{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	& .OrderList_nodata_text{
+		width: 100%;
+		font-size: 20px;
+		color: #999;
+		text-align: center;
+		margin-top: 15px;
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+
+	& .OrderList_nodata_img{
+		display: block;
+		width: 100%;
+		margin-top: 20px;
+		& img{
+			width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+
+	@include pad-width{
+		& .OrderList_nodata_text{
+			font-size: 24px;
+		}
+
+		& .OrderList_nodata_img{
+			& img{
+				width: 80%;
+			}
+		}
+	}
+
+}
