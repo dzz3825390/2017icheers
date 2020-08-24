@@ -6104,8 +6104,6 @@ h2.detail_Name_cn {
   color: #999;
 }
 .cart_form_row a {
-  display: inline-block;
-  margin: 0.5rem 0;
   color: #666;
   text-decoration: underline;
   width: 100%;
