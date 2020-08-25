@@ -107,14 +107,17 @@
 		    	$(window).on('touchstart.HeaderShow',HeaderShow())
 		    });
 
+		    //商品內容展開
 		    $('.BTN_Order_Detail_extend').click(function(){
 		    	//check isExtend
-		    	var IsExtend = $('.Order_Detail_extend').hasClass('Extend');
+		    	var IsExtend = $(this).hasClass('Extend');
 
 		    	if (IsExtend) {
-		    		$('.Order_Detail_extend').removeClass('Extend');
+		    		$(this).removeClass('Extend');
+		    		$(this).next().removeClass('Extend');
 		    	} else {
-		    		$('.Order_Detail_extend').addClass('Extend');
+		    		$(this).addClass('Extend');
+		    		$(this).next().addClass('Extend');
 		    	}
 		    });
 
@@ -163,9 +166,10 @@
 <!--content-->
 <div class="content_layout">
 	<div class="OrderInfo_top">
-		<span class="OrderNumber">W19112500016</span>
+		<span class="OrderNumber">W19112500016 </span>
 		<span class="OrderPayment">$&nbsp;123,237,568</span>
 	</div>
+
 	<div class="Order_Detail_layout">
 		<div class="Order_Info_Row Order_Status">
 			<div class="OneStatus Status_FinishOrder">
@@ -178,31 +182,25 @@
 				</div>
 			</div>
 			<div class="StatusDottedLine"></div>
-			<div class="OneStatus Status_Transfer">
+			<div class="OneStatus Status_Transfer Status_active">
 				<div class="Status_icon"><span></span></div>
 				<div class="Status_text">
-					確認匯款
+					待匯款
 				</div>
 				<div class="Status_date">
-					2019/12/31 17:50
-				</div>
-			</div>
-			<div class="StatusDottedLine"></div>
-			<div class="OneStatus Status_Delivery Status_active">
-				<div class="Status_icon"><span></span></div>
-				<div class="Status_text">
-					已出貨
-				</div>
-				<div class="Status_date">
-					2019/12/31 17:50
+					$123,456,789
 				</div>
 			</div>
 		</div>
 		<div class="Order_Info_Row">
-			<div class="Info_Title">出貨單號</div>
-			<div class="Info_Text">W19112500016-1 外務親送/客戶自取</div>
-		</div>
-		<div class="Order_Info_Row">
+			<div class="TitleBox StatusNormal">
+				<div class="largeT">
+					一般配送
+				</div>
+				<div class="secondT">
+					預計到貨日：2017年12月（合併出貨）
+				</div>
+			</div>
 			<div class="WineName_En">Jester Sangiovese Rosé</div>
 			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
 			<div class="WineInfo">
@@ -310,7 +308,40 @@
 			</div>
 			<div class="WinePrice">小計<b>$123,456,789</b></div>
 		</div>
-		
+		<!--預訂-->
+		<div class="Order_Info_Row">
+			<div class="TitleBox">
+				<div class="largeT">
+					預訂商品
+				</div>
+				<div class="secondT">
+					預計 2019 年 5 月到貨
+				</div>
+			</div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+			<div class="SolidLine"></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+		</div>
 		<!--贈品-->
 		<div class="Order_Info_Row">
 			<div class="TitleBox">
@@ -343,6 +374,7 @@
 			<div class="WinePrice">小計<b>$123,456,789</b></div>
 		</div>
 	</div>
+	<!--一般二聯式-->
 	<div class="Order_Detail_layout">
 		<div class="Order_Info_Row">
 			<div class="Info_Title">收貨資訊</div>
@@ -355,6 +387,65 @@
 		<div class="Order_Info_Row">
 			<div class="Info_Title">發票寄送</div>
 			<div class="Info_SmallText">二聯式發票-隨商品寄出</div>
+		</div>
+		<!--匯款/刷卡未匯款才會有下面這個-->
+		<div class="btn_edit">修改配送/付款資訊</div>
+	</div>
+	<!--三聯式-->
+	<div class="Order_Detail_layout">
+		<div class="Order_Info_Row">
+			<div class="Info_Title">收貨資訊</div>
+			<div class="Info_SmallText">劉學涵</div>
+			<div class="Info_SmallText">0910-000-344</div>
+			<div class="Info_SmallText">新北市永和區成功路一段80號15樓</div>
+			<div class="Info_SmallText">希望於上午時段(8-13時)配達</div>
+			<div class="Info_SmallText">附提袋6個</div>
+		</div>
+		<div class="Order_Info_Row">
+			<div class="Info_Title">發票資訊</div>
+			<div class="Info_SmallText">三聯式發票-分開寄送</div>
+			<div class="Info_SmallText">統一編號 29081831</div>
+			<div class="Info_SmallText">發票抬頭 佳釀有限公司</div>
+		</div>
+		<div class="Order_Info_Row">
+			<div class="Info_Title">發票寄送</div>
+			<div class="Info_SmallText">劉學涵</div>
+			<div class="Info_SmallText">新北市永和區成功路一段80號18樓</div>
+		</div>
+	</div>
+	<!--發票捐贈-->
+	<div class="Order_Detail_layout">
+		<div class="Order_Info_Row">
+			<div class="Info_Title">收貨資訊</div>
+			<div class="Info_SmallText">劉學涵</div>
+			<div class="Info_SmallText">0910-000-344</div>
+			<div class="Info_SmallText">新北市永和區成功路一段80號15樓</div>
+			<div class="Info_SmallText">希望於上午時段(8-13時)配達</div>
+			<div class="Info_SmallText">附提袋6個</div>
+		</div>
+		<div class="Order_Info_Row">
+			<div class="Info_Title">發票寄送</div>
+			<div class="Info_SmallText">捐贈發票-陽光基金會</div>
+		</div>
+	</div>
+	<!--發票另寄-->
+	<div class="Order_Detail_layout">
+		<div class="Order_Info_Row">
+			<div class="Info_Title">收貨資訊</div>
+			<div class="Info_SmallText">劉學涵</div>
+			<div class="Info_SmallText">0910-000-344</div>
+			<div class="Info_SmallText">新北市永和區成功路一段80號15樓</div>
+			<div class="Info_SmallText">希望於上午時段(8-13時)配達</div>
+			<div class="Info_SmallText">附提袋6個</div>
+		</div>
+		<div class="Order_Info_Row">
+			<div class="Info_Title">發票資訊</div>
+			<div class="Info_SmallText">二聯式發票-分開寄送</div>
+		</div>
+		<div class="Order_Info_Row">
+			<div class="Info_Title">發票寄送</div>
+			<div class="Info_SmallText">劉學涵</div>
+			<div class="Info_SmallText">新北市永和區成功路一段80號18樓</div>
 		</div>
 	</div>
 </div>

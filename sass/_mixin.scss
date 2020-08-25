@@ -93,7 +93,7 @@ $LargePadPadding : 40px;
 	display: inline-block;
 	width: $IconWidth;
 	height: $IconHeight;
-	background-image: url(../images/fasticon_color.png);
+	background-image: url(../images/mobile/fasticon_color.png);
 	background-size: cover;
 	@content;
 }
@@ -102,7 +102,7 @@ $LargePadPadding : 40px;
 	display: inline-block;
 	width: $IconWidth;
 	height: $IconHeight;
-	background-image: url(../images/normalicon_color.png);
+	background-image: url(../images/mobile/normalicon_color.png);
 	background-size: cover;
 	@content;
 }
@@ -111,7 +111,7 @@ $LargePadPadding : 40px;
 	display: inline-block;
 	width: $IconWidth;
 	height: $IconHeight;
-	background-image: url(../images/preordericon_color.png);
+	background-image: url(../images/mobile/preordericon_color.png);
 	background-size: cover;
 	@content;
 }

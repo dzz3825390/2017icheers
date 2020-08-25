@@ -28,36 +28,7 @@
 	  </script>
 	![endif]-->
 	<script type="text/javascript">
-		/*detect Webview*/
-		/*
-		function isWebview() {
-		    var useragent = navigator.userAgent;
-		    var rules = ['WebView','(iPhone|iPod|iPad)(?!.*Safari\/)','Android.*(wv|\.0\.0\.0)'];
-		    var regex = new RegExp(`(${rules.join('|')})`, 'ig');
-		    return Boolean(useragent.match(regex));
-		}*/
-
-		function SearchConditionExtend() {
-			//check extend or not
-		    var IsExtend = $('.Order_SearchCondition_layout').hasClass('Order_SearchCondition_Open');
-		    //extneded
-		    if (IsExtend) {
-		    	//do nothing
-		    } 
-		    //not extend
-		    else {
-		    	$('.Order_SearchCondition_layout').addClass('Order_SearchCondition_Open');
-		    	$('.Order_SearchCondition_Extend').slideDown();
-		    	$('.Order_SearchCondition_layout').unbind('click');
-		    }
-		}
-
 		$(document).ready(function(){
-			/*強迫使用瀏覽器app開啟*/
-			/*
-			if (isWebview()){
-				location.href = location.href + '?openExternalBrowser=1';
-			}*/
 			
 			var intBrowserW = 0;
 
@@ -73,24 +44,43 @@
 				    intBrowserH = document.body.clientHeight;
 				}
 
+			//loading page sample
 			$('body').css('height',intBrowserH);
 			$('.wapper').css({
 				'height':intBrowserH,
-				'overflow-y':'scroll'
+				'overflow-y':'hidden'
 			})
+			$('.LoadingPage').css('height',intBrowserH);
+			var LoadingLogoHeight = $('.LoadingPage').children().height();
+			var LoadingLogoPositionY = (intBrowserH - LoadingLogoHeight) /2;
+			$('.LoadingPage').children().css('margin-top',LoadingLogoPositionY);
 
-			//content最小高度設定
+			setTimeout(function(){
+				$('.LoadingPage').css('transform','scale(1.15)');
+				$('.LoadingPage').fadeOut(300,function(){
+					$('body').css('height','auto');
+					$('.wapper').css({
+						'height':'auto',
+						'overflow-y':'scroll'
+					});
+				});
+			},5100);
 
-			if (intBrowserW < 768) {
-				$('.Member .content_layout').css('min-height',intBrowserH - 56);
-			} else if (intBrowserW < 1366) {
-				$('.Member .content_layout').css('min-height',intBrowserH - 226);
-			} else {
-				$('.Member .content_layout').css('min-height',intBrowserH - 90);
-			}
 
+			var BannerHeight = $('.onebanner').width() / 2;
+			$('.onebanner').css('height',BannerHeight);
 
+		    //鑽石白銀文字置中
+		    var MemberOnlyInfoWidth = $('.info_layout').width();
+		    var MemberOnlyPositionX = (intBrowserW - MemberOnlyInfoWidth) / 2;
 
+		    $('.info_layout').css('left',MemberOnlyPositionX);
+
+		    //預訂區高度設定
+		    if (intBrowserW > 1340){
+		    	 var PreorderZoneHeight = $('.PreorderZone_BottleImg').outerHeight(true) + 40;
+		    	$('.PreorderZone').css('height',PreorderZoneHeight);
+		    }
 
 		    //視窗關閉
 		    $('.CloseBTN').on('touchend',function(){
@@ -106,35 +96,28 @@
 		    	//window重新綁定HeaderShow事件
 		    	$(window).on('touchstart.HeaderShow',HeaderShow())
 		    });
-
-		    $('.BTN_Order_Detail_extend').click(function(){
-		    	//check isExtend
-		    	var IsExtend = $('.Order_Detail_extend').hasClass('Extend');
-
-		    	if (IsExtend) {
-		    		$('.Order_Detail_extend').removeClass('Extend');
-		    	} else {
-		    		$('.Order_Detail_extend').addClass('Extend');
-		    	}
-		    });
-
 		   
-
-		   	
+		   
 		});
 
 
 	</script>
 </head>
-<body class="Member">
+<body class="Whisky">
 
 <!--假body-->
 <div class="wapper">
 
+<!--loading page sample-->
+<!-- <div class="LoadingPage">
+	<div class="logo"></div>
+</div> -->
+<!--loading page sample end-->
+
 <!--header-->
 <div class="header">
 	<header>
-		<h1>iCheers 愛酒窩 訂單查詢</h1>
+		<h1>iCheers 愛酒窩 葡萄酒館</h1>
 	</header>
 	<!--side menu-->
 	<div class="menuBTN">
@@ -146,7 +129,7 @@
 
 	<!--logo svg-->
 	<div class="logo">
-		
+
 	</div>
 	<!--logo svg end-->
 
@@ -159,230 +142,464 @@
 </div>
 <!--header end-->
 
-
 <!--content-->
 <div class="content_layout">
-	<div class="OrderInfo_top">
-		<span class="OrderNumber">W19112500016</span>
-		<span class="OrderPayment">$&nbsp;123,237,568</span>
-	</div>
-	<div class="Order_Detail_layout">
-		<div class="Order_Info_Row Order_Status">
-			<div class="OneStatus Status_FinishOrder">
-				<div class="Status_icon"><span></span></div>
-				<div class="Status_text">
-					完成訂單
-				</div>
-				<div class="Status_date">
-					2019/12/31 17:50
-				</div>
-			</div>
-			<div class="StatusDottedLine"></div>
-			<div class="OneStatus Status_Transfer">
-				<div class="Status_icon"><span></span></div>
-				<div class="Status_text">
-					確認匯款
-				</div>
-				<div class="Status_date">
-					2019/12/31 17:50
-				</div>
-			</div>
-			<div class="StatusDottedLine"></div>
-			<div class="OneStatus Status_Delivery Status_active">
-				<div class="Status_icon"><span></span></div>
-				<div class="Status_text">
-					已出貨
-				</div>
-				<div class="Status_date">
-					2019/12/31 17:50
-				</div>
-			</div>
+	<!--4個BN-->
+	<section class="fourbanner_layout">
+		<div class="onebanner" style="background-image: url(images/mobile/b1.jpg);">
 		</div>
-		<div class="Order_Info_Row">
-			<div class="Info_Title">出貨單號</div>
-			<div class="Info_Text">W19112500016-1 外務親送/客戶自取</div>
+		<div class="onebanner" style="background-image: url(images/mobile/b2.jpg);">
 		</div>
-		<div class="Order_Info_Row">
-			<div class="WineName_En">Jester Sangiovese Rosé</div>
-			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
-			<div class="WineInfo">
-				<span>2017</span>
-				<span>750ml</span>
-				<span>法國</span>
-			</div>
-			<div class="WineCount">
-				數量：5
-			</div>
-			<div class="WinePrice">小計<b>$123,456,789</b></div>
+		<div class="onebanner" style="background-image: url(images/mobile/b-beer.jpg);">
 		</div>
-		<!--組合商品-->
-		<div class="Order_Info_Row">
-			<div class="TitleBox">
-				<div class="largeT">
-					歡樂春節套組
-				</div>
-				<div class="secondT">
-					波爾多超值組合優惠
-				</div>
-			</div>
-			<div class="WineName_En">Jester Sangiovese Rosé</div>
-			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
-			<div class="WineInfo">
-				<span>2017</span>
-				<span>750ml</span>
-				<span>法國</span>
-			</div>
-			<div class="DottedLine"></div>
-			<div class="WineName_En">Jester Sangiovese Rosé</div>
-			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
-			<div class="WineInfo">
-				<span>2017</span>
-				<span>750ml</span>
-				<span>法國</span>
-			</div>
-			<div class="WineCount">
-				數量：5
-			</div>
-			<div class="WinePrice"><b>共&nbsp;1&nbsp;組&nbsp;&nbsp;</b>小計<b>$123,456,789</b></div>
-		</div>
-	</div>
-	<div class="BTN_Order_Detail_extend">展開商品明細<i></i></div>
-	<div class="Order_Detail_layout Order_Detail_extend">
-		<!--加價購-->
-		<div class="Order_Info_Row">
-			<div class="TitleBox">
-				<div class="largeT">
-					Raúl Peréz 任選六瓶8折加999元再送電動刮鬍刀
-				</div>
-			</div>
-			<div class="WineName_En">Jester Sangiovese Rosé</div>
-			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
-			<div class="WineInfo">
-				<span>2017</span>
-				<span>750ml</span>
-				<span>法國</span>
-			</div>
-			<div class="WineCount">
-				數量：5
-			</div>
-			<div class="WinePrice">小計<b>$123,456,789</b></div>
-			<div class="SolidLine"></div>
-			<div class="WineName_En">Jester Sangiovese Rosé</div>
-			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
-			<div class="WineInfo">
-				<span>2017</span>
-				<span>750ml</span>
-				<span>法國</span>
-			</div>
-			<div class="WineCount">
-				數量：5
-			</div>
-			<div class="WinePrice">小計<b>$123,456,789</b></div>
-		</div>
-		<!--任選-->
-		<div class="Order_Info_Row">
-			<div class="TitleBox">
-				<div class="largeT">
-					iCheers推薦任選3瓶限時優惠價3500元
-				</div>
-			</div>
-			<div class="WineName_En">Jester Sangiovese Rosé</div>
-			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
-			<div class="WineInfo">
-				<span>2017</span>
-				<span>750ml</span>
-				<span>法國</span>
-			</div>
-			<div class="WineCount">
-				數量：5
-			</div>
-			<div class="WinePrice">小計<b>$123,456,789</b></div>
-			<div class="SolidLine"></div>
-			<div class="WineName_En">Jester Sangiovese Rosé</div>
-			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
-			<div class="WineInfo">
-				<span>2017</span>
-				<span>750ml</span>
-				<span>法國</span>
-			</div>
-			<div class="WineCount">
-				數量：5
-			</div>
-			<div class="WinePrice">小計<b>$123,456,789</b></div>
+		<div class="onebanner" style="background-image: url(images/mobile/b4.jpg);">
 		</div>
 		
-		<!--贈品-->
-		<div class="Order_Info_Row">
-			<div class="TitleBox">
-				<div class="largeT">
-					iCheers 6月份限時贈送好禮
+	</section>
+	<!--4個BN end-->
+	<!--隔日到貨-->
+	<section class="BottlesZone_layout">
+		<h2 class="LargeTitle FastZone_title">
+			<div class="text">
+				<span>隔日到貨</span>
+				<span class="fasticon"></span>
+				<span>-12月推薦</span>
+			</div>
+			<span class="line"></span>
+		</h2>
+		<div class="FastZone_bottles_layout" id="FastBottleScroll">
+			<div class="content_bottle_scrollX">
+				<!--1瓶酒-->
+				<div class="BottlesZone_onebottle FastZone_onebottle">
+					<div class="bottle_img">
+						<img src="images/mobile/bottle-s.jpg">
+					</div>
+					<h3 class="bottle_name_en">
+						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
+					</h3>
+					<h3 class="bottle_name_cn">
+						風車磨坊特級村莊「大卡園」紅酒
+					</h3>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750 ml</span>
+						<span>RP&nbsp;95</span>
+					</div>
+					<div class="bottle_price_fast">
+						$1,350
+						<span class="fasticon"></span>
+					</div>
 				</div>
+				<!--1瓶酒 end-->
+				<!--1瓶酒-->
+				<div class="BottlesZone_onebottle FastZone_onebottle">
+					<div class="bottle_img">
+						<img src="images/mobile/bottle-s.jpg">
+					</div>
+					<h3 class="bottle_name_en">
+						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
+					</h3>
+					<h3 class="bottle_name_cn">
+						風車磨坊特級村莊「大卡園」紅酒
+					</h3>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750 ml</span>
+						<span>RP&nbsp;95</span>
+					</div>
+					<div class="bottle_price_fast">
+						$1,350
+						<span class="fasticon"></span>
+					</div>
+				</div>
+				<!--1瓶酒 end-->
+				<!--1瓶酒-->
+				<div class="BottlesZone_onebottle FastZone_onebottle">
+					<div class="bottle_img">
+						<img src="images/mobile/bottle-s.jpg">
+					</div>
+					<h3 class="bottle_name_en">
+						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
+					</h3>
+					<h3 class="bottle_name_cn">
+						風車磨坊特級村莊「大卡園」紅酒
+					</h3>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750 ml</span>
+						<span>RP&nbsp;95</span>
+					</div>
+					<div class="bottle_price_fast">
+						$1,350
+						<span class="fasticon"></span>
+					</div>
+				</div>
+				<!--1瓶酒 end-->
+				<!--1瓶酒-->
+				<div class="BottlesZone_onebottle FastZone_onebottle">
+					<div class="bottle_img">
+						<img src="images/mobile/bottle-s.jpg">
+					</div>
+					<h3 class="bottle_name_en">
+						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
+					</h3>
+					<h3 class="bottle_name_cn">
+						風車磨坊特級村莊「大卡園」紅酒
+					</h3>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750 ml</span>
+						<span>RP&nbsp;95</span>
+					</div>
+					<div class="bottle_price_fast">
+						$1,350
+						<span class="fasticon"></span>
+					</div>
+				</div>
+				<!--1瓶酒 end-->
+				<!--1瓶酒-->
+				<div class="BottlesZone_onebottle FastZone_onebottle">
+					<div class="bottle_img">
+						<img src="images/mobile/bottle-s.jpg">
+					</div>
+					<h3 class="bottle_name_en">
+						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
+					</h3>
+					<h3 class="bottle_name_cn">
+						風車磨坊特級村莊「大卡園」紅酒
+					</h3>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750 ml</span>
+						<span>RP&nbsp;95</span>
+					</div>
+					<div class="bottle_price_fast">
+						$1,350
+						<span class="fasticon"></span>
+					</div>
+				</div>
+				<!--1瓶酒 end-->
 			</div>
-			<div class="WineName_En">Jester Sangiovese Rosé</div>
-			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
-			<div class="WineInfo">
+		</div>
+	</section>
+	<!--隔日到貨 end-->
+	<!--本周特價-->
+	<section class="BottlesZone_layout">
+		<h2 class="LargeTitle NormalZone_title">
+			<div class="text">
+				<span>本周特價</span>
+			</div>
+			<span class="line"></span>
+		</h2>
+		<div class="NormalZone_bottles_layout" id="OnSalesBottleScroll">
+			<div class="content_bottle_scrollX">
+				<!--1瓶酒-->
+				<div class="BottlesZone_onebottle NormalZone_onebottle">
+					<div class="bottle_img">
+						<img src="images/mobile/bottle-s.jpg">
+					</div>
+					<h3 class="bottle_name_en">
+						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
+					</h3>
+					<h3 class="bottle_name_cn">
+						風車磨坊特級村莊「大卡園」紅酒
+					</h3>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750 ml</span>
+						<span>RP&nbsp;95</span>
+					</div>
+					<div class="bottle_price">
+						$1,350
+						<span class="normalicon"></span>
+					</div>
+					<div class="bottle_price_preorder">
+						$1,350
+						<span class="preordericon"></span>
+					</div>
+				</div>
+				<!--1瓶酒 end-->
+				<!--1瓶酒-->
+				<div class="BottlesZone_onebottle NormalZone_onebottle">
+					<div class="bottle_img">
+						<img src="images/mobile/bottle-s.jpg">
+					</div>
+					<h3 class="bottle_name_en">
+						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
+					</h3>
+					<h3 class="bottle_name_cn">
+						風車磨坊特級村莊「大卡園」紅酒
+					</h3>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750 ml</span>
+						<span>RP&nbsp;95</span>
+					</div>
+					<div class="bottle_price">
+						$1,350
+						<span class="normalicon"></span>
+					</div>
+					<div class="bottle_price_preorder">
+						$1,350
+						<span class="preordericon"></span>
+					</div>
+				</div>
+				<!--1瓶酒 end-->
+				<!--1瓶酒-->
+				<div class="BottlesZone_onebottle NormalZone_onebottle">
+					<div class="bottle_img">
+						<img src="images/mobile/bottle-s.jpg">
+					</div>
+					<h3 class="bottle_name_en">
+						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
+					</h3>
+					<h3 class="bottle_name_cn">
+						風車磨坊特級村莊「大卡園」紅酒
+					</h3>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750 ml</span>
+						<span>RP&nbsp;95</span>
+					</div>
+					<div class="bottle_price">
+						$1,350
+						<span class="normalicon"></span>
+					</div>
+					<div class="bottle_price_preorder">
+						$1,350
+						<span class="preordericon"></span>
+					</div>
+				</div>
+				<!--1瓶酒 end-->
+				<!--1瓶酒-->
+				<div class="BottlesZone_onebottle NormalZone_onebottle">
+					<div class="bottle_img">
+						<img src="images/mobile/bottle-s.jpg">
+					</div>
+					<h3 class="bottle_name_en">
+						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
+					</h3>
+					<h3 class="bottle_name_cn">
+						風車磨坊特級村莊「大卡園」紅酒
+					</h3>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750 ml</span>
+						<span>RP&nbsp;95</span>
+					</div>
+					<div class="bottle_price">
+						$1,350
+						<span class="normalicon"></span>
+					</div>
+					<div class="bottle_price_preorder">
+						$1,350
+						<span class="preordericon"></span>
+					</div>
+				</div>
+				<!--1瓶酒 end-->
+				<!--1瓶酒-->
+				<div class="BottlesZone_onebottle NormalZone_onebottle">
+					<div class="bottle_img">
+						<img src="images/mobile/bottle-s.jpg">
+					</div>
+					<h3 class="bottle_name_en">
+						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
+					</h3>
+					<h3 class="bottle_name_cn">
+						風車磨坊特級村莊「大卡園」紅酒
+					</h3>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750 ml</span>
+						<span>RP&nbsp;95</span>
+					</div>
+					<div class="bottle_price">
+						$1,350
+						<span class="normalicon"></span>
+					</div>
+					<div class="bottle_price_preorder">
+						$1,350
+						<span class="preordericon"></span>
+					</div>
+				</div>
+				<!--1瓶酒 end-->
+				<!--1瓶酒-->
+				<div class="BottlesZone_onebottle NormalZone_onebottle">
+					<div class="bottle_img">
+						<img src="images/mobile/bottle-s.jpg">
+					</div>
+					<h3 class="bottle_name_en">
+						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
+					</h3>
+					<h3 class="bottle_name_cn">
+						風車磨坊特級村莊「大卡園」紅酒
+					</h3>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750 ml</span>
+						<span>RP&nbsp;95</span>
+					</div>
+					<div class="bottle_price">
+						$1,350
+						<span class="normalicon"></span>
+					</div>
+					<div class="bottle_price_preorder">
+						$1,350
+						<span class="preordericon"></span>
+					</div>
+				</div>
+				<!--1瓶酒 end-->
+			</div>
+		</div>
+	</section>
+	<!--本周特價 end-->
+	<!--4個BN-->
+	<section class="fourbanner_layout">
+		<div class="onebanner" style="background-image: url(images/mobile/b-vip.jpg);">
+		</div>
+		<div class="onebanner" style="background-image: url(images/mobile/b5.jpg);">
+		</div>
+		<div class="onebanner" style="background-image: url(images/mobile/b6.jpg);">
+		</div>
+		<div class="onebanner" style="background-image: url(images/mobile/b7.jpg);">
+		</div>
+		
+	</section>
+	<!--4個BN end-->
+	<!--鑽石白銀-->
+	<section class="MemberOnly_layout">
+		<div class="info_layout">
+			<h3 class="bottle_name_en">Armand Rousseau Chambertin 2011</h3>
+			<div class="bottle_price">
+				$1,350
+				<span class="normalicon"></span>
+			</div>
+		</div>
+	</section>
+	<!--鑽石白銀 end-->
+	<!--活動專區-->
+	<section class="Events_layout">
+		<!--一個活動-->
+		<div class="oneevent">
+			<div class="EventImg">
+				<img src="images/mobile/events1.jpg" />
+			</div>
+			<div class="EventTitle">2011波爾多現貨熱賣中</div>
+		</div>
+		<!--一個活動 end-->
+		<!--一個活動-->
+		<div class="oneevent">
+			<div class="EventImg">
+				<img src="images/mobile/events2.jpg" />
+			</div>
+			<div class="EventTitle">12月份混搭成箱優惠</div>
+		</div>
+		<!--一個活動 end-->
+	</section>
+	<!--活動專區-->
+	<!--預訂專區-->
+	<section class="BottlesZone_layout PreorderZone">
+		<h2 class="LargeTitle PreorderZone_title">
+			<div class="text">
+				<span>預訂專區</span>
+				<span class="preordericon"></span>
+			</div>
+			<span class="line"></span>
+		</h2>
+		<div class="SmallTitle">
+			連日本當地都難入手
+		</div>
+		<div class="PreorderZone_BottleImg">
+			<img src="images/mobile/bottle.jpg"/>
+		</div>
+		<div class="PreorderZone_BottleInfo">
+			<h3 class="bottle_name_en">
+				Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
+			</h3>
+			<h3 class="bottle_name_cn">
+				風車磨坊特級村莊「大卡園」紅酒
+			</h3>
+			<div class="bottle_info">
 				<span>2017</span>
-				<span>750ml</span>
-				<span>法國</span>
+				<span>750 ml</span>
+				<span>RP&nbsp;95</span>
 			</div>
-			<div class="WineCount">
-				數量：5
+			<div class="bottle_price_preorder">
+				$1,350
+				<span class="preordericon"></span>
 			</div>
-			<div class="WinePrice">小計<b>$123,456,789</b></div>
-			<div class="SolidLine"></div>
-			<div class="WineName_En">Jester Sangiovese Rosé</div>
-			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
-			<div class="WineInfo">
-				<span>2017</span>
-				<span>750ml</span>
-				<span>法國</span>
-			</div>
-			<div class="WineCount">
-				數量：5
-			</div>
-			<div class="WinePrice">小計<b>$123,456,789</b></div>
 		</div>
-	</div>
-	<div class="Order_Detail_layout">
-		<div class="Order_Info_Row">
-			<div class="Info_Title">收貨資訊</div>
-			<div class="Info_SmallText">劉學涵</div>
-			<div class="Info_SmallText">0910-000-344</div>
-			<div class="Info_SmallText">新北市永和區成功路一段80號15樓</div>
-			<div class="Info_SmallText">希望於上午時段(8-13時)配達</div>
-			<div class="Info_SmallText">附提袋6個</div>
+	</section>
+	<!--預訂專區 end-->
+	<!--文章/專欄-->
+	<section class="ArticleZone_layout">
+		<h2 class="LargeTitle Article_title">
+			<div class="text">
+				<span>精選文章</span>
+			</div>
+			<span class="line"></span>
+		</h2>
+		<!--一個文章-->
+		<div class="Article_layout">
+			<div class="Article_img">
+				<img src="images/mobile/article02.jpg" />
+			</div>
+			<h3 class="Article_title">精彩十年 Dog Point</h3>
+			<h4 class="Article_second_title">【解眾神之渴專欄】</h4>
+			<div class="Article_text">2015年的版的《Hugh Johnson’s Pocket Wine Book》將本莊評為三星，其實筆者認為有Q四星的最高水準；我...</div>
+			<div class="Article_more">More&nbsp;></div>
 		</div>
-		<div class="Order_Info_Row">
-			<div class="Info_Title">發票寄送</div>
-			<div class="Info_SmallText">二聯式發票-隨商品寄出</div>
+		<!--一個文章 end-->
+		<!--一個文章-->
+		<div class="Article_layout">
+			<div class="Article_img">
+				<img src="images/mobile/article02.jpg" />
+			</div>
+			<h3 class="Article_title">精彩十年 Dog Point</h3>
+			<h4 class="Article_second_title">【解眾神之渴專欄】</h4>
+			<div class="Article_text">2015年的版的《Hugh Johnson’s Pocket Wine Book》將本莊評為三星，其實筆者認為有Q四星的最高水準；我...</div>
+			<div class="Article_more">More&nbsp;></div>
 		</div>
-	</div>
+		<!--一個文章 end-->
+	</section>
+	<!--文章/專欄 end-->
 </div>
 <!--content end-->
 
+<!--icheers info-->
 <div class="iCheers_info_layout">
 	<div class="iCheers_info">
-		<a href="tel:02-2926-3667"><div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_tel.jpg);" id="AboutUs">
-			<span>聯絡我們</span>
-		</div></a>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_newbie.jpg);" id="Newbie">
+			<span>新手上路</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_qualityGarentee.jpg);" id="Quality">
+			<span>品質宣言</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_delivery_info2.jpg);" id="DeliveryInfo">
+			<span>到貨時間</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_bouns.jpg);" id="BounsInfo">
+			<span>紅利好康</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_aboutus.jpg);" id="AboutUs">
+			<span>關於我們</span>
+		</div>
 		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_contactus.jpg);">
 			<span>加入我們</span>
 		</div>
 	</div>
+</div>
+<!--icheers info end-->
 
-</div>
 <div class="separateline info_separateline"></div>
-<div class="iCheers_service_time">
-	<div class="title">服務時間</div>
-	<div class="text">星期一～五，9:00~18:00<br/>國定假日除外</div>
-	<div class="title">客服信箱</div>
-	<div class="text">服務時間以外歡迎來信<br/><a href="mailto:service@icheers.tw">service@icheers.tw</a></div>
-</div>
+
+<div class="icheers_slogan"></div>
+
 <div class="footer">
 	<div class="footer_option_row">
-		<div class="footer_option" id="Noletter">
-			<div class="icon" style="background-image: url(images/mobile/Noletter_icon.png);width: 17px;"></div>
-			<div class="text">沒收到確認信?</div>
+		<div class="footer_option">
+			<div class="icon" style="background-image: url(images/mobile/contactus_icon.png);width: 17px;"></div>
+			<div class="text">聯絡我們</div>
 		</div>
 		<div class="footer_option">
 			<div class="icon" style="background-image: url(images/mobile/desktop_icon.png);width: 17px;"></div>
@@ -391,38 +608,24 @@
 	</div>
 </div>
 
-
 <div class="warning">
 	飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
 </div>
 
 <!--side menu-->
 <div class="black_BG" id="black_BG">
-	<div class="SideMenuCloseBtn"></div>
 	<div class="SideMenu_layout">
 		<!--頂端search row-->
 		<div class="SideMenu_SearchRow">
-			<!--
 			<div class="SideMenu_BackBTN">
 				<a class="navicon-button uarr open">
 					<div class="navicon"></div>
 				</a> 
 			</div>
-			-->
 			<div class="SideMenu_SignInBTN"></div>
 			<div class="SideMenu_SearchInput">
-				<!--20180626 fix input type-->
-				<form action="" name="search" id="SearchInput">
-					<input type="search">
-				</form>
+				<input type="text" name="">
 				<span class="search_icon"></span>
-			</div>
-			<!--add auto complete sample max:4-->
-			<div class="SideMenu_AutoComplete">
-				<div class="OneResult"><span>au</span>to complete1</div>
-				<div class="OneResult"><span>au</span>to complete2</div>
-				<div class="OneResult"><span>au</span>to complete3</div>
-				<div class="OneResult"><span>au</span>to complete4</div>
 			</div>
 		</div>
 		<!--頂端search row end-->
@@ -432,10 +635,37 @@
 			<div class="SideMenu_Detail_Title">其他館</div>
 			<!--title-->
 			<div class="SideMenu_Detail_list">
-				威士忌 Whisky
+				葡萄酒 Wine
 			</div>
 			<div class="SideMenu_Detail_list">
 				精釀啤酒 Craft Beer
+			</div>
+			<!--title-->
+			<div class="SideMenu_Detail_Title">超快速找酒</div>
+			<!--title-->
+			<div class="SideMenu_Detail_list">
+				紅酒
+				<span class="arrow"></span>
+			</div>
+			<div class="SideMenu_Detail_list">
+				白酒
+				<span class="arrow"></span>
+			</div>
+			<div class="SideMenu_Detail_list">
+				氣泡酒
+				<span class="arrow"></span>
+			</div>
+			<div class="SideMenu_Detail_list">
+				波爾多列級酒
+				<span class="arrow"></span>
+			</div>
+			<div class="SideMenu_Detail_list">
+				布根地專區
+				<span class="arrow"></span>
+			</div>
+			<div class="SideMenu_Detail_list">
+				清酒
+				<span class="arrow"></span>
 			</div>
 			<!--title-->
 			<div class="SideMenu_Detail_Title">熱門搜尋</div>
@@ -444,89 +674,68 @@
 				頂級名酒 (2764)
 				<span class="arrow"></span>
 			</div>
-			<div class="SideMenu_Detail_list_Layer" data-layer="2">
-				<div class="SideMenu_Detail_list">波爾多 (123)</div>
-				<div class="SideMenu_Detail_list">布根地 (123)</div>
-				<div class="SideMenu_Detail_list">香檳 (123)</div>
-			</div>
 			<div class="SideMenu_Detail_list">
 				隔日到貨 (1535)
 				<em>三點下單隔天到</em>
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				超值預訂 (11)
+				<span class="arrow"></span>
 			</div>
 			<!--title-->
 			<div class="SideMenu_Detail_Title">類型</div>
 			<!--title-->
 			<div class="SideMenu_Detail_list">
 				紅酒(5560)
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				白酒(1577)
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				粉紅酒(59)
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				氣泡酒(561)
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				甜酒(681)
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				加烈酒(127)
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				烈酒(15)
+				<span class="arrow"></span>
 			</div>
 			<!--title-->
 			<div class="SideMenu_Detail_Title">產區</div>
 			<!--title-->
 			<div class="SideMenu_Detail_list">
 				法國(4879)
-				<!--<span class="arrow"></span>-->
-			</div>
-			<div class="SideMenu_Detail_list_Layer" data-layer="2">
-				<div class="SideMenu_Detail_list">
-					阿爾薩斯 (68)
-					<!--<span class="arrow"></span>-->
-				</div>
-				<div class="SideMenu_Detail_list_Layer" data-layer="3">
-					<div class="SideMenu_Detail_list">
-						福斯登圖 (2)
-					</div>
-					<div class="SideMenu_Detail_list">
-						句耳得爾特 (1)
-					</div>
-					<div class="SideMenu_Detail_list">
-						羅莎給爾 (4)
-					</div>
-				</div>
-				<div class="SideMenu_Detail_list">
-					薄酒萊 (67)
-					<!--<span class="arrow"></span>-->
-				</div>
-				<div class="SideMenu_Detail_list">
-					波爾多 (3271)
-					<!--<span class="arrow"></span>-->
-				</div>
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				義大利(760)
-				<!--<span class="arrow"></span>-->
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				美國(551)
-				<!--<span class="arrow"></span>-->
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				澳洲(331)
-				<!--<span class="arrow"></span>-->
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				德國(120)
-				<!--<span class="arrow"></span>-->
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list SideMenu_Detail_list_more">
 				展開全部
@@ -539,83 +748,83 @@
 				</div>
 				<div class="SideMenu_Detail_list">
 					阿根廷 (153)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					智利 (205)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					南非 (39)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					紐西蘭 (129)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					葡萄牙 (110)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					匈牙利 (12)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					加拿大 (8)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					奧地利 (39)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					英國 (5)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					希臘 (23)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					羅馬尼亞 (7)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					瑞士 (11)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					摩爾多瓦 (15)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					斯洛伐克 (15)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					日本 (32)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					以色列 (2)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					N/A (3)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					台灣 (5)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					列支敦斯登 (7)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					聖馬利諾共和國 (3)
-					<!--<span class="arrow"></span>-->
+					<span class="arrow"></span>
 				</div>
 			</div>
 			<!--extend-->
@@ -624,18 +833,23 @@
 			<!--title-->
 			<div class="SideMenu_Detail_list">
 				梅洛 (2340)
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				卡本內蘇維濃 (2011)
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				卡本內弗朗 (1570)
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				黑皮諾 (1111)
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				夏多內 (876)
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list SideMenu_Detail_list_more">
 				展開全部
@@ -648,88 +862,91 @@
 				</div>
 				<div class="SideMenu_Detail_list">
 					小維鐸 (591)
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					波爾多調配品種 (528)
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					白蘇維濃 (432)
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					榭密雍 (342)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					希哈 (342)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					內比歐露 (217)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					格那希 (188)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					馬爾貝克 (166)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					希哈(Shiraz) (162)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					麗絲玲 (160)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					田帕尼優 (148)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					山吉歐維榭 (133)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					格那希(Garnacha) (112)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					皮諾莫尼耶 (111)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					其他 (94)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					慕維得爾 (89)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					加美 (75)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					國產杜麗佳 (72)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					法藍杜麗佳 (70)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					卡門內 (65)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					維羅內科維那 (65)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					維歐尼耶 (63)
-					
+					<span class="arrow"></span>
 				</div>
 			</div>
 			<!--extend-->
@@ -738,54 +955,54 @@
 			<!--title-->
 			<div class="SideMenu_Detail_list">
 				低於 $500 (178)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				$500-$1000 (1157)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				$500-$1000 (1157)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				$2001-$3000 (1238)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				$3001-$4000 (753)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				$4001-$5000 (486)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				$5000以上 (1550)
-				
+				<span class="arrow"></span>
 			</div>
 			<!--title-->
 			<div class="SideMenu_Detail_Title">評價</div>
 			<!--title-->
 			<div class="SideMenu_Detail_list">
 				Robert Parker (3326)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				Jancis Robinson (2801)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				Wine Spectator (1159)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				Stephen Tanzer (1089)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				Wine Enthusiast (696)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list SideMenu_Detail_list_more">
 				展開全部
@@ -798,91 +1015,91 @@
 				</div>
 				<div class="SideMenu_Detail_list">
 					Decanter (528)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					James Suckling (497)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					La Revue du Vin de France (457)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					Antonio Galloni (397)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					Burghound (214)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					International Wine Challenge (162)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					Le Guied Hachette des Vins (141)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					Jeannie Cho Lee (124)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					Tim Atkin (112)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					Bettane & Desseauve (103)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					International Wine & Spirit Competition (101)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					James Halliday (92)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					The Wine Front (77)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					Guía Peñín (54)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					Allen Meadow (39)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					Bob Campbell (38)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					Vinum Magazine (34)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					Jeremy Oliver (26)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					Gambero Rosso (21)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					Huon Hooke (16)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					Concour Mondial de Bruxelles (8)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					The Wine Doctor (3)
-					
+					<span class="arrow"></span>
 				</div>
 			</div>
 			<!--extend-->
@@ -891,23 +1108,23 @@
 			<!--title-->
 			<div class="SideMenu_Detail_list">
 				法定產區管制(AC) (1605)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				特級園 (347)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				一級園 (337)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				村莊級 (281)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				布根地地區級 (148)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list SideMenu_Detail_list_more">
 				展開全部
@@ -920,91 +1137,91 @@
 				</div>
 				<div class="SideMenu_Detail_list">
 					布根地氣泡酒 (10)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					梅多克一級酒莊 (336)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					梅多克二級酒莊 (358)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					梅多克三級酒莊 (190)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					梅多克四級酒莊 (150)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					梅多克五級酒莊 (223)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					聖愛美濃一級特等酒莊A (114)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					聖愛美濃一級特等酒莊B (160)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					聖愛美濃特等酒莊 (76)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					索甸優等一級酒莊 (39)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					索甸一級酒莊 (95)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					索甸二級酒莊 (1)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					巴薩克一級酒莊 (20)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					巴薩克二級酒莊 (19)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					格拉夫列級酒莊 (205)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					布爾喬亞級傑出酒莊 (1)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					布爾喬亞級優質酒莊 (7)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					布爾喬亞級酒莊 (53)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					聖愛美濃列級酒莊 (25)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					優級波爾多 (14)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					地區餐酒 (36)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					普級餐酒 (10)
-					
+					<span class="arrow"></span>
 				</div>
 			</div>
 			<!--extend-->
@@ -1013,54 +1230,54 @@
 			<!--title-->
 			<div class="SideMenu_Detail_list">
 				NV(無年份) (473)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				1920年之前 (3)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				1920-1939年 (1)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				1940-1959年 (41)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				1960-1979年 (194)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				1980-1999年 (765)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				2000年至今 (6493)
-				
+				<span class="arrow"></span>
 			</div>
 			<!--title-->
 			<div class="SideMenu_Detail_Title">容量</div>
 			<!--title-->
 			<div class="SideMenu_Detail_list">
 				750ml (7275)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				375ml (449)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				1.5L (286)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				3L (50)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list">
 				6L (21)
-				
+				<span class="arrow"></span>
 			</div>
 			<div class="SideMenu_Detail_list SideMenu_Detail_list_more">
 				展開全部
@@ -1073,63 +1290,63 @@
 				</div>
 				<div class="SideMenu_Detail_list">
 					125ml (1)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					187ml (6)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					200ml (3)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					250ml (3)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					330ml (1)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					500ml (44)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					700ml (7)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					720ml (4)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					1L (2)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					6L (21)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					9L (1)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					12L (1)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					15L (1)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					N/A (28)
-					
+					<span class="arrow"></span>
 				</div>
 				<div class="SideMenu_Detail_list">
 					18L (28)
-					
+					<span class="arrow"></span>
 				</div>
 			</div>
 			<!--extend-->
@@ -1139,6 +1356,126 @@
 			</div>
 		</div>
 		<!--第一層-->
+		<!--第二層-->
+		<div class="SideMenu_Detail" id="SideMenuDetailL2">
+			<!--搜尋條件-->
+			<div class="SideMenu_Detail_Title SideMenu_Detail_Title_condition">
+				紅酒
+			</div>
+			<!--搜尋條件-->
+			<div class="SideMenu_Detail_list">
+				低於500 (178)
+				<span class="arrow"></span>
+			</div>
+			<div class="SideMenu_Detail_list">
+				$500-$1000 (1157)
+				<span class="arrow"></span>
+			</div>
+			<div class="SideMenu_Detail_list">
+				$1101-$2000 (1617)
+				<span class="arrow"></span>
+			</div>
+			<div class="SideMenu_Detail_list">
+				$2001-$3000 (1238)
+				<span class="arrow"></span>
+			</div>
+			<div class="SideMenu_Detail_list">
+				$3001-$4000 (753)
+				<span class="arrow"></span>
+			</div>
+			<div class="SideMenu_Detail_list">
+				$4001-$5000 (486)
+				<span class="arrow"></span>
+			</div>
+			<div class="SideMenu_Detail_list">
+				$5000以上 (1550)
+				<span class="arrow"></span>
+			</div>
+			
+			<div class="SideMenu_RecentView">
+				<span class="icon"></span>
+				近期瀏覽
+			</div>
+		</div>
+		<!--第二層-->
+		<!--第3層-->
+		<div class="SideMenu_Detail" id="SideMenuDetailL3">
+			<!--搜尋條件-->
+			<div class="SideMenu_Detail_Title SideMenu_Detail_Title_condition">
+				$500-$1000
+			</div>
+			<!--搜尋條件-->
+			<!--title-->
+			<div class="SideMenu_Detail_Title">產區</div>
+			<!--title-->
+			<div class="SideMenu_Detail_list">
+				法國
+			</div>
+			<div class="SideMenu_Detail_list2">
+				<span>波爾多</span>
+			</div>
+			<div class="SideMenu_Detail_list2">
+				<span>布根地</span>
+			</div>
+			<div class="SideMenu_Detail_list">
+				義大利
+			</div>
+			<div class="SideMenu_Detail_list">
+				西班牙
+			</div>
+			<div class="SideMenu_Detail_list">
+				美國
+			</div>
+			<div class="SideMenu_Detail_list2">
+				<span>納帕谷</span>
+			</div>
+			<div class="SideMenu_Detail_list">
+				澳洲
+			</div>
+			<div class="SideMenu_Detail_list">
+				阿根廷
+			</div>
+			<div class="SideMenu_Detail_list">
+				智利
+			</div>
+			<div class="SideMenu_Detail_list">
+				南非
+			</div>
+			<!--title-->
+			<div class="SideMenu_Detail_Title">品種</div>
+			<!--title-->
+			<div class="SideMenu_Detail_list">
+				卡本內蘇維濃
+			</div>
+			<div class="SideMenu_Detail_list">
+				黑皮諾
+			</div>
+			<div class="SideMenu_Detail_list">
+				智利
+			</div>
+			<div class="SideMenu_Detail_list">
+				希哈
+			</div>
+			<div class="SideMenu_Detail_list">
+				梅洛
+			</div>
+			<div class="SideMenu_Detail_list">
+				田帕尼優
+			</div>
+			<div class="SideMenu_Detail_Title">評價</div>
+			<!--title-->
+			<div class="SideMenu_Detail_list">
+				Robert Parker 90+
+			</div>
+			<div class="SideMenu_Detail_list">
+				Jancis Robinson 18+
+			</div>
+			<div class="SideMenu_RecentView">
+				<span class="icon"></span>
+				近期瀏覽
+			</div>
+		</div>
+		<!--第3層-->
 	</div>
 </div>
 <!--side menu end-->
@@ -1338,6 +1675,7 @@
 					但恕無法累積紅利
 				</div>
 			</div>
+
 		</div>
 		<div class="AllTitle_layout About_Alltitle_layout">
 			<div class="largeT">
@@ -1378,7 +1716,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="SignUp_btn">我要加入會員</div>
 	</div>
 </div>
 <!--About bouns end-->
@@ -1407,7 +1744,7 @@
 			<div class="OneInfo">
 				<div class="title">
 					<div class="icon Fast"></div>
-					<div class="text">隔日到貨</div>
+					<div class="text">快速到貨</div>
 				</div>
 				<div class="explain">
 					於每日截單時間<span>15:00</span>之前完成訂單，下一個工作天即可收到商品！
@@ -1452,11 +1789,11 @@
 	<div class="About_Contain">
 		<div class="About_Newbie">
 			<div class="text">
-				瀏覽iCheers愛酒窩官網
+				到iCheers愛酒窩網站
 				<br />
-				點選活動DM或者左上角<span class="icon_sidemenu"></span>
+				<em>www.icheers.tw</em>
 				<br />
-				尋找您喜愛的酒款
+				尋找喜愛的酒款
 			</div>
 		</div>
 		<div class="About_Newbie_Arrow"></div>
@@ -1483,7 +1820,7 @@
 			</div>
 		</div>
 		<div class="About_Newbie_Arrow"></div>
-		<div class="About_Newbie FlexBoxCenter">
+		<div class="About_Newbie">
 			<div class="About_Newbie_mylist">
 				<div class="MyListIcon"></div>
 				<div class="text">
@@ -1522,7 +1859,6 @@
 				確認酒款明細
 			</div>
 			<div class="About_Newbie_mailicon"></div>
-			<div class="About_Newbie_link"><a href="https://www.icheers.tw/iCheers/Content/HTML/Newbie2.html" target="_blank">>收不到信怎麼辦?<</a></div>
 		</div>
 		<div class="About_Newbie_Arrow"></div>
 		<div class="About_Newbie">
@@ -1572,10 +1908,7 @@
 			全程存放於溫控、濕控酒窖
 		</div>
 		<div class="About_Quality_text About_Quality_text_afterSlogan">
-			為了讓每一位愛酒人士收到品質健康的酒品，
-			<!--20180619 add "br" tag-->
-			<br />
-			iCheers愛酒窩堅持：
+			為了讓每一位愛酒人士收到品質健康的酒品，iCheers愛酒窩堅持：
 		</div>
 		<div class="About_Quality_Icons_Bg">
 			<div class="About_Quality_OneIcon">
@@ -1583,14 +1916,9 @@
 				<div class="text">
 					所有酒款皆存放於專為
 					<br />
-					酒品設計的控溫控濕酒窖
+					葡萄酒設計的控溫控濕酒窖
 				</div>
-				<!--20180628 fix add new img-->
-				<div class="img_quality_01_zone">
-					<img src="images/mobile/img_quality_01-1.png" class="img_quality_01" />
-					<img src="images/mobile/img_quality_01-2.png" class="img_quality_01" />
-				</div>
-				<!--20180628 fix add new img end-->
+				<img src="images/mobile/img_quality_01.png" class="img_quality_01" />
 			</div>
 			<div class="About_Quality_OneIcon">
 				<div class="IconImgBorder" style="background-image: url(images/mobile/icon_quality_package.png);"></div>
@@ -1613,21 +1941,15 @@
 		</div>
 
 		<div class="About_Storage_layout">
-			<div class="Product">收到iCheers愛酒窩送來的酒品之後，我該如何保存？</div>
-			<div class="NoStorageInHouse">我家沒有酒櫃怎麼辦？</div>
-		</div>
-
-		<div class="About_Storage_layout">
 			<div class="Product">葡萄酒</div>
 			<div class="Storage">
 				<div class="title">保存方式：</div>
 				<div class="text">
-					最佳保存溫度為15°C，最熱不宜超過25℃；以軟木塞封瓶的葡萄酒，建議<span>平躺</span>存放。
+					最佳保存溫度為10-15°C，請將您的愛酒<span>平躺</span>存放在陰暗、涼爽的空間，並避免陽光直射(窗邊)和溫度變化劇烈(廚房)等環境。
 				</div>
 			</div>
 			<div class="DrinkTemp">
 				<div class="title">建議飲用溫度：</div>
-				<div class="text">事先冰鎮</div>
 				<div class="text">紅酒  <strong>16-18°C</strong></div>
 				<div class="text">白酒&nbsp;/&nbsp; 粉紅酒  <strong>10-12°C</strong></div>
 				<div class="text">氣泡酒&nbsp;/&nbsp;甜酒&nbsp;/&nbsp;加烈酒  <strong>6-8°C</strong></div>
@@ -1638,22 +1960,22 @@
 			<div class="Storage">
 				<div class="title">保存方式：</div>
 				<div class="text">
-					室溫OK，建議<span>直立</span>存放在陰暗、涼爽的空間，避免陽光直射（窗邊）和溫度變化劇烈（廚房）等環境。
+					最佳保存溫度為15-25°C，請將您的愛酒<span>直立</span>存放在陰暗、涼爽的空間，並避免陽光直射(窗邊)和溫度變化劇烈(廚房)等環境。
 				</div>
 			</div>
 			<div class="DrinkTemp Whisky">
 				<div class="title">建議品飲方式：</div>
 				<div class="text">
 					<strong>純飲</strong>
-					蘇格蘭純正喝法，感受原始風貌。
+					蘇格蘭最純正喝法感受原風貌
 				</div>
 				<div class="text">
 					<strong>兌水</strong>
-					慢慢加水、慢慢品飲，找出您最適口的黃金比例。（亦可嘗試不同水質能激發出不同火花！）
+					慢慢加水慢慢品找出您最喜歡的比例
 				</div>
 				<div class="text">
 					<strong>加冰</strong>
-					冰塊慢慢融化的同時，品飲溫度VS兌水比例的變數組合，激發同一款酒的數種風貌！
+					加冰去火氣口感滑順好入喉
 				</div>
 			</div>
 		</div>
@@ -1662,13 +1984,13 @@
 			<div class="Storage">
 				<div class="title">保存方式：</div>
 				<div class="text">
-					最佳保存溫度為5°C，建議<span>直立</span>存放。
+					最佳保存溫度為5-10°C，請將您的愛酒<span>直立</span>存放在陰暗、涼爽乾燥的空間，避免陽光直射(窗邊)和溫度變化劇烈(廚房)與<sapn>避免過於潮濕</sapn>等環境。
 				</div>
 			</div>
 			<div class="DrinkTemp">
 				<div class="title">建議飲用溫度：</div>
 				<div class="text">
-					<b>事先冰鎮/常溫/隔水加熱</b>清酒之美在於廣泛的飲用溫度，可以找找酒標的後標上，會有酒造所推薦的飲用溫度。
+					清酒之美在於廣泛的飲用溫度，可以找找酒標的後標上，會有酒造所推薦的飲用溫度。
 				</div>
 			</div>
 		</div>
@@ -1677,36 +1999,14 @@
 			<div class="Storage">
 				<div class="title">保存方式：</div>
 				<div class="text">
-					最佳保存溫度為5°C，建議保持瓶身<span>直立</span>，這樣能保證酵母沉積在瓶底。（那麼飲用前就別再劇烈搖晃囉！）
+					最佳保存溫度為8-12°C，請儲藏在陰暗、涼爽的空間，避免陽光直射(窗邊)和溫度變化劇烈(廚房)等環境。另外，注意保持瓶子<span>直立</span>，保證酵母沉積在瓶底。
 				</div>
 			</div>
 			<div class="DrinkTemp">
 				<div class="title">建議飲用溫度：</div>
 				<div class="text">
-					啤酒類型繁多，可多方嘗試，一般來說，淡色啤酒建議 0-7°C，深顏色的建議 8-14°C。
+					啤酒類型繁多，但建議冰涼飲用，淡色啤酒約 0-7°C，深色啤酒約 8-14°C，確切適飲溫度請見該酒款頁面。
 				</div>
-			</div>
-		</div>
-		<div class="About_Storage_layout" id="NoStorageSolution">
-			<div class="Product">我家沒有酒櫃怎麼辦？</div>
-			<div class="DrinkTemp">
-				<div class="text">
-					<b>清酒、啤酒、蘋果酒</b>放冰箱OK，建議直立。
-				</div>
-				<div class="text">
-					<b>葡萄酒</b>視天氣而定：
-				</div>
-				<div class="text">
-					當氣溫高於25℃時（譬如盛夏），建議放冰箱，特別是以軟木塞封瓶的酒，務必平躺，因為冰箱濕度低，軟木塞容易乾掉，並建議盡快飲用。
-				</div>
-				<div class="text">
-					當氣溫低於25℃時（譬如秋冬），可儲存於陰暗、涼爽的空間，避免陽光直射（窗邊）和溫度變化劇烈（廚房）等環境，並建議盡快飲用。
-				</div>
-			</div>
-		</div>
-		<div class="About_Storage_layout">
-			<div class="slogan">
-				iCheers愛酒窩的酒窖裡有上千款<span>快速到貨</span>酒品，三點前下單隔天到！輕輕鬆鬆窩在家裡，就能享受美酒！
 			</div>
 		</div>
 	</div>
@@ -1725,10 +2025,6 @@
 			<div class="Popwindow_form">
 				<div class="title">帳號</div>
 				<input type="text" />
-				<div class="keepaccount">
-					<input type="checkbox" name="" checked="checked">
-					<span>記住我</span>
-				</div>
 			</div>
 			<div class="Popwindow_form">
 				<div class="title">密碼</div>
@@ -1739,7 +2035,7 @@
 			</div>
 			<div class="Popwindow_form">
 				<div class="title">驗證碼</div>
-				<input type="tel" />
+				<input type="text" />
 				<div class="VerifyImg">
 					<img src="images/mobile/VerifyImg.png">
 				</div>
@@ -1748,22 +2044,6 @@
 			<div class="AddMember">
 				現在加入會員
 			</div>
-		</div>
-	</div>
-
-	<div class="PopWindow_layout" id="NoletterWindow">
-		<div class="PopWindow_title">
-			發送確認信
-			<span class="CloseBTN"></span>
-		</div>
-		<div class="PopWindow_content">
-			<div class="PopWindow_content_text">法令規定酒類無法線上交易，請留下e-mail，客服將會盡快與您聯繫！</div>
-			<div class="PopWindow_noticetext">PS若收不到信，請記得檢查垃圾信箱。</div>
-			<div class="Popwindow_form">
-				<div class="title">請輸入e-mail</div>
-				<input type="text" />
-			</div>	
-			<div class="Popwindow_ConfirmBtn">送出</div>			
 		</div>
 	</div>
 </div>

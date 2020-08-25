@@ -369,19 +369,19 @@
 
 		& .Normal{
 			background-color: $NormalColor;
-			background-image: url(../images/addcart_icon_normal.png);
+			background-image: url(../images/mobile/addcart_icon_normal.png);
 			@extend %backgroundimagecover;
 		}
 
 		& .Fast{
 			background-color: $FastColor;
-			background-image: url(../images/addcart_icon_fast.png);
+			background-image: url(../images/mobile/addcart_icon_fast.png);
 			@extend %backgroundimagecover;
 		}
 
 		& .Preorder{
 			background-color: $PreorderColor;
-			background-image: url(../images/addcart_icon_preorder.png);
+			background-image: url(../images/mobile/addcart_icon_preorder.png);
 			@extend %backgroundimagecover;
 		}
 
@@ -501,7 +501,7 @@
 .About_Newbie_Arrow{
 	width: 30px;
 	height: 44px;
-	background-image: url(../images/icon_newbie_arrow.png);
+	background-image: url(../images/mobile/icon_newbie_arrow.png);
 	@extend %backgroundimagecover;
 	margin: 0 auto;
 	margin-top: 24px;
@@ -515,7 +515,7 @@
 	justify-content: space-between;
 	& .CartIcons{
 		& .Normal{
-			@include AddCartIcon($NormalColor, url(../images/addcart_icon_normal.png));
+			@include AddCartIcon($NormalColor, url(../images/mobile/addcart_icon_normal.png));
 			width: 35px;
 			height: 35px;
 			float: none;
@@ -523,7 +523,7 @@
 		}
 
 		& .Fast{
-			@include AddCartIcon($FastColor, url(../images/addcart_icon_fast.png));
+			@include AddCartIcon($FastColor, url(../images/mobile/addcart_icon_fast.png));
 			width: 35px;
 			height: 35px;
 			float: none;
@@ -531,7 +531,7 @@
 		}
 
 		& .Preorder{
-			@include AddCartIcon($PreorderColor, url(../images/addcart_icon_preorder.png));
+			@include AddCartIcon($PreorderColor, url(../images/mobile/addcart_icon_preorder.png));
 			width: 35px;
 			height: 35px;
 			float: none;
@@ -579,7 +579,7 @@
 	& .MyListIcon{
 		width: 60px;
 		height: 72px;
-		background-image: url(../images/icon_newbie_mylist.png);
+		background-image: url(../images/mobile/icon_newbie_mylist.png);
 		float:left;
 		margin-top: 5px;
 	}
@@ -616,7 +616,7 @@
 .About_Newbie_mailicon{
 	width: 93px;
 	height: 62px;
-	background-image: url(../images/icon_newbie_mail.png);
+	background-image: url(../images/mobile/icon_newbie_mail.png);
 	margin: 10px auto;
 }
 
@@ -727,7 +727,7 @@
 	padding: 20px 0;
 	margin-top: 1rem;
 	width: 100%;
-	background-image: url(../images/about_quality_icon_bg.jpg);
+	background-image: url(../images/mobile/about_quality_icon_bg.jpg);
 	@extend %backgroundimagecover;
 	&:after{
 		@extend %clearfix;
@@ -852,7 +852,7 @@
 			display:block;
 			width: 20px;
 			height: 20px;
-			background-image: url(../images/icon_quality_hand.svg);
+			background-image: url(../images/mobile/icon_quality_hand.svg);
 			float:left;
 			margin-right: 6px;
 		}
@@ -958,7 +958,7 @@
 				display: inline-block;
 				width: 13px;
 				height: 20px;
-				background-image: url(../images/fasticon_color.png);
+				background-image: url(../images/mobile/fasticon_color.png);
 				background-size: cover;
 				margin-right: 5px;
 				margin-left: 5px;
@@ -972,7 +972,7 @@
 	height: 16px;
 	margin-left: 5px;
 	display:inline-block;
-	background-image: url(../images/icon_sidemenu.png);
+	background-image: url(../images/mobile/icon_sidemenu.png);
 	@extend %backgroundimagecover;
 	@include pad-width{
 		width: 30px;

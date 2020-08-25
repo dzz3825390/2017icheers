@@ -306,7 +306,7 @@
 .MemberOnly_layout{
 	width:100%;
 	height: 547px;
-	background-image:url(../images/memberonly_bg.jpg);
+	background-image:url(../images/mobile/memberonly_bg.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat:no-repeat;
@@ -665,7 +665,7 @@
 		width: 217px;
 		height: 123px;
 		display: block;
-		background-image:url("../images/loading_logo.png");
+		background-image:url("../images/mobile/loading_logo.png");
 		@extend %backgroundimagecover;
 		margin: 0 auto;
 	}

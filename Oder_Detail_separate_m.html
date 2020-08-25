@@ -107,14 +107,17 @@
 		    	$(window).on('touchstart.HeaderShow',HeaderShow())
 		    });
 
+		    //商品內容展開
 		    $('.BTN_Order_Detail_extend').click(function(){
 		    	//check isExtend
-		    	var IsExtend = $('.Order_Detail_extend').hasClass('Extend');
+		    	var IsExtend = $(this).hasClass('Extend');
 
 		    	if (IsExtend) {
-		    		$('.Order_Detail_extend').removeClass('Extend');
+		    		$(this).removeClass('Extend');
+		    		$(this).next().removeClass('Extend');
 		    	} else {
-		    		$('.Order_Detail_extend').addClass('Extend');
+		    		$(this).addClass('Extend');
+		    		$(this).next().addClass('Extend');
 		    	}
 		    });
 
@@ -163,10 +166,62 @@
 <!--content-->
 <div class="content_layout">
 	<div class="OrderInfo_top">
-		<span class="OrderNumber">W19112500016</span>
+		<span class="OrderNumber">W19112500016 </span>
 		<span class="OrderPayment">$&nbsp;123,237,568</span>
 	</div>
 	<div class="Order_Detail_layout">
+		<div class="Order_Info_Row Order_Status">
+			<div class="OneStatus Status_FinishOrder">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					完成訂單
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Transfer Status_active">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					待匯款
+				</div>
+				<div class="Status_date">
+					$123,456,789
+				</div>
+			</div>
+		</div>
+		<div class="Order_Info_Row Order_Status">
+			<div class="OneStatus Status_FinishOrder">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					完成訂單
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Transfer">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					確認匯款
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Delivering Status_active">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					分批出貨中
+				</div>
+				<div class="Status_date">
+					快速/一般/預訂
+				</div>
+			</div>
+		</div>
 		<div class="Order_Info_Row Order_Status">
 			<div class="OneStatus Status_FinishOrder">
 				<div class="Status_icon"><span></span></div>
@@ -198,11 +253,400 @@
 				</div>
 			</div>
 		</div>
-		<div class="Order_Info_Row">
-			<div class="Info_Title">出貨單號</div>
-			<div class="Info_Text">W19112500016-1 外務親送/客戶自取</div>
+		<div class="Order_Info_Row Order_Status">
+			<div class="OneStatus Status_FinishOrder">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					完成訂單
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Transfer">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					確認匯款
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Collect Status_active">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					集貨中
+				</div>
+				<div class="Status_date">
+					
+				</div>
+			</div>
+		</div>
+		<div class="Order_Info_Row Order_Status">
+			<div class="OneStatus Status_FinishOrder">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					完成訂單
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Creditcard Status_active">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					待刷卡
+				</div>
+				<div class="Status_date">
+					$123,456,789
+				</div>
+			</div>
+		</div>
+		<div class="Order_Info_Row Order_Status">
+			<div class="OneStatus Status_FinishOrder">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					完成訂單
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Creditcard">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					確認刷卡
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Delivering Status_active">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					分批出貨中
+				</div>
+				<div class="Status_date">
+					快速/一般/預訂
+				</div>
+			</div>
+		</div>
+		<div class="Order_Info_Row Order_Status">
+			<div class="OneStatus Status_FinishOrder">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					完成訂單
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Creditcard">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					確認刷卡
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Delivery Status_active">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					已出貨
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+		</div>
+		<div class="Order_Info_Row Order_Status">
+			<div class="OneStatus Status_FinishOrder">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					完成訂單
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Creditcard">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					確認刷卡
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Collect Status_active">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					集貨中
+				</div>
+				<div class="Status_date">
+					
+				</div>
+			</div>
+		</div>
+		<div class="Order_Info_Row Order_Status">
+			<div class="OneStatus Status_FinishOrder">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					完成訂單
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Delivering Status_active">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					分批出貨中
+				</div>
+				<div class="Status_date">
+					快速/一般/預訂
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_FinishCash">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					貨到付款
+				</div>
+				<div class="Status_date">
+					$123,456,789
+				</div>
+			</div>
+		</div>
+		<div class="Order_Info_Row Order_Status">
+			<div class="OneStatus Status_FinishOrder">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					完成訂單
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Delivery">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					已出貨
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_FinishCash Status_active">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					貨到付款
+				</div>
+				<div class="Status_date">
+					$123,456,789
+				</div>
+			</div>	
+		</div>
+		<div class="Order_Info_Row Order_Status">
+			<div class="OneStatus Status_FinishOrder">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					完成訂單
+				</div>
+				<div class="Status_date">
+					2019/12/31 17:50
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_Collect Status_active">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					集貨中
+				</div>
+				<div class="Status_date">
+					
+				</div>
+			</div>
+			<div class="StatusDottedLine"></div>
+			<div class="OneStatus Status_FinishCash">
+				<div class="Status_icon"><span></span></div>
+				<div class="Status_text">
+					貨到付款
+				</div>
+				<div class="Status_date">
+					$123,456,789
+				</div>
+			</div>
 		</div>
 		<div class="Order_Info_Row">
+			<div class="TitleBox StatusFast">
+				<div class="largeT">
+					快速到貨
+				</div>
+				<div class="secondT">
+					<a href="#">到底有多快?</a>
+				</div>
+			</div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+		</div>
+		<!--組合商品-->
+		<div class="Order_Info_Row">
+			<div class="TitleBox Fast">
+				<div class="largeT">
+					歡樂春節套組
+				</div>
+				<div class="secondT">
+					波爾多超值組合優惠
+				</div>
+			</div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="DottedLine"></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice"><b>共&nbsp;1&nbsp;組&nbsp;&nbsp;</b>小計<b>$123,456,789</b></div>
+		</div>
+	</div>
+	<div class="BTN_Order_Detail_extend">展開商品明細<i></i></div>
+	<div class="Order_Detail_layout Order_Detail_extend">
+		<!--加價購-->
+		<div class="Order_Info_Row">
+			<div class="TitleBox Fast">
+				<div class="largeT">
+					Raúl Peréz 任選六瓶8折加999元再送電動刮鬍刀
+				</div>
+			</div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+			<div class="SolidLine"></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+		</div>
+		<!--任選-->
+		<div class="Order_Info_Row">
+			<div class="TitleBox Fast">
+				<div class="largeT">
+					iCheers推薦任選3瓶限時優惠價3500元
+				</div>
+			</div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+			<div class="SolidLine"></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+		</div>
+		<!--贈品-->
+		<div class="Order_Info_Row">
+			<div class="TitleBox Fast">
+				<div class="largeT">
+					iCheers 6月份限時贈送好禮
+				</div>
+			</div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+			<div class="SolidLine"></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+		</div>
+		<div class="Order_Info_Row">
+			<div class="TitleBox StatusNormal">
+				<div class="largeT">
+					一般配送
+				</div>
+				<div class="secondT">
+					完成流程後3-5個工作天內可收到商品
+				</div>
+			</div>
 			<div class="WineName_En">Jester Sangiovese Rosé</div>
 			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
 			<div class="WineInfo">
@@ -245,9 +689,6 @@
 			</div>
 			<div class="WinePrice"><b>共&nbsp;1&nbsp;組&nbsp;&nbsp;</b>小計<b>$123,456,789</b></div>
 		</div>
-	</div>
-	<div class="BTN_Order_Detail_extend">展開商品明細<i></i></div>
-	<div class="Order_Detail_layout Order_Detail_extend">
 		<!--加價購-->
 		<div class="Order_Info_Row">
 			<div class="TitleBox">
@@ -310,10 +751,153 @@
 			</div>
 			<div class="WinePrice">小計<b>$123,456,789</b></div>
 		</div>
-		
 		<!--贈品-->
 		<div class="Order_Info_Row">
 			<div class="TitleBox">
+				<div class="largeT">
+					iCheers 6月份限時贈送好禮
+				</div>
+			</div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+			<div class="SolidLine"></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+		</div>
+		<div class="Order_Info_Row">
+			<div class="TitleBox StatusPreorder">
+				<div class="largeT">
+					預訂商品
+				</div>
+				<div class="secondT">
+					預計到貨日：2020年5月
+				</div>
+			</div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+		</div>
+		<!--組合商品-->
+		<div class="Order_Info_Row">
+			<div class="TitleBox Preorder">
+				<div class="largeT">
+					歡樂春節套組
+				</div>
+				<div class="secondT">
+					波爾多超值組合優惠
+				</div>
+			</div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="DottedLine"></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice"><b>共&nbsp;1&nbsp;組&nbsp;&nbsp;</b>小計<b>$123,456,789</b></div>
+		</div>
+		<!--加價購-->
+		<div class="Order_Info_Row">
+			<div class="TitleBox Preorder">
+				<div class="largeT">
+					Raúl Peréz 任選六瓶8折加999元再送電動刮鬍刀
+				</div>
+			</div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+			<div class="SolidLine"></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+		</div>
+		<!--任選-->
+		<div class="Order_Info_Row">
+			<div class="TitleBox Preorder">
+				<div class="largeT">
+					iCheers推薦任選3瓶限時優惠價3500元
+				</div>
+			</div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+			<div class="SolidLine"></div>
+			<div class="WineName_En">Jester Sangiovese Rosé</div>
+			<div class="WineName_Cn">米斗羅酒莊 名丑山吉歐維榭粉紅酒</div>
+			<div class="WineInfo">
+				<span>2017</span>
+				<span>750ml</span>
+				<span>法國</span>
+			</div>
+			<div class="WineCount">
+				數量：5
+			</div>
+			<div class="WinePrice">小計<b>$123,456,789</b></div>
+		</div>
+		<!--贈品-->
+		<div class="Order_Info_Row">
+			<div class="TitleBox Preorder">
 				<div class="largeT">
 					iCheers 6月份限時贈送好禮
 				</div>
@@ -356,7 +940,10 @@
 			<div class="Info_Title">發票寄送</div>
 			<div class="Info_SmallText">二聯式發票-隨商品寄出</div>
 		</div>
+		<!--匯款/刷卡 未付款狀態才有下面這個-->
+		<div class="btn_edit">修改配送/付款資訊</div>
 	</div>
+
 </div>
 <!--content end-->
 
@@ -378,6 +965,8 @@
 	<div class="title">客服信箱</div>
 	<div class="text">服務時間以外歡迎來信<br/><a href="mailto:service@icheers.tw">service@icheers.tw</a></div>
 </div>
+
+
 <div class="footer">
 	<div class="footer_option_row">
 		<div class="footer_option" id="Noletter">
