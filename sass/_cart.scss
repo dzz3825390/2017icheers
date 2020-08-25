@@ -88,19 +88,16 @@
 	padding: 1rem 0 2rem 0;
 	border-bottom: $BorderColor;
 	position: relative;
-	&:after{
-		@extend %clearfix;
-	}
-
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
 	& .BottleImg{
 		width: 33%;
-		float: left;
 		@extend %backgroundimagecover;
 	}
 
 	& .BottleInfo{
 		width: calc(67% - 1px);
-		float:right;
 		& .Name_en{
 			font-size: 1.125rem;
 			color: $TitleColor;
@@ -195,6 +192,29 @@
 		}
 	}
 
+	& .EventNotice{
+		width: 100%;
+		padding: 10px 16px;
+		@include box-sizing(border-box);
+		background-color: #f3f4f5;
+		font-size: 0.875rem;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin: 1rem 0;
+		cursor: pointer;
+		& .redtext{
+			width: 117px;
+			color: $NoticeColor;
+			font-weight: bold;
+		}
+
+		& .eventtext{
+			color: $TextColor;
+			line-height: 1.125rem;
+		}
+	}
+
 	& .btn_delete{
 		width: 40px;
 		height: 40px;
@@ -205,16 +225,27 @@
 		bottom: 0;
 	}
 
+	& .icon_tracking{
+		width: 40px;
+		height: 40px;
+		@extend %backgroundimagecover;
+		background-position: center bottom;
+		background-image: url(../images/icon_tracking_large.png);
+		position: absolute;
+		left: 0;
+		top: 32px;
+	}
+
 	@include pad-width{
+		align-items: flex-end;
+
 		& .BottleImg{
 			width: 40%;
 		}
 
 		& .BottleInfo{
+			margin-bottom: 20px;
 			width: calc(60% - 1px);
-			position:absolute;
-			bottom: 70px;
-			right: 0;
 			& .Name_en{
 				font-size: $PadTitleFontSize;
 				line-height: 2.1rem;
@@ -252,6 +283,21 @@
 				}*/
 			}
 
+		}
+
+		& .EventNotice{
+			padding: 16px 32px;
+			font-size: $padContentFontSize;
+			& .eventtext{
+				line-height: 1.7rem;
+			}
+		}
+
+		& .icon_tracking{
+			width: 50px;
+			height: 50px;
+			top: 54px;
+			left: calc(20% - 50px - 40px);
 		}
 	}
 

@@ -132,13 +132,36 @@
 .winelist_OneWine_bottleImg{
 	float: left;
 	width: 23%;
+	position: relative;
+	& .winelist_OneWine_btn_track{
+		width: 40px;
+		height: 40px;
+		@include border-radius(50%);
+		background-color: #fff;
+		background-image: url(../images/icon_tracking_large.png);
+		@extend %backgroundimagecover;
+		background-position: center bottom;
+		position: absolute;
+		bottom: 10px;
+		right: -10px;
+	}
 	@extend %backgroundimagecover;
 	@include pad-width{
 		width: 40%;
+		& .winelist_OneWine_btn_track{
+			width: 60px;
+			height: 60px;
+			right: calc(50% - 60px - 30px);
+		}
 	}
 
 	@include large-pad-width{
 		background-size: contain;
+		& .winelist_OneWine_btn_track{
+			width: 70px;
+			height: 70px;
+			right: calc(50% - 70px - 30px);
+		}
 	}
 }
 
@@ -429,3 +452,34 @@
 		}
 	}
 }
+
+.not_sale{
+	& .winelist_OneWine_bottleImg{
+		background-color: rgba(255,255,255,0.7);
+		background-blend-mode:lighten; 
+	}
+
+	& .winelist_OneWine_Info{
+		opacity: 0.3;
+	}
+
+	& .winelist_notsale{
+		cursor: pointer;
+		@include box-sizing(border-box);
+		width: 100%;
+		padding: 10px 16px;
+		background-color: #f3f4f5; 
+		font-size: 1rem;
+		line-height: 1.5rem;
+		color: #666;
+		& a{
+			color: $NoticeColor;
+			font-weight: bold;
+		}
+
+		@include pad-width{
+			padding: 16px 32px;
+			font-size: 1.25rem;
+		}
+	}
+} 
