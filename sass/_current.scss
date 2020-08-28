@@ -327,6 +327,8 @@ span.more{
 /***content***/
 
 .content_layout{
+	position: relative;
+	z-index: 1;
 	width: 100%;
 	background-color:#ffffff;
 	@include transform(translate3d(0,0,0));
