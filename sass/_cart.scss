@@ -1309,6 +1309,10 @@
 		font-size: $PhoneContentFontSize;
 		line-height: 1.25rem;
 		margin-top: 0.5rem;
+		& a{
+			display: inline;
+			margin: 0;
+		}
 	}
 
 	& textarea{
@@ -1373,10 +1377,6 @@
 		& .NoticeText{
 			font-size: $padContentFontSize;
 			line-height: 1.75rem;
-			& a{
-				display: inline;
-				margin: 0;
-			}
 		}
 
 		& .Radio_infotext{
