@@ -6111,6 +6111,8 @@ h2.detail_Name_cn {
   color: #999;
 }
 .cart_form_row a {
+  display: inline-block;
+  margin: 0.5rem 0;
   color: #666;
   text-decoration: underline;
   width: 100%;
@@ -6145,6 +6147,10 @@ h2.detail_Name_cn {
   .cart_form_row .NoticeText {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+  .cart_form_row .NoticeText a {
+    display: inline;
+    margin: 0;
   }
   .cart_form_row .Radio_infotext {
     font-size: 1.25rem;
