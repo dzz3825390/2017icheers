@@ -6481,6 +6481,37 @@ h2.detail_Name_cn {
     opacity: 0.5;
   }
 }
+.DeliveryCostTable {
+  margin-bottom: 16px;
+  color: #666;
+  line-height: 1.3rem;
+}
+.DeliveryCostTable th {
+  height: 50px;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #cccccc;
+}
+.DeliveryCostTable tr:nth-child(odd) {
+  background: #f2f2f2;
+}
+.DeliveryCostTable tr:first-child {
+  background: #fbfbfb;
+}
+.DeliveryCostTable td {
+  height: 48px;
+  padding: 10px 16px;
+  text-align: center;
+}
+.DeliveryCostTable td:nth-child(2) {
+  text-align: right;
+}
+.DeliveryCostTable .cost {
+  font-weight: bold;
+  color: #B00808;
+}
+
 .About_BG {
   width: 100%;
   position: absolute;

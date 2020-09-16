@@ -1245,23 +1245,40 @@
 			<span class="CloseBTN"></span>
 		</div>
 		<div class="PopWindow_content">
-			<div class="PopWindow_content_text">折扣後商品總額</div>
-			<div class="FreightInfoRow">
-				<div><span>1,499</span>元以下</div>
-				<div>200元</div>
-			</div>
-			<div class="FreightInfoRow">
-				<div><span>1,500</span>元(含)以上</div>
-				<div>0元</div>
-			</div>
-			<div class="FreightInfo_notice">
-				*若有選購任一需運費商品，則不適用滿額  免運費之優惠。
-			</div>
-
-			<div class="FreightInfo_notice">
-				*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。
-			</div>
+			<table width="100%" border="0" cellspacing="0" align="center" class="DeliveryCostTable">
+	            <tr>
+	                <th width="30%"></th>
+	                <th width="40%">金額小計</th>
+	                <th width="30%">運費</th>
+	            </tr>
+	            <tr>
+	                <td>快速到貨</td>
+	                <td>$3,500</td>
+	                <td>免運費</td>
+	            </tr>
+	            <tr>
+	                <td>一般配送</td>
+	                <td>$1,200</td>
+	                <td class="cost">$200</td>
+	            </tr>
+	            <tr>
+	                <td>預訂商品<br/>2016/12</td>
+	                <td>$800</td>
+	                <td class="cost">$200</td>
+	            </tr>
+	            <tr>
+	                <td>預訂商品<br/>2017/5</td>
+	                <td>$19,000</td>
+	                <td>免運費</td>
+	            </tr>
+	            <tr>
+	                <td>預訂商品<br/>2017/11</td>
+	                <td>$1,499</td>
+	                <td class="cost">$200</td>
+	            </tr>
+	        </table>
 			<div class="Popwindow_ConfirmBtn">回購物車</div>
+			<div class="Popwindow_ConfirmBtnGray" style="margin-top: 10px;" onclick="window.open('https://www.icheers.tw/iCheers/Content/HTML/Delivery_m.html');">詳細運費說明</div>
 		</div>
 	</div>
 	<!--運費說明 end-->
