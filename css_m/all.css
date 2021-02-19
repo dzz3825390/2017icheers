@@ -1998,6 +1998,12 @@ h4 {
 .PopWindow_content .Popwindow_form .title span {
   color: #B00808;
 }
+.PopWindow_content .Popwindow_form .row {
+  margin-top: 8px;
+}
+.PopWindow_content .Popwindow_form .row span {
+  font-size: 0.875rem;
+}
 .PopWindow_content .Popwindow_form input[type=text] {
   width: 100%;
   padding: 0 10px;
@@ -6076,6 +6082,7 @@ h2.detail_Name_cn {
 }
 .cart_form_row .Radio_infotext {
   font-size: 0.875rem;
+  line-height: 1.25rem;
   color: #999;
   padding: 0 10px;
   margin-top: 0.5rem;

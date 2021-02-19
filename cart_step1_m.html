@@ -1138,21 +1138,41 @@
 			<span class="CloseBTN"></span>
 		</div>
 		<div class="PopWindow_content">
+			<div class="PopWindow_content_text">依法令規定，酒類商品無法提供線上交易服務，請留下您的Email，客服夥伴將會盡快與您聯繫！</div>
+			<div class="Popwindow_form">
+				<div class="title">請輸入Email</div>
+				<input type="text" />
+				<div class="row">
+		    	 	<input type="checkbox">
+		    	 	<span>記住我</span>
+		    	</div> 
+			</div>
+			<!--3點前-->
 			<div class="PopWindow_content_text">
-				您所選擇的快速到貨品項已超過截單時間<span>15:00</span>，為了以最快速度安排出貨，請於下個截單時間之前完成流程(至Step4)，為求出貨效率，建議使用宅配貨到付款(現金)：
+				快速到貨截單時間倒數計時：<br/><span>HH</span>時<span>MM</span>分<span>SS</span>秒
 			</div>
+			<!--3點後-->
+			<!--
+			<div class="PopWindow_content_text">
+				已經超過快速到貨截單時間：<span>HH:MM</span>，將於下個工作日安排出貨。
+			</div>-->
+			
+			<!--3點前-->
 			<div class="PopWindow_RadioBox" name='G1'>
-				 我需要快速到貨，宅配貨到付款(現金)OK！<b>（提醒：需依出貨批次<em>分批付款</em>！）</b>
+				 我需要快速到貨，我會在<em>HH:MM</em>前完成付款（Step4），逾時恕無法快速到貨。
 			</div>
+			<!--3點後-->
+			<!--
 			<div class="PopWindow_RadioBox" name='G1'>
-				 我需要快速到貨，我會在<em>下個工作天15:00之前</em>，以線下刷卡/匯款方式，擇一完成付款(Step4)。<b>（提醒：款項需<em>一次付清</em>，且逾時恕無法快速到貨！）</b>
-			</div>
+				 我需要快速到貨，我會在下個工作日<em>HH:MM</em>前，完成付款！（Step4），逾時恕無法快速到貨
+			</div>-->
 			<div class="PopWindow_RadioBox" name='G1'>
-				 我不急著用酒，以一般配送方式合併出貨即可。
+				 一般速度出貨即可。
 			</div>
-			<!--20180614 add notice text sample-->
-			<div class="PopWindow_noticetext">*如遇例假日及國定假日，則截單時間順延至下個工作天當日15:00，到貨日亦順延至「隔日」。</div>
-			<div class="Popwindow_ConfirmBtn" id="PaymentCheck">下一步</div>			
+			<div class="PopWindow_noticetext">
+				*如遇例假日及國定假日則到貨時間順延
+			</div>
+			<div class="Popwindow_ConfirmBtn" id="PaymentCheck">送出</div>			
 		</div>
 	</div>
 	<!--發送確認信1 end-->
@@ -1160,19 +1180,14 @@
 	<!--發送確認信2 範本-->
 	<div class="PopWindow_layout" id="MailWindow2">
 		<div class="PopWindow_title">
-			發送確認信
+			還差一步！
 			<span class="CloseBTN"></span>
 		</div>
 		<div class="PopWindow_content">
-			<div class="PopWindow_content_text">法令規定酒類無法線上交易，請留下e-mail，客服將會盡快與您聯繫！</div>
-			<div class="PopWindow_noticetext">PS若收不到信，請記得檢查垃圾信箱。</div>
-			<div class="Popwindow_form">
-				<div class="title">請輸入e-mail</div>
-				<input type="text" />
-			</div>
-			<div class="PopWindow_noticetext">*如遇例假日及國定假日，則截單時間順延至下個工作天當日15:00，到貨日亦順延至「隔日」。</div>
-			<div class="Popwindow_ConfirmBtnGray" id="BackToPaymentCheck">上一步</div>	
-			<div class="Popwindow_ConfirmBtn">送出</div>			
+			<div class="PopWindow_content_text">請收Email完成付款。</div>
+			<div class="PopWindow_noticetext">*若收不到信，請記得檢查垃圾信箱。</div>
+			
+			<div class="Popwindow_ConfirmBtn">回首頁</div>			
 		</div>
 	</div>
 	<!--發送確認信2 end-->

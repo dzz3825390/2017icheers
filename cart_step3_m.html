@@ -159,8 +159,12 @@
 		   		var isSelfClick = $(this).hasClass('RadioBox_active')
 		   		if (!isSelfClick) {
 		   			Radiobox(this);
-		   			$('.Radio_Payment').next().css('display','none');
-		   			$(this).next().slideDown(300);
+		   			if ($(this).next().hasClass('Radio_infotext')) {
+		   				$(this).next().slideDown(300);
+		   			} else{
+		   				$('.Radio_Payment').next('.Radio_infotext').css('display','none');
+		   			}
+		   			
 		   		} else {
 		   			//do nothing
 		   		}
@@ -581,9 +585,7 @@
 		</div>
 		<div class="cart_form_row">
 			<div class="RadioBox Radio_Payment" name='payment'>匯款</div>
-			<div class="Radio_infotext" style="display:none;">請於24小時內完成付款，逾期將取消訂單。</div>
-			<div class="RadioBox Radio_Payment" name='payment'>傳真刷卡單</div>
-			<div class="Radio_infotext" style="display:none;">請於24小時內完成付款，逾期將取消訂單。</div>
+			<div class="RadioBox Radio_Payment" name='payment'>刷卡/行動支付</div>
 			<div class="RadioBox Radio_Payment" name='payment'>宅配貨到付款</div>
 			<div class="Radio_infotext" style="display:none;">現金</div>
 		</div>
