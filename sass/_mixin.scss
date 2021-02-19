@@ -498,3 +498,8 @@ $LargePadPadding : 40px;
 		width: 380px;
 	}
 }
+
+@keyframes TrackingBtn {
+	0%{transform: scale(0.95);}
+    100%{transform: scale(1);}
+}

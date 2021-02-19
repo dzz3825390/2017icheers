@@ -127,9 +127,13 @@
 		margin-top: 1px;
 	}
 
+
 	&.active{
 		border-color: #f38989;
 		background-color: #f38989;
+		animation-name: TrackingBtn;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
 		&:before{
 			background-position: center bottom;
 		}

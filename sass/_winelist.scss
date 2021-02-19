@@ -138,12 +138,18 @@
 		height: 40px;
 		@include border-radius(50%);
 		background-color: #fff;
-		background-image: url(../images/icon_tracking_large.png);
+		background-image: url(../images/mobile/icon_tracking_large.png);
 		@extend %backgroundimagecover;
-		background-position: center bottom;
+		background-position: center top;
 		position: absolute;
 		bottom: 10px;
 		right: -10px;
+		&.active{
+			background-position: center bottom;
+			animation-name: TrackingBtn;
+	        animation-duration: 0.5s;
+	        animation-iteration-count: 1;
+		}
 	}
 	@extend %backgroundimagecover;
 	@include pad-width{
@@ -189,6 +195,8 @@
 		height: 1.5rem;
 		overflow:hidden;
 	}
+
+
 
 	& .bottle_info{
 		margin-top: 5px;
@@ -338,6 +346,36 @@
 		height: 50px;
 		&:after{
 			@extend %clearfix;
+		}
+		& .tracking_list{
+			width: 40px;
+			height: 50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			float: left;
+			outline: none;
+			display: none;
+			& span{
+				width: 20px;
+				height: 20px;
+				background-image: url(../images/mobile/TrackingList_red.png);
+				@extend %backgroundimagecover;
+				background-position: center top;
+			}
+
+			&.active{
+				animation-name: TrackingBtn;
+        		animation-duration: 0.5s;
+        		animation-iteration-count: 1;
+			}
+
+			&.active span{
+				background-position: center bottom;		
+			}
+			
+			
 		}
 		& .bottle_info{
 			margin-top: calc((50px - 0.8rem)/2);
