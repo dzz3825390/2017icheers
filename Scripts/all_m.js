@@ -424,6 +424,12 @@ $(document).ready(function(){
 		PopWindow('#WineTagWindow',intBrowserH,intBrowserW);	
 	});
 
+	//台大實驗用結束後可刪
+	$('#Step3_submit').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#Pop_NTU_Control7',intBrowserH,intBrowserW);	
+	});
+
 	//PopWindow關閉
 	$('#black_BG02 .CloseBTN').click(function(){
 		//隱藏黑底
