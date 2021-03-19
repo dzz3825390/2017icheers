@@ -97,57 +97,40 @@
 	}
 }
 
+@keyframes TrackingBtn {
+    0%{transform: scale(1);}
+    10%{transform: scale(0.9);}
+    75%{transform: scale(1.1);}
+    100%{transform: scale(1);}
+}
+
 .detail_bottleImg_btn_track{
+	width:40px;
+	height: 40px;
+	@extend %backgroundimagecover;
+	background-image: url(../images/mobile/icon_tracking_large2_gray.png);
 	@include box-sizing(border-box);
-	@include border-radius(7px);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 8px 10px;
-	border: #d6d6d6 1px solid;
 	position: absolute;
 	right: 0;
 	top: 50px;
 	cursor: pointer;
-	&:before{
-		content: '';
-		display: inline-block;
-		width: 18px;
-		height: 18px;
-		margin-right: 8px;
-		background-image: url(../images/mobile/icon_btn_track.png);
-		@extend %backgroundimagecover;
-		background-position: center top;
-	}
-
-	& .text{
-		display: inline-block;
-		font-size: 1rem;
-		color: #d6d6d6;
-		margin-top: 1px;
-	}
-
 
 	&.active{
-		border-color: #f38989;
-		background-color: #f38989;
+		background-image: url(../images/mobile/icon_tracking_large2_pink.png);
 		animation-name: TrackingBtn;
         animation-duration: 0.5s;
         animation-iteration-count: 1;
-		&:before{
-			background-position: center bottom;
-		}
-
-		& .text{
-			color: #ffffff;
-		}
 	}
 
 	@include pad-width{
+		width:50px;
+		height: 50px;
 		top: 60px;
 	}
 
 	@include large-pad-width{
+		width:40px;
+		height: 40px;
 		top: 80px;
 	}
 }
@@ -225,6 +208,8 @@ h2.detail_Name_cn{
 .detail_bottle_info{
 	width: 100%;
 	margin-top: 5px;
+	display: flex;
+	align-items: center;
 	& span{
 		display: inline-block;
 		height: 1.2rem;
@@ -232,18 +217,11 @@ h2.detail_Name_cn{
 		font-weight: bold;
 		color: $TextColor;
 		padding:0 10px;
-		border-right: $BorderColor;
+		border-left: $BorderColor;
 		border-color: #666;
 		&:first-child{
 			padding-left: 0;
-		}
-
-		&:not(:first-child){
-			border-right: none;
-		}
-
-		&:only-child{
-			border-right: none;
+			border-left: none;
 		}
 
 		@include pad-width{
@@ -262,7 +240,32 @@ h2.detail_Name_cn{
 		color: #999;
 		text-decoration: underline;
 	}
+
+	.btn_track_singleyear{
+		width: 40px;
+		height: 40px;
+		margin-left:-10px;
+		display: inline-block;
+		background-image: url(../images/mobile/icon_tracking_small_gray.png);
+		background-size: 50%;
+		background-position: center;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		@extend %backgroundimagecover;
+		&.active{
+			background-image: url(../images/mobile/icon_tracking_small_pink.png);
+			animation-name: TrackingBtn;
+            animation-duration: 0.5s;
+            animation-iteration-count: 1;
+		}
+
+		@include pad-width{
+			margin-left:-16px;
+		}			
+	}
 }
+
+
 
 .detail_saletext{
 	width: calc(100% - 1.2rem);

@@ -77,7 +77,7 @@
 
 		    	var BottleInfoPositionX = (BottleInfoOuterWidth - BottleInfoWidth)/2 + 40;
 		    	var BottleInfoPositionY = (BottleInfoOuterHeight - BottleInfoHeight)/2;
-		    	$('.BottleInfo').css_m({
+		    	$('.BottleInfo').css({
 		    		'top':BottleInfoPositionY,
 		    		'right':BottleInfoPositionX
 		    	});
@@ -139,6 +139,11 @@
 		   		} else {
 		   			//do nothing
 		   		}
+		    });
+
+		    //追蹤酒款active
+		    $('.BottleImg .Btn_track').click(function(){
+		    	$(this).toggleClass('active');
 		    });
 
 		    		   	
@@ -217,7 +222,8 @@
 		<!--20180521 Roger add-->
 		<!--一瓶酒(售完需刪除)-->
 		<div class="cart_list_OneBottle cart_list_BottleSoldOut">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -250,7 +256,9 @@
 		<!--20180521 Roger add end-->
 		<!--一瓶酒-->
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -286,7 +294,9 @@
 		<!--一瓶酒 end-->
 		<!--一瓶酒-->
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -410,7 +420,9 @@
 			</div>
 		</div>
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -439,7 +451,9 @@
 			<div class="btn_delete"></div>
 		</div>
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -479,7 +493,9 @@
 			<div class="text">※此區優惠商品僅能統一出貨，目前時態：一般出貨，約<span>3-5</span>個工作日</div>
 		</div>
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -508,7 +524,9 @@
 			<div class="btn_delete"></div>
 		</div>
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -547,7 +565,9 @@
 			</div>
 		</div>
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -576,7 +596,9 @@
 			<div class="btn_delete"></div>
 		</div>
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -615,7 +637,9 @@
 			</div>
 		</div>
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -654,7 +678,9 @@
 			</div>
 		</div>
 		<div class="cart_list_OneBottle cart_list_gift">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>

@@ -80,13 +80,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   clear: both;
 }
 
-.logo, .icheers_slogan, .footer_option .icon, .SideMenu_SignInBTN, .SideMenu_SearchInput .search_icon, .SideMenu_RecentView .icon, .SideMenu_GotoDesktop .icon, .OneWine .img-s, .LoadingPage .logo, .GoToDesktop .icon, .detail_bottleImg_btn_track:before, .winelist_OneWine_bottleImg .winelist_OneWine_btn_track, .winelist_OneWine_bottleImg, .winelist_allyear_extend .OneYearRow .tracking_list span, .cart_list_OneBottle .BottleImg, .cart_list_OneBottle .icon_tracking, .About_DeliveryInfo .title .Normal, .About_DeliveryInfo .title .Fast, .About_DeliveryInfo .title .Preorder, .About_Newbie_Arrow, .About_Quality_Icons_Bg, .icon_sidemenu, .winery_intro .Region .flags, .WineryIntroZone_onewinery .WineryRegion .flags {
+.logo, .icheers_slogan, .footer_option .icon, .SideMenu_SignInBTN, .SideMenu_SearchInput .search_icon, .SideMenu_RecentView .icon, .SideMenu_GotoDesktop .icon, .OneWine .img-s, .LoadingPage .logo, .GoToDesktop .icon, .detail_bottleImg_btn_track, .detail_bottle_info .btn_track_singleyear, .winelist_OneWine_bottleImg, .winelist_OneWine_bottleImg .winelist_OneWine_btn_track, .cart_list_OneBottle .BottleImg, .cart_list_OneBottle .BottleImg .Btn_track, .cart_list_OneBottle .icon_tracking, .About_DeliveryInfo .title .Normal, .About_DeliveryInfo .title .Fast, .About_DeliveryInfo .title .Preorder, .About_Newbie_Arrow, .About_Quality_Icons_Bg, .icon_sidemenu, .winery_intro .Region .flags, .WineryIntroZone_onewinery .WineryRegion .flags {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.addcart_normal button, .addcart_normal_withtext button:after, .addcart_fast button, .addcart_fast_withtext button:after, .addcart_preorder button, .addcart_preorder_withtext button:after, .addcart_soldout button, .addcart_soldout_withtext button:after, .detail_bottle_img, .detail_MoreInfo_OneInfo .awardbox .img, .cart_list_OneBottle .BottleInfo .Price .Count .btn, .cart_list_OneBottle .btn_delete, .cart_list_OneGroup .Price .Count .btn, .cart_list_OneGroup .btn_delete, .About_BounsInfo .icon, .About_Newbie_CartIcons .CartIcons .Normal, .About_Newbie_CartIcons .CartIcons .Fast, .About_Newbie_CartIcons .CartIcons .Preorder {
+.addcart_normal button, .addcart_normal_withtext button:after, .addcart_fast button, .addcart_fast_withtext button:after, .addcart_preorder button, .addcart_preorder_withtext button:after, .addcart_soldout button, .addcart_soldout_withtext button:after, .detail_bottle_img, .detail_MoreInfo_OneInfo .awardbox .img, .winelist_allyear_extend .OneYearRow .tracking_list span, .cart_list_OneBottle .BottleInfo .Price .Count .btn, .cart_list_OneBottle .btn_delete, .cart_list_OneGroup .Price .Count .btn, .cart_list_OneGroup .btn_delete, .About_BounsInfo .icon, .About_Newbie_CartIcons .CartIcons .Normal, .About_Newbie_CartIcons .CartIcons .Fast, .About_Newbie_CartIcons .CartIcons .Preorder {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -3371,58 +3371,49 @@ h4 {
   }
 }
 
+@keyframes TrackingBtn {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .detail_bottleImg_btn_track {
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/mobile/icon_tracking_large2_gray.png);
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  border-radius: 7px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 10px;
-  border: #d6d6d6 1px solid;
   position: absolute;
   right: 0;
   top: 50px;
   cursor: pointer;
 }
-.detail_bottleImg_btn_track:before {
-  content: '';
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  margin-right: 8px;
-  background-image: url(../images/mobile/icon_btn_track.png);
-  background-position: center top;
-}
-.detail_bottleImg_btn_track .text {
-  display: inline-block;
-  font-size: 1rem;
-  color: #d6d6d6;
-  margin-top: 1px;
-}
 .detail_bottleImg_btn_track.active {
-  border-color: #f38989;
-  background-color: #f38989;
+  background-image: url(../images/mobile/icon_tracking_large2_pink.png);
   animation-name: TrackingBtn;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
 }
-.detail_bottleImg_btn_track.active:before {
-  background-position: center bottom;
-}
-.detail_bottleImg_btn_track.active .text {
-  color: #ffffff;
-}
 @media screen and (min-width: 760px) {
   .detail_bottleImg_btn_track {
+    width: 50px;
+    height: 50px;
     top: 60px;
   }
 }
 @media screen and (min-width: 1360px) {
   .detail_bottleImg_btn_track {
+    width: 40px;
+    height: 40px;
     top: 80px;
   }
 }
@@ -3501,6 +3492,8 @@ h2.detail_Name_cn {
 .detail_bottle_info {
   width: 100%;
   margin-top: 5px;
+  display: flex;
+  align-items: center;
 }
 .detail_bottle_info span {
   display: inline-block;
@@ -3509,17 +3502,12 @@ h2.detail_Name_cn {
   font-weight: bold;
   color: #666666;
   padding: 0 10px;
-  border-right: solid 1px #cccccc;
+  border-left: solid 1px #cccccc;
   border-color: #666;
 }
 .detail_bottle_info span:first-child {
   padding-left: 0;
-}
-.detail_bottle_info span:not(:first-child) {
-  border-right: none;
-}
-.detail_bottle_info span:only-child {
-  border-right: none;
+  border-left: none;
 }
 @media screen and (min-width: 760px) {
   .detail_bottle_info span {
@@ -3536,6 +3524,28 @@ h2.detail_Name_cn {
   height: 1.2rem;
   color: #999;
   text-decoration: underline;
+}
+.detail_bottle_info .btn_track_singleyear {
+  width: 40px;
+  height: 40px;
+  margin-left: -10px;
+  display: inline-block;
+  background-image: url(../images/mobile/icon_tracking_small_gray.png);
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.detail_bottle_info .btn_track_singleyear.active {
+  background-image: url(../images/mobile/icon_tracking_small_pink.png);
+  animation-name: TrackingBtn;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+@media screen and (min-width: 760px) {
+  .detail_bottle_info .btn_track_singleyear {
+    margin-left: -16px;
+  }
 }
 
 .detail_saletext {
@@ -3961,17 +3971,22 @@ h2.detail_Name_cn {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   background-color: #fff;
-  background-image: url(../images/mobile/icon_tracking_large.png);
-  background-position: center top;
+  background-image: url(../images/mobile/icon_tracking_large2_gray.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
   position: absolute;
   bottom: 10px;
   right: -10px;
 }
 .winelist_OneWine_bottleImg .winelist_OneWine_btn_track.active {
-  background-position: center bottom;
+  background-image: url(../images/mobile/icon_tracking_large2_pink.png);
   animation-name: TrackingBtn;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+}
+.winelist_OneWine_bottleImg.not_sell {
+  background-color: rgba(255, 255, 255, 0.7);
+  background-blend-mode: lighten;
 }
 @media screen and (min-width: 760px) {
   .winelist_OneWine_bottleImg {
@@ -3984,9 +3999,6 @@ h2.detail_Name_cn {
   }
 }
 @media screen and (min-width: 1360px) {
-  .winelist_OneWine_bottleImg {
-    background-size: contain;
-  }
   .winelist_OneWine_bottleImg .winelist_OneWine_btn_track {
     width: 70px;
     height: 70px;
@@ -4054,6 +4066,9 @@ h2.detail_Name_cn {
 }
 .winelist_OneWine_Info .bottle_price .price_row:first-child {
   margin-top: 0;
+}
+.winelist_OneWine_Info.not_sell {
+  opacity: 0.3;
 }
 @media screen and (min-width: 760px) {
   .winelist_OneWine_Info {
@@ -4151,6 +4166,9 @@ h2.detail_Name_cn {
   padding: 0 1rem;
   height: 50px;
 }
+.winelist_allyear_extend .OneYearRow.not_sell {
+  opacity: 0.3;
+}
 .winelist_allyear_extend .OneYearRow .tracking_list {
   width: 40px;
   height: 50px;
@@ -4160,13 +4178,12 @@ h2.detail_Name_cn {
   cursor: pointer;
   float: left;
   outline: none;
-  display: none;
 }
 .winelist_allyear_extend .OneYearRow .tracking_list span {
   width: 20px;
   height: 20px;
-  background-image: url(../images/mobile/TrackingList_red.png);
-  background-position: center top;
+  background-image: url(../images/mobile/icon_tracking_small_gray.png);
+  background-position: center;
 }
 .winelist_allyear_extend .OneYearRow .tracking_list.active {
   animation-name: TrackingBtn;
@@ -4174,7 +4191,7 @@ h2.detail_Name_cn {
   animation-iteration-count: 1;
 }
 .winelist_allyear_extend .OneYearRow .tracking_list.active span {
-  background-position: center bottom;
+  background-image: url(../images/mobile/icon_tracking_small_pink.png);
 }
 .winelist_allyear_extend .OneYearRow .bottle_info {
   margin-top: calc((50px - 0.8rem)/2);
@@ -4276,14 +4293,7 @@ h2.detail_Name_cn {
   }
 }
 
-.not_sale .winelist_OneWine_bottleImg {
-  background-color: rgba(255, 255, 255, 0.7);
-  background-blend-mode: lighten;
-}
-.not_sale .winelist_OneWine_Info {
-  opacity: 0.3;
-}
-.not_sale .winelist_notsale {
+.winelist_notsale {
   cursor: pointer;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -4295,12 +4305,12 @@ h2.detail_Name_cn {
   line-height: 1.5rem;
   color: #666;
 }
-.not_sale .winelist_notsale a {
+.winelist_notsale a {
   color: #B00808;
   font-weight: bold;
 }
 @media screen and (min-width: 760px) {
-  .not_sale .winelist_notsale {
+  .winelist_notsale {
     padding: 16px 32px;
     font-size: 1.25rem;
   }
@@ -4391,6 +4401,40 @@ h2.detail_Name_cn {
 }
 .cart_list_OneBottle .BottleImg {
   width: 33%;
+  position: relative;
+}
+.cart_list_OneBottle .BottleImg .Btn_track {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-image: url(../images/mobile/icon_tracking_large2_gray.png);
+  background-color: #fff;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  bottom: 10px;
+  right: calc(50% - 60px);
+}
+.cart_list_OneBottle .BottleImg .Btn_track.active {
+  background-image: url(../images/mobile/icon_tracking_large2_pink.png);
+  animation-name: TrackingBtn;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+@media screen and (min-width: 760px) {
+  .cart_list_OneBottle .BottleImg .Btn_track {
+    width: 50px;
+    height: 50px;
+    left: 5%;
+    top: 5%;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .cart_list_OneBottle .BottleImg .Btn_track {
+    width: 70px;
+    height: 70px;
+  }
 }
 .cart_list_OneBottle .BottleInfo {
   width: calc(67% - 1px);

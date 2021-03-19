@@ -76,13 +76,24 @@
 		    	var isOpen = $(this).hasClass('winelist_MoreInfo_BtnClose');
 		    	if (isOpen) {
 		    		$(this).removeClass('winelist_MoreInfo_BtnClose');
-		    		$('.winelist_MoreInfo_BtnOpen .text').text('展開所有年分');
+		    		$(this).find('.text').text('展開所有年分');
 		    		$(this).next().slideUp(200);
 		    	} else {
 					$(this).addClass('winelist_MoreInfo_BtnClose');
-		    		$('.winelist_MoreInfo_BtnOpen .text').text('收合');
+		    		$(this).find('.text').text('收合');
 		    		$(this).next().slideDown(200);
 		    	}
+		    });
+
+
+		    //追蹤按鈕切換樣式
+		    $('.winelist_OneWine_btn_track').click(function(){
+		    	$(this).toggleClass('active');
+		    });
+
+		    //單一年份追蹤按鈕切換樣式
+		    $('.OneYearRow .tracking_list').click(function(){
+		    	$(this).toggleClass('active');
 		    });
 
 		    
@@ -183,6 +194,7 @@
 	<!--One Wine-->
 	<section class="winelist_OneWine_layout">
 		<div class="winelist_OneWine_bottleImg" style="background-image: url(images/mobile/bottle.jpg);">
+			<div class="winelist_OneWine_btn_track"></div>
 		</div>
 		<div class="winelist_OneWine_Info">
 			<div class="WineInfo">
@@ -230,6 +242,7 @@
 			</div>
 			<div class="winelist_allyear_extend">
 				<div class="OneYearRow ThisYear">
+					<div class="tracking_list"><span></span></div>
 					<div class="bottle_info">
 						<span>2017</span>
 						<span class="capacity">750<em>ml</em></span>
@@ -242,6 +255,7 @@
 				</div>
 				<div class="dottedline"></div>
 				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
 					<div class="bottle_info">
 						<span>2016</span>
 						<span class="capacity">750<em>ml</em></span>
@@ -254,6 +268,7 @@
 				</div>
 				<div class="dottedline"></div>
 				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
 					<div class="bottle_info">
 						<span>2015</span>
 						<span class="capacity">1.5<em>L</em></span>
@@ -267,6 +282,7 @@
 				<!--20180613 add sold out sample-->
 				<div class="dottedline"></div>
 				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
 					<div class="bottle_info">
 						<span>2015</span>
 						<span class="capacity">1.5<em>L</em></span>
@@ -287,6 +303,7 @@
 	<!--One Wine-->
 	<section class="winelist_OneWine_layout">
 		<div class="winelist_OneWine_bottleImg" style="background-image: url(images/mobile/bottle.jpg);">
+			<div class="winelist_OneWine_btn_track"></div>
 		</div>
 		<div class="winelist_OneWine_Info">
 			<div class="WineInfo">
@@ -334,6 +351,7 @@
 			</div>
 			<div class="winelist_allyear_extend">
 				<div class="OneYearRow ThisYear">
+					<div class="tracking_list"><span></span></div>
 					<div class="bottle_info">
 						<span>2017</span>
 						<span class="capacity">750<em>ml</em></span>
@@ -346,6 +364,7 @@
 				</div>
 				<div class="dottedline"></div>
 				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
 					<div class="bottle_info">
 						<span>2016</span>
 						<span class="capacity">750<em>ml</em></span>
@@ -358,6 +377,7 @@
 				</div>
 				<div class="dottedline"></div>
 				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
 					<div class="bottle_info">
 						<span>2015</span>
 						<span class="capacity">1.5<em>L</em></span>
@@ -377,6 +397,7 @@
 	<!--One Wine-->
 	<section class="winelist_OneWine_layout">
 		<div class="winelist_OneWine_bottleImg" style="background-image: url(images/mobile/bottle.jpg);">
+			<div class="winelist_OneWine_btn_track"></div>
 		</div>
 		<div class="winelist_OneWine_Info">
 			<div class="WineInfo">
@@ -424,6 +445,7 @@
 			</div>
 			<div class="winelist_allyear_extend">
 				<div class="OneYearRow ThisYear">
+					<div class="tracking_list"><span></span></div>
 					<div class="bottle_info">
 						<span>2017</span>
 						<span class="capacity">750<em>ml</em></span>
@@ -436,6 +458,7 @@
 				</div>
 				<div class="dottedline"></div>
 				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
 					<div class="bottle_info">
 						<span>2016</span>
 						<span class="capacity">750<em>ml</em></span>
@@ -448,6 +471,7 @@
 				</div>
 				<div class="dottedline"></div>
 				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
 					<div class="bottle_info">
 						<span>2015</span>
 						<span class="capacity">1.5<em>L</em></span>
@@ -467,6 +491,7 @@
 	<!--One Wine-->
 	<section class="winelist_OneWine_layout">
 		<div class="winelist_OneWine_bottleImg" style="background-image: url(images/mobile/bottle.jpg);">
+			<div class="winelist_OneWine_btn_track"></div>
 		</div>
 		<div class="winelist_OneWine_Info">
 			<div class="WineInfo">
@@ -514,6 +539,7 @@
 			</div>
 			<div class="winelist_allyear_extend">
 				<div class="OneYearRow ThisYear">
+					<div class="tracking_list"><span></span></div>
 					<div class="bottle_info">
 						<span>2017</span>
 						<span class="capacity">750<em>ml</em></span>
@@ -526,6 +552,7 @@
 				</div>
 				<div class="dottedline"></div>
 				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
 					<div class="bottle_info">
 						<span>2016</span>
 						<span class="capacity">750<em>ml</em></span>
@@ -538,6 +565,7 @@
 				</div>
 				<div class="dottedline"></div>
 				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
 					<div class="bottle_info">
 						<span>2015</span>
 						<span class="capacity">1.5<em>L</em></span>

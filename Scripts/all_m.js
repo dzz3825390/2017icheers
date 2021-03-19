@@ -424,39 +424,6 @@ $(document).ready(function(){
 		PopWindow('#WineTagWindow',intBrowserH,intBrowserW);	
 	});
 
-	//追蹤年份確認
-	var WineBottleIndex;
-	$('.winelist_OneWine_btn_track').click(function(){
-		WineBottleIndex = $(this).parent().parent().index();
-		BodyScrollTopY = $(window).scrollTop();
-		PopWindow('#TrackConfirmWindow',intBrowserH,intBrowserW);
-		$('body').off('touchmove.preventScroll');	
-	});
-
-	$('.tracksingleBtn').click(function(){
-
-		//隱藏黑底
-		$('#black_BG02').css('display','none');
-		//隱藏視窗
-		$('.PopWindow_layout').css('display','none');
-		//回復body高度、overflow設定
-		$('body').css({
-		    'height':'auto'
-		});
-		//回復假body高度、overflow設定
-		$('.wapper').css({
-			'height':'auto',
-			'overflow-y':'scroll',
-			'position':'relative'
-		});
-		//回復之前瀏覽位置
-		$(window).scrollTop(BodyScrollTopY);
-		//window重新綁定HeaderShow事件
-		$(window).on('touchstart.HeaderShow',HeaderShow());
-		$('.winelist_OneWine_layout').eq(WineBottleIndex-3).find('.winelist_MoreInfo_BtnOpen').click();
-		$('.winelist_OneWine_layout').eq(WineBottleIndex-3).find('.tracking_list').css('display','flex');
-	});
-
 	//PopWindow關閉
 	$('#black_BG02 .CloseBTN').click(function(){
 		//隱藏黑底
