@@ -56,8 +56,15 @@
 		    		$('.detail_MoreInfo_layout').slideDown(200);
 		    	}
 		    });
-		   
-		   
+
+		    //追蹤按鈕切換樣式
+		    $('.detail_bottleImg_btn_track').click(function(){
+		    	$(this).toggleClass('active');
+		    });
+
+		    $('.btn_track_singleyear').click(function(){
+		    	$(this).toggleClass('active');
+		    });
 
 		});
 
@@ -99,26 +106,30 @@
 
 <!--content-->
 <div class="content_layout">
+	<div class="GoToDesktop">
+		<div class="option" id="Tracking_list">
+			<div class="icon" style="background-image: url(images/mobile/icon_track.png);"></div>
+			<div class="text">追蹤酒款</div>
+		</div>
+		<div class="option" id="Order_progress">
+			<div class="icon" style="background-image: url(images/mobile/icon_orderprogress.png);"></div>
+			<div class="text">訂單查詢</div>
+		</div>
+	</div>
 	<!--酒瓶圖&酒款基本資訊-->
 	<section class="detail_bottleImg_layout">
 		<div class="detail_bottle_img" style="background-image:url(images/mobile/bottle.jpg);">
-			<div class="detail_bottleImg_status_layout">
-				<div class="detail_bottleImg_status detail_bottleImg_number">#12345</div>
-				<div class="detail_bottleImg_status">無紅利</div>
-				<div class="detail_bottleImg_status">需運費</div>
-				<div class="detail_bottleImg_status">限匯款</div>
-			</div>
 			
-			<!--20180612 delete bottleImg_rating-->
-			<!--20180620 add wine tag-->
+			<div class="detail_bottleImg_number">#123456</div>
+			<div class="detail_bottleImg_btn_track">
+				
+			</div>
 			<div class="detail_bottleImg_winetag">
 				<img src="images/mobile/wine_tag.jpg" />
 			</div>
 		</div>
 		<div class="detail_addcartBtns" >
-			<!--20180612 add stock status row-->
-			<div class="detail_stockstatus">✔ 有庫存</div>
-			<!--20180612 add stock status row-->
+			<div class="detail_stockstatus">3-5工作天到貨</div>
 			<!--一般配送-->
 			<div class="detail_price_row">
 				<div class="addcart_normal_withtext">
@@ -126,13 +137,15 @@
 					<button>加入清單</button>
 				</div>
 			</div>
-			<!--快速到貨-->
+			<!--快速到貨樣式-->
+			<!--<div class="detail_stockstatus">✔ 有庫存</div>
 			<div class="detail_price_row" style="display:none;">
 				<div class="addcart_fast_withtext">
 					<span>$1,350</span>
 					<button>快速到貨</button>
 				</div>
 			</div>
+			</div>-->
 			<!--預訂商品-->
 			<div class="detail_price_row">
 				<div class="addcart_preorder_withtext">
@@ -155,10 +168,15 @@
 			<h2 class="detail_Name_cn">崗夏酒莊 特吉普賽可氣泡酒</h2>
 			<div class="detail_bottle_info">
 				<span>2017</span>
+				<div class="btn_track_singleyear"></div>
 				<span>750ml</span>
 				<label class="others">其他年份容量</label>
 			</div>
-			<!--20180612 add ouside ratebox-->
+			<div class="detail_bottleImg_status_layout">			
+				<div class="detail_bottleImg_status">無紅利</div>
+				<div class="detail_bottleImg_status">需運費</div>
+				<div class="detail_bottleImg_status">限匯款</div>
+			</div>
 			<div class="ratebox_outside">
 				<span class="name">Robert Parker</span>
 				<span class="rating">
@@ -1357,6 +1375,10 @@
 			<div class="SideMenu_RecentView">
 				<span class="icon"></span>
 				近期瀏覽
+			</div>
+			<div class="SideMenu_GotoDesktop">
+				<span class="icon"></span>
+				切換為電腦版
 			</div>
 		</div>
 		<!--第一層-->

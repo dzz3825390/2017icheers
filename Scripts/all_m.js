@@ -363,35 +363,43 @@ $(document).ready(function(){
 		PopWindow('#UseCouponWindow',intBrowserH,intBrowserW);
 	});
 
+	//活動折扣詳細資訊視窗
+	$('#EventDiscountInfo').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#EventDiscountInfoWindow',intBrowserH,intBrowserW);
+	});
+
+	//刪除視窗
+	$('#Delete_All, .btn_delete').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#DeleteItemWindow',intBrowserH,intBrowserW);
+	});
+
 	//運費說明
 	$('#FreightInfo').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
 		PopWindow('#FreightInfoWindow',intBrowserH,intBrowserW);
 	});
 
-	//分批出貨確認
-	//20180628 fix checkseparate flow
-	$('#NotSeparate').click(function(){
-		$('#SeparateCheckSetion').hide();
-		$('#YearCheckSetion').slideDown('fast',function(){
-			var YearCheckWidth = $('.cart_YearCheck_layout').width();
-		    var YearCheckPositionX = (intBrowserW - YearCheckWidth)/2;
-		    $('.cart_YearCheck_layout').css('margin-left',YearCheckPositionX);
-		    $('#YearCheckSetion').animate({
-		    	'opacity':1
-		    },'slow');
-		});
-	});
 
-	$('#YearCheckBtn').click(function(){
+	//送出確認信視窗
+	$('#OrderSubmit').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
 		PopWindow('#MailWindow1',intBrowserH,intBrowserW);
 	});
 
-	/*$('#ConfirmBtn01').click(function(){
+	//未綁定信用卡送出
+	$('#OrderSubmit_NoLinkCard').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
-		PopWindow('#MailWindow1',intBrowserH,intBrowserW);	
-	});*/
+		PopWindow('#MailWindow_NoLinkCard',intBrowserH,intBrowserW);
+	});
+
+	//已綁定信用卡完成
+	$('#BTN_LinkedCard').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#MailWindow_LinkedCard',intBrowserH,intBrowserW);
+	});
+
 
 	$('#PaymentCheck').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
@@ -424,10 +432,11 @@ $(document).ready(function(){
 		PopWindow('#WineTagWindow',intBrowserH,intBrowserW);	
 	});
 
-	//台大實驗用結束後可刪
-	$('#Step3_submit').click(function(){
+
+	//會員送出註冊資料
+	$('#MemberRegister').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
-		PopWindow('#Pop_NTU_Control7',intBrowserH,intBrowserW);	
+		PopWindow('#RegisterFinishedWindow',intBrowserH,intBrowserW);
 	});
 
 	//PopWindow關閉
@@ -449,7 +458,7 @@ $(document).ready(function(){
 		//回復之前瀏覽位置
 		$(window).scrollTop(BodyScrollTopY);
 		//window重新綁定HeaderShow事件
-		$(window).on('touchstart.HeaderShow',HeaderShow())
+		$(window).on('touchstart.HeaderShow',HeaderShow());
 	});
 
 	//20180626 add search input auto complete show/close

@@ -702,6 +702,12 @@
     	float:left;
 	}
 
+	& .option#Tracking_list .icon{
+		width: 20px;
+		height: 45px;
+		background-position-y:12px; 
+	}
+
 	& .option#Order_progress .icon{
 		width: 27px;
 		height: 45px;
@@ -732,6 +738,12 @@
 			font-size: 1.25rem;
 		    height: 70px;
 		    line-height: 70px;
+		}
+
+		& .option#Tracking_list .icon{
+			width: 25px;
+			height: 70px;
+			background-position-y:center; 
 		}
 	}
 

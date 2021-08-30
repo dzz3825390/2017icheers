@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="iCheers愛酒窩">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="address=no">
+	<title>iCheers愛酒窩 ─ 讓你窩在家就能享受葡萄酒</title>
+	<link href="css_m/all.css" rel="stylesheet" type="text/css" />
+	<link href="css_m/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="Scripts/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="Scripts/all_m.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+	<!--[if lt IE 9]  //記得在前後加上 < > 註解
+	  <script>
+	    document.createElement("header" );
+	    document.createElement("footer" );
+	    document.createElement("section"); 
+	    document.createElement("aside"  );
+	    document.createElement("nav"    );
+	    document.createElement("article"); 
+	    document.createElement("hgroup" ); 
+	    document.createElement("time"   );
+	  </script>
+	![endif]-->
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var intBrowserW = 0;
+
+			//瀏覽器內容高度
+			var intBrowserH = 0;
+
+			//#region 取得瀏覽器內容寬度/高度
+				if (document.documentElement) {
+				    intBrowserW = document.documentElement.clientWidth;
+				    intBrowserH = document.documentElement.clientHeight;
+				} else {
+				    intBrowserW = document.body.clientWidth;
+				    intBrowserH = document.body.clientHeight;
+				}
+
+		    //酒瓶高度 info高度
+		    if (intBrowserW < 768) {
+		    	$('.winelist_OneWine_bottleImg').each(function(){
+			    	var BottleWidth = $(this).width();
+			    	var BottleHeight = BottleWidth*3.2;
+			    	$(this).css('height',BottleHeight);
+			    	//隔壁的info欄也一樣高
+			    	$(this).next().css('height',BottleHeight);
+			    });
+		    } else if (intBrowserW < 1366){
+		    	$('.winelist_OneWine_bottleImg').each(function(){
+			    	var BottleWidth = $(this).width();
+			    	var BottleHeight = BottleWidth*1.56;
+			    	$(this).css('height',BottleHeight);
+			    	//隔壁的info欄也一樣高
+			    	//$(this).next().css('height',BottleHeight);
+			    });
+		    } else {
+		    	$('.winelist_OneWine_bottleImg').each(function(){
+			    	var BottleWidth = $(this).width();
+			    	var BottleHeight = BottleWidth*1.2;
+			    	$(this).css('height',BottleHeight);
+			    	//隔壁的info欄也一樣高
+			    	//$(this).next().css('height',BottleHeight);
+			    });
+		    }
+		    
+
+		    //展開所有年分資訊
+		    $('.winelist_MoreInfo_BtnOpen').click(function(){
+		    	var isOpen = $(this).hasClass('winelist_MoreInfo_BtnClose');
+		    	if (isOpen) {
+		    		$(this).removeClass('winelist_MoreInfo_BtnClose');
+		    		$(this).find('.text').text('展開所有年分');
+		    		$(this).next().slideUp(200);
+		    	} else {
+					$(this).addClass('winelist_MoreInfo_BtnClose');
+		    		$(this).find('.text').text('收合');
+		    		$(this).next().slideDown(200);
+		    	}
+		    });
+
+		    //追蹤按鈕切換樣式
+		    $('.winelist_OneWine_btn_track').click(function(){
+		    	$(this).toggleClass('active');
+		    });
+
+		    //單一年份追蹤按鈕切換樣式
+		    $('.OneYearRow .tracking_list').click(function(){
+		    	$(this).toggleClass('active');
+		    });
+		   
+
+		    
+		   
+		   
+
+		});
+
+
+	</script>
+</head>
+<body class="Member">
+
+<!--假body-->
+<div class="wapper">
+
+<!--header-->
+<div class="header">
+	<header>
+		<h1>iCheers 愛酒窩</h1>
+	</header>
+	<!--side menu-->
+	<div class="menuBTN">
+		<a class="navicon-button uarr" id="menuBTN">
+			<div class="navicon"></div>
+		</a> 
+	</div>
+	<!--side menu end-->
+
+	<!--logo svg-->
+	<div class="logo">
+
+	</div>
+	<!--logo svg end-->
+
+	<!--mylist-->
+	<div class="mylist">
+		<span>9+</span>
+	</div>
+	<!--mylist end-->
+
+</div>
+<!--header end-->
+
+<!--content-->
+<div class="content_layout">
+	<div class="GoToDesktop">
+		<div class="option" id="Tracking_list">
+			<div class="icon" style="background-image: url(images/mobile/icon_track.png);"></div>
+			<div class="text">追蹤酒款</div>
+		</div>
+		<div class="option" id="Order_progress">
+			<div class="icon" style="background-image: url(images/mobile/icon_orderprogress.png);"></div>
+			<div class="text">訂單查詢</div>
+		</div>
+	</div>
+	<!--搜尋條件-->
+	<section class="winelist_searchCondition_layout">
+		<!--20180626 add clear condition btn-->
+		<div class="winelist_searchCondition_Title">
+			搜尋結果
+			<span class="winelist_searchCondition_clearBtn">清除全部</span>
+		</div>
+		<!--20180626 add clear condition btn end-->
+		<div class="winelist_searchCondition_text">
+			<span class="OneCondition">追蹤酒款</span>
+		</div>
+	</section>
+	<!--搜尋條件 end-->
+	<!--filter-->
+	<div class="winelist_searchCondition_filter">
+		<div class="dropdown">
+			<div class="dropdown_text">排序：<span>酒款</span></div>
+			<div class="dropdown_extend">
+				<div class="dropdown_option">
+					酒款
+				</div>
+				<!--20180613 add price sort sample-->
+				<div class="dropdown_option">
+					價格&nbsp;高→低
+				</div>
+				<div class="dropdown_option">
+					價格&nbsp;低→高
+				</div>
+				<!--20180613 add price sort sample end-->
+				<div class="dropdown_option">
+					年份
+				</div>
+			</div>
+		</div>
+		<div class="checkbox_layout">
+			<label class="checkbox">
+				<input type="checkbox" />
+				<span class="checked"></span>
+			</label>
+			<span class="checkbox_text">排除無庫存</span>
+		</div>
+		
+	</div>
+	<!--filter-->
+
+	<!--One Wine-->
+	<section class="winelist_OneWine_layout">
+		<div class="winelist_OneWine_bottleImg" style="background-image: url(images/mobile/bottle.jpg);">
+			<div class="winelist_OneWine_btn_track active"></div>
+		</div>
+		<div class="winelist_OneWine_Info">
+			<div class="WineInfo">
+				<div class="Name_En">
+					Jester Sangiovese Rosé Jester Sangiovese Rosé
+				</div>
+				<div class="Name_Cn">
+					米斗羅酒莊 名丑山吉歐維榭粉紅酒
+				</div>
+				<div class="bottle_info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>RP 96</span>
+				</div>
+				<div class="bottle_origin">
+					<span>西班牙</span>
+					<span>></span>
+					<span>卡斯提亞拉曼查</span>
+				</div>
+			</div>
+			
+			<div class="bottle_price">
+				<div class="price_row">
+					<div class="addcart_normal">
+						<span>$2,312,321</span>
+						<button></button>
+					</div>
+				</div>
+				<div class="price_row">
+					<div class="addcart_fast">
+						<span>$1,350</span>
+						<button></button>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!-- <div class="clearfix"></div> -->
+		<div class="winelist_MoreInfo">
+			<div class="winelist_MoreInfo_BtnOpen">
+				<div>
+					<span class="text">展開所有年份</span>
+					<span class="arrow"></span>
+				</div>
+			</div>
+			<div class="winelist_allyear_extend">
+				<div class="OneYearRow ThisYear">
+					<div class="tracking_list"><span></span></div>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span class="capacity">750<em>ml</em></span>
+						<span>96<em>RP</em></span>
+					</div>
+					<div class="bottle_price price_normal">
+						$2,312,321
+						<span class="normalicon"></span>
+					</div>
+				</div>
+				<div class="dottedline"></div>
+				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
+					<div class="bottle_info">
+						<span>2016</span>
+						<span class="capacity">750<em>ml</em></span>
+						<span>94<em>WE</em></span>
+					</div>
+					<div class="bottle_price price_preorder">
+						$2,312,321
+						<span class="preordericon"></span>
+					</div>
+				</div>
+				<div class="dottedline"></div>
+				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
+					<div class="bottle_info">
+						<span>2015</span>
+						<span class="capacity">1.5<em>L</em></span>
+						<span>94<em>WE</em></span>
+					</div>
+					<div class="bottle_price price_fast">
+						$2,312,321
+						<span class="fasticon"></span>
+					</div>
+				</div>
+				<!--20180613 add sold out sample-->
+				<div class="dottedline"></div>
+				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
+					<div class="bottle_info">
+						<span>2015</span>
+						<span class="capacity">1.5<em>L</em></span>
+						<span>94<em>WE</em></span>
+					</div>
+					<div class="bottle_price price_soldout">
+						$2,312,321
+						<span class="soldouticon"></span>
+					</div>
+				</div>
+				<!--20180613 add sold out sample end-->
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="seperateline"></div>
+	</section>
+	<!--One Wine end-->
+	<!--One Wine-->
+	<section class="winelist_OneWine_layout">
+		<div class="winelist_OneWine_bottleImg not_sell" style="background-image: url(images/mobile/bottle.jpg);">
+			<div class="winelist_OneWine_btn_track active"></div>
+		</div>
+		<div class="winelist_OneWine_Info not_sell">
+			<div class="WineInfo">
+				<div class="Name_En">
+					Jester Sangiovese Rosé
+				</div>
+				<div class="Name_Cn">
+					米斗羅酒莊 名丑山吉歐維榭粉紅酒
+				</div>
+				<div class="bottle_info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>RP 96</span>
+				</div>
+				<div class="bottle_origin">
+					<span>西班牙</span>
+					<span>></span>
+					<span>卡斯提亞拉曼查</span>
+				</div>
+			</div>
+			
+		</div>
+		<div class="clearfix"></div>
+		<div class="winelist_notsale">
+			!&nbsp;品項已下架，請<a href="#">點此</a>移出追蹤酒款。
+		</div>
+		
+		<div class="seperateline"></div>
+	</section>
+	<!--One Wine end-->
+
+	<!--One Wine 多年份有些年份下架-->
+	<section class="winelist_OneWine_layout">
+		<div class="winelist_OneWine_bottleImg" style="background-image: url(images/mobile/bottle.jpg);">
+			<div class="winelist_OneWine_btn_track active"></div>
+		</div>
+		<div class="winelist_OneWine_Info">
+			<div class="WineInfo">
+				<div class="Name_En">
+					Jester Sangiovese Rosé Jester Sangiovese Rosé
+				</div>
+				<div class="Name_Cn">
+					米斗羅酒莊 名丑山吉歐維榭粉紅酒
+				</div>
+				<div class="bottle_info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>RP 96</span>
+				</div>
+				<div class="bottle_origin">
+					<span>西班牙</span>
+					<span>></span>
+					<span>卡斯提亞拉曼查</span>
+				</div>
+			</div>
+			
+			<div class="bottle_price">
+				<div class="price_row">
+					<div class="addcart_normal">
+						<span>$2,312,321</span>
+						<button></button>
+					</div>
+				</div>
+				<div class="price_row">
+					<div class="addcart_fast">
+						<span>$1,350</span>
+						<button></button>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!-- <div class="clearfix"></div> -->
+		<div class="winelist_MoreInfo">
+			<div class="winelist_MoreInfo_BtnOpen">
+				<div>
+					<span class="text">展開所有年份</span>
+					<span class="arrow"></span>
+				</div>
+			</div>
+			<div class="winelist_allyear_extend">
+				<div class="OneYearRow ThisYear">
+					<div class="tracking_list active"><span></span></div>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span class="capacity">750<em>ml</em></span>
+						<span>96<em>RP</em></span>
+					</div>
+					<div class="bottle_price price_normal">
+						$2,312,321
+						<span class="normalicon"></span>
+					</div>
+				</div>
+				<div class="dottedline"></div>
+				<div class="OneYearRow not_sell">
+					<div class="tracking_list"><span></span></div>
+					<div class="bottle_info">
+						<span>2016</span>
+						<span class="capacity">750<em>ml</em></span>
+						<span>94<em>WE</em></span>
+					</div>
+					<div class="bottle_price price_preorder">
+						
+					</div>
+				</div>
+				<div class="dottedline"></div>
+				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
+					<div class="bottle_info">
+						<span>2015</span>
+						<span class="capacity">1.5<em>L</em></span>
+						<span>94<em>WE</em></span>
+					</div>
+					<div class="bottle_price price_fast">
+						$2,312,321
+						<span class="fasticon"></span>
+					</div>
+				</div>
+				<!--20180613 add sold out sample-->
+				<div class="dottedline"></div>
+				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
+					<div class="bottle_info">
+						<span>2015</span>
+						<span class="capacity">1.5<em>L</em></span>
+						<span>94<em>WE</em></span>
+					</div>
+					<div class="bottle_price price_soldout">
+						$2,312,321
+						<span class="soldouticon"></span>
+					</div>
+				</div>
+				<!--20180613 add sold out sample end-->
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="seperateline"></div>
+	</section>
+	<!--One Wine end-->
+
+	<!--One Wine-->
+	<section class="winelist_OneWine_layout">
+		<div class="winelist_OneWine_bottleImg" style="background-image: url(images/mobile/bottle.jpg);">
+			<div class="winelist_OneWine_btn_track active"></div>
+		</div>
+		<div class="winelist_OneWine_Info">
+			<div class="WineInfo">
+				<div class="Name_En">
+					Jester Sangiovese Rosé
+				</div>
+				<div class="Name_Cn">
+					米斗羅酒莊 名丑山吉歐維榭粉紅酒
+				</div>
+				<div class="bottle_info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>RP 96</span>
+				</div>
+				<div class="bottle_origin">
+					<span>西班牙</span>
+					<span>></span>
+					<span>卡斯提亞拉曼查</span>
+				</div>
+			</div>
+			
+			<div class="bottle_price">
+				<div class="price_row">
+					<div class="addcart_normal">
+						<span>$2,312,321</span>
+						<button></button>
+					</div>
+				</div>
+				<div class="price_row">
+					<div class="addcart_fast">
+						<span>$1,350</span>
+						<button></button>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!-- <div class="clearfix"></div> -->
+		<div class="winelist_MoreInfo">
+			<div class="winelist_MoreInfo_BtnOpen">
+				<div>
+					<span class="text">展開所有年份</span>
+					<span class="arrow"></span>
+				</div>
+			</div>
+			<div class="winelist_allyear_extend">
+				<div class="OneYearRow ThisYear">
+					<div class="tracking_list"><span></span></div>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span class="capacity">750<em>ml</em></span>
+						<span>96<em>RP</em></span>
+					</div>
+					<div class="bottle_price price_normal">
+						$2,312,321
+						<span class="normalicon"></span>
+					</div>
+				</div>
+				<div class="dottedline"></div>
+				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
+					<div class="bottle_info">
+						<span>2016</span>
+						<span class="capacity">750<em>ml</em></span>
+						<span>94<em>WE</em></span>
+					</div>
+					<div class="bottle_price price_preorder">
+						$2,312,321
+						<span class="preordericon"></span>
+					</div>
+				</div>
+				<div class="dottedline"></div>
+				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
+					<div class="bottle_info">
+						<span>2015</span>
+						<span class="capacity">1.5<em>L</em></span>
+						<span>94<em>WE</em></span>
+					</div>
+					<div class="bottle_price price_fast">
+						$2,312,321
+						<span class="fasticon"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="seperateline"></div>
+	</section>
+	<!--One Wine end-->
+	<!--One Wine-->
+	<section class="winelist_OneWine_layout">
+		<div class="winelist_OneWine_bottleImg" style="background-image: url(images/mobile/bottle.jpg);">
+			<div class="winelist_OneWine_btn_track active"></div>
+		</div>
+		<div class="winelist_OneWine_Info">
+			<div class="WineInfo">
+				<div class="Name_En">
+					Jester Sangiovese Rosé
+				</div>
+				<div class="Name_Cn">
+					米斗羅酒莊 名丑山吉歐維榭粉紅酒
+				</div>
+				<div class="bottle_info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>RP 96</span>
+				</div>
+				<div class="bottle_origin">
+					<span>西班牙</span>
+					<span>></span>
+					<span>卡斯提亞拉曼查</span>
+				</div>
+			</div>
+			
+			<div class="bottle_price">
+				<div class="price_row">
+					<div class="addcart_normal">
+						<span>$2,312,321</span>
+						<button></button>
+					</div>
+				</div>
+				<div class="price_row">
+					<div class="addcart_fast">
+						<span>$1,350</span>
+						<button></button>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!-- <div class="clearfix"></div> -->
+		<div class="winelist_MoreInfo">
+			<div class="winelist_MoreInfo_BtnOpen">
+				<div>
+					<span class="text">展開所有年份</span>
+					<span class="arrow"></span>
+				</div>
+			</div>
+			<div class="winelist_allyear_extend">
+				<div class="OneYearRow ThisYear">
+					<div class="tracking_list"><span></span></div>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span class="capacity">750<em>ml</em></span>
+						<span>96<em>RP</em></span>
+					</div>
+					<div class="bottle_price price_normal">
+						$2,312,321
+						<span class="normalicon"></span>
+					</div>
+				</div>
+				<div class="dottedline"></div>
+				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
+					<div class="bottle_info">
+						<span>2016</span>
+						<span class="capacity">750<em>ml</em></span>
+						<span>94<em>WE</em></span>
+					</div>
+					<div class="bottle_price price_preorder">
+						$2,312,321
+						<span class="preordericon"></span>
+					</div>
+				</div>
+				<div class="dottedline"></div>
+				<div class="OneYearRow">
+					<div class="tracking_list"><span></span></div>
+					<div class="bottle_info">
+						<span>2015</span>
+						<span class="capacity">1.5<em>L</em></span>
+						<span>94<em>WE</em></span>
+					</div>
+					<div class="bottle_price price_fast">
+						$2,312,321
+						<span class="fasticon"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="seperateline"></div>
+	</section>
+	<!--One Wine end-->
+
+	<!--pagnation-->
+	<div class="pagination_layout">
+		<div class="pagination">
+		    <a href="">&laquo;</a>
+		    <a href="">&nbsp;</a>
+		    <a href="">&nbsp;</a>
+		    <a href="" class="active">1</a>
+		    <a href="">2</a>
+		    <a href="">3</a>
+		    <a href="">&raquo;</a>
+		</div>
+	</div>
+	<!--pagnation end-->
+</div>
+<!--content end-->
+
+<!--icheers info-->
+<div class="iCheers_info_layout">
+	<div class="iCheers_info">
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_newbie.jpg);">
+			<span>新手上路</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_qualityGarentee.jpg);">
+			<span>品質宣言</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_delivery_info2.jpg);">
+			<span>到貨時間</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_bouns.jpg);">
+			<span>紅利好康</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_aboutus.jpg);">
+			<span>關於我們</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_contactus.jpg);">
+			<span>加入我們</span>
+		</div>
+	</div>
+</div>
+<!--icheers info end-->
+
+<div class="separateline info_separateline"></div>
+
+<div class="icheers_slogan"></div>
+
+<div class="footer">
+	<div class="footer_option_row">
+		<div class="footer_option">
+			<div class="icon" style="background-image: url(images/mobile/contactus_icon.png);width: 17px;"></div>
+			<div class="text">聯絡我們</div>
+		</div>
+		<div class="footer_option">
+			<div class="icon" style="background-image: url(images/mobile/desktop_icon.png);width: 17px;"></div>
+			<div class="text">切換電腦版網站</div>
+		</div>
+	</div>
+</div>
+
+<div class="warning">
+	飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+</div>
+
+<div class="black_BG" id="black_BG02">
+	<div class="PopWindow_layout" id="TrackConfirmWindow">
+		<div class="PopWindow_title">
+			
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="Popwindow_ConfirmBtn tracksingleBtn">追蹤單一年份</div>
+			<div class="Popwindow_ConfirmBtn trackallBtn">追蹤全部年份</div>
+		</div>
+	</div>
+</div>
+
+<!--side menu-->
+<div class="black_BG" id="black_BG">
+	<div class="SideMenu_layout">
+		<!--頂端search row-->
+		<div class="SideMenu_SearchRow">
+			<div class="SideMenu_BackBTN">
+				<a class="navicon-button uarr open">
+					<div class="navicon"></div>
+				</a> 
+			</div>
+			<div class="SideMenu_SignInBTN"></div>
+			<div class="SideMenu_SearchInput">
+				<!--20180626 fix input type-->
+				<form action="" name="search" id="SearchInput">
+					<input type="search">
+				</form>
+				<span class="search_icon"></span>
+			</div>
+			<!--add auto complete sample max:4-->
+			<div class="SideMenu_AutoComplete">
+				<div class="OneResult"><span>au</span>to complete1</div>
+				<div class="OneResult"><span>au</span>to complete2</div>
+				<div class="OneResult"><span>au</span>to complete3</div>
+				<div class="OneResult"><span>au</span>to complete4</div>
+			</div>
+		</div>
+		<!--頂端search row end-->
+		<!--第一層-->
+		<div class="SideMenu_Detail" id="SideMenuDetailL1">
+			<!--title-->
+			<div class="SideMenu_Detail_Title">依館別篩選</div>
+			<!--title-->
+			<div class="SideMenu_Detail_list">
+				葡萄酒館 (16)
+			</div>
+			<div class="SideMenu_Detail_list">
+				威士忌館 (0)
+			</div>
+			<div class="SideMenu_Detail_list">
+				啤酒館 (32)
+			</div>
+			<div class="SideMenu_Detail_list">
+				清酒館 (2)
+			</div>
+
+			
+
+
+			<div class="SideMenu_RecentView">
+				<span class="icon"></span>
+				近期瀏覽
+			</div>
+			<div class="SideMenu_GotoDesktop">
+				<span class="icon"></span>
+				切換為電腦版
+			</div>
+		</div>
+		<!--第一層-->
+	</div>
+</div>
+<!--side menu end-->
+
+</div>
+<!--假body-->
+
+</body>
+</html>

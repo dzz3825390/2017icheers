@@ -144,7 +144,7 @@ span.more{
 
 	@include pad-width{
 		top: 23px;
-		left: 20px;
+		left: 32px;
 	}
 
 	@include large-pad-width{
@@ -290,7 +290,7 @@ span.more{
 	right: 13px;
 	top: 6px;
 	@include pad-width{
-		right: 25px;
+		right: 36px;
 		top: 17px;
 	};
 
@@ -612,6 +612,11 @@ h4{
 	position: fixed;
 	bottom: 0;
 	z-index: 99999;
+	@include phone-l{
+		height: 30px;
+		line-height: 30px;
+		font-size: 0.625rem;
+	}
 	@include pad-width{
 		height: 80px;
 		line-height: 80px;
@@ -1082,6 +1087,54 @@ h4{
 	}
 }
 
+.SideMenu_OrderProgress{
+	width: calc(100% - 30px);
+	padding: 0 15px;
+	height: 40px;
+	font-size: 1rem;
+	color: #666;
+	line-height: 40px;
+	margin-top: 10px;
+	&:after{
+		@extend %clearfix;
+	}
+
+	& .icon{
+		display: inline-block;
+		width: 27px;
+		height: 18px;
+		background-image:url(../images/mobile/icon_orderprogress.png);
+		@extend %backgroundimagecover;
+		float: left;
+		margin-top: 10px;
+		margin-right: 10px;
+	}
+}
+
+.SideMenu_TrackingList{
+	width: calc(100% - 30px);
+	padding: 0 15px;
+	height: 40px;
+	font-size: 1rem;
+	color: #666;
+	line-height: 40px;
+	margin-top: 10px;
+	&:after{
+		@extend %clearfix;
+	}
+
+	& .icon{
+		display: inline-block;
+		width: 27px;
+		height: 18px;
+		background-image:url(../images/mobile/icon_track.png);
+		@extend %backgroundimagecontain;
+		float: left;
+		margin-top: 10px;
+		margin-right: 10px;
+	}
+}
+
 .SideMenu_Detail_Title_condition{
 	background-color: #666666;
 }
@@ -1402,53 +1455,33 @@ h4{
 //checkbox
 
 .checkbox_layout{
-	&:after{
-		@extend %clearfix;
-	}
-
-	& .checkbox{
-		float: left;
-		position: relative;
-		margin: 0;
-		width: 45px;
-		height: 45px;
-		& input[type="checkbox"]{
-			display: none;
-		}
-
-		& .checked{
-			width: 45px;
-			height: 45px;
-			@include border-radius(4px);
-			border: $BorderColor;
-			background-color: #fff;
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			margin: auto;
-			display: block;
-		}
-
-		& input:checked + .checked:after{
-			content:'';
-			display: block;
-			width: 31px;
-			height: 23px;
-			background-image: url(../images/mobile/icon_checked.png);
-			position:absolute;
-			top: 11px;
-			left: 7px;
-		}
-	}
-
-	& .checkbox_text{
-		float: left;
-		font-size: 1.25rem;
-		color: #666;
-		margin-left: 10px;
-		margin-top: 14px;
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 12px;
+	& .option_check{
+		width: 40px;
+	    height: 40px;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    margin-left: -10px;
+	    & .icon_check{
+	    	width: 20px;
+		    height: 20px;
+		    border: 1px solid #cccccc;
+		    border-radius: 3px;
+		    position: relative;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    &.active:after{
+		    	content: '✓';
+			    display: block;
+			    color: #939334;
+			    font-size: 1rem;
+			    font-weight: bold;
+		    }
+	    }
 	}
 }
 
@@ -1658,6 +1691,11 @@ h4{
 				color: #999;
 				font-size: $PhoneContentFontSize;
 			}
+		}
+
+		& .row{
+			margin-top: 8px;
+			color: #666;
 		}
 	}
 

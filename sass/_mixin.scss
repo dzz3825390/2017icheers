@@ -31,14 +31,26 @@ $PadWidth : 760px;
 $PadWidth-L : 1020px;
 $LargePadWidth: 1360px;
 
+@mixin phone-l(){
+	@media screen and (orientation: landscape) {
+		@content;
+	}
+}
+
 @mixin pad-width() {
 	@media screen and (min-width: $PadWidth){
 		@content;
 	}
 }
 
+@mixin pad-width1024() {
+	@media screen and (min-width: 1024px){
+		@content;
+	}
+}
+
 @mixin pad-width-l() {
-	@media screen and (min-width: $PadWidth-L){
+	@media screen and (orientation: landscape) and (min-width: $PadWidth-L){
 		@content;
 	}
 }
@@ -51,10 +63,11 @@ $LargePadWidth: 1360px;
 
 %SectionLayout {
 	padding:0 16px;
+	box-sizing: border-box;
 	background-color: #fff;
 	position: relative;
 	@include pad-width{
-		padding: 0 20px;
+		padding: 0 32px;
 	}
 
 	@include large-pad-width{
@@ -222,180 +235,347 @@ $LargePadPadding : 40px;
 }
 
 //Cart
-@mixin CartPrice ($Color) {
-	font-size: 1.75rem;
-	font-weight: bold;
-	color: $Color;
-	@include pad-width{
-		font-size: 2.15rem;
+@mixin Cart_Wine_DetailInfo (){
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	& .bottle_img{
+		width: 68px;
+		height: 68px;
+		border: 1px solid #cccccc;
+		box-sizing: border-box;
+		margin-left: 40px;
+		& img{
+		 	width: 100%;
+    		height: auto;
+		}
 	}
+	& .bottle_info{
+		width: calc(100% - 68px - 14px - 40px);
+		margin-left: 14px;
+		& .name_cn{
+			font-size: 1rem;
+			line-height: 1.5rem;
+			color: #666;
+		}
+		& .name_en{
+			font-size: 1rem;
+			line-height: 1.3rem;
+			color: #666;
+		}
+		& .status{
+			display: flex;
+			font-size: 1rem;
+			line-height: 1.3rem;
+			color: #666;
+			margin-top: 5px;
+			& span{
+				&:after{
+					content: '';
+					display: inline-block;
+					width: 1px;
+					height: 13px;
+					background-color: #999999;
+					margin:0 8px;
+				}
+				&:nth-child(3):after{
+					display: none;
+				}
+			}
+			& .icon_nobonus{
+				width: 18px;
+				height: 18px;
+				margin-left: 8px;
+			}
+
+			& .icon_text{
+				font-size: 14px;
+				color: #fff;
+				padding: 4px 8px;
+				background-color: #999;
+				border-radius: 5px;
+				margin-right: 5px;
+			}
+		}
+
+		& .expired_date{
+			font-size: 1rem;
+			line-height: 1.3rem;
+			color: #666;
+			margin-top: 6px;
+		}
+	}
+
+	& .beer{
+		& span{
+				&:nth-child(2):after{
+					display: none;
+				}
+			}
+	}
+
+	& .sake{
+		& span{
+				&:nth-child(2):after{
+					display: none;
+				}
+			}
+	}
+
+	@media screen and (orientation: landscape){
+		& .bottle_info{
+			width: 45%;
+		}
+	}
+
+	@media screen and (min-width:768px){
+		& .bottle_img{
+			width: 135px;
+			height: 135px;
+		}
+
+		& .bottle_info{
+			width: calc(100% - 44px - 135px - 18px);
+			margin-left: 18px;
+			& .name_cn{
+				font-size: 1.375rem;
+				line-height: 2rem;
+			}
+
+			& .name_en{
+				font-size: 1.375rem;
+				line-height: 1.85rem;
+			}
+
+			& .status{
+				font-size: 1.375rem;
+				line-height: 1.85rem;
+				& span{
+					&:after{
+						height: 18px;
+						margin:0 12px;
+					}
+				}
+				& .icon_nobonus{
+					width: 21px;
+					height: 21px;
+					margin-left: 12px;
+					margin-top: 3px;
+				}
+			}
+
+			& .expired_date{
+				font-size: 1.375rem;
+				line-height: 1.85rem;
+				margin-top: 6px;
+			}
+		}
+	}
+
+	@media screen and (min-width:1024px){
+		& .bottle_info{
+			width: 45%;
+		}
+	}
+	@content;
 }
 
-
-@mixin PriceAndCount () {
-	& .Count{
+@mixin Cart_Wine_Count_Price () {
+	width: 100%;
+	position: relative;
+	margin-top : 16px;
+	& .count{
 		width: 100%;
-		float: left;
-		& .btn{
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		& .text{
+			font-size: 1rem;
+			color: #666;
+			letter-spacing: 16px;
+		}
+		& .icon_minus{
 			width: 40px;
 			height: 40px;
-			float:left;
-			margin-right: 0.5rem;
-			@include border-radius(4px);
-			border: 1px solid #93938c;
-			background-color: #93938c;
-			@extend %backgroundimagecontain;
-			&:active{
-				background-color:#7e7e78;
-			}
-			&:last-child{
-				margin-right:0;
-			}
-		}
-		& .fast{
-			background-color:#e8b85d;
-			border-color: #d8ab56;
-			&:active{
-				background-color:$FastColor;
+			border: 1px solid #cccccc;
+			background-color: #e5e5e5;
+			margin-right: 5px;
+			border-radius: 4px;
+			box-sizing: border-box;
+			cursor: pointer;
+			position: relative;
+			&:after{
+				content: '';
+				width: 13px;
+				height: 3px;
+				background-color: #666666;
+				display: block;
+				position: absolute;
+				top: calc((100% - 3px)/2);
+				left: calc((100% - 13px)/2);
 			}
 		}
-
-		& .preorder{
-			background-color:#67aad6;
-			border-color: #5b98bf;
-			&:active{
-				background-color:$PreorderColor;
-			}
-		}
-		& input[type=text]{
-			float:left;
-			margin-right: 0.5rem;
-			width: calc(100% - 86px - 1rem);
+		& .bottle_number{
+			width: calc(100% - 68px - 14px - 40px - 80px - 10px);
 			height: 40px;
-			border: $BorderColor;
-			@include border-radius(4px);
-			font-size: 1.375rem;
-			color: $TextColor;
-			font-weight: bold;
-			text-align:center;
-			line-hieght: 40px;
+			border: 1px solid #cccccc;
+			background-color: #ffffff;
+			border-radius: 4px;
+			box-sizing: border-box;
+			padding: 0 16px;
+			text-align: center;
+			font-size: 1rem;
+			line-height: 40px;
+			color: #666;
 			outline:none;
 		}
+
+		& .icon_plus{
+			width: 40px;
+			height: 40px;
+			border: 1px solid #cccccc;
+			background-color: #e5e5e5;
+			margin-left: 5px;
+			border-radius: 4px;
+			box-sizing: border-box;
+			cursor: pointer;
+			position: relative;
+			&:before{
+				content: '';
+				width: 3px;
+				height: 13px;
+				background-color: #666666;
+				display: block;
+				position: absolute;
+				top: calc((100% - 13px)/2);
+				left: calc((100% - 3px)/2);
+			}
+			&:after{
+				content: '';
+				width: 13px;
+				height: 3px;
+				background-color: #666666;
+				display: block;
+				position: absolute;
+				top: calc((100% - 3px)/2);
+				left: calc((100% - 13px)/2);
+			}
+		}
 	}
-	& .Subtotal{
-		margin-top: 0.75rem;
-		float:right; 
-		& span{
-			color: $TextColor;
+
+	& .price{
+		margin-top: 16px;
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+		& .text{
 			font-size: 1rem;
-			font-weight: normal;
+			color: #333;
 		}
-	}
-	& .Normal{
-		@include CartPrice($NormalColor);
-	}
-	& .Fast{
-		@include CartPrice($FastColor);
-	}
-	& .Preorder{
-		@include CartPrice($PreorderColor);
+		& .bottle_price{
+			margin-left: 10px;
+			font-size: 1.5rem;
+			color: #000;
+			font-weight: bold;
+			&.fast{
+				color: $FastColor;
+			}
+
+			&.normal{
+				color: $NormalColor;
+			}
+
+			&.preorder{
+				color: $PreorderColor;
+			}
+		}
 	}
 
-	& .Gift{
-		@include CartPrice($NormalColor-black);
+	& .delivery[style*="flex"] + .storage{
+		margin-top: 12px;
 	}
 
-	@include pad-width{
-		& .Count{
-			width: 45%;
+	@media screen and (orientation: landscape){
+		width: calc(55% - 68px - 14px - 14px);
+		margin-left: 14px;
+		margin-top: 0;
+	}
+
+	@media screen and (min-width:768px){
+		width: 50%;
+		& .count{
+			& .text{
+				font-size: 1.375rem;
+			}
+
+			& .icon_minus{
+				width: 44px;
+				height: 44px;
+				margin-right: 10px;
+				&:after{
+					width: 20px;
+					height: 4px;
+					top: calc((100% - 4px)/2);
+					left: calc((100% - 20px)/2);
+				}
+			}
+
+			& .bottle_number{
+				width: calc(100% - 76px - 14px - 88px - 20px);
+				height: 44px;
+				font-size: 1.375rem;
+				line-height: 44px;
+			}
+
+			& .icon_plus{
+				width: 44px;
+				height: 44px;
+				margin-left: 10px;
+				&:before{
+					width: 4px;
+					height: 20px;
+					top: calc((100% - 20px)/2);
+					left: calc((100% - 4px)/2);
+				}
+				&:after{
+					width: 20px;
+					height: 4px;
+					top: calc((100% - 4px)/2);
+					left: calc((100% - 20px)/2);
+				}
+			}
 		}
-		& .Subtotal{
-			text-align:right;
-			width: 55%;
-			margin-top: 0.7rem;
+
+		& .price{
+			margin-top: 24px;
+			& .text{
+				font-size: 1.375rem;
+			}
+			& .bottle_price{
+				font-size: 2rem;
+			}
+		}
+
+		& .delivery[style*="flex"] + .storage{
+			margin-top: 18px;
 		}
 	}
+
+	@media screen and (min-width:1024px){
+		width: calc(55% - 40px - 135px - 18px - 18px);
+		min-height: 135px;
+		& .count{
+			& .bottle_number{
+				width: 180px;
+			}
+		}
+	}
+
+	@content;
 }
 
-@mixin PriceAndCountChange () {
-	& .Count{
-		& input[type=text]{
-			border-color: $NoticeColor;
-			color: $NoticeColor;
-		}
-	}
-	& .Subtotal{
-		margin-top: 0.75rem;
-		float:right; 
-		& span{
-			color: $TextColor;
-			font-size: 1rem;
-			font-weight: normal;
-		}
-	}
-	& .Normal{
-		@include CartPrice($NormalColor);
-	}
-
-	& .NormalChange{
-		color: #fff;
-		background-color: $NormalColor;
-		padding: 8px;
-		& span{
-			color: #fff;
-			background-color: $NormalColor;
-		}
-	}
-	& .Fast{
-		@include CartPrice($FastColor);
-	}
-	& .FastChange{
-		color: #fff;
-		background-color: $FastColor;
-		padding: 8px;
-		& span{
-			color: #fff;
-			background-color: $FastColor;
-		}
-	}
-
-	& .Preorder{
-		@include CartPrice($PreorderColor);
-	}
-
-	& .PreorderChange{
-		color: #fff;
-		background-color: $PreorderColor;
-		padding: 8px;
-		& span{
-			color: #fff;
-			background-color: $PreorderColor;
-		}
-	}
-
-	& .Gift{
-		@include CartPrice($NormalColor-black);
-	}
-
-	@include pad-width{
-		& .Count{
-			width: 45%;
-		}
-		& .NormalChange{
-			width: 51%;
-			margin-top: 3.7rem;
-		}
-		& .FastChange{
-			width: 51%;
-			margin-top: 3.7rem;
-		}
-		& .PreorderChange{
-			width: 51%;
-			margin-top: 3.7rem;
-		}
-		
-	}
-}
 
 @mixin DottedLine () {
 	width: calc(100% - 2rem);
@@ -497,4 +677,9 @@ $LargePadPadding : 40px;
 	@include pad-width{
 		width: 380px;
 	}
+}
+
+@keyframes TrackingBtn {
+	0%{transform: scale(0.95);}
+    100%{transform: scale(1);}
 }
