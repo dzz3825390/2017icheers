@@ -6,1264 +6,1759 @@
 	border-color: #909090;
 }
 
-.cart_large_title{
+.step_option{
 	@extend %SectionLayout;
-	font-size: 1.625rem;
-	font-weight:bold;
-	padding-top: 1rem;
-	color:$TitleColor;
-	@include pad-width{
-		font-size: 2rem;
-		padding-top: 1.25rem;
-	}
-
-	@include large-pad-width{
-		padding-top: 2.5rem;
-	}
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	border-bottom: 1px solid #cccccc;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 55;
 }
 
 .cart_step_row{
-	margin-top: 10px;
-	@extend %SectionLayout;
-	&:after{
-		@extend %clearfix;
-	}
-
-	& .OneStep{
-		float: left;
-		width: calc((100% - 15px)/4);
-		border-top: 4px solid #bbbbbb;
-		margin-right: 5px;
-		&:last-child{
-			margin-right: 0;
-		}
-
-		& span{
-			width: 100%;
-			font-size: 0.875rem;
-			line-height: 1.2rem;
-			color: #bbbbbb;
-			text-align: center;
-			display: inline-block;
-		}
-	}
-
-	& .OneStep_active{
-		border-color: #333333;
-		& span{
-			color: #333333;
-			font-weight:bold;
+	width: 100%;
+	margin-top: 16px;
+	display: flex;
+	align-items: flex-end;
+	& .one_step{
+		font-size: 15px;
+		color: #c3c3c3;
+		&.active{
+			font-size: 24px;
+			font-weight: bold;
 			font-style: italic;
+			color: #000;
+		}
+	}
+
+	& .icon_nextstep{
+		width: 17px;
+		height: 17px;
+		border-radius: 50%;
+		background-color: #c3c3c3;
+		position: relative;
+		margin: 0 8px;
+		transform: scale(0.9);
+		&:after{
+			content: ' ❯ ';
+			display: block;
+			color: #fff;
+			text-align: center;
+			line-height: 16px;
+			font-size: 9px;
 		}
 	}
 
 	@include pad-width{
-		margin-top: 1rem;
-		& .OneStep{
-			border-width: 6px;
-			& span{
-				font-size: 1.125rem;
-				line-height: 1.5rem;
+		margin-top: 20px;
+		& .one_step{
+			font-size: 22px;
+			&.active{
+				font-size: 36px;
+			}
+		}
+
+		& .icon_nextstep{
+			width: 22px;
+			height: 22px;
+			margin: 0 12px;
+			&:after{
+				line-height: 22px;
+				font-size: 14px;
 			}
 		}
 	}
 
-	@include large-pad-width{
-		margin-top: 1.25rem;
-		& .OneStep{
-			border-width: 8px;
-			& span{
-				font-size: 1.5rem;
-				line-height: 2rem;
-			}
-		}
-	}
 }
 
-.cart_list_layout{
-	@extend %SectionLayout;
-}
-
-.cart_list_OneBottle{
-	padding: 1rem 0 2rem 0;
-	border-bottom: $BorderColor;
-	position: relative;
+.options{
 	display: flex;
-	justify-content: flex-start;
-	flex-wrap: wrap;
-	& .BottleImg{
-		width: 33%;
-		position: relative;
-		@extend %backgroundimagecover;
-		& .Btn_track{
-			position: absolute;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin: 18px 0 0 0;
+	& .one_option{
+		width: 40px;
+		height: 40px;
+		margin-left: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		&:first-child{
+			margin-left: -10px;
+		}
+		& .icon_check{
+			width: 20px;
+			height: 20px;
+			border: 1px solid #cccccc;
+			border-radius: 3px;
+		}
+
+		& .icon_delete{
 			width: 40px;
 			height: 40px;
-			cursor: pointer;
-			background-image: url(../images/mobile/icon_tracking_large2_gray.png);
-			@extend %backgroundimagecover;
-			background-color: #fff;
-			@include border-radius(50%);
-			bottom: 10px;
-			right: calc(50% - 60px);
-			&.active{
-				background-image: url(../images/mobile/icon_tracking_large2_pink.png);
-				animation-name: TrackingBtn;
-		        animation-duration: 0.5s;
-		        animation-iteration-count: 1;
-			}
-
-			@include pad-width{
-				width: 50px;
-				height: 50px;
-				left: 5%;
-				top: 5%;
-			}
-
-			@include large-pad-width{
-				width: 70px;
-				height: 70px;
-			}
+			background-image: url(../images/mobile/icon_delete.png);
+			@extend %backgroundimagecontain;
 		}
-	}
-
-	& .BottleInfo{
-		width: calc(67% - 1px);
-		& .Name_en{
-			font-size: 1.125rem;
-			color: $TitleColor;
-			line-height: 1.5rem;
-			max-height: 3rem;
-			overflow:hidden;
-			margin-top: 1rem;
-			font-weight: bold;
-		}
-
-		& .Name_cn{
-			font-size: $PhoneSecondTitleFontSize;
-			color: $TextColor;
-			line-height: 1.5rem;
-			max-height: 1.5rem;
-			overflow:hidden;
-			margin-top: 5px;
-		}
-
-		& .Info{
-			margin-top: 10px;
-			@include BottleInfo($PhoneContentFontSize,5px);
-			&:after{
-				@extend %clearfix;
-			}
-
-		}
-
-		& .Status{
-			margin-top: 15px;
-			&:after{
-				@extend %clearfix;
-			}
-
-			& div{
-				width: 60px;
-				height: 30px;
-				font-size: 14px;
-				text-align:center;
-				line-height: 30px;
-				color: $TextColor;
-				border: $BorderColor;
-				@include border-radius(4px);
-				background-color: #e9e9e9;
-				float: left;
-				margin-right: 3px;
-			}
-		}
-
-		& .Price{
-			margin-top: 1rem;
-			@include PriceAndCount;
-		}
-
-		& .PriceChangeFast{
-			@include PriceAndCountChange;
-			& .Count input[type=text]{
-				border-color:#EF9C00;
-				border-width:3px;
-				color: #EF9C00;
-			}
-			& .Count .fast{
-				background-color: #EF9C00;
-				border-color: #EF9C00;
-			}
-		}
-
-		& .PriceChangeNormal{
-			@include PriceAndCountChange;
-			& .Count input[type=text]{
-				border-color:$NormalColor;
-				border-width:3px;
-				color: $NormalColor;
-			}
-			& .Count .btn{
-				background-color: $NormalColor;
-				border-color: $NormalColor;
-			}
-		}
-
-		& .PriceChangePreorder{
-			@include PriceAndCountChange;
-			& .Count input[type=text]{
-				border-color:$PreorderColor;
-				border-width:3px;
-				color: $PreorderColor;
-			}
-			& .Count .btn{
-				background-color: $PreorderColor;
-				border-color: $PreorderColor;
-			}
-		}
-	}
-
-	& .EventNotice{
-		width: 100%;
-		padding: 10px 16px;
-		@include box-sizing(border-box);
-		background-color: #f3f4f5;
-		font-size: 0.875rem;
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		margin: 1rem 0;
-		cursor: pointer;
-		& .redtext{
-			width: 117px;
-			color: $NoticeColor;
-			font-weight: bold;
-		}
-
-		& .eventtext{
-			color: $TextColor;
-			line-height: 1.125rem;
-		}
-	}
-
-	& .btn_delete{
-		width: 40px;
-		height: 40px;
-		@extend %backgroundimagecontain;
-		background-image: url(../images/mobile/icon_delete.png);
-		position: absolute;
-		right: -10px;
-		bottom: 0;
-	}
-
-	& .icon_tracking{
-		width: 40px;
-		height: 40px;
-		@extend %backgroundimagecover;
-		background-position: center bottom;
-		background-image: url(../images/icon_tracking_large.png);
-		position: absolute;
-		left: 0;
-		top: 32px;
 	}
 
 	@include pad-width{
-		align-items: flex-end;
-
-		& .BottleImg{
-			width: 40%;
-		}
-
-		& .BottleInfo{
-			margin-bottom: 20px;
-			width: calc(60% - 1px);
-			& .Name_en{
-				font-size: $PadTitleFontSize;
-				line-height: 2.1rem;
-				max-height: 4.2rem;
+		margin: 16px 0 10px 0;
+		& .one_option{
+			width: 44px;
+			height: 44px;
+			& .icon_check{
+				width: 24px;
+				height: 24px;
 			}
-
-			& .Name_cn{
-				font-size: $padContentFontSize;
-				height: 1.5rem;
-			}
-
-			& .Info span{
-				font-size:$padContentFontSize;
-				height: 1.05rem;
-				padding:0 12px;
-			}
-
-			& .Status div{
-				width: 80px;
-				height: 40px;
-				line-height: 40px;
-				font-size: $padContentFontSize;
-				margin-right: 5px;
-			}
-
-			& .Price{
-				& .Count{
-					width: 45%;
-				}
-
-				/*& .Subtotal{
-					text-align:right;
-					width: 55%;
-					margin-top: 0.7rem;
-				}*/
-			}
-
-		}
-
-		& .EventNotice{
-			padding: 16px 32px;
-			font-size: $padContentFontSize;
-			& .eventtext{
-				line-height: 1.7rem;
+			& .icon_delete{
+				width: 44px;
+				height: 44px;
 			}
 		}
+	}
 
-		& .icon_tracking{
-			width: 50px;
-			height: 50px;
-			top: 54px;
-			left: calc(20% - 50px - 40px);
+}
+
+.delivery_type_chose{
+	display: flex;
+	margin: 18px 0 10px 0;
+	& .one_option{
+		width: 60px;
+		height: 40px;
+		border: 1px solid #c1c1c1;
+		border-radius: 4px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: 8px;
+		font-size: 1.125rem;
+		color: #c1c1c1;
+		cursor: pointer;
+		& span.icon_check{
+			display: none;
+		}
+
+		&.active{
+			border-color: #7c627d;
+			background-color: #7c627d;
+			font-weight: bold;
+			color: #fff; 
+		}
+	}
+
+	@include pad-width{
+		margin: 16px 0 20px 0;
+		& .one_option{
+			width: 65px;
+			height: 44px;
+			margin-left: 12px;
+			font-size: 1.25rem;
+		}
+	}
+}
+
+.DeliveryType_title{
+	@extend %SectionLayout;
+	width: 100%;
+	& .Large_title{
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	& .Small_title{
+		margin-top: 12px;
+		font-size: 1rem;
+		color: #666;
+		cursor: pointer;
+	}
+
+	@include pad-width{
+		padding: 0 32px;
+		& .Large_title{
+			font-size: 1.75rem;
+		}
+		& .Small_title{
+			margin-top: 10px;
+			font-size: 1.25rem;
 		}
 	}
 
 	@include large-pad-width{
-		& .BottleImg{
-			background-size: contain;
+		margin-top: 64px;
+	}
+}
+
+.DeliveryType_Fast{
+	margin-top: 24px;
+	color: $FastColor;
+	& .Small_title{
+		display: flex;
+		&:after{
+			content: '?';
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			border: 1px solid #666;
+			border-radius: 50%;
+			color: #666;
+			font-size: 11px;
+			text-align: center;
+			line-height: 18px;
+			margin-left: 5px;
+			margin-top: -4px;
+		}
+	}
+	@include pad-width{
+		margin-top: 32px;
+		& .Small_title{
+			&:after{
+				width: 22px;
+				height: 22px;
+				font-size: 13px;
+				line-height: 22px;
+				margin-left: 8px;
+				margin-top: -3px;
+			}
+		}
+	}
+}
+
+.DeliveryType_Normal{
+	color: $NormalColor-black;
+}
+
+.DeliveryType_Preorder{
+	color: $PreorderColor;
+}
+
+.TitleType_BonusCoupon{
+	color: #333;
+}
+
+.TitleType_Addon{
+	color: #333;
+	margin-top: 32px;
+}
+
+/*check style*/
+.icon_check{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.icon_check.active:after{
+	content: '✓';
+	display: block;
+	color: #939334;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+
+.cart_list_OneBottle{
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 50px;
+	&:first-child{
+		margin-top: 30px;
+	}
+
+	& .option_check{
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		top: 12px;
+		left: -10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		& .icon_check{
+			width: 20px;
+			height: 20px;
+		    border: 1px solid #cccccc;
+		    border-radius: 3px;
+		}
+	}
+
+	@include Cart_Wine_DetailInfo{
+
+	}
+
+	& .count_price{
+		@include Cart_Wine_Count_Price{
+
+		}
+	}
+
+	& .event_notice{
+		width: 100%;
+		box-sizing: border-box;
+		margin-top: 16px;
+		display: flex;
+		flex-wrap: wrap;
+		cursor: pointer;
+		& .icon_notice{
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			background-color: #ea3333;
+			color: #fff;
+			font-size:	16px;
+			line-height: 18px;
+			text-align: center;
+			margin-right: 6px;
+			margin-top: 2px;
 		}
 
-		& .BottleInfo{
-			width: 40%;
-			& .Info{
-				margin-top: 15px;
+		& .text{
+			width: calc(100% - 24px);
+			font-size: 1rem;
+			color: #666;
+			line-height: 1.5rem;
+			& span{
+				color :#ea3333;
+				font-weight: bold;
+				margin-right: 8px;
 			}
 
-			& .Status{
-				margin-top: 20px;
+			& a {
+				color: #666;
+
 			}
+		}
+	}
+
+	@include pad-width{
+		justify-content: flex-end;
+		& .option_check{
+			width: 44px;
+			height: 44px;
+			top: 45px;
+			& .icon_check{
+				width: 24px;
+				height: 24px;
+			}
+		}
+
+		& .event_notice{
+			width: calc(100% - 40px);
+			& .icon_notice{
+				width: 24px;
+				height: 24px;
+				font-size:	20px;
+				line-height: 24px;
+				text-align: center;
+				margin-right: 10px;
+			}
+
+			& .text{
+				width: calc(100% - 40px);
+				font-size: 1.375rem;
+				line-height: 2rem;
+				& span{
+					margin-right: 8px;
+				}
+			}
+		}
+
+		& .btn_delete{
+			width: 44px;
+		    height: 44px;
+		}
+	}
+
+	@include pad-width-l {
+		justify-content: flex-start;
+		& .event_notice{
+			margin-left: 40px;
+		}
+	}
+}
+
+.cart_list_OneGroup{
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 50px;
+
+	& .option_check{
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		top: -6px;
+		left: -10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		& .icon_check{
+			width: 20px;
+			height: 20px;
+		    border: 1px solid #cccccc;
+		    border-radius: 3px;
+		    background-color: #fff;
+		}
+	}
+
+	& .gropu_name{
+		width: calc(100% - 40px);
+		margin-left: 40px;
+		box-sizing: border-box;
+		font-size: 1rem;
+		line-height: 1.5rem;
+		color: #666; 
+	}
+
+	& .btn_group_wine_detail_extend{
+		width: calc(100% - 40px);
+		margin-left: 40px;
+		margin-top: 16px;
+		font-size: 1rem;
+		color: #666;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		& span.icon_extend{
+			width: 17px;
+			height: 17px;
+			border-radius: 50%;
+			border: 1px solid #999;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			margin-left: 5px;
+			&:before{
+				width: 9px;
+				height: 1px;
+				content: '';
+				display: block;
+				background-color: #666;
+			}
+
+			&:after{
+				width: 8px;
+				height: 1px;
+				content: '';
+				display: block;
+				background-color: #666;
+				position: absolute;
+				transform: rotate(90deg);
+			}
+
+			&.active:after{
+				display: none;
+			}
+		}
+	}
+
+	& .grouo_wine_detail{
+		margin-top: 16px;
+		width: 100%;
+	}
+
+	& .group_wine{
+		margin-top: 16px;
+		&:first-child{
+			margin-top: 0;
+		}
+		@include Cart_Wine_DetailInfo{
+			& .bottle_img{
+				position: relative;
+				& .bottle_count{
+					padding: 4px;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					background-color: #666666;
+					color: #fff;
+					font-size: 1rem;
+					font-weight: bold;
+				}
+			}
+		}
+
+		@include  phone-l{
+			width: calc(45% + 68px + 14px);
+		}
+	}
+
+	& .count_price{
+		@include Cart_Wine_Count_Price{
+				
+		}
+	}
+
+	@include pad-width{
+		justify-content: flex-end;
+		& .option_check{
+			width: 44px;
+			height: 44px;
+			top: 13px;
+			& .icon_check{
+				width: 24px;
+				height: 24px;
+			}
+		}
+
+		& .gropu_name{
+			padding: 1.15rem;
+			padding-left: 0;
+			font-size: 1.375rem;
+			line-height: 2rem;
+			& + .group_wine{
+				margin-top: 32px;
+			}
+		}
+
+		& .group_wine{
+			margin-bottom: 24px;
+			@include Cart_Wine_DetailInfo{
+				& .bottle_img{
+					& .bottle_count{
+						padding: 10px;
+						font-size: 1.375rem;
+					}
+				}
+			}
+		}
+
+		& .btn_group_wine_detail_extend{
+			font-size: 1.375rem;
+			& span.icon_extend{
+				width: 24px;
+				height: 24px;
+				margin-left: 10px;
+				&:before{
+					width: 11px;
+				}
+
+				&:after{
+					width: 11px;
+				}
+			}
+		}
+
+	}
+
+	@include pad-width-l{
+		& .group_wine{
+			width: calc(45% + 40px + 135px + 18px);
 		}
 	}
 }
 
 .cart_list_BottleSoldOut{
-	& .BottleImg{
-		opacity: 0.4;
-	}
-
-	& .BottleInfo{
-		& .Name_en{
-			color: #d9d9d9;
-		}
-
-		& .Name_cn{
-			color: #d9d9d9;
-		}
-
-		& .Info{
-			color: #d9d9d9;
-		}
-
-		& .Status div{
-			color: #d9d9d9;
-			border-color: #e6e6e6;
-			background: #f2f2f2;
-		}
-
-		& .Price{
-			& .Count .btn{
-				background-color: #f2f2f2;
-				border-color: #e6e6e6;
-			}
-
-			& .Count input[type=text]{
-				color: #d9d9d9;
-				border-color:#e6e6e6;
-			}
-
-			& .Subtotal{
-				color: #d9d9d9;
-				& span{
-					color: #d9d9d9;
-				}
-			}
-		}
-	}
-
-}
-
-.cart_list_OneBottle_unchange{
-	& .BottleImg{
-		opacity: 0.4;
-	}
-
-	& .BottleInfo{
-		& .Name_en{
-			color: #d9d9d9;
-		}
-
-		& .Name_cn{
-			color: #d9d9d9;
-		}
-
-		& .Info{
-			color: #d9d9d9;
-		}
-
-		& .Status div{
-			color: #d9d9d9;
-			border-color: #e6e6e6;
-			background: #f2f2f2;
-		}
-
-		& .Price{
-			& .Count .btn{
-				background-color: #f2f2f2;
-				border-color: #e6e6e6;
-			}
-
-			& .Count input[type=text]{
-				color: #d9d9d9;
-				border-color:#e6e6e6;
-			}
-
-			& .Subtotal{
-				color: #d9d9d9;
-				& span{
-					color: #d9d9d9;
-				}
-			}
-		}
-	}
-}
-
-.cart_list_layout .AllTitle_layout{
-	margin-top: 1rem;
-}
-
-.cart_list_OneGroup{
-	padding: 1.5rem 0 4rem 0;
-	border-bottom: $BorderColor;
-	position: relative;
-	&:after{
-		@extend %clearfix;
-	}
-
-	& .GroupBottle{
-		width: 100%;
-		&:after{
-			@extend %clearfix;
-		}
-
-		& .GroupBottleImg{
-			@include BottleImgOblique(110px);
-			float: left;
-			position: relative;
-			& .BottleNumber{
-				padding: 8px;
-				position: absolute;
-				left:0;
-				bottom: 0;
-				background-color: #666;
-				color: #fff;
-				font-size: 1rem;
-				font-weight: bold;
-			}
-		}
-
-		& .GroupBottleInfo{
-			width: calc(100% - 128px);
-			float:right;
-			& .Name_en{
-				@include BottleNameEN(1.125rem);
-				max-height: 3rem;
-				line-height: 1.5rem;
-				overflow:hidden;
-				font-weight: bold;
-				color: $TitleColor;
-			}
-
-			& .Name_cn{
-				@include BottleNameCN(1rem);
-				line-height: 1.5rem;
-				max-height: 1.5rem;
-				overflow:hidden;
-				color: $TextColor;
-				margin-top: 8px;
-			}
-
-			& .Info{
-				@include BottleInfo($PhoneContentFontSize,5px);
-				margin-top: 8px;
-			}
-		}
-
-	}
-
-	& .dottedline{
-		@include DottedLine;
-		margin-top: 1rem;
-		margin-bottom: 1rem;
-	}
-
-	& .Status{
-		width: calc(100% - 128px);
-		margin-top: 15px;
-		margin-left: calc(112px + 1rem);
-		&:after{
-			@extend %clearfix;
-		}
-
-		& div{
-			width: 60px;
-			height: 30px;
-			font-size: 14px;
-			text-align:center;
-			line-height: 30px;
-			color: $TextColor;
-			border: $BorderColor;
-			@include border-radius(4px);
-			background-color: #e9e9e9;
-			float: left;
-			margin-right: 3px;
-		}
-	}
-
-	& .Price{
-		width: calc(100% - 128px);
-		margin-left: calc(112px + 1rem);
-		margin-top: 1.5rem;
-		@include PriceAndCount;
-	}
-
-	& .PriceChangeFast{
-		@include PriceAndCountChange;
-		& .Count input[type=text]{
-			border-color:#EF9C00;
-			border-width:3px;
-			color: #EF9C00;
-		}
-		& .Count .fast{
-			background-color: #EF9C00;
-			border-color: #EF9C00;
-		}
-	}
-
-	& .PriceChangeNormal{
-		@include PriceAndCountChange;
-		& .Count input[type=text]{
-			border-color:$NormalColor;
-			border-width:3px;
-			color: $NormalColor;
-		}
-		& .Count .btn{
-			background-color: $NormalColor;
-			border-color: $NormalColor;
-		}
-	}
-
-	& .PriceChangePreorder{
-		@include PriceAndCountChange;
-		& .Count input[type=text]{
-			border-color:$PreorderColor;
-			border-width:3px;
-			color: $PreorderColor;
-		}
-		& .Count .btn{
-			background-color: $PreorderColor;
-			border-color: $PreorderColor;
-		}
-	}
-
-	& .btn_delete{
-		width: 40px;
-		height: 40px;
-		@extend %backgroundimagecontain;
-		background-image: url(../images/mobile/icon_delete.png);
-		position: absolute;
-		right: -10px;
-		bottom: 0;
-	}
-
-	@include pad-width{
-		& .GroupBottle{
-			& .GroupBottleImg{
-				width:200px;
-				height:200px;
-				& .BottleNumber{
-					padding: 0.75rem;
-					font-size: 1.75rem;
-				}
-			}
-
-			& .GroupBottleInfo{
-				width: calc(100% - 228px);
-				& .Name_en{
-					font-size:1.75rem;
-					height: 2rem;
-					line-height:2rem;
-				}
-
-				& .Name_cn{
-					font-size:1.25rem;
-					margin-top: 1rem;
-					line-height: 1.625rem;
-					max-height: 3.25rem;
-				}
-
-				& .Info{
-					margin-top: 15px;
-					@include BottleInfo($padContentFontSize,10px);
-				}
-			}
-		}
-
-		& .Status{
-			width: calc(100% - 228px);
-			margin-left:230px;
-			& div{
-				width:80px;
-				height:40px;
-				margin-right: 5px;
-				line-height: 40px;
-				font-size: $padContentFontSize;
-			}
-		}
-
-		& .Price{
-			width: calc(100% - 228px);
-			margin-left: calc(212px + 1rem);
-		}
-	}
-
-	@include large-pad-width{
-		padding-top:0;
-		& .GroupBottle{
-			width: calc((100% - 5rem)/2 - 1px);
-			float:left;
-			margin-left: 2rem;
-			padding-right: 2rem;
-			margin-top: 2rem;
-			&:nth-child(2n+1){
-				margin-left:0;
-			}
-
-			& .GroupBottleImg{
-				width: 250px;
-			}
-
-			& .GroupBottleInfo{
-				width: calc(100% - 284px);
-				float:left;
-				margin-left:2rem;
-				& .Name_en{
-					height: auto;
-					line-height:2.2rem;
-					max-height: 4.4rem;
-				}
-			}
-		}
-
-		& .dottedline{
-			display:none;
-		}
-
-		& .Status{
-			width: calc(50% - 1px);
-			float:right;
-			margin-left:0;
-		}
-
-		& .Price{
-			width: calc(50% - 1px);
-			float:right;
-			margin-left:0;
-			& .Count{
-				width: 45%;
-			}
-
-			& .Subtotal{
-				width: 55%;
-			}
-		}
-
-	}
-}
-
-.cart_list_OneGroup_unchange{
-
-	& .GroupBottle{
-
-		& .GroupBottleImg{
+	& .group_wine{
+		& .bottle_img{
 			opacity: 0.4;
 		}
-
-		& .GroupBottleInfo{
-
-			& .Name_en{
+		& .bottle_info{
+			& .name_en{
 				color: #d9d9d9;
 			}
 
-			& .Name_cn{
+			& .name_cn{
 				color: #d9d9d9;
 			}
 
-			& .Info{
+			& .status{
 				color: #d9d9d9;
+				& span{
+					&:after{
+						background-color: #d9d9d9;
+					}
+				}
 			}
-		}
-
-	}
-
-	& .Status{
-		& div{
-			color: #d9d9d9;
-			border: #e6e6e6;
-			background-color: #f2f2f2;
 		}
 	}
 
-	& .Price{
-		& .Count .btn{
-			border-color: #e6e6e6;
-			background-color: #f2f2f2;
-		}
+	& .gropu_name{
+		opacity: 0.4;
+	}
 
-		& .Count input[type=text]{
-			border-color: #e6e6e6;
+	& .bottle_img{
+		opacity: 0.4;
+	}
+
+	& .bottle_info{
+		& .name_en{
 			color: #d9d9d9;
 		}
 
-		& .Subtotal{
+		& .name_cn{
+			color: #d9d9d9;
+		}
+
+		& .status{
 			color: #d9d9d9;
 			& span{
+				&:after{
+					background-color: #d9d9d9;
+				}
+			}
+			& .icon_nobonus{
+				opacity: 0.4;
+			}
+		}
+	}
+
+	& .count_price{
+
+		& .count{
+
+			& .text{
+				color: #d9d9d9;
+			}
+
+			& .icon_minus{
+				border: 1px solid #e6e6e6;
+				background-color: #f2f2f2;
+				&:after{
+					background-color: #d9d9d9;
+				}
+			}
+
+			& .bottle_number{
+				color: #d9d9d9;
+				border: 1px solid #e6e6e6;
+				background-color: #f2f2f2;
+			}
+
+			& .icon_plus{
+				border: 1px solid #e6e6e6;
+				background-color: #f2f2f2;
+				&:before{
+					background-color: #d9d9d9;
+				}
+				&:after{
+					background-color: #d9d9d9;
+				}
+			}
+		}
+
+		& .price{
+
+			& .text{
+				color: #d9d9d9;
+			}
+			& .bottle_price{
 				color: #d9d9d9;
 			}
 		}
-	}
 
-}
-
-.cart_list_OneGroup_soldout{
-	& .GroupBottle{
-
-		& .GroupBottleInfo{
-
-			& .Name_en{
-				text-decoration: line-through;
-			}
-
-			& .Name_cn{
-				text-decoration: line-through;
-			}
-		}
-
-	}
-
-
-	& .Price{
-		& .Count .btn{
-			border-color: #e6e6e6;
-			background-color: #f2f2f2;
-		}
-
-		& .Count input[type=text]{
-			border-color: #e6e6e6;
-			color: #d9d9d9;
-		}
-
-	}
-
-}
-
-.cart_list_OneBottle_soldout{
-	& .BottleInfo{
-		& .Name_en{
-			text-decoration:line-through;
-		}
-
-		& .Name_cn{
-			text-decoration:line-through;
+		& .delete_text{
+			height: 40px;
+			font-size: 1rem;
+			line-height: 40px;
+			color: #ea3333;
+			position: absolute;
+			bottom: -11px;
+			left: 40px;
+			opacity: 1;
 		}
 	}
 
-
-	& .BottleInfo .Price{
-		& .Count .btn{
-			border-color: #e6e6e6;
-			background-color: #f2f2f2;
-			&:active{
-				background-color: #f2f2f2;
-				border-color: #e6e6e6;
-			}
-		}
-
-		& .Count input[type=text]{
-			border-color: #e6e6e6;
-			color: #d9d9d9;
-		}
+	& .btn_group_wine_detail_extend{
+		opacity: 0.4;
 	}
+
 	
 
-}
-
-.cart_list_EventNotice{
-	margin-top: 0.75rem;
-	& .text{
-		font-size:$PhoneContentFontSize;
-		color:$TextColor;
-		line-height: 1.3rem;
-		& span{
-			color:#B00808;
-		}
-	}
 	@include pad-width{
-		margin-top: 1rem;
-		& .text{
-			font-size: $padContentFontSize;
-			line-height: 2rem;
-		}
-	}
-}
-
-.cart_list_gift{
-	& .checkbox_layout{
-		position:absolute;
-		right: 0;
-		bottom: 3rem;
-	}
-
-	@include pad-width{
-		& .checkbox_layout{
-			bottom:1rem;
-		}
-	}
-}
-
-.cart_list_gift_unchecked{
-	& .BottleImg{
-		opacity: 0.4;
-	}
-
-	& .BottleInfo{
-		opacity: 0.4;
-	}
-}
-
-.cart_bouns_layout{
-	padding: 1rem;
-	margin-top: 1.25rem;
-	background-color: #d9d9d9;
-	& .LargeTitle{
-		font-size: 1.375rem;
-		color: $TitleColor;
-		margin-top: 2rem;
-		&:first-child{
-			margin-top:0;
-		}
-	}
-
-	& .LargeTitle_info{
-		font-size: 0.875rem;
-		line-height: 1.25rem;
-		color: $TextColor;
-		margin-top: 5px;
-	}
-
-	& .OneItem_Row{
-		margin-top: 1rem;
-		&:after{
-			@extend %clearfix;
-		}
-
-		& .OneItem_title{
-			font-size:1.15rem;
-			font-weight:bold;
-			color:$TitleColor;
-			float:left;
-		}
-
-		& .OneItem_text{
-			font-size:1.15rem;
-			font-weight:bold;
-			color:$TitleColor;
-			float:right;
-			& span{
-				color:#B00808;
-				margin-right: 5px;
+		& .count_price{
+			& .delete_text{
+				height: 44px;
+				font-size: 1.375rem;
+				line-height: 44px;
 			}
 		}
-	}
-
-	& .OneItem_Row_unchange{
-		& .OneItem_text{
-			& span{
-				color:#666666;
-			}
-		}
-	}
-
-	@include pad-width{
-		padding: 2rem 1.25rem;
-		margin-top: 1.5rem;
-		& .LargeTitle{
-			font-size: 1.875rem;
-			margin-top: 2.5rem;
-		}
-
-		& .LargeTitle_info{
-			font-size: 1.25rem;
-			line-height: 1.75rem;
-		}
-
-		& .OneItem_Row{
-			margin-top: 1.75rem;
-			& .OneItem_title{
-				font-size: 1.5rem;
-			}
-
-			& .OneItem_text{
-				font-size: 1.5rem;
-			}
-		}
-	}
-
-	@include pad-width{
-		padding: 4rem 2.5rem;
-	}
-}
-
-.cart_sum_layout{
-	margin-top: 1rem;
-	@extend %SectionLayout;
-	& .OneItem_Row{
-		margin-top: 1rem;
-		&:first-child{
-			margin-top:0;
-		}
-
-		&:after{
-			@extend %clearfix;
-		}
-
-		& .OneItem_title{
-			max-width: 50%;
-			font-size:1.15rem;
-			line-height: 1.5rem;
-			color:$TitleColor;
-			float:left;
-		}
-
-		& .OneItem_text{
-			max-width: 50%;
-			font-size:1.15rem;
-			line-height: 1.5rem;
-			color:$TitleColor;
-			float:right;
-		}
-
-		& .OneItem_Total{
-			max-width: 50%;
-			font-size:1.75rem;
-			color: $NoticeColor;
-			font-weight:bold;
-			float:right;
-		}
-	}
-
-	& .dottedline{
-		@include DottedLine;
-		margin-top: 1rem;
-	}
-
-	& .btn_row{
-		margin-top: 0.75rem;
-		float:right;
-		&:after{
-			@extend %clearfix;
-		}
-	}
-
-	@include pad-width{
-		margin-top: 3rem;
-		& .OneItem_Row{
-			margin-top: 3rem;
-			& .OneItem_title{
-				font-size:1.5rem;
-				line-height: 3rem;
-			}
-
-			& .OneItem_text{
-				font-size:1.5rem;
-				line-height: 2.25rem;
-			}
-
-			& .OneItem_Total{
-				font-size:2.25rem;
-			}
-		}
-		& .dottedline{
-			margin-top: 3.125rem;
-		}
-	}
-}
-
-.cart_Terms_layout{
-	margin-top: 1rem;
-	@extend %SectionLayout;
-}
-
-.cart_Terms_border{
-	padding: 1rem;
-	border: $BorderColor;
-	background-color: #f3f4f5;
-	@include border-radius(4px);
-	& .OneTerm{
-		margin-top: 0.75rem;
-		font-size: 0.75rem;
-		color: $TextColor;
-		line-height: 1.25rem;
-		&:first-child{
-			margin-top:0;
-		}
-		&:before{
-			content:'';
-			display:inline-block;
-			width: 5px;
-			height: 5px;
-			background-color: #666666;
-			@include border-radius(50%);
-			margin-right: 5px;
-			margin-top: 8px;
-			float:left;
-		}
-
-		&:after{
-			@extend %clearfix;
-		}
-
-		& a{
-			color: #666;
-		}
-	}
-
-	@include pad-width{
-		padding: 1.25rem;
-		& .OneTerm{
-			margin-top: 1rem;
-			font-size: 1rem;
-			line-height: 1.5rem;
-		}
-	}
-}
-
-.cart_SeparateCheck_layout{
-	margin-top: 1.5rem;
-	padding: 0 16px;
-	display:inline-block;
-	&:after{
-		@extend %clearfix;
-	}
-
-	& .cart_SeparateCheck_text{
-		font-size: $PhoneSecondTitleFontSize;
-		line-height: 1.5rem;
-		color: $TitleColor;
-		& span.fast{
-			color: $FastColor;
-		}
-
-		& span.preorder{
-			color: $PreorderColor;
-		}
-	}
-
-	& .cart_SeparateCheck_noticetext{
-		font-size: $PhoneContentFontSize;
-		color: $TextColor;
-		line-height:1.25rem;
-		&:before{
-			content:'';
-			width:4px;
-			height:4px;
-			background-color: $TextColor;
-			display:inline-block;
-			float:left;
-			margin-top: 8px;
-			margin-right: 5px;
-			margin-left: 5px;
-			@include border-radius(50%);
-		}
-	}
-
-	& .cart_SeparateCheck_noticetext.red{
-		color: $NoticeColor;
-		&:before{
-			background-color: $NoticeColor;
-		}
-	}
-
-	& .cart_SeparateCheck_btn{
-		width: 100%;
-		height: 60px;
-	    line-height: 60px;
-	    text-align: center;
-	    color: #fff;
-	    background-color: #939334;
-	    font-weight: bold;
-	    font-size: 1.5rem;
-	    cursor: pointer;
-	    @include border-radius(4px);
-	    margin-top: 1rem;
-	}
-
-}
-
-.cart_YearCheck_layout{
-	margin-top: 1.5rem;
-	padding: 5px 0;
-	display:inline-block;
-	&:after{
-		@extend %clearfix;
-	}
-	& .checkbox_layout{
-		float:left;
-	}
-	& .cart_YearCheck_text{
-		float:left;
-		margin-left: 0.5rem;
-	}
-
-	& span{
-		display:block;
-		font-size: 1rem;
-		color: $TitleColor;
-	}
-
-	& span.large{
-		font-weight: bold;
-		font-size: 1.5rem;
 		
 	}
 
-	& span.small{
-		margin-top: 5px;
-	}
 	@include large-pad-width{
-		margin-top: 2.5rem;
+		& .count_price{
+			& .delete_text{
+				text-align: right;
+				right:0;
+				bottom: -40px;
+			}
+		}
 	}
 }
 
-.cart_YearCheck_btn{
-	@include ConfirmBtn;
-	width: calc(100% - 2rem);
-	cursor: pointer;
-}
-
-.cart_YearCheck_btn_unchecked{
-	opacity: 0.3;
-}
-
-//FreightInfo
-.FreightInfoRow{
-	margin-top: 5px;
-	font-size: 1.25rem;
-	line-height: 2rem;
-	font-weight: bold;
-	color: $TextColor;
-	&:after{
-		@extend %clearfix;
-	}
-
-	& div:first-child{
-		float:left;
-		& span{
-			color:$NoticeColor;
+.cart_list_event{
+	width: 100%;
+	margin-top: 50px;
+	& .event_name{
+		width: 100%;
+		box-sizing: border-box;
+		padding: 12px 16px;
+		border: 1px solid #cccccc;
+		font-size: 1rem;
+		line-height: 1.5rem;
+		color: #333333;
+		font-weight: bold;
+		& + .cart_list_OneBottle{
+			margin-top: 32px;
 		}
 	}
 
-	& div:last-child{
-		float:right;
+	@include pad-width{
+		& .event_name{
+			font-size: 1.375rem;
+			line-height: 2.3rem;
+			padding: 16px 20px;
+		}
 	}
 }
 
-.FreightInfo_notice{
-	font-size: 0.75rem;
-	line-height: 1.25rem;
-	color: $TextColor;
-	margin-top: 0.625rem;
-	@include large-pad-width{
+.cart_list_event_special{
+	width: 100%;
+	margin-top: 50px;
+	& .event_name{
+		width: 100%;
+		box-sizing: border-box;
+		padding: 12px 16px;
+		border: 1px solid #cccccc;
 		font-size: 1rem;
 		line-height: 1.5rem;
-	}
-}
-
-.DeliveryType_Fast{
-	background-color: $FastColor;
-	& .largeT{
-		color: #fff;
+		color: #333333;
 		font-weight: bold;
+		
 	}
 
-	& .secondT{
-		color: #fff;
+	& .event_info{
+		margin-top: 10px;
+		& .row{
+			margin-top: 5px;
+			&:first-child{
+				margin-top: 0;
+			}
+
+			& .text{
+				font-size: 1rem;
+				color: #666;
+				line-height: 1.5rem;
+				& span{
+					display: inline-block;
+					margin: 0 8px;
+					font-weight: bold;
+				}
+
+				& span.fast{
+					color: #ef9c00;
+				}
+
+				& span.normal{
+					color: #cf3448;
+				}
+
+				& span.preorder{
+					color: #0071bc;
+				}
+
+				& span.number{
+					color: #ea3333;
+				}
+			}
+		}
+		& + .cart_list_OneBottle{
+			margin-top: 32px;
+		}
 	}
+
+	& .event_sum{
+		width: 100%;
+		margin-top: 50px;
+		border-top: 1px solid #cccccc;
+		& .count_price{
+			@include Cart_Wine_Count_Price{
+					
+			}
+		}
+	}
+
+	@include pad-width{
+		& .event_name{
+			font-size: 1.375rem;
+			line-height: 2.3rem;
+			padding: 16px 20px;
+		}
+
+		& .event_info{
+			margin-top: 20px;
+			& .row{
+				& .text{
+					font-size: 1.375rem;
+					line-height: 2.3rem;
+				}
+			}
+		}
+
+		& .event_sum{
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+
+
 }
 
-.DeliveryType_Normal{
-	background-color: $NormalColor-black;
-	& .largeT{
-		color: #fff;
+.cart_list_gift{
+	width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+
+    & .gift_name{
+		width: 100%;
+		box-sizing: border-box;
+		padding: 12px 16px;
+		border: 1px solid #cccccc;
+		font-size: 1rem;
+		line-height: 1.5rem;
+		color: #333333;
 		font-weight: bold;
+
+		& + .gift_wine{
+			margin-top: 24px;
+		}
 	}
 
-	& .secondT{
-		color: #fff;
+	& .gift_wine{
+		margin-top: 30px;
+		width: 100%;
+		box-sizing: border-box;
+		padding-bottom: 16px;
+    	display: flex;
+    	flex-wrap: wrap;
+		@include Cart_Wine_DetailInfo{}
+
+		& .bottle_img{
+			margin-left: 0;
+		}
+
+		& .count_price{
+			@include Cart_Wine_Count_Price{
+				
+			}
+		}
 	}
+
+	@include pad-width{
+		
+		& .gift_name{
+			padding: 1.5rem;
+			font-size: 1.375rem;
+			line-height: 2rem;
+			& + .gift_wine{
+				margin-top: 32px;
+			}
+		}
+
+		& .gift_wine{
+	    	justify-content: flex-end;
+	    	& .bottle_info{
+	    		width: calc(100% - 135px - 18px);
+	    	}
+		}
+	}
+
+	@include pad-width-l{
+		& .gift_wine{
+	    	justify-content: flex-start;
+	    	& .bottle_info{
+	    		width: calc(45% + 40px);
+	    	}
+		}
+	}	
 }
 
-.DeliveryType_Preorder{
-	background-color: $PreorderColor;
-	& .largeT{
-		color: #fff;
-		font-weight: bold;
-	}
-
-	& .secondT{
-		color: #fff;
-	}
-}
-
-.DeliveryType_bottomText{
-	margin-top: 1.25rem;
-	font-size: $PhoneContentFontSize;
-	line-height: 1.25rem;
-	color: $NoticeColor;
-}
-
-.DeliveryType_bottomLine_fast{
-	margin-top: 0.5rem;
+.cart_list_BonusCoupon{
 	width: 100%;
-	height: 16px;
-	background-color: $FastColor;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    &:last-child{
+    	border:none;
+    }
+	& .BonusCoupon_img{
+		width: 68px;
+	    height: 68px;
+	    border: 1px solid #cccccc;
+	    box-sizing: border-box;
+	    & img{
+	    	width: 100%;
+    		height: auto;
+	    }
+	}
+
+	& .BonusCoupon_info{
+		width: calc(100% - 68px - 14px);
+    	margin-left: 14px;
+    	font-size: 1rem;
+    	line-height: 1.5rem;
+    	color: #666;
+	}
+
+	& .BonusCoupon_count{
+		width: 100%;
+    	margin-top: 24px;
+    	display: flex;
+    	justify-content: flex-end;
+    	align-items: flex-end;
+
+    	& .text{
+    		font-size: 1rem;
+    		color: #333;
+    	}
+
+    	& .number{
+    		margin:0 10px;
+		    font-size: 1.5rem;
+		    color: #000;
+		    font-weight: bold;
+    	}
+	}
+
+	@include pad-width{
+
+		& .BonusCoupon_img{
+			width: 135px;
+		    height: 135px;
+		}
+
+		& .BonusCoupon_info{
+			width: calc(100% - 135px - 18px);
+	    	margin-left: 18px;
+	    	font-size: 1.375rem;
+	    	line-height: 2rem;
+		}
+
+		& .BonusCoupon_count{
+	    	& .text{
+	    		font-size: 1.375rem;
+	    	}
+
+	    	& .number{
+	    		margin:0 10px;
+			    font-size: 2rem;
+	    	}
+		}
+	}
 }
 
-.DeliveryType_bottomLine_normal{
-	margin-top: 0.5rem;
+.order_sum{
 	width: 100%;
-	height: 16px;
-	background-color: $NormalColor-black;
+	padding: 16px;
+	box-sizing: border-box;
+	background-color: #f2f2f2;
+	& .order_summary{
+		font-size: 1rem;
+		color: #666;
+		line-height: 1.5rem;
+		& span{
+			color: #c29c20;
+			font-weight: bold;
+			margin: 0 5px;
+		}
+	}
+
+	& .order_sum_row{
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-top: 24px;
+		font-size: 1rem;
+		color: #666;
+		&:first-child{
+			margin-top: 0;
+		}
+
+		& .title{
+			position: relative;
+		}
+
+		& .icon_info{
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			border: 1px solid #666;
+			font-size: 13px;
+			color: #666;
+			line-height: 18px;
+			text-align: center;
+			cursor: pointer;
+			margin-left: 8px;
+			position: relative;
+			top: -2px;
+		}
+
+		& .text{
+			font-size: 1rem;
+			color: #666;
+		}
+
+		& a {
+			color: #296993;
+			margin-left: 13px;
+		}
+	}
+
+	& .order_sum_btnrow{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 16px; 
+		& .btn_combine{
+			width: 100%;
+			height: 40px;
+			box-sizing: border-box;
+			border: 1px solid #cccccc;
+			border-radius: 4px;
+			background-color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			& .icon_check{
+				width: 16px;
+				height: 16px;
+				border: 1px solid #cccccc;
+				border-radius: 3px;
+			}
+			& .text{
+				font-size: 1rem;
+				color: #666;
+				margin-left: 10px;
+			}
+		}
+
+		& .btn_freedelivery{
+			width: 100%;
+			height: 40px;
+			box-sizing: border-box;
+			border: 1px solid #939334;
+			border-radius: 4px;
+			background-color: #939334;
+			margin-top: 8px;
+			font-size: 1rem;
+			line-height: 40px;
+			text-align: center;
+			color: #fff;
+			cursor: pointer;
+		}
+
+		& .btn_linkedcard{
+			width: 100%;
+			height: 40px;
+			box-sizing: border-box;
+			border: 1px solid #939334;
+			border-radius: 4px;
+			background-color: #939334;
+			margin-top: 8px;
+			font-size: 1rem;
+			line-height: 40px;
+			text-align: center;
+			color: #fff;
+			cursor: pointer;
+		}
+
+		& .only_text{
+			width: 100%;
+			font-size: 1rem;
+			color: #8b8b8b;
+			text-align: right;
+		}
+	}
+
+	@include phone-l{
+		& .order_sum_btnrow{
+			justify-content: space-between;
+			& .btn_combine{
+				width: calc(50% - 8px);
+			}
+
+			& .btn_freedelivery{
+				width: calc(50% - 8px);
+				margin-top: 0;
+			}
+
+			& .btn_linkedcard{
+				width: calc(50% - 8px);
+				margin-left: calc(50% - 8px + 16px);
+			}
+		}
+	}
+
+	@include pad-width{
+		padding: 32px;
+		& .order_summary{
+			font-size: 1.375rem;
+			line-height: 2.3rem;
+		}
+
+		& .order_sum_row{
+			margin-top: 32px;
+			font-size: 1.375rem;
+			& .icon_info{
+				display: inline-block;
+				width: 22px;
+				height: 22px;
+				font-size: 16px;
+				line-height: 22px;
+				margin-left: 8px;
+				top: -3px;
+			}
+
+			& a {
+				margin-left: 18px;
+			}
+		}
+
+		& .order_sum_btnrow{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-top: 24px; 
+			& .btn_combine{
+				width: calc((90% - 16px)/2);
+				height: 50px;
+				border-radius: 5px;
+				margin-right: 12px;
+				& .icon_check{
+					width: 20px;
+					height: 20px;
+				}
+				& .text{
+					font-size: 1.375rem;
+					margin-left: 12px;
+					line-height: 50px;
+				}
+			}
+
+			& .btn_freedelivery{
+				width: calc((80% - 16px)/2);
+				height: 50px;
+				border-radius: 5px;
+				margin-top: 0;
+				font-size: 1.375rem;
+				line-height: 50px;
+			}
+
+			& .btn_linkedcard{
+				height: 50px;
+				border-radius: 5px;
+				margin-top: 12px;
+				font-size: 1.375rem;
+				line-height: 50px;
+			}
+
+			& .only_text{
+				font-size: 1.375rem;
+			}
+		}
+	}
 }
 
-.DeliveryType_bottomLine_preorder{
-	margin-top: 0.5rem;
+.order_sum_dark{
+	background-color: #e5e5e5;
+	& .order_sum_row{
+		& .number{
+			font-size: 1.5rem;
+			color: #c20012;
+			font-weight: bold;
+		}
+	}
+}
+
+.order_sum_storage{
+
+}
+
+.cart_list_addon{
+	padding: 16px;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	& .addon_event_name{
+		width: 100%;
+	    background-color: #f2f2f2;
+	    padding: 1rem;
+	    box-sizing: border-box;
+	    font-size: 1rem;
+	    line-height: 1.5rem;
+	    color: #666;
+	}
+
+	& .addon_wine{
+		margin-top: 24px;
+		width: 100%;
+	    box-sizing: border-box;
+	    display: flex;
+	    flex-wrap: wrap;
+	    @include Cart_Wine_DetailInfo{
+	    	& .bottle_info{
+	    		& .status{
+	    			& span{
+		    			&:nth-child(2):after{
+							display: none;
+						}
+					}
+	    		}
+	    	}
+	    }
+
+	    & .bottle_img{
+	    	margin-left: 0;
+	    }
+	}
+
+	& .addon_addcart_row{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		align-items: center;
+		margin-top: 12px;
+		& .original_price{
+			width: 100%;
+			text-align: right;
+			font-size: 1rem;
+			color: #d9d9d9;
+			text-decoration: line-through;
+			margin-bottom: 10px;
+		}
+		& .price{
+			display: flex;
+			align-items: flex-end;
+			& .text{
+				font-size: 1rem;
+				color: #666;
+			}
+
+			& .number{
+				margin-left: 10px;
+				font-size: 1.5rem;
+				font-weight: bold;
+			}
+		}
+
+		& .btn_addcart{
+			margin-left: 10px;
+			width: 120px;
+			height: 40px;
+			font-size: 1rem;
+			color: #fff;
+			border-radius: 5px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+		}
+
+		&.normal{
+			& .price{
+				& .number{
+					color: $NormalColor;
+				}
+			}
+
+			& .btn_addcart{
+				background-color: $NormalColor;
+				& .icon_plus{
+					width: 13px;
+					height: 13px;
+					position: relative;
+					margin-left: 6px;
+					margin-top: -6px;
+					background-image: url(../images/mobile/addcart_icon_normal.png);
+					background-size: 250%;
+					background-position: center;
+				}
+			}
+		}
+
+		&.fast{
+			& .price{
+				& .number{
+					color: $FastColor;
+				}
+			}
+
+			& .btn_addcart{
+				background-color: $FastColor;
+				& .icon_plus{
+					width: 13px;
+					height: 18px;
+					position: relative;
+					margin-left: 6px;
+					margin-top: -4px;
+					background-image: url(../images/mobile/addcart_icon_fast.png);
+					background-size: 180%;
+					background-position: center;
+				}
+			}
+		}
+
+		&.preorder{
+			& .price{
+				& .number{
+					color: $PreorderColor;
+				}
+			}
+
+			& .btn_addcart{
+				background-color: $PreorderColor;
+				& .icon_plus{
+					width: 15px;
+					height: 13px;
+					position: relative;
+					margin-left: 6px;
+					margin-top: -6px;
+					background-image: url(../images/mobile/addcart_icon_preorder.png);
+					background-size: 180%;
+					background-position: center;
+				}
+			}
+		}
+	}
+
+	@include phone-l{
+		align-items: flex-start;
+		& .addon_wine{
+			width: calc(45% + 68px + 14px);
+		}
+
+		& .addon_addcart_row{
+			width: calc(55% - 68px - 14px - 14px);
+			margin-top: 24px;
+
+			& .btn_addcart{
+				margin-top: 12px;
+			}
+		}
+	}
+
+	@include pad-width{
+		padding: 32px;
+		& .addon_event_name{
+		    padding: 1.2rem;
+		    font-size: 1.375rem;
+		    line-height: 2rem;
+		}
+
+		& .addon_addcart_row{
+			margin-top: 18px;
+			& .original_price{
+				font-size: 1.375rem;
+				margin-bottom: 16px;
+			}
+			& .price{
+				& .text{
+					font-size: 1.375rem;
+				}
+
+				& .number{
+					font-size: 2rem;
+				}
+			}
+
+			& .btn_addcart{
+				margin-left: 16px;
+				width: 160px;
+				height: 50px;
+				font-size: 1.375rem;
+				border-radius: 5px;
+			}
+
+			&.normal{
+
+				& .btn_addcart{
+					& .icon_plus{
+						width: 15px;
+						height: 15px;
+						margin-left: 7px;
+						margin-top: -5px;
+					}
+				}
+			}
+
+			&.fast{
+
+				& .btn_addcart{
+					& .icon_plus{
+						width: 15px;
+						height: 20px;
+						background-size: 180%;
+					}
+				}
+			}
+
+			&.preorder{
+
+				& .btn_addcart{
+					& .icon_plus{
+						width: 17px;
+						height: 17px;
+					}
+				}
+			}
+		}
+	}
+
+	@include pad-width-l{
+		& .addon_addcart_row{
+			margin-top: 24px;
+			width: calc(55% - 135px - 18px - 18px);
+			& .original_price{
+				margin-bottom: 12px;
+			}
+			& .price{
+				& .text{
+					font-size: 1.375rem;
+				}
+
+				& .number{
+					font-size: 2rem;
+				}
+			}
+
+			& .btn_addcart{
+				margin-top: 0;
+				width: 148px;
+			}
+		}
+
+		& .addon_wine{
+			width: calc(45% + 135px + 18px);
+
+			& .bottle_info{
+				width: calc(100% - 135px - 18px);
+			}
+		}
+	}
+}
+
+.proclaim{
+	width: calc(100% - 32px);
+	margin: 0 16px;
+	margin-top: 20px;
+	padding: 16px;
+	box-sizing: border-box;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	& .proclaim_row{
+		padding-left: 10px;
+		box-sizing: border-box;
+		font-size: 0.625rem;
+		line-height: 1.1rem;
+		color: #999; 
+		margin-top: 12px;
+		position: relative;
+		&:first-child{
+			margin-top: 0;
+		}
+
+		&:before{
+			content: '';
+			width: 5px;
+			height: 5px;
+			display: inline-block;
+			border-radius: 50%;
+			background-color: #999;
+			position: absolute;
+			left: 0;
+			top: 5px;
+		}
+
+		& span{
+			color: $NoticeColor;
+		} 
+
+		& strong{
+			text-decoration: underline;
+		}
+
+		& a{
+			color: #999;
+		}
+	}
+
+	@include pad-width{
+		width: calc(100% - 64px);
+		margin: 0 32px;
+		margin-top: 28px;
+		padding: 24px;
+		& .proclaim_row{
+			padding-left: 16px;
+			font-size: 1rem;
+			line-height: 1.5rem; 
+			margin-top: 16px;
+			&:before{
+				content: '';
+				width: 6px;
+				height: 6px;
+				display: inline-block;
+				border-radius: 50%;
+				background-color: #999;
+				position: absolute;
+				left: 0;
+				top: 7px;
+			}
+		}
+	}
+}
+
+.confirm18{
 	width: 100%;
-	height: 16px;
-	background-color: $PreorderColor;
+    height: 60px;
+    overflow: hidden;
+    margin-top: 24px;
+    position: relative;
+    cursor: pointer;
+    & .icon_check{
+    	width: 16px;
+    	height: 16px;
+    	border: 1px solid #cccccc;
+    	border-radius: 3px;
+    	position: absolute;
+    	top: 5px;
+    	left: calc(50% - 94px - 26px);
+    }
+
+    & .text{
+    	color: #666;
+    	text-align: center;
+    	& .large{
+    		font-size: 30px;
+    	}
+
+    	& .small{
+    		font-size: 14px;
+    		margin-top: 5px;
+    	}
+    }
+
+    & .btn_ordersubmit{
+    	width: 176px;
+	    height: 50px;
+	    text-align: center;
+	    line-height: 50px;
+	    box-sizing: border-box;
+	    font-size: 24px;
+	    font-weight: bold;
+	    color: #fff;
+	    background-color: #939334;
+	    border-radius: 5px;
+	    margin: 0 auto;
+	    margin-top: 12px;
+    }
+
+    & .additem{
+    	font-size: 16px;
+	    text-align: center;
+	    line-height: 25px;
+	    color: #666666;
+	    margin-top: 12px;
+	    cursor: pointer;
+	    & span{
+	    	color: #7e272d;
+		    text-decoration: underline;
+		    font-weight: bold;
+		    margin-left: 5px;
+		    cursor: pointer;
+	    }
+    }
+
+    @include pad-width{
+    	margin-top: 48px;
+    	height: 70px;
+    	& .icon_check{
+	    	top: 8px;
+	    	left: calc(50% - 111px - 26px);
+	    }
+
+    	& .text{
+	    	& .large{
+	    		font-size: 36px;
+	    	}
+
+	    	& .small{
+	    		font-size: 18px;
+	    		margin-top: 10px;
+	    	}
+	    }
+
+	    & .btn_ordersubmit{
+	    	width: 230px;
+		    height: 60px;
+		    text-align: center;
+		    line-height: 60px;
+		    font-size: 28px;
+	    }
+
+	    & .additem{
+	    	font-size: 1.375rem;
+		    line-height: 2rem;
+		    margin-top: 20px;
+	    }
+
+    }
+}
+
+.animate_slideupbox{
+	width: 100%;
+    height: 59px;
+    top: 0;
+    position: absolute;
+}
+
+/*活動折扣特化style*/
+
+#EventDiscountInfoWindow .PopWindow_content .PopWindow_content_text{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 16px;
+	border-bottom: 1px dotted #cccccc;
+	&:last-child{
+		border:none;
+	}
+}
+
+#EventDiscountInfoWindow .PopWindow_content .PopWindow_content_text .event_discount{
+	font-weight: bold;
+	margin-left: 16px;
+}
+
+/************以下為step3***************/
+
+.step3_option{
+	position: relative;
+	padding-bottom: 16px;
+	border:none;
+}
+
+.cart_list_layout, .cart_sum_layout{
+	@extend %SectionLayout;
+	margin-bottom: 24px;
+}
+
+
+#Form_RecordedAddress, #Form_RecordedCompany{
+	position: relative;
+	margin-top: 16px;
+	& .btn_edit{
+		padding: 0 12px;
+		height: 40px;
+		border: 1px solid #cccccc;
+		border-radius: 4px;
+		font-size: $PhoneSecondTitleFontSize;
+		color: $TextColor;
+		line-height: 40px;
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	& .cart_form_row {
+		& .text{
+			color: #333;
+		}
+	}
+
+	@include pad-width{
+		& .btn_edit{
+			top: -79px;
+			right: 187px;
+			height: calc(45px - 1.5rem);
+			padding: 0.75rem;
+			border-color: #cccccc;
+			line-height: calc(45px - 1.5rem);
+			font-size: 1.125rem;
+		}
+	}
+
+	@include pad-width1024{
+		& .btn_edit{
+			right: 326px;
+		}
+	}
+}
+
+#Form_PurchaseInfo{
+	position: relative;
+	margin-top: 16px;
+	& .btn_edit{
+		padding: 0 12px;
+		height: 40px;
+		border: 1px solid #cccccc;
+		border-radius: 4px;
+		font-size: $PhoneSecondTitleFontSize;
+		color: $TextColor;
+		line-height: 40px;
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	& .cart_form_row {
+		& .text{
+			color: #333;
+		}
+	}
+
+	@include pad-width{
+		& .btn_edit{
+			height: calc(45px - 1.5rem);
+			padding: 0.75rem;
+			border-color: #cccccc;
+			line-height: calc(45px - 1.5rem);
+			font-size: 1.125rem;
+		}
+	}
+
+	@include pad-width1024{
+		& .btn_edit{
+			right: 110px;
+		}
+	}
+}
+
+
+
+.cart_sum_layout{
+	& .BTN_Order_Detail_extend{
+		margin-left: 0;
+		font-size: 1.125rem;
+	}
+
+	@include pad-width{
+		& .BTN_Order_Detail_extend{
+			font-size: 1.375rem;
+		}
+	}
+
+	@include pad-width1024{
+		& .BTN_Order_Detail_extend{
+			margin-left: 120px;
+		}
+	}
 }
 
 .cart_form_row{
@@ -1271,16 +1766,26 @@
 	&:after{
 		@extend %clearfix;
 	}
+
 	& .formTitle{
 		font-size: $PhoneSecondTitleFontSize;
 		color: $TextColor;
+		width: 100%;
 	}
+
+	& .text{
+		font-size: $PhoneSecondTitleFontSize;
+		color: #999;
+		line-height: 1.5rem;
+		margin-top: 8px; 
+	}
+
 	& input {
 		width: 100%;
 		height: 45px;
 		line-height: 46px;
 		padding: 0 0.5rem;
-		font-size: 1.125rem;
+		font-size: 1rem;
 		color: $TextColor;
 		margin-top: 0.5rem;
 		&::-webkit-input-placeholder { /* WebKit browsers */
@@ -1297,20 +1802,26 @@
 		}
 	}
 
-	& .Radio_Sexual{
-		float:left;
-		padding: 0;
-		width: calc((100% - 0.5rem)/2);
-		height: 45px;
-		line-height: 45px;
-		font-size: 1.125rem;
-		text-align: center;
-		margin-left: 0.5rem;
-		margin-top: 0.5rem;
-		&:nth-child(2){
-			margin-left: 0;
+	& .checkbox_layout{
+		width: 100%;
+	}
+
+	& .Radio_Sexual_row{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin-top: 10px;
+		& .Radio_Sexual{
+			padding: 0;
+			width: calc((100% - 1rem)/3);
+			height: 45px;
+			line-height: 45px;
+			font-size: 1rem;
+			text-align: center;
 		}
 	}
+
+	
 
 	& .Radio_Delivery{
 		float:left;
@@ -1318,7 +1829,7 @@
 		width: calc((100% - 0.5rem)/2);
 		height: 45px;
 		line-height: 45px;
-		font-size: 1.125rem;
+		font-size: 1rem;
 		text-align: center;
 		margin-left: 0.5rem;
 		margin-top: 0.5rem;
@@ -1328,12 +1839,11 @@
 	}
 
 	& .Radio_DeliveryTime{
-		float:left;
 		padding: 0;
 		width: 100%;
 		height: 45px;
 		line-height: 45px;
-		font-size: 1.125rem;
+		font-size: 1rem;
 		text-align: center;
 		margin-top: 0.5rem;
 		margin-left:0;
@@ -1344,7 +1854,7 @@
 		width: 100%;
 		height: 45px;
 		line-height: 45px;
-		font-size: 1.125rem;
+		font-size: 1rem;
 		text-align: center;
 		margin-top: 0.5rem;
 		margin-left:0;
@@ -1355,10 +1865,17 @@
 		width: 100%;
 		height: 45px;
 		line-height: 45px;
-		font-size: 1.125rem;
+		font-size: 1rem;
 		text-align: center;
 		margin-top: 0.5rem;
 		margin-left:0;
+	}
+
+	& .donate_code{
+		width: 100%;
+		margin-top: 10px;
+		display: block;
+		text-align: center;
 	}
 
 	& .Radio_remittance{
@@ -1366,25 +1883,26 @@
 		width: 100%;
 		height: 45px;
 		line-height: 45px;
-		font-size: 1.125rem;
+		font-size: 1rem;
 		text-align: center;
 		margin-top: 0.5rem;
 		margin-left:0;
 	}
 
 	& .Radio_infotext{
-		font-size: $PhoneContentFontSize;
+		font-size: 1rem;
+		line-height: 1.5rem;
 		color: #999;
-		padding: 0 10px;
 		margin-top: 0.5rem;
 		margin-bottom: 1rem;
 		text-align: center;
 	}
 
 	& .NoticeText{
+		width: 100%;
 		color: $NoticeColor;
-		font-size: $PhoneContentFontSize;
-		line-height: 1.25rem;
+		font-size: 1rem;
+		line-height: 1.5rem;
 		margin-top: 0.5rem;
 	}
 
@@ -1392,9 +1910,9 @@
 		width:100%;
 		height: 150px;
 		margin-top:0.5rem;
-		font-size: 1.25rem;
+		font-size: 1rem;
 		padding:10px;
-		line-height: 1.75rem;
+		line-height: 1.5rem;
 		color: $TextColor;
 		&::-webkit-teatarea-placeholder { /* WebKit browsers */
 		    color: #999;
@@ -1418,17 +1936,37 @@
 	}
 
 	& .checkbox_text{
-		width: calc(100% - 47px - 0.75rem);
-		font-size: $PhoneTitleFontSize;
-		line-height: 1.75rem;
+		width: calc(100% - 40px);
+		font-size: 1rem;
+		line-height: 1.5rem;
 		color: $TextColor;
-		float: left;
-		margin-left: 0.75rem;
+		margin-top: 8px;
+	}
+
+	& .img{
+		width: 100%;
+		margin-top: 16px;
+
+		& img{
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	& #DeliveryInfo_Address, #CompanyInfo_Address{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
 	}
 
 	@include pad-width{
-		padding:0 88px;
 		margin-top: 2rem;
+
+		& .text{
+			font-size: 1.375rem;
+    		line-height: 2.3rem;
+		}
+
 		& .formTitle{
 			font-size: $padContentFontSize;
 		}
@@ -1446,14 +1984,57 @@
 		}
 
 		& .NoticeText{
-			font-size: $padContentFontSize;
-			line-height: 1.75rem;
+			font-size: 1.375rem;
+			line-height: 2.3rem;
+		}
+
+		& .donate_code{
+			margin-top: 16px;
+			font-size: 1.375rem;
 		}
 
 		& .Radio_infotext{
-			font-size: $padContentFontSize;
-			line-height: 1.75rem;
+			margin-top: 16px;
+			font-size: 1.375rem;
+			line-height: 2.3rem;
 		}
+
+		& .checkbox_text{
+			font-size: 1.375rem;
+			line-height: 2.3rem;
+			margin-top: 3px;
+		}
+
+		& .Radio_Payment{
+			width: calc((100% - 20px)/3);
+		}
+
+		& .Radio_DeliveryTime{
+			width: calc((100% - 20px)/3);
+		}
+
+		&.delivery_datetime{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		&.payment{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		& .Radio_Sexual_row{
+			& .Radio_Sexual{
+				font-size: 1.375rem;
+			}
+		}
+	}
+
+	@include pad-width1024{
+		padding: 0 120px;
+
 	}
 
 	@include large-pad-width{
@@ -1530,13 +2111,70 @@
 		text-align: center;
 		
 		& .dropdown_text{
-			font-size: 1.125rem;
+			font-size: 1rem;
 			height: 18px;
-			line-height: 1.125rem;
+			line-height: 1rem;
 			& span{
 				display: inline-block;
 				height: 18px;
-				margin-top: 1px;
+				margin-top: 3px;
+			}
+		}
+	}
+
+	@include pad-width{
+		display: flex;
+		flex-wrap: wrap;
+
+		& .district{
+			width: 150px;
+			margin-right: 10px;
+		}
+
+		& .dropdown{
+			& .dropdown_text{
+				font-size: 1.125rem;
+				line-height: 1.125rem;
+				& span{
+					margin-top: 1px;
+				}
+			}
+		}
+
+		
+	}
+}
+
+.form_Recorded{
+	& .dropdown{
+		width: calc(100% - 1.5rem - 2px);
+		margin-top: 0.5rem;
+		text-align: center;
+		
+		& .dropdown_text{
+			font-size: 1rem;
+			height: 18px;
+			line-height: 1rem;
+			& span{
+				display: inline-block;
+				height: 18px;
+				margin-top: 3px;
+			}
+		}
+	}
+
+	@include pad-width{
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 10px;
+		& .dropdown{
+			width: 170px;
+			& .dropdown_text{
+				font-size: 1.125rem;
+				line-height: 1.125rem;
+				& span{
+					margin-top: 1px;
+				}
 			}
 		}
 	}
@@ -1545,6 +2183,14 @@
 .form_invoice{
 	& .Radio_infotext{
 		text-align:left;
+	}
+
+	@include pad-width1024{
+		& .Radio_infotext{
+			width: 60%;
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 }
 
@@ -1636,6 +2282,225 @@
 			font-size: 1.25rem;
 		}
 	}
+
+	@include pad-width1024{
+		width: 60%;
+	}
+}
+
+.order_detail{
+
+	& .one_delivery_type{
+		margin-top: 24px;
+	}
+
+	& .row_title{
+		width: 100%;
+		height: 40px;
+		color: #666;
+		font-size: 1rem;
+		font-weight: bold;
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid #ebebeb;
+		& .wine_info{
+			width: 80%;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			& span{
+				letter-spacing: 5px;
+			}
+		}
+
+		& .wine_number{
+			width: 20%;
+			text-align: center;
+		}
+	}
+
+	& .row{
+		margin-top: 16px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		& .wine_info{
+			width: 80%;
+			font-size: 1rem;
+			color: #666;
+			& .wine_nameCN{
+				line-height: 1.5rem;
+			}
+
+			& .wine_nameEN{
+				color: #999;
+				line-height: 1.2rem;
+			}
+
+			& .wine_detail{
+				color: #999;
+				line-height: 1.2rem;
+				margin-top: 5px;
+				display: flex;
+				& span{
+					&:after{
+						content: '';
+						display: inline-block;
+						width: 1px;
+						height: 10px;
+						background-color: #999;
+						margin: 0 8px;
+					}
+
+					&:last-child:after{
+						display: none;
+					}
+				}
+			}
+		}
+
+		& .wine_number{
+			width: 20%;
+			text-align: center;
+			font-size: 1rem;
+			color: #666;
+		}
+	}
+
+	@include pad-width{
+		& .row_title{
+			font-size: 1.375rem;
+			height: 50px;
+		}
+
+		& .row{
+			margin-top: 24px;
+			& .wine_info{
+				font-size: 1.375rem;
+				
+				& .wine_nameCN{
+					line-height: 2.3rem;
+				}
+
+				& .wine_nameEN{
+					line-height: 2rem;
+				}
+
+				& .wine_detail{
+					line-height: 2rem;
+					& span{
+						&:after{
+							height: 14px;
+							margin: 0 12px;
+						}
+					}
+				}
+			}
+
+			& .wine_number{
+				font-size: 1.375rem;
+			}
+
+
+		}
+	}
+
+	@include pad-width1024{
+		padding: 0 120px;
+		box-sizing: border-box;
+	}
+}
+
+.sum_detail{
+	width: 100%;
+	margin-top: 24px;
+	& .row{
+		width: 100%;
+		display: flex;
+		align-items: flex-end;
+		margin-top: 20px;
+		justify-content: space-between;
+		& .text{
+			font-size: 1rem;
+			color: #666;
+			& .icon_info{
+				display: inline-block;
+			    width: 18px;
+			    height: 18px;
+			    border-radius: 50%;
+			    border: 1px solid #666;
+			    font-size: 13px;
+			    color: #666;
+			    line-height: 18px;
+			    text-align: center;
+			    cursor: pointer;
+			    margin-left: 8px;
+			    position: relative;
+			    top: -2px;
+			}
+
+			& a {
+				color: #296993;
+    			margin-left: 13px;
+			}
+		}
+
+		& .total{
+			font-size: 1.5rem;
+		    color: #c20012;
+		    font-weight: bold;
+		}
+	}
+
+	@include pad-width{
+		& .row{
+			margin-top: 32px;
+			& .text{
+				font-size: 1.375rem;
+				line-height: 2.3rem;
+				& .icon_info{
+					display: inline-block;
+				    width: 22px;
+				    height: 22px;
+				    font-size: 16px;
+				    line-height: 22px;
+				    margin-left: 8px;
+				    top: -3px;
+				}
+			}
+
+			& .total{
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	@include pad-width1024{
+		padding: 0 120px;
+		box-sizing: border-box;
+	}
+}
+
+.btn_submit{
+	width: 176px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    box-sizing: border-box;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #939334;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 24px;
+
+    @include pad-width{
+    	width: 300px;
+    	margin-top: 48px;
+    	height: 65px;
+    	line-height: 65px;
+    }
 }
 
 .ReviseOrder_text{
@@ -1660,38 +2525,13 @@
 	}
 }
 
-.delete_text{
-	height: 40px;
-	line-height: 40px;
-	position: absolute;
-	bottom: 0;
-	right: 28px;
-	color: #B00808;
-	font-size: 1rem;
-	text-align: right;
-}
 
-//20180615 add new additional_purchase section(replace old one)
-.section_additional_purchase{
-	padding: 0 16px;
-    background-color: #fff;
-    position: relative;
-    margin-top: 2rem;
-}
-
-.section_additional_purchase .DottedLine{
-	@include DottedLine;
-	margin: 1rem auto;
-}
-
-.section_additional_purchase .AddPriceProduct:not(:first-child){
-	margin-top: 2rem;
-}
 
 .Radio_remittance_extend{
 	margin-bottom: 16px;
 }
 
+/*****loading window*******/
 #LoadingWindow{
 	& .PopWindow_content{
 		display: flex;
