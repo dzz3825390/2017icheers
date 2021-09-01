@@ -545,6 +545,7 @@ h4{
 	height: 45px;
 	background-color: #d9d9d9;
 	margin-bottom: 40px;
+	margin-top: 20px;
 	&:after{
 		@extend %clearfix;
 	}
@@ -1030,6 +1031,53 @@ h4{
 			margin-right: 0.75rem;
 			@include border-radius(50%);
 		}
+	}
+}
+
+.SideMenu_Mode{
+	width: 100%;
+	padding:0 15px;
+	height: 50px;
+	font-size: 1rem;
+	color: #666;
+	line-height: 50px;
+	background-color: #ededed;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+
+	& .icon{
+		display: inline-block;
+		width: 29px;
+		height: 18px;
+		@extend %backgroundimagecontain;
+		margin-right: 10px;
+		&.listmode{
+			background-image:url(../images/mobile/listmode_icon.png);
+		}
+	}
+}
+
+.SideMenu_Export{
+	width: 100%;
+	padding: 0 15px;
+	height: 50px;
+	font-size: 1rem;
+	color: #666;
+	line-height: 50px;
+	box-sizing: border-box;
+	background-color: #ededed;
+	display: flex;
+	align-items: center;
+
+	& .icon{
+		display: inline-block;
+		width: 29px;
+		height: 19px;
+		background-image:url(../images/mobile/export_icon.png);
+		@extend %backgroundimagecontain;
+		margin-right: 10px;
+		margin-top: -1px;
 	}
 }
 

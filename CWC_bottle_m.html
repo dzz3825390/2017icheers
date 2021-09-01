@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="iCheers愛酒窩">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="address=no">
+	<title>iCheers愛酒窩 ─ 讓你窩在家就能享受葡萄酒</title>
+	<link href="css_m/all.css" rel="stylesheet" type="text/css" />
+	<link href="css_m/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="Scripts/all_m.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+	<!--[if lt IE 9]  //記得在前後加上 < > 註解
+	  <script>
+	    document.createElement("header" );
+	    document.createElement("footer" );
+	    document.createElement("section"); 
+	    document.createElement("aside"  );
+	    document.createElement("nav"    );
+	    document.createElement("article"); 
+	    document.createElement("hgroup" ); 
+	    document.createElement("time"   );
+	  </script>
+	![endif]-->
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var intBrowserW = 0;
+
+			//瀏覽器內容高度
+			var intBrowserH = 0;
+
+			//#region 取得瀏覽器內容寬度/高度
+				if (document.documentElement) {
+				    intBrowserW = document.documentElement.clientWidth;
+				    intBrowserH = document.documentElement.clientHeight;
+				} else {
+				    intBrowserW = document.body.clientWidth;
+				    intBrowserH = document.body.clientHeight;
+				}
+
+		   
+
+		    
+		   
+		   
+
+		});
+
+
+	</script>
+</head>
+<body class="CWC">
+
+<!--假body-->
+<div class="wapper">
+
+<!--header-->
+<div class="header">
+	<header>
+		<h1>iCheers 愛酒窩</h1>
+	</header>
+	<!--side menu-->
+	<div class="menuBTN">
+		<a class="navicon-button uarr" id="menuBTN">
+			<div class="navicon"></div>
+		</a> 
+	</div>
+	<!--side menu end-->
+
+	<!--logo svg-->
+	<div class="logo">
+
+	</div>
+	<!--logo svg end-->
+
+	<!--mylist-->
+	<div class="mylist">
+		<span>9+</span>
+	</div>
+	<!--mylist end-->
+
+</div>
+<!--header end-->
+
+<!--content-->
+<div class="content_layout">
+	<!--
+	<div class="GoToDesktop">
+		<div class="option" id="Tracking_list">
+			<div class="icon" style="background-image: url(images/mobile/icon_track.png);"></div>
+			<div class="text">追蹤酒款</div>
+		</div>
+		<div class="option" id="Order_progress">
+			<div class="icon" style="background-image: url(images/mobile/icon_orderprogress.png);"></div>
+			<div class="text">訂單查詢</div>
+		</div>
+	</div>
+	-->
+	<!--搜尋條件-->
+	<section class="winelist_searchCondition_layout">
+		<!--20180626 add clear condition btn-->
+		<div class="winelist_searchCondition_Title">
+			篩選結果
+			<span class="winelist_searchCondition_clearBtn">清除全部</span>
+		</div>
+		<!--20180626 add clear condition btn end-->
+		<div class="winelist_searchCondition_text">
+			<span class="OneCondition">紅酒</span>
+			<span class="OneCondition">波爾多</span>
+		</div>
+	</section>
+	<!--搜尋條件 end-->
+
+	<section class="wine_bottle_list">
+		<div class="one_bottle" style="background-image: url(images/mobile/WI00051001_btl.jpg);"></div>
+		<div class="one_bottle" style="background-image: url(images/mobile/WI00006001_btl.jpg);"></div>
+		<div class="one_bottle" style="background-image: url(images/mobile/WI00015102_btl.jpg);"></div>
+		<div class="one_bottle" style="background-image: url(images/mobile/WI00023901_btl.jpg);"></div>
+	</section>
+
+	<!--pagnation-->
+	<div class="pagination_layout">
+		<div class="pagination">
+		    <a href="">&laquo;</a>
+		    <a href="">&nbsp;</a>
+		    <a href="">&nbsp;</a>
+		    <a href="" class="active">1</a>
+		    <a href="">2</a>
+		    <a href="">3</a>
+		    <a href="">&raquo;</a>
+		</div>
+	</div>
+	<!--pagnation end-->
+</div>
+<!--content end-->
+
+
+<div class="footer">
+	<div class="footer_option_row">
+		<div class="footer_option">
+			<div class="icon" style="background-image: url(images/mobile/contactus_icon.png);width: 17px;"></div>
+			<div class="text">聯絡我們</div>
+		</div>
+		<div class="footer_option">
+			<div class="icon" style="background-image: url(images/mobile/desktop_icon.png);width: 17px;"></div>
+			<div class="text">切換電腦版網站</div>
+		</div>
+	</div>
+</div>
+
+<div class="warning">
+	飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+</div>
+
+
+
+<!--side menu-->
+<div class="black_BG" id="black_BG">
+	<div class="SideMenu_layout">
+		<!--頂端search row-->
+		<div class="SideMenu_SearchRow">
+			<div class="SideMenu_BackBTN">
+				<a class="navicon-button uarr open">
+					<div class="navicon"></div>
+				</a> 
+			</div>
+			<div class="SideMenu_SignInBTN"></div>
+			<div class="SideMenu_SearchInput">
+				<!--20180626 fix input type-->
+				<form action="" name="search" id="SearchInput">
+					<input type="search">
+				</form>
+				<span class="search_icon"></span>
+			</div>
+			<!--add auto complete sample max:4-->
+			<div class="SideMenu_AutoComplete">
+				<div class="OneResult"><span>au</span>to complete1</div>
+				<div class="OneResult"><span>au</span>to complete2</div>
+				<div class="OneResult"><span>au</span>to complete3</div>
+				<div class="OneResult"><span>au</span>to complete4</div>
+			</div>
+		</div>
+		<!--頂端search row end-->
+		<!--第一層-->
+		<div class="SideMenu_Detail" id="SideMenuDetailL1">
+			<div class="SideMenu_Mode">
+				<span class="icon listmode"></span>
+				清單模式
+			</div>
+			<div class="SideMenu_Export">
+				<span class="icon"></span>
+				匯出我的窖藏清單
+			</div>
+
+			<!--title-->
+			<div class="SideMenu_Detail_Title">類型</div>
+			<!--title-->
+			<div class="SideMenu_Detail_list">
+				紅酒 (16)
+			</div>
+			<div class="SideMenu_Detail_list">
+				白酒 (0)
+			</div>
+			<div class="SideMenu_Detail_list">
+				粉紅酒 (32)
+			</div>
+			<div class="SideMenu_Detail_list">
+				氣泡酒 (2)
+			</div>
+			<div class="SideMenu_Detail_list">
+				烈酒 (2)
+			</div>
+
+			<!--title-->
+			<div class="SideMenu_Detail_Title">產區</div>
+			<!--title-->
+			<div class="SideMenu_Detail_list">
+				法國 (16)
+			</div>
+			<div class="SideMenu_Detail_list">
+				義大利 (0)
+			</div>
+			<div class="SideMenu_Detail_list">
+				西班牙 (32)
+			</div>
+			<div class="SideMenu_Detail_list">
+				德國 (2)
+			</div>
+			<div class="SideMenu_Detail_list">
+				美國 (2)
+			</div>
+
+			
+
+
+			<div class="SideMenu_RecentView">
+				<span class="icon"></span>
+				近期瀏覽
+			</div>
+			<div class="SideMenu_GotoDesktop">
+				<span class="icon"></span>
+				切換為電腦版
+			</div>
+		</div>
+		<!--第一層-->
+	</div>
+</div>
+<!--side menu end-->
+
+</div>
+<!--假body-->
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+@import "compass/css3";
+@import "mixin";
+
+.CWC .header{
+	border-color: $CWCColor;
+}
+
+.wine_bottle_list{
+	box-sizing: border-box;
+	padding: 1rem;
+	padding-top: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	& .one_bottle{
+		margin-top: 40px;
+		box-sizing: border-box;
+		width: calc((100% - 16px)/2);
+		height: calc((100vw - 48px)/2*1.5);
+		@extend %backgroundimagecontain;
+		cursor: pointer;
+	}
+}

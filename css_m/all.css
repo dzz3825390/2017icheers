@@ -88,7 +88,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
 }
 
-.SideMenu_TrackingList .icon, .addcart_normal button, .addcart_normal_withtext button:after, .addcart_fast button, .addcart_fast_withtext button:after, .addcart_preorder button, .addcart_preorder_withtext button:after, .addcart_soldout button, .addcart_soldout_withtext button:after, .detail_bottle_img, .detail_MoreInfo_OneInfo .awardbox .img, .winelist_allyear_extend .OneYearRow .tracking_list span, .options .one_option .icon_delete, .About_BounsInfo .icon, .About_Newbie_CartIcons .CartIcons .Normal, .About_Newbie_CartIcons .CartIcons .Fast, .About_Newbie_CartIcons .CartIcons .Preorder {
+.SideMenu_Mode .icon, .SideMenu_Export .icon, .SideMenu_TrackingList .icon, .addcart_normal button, .addcart_normal_withtext button:after, .addcart_fast button, .addcart_fast_withtext button:after, .addcart_preorder button, .addcart_preorder_withtext button:after, .addcart_soldout button, .addcart_soldout_withtext button:after, .detail_bottle_img, .detail_MoreInfo_OneInfo .awardbox .img, .winelist_allyear_extend .OneYearRow .tracking_list span, .options .one_option .icon_delete, .About_BounsInfo .icon, .About_Newbie_CartIcons .CartIcons .Normal, .About_Newbie_CartIcons .CartIcons .Fast, .About_Newbie_CartIcons .CartIcons .Preorder, .wine_bottle_list .one_bottle {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -698,6 +698,7 @@ h4 {
   height: 45px;
   background-color: #d9d9d9;
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 @media screen and (min-width: 760px) {
   .footer {
@@ -1226,6 +1227,49 @@ h4 {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+}
+
+.SideMenu_Mode {
+  width: 100%;
+  padding: 0 15px;
+  height: 50px;
+  font-size: 1rem;
+  color: #666;
+  line-height: 50px;
+  background-color: #ededed;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.SideMenu_Mode .icon {
+  display: inline-block;
+  width: 29px;
+  height: 18px;
+  margin-right: 10px;
+}
+.SideMenu_Mode .icon.listmode {
+  background-image: url(../images/mobile/listmode_icon.png);
+}
+
+.SideMenu_Export {
+  width: 100%;
+  padding: 0 15px;
+  height: 50px;
+  font-size: 1rem;
+  color: #666;
+  line-height: 50px;
+  box-sizing: border-box;
+  background-color: #ededed;
+  display: flex;
+  align-items: center;
+}
+.SideMenu_Export .icon {
+  display: inline-block;
+  width: 29px;
+  height: 19px;
+  background-image: url(../images/mobile/export_icon.png);
+  margin-right: 10px;
+  margin-top: -1px;
 }
 
 .SideMenu_RecentView {
@@ -10196,4 +10240,24 @@ h2.detail_Name_cn {
   .member_form .row {
     padding: 0 20%;
   }
+}
+
+.CWC .header {
+  border-color: #904d06;
+}
+
+.wine_bottle_list {
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.wine_bottle_list .one_bottle {
+  margin-top: 40px;
+  box-sizing: border-box;
+  width: calc((100% - 16px)/2);
+  height: calc((100vw - 48px)/2*1.5);
+  cursor: pointer;
 }
