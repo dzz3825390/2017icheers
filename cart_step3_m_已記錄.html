@@ -578,7 +578,14 @@
 
 		    //客製checkbox
 		    $('.option_check').click(function(){
-		    	$(this).find('.icon_check').toggleClass('active')
+		    	$(this).find('.icon_check').toggleClass('active');
+
+		    	//紙袋
+		    	if ($('#Checkbox_Paperbag').find('.icon_check').hasClass('active')){
+		    		$('.number_paperbag span').css('display','inline');
+		    	} else{
+		    		$('.number_paperbag span').css('display','none');
+		    	}
 		    });
 
 
@@ -783,16 +790,15 @@
 		</div>
 		<div class="cart_form_row">
 			<div class="checkbox_layout" >
-				<div class="option_check">
+				<div class="option_check" id="Checkbox_Paperbag">
 					<div class="icon_check"></div>
 				</div>
 				<div class="checkbox_text number_paperbag">
 					請隨貨附提袋
-					<input type="number" name="">
-					個
+					<span  style="display: none;">
+						<input type="number" name="">個
+					</span>
 				</div>
-				
-
 			</div>
 		</div>
 		
