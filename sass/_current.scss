@@ -1457,6 +1457,7 @@ h4{
 .checkbox_layout{
 	display: flex;
 	justify-content: flex-start;
+	align-items: center;
 	margin-top: 12px;
 	& .option_check{
 		width: 40px;
@@ -1592,6 +1593,10 @@ h4{
 			color: $NoticeColor;
 		}
 
+		& a {
+			color: $TextColor;
+		}
+
 		&:first-child{
 			margin-top: 0;
 		}
@@ -1697,6 +1702,13 @@ h4{
 			margin-top: 8px;
 			color: #666;
 		}
+	}
+
+	& .PopWindow_content_title{
+		font-size: 1.25rem;
+		margin-top: 20px;
+		color: #666;
+		font-weight: bold;
 	}
 
 	& .Popwindow_ConfirmBtn{

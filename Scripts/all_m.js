@@ -439,6 +439,12 @@ $(document).ready(function(){
 		PopWindow('#RegisterFinishedWindow',intBrowserH,intBrowserW);
 	});
 
+	//step3修改訂購人資訊
+	$('#PurchaseInfo_BTNEdit').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#EditPurchaseInfoNotice',intBrowserH,intBrowserW);
+	});
+
 	//PopWindow關閉
 	$('#black_BG02 .CloseBTN').click(function(){
 		//隱藏黑底

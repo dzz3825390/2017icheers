@@ -1843,6 +1843,7 @@ h4 {
 .checkbox_layout {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   margin-top: 12px;
 }
 .checkbox_layout .option_check {
@@ -2026,6 +2027,9 @@ h4 {
   margin: 0 5px;
   color: #B00808;
 }
+.PopWindow_content .PopWindow_content_text a {
+  color: #666666;
+}
 .PopWindow_content .PopWindow_content_text:first-child {
   margin-top: 0;
 }
@@ -2129,6 +2133,12 @@ h4 {
 .PopWindow_content .Popwindow_form .row {
   margin-top: 8px;
   color: #666;
+}
+.PopWindow_content .PopWindow_content_title {
+  font-size: 1.25rem;
+  margin-top: 20px;
+  color: #666;
+  font-weight: bold;
 }
 .PopWindow_content .Popwindow_ConfirmBtn {
   margin-top: 2rem;
@@ -7119,13 +7129,17 @@ h2.detail_Name_cn {
   top: 0;
   right: 0;
 }
+#Form_RecordedAddress .btn_save, #Form_RecordedCompany .btn_save {
+  display: none;
+}
 #Form_RecordedAddress .cart_form_row .text, #Form_RecordedCompany .cart_form_row .text {
   color: #333;
 }
 @media screen and (min-width: 760px) {
   #Form_RecordedAddress .btn_edit, #Form_RecordedCompany .btn_edit {
     top: -79px;
-    right: 187px;
+    right: 0;
+    display: inline-block;
     height: calc(45px - 1.5rem);
     padding: 0.75rem;
     border-color: #cccccc;
@@ -7344,7 +7358,6 @@ h2.detail_Name_cn {
   color: #999;
 }
 .cart_form_row a {
-  display: inline-block;
   margin: 0.5rem 0;
   color: #666;
   text-decoration: underline;
@@ -7356,7 +7369,6 @@ h2.detail_Name_cn {
   font-size: 1rem;
   line-height: 1.5rem;
   color: #666666;
-  margin-top: 8px;
 }
 .cart_form_row .img {
   width: 100%;
@@ -7428,6 +7440,10 @@ h2.detail_Name_cn {
   }
   .cart_form_row .Radio_Sexual_row .Radio_Sexual {
     font-size: 1.375rem;
+  }
+  .cart_form_row textarea {
+    font-size: 1.375rem;
+    line-height: 2.5rem;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -7547,7 +7563,7 @@ h2.detail_Name_cn {
 @media screen and (min-width: 760px) {
   .form_Recorded {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin-top: 10px;
   }
   .form_Recorded .dropdown {
@@ -8014,6 +8030,29 @@ h2.detail_Name_cn {
 .DeliveryCostTable .cost {
   font-weight: bold;
   color: #B00808;
+}
+
+.checkbox_layout .number_paperbag {
+  display: flex;
+  align-items: center;
+}
+.checkbox_layout .number_paperbag input {
+  width: 40px;
+  height: 45px;
+  line-height: 46px;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #666666;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  margin: 0 8px;
+  outline: none;
+}
+@media screen and (min-width: 760px) {
+  .checkbox_layout .number_paperbag input {
+    font-size: 1.375rem;
+  }
 }
 
 .About_BG {
