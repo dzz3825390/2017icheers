@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="iCheers愛酒窩">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="address=no">
+	<title>iCheers愛酒窩 ─ 讓你窩在家就能享受葡萄酒</title>
+	<link href="css_m/all.css" rel="stylesheet" type="text/css" />
+	<link href="css_m/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="Scripts/all_m.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+	<!--[if lt IE 9]  //記得在前後加上 < > 註解
+	  <script>
+	    document.createElement("header" );
+	    document.createElement("footer" );
+	    document.createElement("section"); 
+	    document.createElement("aside"  );
+	    document.createElement("nav"    );
+	    document.createElement("article"); 
+	    document.createElement("hgroup" ); 
+	    document.createElement("time"   );
+	  </script>
+	![endif]-->
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var intBrowserW = 0;
+
+			//瀏覽器內容高度
+			var intBrowserH = 0;
+
+			//#region 取得瀏覽器內容寬度/高度
+				if (document.documentElement && document.documentElement.clientWidth != 0 && document.documentElement.clientHeight != 0) {
+				    intBrowserW = document.documentElement.clientWidth;
+				    intBrowserH = document.documentElement.clientHeight;
+				} else {
+				    intBrowserW = document.body.clientWidth;
+				    intBrowserH = document.body.clientHeight;
+				}
+
+			//logo區塊高度
+			var SectionLogoHeight = $('.header ').outerHeight(true);
+
+			//Step、宅配儲酒及操作按鈕區塊高度
+			var SectionOptionsHeight = $('.step_option').outerHeight(true);
+
+			//////以上resize要重取////////
+
+			//酒款勾選
+			$('.option_check').click(function(){
+				$(this).children().toggleClass('active');
+			});
+
+			//酒款全選
+			$('.check_all').click(function(){
+				$(this).children().toggleClass('active');
+				var IsActive = $(this).children().hasClass('active');
+				if (IsActive) {
+					$('.option_check').each(function(){
+						$(this).children().addClass('active');
+					});
+				} else {
+					$('.option_check').each(function(){
+						$(this).children().removeClass('active');
+					});
+				}
+			});
+
+
+			//年齡確認
+			$('.before_confirm18').click(function(){
+				$(this).children('.icon_check').toggleClass('active');
+				setTimeout(function(){
+					if (intBrowserW < 768){
+						$('.animate_slideupbox').animate({top:'-60px'});
+		    			$('.confirm18').css('height','130px');
+					} else if (intBrowserW < 1024) {
+						$('.animate_slideupbox').animate({top:'-70px'});
+		    			$('.confirm18').css('height','150px');
+					} else {
+						$('.animate_slideupbox').animate({top:'-70px'});
+		    			$('.confirm18').css('height','150px');
+					}
+		    		
+		    	},100)
+			});
+
+		});
+
+
+	</script>
+</head>
+<body class="CWC">
+
+<!--假body-->
+<div class="wapper">
+	
+<!--header-->
+<div class="header">
+	<header>
+		<h1>iCheers 愛酒窩 葡萄酒館</h1>
+	</header>
+	<!--side menu-->
+	<div class="menuBTN">
+		<a class="navicon-button uarr" id="menuBTN">
+			<div class="navicon"></div>
+		</a> 
+	</div>
+	<!--side menu end-->
+
+	<!--logo svg-->
+	<div class="logo">
+	</div>
+	<!--logo svg end-->
+
+	<!--mylist-->
+	<div class="mylist">
+		<span>9+</span>
+	</div>
+	<!--mylist end-->
+
+</div>
+<!--header end-->
+
+<!--content-->
+<div class="content_layout">
+	<section class="step_option">
+		<!--
+		<div class="cart_step_row">
+			<div class="one_dot active">
+				<div class="text">取酒</div>
+				<div class="dot"></div>			
+			</div>
+			<div class="one_dot">
+				<div class="text">配送資訊</div>
+				<div class="dot"></div>				
+			</div>
+			<div class="one_dot">
+				<div class="text">發票</div>
+				<div class="dot"></div>				
+			</div>
+			<div class="one_dot">
+				<div class="text">付款方式</div>
+				<div class="dot"></div>
+			</div>
+		</div>-->
+		<div class="options">
+			<div class="one_option check_all">
+				<div class="icon_check"></div>
+			</div>
+			<div class="one_option" id="Delete_All">
+				<div class="icon_delete"></div>
+			</div>
+		</div>
+		<div class="delivery_count_sum">
+			配送總瓶數<span>96</span>瓶
+		</div>
+	</section>
+	
+	<div class="cart_list_layout">
+		<div class="cart_list_OneBottle">
+			<div class="option_check">
+				<div class="icon_check"></div>
+			</div>
+			<div class="bottle_info">
+				<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+				<div class="name_en">Torres, Grans Coronas </div>
+				<div class="status">
+					<span>2016</span>
+					<span>330&nbsp;ml</span>
+				</div>
+				<div class="storage_avg_price">
+					<span>窖藏均價&nbsp;$12,345</span>
+					<span class="icon">i</span>
+				</div>
+			</div>
+			<div class="count_price">
+				<div class="count">
+					<div class="icon_minus"></div>
+					<input type="number" class="bottle_number" value="4" />
+					<div class="icon_plus"></div>
+				</div>
+				<div class="count_storage">
+					還剩<span>16</span>瓶
+				</div>
+			</div>
+			 
+		</div>
+		<div class="cart_list_OneBottle">
+			<div class="option_check">
+				<div class="icon_check"></div>
+			</div>
+			<div class="bottle_info">
+				<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+				<div class="name_en">Torres, Grans Coronas </div>
+				<div class="status">
+					<span>2016</span>
+					<span>330&nbsp;ml</span>
+				</div>
+				<div class="storage_avg_price">
+					<span>窖藏均價&nbsp;$12,345</span>
+					<span class="icon">i</span>
+				</div>
+			</div>
+			<div class="count_price">
+				<div class="count">
+					<div class="icon_minus"></div>
+					<input type="number" class="bottle_number" value="4" />
+					<div class="icon_plus"></div>
+				</div>
+				<div class="count_storage">
+					還剩<span>16</span>瓶
+				</div>
+			</div>
+			 
+		</div>
+		<div class="cart_list_OneBottle">
+			<div class="option_check">
+				<div class="icon_check"></div>
+			</div>
+			<div class="bottle_info">
+				<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+				<div class="name_en">Torres, Grans Coronas </div>
+				<div class="status">
+					<span>2016</span>
+					<span>330&nbsp;ml</span>
+				</div>
+				<div class="storage_avg_price">
+					<span>窖藏均價&nbsp;$12,345</span>
+					<span class="icon">i</span>
+				</div>
+			</div>
+			<div class="count_price">
+				<div class="count">
+					<div class="icon_minus"></div>
+					<input type="number" class="bottle_number" value="4" />
+					<div class="icon_plus"></div>
+				</div>
+				<div class="count_storage">
+					還剩<span>16</span>瓶
+				</div>
+			</div>
+			 
+		</div>
+		<div class="cart_list_OneBottle">
+			<div class="option_check">
+				<div class="icon_check"></div>
+			</div>
+			<div class="bottle_info">
+				<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+				<div class="name_en">Torres, Grans Coronas </div>
+				<div class="status">
+					<span>2016</span>
+					<span>330&nbsp;ml</span>
+				</div>
+				<div class="storage_avg_price">
+					<span>窖藏均價&nbsp;$12,345</span>
+					<span class="icon">i</span>
+				</div>
+			</div>
+			<div class="count_price">
+				<div class="count">
+					<div class="icon_minus"></div>
+					<input type="number" class="bottle_number" value="4" />
+					<div class="icon_plus"></div>
+				</div>
+				<div class="count_storage">
+					還剩<span>16</span>瓶
+				</div>
+			</div>
+			 
+		</div>
+		<div class="cart_list_OneBottle">
+			<div class="option_check">
+				<div class="icon_check"></div>
+			</div>
+			<div class="bottle_info">
+				<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+				<div class="name_en">Torres, Grans Coronas </div>
+				<div class="status">
+					<span>2016</span>
+					<span>330&nbsp;ml</span>
+				</div>
+				<div class="storage_avg_price">
+					<span>窖藏均價&nbsp;$12,345</span>
+					<span class="icon">i</span>
+				</div>
+			</div>
+			<div class="count_price">
+				<div class="count">
+					<div class="icon_minus"></div>
+					<input type="number" class="bottle_number" value="4" />
+					<div class="icon_plus"></div>
+				</div>
+				<div class="count_storage">
+					還剩<span>16</span>瓶
+				</div>
+			</div>
+			 
+		</div>
+		<div class="cart_list_OneBottle">
+			<div class="option_check">
+				<div class="icon_check"></div>
+			</div>
+			<div class="bottle_info">
+				<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+				<div class="name_en">Torres, Grans Coronas </div>
+				<div class="status">
+					<span>2016</span>
+					<span>330&nbsp;ml</span>
+				</div>
+				<div class="storage_avg_price">
+					<span>窖藏均價&nbsp;$12,345</span>
+					<span class="icon">i</span>
+				</div>
+			</div>
+			<div class="count_price">
+				<div class="count">
+					<div class="icon_minus"></div>
+					<input type="number" class="bottle_number" value="4" />
+					<div class="icon_plus"></div>
+				</div>
+				<div class="count_storage">
+					還剩<span>16</span>瓶
+				</div>
+			</div>
+			 
+		</div>
+
+	</div>
+
+	<div class="proclaim">
+		<div class="proclaim_row">
+			本網站不鼓勵、不提倡飲酒。未成年請勿飲酒，飲酒過量有害健康，酒後不開車。
+		</div>
+		<div class="proclaim_row">
+			<span>本網站僅提供商品資訊，<strong>恕不提供線上交易服務</strong>，網站上不可接受訂單或完成訂單確認。</span>如果對本網站所陳列的商品有興趣，請詳閱本宣告文後，點選「送出確認信」洽詢，本公司收到您的訊息後將有客服人員Email與您聯繫。
+		</div>
+		<div class="proclaim_row">
+			本網站酒類商品不得售予未滿十八歲之青少年，因此欲發送詢問希望進一步訊息時，<span>請務必確認<strong>訂購人及收貨人</strong>均為年滿十八歲以上之成年人。</span>如本網站服務人員與送貨人員在難以辨識訂購人或收貨人之年齡時，必會請對方提供證明文件，屆時敬請務必配合。
+		</div>
+		<div class="proclaim_row">
+			本公司保有隨時更動價格、取消或拒絕交易之權力，若造成不便，敬請見諒。
+		</div>
+		<div class="proclaim_row">
+			iCheers愛酒窩非常重視您的隱私權，瞭解更多<a href="">隱私權政策</a>。
+		</div>
+		<div class="proclaim_row">
+			iCheers愛酒窩非常重視酒品品質，請將收到的酒品妥善保存於低溫環境，詳見品質宣言，若未保存得當，恕不接受退換貨。
+		</div>
+	</div>
+
+	<div class="confirm18">
+		<div class="animate_slideupbox">
+			<div class="before_confirm18">
+				<div class="icon_check"></div>
+				<div class="text">
+					<div class="large">我已年滿18歲</div>
+					<div class="small">並詳細閱讀與同意網站條款</div>
+				</div>
+			</div>
+			<div class="btn_ordersubmit" id="OrderSubmit">下一步</div>
+		</div>	
+	</div>
+</div>
+<!--content end-->
+
+<!--icheers info-->
+<div class="iCheers_info_layout">
+	<div class="iCheers_info">
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_newbie.jpg);">
+			<span>新手上路</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_qualityGarentee.jpg);">
+			<span>品質宣言</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_delivery_info2.jpg);">
+			<span>到貨時間</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_bouns.jpg);">
+			<span>紅利好康</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_aboutus.jpg);">
+			<span>關於我們</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_contactus.jpg);">
+			<span>加入我們</span>
+		</div>
+	</div>
+</div>
+<!--icheers info end-->
+
+<div class="separateline info_separateline"></div>
+
+<div class="icheers_slogan"></div>
+
+<div class="footer">
+	<div class="footer_option_row">
+		<div class="footer_option">
+			<div class="icon" style="background-image: url(images/mobile/contactus_icon.png);width: 17px;"></div>
+			<div class="text">聯絡我們</div>
+		</div>
+		<div class="footer_option">
+			<div class="icon" style="background-image: url(images/mobile/desktop_icon.png);width: 17px;"></div>
+			<div class="text">切換電腦版網站</div>
+		</div>
+	</div>
+</div>
+
+<div class="warning">
+	飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+</div>
+
+<div class="black_BG" id="black_BG02">
+	<!--活動折扣詳細資訊-->
+	<div class="PopWindow_layout" id="EventDiscountInfoWindow">
+		<div class="PopWindow_title">
+			活動折扣
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_content_text">
+				<div class="event_name">
+					波爾多紅酒任選二款(含以上)79折優惠
+				</div>
+				<div class="event_discount">
+					<span>-&nbsp;$&nbsp;200</span>
+				</div>
+			</div>
+			<div class="PopWindow_content_text">
+				<div class="event_name">
+					Domaine Geantet Pansiot任選六瓶 加碼送老酒開瓶器
+				</div>
+				<div class="event_discount">
+					<span>-&nbsp;$&nbsp;400</span>
+				</div>
+			</div>
+			<div class="PopWindow_content_text">
+				<div class="event_name">
+					Zenato Ripassa Valpolicella Superiore 買二送一超值優惠
+				</div>
+				<div class="event_discount">
+					<span>-&nbsp;$&nbsp;1,500</span>
+				</div>
+			</div>
+			<div class="PopWindow_content_text">
+				<div class="event_name">
+					波爾多紅酒任選二款(含以上)79折優惠
+				</div>
+				<div class="event_discount">
+					<span>-&nbsp;$&nbsp;200</span>
+				</div>
+			</div>
+			<div class="PopWindow_content_text">
+				<div class="event_name">
+					Domaine Geantet Pansiot任選六瓶 加碼送老酒開瓶器
+				</div>
+				<div class="event_discount">
+					<span>-&nbsp;$&nbsp;400</span>
+				</div>
+			</div>
+			<div class="PopWindow_content_text">
+				<div class="event_name">
+					Zenato Ripassa Valpolicella Superiore 買二送一超值優惠
+				</div>
+				<div class="event_discount">
+					<span>-&nbsp;$&nbsp;1,500</span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!--活動折扣詳細資訊 end-->
+
+
+	<!--使用bouns-->
+	<div class="PopWindow_layout" id="UseBounsWindow">
+		<div class="PopWindow_title">
+			紅利折抵
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_content_text">您目前的紅利累計有<span>12345</span>點，可折抵<span>12345</span>元。</div>
+			<div class="Popwindow_form">
+				<div class="title">本次折抵點數</div>
+				<input type="text" />
+			</div>
+			<div class="Popwindow_ConfirmBtn">確定</div>
+		</div>
+	</div>
+	<!--使用bouns end-->
+
+	<!--使用coupon-->
+	<div class="PopWindow_layout" id="UseCouponWindow">
+		<div class="PopWindow_title">
+			e-eoupon優惠
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			
+			<div class="Popwindow_form">
+				<div class="title">請輸入e-Coupon號碼</div>
+				<input type="text" />
+			</div>
+			<div class="Popwindow_ConfirmBtn">確定</div>
+		</div>
+	</div>
+	<!--使用coupon end-->
+	
+	<!--發送確認信 -->
+	<div class="PopWindow_layout" id="MailWindow1">
+		<div class="PopWindow_title">
+			發送確認信
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_content_text">依法令規定，酒類商品無法提供線上交易服務，請留下您的e-mail，客服人員將會盡快與您e-mail聯繫！</div>
+			<div class="Popwindow_form">
+				<div class="title">請輸入e-mail</div>
+				<input type="text" />
+				<div class="row">
+		    	 	<input type="checkbox">
+		    	 	<span>記住我</span>
+		    	</div> 
+			</div>
+			<div class="PopWindow_content_text">
+				快速到貨截單時間倒數計時：<span>HH</span>時<span>MM</span>分<span>SS</span>秒
+			</div>
+			<div class="PopWindow_noticetext">
+				*如遇例假日及國定假日則到貨時間順延
+			</div>
+			<div class="Popwindow_ConfirmBtn">快速到貨15:00前完成付款</div>
+			<div class="Popwindow_ConfirmBtn">一般速度出貨即可</div>
+		</div>
+	</div>
+	<!--發送確認信 end-->
+
+	<!--未綁定信用卡送出-->
+	<div class="PopWindow_layout" id="MailWindow_NoLinkCard">
+		<div class="PopWindow_title">
+			儲酒服務說明
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_content_text" style="text-align: center;">儲酒服務需綁定信用卡方可啟用。</div>
+			<div class="PopWindow_content_text" style="text-align: center;"><a href="#" style="color:#666;">點我了解儲酒收費規則</a></div>
+		</div>
+	</div>
+	<!--未綁定信用卡送出 end-->
+
+	<!--已綁定信用卡完成-->
+	<div class="PopWindow_layout" id="MailWindow_LinkedCard">
+		<div class="PopWindow_title">
+			儲酒服務說明
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_content_text" style="text-align: center;">您已完成信用卡綁定</div>
+		</div>
+	</div>
+	<!--未綁定信用卡送出 end-->
+
+	<!--刪除商品-->
+	<div class="PopWindow_layout" id="DeleteItemWindow">
+		<div class="PopWindow_title">
+			刪除商品
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_content_text">請問是否將刪除商品加入追蹤清單?</div>
+			<div class="Popwindow_form">
+				<div class="row">
+		    	 	<input type="checkbox">
+		    	 	<span>在我重新造訪網頁前皆使用此設定</span>
+		    	</div> 
+			</div>
+			<div class="Popwindow_ConfirmBtn">確定</div>
+			<div class="Popwindow_ConfirmBtnGray">直接刪除</div>
+		</div>
+	</div>
+	<!--刪除商品 end-->
+
+</div>
+<!--side menu-->
+<div class="black_BG" id="black_BG">
+	<div class="SideMenu_layout">
+		<!--頂端search row-->
+		<div class="SideMenu_SearchRow">
+			<div class="SideMenu_BackBTN">
+				<a class="navicon-button uarr open">
+					<div class="navicon"></div>
+				</a> 
+			</div>
+			<div class="SideMenu_SignInBTN"></div>
+			<div class="SideMenu_SearchInput">
+				<!--20180626 fix input type-->
+				<form action="" name="search" id="SearchInput">
+					<input type="search">
+				</form>
+				<span class="search_icon"></span>
+			</div>
+			<!--add auto complete sample max:4-->
+			<div class="SideMenu_AutoComplete">
+				<div class="OneResult"><span>au</span>to complete1</div>
+				<div class="OneResult"><span>au</span>to complete2</div>
+				<div class="OneResult"><span>au</span>to complete3</div>
+				<div class="OneResult"><span>au</span>to complete4</div>
+			</div>
+		</div>
+		<!--頂端search row end-->
+		<!--第一層-->
+		<div class="SideMenu_Detail" id="SideMenuDetailL1">
+			<!--title-->
+			<div class="SideMenu_Detail_Title">繼續逛逛</div>
+			<!--title-->
+			<div class="SideMenu_Detail_list">
+				葡萄酒 Wine
+			</div>
+			<div class="SideMenu_Detail_list">
+				威士忌 Whisky
+			</div>
+			<div class="SideMenu_Detail_list">
+				精釀啤酒 Craft Beer
+			</div>
+			<div class="SideMenu_Detail_list">
+				清酒 Sake
+			</div>
+
+			<div class="SideMenu_RecentView">
+				<span class="icon"></span>
+				近期瀏覽
+			</div>
+			<div class="SideMenu_OrderProgress">
+				<span class="icon"></span>
+				訂單查詢
+			</div>
+			<div class="SideMenu_TrackingList">
+				<span class="icon"></span>
+				追蹤酒款
+			</div>
+			<div class="SideMenu_GotoDesktop">
+				<span class="icon"></span>
+				切換為電腦版
+			</div>
+			
+		</div>
+		<!--第一層-->
+	</div>
+</div>
+<!--side menu end-->
+
+</div>
+<!--假body end-->
+</body>
+</html>

@@ -44,7 +44,15 @@
 				}
 
 		   
-
+			//取酒視窗checkbox
+			$('.option_check').click(function(){
+				$(this).find('.icon_check').toggleClass('active');
+				if($(this).find('.icon_check').hasClass('active')){
+					$(this).parent().parent().find('.count').css('display','flex');
+				} else {
+					$(this).parent().parent().find('.count').css('display','none');
+				}
+			});
 		    
 		   
 		   
@@ -101,45 +109,87 @@
 		</div>
 	</div>
 	-->
-	<!--搜尋條件-->
-	<section class="winelist_searchCondition_layout">
-		<!--20180626 add clear condition btn-->
-		<div class="winelist_searchCondition_Title">
-			篩選結果
-			<span class="winelist_searchCondition_clearBtn">清除全部</span>
+	
+	<section class="detail_bottleImg_layout">
+		<div class="detail_bottle_img" style="background-image:url(images/mobile/bottle.jpg);">
+			
+			<div class="detail_bottleImg_winetag">
+				<img src="images/mobile/wine_tag.jpg" />
+			</div>
 		</div>
-		<!--20180626 add clear condition btn end-->
-		<div class="winelist_searchCondition_text">
-			<span class="OneCondition">紅酒</span>
-			<span class="OneCondition">波爾多</span>
+		<div class="detail_BasicInfo">
+			<h2 class="detail_Name_en">Gancia Gancia Prosecco DOCG CUV. PLAT. </h2>
+			<h2 class="detail_Name_cn">崗夏酒莊 特吉普賽可氣泡酒</h2>
+			<div class="detail_allyears">
+				<div class="one_year">2010</div>
+				<div class="one_year active">2011</div>
+				<div class="one_year">2012</div>
+				<div class="one_year">2013</div>
+				<div class="one_year">2015</div>
+				<div class="one_year">2018</div>
+				<div class="one_year">2019</div>
+				<div class="one_year">2020</div>
+			</div>
+			<div class="detail_allcapacity">
+				<div class="one_capacity">375ml</div>
+				<div class="one_capacity active">750ml</div>
+			</div>
+		</div>
+		
+	</section>
+	
+	<section class="detail_MoreInfo_layout" style="display: block;">
+		<div class="one_info_row">
+			<div class="title">2016<em></em>750ml&nbsp;瓶數(各年份容量總瓶數)</div>
+			<div class="bottle_number">
+				<img src="images/mobile/icon_CWC_bottle_number.svg">
+				<span>x26&nbsp;(105)</span>
+				<button class="btn_getwine" id="CWCGetWine">取酒</button>
+			</div>
+		</div>
+		<div class="one_info_row">
+			<div class="title">購入價格</div>
+			<div class="text">
+				$1,210,536
+			</div>
+		</div>
+		<div class="one_info_row">
+			<div class="title">目前市價</div>
+			<div class="text">
+				$1,210,536
+				<span class="rise">+2000&nbsp;(+8.7%)</span>
+			</div>
+		</div>
+		<div class="one_info_row">
+			<div class="title">評價</div>
+			<div class="text">
+				RP&nbsp;95&nbsp;/&nbsp;100
+			</div>
+		</div>
+
+		<div class="one_info_row">
+			<div class="title">試飲期</div>
+			<div class="text">
+				2030-2050(還要再等等)
+			</div>
+		</div>
+
+		<div class="one_info_row">
+			<div class="title">產區</div>
+			<div class="text">
+				Napa Valley
+			</div>
+		</div>
+
+		<div class="one_info_row">
+			<div class="title">類型</div>
+			<div class="text">
+				白氣泡葡萄酒／干型（不甜）
+			</div>
 		</div>
 	</section>
-	<!--搜尋條件 end-->
 
-	<section class="wine_bottle_list">
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00051001_btl.jpg);"></div>
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00006001_btl.jpg);"></div>
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00015102_btl.jpg);"></div>
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00023901_btl.jpg);"></div>
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00051001_btl.jpg);"></div>
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00006001_btl.jpg);"></div>
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00015102_btl.jpg);"></div>
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00023901_btl.jpg);"></div>
-	</section>
-
-	<!--pagnation-->
-	<div class="pagination_layout">
-		<div class="pagination">
-		    <a href="">&laquo;</a>
-		    <a href="">&nbsp;</a>
-		    <a href="">&nbsp;</a>
-		    <a href="" class="active">1</a>
-		    <a href="">2</a>
-		    <a href="">3</a>
-		    <a href="">&raquo;</a>
-		</div>
-	</div>
-	<!--pagnation end-->
+	
 </div>
 <!--content end-->
 
@@ -159,6 +209,98 @@
 
 <div class="warning">
 	飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+</div>
+
+<div class="black_BG" id="black_BG02">
+	<div class="PopWindow_layout" id="CWCGetWineWindow">
+		<div class="PopWindow_title">
+			Opus One
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_CWC_row">
+				<div class="checkbox_and_info">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_info">
+						<span>2010</span>
+						<span>750ml</span>
+					</div>
+				</div>
+				<div class="bottle_number">
+					<img src="images/mobile/icon_CWC_bottle_number.svg">
+					<span>x26</span>
+				</div>
+				<div class="count">
+					<div class="icon_minus"></div>
+					<input type="number" class="bottle_number" value="0">
+					<div class="icon_plus"></div>
+				</div>
+			</div>
+			<div class="PopWindow_CWC_row">
+				<div class="checkbox_and_info">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_info">
+						<span>2011</span>
+						<span>750ml</span>
+					</div>
+				</div>
+				<div class="bottle_number">
+					<img src="images/mobile/icon_CWC_bottle_number.svg">
+					<span>x10</span>
+				</div>
+				<div class="count">
+					<div class="icon_minus"></div>
+					<input type="number" class="bottle_number" value="0">
+					<div class="icon_plus"></div>
+				</div>
+			</div>
+			<div class="PopWindow_CWC_row">
+				<div class="checkbox_and_info">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_info">
+						<span>2011</span>
+						<span>1.5L</span>
+					</div>
+				</div>
+				<div class="bottle_number">
+					<img src="images/mobile/icon_CWC_bottle_number.svg">
+					<span>x3</span>
+				</div>
+				<div class="count">
+					<div class="icon_minus"></div>
+					<input type="number" class="bottle_number" value="0">
+					<div class="icon_plus"></div>
+				</div>
+			</div>
+			<div class="PopWindow_CWC_row">
+				<div class="checkbox_and_info">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_info">
+						<span>2012</span>
+						<span>750ml</span>
+					</div>
+				</div>
+				<div class="bottle_number">
+					<img src="images/mobile/icon_CWC_bottle_number.svg">
+					<span>x13</span>
+				</div>
+				<div class="count">
+					<div class="icon_minus"></div>
+					<input type="number" class="bottle_number" value="0">
+					<div class="icon_plus"></div>
+				</div>
+			</div>
+			<div class="Popwindow_GetWineBtn">取酒</div>
+		</div>
+	</div>
 </div>
 
 
@@ -193,8 +335,8 @@
 		<!--第一層-->
 		<div class="SideMenu_Detail" id="SideMenuDetailL1">
 			<div class="SideMenu_Mode">
-				<span class="icon listmode"></span>
-				清單模式
+				<span class="icon bottlemode"></span>
+				酒瓶模式
 			</div>
 			<div class="SideMenu_Export">
 				<span class="icon"></span>

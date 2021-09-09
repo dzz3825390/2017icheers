@@ -76,7 +76,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 }
 
-.clearfix:after, .footer:after, .SideMenu_SearchRow:after, .SideMenu_SearchInput:after, .SideMenu_Detail_list2 span:after, .SideMenu_RecentView:after, .SideMenu_GotoDesktop:after, .SideMenu_OrderProgress:after, .SideMenu_TrackingList:after, .OneWine:after, .OneWine .info .bottle_info:after, .pagination_layout .pagination:after, .fourbanner_layout:after, .BottlesZone_onebottle .bottle_info:after, .BottlesZone_onebottle .bottle_price:after, .FastZone_bottles_layout:after, .NormalZone_bottles_layout:after, .MemberOnly_layout .bottle_price:after, .Events_layout:after, .PreorderZone_BottleInfo:after, .PreorderZone_BottleInfo .bottle_info:after, .ArticleZone_layout:after, .Article_layout:after, .GoToDesktop .option:after, .detail_price_row:after, .detail_MoreInfo_layout:after, .detail_MoreInfo_BtnOpen:after, .detail_GroupProduct_layout:after, .detail_introduce_layout:after, .winelist_searchCondition_text:after, .winelist_searchCondition_filter:after, .winelist_OneWine_layout:after, .winelist_OneWine_Info .bottle_info:after, .winelist_OneWine_Info .bottle_origin:after, .winelist_OneWine_Info .bottle_price .price_row:after, .winelist_MoreInfo_BtnOpen:after, .winelist_allyear_extend .OneYearRow:after, .cart_form_row:after, .About_SpecialQuote:after, .About_img:after, .About_BounsInfo:after, .About_Bouns_table .Row .MemberLevel:after, .About_DeliveryInfo:after, .About_DeliveryInfo .title:after, .About_Newbie_mylist:after, .About_Quality_Icons_Bg:after, .winery_intro .Region, .WineryIntroZone_onewinery .WineryRegion, .Order_SearchCondition_form_row:after, .Order_Detail_layout .Order_Info_Row .WineInfo:after {
+.clearfix:after, .footer:after, .SideMenu_SearchRow:after, .SideMenu_SearchInput:after, .SideMenu_Detail_list2 span:after, .SideMenu_RecentView:after, .SideMenu_GotoDesktop:after, .SideMenu_OrderProgress:after, .SideMenu_TrackingList:after, .OneWine:after, .OneWine .info .bottle_info:after, .pagination_layout .pagination:after, .fourbanner_layout:after, .BottlesZone_onebottle .bottle_info:after, .BottlesZone_onebottle .bottle_price:after, .FastZone_bottles_layout:after, .NormalZone_bottles_layout:after, .MemberOnly_layout .bottle_price:after, .Events_layout:after, .PreorderZone_BottleInfo:after, .PreorderZone_BottleInfo .bottle_info:after, .ArticleZone_layout:after, .Article_layout:after, .GoToDesktop .option:after, .detail_price_row:after, .detail_MoreInfo_layout:after, .detail_MoreInfo_BtnOpen:after, .detail_GroupProduct_layout:after, .detail_introduce_layout:after, .winelist_searchCondition_text:after, .winelist_searchCondition_filter:after, .winelist_OneWine_layout:after, .winelist_OneWine_Info .bottle_info:after, .winelist_OneWine_Info .bottle_origin:after, .winelist_OneWine_Info .bottle_price .price_row:after, .winelist_MoreInfo_BtnOpen:after, .winelist_allyear_extend .OneYearRow:after, .cart_form_row:after, .About_SpecialQuote:after, .About_img:after, .About_BounsInfo:after, .About_Bouns_table .Row .MemberLevel:after, .About_DeliveryInfo:after, .About_DeliveryInfo .title:after, .About_Newbie_mylist:after, .About_Quality_Icons_Bg:after, .winery_intro .Region, .WineryIntroZone_onewinery .WineryRegion, .Order_SearchCondition_form_row:after, .Order_Detail_layout .Order_Info_Row .WineInfo:after, .CWC .cart_form_row #DeliveryInfo_Type:after {
   content: '';
   display: block;
   clear: both;
@@ -88,7 +88,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
 }
 
-.SideMenu_Mode .icon, .SideMenu_Export .icon, .SideMenu_TrackingList .icon, .addcart_normal button, .addcart_normal_withtext button:after, .addcart_fast button, .addcart_fast_withtext button:after, .addcart_preorder button, .addcart_preorder_withtext button:after, .addcart_soldout button, .addcart_soldout_withtext button:after, .detail_bottle_img, .detail_MoreInfo_OneInfo .awardbox .img, .winelist_allyear_extend .OneYearRow .tracking_list span, .options .one_option .icon_delete, .About_BounsInfo .icon, .About_Newbie_CartIcons .CartIcons .Normal, .About_Newbie_CartIcons .CartIcons .Fast, .About_Newbie_CartIcons .CartIcons .Preorder, .wine_bottle_list .one_bottle {
+.SideMenu_Mode .icon, .SideMenu_Export .icon, .SideMenu_TrackingList .icon, .addcart_normal button, .addcart_normal_withtext button:after, .addcart_fast button, .addcart_fast_withtext button:after, .addcart_preorder button, .addcart_preorder_withtext button:after, .addcart_soldout button, .addcart_soldout_withtext button:after, .detail_bottle_img, .detail_MoreInfo_OneInfo .awardbox .img, .winelist_allyear_extend .OneYearRow .tracking_list span, .options .one_option .icon_delete, .About_BounsInfo .icon, .About_Newbie_CartIcons .CartIcons .Normal, .About_Newbie_CartIcons .CartIcons .Fast, .About_Newbie_CartIcons .CartIcons .Preorder, .wine_bottle_list .one_bottle_img {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -1249,6 +1249,9 @@ h4 {
 }
 .SideMenu_Mode .icon.listmode {
   background-image: url(../images/mobile/listmode_icon.png);
+}
+.SideMenu_Mode .icon.bottlemode {
+  background-image: url(../images/mobile/bottlemode_icon.png);
 }
 
 .SideMenu_Export {
@@ -7388,7 +7391,6 @@ h2.detail_Name_cn {
   color: #999;
 }
 .cart_form_row a {
-  display: inline-block;
   margin: 0.5rem 0;
   color: #666;
   text-decoration: underline;
@@ -10252,12 +10254,678 @@ h2.detail_Name_cn {
   padding-top: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
-.wine_bottle_list .one_bottle {
+.wine_bottle_list .one_bottle_img {
   margin-top: 40px;
+  margin-right: 16px;
   box-sizing: border-box;
   width: calc((100% - 16px)/2);
   height: calc((100vw - 48px)/2*1.5);
   cursor: pointer;
+}
+.wine_bottle_list .one_bottle_img:nth-child(2n) {
+  margin-right: 0;
+}
+.wine_bottle_list .one_bottle {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 0;
+  display: flex;
+  font-size: 1rem;
+  justify-content: space-between;
+  border-bottom: 1px dotted #cccccc;
+}
+.wine_bottle_list .one_bottle:last-child {
+  border: none;
+}
+.wine_bottle_list .one_bottle .info {
+  width: 70%;
+}
+.wine_bottle_list .one_bottle .info .winename_CN {
+  color: #666;
+  line-height: 1.5rem;
+}
+.wine_bottle_list .one_bottle .info .winename_EN {
+  color: #666;
+  line-height: 1.25rem;
+  margin-top: 3px;
+}
+.wine_bottle_list .one_bottle .info .wineinfo {
+  color: #999;
+  line-height: 1.25rem;
+  margin-top: 8px;
+}
+.wine_bottle_list .one_bottle .info .wineinfo span {
+  display: inline-block;
+  margin-left: 6px;
+}
+.wine_bottle_list .one_bottle .info .wineinfo span:after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 11px;
+  background-color: #999;
+  margin-left: 10px;
+}
+.wine_bottle_list .one_bottle .info .wineinfo span:first-child {
+  margin-left: 0;
+}
+.wine_bottle_list .one_bottle .info .wineinfo span:last-child:after {
+  display: none;
+}
+.wine_bottle_list .one_bottle .price_and_number {
+  width: 30%;
+  text-align: right;
+}
+.wine_bottle_list .one_bottle .price_and_number .price {
+  line-height: 1.5rem;
+  font-weight: bold;
+  color: #000;
+}
+.wine_bottle_list .one_bottle .price_and_number .trend {
+  line-height: 1.25rem;
+  margin-top: 3px;
+}
+.wine_bottle_list .one_bottle .price_and_number .trend.rise {
+  color: #d30a0a;
+}
+.wine_bottle_list .one_bottle .price_and_number .trend.drop {
+  color: #0b7b62;
+}
+.wine_bottle_list .one_bottle .price_and_number .trend strong {
+  font-weight: bold;
+}
+.wine_bottle_list .one_bottle .price_and_number .trend span {
+  font-size: 0.875rem;
+}
+.wine_bottle_list .one_bottle .price_and_number .number {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 5px;
+}
+.wine_bottle_list .one_bottle .price_and_number .number img {
+  width: 8px;
+  height: auto;
+}
+.wine_bottle_list .one_bottle .price_and_number .number span {
+  margin-left: 8px;
+  color: #6e6e6e;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+@media screen and (min-width: 760px) {
+  .wine_bottle_list {
+    padding: 1.25rem;
+  }
+  .wine_bottle_list .one_bottle {
+    font-size: 1.25rem;
+    padding: 20px 0;
+  }
+  .wine_bottle_list .one_bottle .info .winename_CN {
+    line-height: 1.875rem;
+  }
+  .wine_bottle_list .one_bottle .info .winename_EN {
+    line-height: 1.5rem;
+  }
+  .wine_bottle_list .one_bottle .info .wineinfo {
+    line-height: 1.5rem;
+  }
+  .wine_bottle_list .one_bottle .info .wineinfo span {
+    margin-left: 8px;
+  }
+  .wine_bottle_list .one_bottle .info .wineinfo span:after {
+    height: 14px;
+    margin-left: 12px;
+  }
+  .wine_bottle_list .one_bottle .price_and_number .price {
+    line-height: 1.875rem;
+  }
+  .wine_bottle_list .one_bottle .price_and_number .trend {
+    line-height: 1.5rem;
+  }
+  .wine_bottle_list .one_bottle .price_and_number .trend span {
+    font-size: 1.125rem;
+  }
+  .wine_bottle_list .one_bottle .price_and_number .number {
+    margin-top: 10px;
+  }
+  .wine_bottle_list .one_bottle .price_and_number .number img {
+    width: 10px;
+  }
+  .wine_bottle_list .one_bottle .price_and_number .number span {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .wine_bottle_list .one_bottle_img {
+    width: calc((100% - 32px)/3);
+    height: calc((100vw - 54px)/3*1.5);
+  }
+  .wine_bottle_list .one_bottle_img:nth-child(2n) {
+    margin-right: 16px;
+  }
+  .wine_bottle_list .one_bottle_img:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+.detail_allyears {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.detail_allyears .one_year {
+  width: calc((100% - 20px)/5);
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.125rem;
+  text-align: center;
+  color: #666;
+  box-sizing: border-box;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: #fff;
+}
+.detail_allyears .one_year:first-child {
+  margin-left: 0;
+}
+.detail_allyears .one_year:nth-child(5n+1) {
+  margin-left: 0;
+}
+.detail_allyears .one_year.active {
+  background-color: #8e6681;
+  border-color: #8e6681;
+  color: #fff;
+}
+@media screen and (min-width: 760px) {
+  .detail_allyears .one_year {
+    width: calc((100% - 30px)/7);
+  }
+  .detail_allyears .one_year:nth-child(5n+1) {
+    margin-left: 5px;
+  }
+  .detail_allyears .one_year:nth-child(7n+1) {
+    margin-left: 0;
+  }
+}
+
+.detail_allcapacity {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.detail_allcapacity .one_capacity {
+  width: calc((100% - 20px)/5);
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.125rem;
+  text-align: center;
+  color: #666;
+  box-sizing: border-box;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: #fff;
+}
+.detail_allcapacity .one_capacity:first-child {
+  margin-left: 0;
+}
+.detail_allcapacity .one_capacity:nth-child(5n+1) {
+  margin-left: 0;
+}
+.detail_allcapacity .one_capacity.active {
+  background-color: #8e6681;
+  border-color: #8e6681;
+  color: #fff;
+}
+@media screen and (min-width: 760px) {
+  .detail_allcapacity .one_capacity {
+    width: calc((100% - 30px)/7);
+  }
+  .detail_allcapacity .one_capacity:nth-child(5n+1) {
+    margin-left: 5px;
+  }
+  .detail_allcapacity .one_capacity:nth-child(7n+1) {
+    margin-left: 0;
+  }
+}
+
+.detail_MoreInfo_layout .one_info_row {
+  margin-top: 40px;
+}
+.detail_MoreInfo_layout .one_info_row .title {
+  font-size: 1rem;
+  color: #666;
+}
+.detail_MoreInfo_layout .one_info_row .title em {
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  background-color: #999;
+  margin: 0 8px;
+}
+.detail_MoreInfo_layout .one_info_row .bottle_number {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-end;
+}
+.detail_MoreInfo_layout .one_info_row .bottle_number img {
+  margin-left: 2px;
+  width: 10px;
+  height: auto;
+}
+.detail_MoreInfo_layout .one_info_row .bottle_number span {
+  font-weight: bold;
+  font-size: 1.75rem;
+  line-height: 1.125rem;
+  color: #6e6e6e;
+  margin-left: 8px;
+}
+.detail_MoreInfo_layout .one_info_row .bottle_number .btn_getwine {
+  font-size: 1.125rem;
+  padding: 0 18px;
+  height: 40px;
+  line-height: 42px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #904d06;
+  color: #fff;
+  margin-left: 16px;
+}
+.detail_MoreInfo_layout .one_info_row .text {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.25rem;
+}
+.detail_MoreInfo_layout .one_info_row .text span {
+  margin-left: 8px;
+}
+.detail_MoreInfo_layout .one_info_row .text span.rise {
+  color: #d30a0a;
+}
+.detail_MoreInfo_layout .one_info_row .text span.drop {
+  color: #0b7b62;
+}
+@media screen and (min-width: 760px) {
+  .detail_MoreInfo_layout .one_info_row .title {
+    font-size: 1.125rem;
+  }
+  .detail_MoreInfo_layout .one_info_row .title em {
+    height: 14px;
+    margin: 0 10px;
+  }
+  .detail_MoreInfo_layout .one_info_row .text {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .detail_MoreInfo_layout {
+    width: calc(55% + 40px);
+    position: absolute;
+    right: 40px;
+    margin-top: -388px;
+    padding-bottom: 190px;
+  }
+  .detail_MoreInfo_layout .one_info_row .title {
+    font-size: 1.375rem;
+  }
+  .detail_MoreInfo_layout .one_info_row .title em {
+    height: 16px;
+    margin: 0 14px;
+  }
+  .detail_MoreInfo_layout .one_info_row .text {
+    font-size: 1.375rem;
+    line-height: 1.75rem;
+    margin-top: 20px;
+  }
+}
+
+/*取酒視窗用樣式*/
+.PopWindow_CWC_row {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-top: 1px dotted #cccccc;
+}
+.PopWindow_CWC_row:first-child {
+  border: none;
+}
+.PopWindow_CWC_row .checkbox_and_info {
+  display: flex;
+  align-items: center;
+}
+.PopWindow_CWC_row .option_check {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.PopWindow_CWC_row .option_check .icon_check {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+}
+.PopWindow_CWC_row .option_check .icon_check.active:after {
+  content: '✓';
+  display: block;
+  color: #939334;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.PopWindow_CWC_row .bottle_info {
+  font-size: 1rem;
+  color: #666;
+  margin-left: 8px;
+}
+.PopWindow_CWC_row .bottle_info span {
+  margin-left: 8px;
+}
+.PopWindow_CWC_row .bottle_info span:first-child {
+  margin-left: 0;
+}
+.PopWindow_CWC_row .bottle_info span:after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  background-color: #999;
+  margin-left: 8px;
+}
+.PopWindow_CWC_row .bottle_info span:last-child:after {
+  display: none;
+}
+.PopWindow_CWC_row .bottle_number {
+  display: flex;
+  align-items: flex-end;
+}
+.PopWindow_CWC_row .bottle_number img {
+  width: 10px;
+  height: auto;
+}
+.PopWindow_CWC_row .bottle_number span {
+  font-size: 28px;
+  color: #6e6e6e;
+  font-weight: bold;
+  margin-left: 8px;
+}
+.PopWindow_CWC_row .count {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 16px;
+  display: none;
+  justify-content: flex-end;
+}
+.PopWindow_CWC_row .count .icon_minus {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #cccccc;
+  background-color: #e5e5e5;
+  margin-right: 5px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+}
+.PopWindow_CWC_row .count .icon_minus:after {
+  content: '';
+  width: 13px;
+  height: 3px;
+  background-color: #666666;
+  display: block;
+  position: absolute;
+  top: calc((100% - 3px)/2);
+  left: calc((100% - 13px)/2);
+}
+.PopWindow_CWC_row .count .bottle_number {
+  width: 80px;
+  height: 40px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 40px;
+  color: #666;
+  outline: none;
+}
+.PopWindow_CWC_row .count .icon_plus {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #cccccc;
+  background-color: #e5e5e5;
+  margin-left: 5px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+}
+.PopWindow_CWC_row .count .icon_plus:before {
+  content: '';
+  width: 3px;
+  height: 13px;
+  background-color: #666666;
+  display: block;
+  position: absolute;
+  top: calc((100% - 13px)/2);
+  left: calc((100% - 3px)/2);
+}
+.PopWindow_CWC_row .count .icon_plus:after {
+  content: '';
+  width: 13px;
+  height: 3px;
+  background-color: #666666;
+  display: block;
+  position: absolute;
+  top: calc((100% - 3px)/2);
+  left: calc((100% - 13px)/2);
+}
+@media screen and (min-width: 760px) {
+  .PopWindow_CWC_row .bottle_info {
+    font-size: 1.125rem;
+  }
+}
+
+.Popwindow_GetWineBtn {
+  width: 100%;
+  margin-top: 24px;
+  height: 60px;
+  line-height: 60px;
+  background-color: #904d06;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*修改詳目頁樣式給CWC用*/
+@media screen and (min-width: 1360px) {
+  .CWC .detail_BasicInfo {
+    top: 40px;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .CWC .footer {
+    position: fixed;
+    bottom: 100px;
+    margin-bottom: 0;
+    z-index: 99;
+  }
+}
+
+/*CWC cart用*/
+.CWC .step_option {
+  align-items: flex-end;
+}
+
+.CWC .cart_step_row {
+  position: relative;
+  justify-content: space-between;
+}
+.CWC .cart_step_row:after {
+  content: '';
+  display: block;
+  width: 75%;
+  height: 3px;
+  background-color: #ebebeb;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 37px;
+  margin: 0 auto;
+}
+.CWC .cart_step_row .one_dot {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.CWC .cart_step_row .one_dot .dot {
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  border: 4px solid #ebebeb;
+  background-color: #ebebeb;
+  border-radius: 50%;
+}
+.CWC .cart_step_row .one_dot .text {
+  width: 100%;
+  font-size: 1rem;
+  color: #ebebeb;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.CWC .cart_step_row .one_dot.active .dot {
+  border-color: #904d06;
+}
+.CWC .cart_step_row .one_dot.active .text {
+  color: #333;
+}
+
+.delivery_count_sum {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+.delivery_count_sum span {
+  color: #c29c20;
+  font-weight: bold;
+  margin: 0 8px;
+}
+@media screen and (min-width: 760px) {
+  .delivery_count_sum {
+    font-size: 1.375rem;
+    margin-bottom: 20px;
+  }
+}
+
+.CWC .cart_list_OneBottle .bottle_info {
+  margin-left: 40px;
+  width: calc(100% - 50px);
+}
+.CWC .cart_list_OneBottle .bottle_info .status span:last-child:after {
+  display: none;
+}
+.CWC .cart_list_OneBottle .bottle_info .storage_avg_price {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+.CWC .cart_list_OneBottle .bottle_info .storage_avg_price span.icon {
+  margin-left: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #999;
+  font-size: 11px;
+  text-align: center;
+  line-height: 18px;
+  color: #999;
+  cursor: pointer;
+}
+.CWC .cart_list_OneBottle .count_price .count_storage {
+  width: 100%;
+  text-align: right;
+  font-size: 1rem;
+  color: #666;
+  margin-top: 10px;
+}
+.CWC .cart_list_OneBottle .count_price .count_storage span {
+  font-weight: bold;
+  margin: 0 8px;
+}
+@media screen and (min-width: 760px) {
+  .CWC .cart_list_OneBottle .bottle_info .storage_avg_price {
+    font-size: 1.375rem;
+    margin-top: 12px;
+  }
+  .CWC .cart_list_OneBottle .bottle_info .storage_avg_price span.icon {
+    width: 22px;
+    height: 22px;
+    font-size: 13px;
+    margin-left: 12px;
+    line-height: 22px;
+  }
+  .CWC .cart_list_OneBottle .count_price .count_storage {
+    font-size: 1.375rem;
+    margin-top: 16px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .CWC .cart_list_OneBottle .bottle_info {
+    margin-left: 44px;
+    width: calc(55% - 44px);
+  }
+  .CWC .cart_list_OneBottle .count_price {
+    margin-left: 44px;
+    width: calc(45% - 44px);
+  }
+}
+
+.CWC .cart_list_layout:first-child {
+  padding-top: 16px;
+}
+
+.CWC .cart_form_row #DeliveryInfo_TypeInfo {
+  color: #999;
+  margin-top: 8px;
+  text-align: center;
+}
+@media screen and (min-width: 760px) {
+  .CWC .cart_form_row #DeliveryInfo_Type {
+    width: 100%;
+  }
+  .CWC .cart_form_row #DeliveryInfo_Type .dropdown {
+    width: 100%;
+    height: 3rem;
+    box-sizing: border-box;
+    float: none;
+    margin-right: 0;
+  }
 }
