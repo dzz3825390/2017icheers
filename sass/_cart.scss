@@ -1677,6 +1677,7 @@
 
 	& .btn_save{
 		display: none;
+		margin-top: -20px;
 	}
 
 	& .cart_form_row {
@@ -1745,6 +1746,10 @@
 	}
 }
 
+#CustomAddress{
+	margin-top: 0;
+}
+
 
 
 .cart_sum_layout{
@@ -1767,7 +1772,7 @@
 }
 
 .cart_form_row{
-	margin-top:1.25rem;
+	margin-top:1.75rem;
 	&:after{
 		@extend %clearfix;
 	}
@@ -1852,6 +1857,9 @@
 		text-align: center;
 		margin-top: 0.5rem;
 		margin-left:0;
+		&:first-child{
+			margin-top: 0;
+		}
 	}
 
 	& .Radio_Payment{
@@ -2021,6 +2029,9 @@
 
 		& .Radio_DeliveryTime{
 			width: calc((100% - 20px)/3);
+			&:first-child{
+				margin-top: 0.5rem;
+			}
 		}
 
 		&.delivery_datetime{
@@ -2148,8 +2159,8 @@
 
 		& .dropdown{
 			& .dropdown_text{
-				font-size: 1.125rem;
-				line-height: 1.125rem;
+				font-size: 1.375rem;
+				line-height: 1.375rem;
 				& span{
 					margin-top: 1px;
 				}
@@ -2689,6 +2700,25 @@
 	@include pad-width{
 		& input {
 			font-size: 1.375rem;
+		}
+	}
+}
+
+.PopWindow_ChoseCreditCard{
+	width: 100%;
+	& .one_option{
+		width: 100T;
+		height: 60px;
+		box-sizing: border-box;
+		border: 1px solid #cccccc;
+		margin-top: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		& img{
+			width:130px;
+			height: auto;
 		}
 	}
 }

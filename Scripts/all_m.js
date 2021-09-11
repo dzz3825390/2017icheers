@@ -385,7 +385,7 @@ $(document).ready(function(){
 	//送出確認信視窗
 	$('#OrderSubmit').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
-		PopWindow('#MailWindow1',intBrowserH,intBrowserW);
+		PopWindow('#VippassWindow2',intBrowserH,intBrowserW);
 	});
 
 	//未綁定信用卡送出

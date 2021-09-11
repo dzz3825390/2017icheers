@@ -4767,7 +4767,7 @@ h2.detail_Name_cn {
 }
 @media screen and (min-width: 1024px) {
   .cart_list_OneBottle .bottle_info {
-    width: 45%;
+    width: 40%;
   }
 }
 .cart_list_OneBottle .count_price {
@@ -4944,7 +4944,7 @@ h2.detail_Name_cn {
 }
 @media screen and (min-width: 1024px) {
   .cart_list_OneBottle .count_price {
-    width: calc(55% - 40px - 135px - 18px - 18px);
+    width: calc(60% - 40px - 135px - 18px - 18px);
     min-height: 135px;
   }
   .cart_list_OneBottle .count_price .count .bottle_number {
@@ -5229,7 +5229,7 @@ h2.detail_Name_cn {
 }
 @media screen and (min-width: 1024px) {
   .cart_list_OneGroup .group_wine .bottle_info {
-    width: 45%;
+    width: 40%;
   }
 }
 .cart_list_OneGroup .group_wine .bottle_img {
@@ -5424,7 +5424,7 @@ h2.detail_Name_cn {
 }
 @media screen and (min-width: 1024px) {
   .cart_list_OneGroup .count_price {
-    width: calc(55% - 40px - 135px - 18px - 18px);
+    width: calc(60% - 40px - 135px - 18px - 18px);
     min-height: 135px;
   }
   .cart_list_OneGroup .count_price .count .bottle_number {
@@ -5573,7 +5573,7 @@ h2.detail_Name_cn {
 }
 @media screen and (min-width: 760px) and (min-width: 1024px) {
   .cart_list_OneGroup .group_wine .bottle_info {
-    width: 45%;
+    width: 40%;
   }
 }
 @media screen and (min-width: 760px) {
@@ -5949,7 +5949,7 @@ h2.detail_Name_cn {
 }
 @media screen and (min-width: 1024px) {
   .cart_list_event_special .event_sum .count_price {
-    width: calc(55% - 40px - 135px - 18px - 18px);
+    width: calc(60% - 40px - 135px - 18px - 18px);
     min-height: 135px;
   }
   .cart_list_event_special .event_sum .count_price .count .bottle_number {
@@ -6119,7 +6119,7 @@ h2.detail_Name_cn {
 }
 @media screen and (min-width: 1024px) {
   .cart_list_gift .gift_wine .bottle_info {
-    width: 45%;
+    width: 40%;
   }
 }
 .cart_list_gift .gift_wine .bottle_img {
@@ -6299,7 +6299,7 @@ h2.detail_Name_cn {
 }
 @media screen and (min-width: 1024px) {
   .cart_list_gift .gift_wine .count_price {
-    width: calc(55% - 40px - 135px - 18px - 18px);
+    width: calc(60% - 40px - 135px - 18px - 18px);
     min-height: 135px;
   }
   .cart_list_gift .gift_wine .count_price .count .bottle_number {
@@ -6740,7 +6740,7 @@ h2.detail_Name_cn {
 }
 @media screen and (min-width: 1024px) {
   .cart_list_addon .addon_wine .bottle_info {
-    width: 45%;
+    width: 40%;
   }
 }
 .cart_list_addon .addon_wine .bottle_info .status span:nth-child(2):after {
@@ -7131,6 +7131,7 @@ h2.detail_Name_cn {
 }
 #Form_RecordedAddress .btn_save, #Form_RecordedCompany .btn_save {
   display: none;
+  margin-top: -20px;
 }
 #Form_RecordedAddress .cart_form_row .text, #Form_RecordedCompany .cart_form_row .text {
   color: #333;
@@ -7188,6 +7189,10 @@ h2.detail_Name_cn {
   }
 }
 
+#CustomAddress {
+  margin-top: 0;
+}
+
 .cart_sum_layout .BTN_Order_Detail_extend {
   margin-left: 0;
   font-size: 1.125rem;
@@ -7204,7 +7209,7 @@ h2.detail_Name_cn {
 }
 
 .cart_form_row {
-  margin-top: 1.25rem;
+  margin-top: 1.75rem;
 }
 .cart_form_row .formTitle {
   font-size: 1rem;
@@ -7279,6 +7284,9 @@ h2.detail_Name_cn {
   text-align: center;
   margin-top: 0.5rem;
   margin-left: 0;
+}
+.cart_form_row .Radio_DeliveryTime:first-child {
+  margin-top: 0;
 }
 .cart_form_row .Radio_Payment {
   padding: 0;
@@ -7428,6 +7436,9 @@ h2.detail_Name_cn {
   .cart_form_row .Radio_DeliveryTime {
     width: calc((100% - 20px)/3);
   }
+  .cart_form_row .Radio_DeliveryTime:first-child {
+    margin-top: 0.5rem;
+  }
   .cart_form_row.delivery_datetime {
     display: flex;
     flex-wrap: wrap;
@@ -7537,8 +7548,8 @@ h2.detail_Name_cn {
     margin-right: 10px;
   }
   .form_Address .dropdown .dropdown_text {
-    font-size: 1.125rem;
-    line-height: 1.125rem;
+    font-size: 1.375rem;
+    line-height: 1.375rem;
   }
   .form_Address .dropdown .dropdown_text span {
     margin-top: 1px;
@@ -8053,6 +8064,25 @@ h2.detail_Name_cn {
   .checkbox_layout .number_paperbag input {
     font-size: 1.375rem;
   }
+}
+
+.PopWindow_ChoseCreditCard {
+  width: 100%;
+}
+.PopWindow_ChoseCreditCard .one_option {
+  width: 100T;
+  height: 60px;
+  box-sizing: border-box;
+  border: 1px solid #cccccc;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.PopWindow_ChoseCreditCard .one_option img {
+  width: 130px;
+  height: auto;
 }
 
 .About_BG {

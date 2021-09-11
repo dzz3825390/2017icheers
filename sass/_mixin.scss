@@ -375,7 +375,7 @@ $LargePadPadding : 40px;
 
 	@media screen and (min-width:1024px){
 		& .bottle_info{
-			width: 45%;
+			width: 40%;
 		}
 	}
 	@content;
@@ -564,7 +564,7 @@ $LargePadPadding : 40px;
 	}
 
 	@media screen and (min-width:1024px){
-		width: calc(55% - 40px - 135px - 18px - 18px);
+		width: calc(60% - 40px - 135px - 18px - 18px);
 		min-height: 135px;
 		& .count{
 			& .bottle_number{

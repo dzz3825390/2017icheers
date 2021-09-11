@@ -422,6 +422,11 @@
 		   	//年齡確認視窗
 		   	PopWindow('#AgeConfrimWindow',intBrowserH,intBrowserW);
 
+		   	//老客戶刷卡/行動支付視窗
+		   	$('.btn_submit').click(function(){
+		   		PopWindow('#VipPassCreditCard',intBrowserH,intBrowserW);
+		   	});
+
 		   	//展開訂單明細
 		   	$('.BTN_Order_Detail_extend').click(function(){
 		   		
@@ -1436,7 +1441,30 @@
 			<div class="Popwindow_ConfirmBtnGray">取消</div>
 		</div>
 	</div>
-	<!--使用coupon end-->
+	<!--修改訂購人資訊 end-->
+
+	<!--Vip pass 刷卡/行動支付-->
+	<div class="PopWindow_layout" id="VipPassCreditCard">
+		<div class="PopWindow_title">
+			請選擇付款方式
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+
+			<div class="PopWindow_ChoseCreditCard">
+				<div class="one_option">
+					<img src="https://www.icheers.tw/iCheers/Content/images/mobile/letter_creditcard.jpg">
+				</div>
+				<div class="one_option">
+					<img src="https://www.icheers.tw/iCheers/Content/images/mobile/letter_applepay.jpg">
+				</div>
+				<div class="one_option">
+					<img src="https://www.icheers.tw/iCheers/Content/images/mobile/letter_googlepay.jpg">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Vip pass 刷卡/行動支付 end-->
 
 	
 
