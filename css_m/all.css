@@ -9706,8 +9706,7 @@ h2.detail_Name_cn {
 }
 .Order_Detail_layout .Order_Info_Row {
   width: 100%;
-  padding: 16px 0;
-  border-bottom: solid 1px #cccccc;
+  padding-top: 24px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -9717,8 +9716,11 @@ h2.detail_Name_cn {
   color: #999999;
   margin-top: 5px;
 }
+.Order_Detail_layout .Order_Info_Row .Info_Title + .WineName_Cn {
+  margin-top: 8px;
+}
 .Order_Detail_layout .Order_Info_Row .Info_Text {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: #333333;
   line-height: 1.75rem;
   margin-top: 8px;
@@ -9728,7 +9730,7 @@ h2.detail_Name_cn {
   color: #097cc5;
 }
 .Order_Detail_layout .Order_Info_Row .Info_Text span {
-  float: right;
+  margin-left: 10px;
 }
 .Order_Detail_layout .Order_Info_Row .Info_SmallText {
   font-size: 1rem;
@@ -9739,30 +9741,72 @@ h2.detail_Name_cn {
 .Order_Detail_layout .Order_Info_Row .Info_SmallText + .Info_SmallText {
   margin-top: 3px;
 }
+.Order_Detail_layout .Order_Info_Row.TitleBox {
+  width: 100%;
+  background-color: #fff;
+  margin-top: 32px;
+}
+.Order_Detail_layout .Order_Info_Row.TitleBox + .Order_Info_Row {
+  padding-top: 10px;
+}
+.Order_Detail_layout .Order_Info_Row.TitleBox .largeT {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.Order_Detail_layout .Order_Info_Row.TitleBox .secondT {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #666;
+  cursor: pointer;
+}
+.Order_Detail_layout .Order_Info_Row.TitleBox.StatusFast {
+  color: #ef9c00;
+}
+.Order_Detail_layout .Order_Info_Row.TitleBox.StatusNormal {
+  color: #4d4d4d;
+}
+.Order_Detail_layout .Order_Info_Row.TitleBox.StatusPreorder {
+  color: #0071bc;
+}
+.Order_Detail_layout .Order_Info_Row.TitleBox.StatuaCWC {
+  color: #904d06;
+}
+.Order_Detail_layout .Order_Info_Row.TitleBox.StatusFast .secondT:after {
+  content: '?';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #666;
+  border-radius: 50%;
+  color: #666;
+  font-size: 11px;
+  text-align: center;
+  line-height: 18px;
+  margin-left: 5px;
+  position: relative;
+  top: -2px;
+}
 .Order_Detail_layout .Order_Info_Row .WineName_En {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #333333;
   line-height: 1.5rem;
-  max-height: 3rem;
-  overflow: hidden;
-  margin-top: 1rem;
-  font-weight: bold;
+  min-height: 1.5rem;
 }
 .Order_Detail_layout .Order_Info_Row .WineName_Cn {
   font-size: 1rem;
-  color: #666666;
+  color: #333333;
   line-height: 1.5rem;
-  max-height: 1.5rem;
-  overflow: hidden;
-  margin-top: 5px;
+  min-height: 1.5rem;
+  margin-top: 1.25rem;
 }
 .Order_Detail_layout .Order_Info_Row .WineInfo {
   margin-top: 5px;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: #808080;
+  color: #333333;
 }
 .Order_Detail_layout .Order_Info_Row .WineInfo span {
-  padding: 0 5px;
+  padding: 0 8px;
   border-left: solid 1px #cccccc;
   float: left;
 }
@@ -9770,95 +9814,68 @@ h2.detail_Name_cn {
   padding-left: 0;
   border-left: none;
 }
+.Order_Detail_layout .Order_Info_Row .WineCountAndPrice {
+  display: flex;
+  color: #333333;
+  justify-content: space-between;
+  margin-top: 10px;
+}
 .Order_Detail_layout .Order_Info_Row .WineCount {
-  margin-top: 16px;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.5rem;
-  color: #666;
 }
 .Order_Detail_layout .Order_Info_Row .WinePrice {
   text-align: right;
   font-size: 1rem;
   line-height: 1.5rem;
-  color: #666;
-  margin-top: 20px;
 }
 .Order_Detail_layout .Order_Info_Row .WinePrice b {
   font-weight: bold;
   margin-left: 5px;
-  font-size: 1.25rem;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox {
-  padding: 1rem;
-  margin-top: 1rem;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  background-color: #d9d9d9;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox .largeT {
-  font-size: 1.25rem;
-  color: #333333;
-  line-height: 1.75rem;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox .secondT {
   font-size: 1rem;
-  color: #666666;
-  line-height: 1.5rem;
 }
-.Order_Detail_layout .Order_Info_Row .TitleBox .secondT a {
-  color: #fff;
-  text-decoration: underline;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox + .Info_Title {
-  margin-top: 20px;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox.StatusFast {
-  background-color: #ef9c00;
-  margin-bottom: 1rem;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox.StatusFast .largeT {
-  color: #fff;
-  font-weight: bold;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox.StatusFast .secondT {
-  color: #fff;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox.StatusNormal {
-  background-color: #4d4d4d;
-  margin-bottom: 1rem;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox.StatusNormal .largeT {
-  color: #fff;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox.StatusNormal .secondT {
-  color: #fff;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox.StatusPreorder {
-  background-color: #0071bc;
-  margin-bottom: 1rem;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox.StatusPreorder .largeT {
-  color: #fff;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox.StatusPreorder .secondT {
-  color: #fff;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox.Fast {
-  background-color: #f1e8d7;
-}
-.Order_Detail_layout .Order_Info_Row .TitleBox.Preorder {
-  background-color: #cbdeea;
-}
-.Order_Detail_layout .Order_Info_Row .DottedLine {
-  width: calc(100% - 2rem);
-  border-top: 1px dotted #cccccc;
-  margin: 1.5rem 1rem;
-}
-.Order_Detail_layout .Order_Info_Row .SolidLine {
+.Order_Detail_layout .Order_Info_Row .group_wine_detail {
+  margin-top: 16px;
   width: 100%;
-  border-top: 1px solid #cccccc;
-  margin: 1.5rem 0;
+}
+.Order_Detail_layout .Order_Info_Row .btn_group_wine_detail_extend {
+  width: 100%;
+  margin-top: 16px;
+  font-size: 1rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.Order_Detail_layout .Order_Info_Row .btn_group_wine_detail_extend span.icon_extend {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-left: 5px;
+}
+.Order_Detail_layout .Order_Info_Row .btn_group_wine_detail_extend span.icon_extend:before {
+  width: 9px;
+  height: 1px;
+  content: '';
+  display: block;
+  background-color: #666;
+}
+.Order_Detail_layout .Order_Info_Row .btn_group_wine_detail_extend span.icon_extend:after {
+  width: 8px;
+  height: 1px;
+  content: '';
+  display: block;
+  background-color: #666;
+  position: absolute;
+  transform: rotate(90deg);
+}
+.Order_Detail_layout .Order_Info_Row .btn_group_wine_detail_extend span.icon_extend.active:after {
+  display: none;
 }
 .Order_Detail_layout .Order_Status {
   display: flex;
@@ -10002,6 +10019,9 @@ h2.detail_Name_cn {
   max-height: 0;
   overflow: hidden;
 }
+.Order_Detail_layout.Order_Detail_extend .TitleBox:first-child {
+  margin-top: 0px;
+}
 .Order_Detail_layout.Extend {
   max-height: 99999px;
 }
@@ -10024,40 +10044,66 @@ h2.detail_Name_cn {
     margin-left: 1rem;
     margin-right: 1rem;
   }
+  .Order_Detail_layout .Order_Info_Row {
+    padding-top: 36px;
+  }
+  .Order_Detail_layout .Order_Info_Row .Info_Title {
+    font-size: 1.375rem;
+  }
+  .Order_Detail_layout .Order_Info_Row .Info_Title + .WineName_Cn {
+    margin-top: 14px;
+  }
+  .Order_Detail_layout .Order_Info_Row .Info_Text {
+    font-size: 1.375rem;
+    margin-top: 14px;
+  }
+  .Order_Detail_layout .Order_Info_Row .Info_SmallText {
+    font-size: 1.375rem;
+    line-height: 2rem;
+  }
   .Order_Detail_layout .Order_Info_Row .WineName_En {
-    font-size: 1.75rem;
-    line-height: 2.1rem;
-    max-height: 4.2rem;
+    font-size: 1.375rem;
+    line-height: 2rem;
   }
   .Order_Detail_layout .Order_Info_Row .WineName_Cn {
-    font-size: 1.25rem;
-    height: 1.5rem;
+    font-size: 1.375rem;
+    line-height: 2rem;
   }
   .Order_Detail_layout .Order_Info_Row .WineInfo {
     margin-top: 10px;
   }
   .Order_Detail_layout .Order_Info_Row .WineInfo span {
-    font-size: 1.25rem;
-    height: 1.05rem;
+    font-size: 1.375rem;
     padding: 0 12px;
   }
   .Order_Detail_layout .Order_Info_Row .WineCount {
-    font-size: 1.25rem;
+    font-size: 1.375rem;
   }
   .Order_Detail_layout .Order_Info_Row .WinePrice b {
-    font-size: 2rem;
+    font-size: 1.375rem;
   }
-  .Order_Detail_layout .Order_Info_Row .TitleBox {
-    padding: 1.25rem;
-    margin-top: 2.5rem;
+  .Order_Detail_layout .Order_Info_Row.TitleBox {
+    margin-top: 36px;
   }
-  .Order_Detail_layout .Order_Info_Row .TitleBox .largeT {
+  .Order_Detail_layout .Order_Info_Row.TitleBox .largeT {
     font-size: 1.75rem;
     line-height: 2.6rem;
   }
-  .Order_Detail_layout .Order_Info_Row .TitleBox .secondT {
-    font-size: 1.5rem;
+  .Order_Detail_layout .Order_Info_Row.TitleBox .secondT {
+    font-size: 1.375rem;
     line-height: 2rem;
+    margin-top: 4px;
+  }
+  .Order_Detail_layout .Order_Info_Row .WineCountAndPrice {
+    margin-top: 24px;
+  }
+  .Order_Detail_layout .Order_Info_Row .WinePrice {
+    font-size: 1.375rem;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .Order_Detail_layout .Order_Info_Row {
+    padding-top: 54px;
   }
 }
 

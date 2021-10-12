@@ -365,27 +365,29 @@
 	}
 	& .Order_Info_Row{
 		width: 100%;
-		padding: 16px 0;
-		border-bottom: $BorderColor;
+		padding-top: 24px;
 		@include box-sizing(border-box);
 		& .Info_Title{
 			font-size: 1rem;
 			color: #999999;
 			margin-top: 5px;
+			& + .WineName_Cn{
+				margin-top:8px;
+			}
 		}
 
 		& .Info_Text{
-			font-size: 1.25rem;
+			font-size: 1rem;
 			color: #333333;
 			line-height: 1.75rem;
-			margin-top: 8px;
+			margin-top: 8px;	
 			& a {
 				text-decoration: underline;
 				color: #097cc5;
 			}
 
 			& span{
-				float: right;
+				margin-left: 10px;
 			}
 		}
 
@@ -399,134 +401,152 @@
 			}
 		}
 
+		&.TitleBox{
+			width: 100%;
+			background-color: #fff;
+			margin-top: 32px;
+			& + .Order_Info_Row{
+				padding-top: 10px;
+			}
+			& .largeT{
+				font-size: 1.5rem;
+    			font-weight: bold;
+			}
+
+			& .secondT{
+				 margin-top: 12px;
+    			font-size: 1rem;
+    			color: #666;
+    			cursor: pointer;
+			}
+
+			&.StatusFast{
+				color:$FastColor;
+			}
+
+			&.StatusNormal{
+				color:$NormalColor-black;
+			}
+
+			&.StatusPreorder{
+				color:$PreorderColor;
+			}
+
+			&.StatuaCWC{
+				color:$CWCColor;
+			}
+
+			&.StatusFast .secondT:after{
+				content: '?';
+			    display: inline-block;
+			    width: 18px;
+			    height: 18px;
+			    border: 1px solid #666;
+			    border-radius: 50%;
+			    color: #666;
+			    font-size: 11px;
+			    text-align: center;
+			    line-height: 18px;
+			    margin-left: 5px;
+			    position: relative;
+			    top: -2px;
+			}
+		}
+
 		& .WineName_En{
-			font-size: 1.125rem;
+			font-size: 1rem;
 			color: $TitleColor;
 			line-height: 1.5rem;
-			max-height: 3rem;
-			overflow:hidden;
-			margin-top: 1rem;
-			font-weight: bold;
+			min-height: 1.5rem;
 		}
 
 		& .WineName_Cn{
-			font-size: $PhoneSecondTitleFontSize;
-			color: $TextColor;
+			font-size: 1rem;
+			color: $TitleColor;
 			line-height: 1.5rem;
-			max-height: 1.5rem;
-			overflow:hidden;
-			margin-top: 5px;
+			min-height: 1.5rem;
+			margin-top: 1.25rem;
 		}
 
 		& .WineInfo{
 			margin-top: 5px;
-			@include BottleInfo($PhoneContentFontSize,5px);
+			@include BottleInfo($PhoneSecondTitleFontSize,8px);
+			color:$TitleColor;
 			&:after{
 				@extend %clearfix;
 			}
 		}
 
+		& .WineCountAndPrice{
+			display: flex;
+			color:$TitleColor;
+			justify-content: space-between;
+			margin-top: 10px;
+		}
+
 		& .WineCount{
-			margin-top: 16px;
-			font-size: 1.125rem;
+			font-size: 1rem;
 			line-height: 1.5rem;
-			color: #666;
 		}
 
 		& .WinePrice{
 			text-align: right;
 			font-size: 1rem;
 			line-height: 1.5rem;
-			color: #666;
-			margin-top: 20px;
 			& b{
 				font-weight: bold;
 				margin-left: 5px;
-				font-size: 1.25rem;
-			}
-		}
-
-		& .TitleBox{
-			padding: 1rem;
-			margin-top: 1rem;
-			@include box-sizing(border-box);
-			background-color: #d9d9d9;
-			& .largeT{
-				font-size: 1.25rem;
-			    color: #333333;
-			    line-height: 1.75rem;
-			}
-
-			& .secondT{
 				font-size: 1rem;
-			    color: #666666;
-			    line-height: 1.5rem;
-			    & a{
-			    	color: #fff;
-			    	text-decoration: underline;
+			}
+		}
+
+		& .group_wine_detail{
+			margin-top: 16px;
+    		width: 100%;
+		}
+
+		& .btn_group_wine_detail_extend{
+			width:100%;
+		    margin-top: 16px;
+		    font-size: 1rem;
+		    color: #666;
+		    display: flex;
+		    align-items: center;
+		    cursor: pointer;
+
+		    & span.icon_extend{
+		    	width: 17px;
+			    height: 17px;
+			    border-radius: 50%;
+			    border: 1px solid #999;
+			    display: flex;
+			    align-items: center;
+			    justify-content: center;
+			    position: relative;
+			    margin-left: 5px;
+
+			    &:before{
+			    	width: 9px;
+				    height: 1px;
+				    content: '';
+				    display: block;
+				    background-color: #666;
 			    }
-			}
 
-			&+.Info_Title{
-				margin-top: 20px;
-			}
+			    &:after{
+			    	width: 8px;
+				    height: 1px;
+				    content: '';
+				    display: block;
+				    background-color: #666;
+				    position: absolute;
+				    transform: rotate(90deg);
+			    }
 
-			&.StatusFast{
-				background-color: #ef9c00;
-				margin-bottom: 1rem;
-				& .largeT{
-					color: #fff;
-					font-weight: bold;
-				}
-
-				& .secondT{
-					color: #fff;
-				}
-			}
-
-			&.StatusNormal{
-				background-color: #4d4d4d;
-				margin-bottom: 1rem;
-				& .largeT{
-					color: #fff;
-				}
-
-				& .secondT{
-					color: #fff;
-				}
-			}
-
-			&.StatusPreorder{
-				background-color: #0071bc;
-				margin-bottom: 1rem;
-				& .largeT{
-					color: #fff;
-				}
-
-				& .secondT{
-					color: #fff;
-				}
-			}
-
-			&.Fast{
-				background-color: #f1e8d7;
-			}
-
-			&.Preorder{
-				background-color: #cbdeea;
-			}
-		}
-
-		.DottedLine{
-			width: calc(100% - 2rem);
-			border-top: 1px dotted #cccccc;
-			margin: 1.5rem 1rem;
-		}
-
-		.SolidLine{
-			width: 100%;
-			border-top: 1px solid #cccccc;
-			margin: 1.5rem 0;
+			    &.active:after{
+			    	display: none;
+			    }
+		    }
 		}
 
 	}
@@ -677,6 +697,9 @@
 		transition: max-height 0.5s ease-in;
 		max-height: 0;
 		overflow: hidden;
+		& .TitleBox:first-child{
+			margin-top: 0px;
+		}
 	}
 
 	&.Extend{
@@ -704,37 +727,52 @@
 		}
 
 		& .Order_Info_Row{
+			padding-top: 36px;
+			& .Info_Title{
+				font-size: 1.375rem;
+				& + .WineName_Cn{
+					margin-top: 14px;
+				}
+			}
+
+			& .Info_Text{
+				font-size: 1.375rem;
+				margin-top: 14px;
+			}
+
+			& .Info_SmallText{
+				font-size: 1.375rem;
+				line-height: 2rem;
+			}
+
 			& .WineName_En{
-				font-size: 1.75rem;
-			    line-height: 2.1rem;
-			    max-height: 4.2rem;
+				font-size: 1.375rem;
+			    line-height: 2rem;
 			}
 
 			& .WineName_Cn{
-				font-size: 1.25rem;
-    			height: 1.5rem;
+				font-size: 1.375rem;
+    			line-height: 2rem;
 			}
 
 			& .WineInfo{
 				margin-top: 10px;
 				& span{
-					font-size: 1.25rem;
-    				height: 1.05rem;
+					font-size: 1.375rem;
     				padding: 0 12px;
 				}	
 			}
 
 			& .WineCount{
-				font-size: 1.25rem;
+				font-size: 1.375rem;
 			}
 
 			& .WinePrice b{
-				font-size: 2rem;
+				font-size: 1.375rem;
 			}
 
-			& .TitleBox{
-			    padding: 1.25rem;
-    			margin-top: 2.5rem;
+			&.TitleBox{
+    			margin-top: 36px;
 
     			& .largeT{
     				font-size: 1.75rem;
@@ -742,10 +780,25 @@
     			}
 
     			& .secondT{
-  				    font-size: 1.5rem;
+  				    font-size: 1.375rem;
     				line-height: 2rem;
+    				margin-top: 4px;
     			}
 			}
+
+			& .WineCountAndPrice{
+				margin-top: 24px;
+			}
+
+			& .WinePrice{
+				font-size: 1.375rem; 
+			}
+		}
+	}
+
+	@include large-pad-width{
+		& .Order_Info_Row{
+			padding-top: 54px;
 		}
 	}
 }
