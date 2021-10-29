@@ -322,6 +322,10 @@ span.more{
 	}
 }
 
+.cwc_cart{
+	background-image: url(../images/mobile/cwc_cart_icon.png);
+}
+
 /***mylist end***/
 
 /***content***/
@@ -552,6 +556,10 @@ h4{
 	@include pad-width{
 		height: 70px;
 		margin-bottom: 80px;
+	}
+
+	@include pad-width1024{
+		margin-top: 0;
 	}
 
 	@include large-pad-width{
@@ -1034,6 +1042,20 @@ h4{
 	}
 }
 
+.SideMenu_OneOption{
+	width: 100%;
+	padding:0 15px;
+	height: 50px;
+	font-size: 1rem;
+	color: #666;
+	line-height: 50px;
+	background-color: #ededed;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+}
+
+
 .SideMenu_Mode{
 	width: 100%;
 	padding:0 15px;
@@ -1082,6 +1104,30 @@ h4{
 		@extend %backgroundimagecontain;
 		margin-right: 10px;
 		margin-top: -1px;
+	}
+}
+
+.SideMenu_OrderProgress{
+	width: calc(100% - 30px);
+	padding: 0 15px;
+	height: 40px;
+	font-size: 1rem;
+	color: #666;
+	line-height: 40px;
+	margin-top: 10px;
+	&:after{
+		@extend %clearfix;
+	}
+
+	& .icon{
+		display: inline-block;
+		width: 27px;
+		height: 18px;
+		background-image:url(../images/mobile/icon_orderprogress.png);
+		@extend %backgroundimagecover;
+		float: left;
+		margin-top: 10px;
+		margin-right: 10px;
 	}
 }
 

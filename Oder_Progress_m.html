@@ -92,14 +92,20 @@
 
 			//查詢條件高度(1024up)
 		   	if (intBrowserW > 1023) {
+		   		var SearchConditionHeight = intBrowserH - 156;
+		   		$('.Order_SearchCondition_layout').css('height',SearchConditionHeight);
+		   	} else if (intBrowserW > 1360) {
 		   		var SearchConditionHeight = intBrowserH - 226;
 		   		$('.Order_SearchCondition_layout').css('height',SearchConditionHeight);
 		   	}
 
 		   	//查詢結果列表高度(1024up)
 		    if (intBrowserW > 1023) {
+		   		var SearchListHeight = intBrowserH - 156;
+		   		$('.OrderList_layout').css('height',SearchListHeight);
+		   	} else if (intBrowserW > 1360){
 		   		var SearchListHeight = intBrowserH - 226;
-		   		$('.OrderList_layout').css('min-height',SearchListHeight);
+		   		$('.OrderList_layout').css('height',SearchListHeight);
 		   	}
 
 

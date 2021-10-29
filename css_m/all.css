@@ -76,13 +76,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 }
 
-.clearfix:after, .footer:after, .SideMenu_SearchRow:after, .SideMenu_SearchInput:after, .SideMenu_Detail_list2 span:after, .SideMenu_RecentView:after, .SideMenu_GotoDesktop:after, .SideMenu_OrderProgress:after, .SideMenu_TrackingList:after, .OneWine:after, .OneWine .info .bottle_info:after, .pagination_layout .pagination:after, .fourbanner_layout:after, .BottlesZone_onebottle .bottle_info:after, .BottlesZone_onebottle .bottle_price:after, .FastZone_bottles_layout:after, .NormalZone_bottles_layout:after, .MemberOnly_layout .bottle_price:after, .Events_layout:after, .PreorderZone_BottleInfo:after, .PreorderZone_BottleInfo .bottle_info:after, .ArticleZone_layout:after, .Article_layout:after, .GoToDesktop .option:after, .detail_price_row:after, .detail_MoreInfo_layout:after, .detail_MoreInfo_BtnOpen:after, .detail_GroupProduct_layout:after, .detail_introduce_layout:after, .winelist_searchCondition_text:after, .winelist_searchCondition_filter:after, .winelist_OneWine_layout:after, .winelist_OneWine_Info .bottle_info:after, .winelist_OneWine_Info .bottle_origin:after, .winelist_OneWine_Info .bottle_price .price_row:after, .winelist_MoreInfo_BtnOpen:after, .winelist_allyear_extend .OneYearRow:after, .cart_form_row:after, .About_SpecialQuote:after, .About_img:after, .About_BounsInfo:after, .About_Bouns_table .Row .MemberLevel:after, .About_DeliveryInfo:after, .About_DeliveryInfo .title:after, .About_Newbie_mylist:after, .About_Quality_Icons_Bg:after, .winery_intro .Region, .WineryIntroZone_onewinery .WineryRegion, .Order_SearchCondition_form_row:after, .Order_Detail_layout .Order_Info_Row .WineInfo:after, .CWC .cart_form_row #DeliveryInfo_Type:after {
+.clearfix:after, .footer:after, .SideMenu_SearchRow:after, .SideMenu_SearchInput:after, .SideMenu_Detail_list2 span:after, .SideMenu_OrderProgress:after, .SideMenu_RecentView:after, .SideMenu_GotoDesktop:after, .SideMenu_TrackingList:after, .OneWine:after, .OneWine .info .bottle_info:after, .pagination_layout .pagination:after, .fourbanner_layout:after, .BottlesZone_onebottle .bottle_info:after, .BottlesZone_onebottle .bottle_price:after, .FastZone_bottles_layout:after, .NormalZone_bottles_layout:after, .MemberOnly_layout .bottle_price:after, .Events_layout:after, .PreorderZone_BottleInfo:after, .PreorderZone_BottleInfo .bottle_info:after, .ArticleZone_layout:after, .Article_layout:after, .GoToDesktop .option:after, .detail_price_row:after, .detail_MoreInfo_layout:after, .detail_MoreInfo_BtnOpen:after, .detail_GroupProduct_layout:after, .detail_introduce_layout:after, .winelist_searchCondition_text:after, .winelist_searchCondition_filter:after, .winelist_OneWine_layout:after, .winelist_OneWine_Info .bottle_info:after, .winelist_OneWine_Info .bottle_origin:after, .winelist_OneWine_Info .bottle_price .price_row:after, .winelist_MoreInfo_BtnOpen:after, .winelist_allyear_extend .OneYearRow:after, .cart_form_row:after, .About_SpecialQuote:after, .About_img:after, .About_BounsInfo:after, .About_Bouns_table .Row .MemberLevel:after, .About_DeliveryInfo:after, .About_DeliveryInfo .title:after, .About_Newbie_mylist:after, .About_Quality_Icons_Bg:after, .winery_intro .Region, .WineryIntroZone_onewinery .WineryRegion, .Order_SearchCondition_form_row:after, .Order_Detail_layout .Order_Info_Row .WineInfo:after, .CWC .cart_form_row #DeliveryInfo_Type:after {
   content: '';
   display: block;
   clear: both;
 }
 
-.logo, .icheers_slogan, .footer_option .icon, .SideMenu_SignInBTN, .SideMenu_SearchInput .search_icon, .SideMenu_RecentView .icon, .SideMenu_GotoDesktop .icon, .SideMenu_OrderProgress .icon, .OneWine .img-s, .LoadingPage .logo, .GoToDesktop .icon, .detail_bottleImg_btn_track, .detail_bottle_info .btn_track_singleyear, .winelist_OneWine_bottleImg, .winelist_OneWine_bottleImg .winelist_OneWine_btn_track, .About_DeliveryInfo .title .Normal, .About_DeliveryInfo .title .Fast, .About_DeliveryInfo .title .Preorder, .About_Newbie_Arrow, .About_Quality_Icons_Bg, .icon_sidemenu, .winery_intro .Region .flags, .WineryIntroZone_onewinery .WineryRegion .flags {
+.logo, .icheers_slogan, .footer_option .icon, .SideMenu_SignInBTN, .SideMenu_SearchInput .search_icon, .SideMenu_OrderProgress .icon, .SideMenu_RecentView .icon, .SideMenu_GotoDesktop .icon, .OneWine .img-s, .LoadingPage .logo, .GoToDesktop .icon, .detail_bottleImg_btn_track, .detail_bottle_info .btn_track_singleyear, .winelist_OneWine_bottleImg, .winelist_OneWine_bottleImg .winelist_OneWine_btn_track, .About_DeliveryInfo .title .Normal, .About_DeliveryInfo .title .Fast, .About_DeliveryInfo .title .Preorder, .About_Newbie_Arrow, .About_Quality_Icons_Bg, .icon_sidemenu, .winery_intro .Region .flags, .WineryIntroZone_onewinery .WineryRegion .flags {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -461,6 +461,10 @@ span.more:after {
   }
 }
 
+.cwc_cart {
+  background-image: url(../images/mobile/cwc_cart_icon.png);
+}
+
 /***mylist end***/
 /***content***/
 .content_layout {
@@ -704,6 +708,11 @@ h4 {
   .footer {
     height: 70px;
     margin-bottom: 80px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer {
+    margin-top: 0;
   }
 }
 @media screen and (min-width: 1360px) {
@@ -1229,6 +1238,19 @@ h4 {
   border-radius: 50%;
 }
 
+.SideMenu_OneOption {
+  width: 100%;
+  padding: 0 15px;
+  height: 50px;
+  font-size: 1rem;
+  color: #666;
+  line-height: 50px;
+  background-color: #ededed;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
 .SideMenu_Mode {
   width: 100%;
   padding: 0 15px;
@@ -1273,6 +1295,25 @@ h4 {
   background-image: url(../images/mobile/export_icon.png);
   margin-right: 10px;
   margin-top: -1px;
+}
+
+.SideMenu_OrderProgress {
+  width: calc(100% - 30px);
+  padding: 0 15px;
+  height: 40px;
+  font-size: 1rem;
+  color: #666;
+  line-height: 40px;
+  margin-top: 10px;
+}
+.SideMenu_OrderProgress .icon {
+  display: inline-block;
+  width: 27px;
+  height: 18px;
+  background-image: url(../images/mobile/icon_orderprogress.png);
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .SideMenu_RecentView {
@@ -3326,6 +3367,10 @@ h4 {
   width: 27px;
   height: 45px;
 }
+.GoToDesktop .option#CWC .icon {
+  width: 22px;
+  height: 45px;
+}
 .GoToDesktop .text {
   font-size: 1rem;
   height: 45px;
@@ -3345,6 +3390,10 @@ h4 {
   }
   .GoToDesktop .option#Order_progress .icon {
     width: 36px;
+    height: 70px;
+  }
+  .GoToDesktop .option#CWC .icon {
+    width: 27px;
     height: 70px;
   }
   .GoToDesktop .text {
@@ -9352,7 +9401,7 @@ h2.detail_Name_cn {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-@media screen and (orientation: landscape) and (min-width: 1020px) {
+@media screen and (min-width: 1024px) {
   .Order_SearchCondition_layout {
     width: 40vw;
     background-color: #ededed;
@@ -9370,7 +9419,7 @@ h2.detail_Name_cn {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-@media screen and (orientation: landscape) and (min-width: 1020px) {
+@media screen and (min-width: 1024px) {
   .Order_SearchCondition_CloseTitle {
     display: none;
   }
@@ -9392,7 +9441,7 @@ h2.detail_Name_cn {
 .Order_SearchCondition_DownArrow span {
   display: inline-block;
 }
-@media screen and (orientation: landscape) and (min-width: 1020px) {
+@media screen and (min-width: 1024px) {
   .Order_SearchCondition_DownArrow {
     display: none;
   }
@@ -9426,7 +9475,7 @@ h2.detail_Name_cn {
     padding: 1.5rem 20px;
   }
 }
-@media screen and (orientation: landscape) and (min-width: 1020px) {
+@media screen and (min-width: 1024px) {
   .Order_SearchCondition_Extend {
     display: block;
     width: 100%;
@@ -9555,7 +9604,7 @@ h2.detail_Name_cn {
     padding-bottom: 20px;
   }
 }
-@media screen and (orientation: landscape) and (min-width: 1020px) {
+@media screen and (min-width: 1024px) {
   .OrderList_layout {
     width: 60vw;
     position: fixed;
@@ -10290,6 +10339,207 @@ h2.detail_Name_cn {
   }
 }
 
+.SearchResult {
+  width: 100%;
+  padding: 0 16px;
+  padding-top: 70px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 760px) {
+  .SearchResult {
+    padding: 0 1.25rem;
+    padding-top: 70px;
+    padding-bottom: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .SearchResult {
+    width: 60vw;
+    position: fixed;
+    right: 0;
+    padding-top: 0;
+    overflow-y: scroll;
+  }
+}
+
+.one_result_row {
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  margin-top: 24px;
+  border-bottom: dotted 1px #cccccc;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.one_result_row:last-child {
+  border-bottom: none;
+}
+.one_result_row .date {
+  width: 100%;
+  font-size: 1rem;
+  color: #333;
+}
+.one_result_row .name {
+  width: 100%;
+  margin-top: 8px;
+}
+.one_result_row .name .name_cn {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #333;
+}
+.one_result_row .name .name_en {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #333;
+  margin-top: 2px;
+}
+.one_result_row .text {
+  width: 70%;
+}
+.one_result_row .text .item {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 8px;
+}
+.one_result_row .info {
+  width: 100%;
+  position: relative;
+  margin-top: 8px;
+}
+.one_result_row .info span {
+  font-size: 1rem;
+  color: #333;
+  margin-left: 5px;
+}
+.one_result_row .info span:first-child {
+  margin-left: 0;
+}
+.one_result_row .info span:after {
+  content: '';
+  width: 1px;
+  height: 10px;
+  background-color: #666;
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  margin-left: 8px;
+}
+.one_result_row .info span:last-child:after {
+  display: none;
+}
+.one_result_row .price {
+  text-align: right;
+  width: 30%;
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+.one_result_row .record {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #cccccc;
+  font-size: 1rem;
+  margin-top: 16px;
+  color: #666;
+}
+.one_result_row .record .row {
+  width: 100%;
+  padding: 12px 0;
+  border-bottom: 1px solid #cccccc;
+  background-color: #fff;
+  display: flex;
+}
+.one_result_row .record .row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.one_result_row .record .row:last-child {
+  border-bottom: none;
+}
+.one_result_row .record .row .text {
+  width: 40%;
+  padding-right: 24px;
+  text-align: right;
+}
+.one_result_row .record .row .storage {
+  color: #d30a0a;
+  font-weight: bold;
+}
+.one_result_row .record .row .take {
+  color: #0b7b62;
+  font-weight: bold;
+}
+.one_result_row .record .row .text_r {
+  width: 60%;
+  text-align: center;
+}
+.one_result_row .record .row a {
+  text-decoration: underline;
+  color: #296993;
+}
+@media screen and (min-width: 760px) {
+  .one_result_row {
+    padding-bottom: 28px;
+    margin-top: 32px;
+  }
+  .one_result_row .text {
+    width: 80%;
+  }
+  .one_result_row .text .item {
+    font-size: 1.375rem;
+    margin-top: 12px;
+  }
+  .one_result_row .date {
+    font-size: 1.25rem;
+  }
+  .one_result_row .name {
+    margin-top: 12px;
+  }
+  .one_result_row .name .name_cn {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .one_result_row .name .name_en {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-top: 6px;
+  }
+  .one_result_row .info {
+    margin-top: 8px;
+  }
+  .one_result_row .info span {
+    font-size: 1.25rem;
+    margin-left: 8px;
+  }
+  .one_result_row .info span:after {
+    height: 12px;
+    margin-left: 12px;
+  }
+  .one_result_row .price {
+    width: 20%;
+    font-size: 1.375rem;
+  }
+  .one_result_row .record {
+    font-size: 1.25rem;
+    margin-top: 24px;
+  }
+  .one_result_row .record .row {
+    padding: 16px 0;
+  }
+  .one_result_row .record .row .text {
+    padding-right: 32px;
+  }
+}
+
+/*
+.cwc_storagerecord .one_result_row{
+	border-bottom: none;
+}*/
 .CWC .header {
   border-color: #904d06;
 }

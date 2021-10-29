@@ -28,6 +28,21 @@
 	![endif]-->
 
 	<script type="text/javascript">
+		function SearchConditionExtend() {
+			//check extend or not
+		    var IsExtend = $('.Order_SearchCondition_layout').hasClass('Order_SearchCondition_Open');
+		    //extneded
+		    if (IsExtend) {
+		    	//do nothing
+		    } 
+		    //not extend
+		    else {
+		    	$('.Order_SearchCondition_layout').addClass('Order_SearchCondition_Open');
+		    	$('.Order_SearchCondition_Extend').slideDown();
+		    	$('.Order_SearchCondition_layout').unbind('click');
+		    }
+		}
+
 		$(document).ready(function(){
 			var intBrowserW = 0;
 
@@ -43,10 +58,49 @@
 				    intBrowserH = document.body.clientHeight;
 				}
 
-		   
 			$('.SideMenu_Filter').click(function(){
 				$(this).next().slideToggle();
 			});
+
+			//查詢條件高度(1024up)
+		   	if (intBrowserW > 1023) {
+		   		var SearchConditionHeight = intBrowserH - 156;
+		   		$('.Order_SearchCondition_layout').css('height',SearchConditionHeight);
+		   	} else if (intBrowserW > 1360) {
+		   		var SearchConditionHeight = intBrowserH - 226;
+		   		$('.Order_SearchCondition_layout').css('height',SearchConditionHeight);
+		   	}
+
+		   	//查詢結果列表高度(1024up)
+		    if (intBrowserW > 1023) {
+		   		var SearchListHeight = intBrowserH - 156;
+		   		$('.SearchResult').css('height',SearchListHeight);
+		   	} else if (intBrowserW > 1360) {
+		   		var SearchListHeight = intBrowserH - 226;
+		   		$('.SearchResult').css('height',SearchListHeight);
+		   	}
+
+			//查詢條件展開
+		    $('.Order_SearchCondition_layout').click(function(){
+		    	SearchConditionExtend();
+		    });
+		    
+
+		    //查詢條件收合
+		   	$('.Order_SearchCondition_DownArrow').click(function(){
+		   		//check extend or not
+		   		var IsExtend = $('.Order_SearchCondition_layout').hasClass('Order_SearchCondition_Open');
+		   		//Extended
+		   		if (IsExtend){
+		   			$('.Order_SearchCondition_layout').removeClass('Order_SearchCondition_Open');
+		   			$('.Order_SearchCondition_Extend').slideUp('fast',function(){
+		   				$('.Order_SearchCondition_layout').bind('click',function(){
+		   					SearchConditionExtend();
+		   				});
+		   			});
+		   			
+		   		}		   		
+		   	});
 		    
 		   
 		   
@@ -90,58 +144,108 @@
 <!--header end-->
 
 <!--content-->
-<div class="content_layout">
-	<!--
-	<div class="GoToDesktop">
-		<div class="option" id="Tracking_list">
-			<div class="icon" style="background-image: url(images/mobile/icon_track.png);"></div>
-			<div class="text">追蹤酒款</div>
+<div class="content_layout cwc_storagerecord">
+	<section class="Order_SearchCondition_layout">
+		<div class="Order_SearchCondition_CloseTitle">
+			修改查詢條件
 		</div>
-		<div class="option" id="Order_progress">
-			<div class="icon" style="background-image: url(images/mobile/icon_orderprogress.png);"></div>
-			<div class="text">訂單查詢</div>
+		
+		<div class="Order_SearchCondition_Extend">
+			<div class="Order_SearchCondition_form_row">
+				<div class="formTitle">酒款名稱</div>
+				<input type='text' />
+			</div>
+			<div class="Order_SearchCondition_form_row form_OrderDate">
+				<div class="formTitle">日期</div>
+				<input type="date" name="">
+				<span>至</span>
+				<input type="date" name="">
+			</div>
+			<div class="Order_SearchCondition_btn">查詢</div>
 		</div>
-	</div>
-	-->
-	<!--搜尋條件-->
-	<section class="winelist_searchCondition_layout">
-		<!--20180626 add clear condition btn-->
-		<div class="winelist_searchCondition_Title">
-			篩選結果
-			<span class="winelist_searchCondition_clearBtn">清除全部</span>
-		</div>
-		<!--20180626 add clear condition btn end-->
-		<div class="winelist_searchCondition_text">
-			<span class="OneCondition">紅酒</span>
-			<span class="OneCondition">波爾多</span>
+		<div class="Order_SearchCondition_DownArrow">
+			<span class="DownArrow"></span>
 		</div>
 	</section>
-	<!--搜尋條件 end-->
 
-	<section class="wine_bottle_list">
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00051001_btl.jpg);"></div>
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00006001_btl.jpg);"></div>
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00015102_btl.jpg);"></div>
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00023901_btl.jpg);"></div>
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00051001_btl.jpg);"></div>
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00006001_btl.jpg);"></div>
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00015102_btl.jpg);"></div>
-		<div class="one_bottle_img" style="background-image: url(images/mobile/WI00023901_btl.jpg);"></div>
-	</section>
+	<section class="SearchResult">
+		<div class="one_result_row">
+			<div class="date">2021/05/24</div>
+			<div class="name">
+				<div class="name_cn">
+					米斗羅酒莊 名丑山吉歐維榭粉
+				</div>
+				<div class="name_en">
+					Robert Mondavi, Woodbridge White Zinfandel
+				</div>
+			</div>
+			<div class="info">
+				<span>2016</span>
+				<span>750ml</span>
+			</div>
+			<div class="record">
+				<div class="row bottle_count">
+					<span class="text">異動紀錄</span>
+					<span class="text_r storage">+32</span>
+				</div>
 
-	<!--pagnation-->
-	<div class="pagination_layout">
-		<div class="pagination">
-		    <a href="">&laquo;</a>
-		    <a href="">&nbsp;</a>
-		    <a href="">&nbsp;</a>
-		    <a href="" class="active">1</a>
-		    <a href="">2</a>
-		    <a href="">3</a>
-		    <a href="">&raquo;</a>
+				<div class="row bottle_amount">
+					<span class="text">目前窖藏</span>
+					<span class="text_r">108瓶</span>
+				</div>
+				
+				<div class="row order_number">
+					<span class="text">異動訂單</span>
+					<span class="text_r"><a href="#">W21102400099</a></span>
+				</div>
+			</div>
+			<!--
+			<div class="record">
+				<div class="order_number">
+					<a href="#">W21102400099</a>
+				</div>
+				<div class="bottle_count">
+					<span class="storage">+32</span>
+					瓶
+				</div>
+				<div class="bottle_amount">
+					(目前窖藏：108瓶)
+				</div>
+			</div>-->
 		</div>
-	</div>
-	<!--pagnation end-->
+		<div class="one_result_row">
+			<div class="date">2021/05/24</div>
+			<div class="name">
+				<div class="name_cn">
+					米斗羅酒莊 名丑山吉歐維榭粉
+				</div>
+				<div class="name_en">
+					Robert Mondavi, Woodbridge White Zinfandel
+				</div>
+			</div>
+			<div class="info">
+				<span>2016</span>
+				<span>750ml</span>
+			</div>
+			<div class="record">
+				<div class="row bottle_count">
+					<span class="text">異動紀錄</span>
+					<span class="text_r take">-6</span>
+				</div>
+
+				<div class="row bottle_amount">
+					<span class="text">目前窖藏</span>
+					<span class="text_r">108瓶</span>
+				</div>
+				
+				<div class="row order_number">
+					<span class="text">異動訂單</span>
+					<span class="text_r"><a href="#">W21102400099</a></span>
+				</div>
+			</div>
+		</div>
+	</section>
+	
 </div>
 <!--content end-->
 
