@@ -151,8 +151,19 @@
 		    	//小計區租金顯示
 		    	if ($('#storage').hasClass('active')) {
 		    		$('.order_sum_storage').css('display','block');
+
+		    		if($('#t-cat').hasClass('active')){
+		    			$('#DeliveryFeeRow').css('display','flex');
+		    			$('#DeliveryFeeRow2').css('display','flex');
+		    		} else {
+		    			$('#DeliveryFeeRow').css('display','none');
+		    			$('#DeliveryFeeRow2').css('display','none');
+		    		}
+
 		    	} else {
 		    		$('.order_sum_storage').css('display','none');
+		    		$('#DeliveryFeeRow').css('display','flex');
+		    		$('#DeliveryFeeRow2').css('display','flex');
 		    	}
 		  	});
 
@@ -210,13 +221,8 @@
 			<div class="icon_nextstep"></div>
 			<div class="one_step">Step&nbsp;4</div>
 		</div>
-		<div class="options">
-			<div class="one_option check_all">
-				<div class="icon_check"></div>
-			</div>
-			<div class="one_option" id="Delete_All">
-				<div class="icon_delete"></div>
-			</div>
+		<div class="gotosum">
+			小計區
 		</div>
 		<div class="delivery_type_chose">
 			<div class="one_option active" id="t-cat">
@@ -229,6 +235,14 @@
 			</div>
 		</div>
 	</section>
+	<div class="options">
+		<div class="one_option" id="Delete_All">
+			<div class="icon_delete"></div>
+		</div>
+		<div class="one_option check_all">
+			<div class="icon_check"></div>
+		</div>
+	</div>
 
 	<!--快速-->
 	<div class="DeliveryType_title DeliveryType_Fast">
@@ -238,9 +252,6 @@
 	
 	<div class="cart_list_layout">
 		<div class="cart_list_OneBottle">
-			<div class="option_check">
-				<div class="icon_check"></div>
-			</div>
 			<div class="bottle_img">
 				<img src="images/mobile/bottle-s.jpg"/>
 			</div>
@@ -258,6 +269,13 @@
 					<div class="icon_text">限匯款</div>
 				</div>
 			</div>
+			<div class="options">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="option_delete">
+				</div>
+			</div>
 			<div class="count_price">
 				<div class="count delivery">
 					<div class="text">宅配</div>
@@ -273,7 +291,7 @@
 				</div>
 				<div class="price">
 					<div class="text">小計</div>
-					<div class="bottle_price fast">$&nbsp;3,060</div>
+					<div class="bottle_price fast"><span>$</span>&nbsp;3,060</div>
 				</div>
 			</div>
 			<!--活動連結設在這-->
@@ -287,9 +305,6 @@
 		</div>
 		<!--啤酒樣式-->
 		<div class="cart_list_OneBottle">
-			<div class="option_check">
-				<div class="icon_check"></div>
-			</div>
 			<div class="bottle_img">
 				<img src="images/mobile/bottle-s.jpg"/>
 			</div>
@@ -303,6 +318,13 @@
 				</div>
 				<div class="expired_date">賞味期：2021/12/31</div>
 			</div>
+			<div class="options">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="option_delete">
+				</div>
+			</div>
 			<div class="count_price">
 				<div class="count delivery">
 					<div class="text">宅配</div>
@@ -318,7 +340,7 @@
 				</div>
 				<div class="price">
 					<div class="text">小計</div>
-					<div class="bottle_price fast">$&nbsp;3,060</div>
+					<div class="bottle_price fast"><span>$</span>&nbsp;3,060</div>
 				</div>
 			</div>
 		 
@@ -326,9 +348,6 @@
 
 		<!--清酒樣式-->
 		<div class="cart_list_OneBottle">
-			<div class="option_check">
-				<div class="icon_check"></div>
-			</div>
 			<div class="bottle_img">
 				<img src="images/mobile/bottle-s.jpg"/>
 			</div>
@@ -342,6 +361,13 @@
 				</div>
 				<div class="expired_date">出廠日：2021/04</div>
 			</div>
+			<div class="options">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="option_delete">
+				</div>
+			</div>
 			<div class="count_price">
 				<div class="count delivery">
 					<div class="text">宅配</div>
@@ -357,16 +383,13 @@
 				</div>
 				<div class="price">
 					<div class="text">小計</div>
-					<div class="bottle_price fast">$&nbsp;3,060</div>
+					<div class="bottle_price fast"><span>$</span>&nbsp;3,060</div>
 				</div>
 			</div>
 		 
 		</div>
 		<!--售完需刪除-->
 		<div class="cart_list_OneBottle cart_list_BottleSoldOut">
-			<div class="option_check">
-				<div class="icon_check"></div>
-			</div>
 			<div class="bottle_img">
 				<img src="images/mobile/bottle-s.jpg"/>
 			</div>
@@ -380,6 +403,13 @@
 					<img src="images/mobile/NoBonus_26x26.png" class="icon_nobonus">
 				</div>
 			</div>
+			<div class="options">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="option_delete">
+				</div>
+			</div>
 			<div class="count_price">
 				<div class="count delivery">
 					<div class="text">宅配</div>
@@ -395,7 +425,7 @@
 				</div>
 				<div class="price">
 					<div class="text">小計</div>
-					<div class="bottle_price">$&nbsp;3,060</div>
+					<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 				</div>
 				<div class="delete_text">售完需刪除</div>
 			</div>
@@ -404,11 +434,15 @@
 		</div>
 		<!--組合-->
 		<div class="cart_list_OneGroup">
-			<div class="option_check">
-				<div class="icon_check"></div>
-			</div>
 			<div class="gropu_name">
 				【此生必喝的Chablis白酒】Domaine Laroche村莊級雙瓶組$1,999
+			</div>
+			<div class="options">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="option_delete">
+				</div>
 			</div>
 			<div class="count_price">
 				<div class="count delivery">
@@ -425,7 +459,7 @@
 				</div>
 				<div class="price">
 					<div class="text">小計</div>
-					<div class="bottle_price fast">$&nbsp;3,060</div>
+					<div class="bottle_price fast"><span>$</span>&nbsp;3,060</div>
 				</div>
 			</div>
 			<div class="btn_group_wine_detail_extend">
@@ -512,11 +546,15 @@
 
 		<!--組合售完-->
 		<div class="cart_list_OneGroup cart_list_BottleSoldOut">
-			<div class="option_check">
-				<div class="icon_check"></div>
-			</div>
 			<div class="gropu_name">
 				【此生必喝的Chablis白酒】Domaine Laroche村莊級雙瓶組$1,999
+			</div>
+			<div class="options">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="option_delete">
+				</div>
 			</div>
 			<div class="count_price">
 				<div class="count delivery">
@@ -533,7 +571,7 @@
 				</div>
 				<div class="price">
 					<div class="text">小計</div>
-					<div class="bottle_price">$&nbsp;3,060</div>
+					<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 				</div>
 				<div class="delete_text">售完需刪除</div>
 			</div>
@@ -624,9 +662,6 @@
 				Raúl Peréz 到港優惠75折起，滿6瓶再送電動刮鬍刀
 			</div>
 			<div class="cart_list_OneBottle">
-				<div class="option_check">
-					<div class="icon_check"></div>
-				</div>
 				<div class="bottle_img">
 					<img src="images/mobile/bottle-s.jpg"/>
 				</div>
@@ -638,6 +673,13 @@
 						<span>330&nbsp;ml</span>
 						<span>$&nbsp;795</span>
 						<img src="images/mobile/NoBonus_26x26.png" class="icon_nobonus">
+					</div>
+				</div>
+				<div class="options">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="option_delete">
 					</div>
 				</div>
 				<div class="count_price">
@@ -655,14 +697,11 @@
 					</div>
 					<div class="price">
 						<div class="text">小計</div>
-						<div class="bottle_price fast">$&nbsp;3,060</div>
+						<div class="bottle_price fast"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>				 
 			</div>
 			<div class="cart_list_OneBottle">
-				<div class="option_check">
-					<div class="icon_check"></div>
-				</div>
 				<div class="bottle_img">
 					<img src="images/mobile/bottle-s.jpg"/>
 				</div>
@@ -674,6 +713,13 @@
 						<span>330&nbsp;ml</span>
 						<span>$&nbsp;795</span>
 						<img src="images/mobile/NoBonus_26x26.png" class="icon_nobonus">
+					</div>
+				</div>
+				<div class="options">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="option_delete">
 					</div>
 				</div>
 				<div class="count_price">
@@ -691,7 +737,7 @@
 					</div>
 					<div class="price">
 						<div class="text">小計</div>
-						<div class="bottle_price fast">$&nbsp;3,060</div>
+						<div class="bottle_price fast"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>				 
 			</div>
@@ -711,9 +757,6 @@
 				</div>
 			</div>
 			<div class="cart_list_OneBottle">
-				<div class="option_check">
-					<div class="icon_check"></div>
-				</div>
 				<div class="bottle_img">
 					<img src="images/mobile/bottle-s.jpg"/>
 				</div>
@@ -725,6 +768,13 @@
 						<span>330&nbsp;ml</span>
 						<span>$&nbsp;795</span>
 						<img src="images/mobile/NoBonus_26x26.png" class="icon_nobonus">
+					</div>
+				</div>
+				<div class="options">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="option_delete">
 					</div>
 				</div>
 				<div class="count_price">
@@ -743,9 +793,6 @@
 				</div>				 
 			</div>
 			<div class="cart_list_OneBottle">
-				<div class="option_check">
-					<div class="icon_check"></div>
-				</div>
 				<div class="bottle_img">
 					<img src="images/mobile/bottle-s.jpg"/>
 				</div>
@@ -757,6 +804,13 @@
 						<span>330&nbsp;ml</span>
 						<span>$&nbsp;795</span>
 						<img src="images/mobile/NoBonus_26x26.png" class="icon_nobonus">
+					</div>
+				</div>
+				<div class="options">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="option_delete">
 					</div>
 				</div>
 				<div class="count_price">
@@ -778,7 +832,7 @@
 				<div class="count_price">
 					<div class="price">
 						<div class="text">此區小計</div>
-						<div class="bottle_price fast">$&nbsp;3,060</div>
+						<div class="bottle_price fast"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>
 			</div>
@@ -812,7 +866,7 @@
 					</div>
 					<div class="price">
 						<div class="text">價值</div>
-						<div class="bottle_price">$&nbsp;3,060</div>
+						<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>
 			</div>
@@ -839,7 +893,7 @@
 					</div>
 					<div class="price">
 						<div class="text">價值</div>
-						<div class="bottle_price">$&nbsp;3,060</div>
+						<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>
 			</div>
@@ -854,9 +908,6 @@
 
 	<div class="cart_list_layout">
 		<div class="cart_list_OneBottle">
-			<div class="option_check">
-				<div class="icon_check"></div>
-			</div>
 			<div class="bottle_img">
 				<img src="images/mobile/bottle-s.jpg"/>
 			</div>
@@ -870,6 +921,13 @@
 					<img src="images/mobile/NoBonus_26x26.png" class="icon_nobonus">
 				</div>
 			</div>
+			<div class="options">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="option_delete">
+				</div>
+			</div>
 			<div class="count_price">
 				<div class="count delivery">
 					<div class="text">宅配</div>
@@ -885,7 +943,7 @@
 				</div>
 				<div class="price">
 					<div class="text">小計</div>
-					<div class="bottle_price normal">$&nbsp;3,060</div>
+					<div class="bottle_price normal"><span>$</span>&nbsp;3,060</div>
 				</div>
 			</div>
 			<!--活動連結設在這-->
@@ -899,11 +957,15 @@
 		</div>
 		<!--組合-->
 		<div class="cart_list_OneGroup">
-			<div class="option_check">
-				<div class="icon_check"></div>
-			</div>
 			<div class="gropu_name">
 				【此生必喝的Chablis白酒】Domaine Laroche村莊級雙瓶組$1,999
+			</div>
+			<div class="options">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="option_delete">
+				</div>
 			</div>
 			<div class="count_price">
 				<div class="count delivery">
@@ -920,7 +982,7 @@
 				</div>
 				<div class="price">
 					<div class="text">小計</div>
-					<div class="bottle_price normal">$&nbsp;3,060</div>
+					<div class="bottle_price normal"><span>$</span>&nbsp;3,060</div>
 				</div>
 			</div>
 			<div class="btn_group_wine_detail_extend">
@@ -1033,7 +1095,7 @@
 					</div>
 					<div class="price">
 						<div class="text">價值</div>
-						<div class="bottle_price">$&nbsp;3,060</div>
+						<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>
 			</div>
@@ -1060,7 +1122,7 @@
 					</div>
 					<div class="price">
 						<div class="text">價值</div>
-						<div class="bottle_price">$&nbsp;3,060</div>
+						<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>
 			</div>
@@ -1075,9 +1137,6 @@
 
 	<div class="cart_list_layout">
 		<div class="cart_list_OneBottle">
-			<div class="option_check">
-				<div class="icon_check"></div>
-			</div>
 			<div class="bottle_img">
 				<img src="images/mobile/bottle-s.jpg"/>
 			</div>
@@ -1091,6 +1150,13 @@
 					<img src="images/mobile/NoBonus_26x26.png" class="icon_nobonus">
 				</div>
 			</div>
+			<div class="options">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="option_delete">
+				</div>
+			</div>
 			<div class="count_price">
 				<div class="count delivery">
 					<div class="text">宅配</div>
@@ -1106,7 +1172,7 @@
 				</div>
 				<div class="price">
 					<div class="text">小計</div>
-					<div class="bottle_price preorder">$&nbsp;3,060</div>
+					<div class="bottle_price preorder"><span>$</span>&nbsp;3,060</div>
 				</div>
 			</div>
 			<!--活動連結設在這-->
@@ -1120,11 +1186,15 @@
 		</div>
 		<!--組合-->
 		<div class="cart_list_OneGroup">
-			<div class="option_check">
-				<div class="icon_check"></div>
-			</div>
 			<div class="gropu_name">
 				【此生必喝的Chablis白酒】Domaine Laroche村莊級雙瓶組$1,999
+			</div>
+			<div class="options">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="option_delete">
+				</div>
 			</div>
 			<div class="count_price">
 				<div class="count delivery">
@@ -1141,9 +1211,10 @@
 				</div>
 				<div class="price">
 					<div class="text">小計</div>
-					<div class="bottle_price preorder">$&nbsp;3,060</div>
+					<div class="bottle_price preorder"><span>$</span>&nbsp;3,060</div>
 				</div>
 			</div>
+
 			<div class="btn_group_wine_detail_extend">
 				組合內容
 				<span class="icon_extend active"></span>
@@ -1254,7 +1325,7 @@
 					</div>
 					<div class="price">
 						<div class="text">價值</div>
-						<div class="bottle_price">$&nbsp;3,060</div>
+						<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>
 			</div>
@@ -1281,7 +1352,7 @@
 					</div>
 					<div class="price">
 						<div class="text">價值</div>
-						<div class="bottle_price">$&nbsp;3,060</div>
+						<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>
 			</div>
@@ -1351,12 +1422,12 @@
 	<section class="order_sum order_sum_dark">
 		<div class="order_sum_row">
 			<div class="title">商品總額</div>
-			<div class="number">$&nbsp;9,900</div>
+			<div class="number"><span>$</span>&nbsp;9,900</div>
 		</div>
 		<!--需運費時顯示-->
-		<div class="order_sum_row">
+		<div class="order_sum_row" id="DeliveryFeeRow">
 			<div class="title">運費<span class="icon_info" onclick="window.open('https://www.icheers.tw/iCheers/Content/HTML/Delivery_m.html');">?</span></div>
-			<div class="number">$&nbsp;200</div>
+			<div class="number"><span>$</span>&nbsp;200</div>
 		</div>
 		<!--免運費時顯示-->
 		<!--
@@ -1365,7 +1436,7 @@
 			<div class="text">&#10004;&nbsp;免運費</div>
 		</div>
 		-->
-		<div class="order_sum_btnrow">
+		<div class="order_sum_btnrow" id="DeliveryFeeRow2">
 			<div class="btn_combine">
 				<div class="icon_check"></div>
 				<div class="text">等商品到齊再一起出貨</div>
@@ -1406,7 +1477,9 @@
 			<div class="number">1</div>
 		</div>
 		<div class="order_sum_btnrow">
-			<div class="btn_linkedcard" id="BTN_LinkedCard">綁定信用卡</div>
+			<div class="text">
+				第一次使用儲酒服務，需先<a href="#" id="BTN_LinkedCard">綁定信用卡</a>以啟用服務（此信用卡僅供使用於支付儲酒租金）。
+			</div>
 		</div>
 	</section>
 
@@ -1437,7 +1510,7 @@
 			<div class="original_price">定價&nbsp;&nbsp;$&nbsp;5,000</div>
 			<div class="price">
 				<div class="text">酒窩價</div>
-				<div class="number">$&nbsp;3,000</div>
+				<div class="number"><span>$</span>&nbsp;3,000</div>
 			</div>	
 			<div class="btn_addcart">加入清單<span class="icon_plus"></span></div>
 		</div>
@@ -1465,7 +1538,7 @@
 			<div class="original_price">定價&nbsp;&nbsp;$&nbsp;5,000</div>
 			<div class="price">
 				<div class="text">酒窩價</div>
-				<div class="number">$&nbsp;3,000</div>
+				<div class="number"><span>$</span>&nbsp;3,000</div>
 			</div>	
 			<div class="btn_addcart">加入清單<span class="icon_plus"></span></div>
 		</div>
@@ -1493,7 +1566,7 @@
 			<div class="original_price">定價&nbsp;&nbsp;$&nbsp;5,000</div>
 			<div class="price">
 				<div class="text">酒窩價</div>
-				<div class="number">$&nbsp;3,000</div>
+				<div class="number"><span>$</span>&nbsp;3,000</div>
 			</div>	
 			<div class="btn_addcart">加入清單<span class="icon_plus"></span></div>
 		</div>

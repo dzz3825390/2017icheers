@@ -27,7 +27,7 @@ textarea{
 	background-color: #fff;
 }
 
-input[type="text"],input[type="password"],input[type="tel"],input[type="datetime-local"]{
+input[type="text"],input[type="password"],input[type="tel"],input[type="datetime-local"],input[type="number"]{
 	outline: none;
 	border: $BorderColor;
 	@include border-radius(4px);
@@ -1555,6 +1555,7 @@ h4{
 .checkbox_layout{
 	display: flex;
 	justify-content: flex-start;
+	align-items: center;
 	margin-top: 12px;
 	& .option_check{
 		width: 40px;

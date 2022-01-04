@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="iCheers愛酒窩">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="address=no">
+	<title>iCheers愛酒窩 ─ 讓你窩在家就能享受葡萄酒</title>
+	<link href="css_m/all.css" rel="stylesheet" type="text/css" />
+	<link href="css_m/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="Scripts/all_m.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+	<!--[if lt IE 9]  //記得在前後加上 < > 註解
+	  <script>
+	    document.createElement("header" );
+	    document.createElement("footer" );
+	    document.createElement("section"); 
+	    document.createElement("aside"  );
+	    document.createElement("nav"    );
+	    document.createElement("article"); 
+	    document.createElement("hgroup" ); 
+	    document.createElement("time"   );
+	  </script>
+	![endif]-->
+
+	<script type="text/javascript">
+		function SearchConditionExtend() {
+			//check extend or not
+		    var IsExtend = $('.Order_SearchCondition_layout').hasClass('Order_SearchCondition_Open');
+		    //extneded
+		    if (IsExtend) {
+		    	//do nothing
+		    } 
+		    //not extend
+		    else {
+		    	$('.Order_SearchCondition_layout').addClass('Order_SearchCondition_Open');
+		    	$('.Order_SearchCondition_Extend').slideDown();
+		    	$('.Order_SearchCondition_layout').unbind('click');
+		    }
+		}
+
+		$(document).ready(function(){
+			var intBrowserW = 0;
+
+			//瀏覽器內容高度
+			var intBrowserH = 0;
+
+			//#region 取得瀏覽器內容寬度/高度
+				if (document.documentElement) {
+				    intBrowserW = document.documentElement.clientWidth;
+				    intBrowserH = document.documentElement.clientHeight;
+				} else {
+				    intBrowserW = document.body.clientWidth;
+				    intBrowserH = document.body.clientHeight;
+				}
+
+			$('.SideMenu_Filter').click(function(){
+				$(this).next().slideToggle();
+			});
+
+			//查詢條件高度(1024up)
+		   	if (intBrowserW > 1023) {
+		   		var SearchConditionHeight = intBrowserH - 156;
+		   		$('.Order_SearchCondition_layout').css('height',SearchConditionHeight);
+		   	} else if (intBrowserW > 1360) {
+		   		var SearchConditionHeight = intBrowserH - 226;
+		   		$('.Order_SearchCondition_layout').css('height',SearchConditionHeight);
+		   	}
+
+		   	//查詢結果列表高度(1024up)
+		    if (intBrowserW > 1023) {
+		   		var SearchListHeight = intBrowserH - 156;
+		   		$('.SearchResult').css('height',SearchListHeight);
+		   	} else if (intBrowserW > 1360) {
+		   		var SearchListHeight = intBrowserH - 226;
+		   		$('.SearchResult').css('height',SearchListHeight);
+		   	}
+
+			//查詢條件展開
+		    $('.Order_SearchCondition_layout').click(function(){
+		    	SearchConditionExtend();
+		    });
+		    
+
+		    //查詢條件收合
+		   	$('.Order_SearchCondition_DownArrow').click(function(){
+		   		//check extend or not
+		   		var IsExtend = $('.Order_SearchCondition_layout').hasClass('Order_SearchCondition_Open');
+		   		//Extended
+		   		if (IsExtend){
+		   			$('.Order_SearchCondition_layout').removeClass('Order_SearchCondition_Open');
+		   			$('.Order_SearchCondition_Extend').slideUp('fast',function(){
+		   				$('.Order_SearchCondition_layout').bind('click',function(){
+		   					SearchConditionExtend();
+		   				});
+		   			});
+		   			
+		   		}		   		
+		   	});
+
+		   	$('.Order_SearchCondition_layout').click();
+		    
+		   
+		   
+
+		});
+
+
+	</script>
+</head>
+<body class="CWC">
+
+<!--假body-->
+<div class="wapper">
+
+<!--header-->
+<div class="header">
+	<header>
+		<h1>iCheers 愛酒窩</h1>
+	</header>
+	<!--side menu-->
+	<div class="menuBTN">
+		<a class="navicon-button uarr" id="menuBTN">
+			<div class="navicon"></div>
+		</a> 
+	</div>
+	<!--side menu end-->
+
+	<!--logo svg-->
+	<div class="logo">
+
+	</div>
+	<!--logo svg end-->
+
+	<!--mylist-->
+	<div class="mylist cwc_cart">
+		<span>9+</span>
+	</div>
+	<!--mylist end-->
+
+</div>
+<!--header end-->
+
+<!--content-->
+<div class="content_layout cwc_storagerecord">
+	<section class="Order_SearchCondition_layout">
+		<div class="Order_SearchCondition_CloseTitle">
+			修改查詢條件
+		</div>
+		
+		<div class="Order_SearchCondition_Extend">
+			<div class="Order_SearchCondition_form_row">
+				<div class="formTitle">酒款名稱</div>
+				<input type='text' />
+			</div>
+			<div class="Order_SearchCondition_form_row form_OrderDate">
+				<div class="formTitle">日期</div>
+				<input type="date" name="">
+				<span>至</span>
+				<input type="date" name="">
+			</div>
+			<div class="Order_SearchCondition_btn">查詢</div>
+		</div>
+		<div class="Order_SearchCondition_DownArrow">
+			<span class="DownArrow"></span>
+		</div>
+	</section>
+
+	<section class="SearchResult">
+		<div class="one_result_row">
+			<div class="date">2021/05/24</div>
+			<div class="name">
+				<div class="name_cn">
+					米斗羅酒莊 名丑山吉歐維榭粉
+				</div>
+				<div class="name_en">
+					Robert Mondavi, Woodbridge White Zinfandel
+				</div>
+			</div>
+			<div class="info">
+				<span>2016</span>
+				<span>750ml</span>
+			</div>
+			<div class="record">
+				<div class="row bottle_count">
+					<span class="text">異動紀錄</span>
+					<span class="text_r storage">+32</span>
+				</div>
+
+				<div class="row bottle_amount">
+					<span class="text">目前窖藏</span>
+					<span class="text_r">108瓶</span>
+				</div>
+				
+				<div class="row order_number">
+					<span class="text">異動訂單</span>
+					<span class="text_r"><a href="#">W21102400099</a></span>
+				</div>
+			</div>
+			<!--
+			<div class="record">
+				<div class="order_number">
+					<a href="#">W21102400099</a>
+				</div>
+				<div class="bottle_count">
+					<span class="storage">+32</span>
+					瓶
+				</div>
+				<div class="bottle_amount">
+					(目前窖藏：108瓶)
+				</div>
+			</div>-->
+		</div>
+		<div class="one_result_row">
+			<div class="date">2021/05/24</div>
+			<div class="name">
+				<div class="name_cn">
+					米斗羅酒莊 名丑山吉歐維榭粉
+				</div>
+				<div class="name_en">
+					Robert Mondavi, Woodbridge White Zinfandel
+				</div>
+			</div>
+			<div class="info">
+				<span>2016</span>
+				<span>750ml</span>
+			</div>
+			<div class="record">
+				<div class="row bottle_count">
+					<span class="text">異動紀錄</span>
+					<span class="text_r take">-6</span>
+				</div>
+
+				<div class="row bottle_amount">
+					<span class="text">目前窖藏</span>
+					<span class="text_r">108瓶</span>
+				</div>
+				
+				<div class="row order_number">
+					<span class="text">異動訂單</span>
+					<span class="text_r"><a href="#">W21102400099</a></span>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+</div>
+<!--content end-->
+
+
+<div class="footer">
+	<div class="footer_option_row">
+		<div class="footer_option">
+			<div class="icon" style="background-image: url(images/mobile/contactus_icon.png);width: 17px;"></div>
+			<div class="text">聯絡我們</div>
+		</div>
+		<div class="footer_option">
+			<div class="icon" style="background-image: url(images/mobile/desktop_icon.png);width: 17px;"></div>
+			<div class="text">切換電腦版網站</div>
+		</div>
+	</div>
+</div>
+
+<div class="warning">
+	飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+</div>
+
+
+
+<!--side menu-->
+<div class="black_BG" id="black_BG">
+	<div class="SideMenu_layout">
+		<!--頂端search row-->
+		<div class="SideMenu_SearchRow">
+			<div class="SideMenu_BackBTN">
+				<a class="navicon-button uarr open">
+					<div class="navicon"></div>
+				</a> 
+			</div>
+			<div class="SideMenu_SignInBTN"></div>
+			<div class="SideMenu_SearchInput">
+				<!--20180626 fix input type-->
+				<form action="" name="search" id="SearchInput">
+					<input type="search">
+				</form>
+				<span class="search_icon"></span>
+			</div>
+			<!--add auto complete sample max:4-->
+			<div class="SideMenu_AutoComplete">
+				<div class="OneResult"><span>au</span>to complete1</div>
+				<div class="OneResult"><span>au</span>to complete2</div>
+				<div class="OneResult"><span>au</span>to complete3</div>
+				<div class="OneResult"><span>au</span>to complete4</div>
+			</div>
+		</div>
+		<!--頂端search row end-->
+		<!--第一層-->
+		<div class="SideMenu_Detail" id="SideMenuDetailL1">
+			<div class="SideMenu_OneOption">
+				清單模式
+			</div>
+			<div class="SideMenu_OneOption">
+				租賃合約
+			</div>
+			<div class="SideMenu_OneOption">
+				租金明細
+			</div>
+			<div class="SideMenu_OneOption">
+				異動紀錄
+			</div>
+			<div class="SideMenu_OneOption">
+				匯出我的窖藏清單
+			</div>
+			<div class="SideMenu_OneOption SideMenu_Filter">
+				篩選
+			</div>
+
+			<div style="display:none;">
+				<!--title-->
+				<div class="SideMenu_Detail_Title">類型</div>
+				<!--title-->
+				<div class="SideMenu_Detail_list">
+					紅酒 (16)
+				</div>
+				<div class="SideMenu_Detail_list">
+					白酒 (0)
+				</div>
+				<div class="SideMenu_Detail_list">
+					粉紅酒 (32)
+				</div>
+				<div class="SideMenu_Detail_list">
+					氣泡酒 (2)
+				</div>
+				<div class="SideMenu_Detail_list">
+					烈酒 (2)
+				</div>
+
+				<!--title-->
+				<div class="SideMenu_Detail_Title">產區</div>
+				<!--title-->
+				<div class="SideMenu_Detail_list">
+					法國 (16)
+				</div>
+				<div class="SideMenu_Detail_list">
+					義大利 (0)
+				</div>
+				<div class="SideMenu_Detail_list">
+					西班牙 (32)
+				</div>
+				<div class="SideMenu_Detail_list">
+					德國 (2)
+				</div>
+				<div class="SideMenu_Detail_list">
+					美國 (2)
+				</div>
+			</div>
+			<div class="SideMenu_GotoDesktop">
+				<span class="icon"></span>
+				切換為電腦版
+			</div>
+		</div>
+		<!--第一層-->
+	</div>
+</div>
+<!--side menu end-->
+
+</div>
+<!--假body-->
+
+</body>
+</html>

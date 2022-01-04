@@ -294,18 +294,7 @@ $(document).ready(function(){
 						$(window).off('touchend.checkclick');
 					}
 				},100);
-
-				/*
-				$('.dropdown').removeClass('dropdown_show');
-				$('.dropdown_extend').css('display','none');
-				if (isOption == 'dropdown_option') {
-					var OptionText = e.target.innerHTML;
-					$(e.target).parent().parent().find('.dropdown_text span').text(OptionText);
-				} else {
-
-				}*/
-
-				
+		
 			});
 		}
 

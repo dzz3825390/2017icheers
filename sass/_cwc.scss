@@ -395,7 +395,6 @@
 			& .text{
 				font-size: 1.375rem;
 				line-height: 1.75rem;
-				margin-top: 20px;
 			}
 		}
 	}
@@ -598,8 +597,31 @@
 
 
 /*CWC cart用*/
-.CWC .step_option{
-	align-items: flex-end;
+.CWC_cart_content .options_layout{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #cccccc;
+	& .options{
+		width: auto;
+	}
+	& .delivery_count_sum{
+		margin-top: 32px;
+		margin-bottom: 8px;
+		@extend %SectionLayout;
+		font-size: 1rem;
+		color: #666;
+		& span{
+			color: #c29c20;
+			font-weight: bold;
+			margin: 0 8px;
+		}
+
+		@include pad-width{
+			font-size: 1.375rem;
+			margin-bottom: 20px;
+		}
+	}
 }
 
 .CWC .cart_step_row{
@@ -654,26 +676,10 @@
 	
 }
 
-.delivery_count_sum{
-	font-size: 1rem;
-	color: #666;
-	margin-bottom: 10px;
-	& span{
-		color: #c29c20;
-		font-weight: bold;
-		margin: 0 8px;
-	}
-
-	@include pad-width{
-		font-size: 1.375rem;
-		margin-bottom: 20px;
-	}
-}
-
 .CWC .cart_list_OneBottle{
 	& .bottle_info{
-		margin-left: 40px;
-		width: calc(100% - 50px);
+		margin-left: 0;
+		width:calc(100% - 40px);
 		& .status{
 			& span:last-child{
 				&:after{
@@ -722,6 +728,7 @@
 	@include pad-width{
 
 		& .bottle_info{
+			width: calc(100% - 88px);
 			& .storage_avg_price{
 				font-size: 1.375rem;
 				margin-top: 12px;
@@ -748,12 +755,19 @@
 
 	@include pad-width1024{
 		& .bottle_info{
-			margin-left: 44px;
-			width: calc(55% - 44px);
+			margin-left: 0;
+			width: 55%;
+		}
+
+		& .options{
+			position: absolute;
+			right: 0;
+			top: 0;
 		}
 
 		& .count_price{
 			margin-left: 44px;
+			margin-top: 54px;
 			width: calc(45% - 44px);
 		}
 	}
