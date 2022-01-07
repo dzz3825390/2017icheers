@@ -182,6 +182,16 @@ $LargePadPadding : 40px;
 	float: right;
 	margin-top: 10px;
 	text-align: right;
+	& label{
+		font-size: 1.125rem;
+		font-weight: normal;
+		margin-right: 5px;
+	}
+	@include pad-width{
+		& label{
+			font-size: 1.5rem;
+		}
+	}
 	@content;
 }
 
@@ -195,8 +205,16 @@ $LargePadPadding : 40px;
 	line-height: 40px;
 	font-size: 1.875rem;
 	margin-right: 0.75rem;
+	& label{
+		font-size: 1.125rem;
+		font-weight: normal;
+		margin-right: 5px;
+	}
 	@include pad-width{
 		font-size: 2.25rem;
+		& label{
+			font-size: 1.5rem;
+		}
 	}
 }
 

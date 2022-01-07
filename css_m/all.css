@@ -1474,9 +1474,17 @@ h4 {
   font-size: 1.875rem;
   margin-right: 0.75rem;
 }
+.addcart_normal span label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
 @media screen and (min-width: 760px) {
   .addcart_normal span {
     font-size: 2.25rem;
+  }
+  .addcart_normal span label {
+    font-size: 1.5rem;
   }
 }
 .addcart_normal button {
@@ -1504,9 +1512,17 @@ h4 {
   font-size: 1.875rem;
   margin-right: 0.75rem;
 }
+.addcart_normal_withtext span label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
 @media screen and (min-width: 760px) {
   .addcart_normal_withtext span {
     font-size: 2.25rem;
+  }
+  .addcart_normal_withtext span label {
+    font-size: 1.5rem;
   }
 }
 .addcart_normal_withtext button {
@@ -1548,9 +1564,17 @@ h4 {
   font-size: 1.875rem;
   margin-right: 0.75rem;
 }
+.addcart_fast span label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
 @media screen and (min-width: 760px) {
   .addcart_fast span {
     font-size: 2.25rem;
+  }
+  .addcart_fast span label {
+    font-size: 1.5rem;
   }
 }
 .addcart_fast button {
@@ -1578,9 +1602,17 @@ h4 {
   font-size: 1.875rem;
   margin-right: 0.75rem;
 }
+.addcart_fast_withtext span label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
 @media screen and (min-width: 760px) {
   .addcart_fast_withtext span {
     font-size: 2.25rem;
+  }
+  .addcart_fast_withtext span label {
+    font-size: 1.5rem;
   }
 }
 .addcart_fast_withtext button {
@@ -1622,9 +1654,17 @@ h4 {
   font-size: 1.875rem;
   margin-right: 0.75rem;
 }
+.addcart_preorder span label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
 @media screen and (min-width: 760px) {
   .addcart_preorder span {
     font-size: 2.25rem;
+  }
+  .addcart_preorder span label {
+    font-size: 1.5rem;
   }
 }
 .addcart_preorder button {
@@ -1652,9 +1692,17 @@ h4 {
   font-size: 1.875rem;
   margin-right: 0.75rem;
 }
+.addcart_preorder_withtext span label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
 @media screen and (min-width: 760px) {
   .addcart_preorder_withtext span {
     font-size: 2.25rem;
+  }
+  .addcart_preorder_withtext span label {
+    font-size: 1.5rem;
   }
 }
 .addcart_preorder_withtext button {
@@ -1696,9 +1744,17 @@ h4 {
   font-size: 1.875rem;
   margin-right: 0.75rem;
 }
+.addcart_soldout span label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
 @media screen and (min-width: 760px) {
   .addcart_soldout span {
     font-size: 2.25rem;
+  }
+  .addcart_soldout span label {
+    font-size: 1.5rem;
   }
 }
 .addcart_soldout button {
@@ -1726,9 +1782,17 @@ h4 {
   font-size: 1.875rem;
   margin-right: 0.75rem;
 }
+.addcart_soldout_withtext span label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
 @media screen and (min-width: 760px) {
   .addcart_soldout_withtext span {
     font-size: 2.25rem;
+  }
+  .addcart_soldout_withtext span label {
+    font-size: 1.5rem;
   }
 }
 .addcart_soldout_withtext button {
@@ -2701,6 +2765,16 @@ h4 {
   margin-top: 10px;
   text-align: right;
 }
+.BottlesZone_onebottle .bottle_price label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
+@media screen and (min-width: 760px) {
+  .BottlesZone_onebottle .bottle_price label {
+    font-size: 1.5rem;
+  }
+}
 .BottlesZone_onebottle .bottle_price .normalicon {
   display: inline-block;
   width: 13px;
@@ -2720,6 +2794,16 @@ h4 {
   margin-top: 10px;
   text-align: right;
 }
+.BottlesZone_onebottle .bottle_price_fast label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
+@media screen and (min-width: 760px) {
+  .BottlesZone_onebottle .bottle_price_fast label {
+    font-size: 1.5rem;
+  }
+}
 .BottlesZone_onebottle .bottle_price_fast .fasticon {
   display: inline-block;
   width: 11px;
@@ -2736,6 +2820,16 @@ h4 {
   margin-top: 10px;
   text-align: right;
   margin-top: 7px;
+}
+.BottlesZone_onebottle .bottle_price_preorder label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
+@media screen and (min-width: 760px) {
+  .BottlesZone_onebottle .bottle_price_preorder label {
+    font-size: 1.5rem;
+  }
 }
 .BottlesZone_onebottle .bottle_price_preorder .preordericon {
   display: inline-block;
@@ -2798,6 +2892,18 @@ h4 {
     margin-top: 10px;
     text-align: right;
   }
+  .BottlesZone_onebottle .bottle_price label {
+    font-size: 1.125rem;
+    font-weight: normal;
+    margin-right: 5px;
+  }
+}
+@media screen and (min-width: 760px) and (min-width: 760px) {
+  .BottlesZone_onebottle .bottle_price label {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 760px) {
   .BottlesZone_onebottle .bottle_price .normalicon {
     display: inline-block;
     width: 21px;
@@ -2814,6 +2920,18 @@ h4 {
     margin-top: 10px;
     text-align: right;
   }
+  .BottlesZone_onebottle .bottle_price_fast label {
+    font-size: 1.125rem;
+    font-weight: normal;
+    margin-right: 5px;
+  }
+}
+@media screen and (min-width: 760px) and (min-width: 760px) {
+  .BottlesZone_onebottle .bottle_price_fast label {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 760px) {
   .BottlesZone_onebottle .bottle_price_fast .fasticon {
     display: inline-block;
     width: 14px;
@@ -2830,6 +2948,18 @@ h4 {
     margin-top: 10px;
     text-align: right;
   }
+  .BottlesZone_onebottle .bottle_price_preorder label {
+    font-size: 1.125rem;
+    font-weight: normal;
+    margin-right: 5px;
+  }
+}
+@media screen and (min-width: 760px) and (min-width: 760px) {
+  .BottlesZone_onebottle .bottle_price_preorder label {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 760px) {
   .BottlesZone_onebottle .bottle_price_preorder .preordericon {
     display: inline-block;
     width: 21px;
@@ -2973,6 +3103,16 @@ h4 {
   margin-top: 10px;
   text-align: right;
 }
+.MemberOnly_layout .bottle_price label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
+@media screen and (min-width: 760px) {
+  .MemberOnly_layout .bottle_price label {
+    font-size: 1.5rem;
+  }
+}
 .MemberOnly_layout .bottle_price .normalicon {
   display: inline-block;
   width: 13px;
@@ -3006,6 +3146,18 @@ h4 {
     margin-top: 10px;
     text-align: right;
   }
+  .MemberOnly_layout .bottle_price label {
+    font-size: 1.125rem;
+    font-weight: normal;
+    margin-right: 5px;
+  }
+}
+@media screen and (min-width: 760px) and (min-width: 760px) {
+  .MemberOnly_layout .bottle_price label {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 760px) {
   .MemberOnly_layout .bottle_price .normalicon {
     display: inline-block;
     width: 21px;
@@ -3136,6 +3288,16 @@ h4 {
   text-align: right;
   margin-top: 7px;
 }
+.PreorderZone_BottleInfo .bottle_price_preorder label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
+@media screen and (min-width: 760px) {
+  .PreorderZone_BottleInfo .bottle_price_preorder label {
+    font-size: 1.5rem;
+  }
+}
 .PreorderZone_BottleInfo .bottle_price_preorder .preordericon {
   display: inline-block;
   width: 13px;
@@ -3187,6 +3349,18 @@ h4 {
     margin-top: 10px;
     text-align: right;
   }
+  .PreorderZone_BottleInfo .bottle_price_preorder label {
+    font-size: 1.125rem;
+    font-weight: normal;
+    margin-right: 5px;
+  }
+}
+@media screen and (min-width: 760px) and (min-width: 760px) {
+  .PreorderZone_BottleInfo .bottle_price_preorder label {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 760px) {
   .PreorderZone_BottleInfo .bottle_price_preorder .preordericon {
     display: inline-block;
     width: 21px;
