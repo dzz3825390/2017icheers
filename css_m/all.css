@@ -11512,9 +11512,12 @@ h2.detail_Name_cn {
   margin-left: 0;
 }
 .detail_allyears .one_year.active {
-  background-color: #8e6681;
+  background-color: #fff;
   border-color: #8e6681;
-  color: #fff;
+  border-width: 2px;
+  font-size: 1.2rem;
+  color: #8e6681;
+  font-weight: bold;
 }
 @media screen and (min-width: 760px) {
   .detail_allyears .one_year {
@@ -11525,6 +11528,9 @@ h2.detail_Name_cn {
   }
   .detail_allyears .one_year:nth-child(7n+1) {
     margin-left: 0;
+  }
+  .detail_allyears .one_year.active {
+    line-height: 38px;
   }
 }
 
@@ -11556,9 +11562,12 @@ h2.detail_Name_cn {
   margin-left: 0;
 }
 .detail_allcapacity .one_capacity.active {
-  background-color: #8e6681;
+  background-color: #fff;
   border-color: #8e6681;
-  color: #fff;
+  border-width: 2px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #8e6681;
 }
 @media screen and (min-width: 760px) {
   .detail_allcapacity .one_capacity {
@@ -11632,7 +11641,12 @@ h2.detail_Name_cn {
   color: #0b7b62;
 }
 @media screen and (min-width: 760px) {
+  .detail_MoreInfo_layout .one_info_row {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .detail_MoreInfo_layout .one_info_row .title {
+    width: 100%;
     font-size: 1.125rem;
   }
   .detail_MoreInfo_layout .one_info_row .title em {
@@ -11640,6 +11654,7 @@ h2.detail_Name_cn {
     margin: 0 10px;
   }
   .detail_MoreInfo_layout .one_info_row .text {
+    width: 100%;
     font-size: 1.125rem;
     line-height: 1.5rem;
   }
@@ -11665,111 +11680,22 @@ h2.detail_Name_cn {
   }
 }
 
-/*取酒視窗用樣式*/
-.PopWindow_CWC_row {
+/*取酒數量row*/
+.count_extend {
   width: 100%;
-  box-sizing: border-box;
+  margin-top: 16px;
   display: flex;
-  align-items: flex-end;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 16px 0;
-  border-top: 1px dotted #cccccc;
 }
-.PopWindow_CWC_row:first-child {
-  border: none;
-}
-.PopWindow_CWC_row .checkbox_and_info {
+.count_extend .count {
+  width: 70%;
   display: flex;
-  align-items: center;
-}
-.PopWindow_CWC_row .option_check {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.PopWindow_CWC_row .option_check .icon_check {
-  width: 20px;
-  height: 20px;
-  border: 1px solid #cccccc;
-  border-radius: 3px;
-}
-.PopWindow_CWC_row .option_check .icon_check.active:after {
-  content: '✓';
-  display: block;
-  color: #939334;
-  font-size: 1rem;
-  font-weight: bold;
-}
-.PopWindow_CWC_row .bottle_info {
-  font-size: 1rem;
-  color: #666;
-  margin-left: 8px;
-}
-.PopWindow_CWC_row .bottle_info span {
-  margin-left: 8px;
-}
-.PopWindow_CWC_row .bottle_info span:first-child {
-  margin-left: 0;
-}
-.PopWindow_CWC_row .bottle_info span:after {
-  content: '';
-  display: inline-block;
-  width: 1px;
-  height: 10px;
-  background-color: #999;
-  margin-left: 8px;
-}
-.PopWindow_CWC_row .bottle_info span:last-child:after {
-  display: none;
-}
-.PopWindow_CWC_row .bottle_number {
-  display: flex;
-  align-items: flex-end;
-}
-.PopWindow_CWC_row .bottle_number img {
-  width: 10px;
-  height: auto;
-}
-.PopWindow_CWC_row .bottle_number span {
-  font-size: 28px;
-  color: #6e6e6e;
-  font-weight: bold;
-  margin-left: 8px;
-}
-.PopWindow_CWC_row .count {
-  width: 100%;
-  box-sizing: border-box;
-  margin-top: 16px;
-  display: none;
   justify-content: flex-end;
+  align-items: center;
 }
-.PopWindow_CWC_row .count .icon_minus {
-  width: 40px;
-  height: 40px;
-  border: 1px solid #cccccc;
-  background-color: #e5e5e5;
-  margin-right: 5px;
-  border-radius: 4px;
-  box-sizing: border-box;
-  cursor: pointer;
-  position: relative;
-}
-.PopWindow_CWC_row .count .icon_minus:after {
-  content: '';
-  width: 13px;
-  height: 3px;
-  background-color: #666666;
-  display: block;
-  position: absolute;
-  top: calc((100% - 3px)/2);
-  left: calc((100% - 13px)/2);
-}
-.PopWindow_CWC_row .count .bottle_number {
-  width: 80px;
+.count_extend .count .bottle_number_input {
+  width: calc(100% - 80px - 10px);
   height: 40px;
   border: 1px solid #cccccc;
   background-color: #ffffff;
@@ -11782,7 +11708,28 @@ h2.detail_Name_cn {
   color: #666;
   outline: none;
 }
-.PopWindow_CWC_row .count .icon_plus {
+.count_extend .count .icon_minus {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #cccccc;
+  background-color: #e5e5e5;
+  margin-right: 5px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+}
+.count_extend .count .icon_minus:after {
+  content: '';
+  width: 13px;
+  height: 3px;
+  background-color: #666666;
+  display: block;
+  position: absolute;
+  top: calc((100% - 3px)/2);
+  left: calc((100% - 13px)/2);
+}
+.count_extend .count .icon_plus {
   width: 40px;
   height: 40px;
   border: 1px solid #cccccc;
@@ -11793,7 +11740,7 @@ h2.detail_Name_cn {
   cursor: pointer;
   position: relative;
 }
-.PopWindow_CWC_row .count .icon_plus:before {
+.count_extend .count .icon_plus:before {
   content: '';
   width: 3px;
   height: 13px;
@@ -11803,7 +11750,7 @@ h2.detail_Name_cn {
   top: calc((100% - 13px)/2);
   left: calc((100% - 3px)/2);
 }
-.PopWindow_CWC_row .count .icon_plus:after {
+.count_extend .count .icon_plus:after {
   content: '';
   width: 13px;
   height: 3px;
@@ -11813,23 +11760,49 @@ h2.detail_Name_cn {
   top: calc((100% - 3px)/2);
   left: calc((100% - 13px)/2);
 }
-@media screen and (min-width: 760px) {
-  .PopWindow_CWC_row .bottle_info {
-    font-size: 1.125rem;
-  }
-}
-
-.Popwindow_GetWineBtn {
+.count_extend .btn_getwine_comfirm {
   width: 100%;
-  margin-top: 24px;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
   height: 60px;
   line-height: 60px;
-  background-color: #904d06;
-  border-radius: 5px;
-  font-size: 1.5rem;
-  color: #fff;
-  font-weight: bold;
   text-align: center;
+  color: #fff;
+  background-color: #939334;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: calc(30% - 5px);
+  height: 40px;
+  font-size: 1.125rem;
+  box-sizing: border-box;
+  line-height: 40px;
+  margin: 0;
+  cursor: pointer;
+}
+@media screen and (min-width: 760px) {
+  .count_extend .btn_getwine_comfirm {
+    width: 380px;
+  }
+}
+@media screen and (min-width: 760px) {
+  .count_extend {
+    justify-content: flex-start;
+    width: auto;
+  }
+  .count_extend .count {
+    width: auto;
+    margin-left: 16px;
+  }
+  .count_extend .count .bottle_number_input {
+    width: 120px;
+  }
+  .count_extend .btn_getwine_comfirm {
+    width: 80px;
+    margin-left: 8px;
+  }
 }
 
 /*修改詳目頁樣式給CWC用*/

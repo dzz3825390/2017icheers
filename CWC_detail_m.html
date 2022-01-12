@@ -42,19 +42,12 @@
 				    intBrowserW = document.body.clientWidth;
 				    intBrowserH = document.body.clientHeight;
 				}
-
-		   
-			//取酒視窗checkbox
-			$('.option_check').click(function(){
-				$(this).find('.icon_check').toggleClass('active');
-				if($(this).find('.icon_check').hasClass('active')){
-					$(this).parent().parent().find('.count').css('display','flex');
-				} else {
-					$(this).parent().parent().find('.count').css('display','none');
-				}
-			});
 		    
-		   
+	   		//窖藏配送展開
+	   		$('#CWCGetWine').click(function(){
+	   			$(this).css('display','none');
+	   			$('.count_extend').css('display','flex');
+	   		});
 		   
 
 		});
@@ -148,6 +141,14 @@
 				<img src="images/mobile/icon_CWC_bottle_number.svg">
 				<span>x26</span>
 				<button class="btn_getwine" id="CWCGetWine">配送窖藏</button>
+			</div>
+			<div class="count_extend" style="display:none;">
+				<div class="count">
+					<div class="icon_minus"></div>
+					<input type="number" class="bottle_number_input" value="4">
+					<div class="icon_plus"></div>
+				</div>
+				<div class="btn_getwine_comfirm">確認</div>
 			</div>
 		</div>
 		<div class="one_info_row">

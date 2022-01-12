@@ -223,9 +223,12 @@
 		}
 
 		&.active{
-			background-color: #8e6681;
+			background-color: #fff;
 			border-color: #8e6681;
-			color: #fff;
+			border-width: 2px;
+			font-size: 1.2rem;
+			color: #8e6681;
+			font-weight: bold;
 		}
 	}
 
@@ -239,6 +242,10 @@
 
 			&:nth-child(7n+1){
 				margin-left: 0;
+			}
+
+			&.active{
+				line-height: 38px;
 			}
 		}
 	}
@@ -272,9 +279,12 @@
 		}
 
 		&.active{
-			background-color: #8e6681;
+			background-color: #fff;
 			border-color: #8e6681;
-			color: #fff;
+			border-width: 2px;
+			font-size: 1.2rem;
+			font-weight: bold;
+			color: #8e6681;
 		}
 	}
 
@@ -362,7 +372,10 @@
 
 	@include pad-width{
 		& .one_info_row{
+			display: flex;
+			flex-wrap: wrap;
 			& .title{
+				width: 100%;
 				font-size: 1.125rem;
 				& em{
 					height: 14px;
@@ -371,6 +384,7 @@
 			}
 
 			& .text{
+				width: 100%;
 				font-size: 1.125rem;
 				line-height: 1.5rem;
 			}
@@ -400,97 +414,35 @@
 	}
 }
 
-/*取酒視窗用樣式*/
-.PopWindow_CWC_row{
+/*取酒數量row*/
+.count_extend{
 	width: 100%;
-	box-sizing: border-box;
+	margin-top: 16px;
 	display: flex;
-	align-items: flex-end;
-	flex-wrap:wrap;
+	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: 16px 0;
-	border-top: 1px dotted #cccccc;
-	&:first-child{
-		border:none;
-	}
-
-	& .checkbox_and_info{
-		display: flex;
-		align-items: center;
-	}
-	& .option_check{
-		width: 40px;
-	    height: 40px;
-	    display: flex;
-	    justify-content: center;
-	    align-items: center;
-	    cursor: pointer;
-	    & .icon_check{
-	    	width: 20px;
-		    height: 20px;
-		    border: 1px solid #cccccc;
-		    border-radius: 3px;
-		    &.active:after{
-		    	content: '✓';
-			    display: block;
-			    color: #939334;
-			    font-size: 1rem;
-			    font-weight: bold;
-		    }
-	    }
-	}
-
-	& .bottle_info{
-		font-size: 1rem;
-		color: #666;
-		margin-left: 8px;
-		& span{
-			margin-left: 8px;
-			&:first-child{
-				margin-left: 0;
-			}
-		}
-
-		& span:after{
-			content: '';
-			display: inline-block;
-			width: 1px;
-			height: 10px;
-			background-color: #999;
-			margin-left: 8px;				
-		}
-
-		& span:last-child:after{
-			display: none;
-		}
-
-
-	}
-
-	& .bottle_number{
-		display: flex;
-		align-items: flex-end;
-		& img{
-			width: 10px;
-			height: auto;
-		}
-
-		& span{
-			font-size: 28px;
-			color: #6e6e6e;
-			font-weight: bold;
-			margin-left: 8px;
-		}
-	}
-
 	& .count{
-		width: 100%;
-		box-sizing: border-box;
-		margin-top: 16px;
-		display: none;
-		justify-content: flex-end;
-		& .icon_minus{
-			width: 40px;
+		width: 70%;
+	    display: flex;
+	    justify-content: flex-end;
+	    align-items: center;
+	    & .bottle_number_input{
+	    	width: calc(100% - 80px - 10px);
+		    height: 40px;
+		    border: 1px solid #cccccc;
+		    background-color: #ffffff;
+		    border-radius: 4px;
+		    box-sizing: border-box;
+		    padding: 0 16px;
+		    text-align: center;
+		    font-size: 1rem;
+		    line-height: 40px;
+		    color: #666;
+		    outline: none;
+	    }
+
+	    & .icon_minus{
+	    	width: 40px;
 		    height: 40px;
 		    border: 1px solid #cccccc;
 		    background-color: #e5e5e5;
@@ -509,25 +461,10 @@
 			    top: calc((100% - 3px)/2);
 			    left: calc((100% - 13px)/2);
 		    }
-		}
+	    }
 
-		& .bottle_number{
-			width: 80px;
-		    height: 40px;
-		    border: 1px solid #cccccc;
-		    background-color: #ffffff;
-		    border-radius: 4px;
-		    box-sizing: border-box;
-		    padding: 0 16px;
-		    text-align: center;
-		    font-size: 1rem;
-		    line-height: 40px;
-		    color: #666;
-		    outline: none;
-		}
-
-		& .icon_plus{
-			width: 40px;
+	    & .icon_plus{
+	    	width: 40px;
 		    height: 40px;
 		    border: 1px solid #cccccc;
 		    background-color: #e5e5e5;
@@ -536,48 +473,63 @@
 		    box-sizing: border-box;
 		    cursor: pointer;
 		    position: relative;
+
 		    &:before{
-				content: '';
-				width: 3px;
-				height: 13px;
-				background-color: #666666;
-				display: block;
-				position: absolute;
-				top: calc((100% - 13px)/2);
-				left: calc((100% - 3px)/2);
-			}
-			&:after{
-				content: '';
-				width: 13px;
-				height: 3px;
-				background-color: #666666;
-				display: block;
-				position: absolute;
-				top: calc((100% - 3px)/2);
-				left: calc((100% - 13px)/2);
-			}
+		    	content: '';
+			    width: 3px;
+			    height: 13px;
+			    background-color: #666666;
+			    display: block;
+			    position: absolute;
+			    top: calc((100% - 13px)/2);
+			    left: calc((100% - 3px)/2);
+		    }
+
+		    &:after{
+		    	content: '';
+			    width: 13px;
+			    height: 3px;
+			    background-color: #666666;
+			    display: block;
+			    position: absolute;
+			    top: calc((100% - 3px)/2);
+			    left: calc((100% - 13px)/2);
+		    }
+	    }
+	}
+
+	& .btn_getwine_comfirm{
+		@include ConfirmBtn{
+
 		}
+		width: calc(30% - 5px);
+		height: 40px;
+		font-size: 1.125rem;
+    	box-sizing: border-box;
+    	line-height: 40px;
+    	margin:0;
+    	cursor: pointer;
 	}
 
 	@include pad-width{
-		& .bottle_info{
-			font-size: 1.125rem;
+		justify-content: flex-start;
+		width: auto;
+		& .count{
+			width: auto;
+			margin-left: 16px;
+			& .bottle_number_input{
+				width: 120px;
+			}
 		}
-	}
+
+		& .btn_getwine_comfirm{
+			width: 80px;
+			margin-left: 8px;
+		}
+	}	
 }
 
-.Popwindow_GetWineBtn{
-	width: 100%;
-	margin-top: 24px;
-	height: 60px;
-	line-height: 60px;
-	background-color: #904d06;
-	border-radius: 5px;
-	font-size: 1.5rem;
-	color: #fff;
-	font-weight: bold;
-	text-align: center;
-}
+
 
 /*修改詳目頁樣式給CWC用*/
 .CWC .detail_BasicInfo{
