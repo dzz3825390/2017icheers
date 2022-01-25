@@ -2012,6 +2012,12 @@
 		}
 	}
 
+	& #DeliveryInfo_Sex{
+		& .Radio_Sexual{
+			width: calc((100% - 0.5rem)/2);
+		}
+	}
+
 	
 
 	& .Radio_Payment{

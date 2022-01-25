@@ -50,11 +50,7 @@
 				}
 
 			//收件人地址下拉初始寬度
-			if (intBrowserW < 768) {
-				var RecordedAddressSelectorWidth = $('.form_Recorded').width() - $('#DeliveryInfo_BTNEdit').outerWidth(true) - 8;
-
-		    	$('#RecordedAddress_Selector').css('width',RecordedAddressSelectorWidth);
-			}
+			RecordedAddressSelectorWidth($('#DeliveryInfo_BTNEdit'));
 
 			//常用公司初始寬度
 			$('#RecordedCompany_Selector').css('width','100%');
@@ -122,6 +118,8 @@
 	                Address:'234新北市永和區成功路一段82號',
 	                Time:'下午(14~18時)',
 	                Date:'假日',
+	                //Motocycle Car T-cat SuperExpress SelfCollect
+	                DeliveryType:'Motocycle',
 	                BuildingGuardCollect:true,
 	                ReuseBox:false,
 	                ReusePaperMaterial:false
@@ -130,12 +128,14 @@
 	        var TestData_Custom2 = [
 	            {
 	                Name:'陳怡棻',
-	                Sex:'Other',
-	                OtherSexualText: '多色寶山大王',
+	                Sex:'Female',
+	                OtherSexualText: '',
 	                Phone:'0965432189',
 	                Address:'234新北市永和區成功路一段84號',
 	                Time:'皆可',
 	                Date:'皆可',
+	                //Motocycle Car T-cat SuperExpress SelfCollect
+	                DeliveryType:'T-cat',
 	                BuildingGuardCollect:false,
 	                ReuseBox:true,
 	                ReusePaperMaterial:true
@@ -146,7 +146,7 @@
 	        $('#RecordedAddress_Selector .dropdown_option').click(function(){
 	        	var ImportDataName = $(this).attr('id');
 	        	switch (ImportDataName){
-	        		case 'Option_PurchaseInfo':
+	        		/*case 'Option_PurchaseInfo':
 	        			$('#Form_RecordedAddress').attr('formstatus','ImportPurchaseAddress');
 	        			if (HasPurchaseInfo){
 	        				var TestData_Purchase = [
@@ -192,7 +192,7 @@
 					        ImportDeliveryInfo(TestData_Purchase);
 
 	        			}
-	        		break;
+	        		break;*/
 	        		
 	        		case 'Option_CustomInfo1' :
 	        			$('#Form_RecordedAddress').attr('formstatus','CustomAddress');
@@ -205,7 +205,7 @@
 	        		break;
 
 	        		case 'Option_AddNew' :
-	        			DeliveryInfoAddNew(intBrowserW);
+	        			DeliveryInfoAddNewCWC(intBrowserW);
 	        		break;
 	        	}
 	        });
@@ -332,70 +332,72 @@
 			</div>
 		</div>
 		<div id="Form_RecordedAddress" formstatus="ImportPurchaseAddress">
-			<div class="btn_edit" id="DeliveryInfo_BTNEdit" onclick="DeliveryInfoEdit();">修改</div>
+			<div class="btn_edit" id="DeliveryInfo_BTNEdit" onclick="DeliveryInfoEdit();" style="display:none;">修改</div>
 			<div class="btn_save" id="DeliveryInfo_BTNSave" style="display:none;">
 				<div class="checkbox_layout">
 					<div class="option_check">
 						<div class="icon_check"></div>
 					</div>
-					<div class="checkbox_text">儲存</div>
+					<div class="checkbox_text">儲存地址</div>
 				</div>	
 			</div>
-			<div class="cart_form_row"><div class="formTitle">收件人大名</div><input id="DeliveryInfo_Name" type="text" name="" value=""></div>
-			<div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual" name="sex" sexual="Female">小姐</div><div class="RadioBox Radio_Sexual OtherSexual" name="sex" sexual="Other">其他</div></div></div>
-			<div class="cart_form_row" style="display:none;margin-top: 0;">
-				<input type="text" name="sex" value="" id="OtherSexualText">
-			</div>
-			<div class="cart_form_row">
-				<div class="formTitle">收件人電話</div>
-				<input id="DeliveryInfo_Phone" type="text" name="" value="">
-			</div>
-			<div class="cart_form_row form_Address"><div class="formTitle">收件人地址</div><div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>新北市</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">澎湖縣</div><div class="dropdown_option">連江縣</div><div class="dropdown_option">金門縣</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>234&nbsp;永和區</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value="成功路一段80號15樓"></div><div class="NoticeText" style="display: none;">*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。</div><div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div></div>
+			<div class="cart_form_row recorded_data">
+				<div class="cart_form_row"><div class="formTitle">收件人大名</div><input id="DeliveryInfo_Name" type="text" name="" value=""></div>
+				<div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual" name="sex" sexual="Female">小姐</div></div></div>
+				<div class="cart_form_row" style="display:none;margin-top: 0;">
+					<input type="text" name="sex" value="" id="OtherSexualText">
+				</div>
+				<div class="cart_form_row">
+					<div class="formTitle">收件人連絡電話</div>
+					<input id="DeliveryInfo_Phone" type="text" name="" value="">
+				</div>
+				<div class="cart_form_row form_Address"><div class="formTitle">收件人地址</div><div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>新北市</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">澎湖縣</div><div class="dropdown_option">連江縣</div><div class="dropdown_option">金門縣</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>234&nbsp;永和區</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value="成功路一段80號15樓"></div><div class="NoticeText" style="display: none;">*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。</div><div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div></div>
 
-			<div class="cart_form_row form_Address">
-				<div class="formTitle">配送方式</div>
-				<div id="DeliveryInfo_Type">
-					<div class="dropdown district">
-						<div class="dropdown_text">
-							<span>宅配到府</span>
-						</div>
-						<div class="dropdown_extend">
-							<div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">機車當日配</div>
-							<div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div>
-							<div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div>
-							<div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件2HR內到貨</div>
-							<div class="dropdown_option" id="DeliveryInfo_Type_Car">自取</div>
+				<div class="cart_form_row form_Address">
+					<div class="formTitle">配送方式</div>
+					<div id="DeliveryInfo_Type">
+						<div class="dropdown district">
+							<div class="dropdown_text">
+								<span>宅配到府</span>
+							</div>
+							<div class="dropdown_extend">
+								<div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">機車當日配</div>
+								<div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div>
+								<div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div>
+								<div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件2HR內到貨</div>
+								<div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div>
+							</div>
 						</div>
 					</div>
+					<div class="text" id="DeliveryInfo_TypeInfo" style="display:none;">(雙北特定區域、1400前)</div>
 				</div>
-				<div class="text" id="DeliveryInfo_TypeInfo" style="display:none;">(雙北特定區域、1400前)</div>
+				<div class="cart_form_row"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div></div>
+				<div class="cart_form_row"><div class="formTitle">希望配送星期</div><div class="Radio_Delivery_row" id="DeliveryInfo_Date"><div class="RadioBox Radio_DeliveryTime" name="deliverydate">平日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div></div></div>
+				<div class="cart_form_row">
+					<div class="formTitle">環保選項</div>
+					<div class="checkbox_layout" id="ReuseBox">
+						<div class="option_check">
+							<div class="icon_check"></div>
+						</div>
+						<div class="checkbox_text">我不介意用乾淨堅固的二手紙箱。</div>
+					</div>
+					<div class="checkbox_layout" id="ReusePaperMaterial">
+						<div class="option_check">
+							<div class="icon_check"></div>
+						</div>
+						<div class="checkbox_text">
+							我不介意用回收紙緩衝材(取代塑膠氣泡袋)。
+							<a href="#">示意圖</a>
+						</div>
+					</div>
+					<div class="img" style="display: none;">
+						<img src="images/mobile/green_package.jpg">
+					</div>
+				</div>
 			</div>
-			<div class="cart_form_row"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div></div>
-			<div class="cart_form_row"><div class="formTitle">希望配送星期</div><div class="Radio_Delivery_row" id="DeliveryInfo_Date"><div class="RadioBox Radio_DeliveryTime" name="deliverydate">平日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div></div></div>
+
 		</div>
 
-		
-		<div class="cart_form_row">
-			<div class="formTitle">環保選項</div>
-			<div class="checkbox_layout" id="ReuseBox">
-				<div class="option_check">
-					<div class="icon_check"></div>
-				</div>
-				<div class="checkbox_text">我不介意用乾淨堅固的二手紙箱。</div>
-			</div>
-			<div class="checkbox_layout" id="ReusePaperMaterial">
-				<div class="option_check">
-					<div class="icon_check"></div>
-				</div>
-				<div class="checkbox_text">
-					我不介意用回收紙緩衝材(取代塑膠氣泡袋)。
-					<a href="#">示意圖</a>
-				</div>
-			</div>
-			<div class="img" style="display: none;">
-				<img src="images/mobile/green_package.jpg">
-			</div>
-		</div>
 		<div class="cart_form_row">
 			<div class="formTitle">備註</div>
 			<textarea placeholder="可指定到貨日，但國定假日及周日恕無法配送喔！"></textarea>

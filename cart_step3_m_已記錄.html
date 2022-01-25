@@ -50,11 +50,7 @@
 				}
 
 			//收件人地址下拉初始寬度
-			if (intBrowserW < 768) {
-				var RecordedAddressSelectorWidth = $('.form_Recorded').width() - $('#DeliveryInfo_BTNEdit').outerWidth(true) - 8;
-
-		    	$('#RecordedAddress_Selector').css('width',RecordedAddressSelectorWidth);
-			}
+			RecordedAddressSelectorWidth($('#DeliveryInfo_BTNEdit'));
 
 			//常用公司初始寬度
 			$('#RecordedCompany_Selector').css('width','100%');
@@ -130,8 +126,8 @@
 	        var TestData_Custom2 = [
 	            {
 	                Name:'陳怡棻',
-	                Sex:'Other',
-	                OtherSexualText: '多色寶山大王',
+	                Sex:'Female',
+	                OtherSexualText: '',
 	                Phone:'0965432189',
 	                Address:'234新北市永和區成功路一段84號',
 	                Time:'皆可',
@@ -365,23 +361,23 @@
 						得和路52號..
 					</div>
 					<div class="dropdown_option" id="Option_AddNew">
-						新增常用地址
+						另行配送
 					</div>
 				</div>
 			</div>
 		</div>
 		<div id="Form_RecordedAddress" formstatus="ImportPurchaseAddress">
-			<div class="btn_edit" id="DeliveryInfo_BTNEdit" onclick="DeliveryInfoEdit();">修改</div>
+			<div class="btn_edit" id="DeliveryInfo_BTNEdit" onclick="DeliveryInfoEdit();" style="display:none;">修改</div>
 			<div class="btn_save" id="DeliveryInfo_BTNSave" style="display:none;">
 				<div class="checkbox_layout">
 					<div class="option_check">
 						<div class="icon_check"></div>
 					</div>
-					<div class="checkbox_text">儲存</div>
+					<div class="checkbox_text">儲存地址</div>
 				</div>	
 			</div>
 			<div class="cart_form_row recorded_data">
-				<div class="text"><span id="DeliveryInfo_Name" style="margin-left:0;">劉學涵</span><span id="DeliveryInfo_Sex" sexual="Female">&nbsp;小姐<span id="DeliveryInfo_OtherSexualText"></span></span></div>
+				<div class="text"><span id="DeliveryInfo_Name" style="margin-left:0;">劉學涵</span></div>
 				<div class="text" id="DeliveryInfo_Phone">0912345678</div>
 				<div class="text" id="DeliveryInfo_Address">234新北市永和區成功路一段80號15樓</div>
 				<div class="NoticeText">

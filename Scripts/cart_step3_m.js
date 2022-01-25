@@ -146,9 +146,16 @@ function RecordedAddressSelectorWidth(BTNID){
 	}
 
 	if (intBrowserW < 768) {
-		var RecordedAddressSelectorWidth = $('.form_Recorded').width() - BTNID.outerWidth(true) - 8;
 
-		$('#RecordedAddress_Selector').css('width',RecordedAddressSelectorWidth);
+		//不顯示的話寬度100%
+		if (BTNID.css('display') == 'none') {
+			$('#RecordedAddress_Selector').css('width','100%');
+		} else {
+			var RecordedAddressSelectorWidth = $('.form_Recorded').width() - BTNID.outerWidth(true) - 8;
+
+			$('#RecordedAddress_Selector').css('width',RecordedAddressSelectorWidth);
+		}		
+		
 	}
 }
 
@@ -288,9 +295,11 @@ function DeliveryInfoEdit (){
 	$('#DeliveryInfo_BTNEdit').css('display','none');
 	$('#DeliveryInfo_BTNSave').css('display','flex');
 	RecordedAddressSelectorWidth($('#DeliveryInfo_BTNSave'));
+
 	var DeliveryInfo_Name = $('#DeliveryInfo_Name').text();
 	var DeliveryInfo_Sex = $('#DeliveryInfo_Sex').attr('sexual');
 	var DeliveryInfo_OtherSexulText = $('#DeliveryInfo_OtherSexualText').text();
+	var DeliveryInfo_Type = $('#DeliveryInfo_Type').attr('delivery_type');
 	var DeliveryInfo_Phone = $('#DeliveryInfo_Phone').text();
 	var DeliveryInfo_Address_PostalCode = $('#DeliveryInfo_Address').text().split(/[^0-9a-zA-Z]+/g)[0];
 	var DeliveryInfo_Address_District = $('#DeliveryInfo_Address').text().substring(6,9);
@@ -313,14 +322,10 @@ function DeliveryInfoEdit (){
 
     //收件人性別
     if (DeliveryInfo_Sex == 'Male'){
-        $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual RadioBox_active" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual" name="sex" sexual="Female">小姐</div><div class="RadioBox Radio_Sexual OtherSexual" name="sex" sexual="Other">其他</div></div></div><div class="cart_form_row" style="display:none;margin-top: 0;"><input type="text" name="sex" value="" id="DeliveryInfo_OtherSexualText"></div>');
+        $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual RadioBox_active" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual" name="sex" sexual="Female">小姐</div></div></div>');
     } 
     else if (DeliveryInfo_Sex == 'Female'){
-        $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual RadioBox_active" name="sex" sexual="Female">小姐</div><div class="RadioBox Radio_Sexual OtherSexual" name="sex" sexual="Other">其他</div></div></div><div class="cart_form_row" style="display:none;margin-top: 0;"><input type="text" name="sex" value="" id="DeliveryInfo_OtherSexualText"></div>');
-        
-    } else {
-		$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual" name="sex" sexual ="Female">小姐</div><div class="RadioBox Radio_Sexual OtherSexual RadioBox_active" name="sex" sexual="Other">其他</div></div></div><div class="cart_form_row" style="margin-top: 0;"><input type="text" name="sex" value="'+DeliveryInfo_OtherSexulText+'" id="DeliveryInfo_OtherSexualText"></div>');
-		    		
+        $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual RadioBox_active" name="sex" sexual="Female">小姐</div></div></div>');    
     }
 
     //收件人電話
@@ -349,6 +354,29 @@ function DeliveryInfoEdit (){
     } else {
         $('#DeliveryInfo_Address').next('.NoticeText').css('display','none');
     }
+
+    //配送方式
+   	switch (DeliveryInfo_Type){
+   		case 'Motocycle':
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>機車當日配</span></div><div class="dropdown_extend" style="display: none;"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">機車當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件2HR內到貨</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div><div><div class="text" id="DeliveryInfo_TypeInfo" style="display:none;">(雙北特定區域、1400前)</div></div>');
+		break;
+
+   		case 'Car':
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>汽車當日配(需下樓自取)</span></div><div class="dropdown_extend" style="display: none;"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">機車當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件2HR內到貨</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text" id="DeliveryInfo_TypeInfo" style="display:none;">(雙北特定區域、1400前)</div></div>');
+		break;
+
+		case 'T-cat':   			
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>宅配到府</span></div><div class="dropdown_extend" style="display: none;"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">機車當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件2HR內到貨</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text" id="DeliveryInfo_TypeInfo" style="display:none;">(雙北特定區域、1400前)</div></div>');
+		break;
+
+		case 'SuperExpress':
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>特急件2HR內到貨</span></div><div class="dropdown_extend" style="display: none;"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">機車當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件2HR內到貨</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text" id="DeliveryInfo_TypeInfo" style="display:none;">(雙北特定區域、1400前)</div></div>');
+		break;
+
+		case 'SelfCollect':
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>自取</span></div><div class="dropdown_extend" style="display: none;"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">機車當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件2HR內到貨</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text" id="DeliveryInfo_TypeInfo" style="display:none;">(雙北特定區域、1400前)</div></div>');
+		break;				
+   	}
 
     //希望配送時段
     if (DeliveryInfo_Time == '上午(08~13時)'){
@@ -420,7 +448,7 @@ function DeliveryInfoAddNew(intBrowserW){
     $('#Form_RecordedAddress .recorded_data').text('');
 
     $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">收件人大名</div><input id="DeliveryInfo_Name" type="text" name="" value=""></div>');
-    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual" name="sex" sexual="Female">小姐</div><div class="RadioBox Radio_Sexual OtherSexual" name="sex" sexual="Other">其他</div></div></div>');
+    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual" name="sex" sexual="Female">小姐</div></div></div>');
     $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" style="display:none;margin-top: 0;"><input type="text" name="sex" value="" id="DeliveryInfo_OtherSexualText"></div>');
     $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">收件人連絡電話</div><input id="DeliveryInfo_Phone" type="text" name="" value=""></div>');
     $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">收件人地址</div><div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>新北市</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">澎湖縣</div><div class="dropdown_option">連江縣</div><div class="dropdown_option">金門縣</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>234&nbsp;永和區</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value=""></div><div class="NoticeText" style="display: none;">*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。</div><div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div></div>');
@@ -438,11 +466,49 @@ function DeliveryInfoAddNew(intBrowserW){
    	DropdownBind();
 }
 
+//新增常用地址(CWC)
+function DeliveryInfoAddNewCWC(intBrowserW){
+	$('#DeliveryInfo_BTNEdit').css('display','none');
+	$('#DeliveryInfo_BTNSave').css('display','flex');
+
+	RecordedAddressSelectorWidth($('#DeliveryInfo_BTNSave'));
+	var DeliveryInfo_FormStatus = $('#Form_RecordedAddress').attr('formstatus');
+
+	//清空
+    $('#Form_RecordedAddress .recorded_data').text('');
+
+    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">收件人大名</div><input id="DeliveryInfo_Name" type="text" name="" value=""></div>');
+    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual" name="sex" sexual="Female">小姐</div></div></div>');
+    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" style="display:none;margin-top: 0;"><input type="text" name="sex" value="" id="DeliveryInfo_OtherSexualText"></div>');
+    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">收件人連絡電話</div><input id="DeliveryInfo_Phone" type="text" name="" value=""></div>');
+    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">收件人地址</div><div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>新北市</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">澎湖縣</div><div class="dropdown_option">連江縣</div><div class="dropdown_option">金門縣</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>234&nbsp;永和區</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value=""></div><div class="NoticeText" style="display: none;">*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。</div><div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div></div>');
+    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>宅配到府</span></div><div class="dropdown_extend"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">機車當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件2HR內到貨</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text" id="DeliveryInfo_TypeInfo" style="display:none;">(雙北特定區域、1400前)</div></div>');
+
+    if (DeliveryInfo_FormStatus == 'NewCustomers') {
+    	
+    } else {
+	    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div><div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div><div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div></div>')
+
+    }
+
+    SexualRadio();
+   	DeliveryTimeRadio();
+   	CheckboxBind();
+   	DropdownBind();
+}
+
 
 //代入常用地址
 function ImportDeliveryInfo(data){
-	$('#DeliveryInfo_BTNEdit').css('display','block');
-	$('#DeliveryInfo_BTNSave').css('display','none');
+
+	if($('#Form_RecordedAddress').attr('formstatus') == 'ImportPurchaseAddress'){
+		$('#DeliveryInfo_BTNEdit').css('display','none');
+		$('#DeliveryInfo_BTNSave').css('display','none');
+	} else{
+		$('#DeliveryInfo_BTNEdit').css('display','block');
+		$('#DeliveryInfo_BTNSave').css('display','none');
+	}
+	
 
 
 	RecordedAddressSelectorWidth($('#DeliveryInfo_BTNEdit'));
@@ -455,21 +521,32 @@ function ImportDeliveryInfo(data){
     var DeliveryInfo_AddressCity = data[0].Address.substring(3,6);
     var DeliveryInfo_Time = data[0].Time;
     var DeliveryInfo_Date = data[0].Date;
+    var DeliveryInfo_Type = data[0].DeliveryType;
     var DeliveryInfo_BuildingGuardCollect = data[0].BuildingGuardCollect;
     var DeliveryInfo_ReuseBox = data[0].ReuseBox;
     var DeliveryInfo_ReusePaperMaterial = data[0].ReusePaperMaterial;
     //清空
     $('#Form_RecordedAddress .recorded_data').text('');
 
-    //收件人姓名性別
-    if (DeliveryInfo_Sex == 'Male'){
+    //收件人姓名
+    if($('#Form_RecordedAddress').attr('formstatus') == 'ImportPurchaseAddress') {
+	    $('#Form_RecordedAddress .recorded_data').append('<div class="text"><span id="DeliveryInfo_Name" style="margin-left:0;">'+DeliveryInfo_Name+'</span></div>');
+    } else {
+    	if (DeliveryInfo_Sex == 'Male'){
+	        $('#Form_RecordedAddress .recorded_data').append('<div class="text"><span id="DeliveryInfo_Name" style="margin-left:0;">'+DeliveryInfo_Name+'</span><span id="DeliveryInfo_Sex" sexual="Male"></span></div>');
+	    } 
+	    else if (DeliveryInfo_Sex == 'Female'){
+	        $('#Form_RecordedAddress .recorded_data').append('<div class="text"><span id="DeliveryInfo_Name" style="margin-left:0;">'+DeliveryInfo_Name+'</span><span id="DeliveryInfo_Sex" sexual="Female"></span></div>');
+	    }
+    }
+    /*if (DeliveryInfo_Sex == 'Male'){
         $('#Form_RecordedAddress .recorded_data').append('<div class="text"><span id="DeliveryInfo_Name" style="margin-left:0;">'+DeliveryInfo_Name+'</span><span id="DeliveryInfo_Sex" sexual="Male">&nbsp;先生<span id="DeliveryInfo_OtherSexualText"></span></span></div>');
     } 
     else if (DeliveryInfo_Sex == 'Female'){
         $('#Form_RecordedAddress .recorded_data').append('<div class="text"><span id="DeliveryInfo_Name" style="margin-left:0;">'+DeliveryInfo_Name+'</span><span id="DeliveryInfo_Sex" sexual="Female">&nbsp;小姐<span id="DeliveryInfo_OtherSexualText"></span></span></div>');
     } else {
         $('#Form_RecordedAddress .recorded_data').append('<div class="text"><span id="DeliveryInfo_Name" style="margin-left:0;">'+DeliveryInfo_Name+'</span><span id="DeliveryInfo_Sex" sexual="Other">&nbsp;<span id="DeliveryInfo_OtherSexualText">'+OtherSexualText+'</span></span></div>');    		
-    }
+    }*/
 
     //收件人電話
     $('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Phone">'+DeliveryInfo_Phone+'</div>');
@@ -510,6 +587,29 @@ function ImportDeliveryInfo(data){
 	        DeliveryTimeRadio();
 	    }
     }
+
+    //配送方式
+   	switch (DeliveryInfo_Type){
+   		case 'Motocycle':
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Type" delivery_type="Motocycle">機車當日配</div>');
+   		break;
+
+   		case 'Car':
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Type" delivery_type="Car">汽車當日配(需下樓自取)</div>');
+		break;
+
+		case 'T-cat':   			
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Type" delivery_type="T-cat">宅配到府</div>');
+		break;
+
+		case 'SuperExpress':
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Type" delivery_type="SuperExpress">特急件2HR內到貨</div>');
+		break;
+
+		case 'SelfCollect':
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="text"  id="DeliveryInfo_Type" delivery_type="SelfCollect">自取</div>');
+		break;				
+   	}
     
 
    	//希望配送星期

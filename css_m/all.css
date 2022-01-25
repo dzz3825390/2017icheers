@@ -8089,6 +8089,9 @@ h2.detail_Name_cn {
   margin-top: 0.5rem;
   margin-left: 0;
 }
+.cart_form_row #DeliveryInfo_Sex .Radio_Sexual {
+  width: calc((100% - 0.5rem)/2);
+}
 .cart_form_row .Radio_Payment {
   padding: 0;
   width: 100%;
