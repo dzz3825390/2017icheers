@@ -13,6 +13,7 @@
 	<link href="css_m/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="Scripts/all_m.js"></script>
+	<script type="text/javascript" src="Scripts/cart_step3_m.js"></script>
 	<script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
 	<!--[if lt IE 9]  //記得在前後加上 < > 註解
 	  <script>
@@ -31,191 +32,6 @@
 		//訂購人資料狀態 true:已記錄 false:可編輯狀態
 		var HasPurchaseInfo = true;
 
-		//修改訂購人資訊
-		function PurchaseInfoEdit (){
-
-			HasPurchaseInfo = false;
-			$('#PurchaseInfo_BTNEdit').css('display','none');
-			var PurchaseInfo_Name = $('#PurchaseInfo_Name').text();
-			var PurchaseInfo_Sex = $('#PurchaseInfo_Sex').text();
-			var PurchaseInfo_Phone = $('#PurchaseInfo_Phone').text();
-			var PurchaseInfo_Address_PostalCode = $('#DeliveryInfo_Address').text().split(/[^0-9a-zA-Z]+/g)[0];
-			var PurchaseInfo_Address_District = $('#DeliveryInfo_Address').text().substring(6,9);
-			var PurchaseInfo_Address_City = $('#PurchaseInfo_Address').text().substring(3,6);
-			var PurchaseInfo_Address_Other = $('#PurchaseInfo_Address').text().slice(9);
-
-			$('#PurchaseInfo_Name').replaceWith('<input id="PurchaseInfo_Name" type="text" name="" value="'+PurchaseInfo_Name+'">');
-
-			if (PurchaseInfo_Sex == '男') {
-	            $('#PurchaseInfo_Sex').replaceWith('<div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual RadioBox_active" name="sex">男</div><div class="RadioBox Radio_Sexual" name="sex">女</div><div class="RadioBox Radio_Sexual" name="sex">中性</div></div>');
-	        } else if (PurchaseInfo_Sex == '女'){
-	        	$('#PurchaseInfo_Sex').replaceWith('<div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex">男</div><div class="RadioBox Radio_Sexual RadioBox_active" name="sex">女</div><div class="RadioBox Radio_Sexual" name="sex">中性</div></div>');
-	        } else {
-	        	$('#PurchaseInfo_Sex').replaceWith('<div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex">男</div><div class="RadioBox Radio_Sexual" name="sex">女</div><div class="RadioBox Radio_Sexual RadioBox_active" name="sex">中性</div></div>');
-	        }
-
-	        $('#PurchaseInfo_Phone').replaceWith('<input id="PurchaseInfo_Phone" type="text" name="" value="'+PurchaseInfo_Phone+'">');
-
-	        $('#PurchaseInfo_Address').replaceWith('<div class="dropdown district"><div class="dropdown_text"><span>'+PurchaseInfo_Address_City+'</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>'+PurchaseInfo_Address_PostalCode+'&nbsp;'+PurchaseInfo_Address_District+'</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value="'+PurchaseInfo_Address_Other+'">');
-
-		} 
-
-		//修改收件人地址
-		function DeliveryInfoEdit (){
-			$('#DeliveryInfo_BTNEdit').css('display','none');
-			var DeliveryInfo_Name = $('#DeliveryInfo_Name').text();
-		   	var DeliveryInfo_Sex = $('#DeliveryInfo_Sex').text();
-		   	var DeliveryInfo_Phone = $('#DeliveryInfo_Phone').text();
-		   	var DeliveryInfo_Address_PostalCode = $('#DeliveryInfo_Address').text().split(/[^0-9a-zA-Z]+/g)[0];
-		   	var DeliveryInfo_Address_District = $('#DeliveryInfo_Address').text().substring(6,9);
-		   	var DeliveryInfo_Address_City = $('#DeliveryInfo_Address').text().substring(3,6);
-		   	var DeliveryInfo_Address_Other = $('#DeliveryInfo_Address').text().slice(9);
-		   	var DeliveryInfo_Time = $('#DeliveryInfo_Time').text();
-        	var DeliverInfo_Date = $('#DeliverInfo_Date').text();
-
-        	$('#DeliveryInfo_Name').replaceWith('<input id="DeliveryInfo_Name" type="text" name="" value="'+DeliveryInfo_Name+'">');
-
-        	if (DeliveryInfo_Sex == '男') {
-	            $('#DeliveryInfo_Sex').replaceWith('<div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual RadioBox_active" name="sex">男</div><div class="RadioBox Radio_Sexual" name="sex">女</div><div class="RadioBox Radio_Sexual" name="sex">中性</div></div>');
-	        } else if (DeliveryInfo_Sex == '女'){
-	        	$('#DeliveryInfo_Sex').replaceWith('<div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex">男</div><div class="RadioBox Radio_Sexual RadioBox_active" name="sex">女</div><div class="RadioBox Radio_Sexual" name="sex">中性</div></div>');
-	        } else {
-	        	$('#DeliveryInfo_Sex').replaceWith('<div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex">男</div><div class="RadioBox Radio_Sexual" name="sex">女</div><div class="RadioBox Radio_Sexual RadioBox_active" name="sex">中性</div></div>');
-	        }
-
-	        $('#DeliveryInfo_Phone').replaceWith('<input id="DeliveryInfo_Phone" type="text" name="" value="'+DeliveryInfo_Phone+'">');
-
-	        $('#DeliveryInfo_Address').replaceWith('<div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>'+DeliveryInfo_Address_City+'</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>'+DeliveryInfo_Address_PostalCode+'&nbsp;'+DeliveryInfo_Address_District+'</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value="'+DeliveryInfo_Address_Other+'"></div>');
-
-	        if (DeliveryInfo_Time == '上午(08~13時)') {
-	            $('#DeliveryInfo_Time').replaceWith('<div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div>');
-	        } else if (DeliveryInfo_Time == '下午(14~18時)') {
-	        	$('#DeliveryInfo_Time').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime RadioBox_active">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div>');
-	        } else {
-	        	$('#DeliveryInfo_Time').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverytime">皆可</div>');
-	        }
-
-	        if (DeliverInfo_Date == '上班日') {
-	            $('#DeliveryInfo_Date').replaceWith('<div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">上班日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div>');
-	        } else if (DeliverInfo_Date == '假日') {
-	            $('#DeliveryInfo_Date').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverydate">上班日</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div>');
-	        } else {
-	            $('#DeliveryInfo_Date').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverydate">上班日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">皆可</div>');
-	        }
-
-		}
-
-		//代入常用地址
-		function ImportDeliveryInfo(data){
-			$('#DeliveryInfo_BTNEdit').css('display','block');
-			var DeliveryInfo_Name = data[0].Name;
-        	var DeliveryInfo_Sex = data[0].Sex;
-        	var DeliveryInfo_Phone = data[0].Phone;
-        	var DeliveryInfo_Address = data[0].Address;
-        	var DeliveryInfo_Time = data[0].Time;
-        	var DeliveryInfo_Date = data[0].Date;
-        	var DeliveryInfo_CustomAddress_Name = data[0].CustomName;
-
-        	$('#DeliveryInfo_CustomAddress_Name').replaceWith('<div class="text" id="DeliveryInfo_CustomAddress_Name">'+DeliveryInfo_CustomAddress_Name+'</div>');
-        	$('#DeliveryInfo_Name').replaceWith('<div class="text" id="DeliveryInfo_Name">'+DeliveryInfo_Name+'</div>');
-        	$('#DeliveryInfo_Sex').replaceWith('<div class="text" id="DeliveryInfo_Sex">'+DeliveryInfo_Sex+'</div>');
-        	$('#DeliveryInfo_Phone').replaceWith('<div class="text" id="DeliveryInfo_Phone">'+DeliveryInfo_Phone+'</div>');
-        	$('#DeliveryInfo_Address').replaceWith('<div class="text" id="DeliveryInfo_Address">'+DeliveryInfo_Address+'</div>');
-
-        	if (DeliveryInfo_Time == '') {
-				$('#DeliveryInfo_Time').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div>');
-        	} else {
-        		$('#DeliveryInfo_Time').replaceWith('<div class="text" id="DeliveryInfo_Time">'+DeliveryInfo_Time+'</div>');
-        	}
-
-        	if (DeliveryInfo_Date == '') {
-        		$('#DeliveryInfo_Date').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverydate">上班日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div>');
-
-        	} else {
-        		$('#DeliveryInfo_Date').replaceWith('<div class="text" id="DeliveryInfo_Date">'+DeliveryInfo_Date+'</div>');
-        	}
-        	
-        	
-
-		}
-
-		//新增常用地址
-		function DeliveryAddNew(){
-			$('#DeliveryInfo_BTNEdit').css('display','none');
-			$('#DeliveryInfo_CustomAddress_Name').parent().css('display','block');
-        	$('#DeliveryInfo_CustomAddress_Name').replaceWith('<input id="DeliveryInfo_CustomAddress_Name" type="text" name="">');
-
-        	$('#DeliveryInfo_Name').replaceWith('<input id="DeliveryInfo_Name" type="text" name="">');
-        	$('#DeliveryInfo_Sex').replaceWith('<div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex">男</div><div class="RadioBox Radio_Sexual" name="sex">女</div><div class="RadioBox Radio_Sexual" name="sex">中性</div></div>');
-        	$('#DeliveryInfo_Phone').replaceWith('<input id="DeliveryInfo_Phone" type="text" name="">');
-
-        	$('#DeliveryInfo_Address').replaceWith('<div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>新北市</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>234&nbsp;永和區</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value=""></div>');
-
-        	$('#DeliveryInfo_Time').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div>');
-
-        	$('#DeliveryInfo_Date').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverydate">上班日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div>');
-		}
-
-
-		//帶入常用公司
-		function ImportCompanyInfo(data) {
-			$('#Form_RecordedCompany .btn_edit').css('display','block');
-
-			var CompanyInfo_Name = data[0].Name;
-			var CompanyInfo_Sex = data[0].Sex;
-			var CompanyInfo_Phone = data[0].Phone;
-			var CompanyInfo_Address = data[0].Address;
-			var CompanyInfo_CompanyName = data[0].CompanyName;
-			var CompanyInfo_BAN = data[0].BAN;
-			var IsAnotherAddress = data[0].AnotherAddress;
-
-			$('#CompanyIfo_CompanyName').replaceWith('<div class="text" id="CompanyIfo_CompanyName">'+CompanyInfo_Name+'</div>');
-
-			$('#CompanyIfo_BAN').replaceWith('<div class="text" id="CompanyIfo_BAN">'+CompanyInfo_BAN+'</div>');
-
-			if (IsAnotherAddress) {
-				$('#invoice_AnotherAddress_3').click();
-				$('#CompanyInfo_Name').replaceWith('<div class="text" id="CompanyInfo_Name">'+CompanyInfo_Name+'</div>');
-				$('#CompanyInfo_Address').replaceWith('<div class="text" id="CompanyInfo_Address">'+CompanyInfo_Address+'</div>');
-			} else {
-				$('#invoice_SameAddress_3').click();
-			}
-
-		}
-
-		function CompanyInfoAddNew(){
-			$('#Form_RecordedCompany .btn_edit').css('display','none');
-			$('.Radio_invoice_unit[name="invoice_unit3"]').removeClass('RadioBox_active');
-
-			$('#CompanyIfo_CompanyName').replaceWith('<input type="text" value="" id="CompanyIfo_CompanyName">');
-
-			$('#CompanyIfo_BAN').replaceWith('<input type="text" value="" id="CompanyIfo_BAN">');
-
-			$('#CompanyInfo_Name').replaceWith('<input type="text" value="" id="CompanyInfo_Name">');
-
-			$('#CompanyInfo_Address').replaceWith('<div id="CompanyInfo_Address">						<div class="dropdown"><div class="dropdown_text"><span>縣市</span></div>	<div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市	</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown"><div class="dropdown_text"><span>鄉鎮區</span></div>	<div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bb</div><div class="dropdown_option">ccc</div></div></div><input type="text" placeholder="請輸入地址"></div>');
-		}
-
-		function EditCompanyInfo () {
-			$('#Form_RecordedCompany .btn_edit').css('display','none');
-			var CompanyIfo_CompanyName = $('#CompanyIfo_CompanyName').text();
-			var CompanyIfo_BAN = $('#CompanyIfo_BAN').text();
-			var CompanyInfo_Name = $('#CompanyInfo_Name').text();
-			var CompanyInfo_Address_PostalCode = $('#CompanyInfo_Address').text().split(/[^0-9a-zA-Z]+/g)[0];
-		   	var CompanyInfo_Address_District = $('#CompanyInfo_Address').text().substring(6,9);
-		   	var CompanyInfo_Address_City = $('#CompanyInfo_Address').text().substring(3,6);
-		   	var CompanyInfo_Address_Other = $('#DeliveryInfo_Address').text().slice(9);
-
-		   	$('#CompanyIfo_CompanyName').replaceWith('<input type="text" value="'+CompanyIfo_CompanyName+'" id="CompanyIfo_CompanyName">');
-
-		   	$('#CompanyIfo_BAN').replaceWith('<input type="text" value="'+CompanyIfo_BAN+'" id="CompanyIfo_BAN">');
-
-		   	$('#CompanyInfo_Name').replaceWith('<input type="text" value="'+CompanyInfo_Name+'" id="CompanyInfo_Name">');
-
-
-		   	$('#CompanyInfo_Address').replaceWith('<div class="dropdown district"><div class="dropdown_text"><span>'+CompanyInfo_Address_City+'</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>'+CompanyInfo_Address_PostalCode+'&nbsp;'+CompanyInfo_Address_District+'</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value="'+CompanyInfo_Address_Other+'">');
-		}
-
 		
 
 		$(document).ready(function(){
@@ -232,112 +48,34 @@
 				    intBrowserW = document.body.clientWidth;
 				    intBrowserH = document.body.clientHeight;
 				}
-		    
-		    //發票第二層radio box置中
-		    $('.invoice_radiobox_layout').each(function(){
-		    	var RadioBoxWidth = $(this).width();
-		    	var RowWidth = $(this).parent().width();
-		    	var RadioBoxPositionX = (RowWidth - RadioBoxWidth)/2;
-		    	$(this).css('margin-left',RadioBoxPositionX);
-		    });
 
+			//收件人地址下拉初始寬度
+			RecordedAddressSelectorWidth($('#DeliveryInfo_BTNEdit'));
 
-		    //發票第二層radio box文字置中
-		    $('.invoice_radiobox_layout span').each(function(){
-		    	var TextHeight = $(this).height();
-		    	$(this).css('height',TextHeight);
-		    });
+			//常用公司初始寬度
+			$('#RecordedCompany_Selector').css('width','100%');
+		
 
 		    //性別radio
-		    $('.Radio_Sexual').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active')
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   		} else {
-		   			//do nothing
-		   		}
-		    });
+		    SexualRadio();
 
 		    //貨運時間Radio
-		    $('.Radio_DeliveryTime').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active')
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   		} else {
-		   			//do nothing
-		   		}
+		    DeliveryTimeRadio();
+
+		    //發票radio
+		   	InvoiceUnitRadio();
+
+		    //修改訂購人資訊
+		    $('#PurchaseInfo_BTNEdit').click(function(){
+		    	PurchaseInfoEdit();
 		    });
 
-		    //發票寄送第二層Radio
-		    $('.Radio_invoice_unit').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active')
-		   		if (!isSelfClick) {
-		   			
-		   			var RidaoType = $(this).attr('id');
-		   			switch(RidaoType){
-		   				case 'invoice_AnotherAddress_2':
-		   				Radiobox(this);
-		   				$('.invoice_hide').css('display','none');
-		   				$(this).parent().next().slideDown(300);
-		   				break;
-
-		   				case 'invoice_SameAddress_2':
-		   				Radiobox(this);
-		   				$('.invoice_hide').css('display','none');
-		   				$(this).parent().next().slideUp(300);
-		   				break;
-
-		   				case 'invoice_AnotherAddress_3':
-		   				Radiobox(this);
-		   				$(this).parent().parent().parent().next().slideDown(300);
-		   				break;
-
-		   				case 'invoice_SameAddress_3':
-		   				Radiobox(this);
-		   				$(this).parent().parent().parent().next().slideUp(300);
-		   				break;
-
-		   				case 'electroic_invoice_phone':
-		   				Radiobox(this);
-		   				$('.invoice_hide').css('display','none');
-		    			$('.electroic_invoice_input_phone').slideDown(300);
-		    			break;
-
-		    			case 'electroic_invoice_idcard':
-		    			Radiobox(this);
-		    			$('.invoice_hide').css('display','none');
-		    			$('.electroic_invoice_input_idcard').slideDown(300);
-		    			break;
-
-		    			case 'invoice_donate_other':
-		    			Radiobox(this);
-		    			$('.invoice_hide').css('display','none');
-		    			$('.invoice_donate_other_input').slideDown(300);
-		    			break;
-
-		    			case undefined: 
-		    			Radiobox(this);
-		    			$('.invoice_hide').css('display','none');
-		    			break;
-		   			}
-
-		   			
-		   		} else {
-		   			//do nothing
-		   		}
+		    //修改常用公司資訊
+		    $('#CompanyInfo_BTNEdit').click(function(){
+		    	EditCompanyInfo();
 		    });
 
-		    //另行配送地址展開/收合
-		    $('.Radio_Delivery').on('click',function(){
-		    	var isAnotherAddress = $(this).attr('id');
-		    	if (isAnotherAddress == 'AnotherAddress') {
-		    		Radiobox(this);
-		    		$('#Form_AnotherAddress').slideDown(300);
-		    	} else {
-		    		Radiobox(this);
-		    		$('#Form_AnotherAddress').slideUp(300);
-		    	}
-		    });
+
 
 		    //匯款方式說明打開/收合
 		   	$('.Radio_Payment').on('click',function(){
@@ -350,46 +88,13 @@
 		   		
 		   	});
 
-		   	//發票第一層
-		   	//先隱藏
-		   	$('.Radio_invoice').next().hide();
-		   	$('.Radio_invoice').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active')
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   			$('.invoice_hide').css('display','none');
-		   			$('.Radio_invoice_unit').removeClass('RadioBox_active');
-		   			$('.Radio_invoice').next().css('display','none');
-		   			$(this).next().slideDown(300);
-		   		} else {
-		   			//do nothing
-		   		}
-		   	});
-
-		   	//二連發票
-		   	$('#invoice_AnotherAddress_2').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active');
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   			$(this).parent().next().slideDown(300);
-		   		} else {
-		   			//do nothing
-		   		}
-		   	})
-
-		   	//三連發票
-		   	$('#invoice_AnotherAddress_3').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active');
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   			$(this).parent().next().slideDown(300);
-		   		} else {
-		   			//do nothing
-		   		}
-		   	});
-
 		   	//年齡確認視窗
 		   	PopWindow('#AgeConfrimWindow',intBrowserH,intBrowserW);
+
+		   	//老客戶刷卡/行動支付視窗
+		   	$('.btn_submit').click(function(){
+		   		PopWindow('#VipPassCreditCard',intBrowserH,intBrowserW);
+		   	});
 
 		   	//展開訂單明細
 		   	$('.BTN_Order_Detail_extend').click(function(){
@@ -407,43 +112,52 @@
 	        var TestData_Custom1 = [
 	            {
 	                Name:'李佳叡',
-	                Sex:'男',
+	                Sex:'Male',
+	                OtherSexualText: '',
 	                Phone:'0912345678',
 	                Address:'234新北市永和區成功路一段82號',
 	                Time:'下午(14~18時)',
 	                Date:'假日',
-	                CustomName:'常用地址1'
+	                BuildingGuardCollect:true,
+	                ReuseBox:false,
+	                ReusePaperMaterial:false
 	            }
 	        ]
 	        var TestData_Custom2 = [
 	            {
 	                Name:'陳怡棻',
-	                Sex:'中性',
+	                Sex:'Female',
+	                OtherSexualText: '',
 	                Phone:'0965432189',
 	                Address:'234新北市永和區成功路一段84號',
 	                Time:'皆可',
 	                Date:'皆可',
-	                CustomName:'常用地址2'
+	                BuildingGuardCollect:false,
+	                ReuseBox:true,
+	                ReusePaperMaterial:true
 	            }
 	        ]
 
-	        //帶入地址
+	        //帶入/新增地址
 	        $('#RecordedAddress_Selector .dropdown_option').click(function(){
 	        	var ImportDataName = $(this).attr('id');
-
-	        	 
 	        	switch (ImportDataName){
 	        		case 'Option_PurchaseInfo':
+	        			$('#Form_RecordedAddress').attr('formstatus','ImportPurchaseAddress');
 	        			if (HasPurchaseInfo){
 	        				var TestData_Purchase = [
 					            {
 					                Name: $('#PurchaseInfo_Name').text(),
 					                Sex: $('#PurchaseInfo_Sex').text(),
+					                OtherSexualText: $('#PurchaseInfo_OtherSexualText').val(),
 					                Phone: $('#PurchaseInfo_Phone').text(),
 					                Address: $('#PurchaseInfo_Address').text(),
 					                //時間與日期不在訂購人資料，但若訂購人是已紀錄狀態則為非第一次下單，原則上會有上次的配送時間與日期的紀錄
 					                Time:'上午(08~13時)',
-					                Date:'上班日'
+					                Date:'平日',
+					                BuildingGuardCollect: false,
+					                ReuseBox: false,
+					                ReusePaperMaterial: true
 					            }
 					        ]
 
@@ -454,20 +168,20 @@
 	        				//將地址串在一起
 	        				var PurchaseAddress = '';
 
-	        				$('#Form_PurchaseInfo .form_Address .district .dropdown_text span').each(function(){
-	        					PurchaseAddress = $(this).text() + PurchaseAddress;
-	        				});
-
-	        				PurchaseAddress = PurchaseAddress + $('#Form_PurchaseInfo .form_Address input').val();
+	        				PurchaseAddress = $('#PurchaseInfo_AddressDistrict').text().split(/[^0-9a-zA-Z]+/g)[0] + $('#PurchaseInfo_AddressCity').text() + $('#PurchaseInfo_AddressDistrict').text().substring(4,7) + $('#PurchaseInfo_AddressOther').val();
 
 	        				var TestData_Purchase = [
 					            {
 					                Name: $('#PurchaseInfo_Name').val(),
-					                Sex: $('#PurchaseInfo_Sex').find('.RadioBox_active').text(),
+					                Sex: $('#PurchaseInfo_Sex').find('.RadioBox_active').attr('sexual'),
+					                OtherSexualText: $('#PurchaseInfo_OtherSexualText').val(),
 					                Phone: $('#PurchaseInfo_Phone').val(),
 					                Address: PurchaseAddress,
 					                Time:'',
-					                Date:''
+					                Date:'',
+					                BuildingGuardCollect: false,
+					                ReuseBox: false,
+					                ReusePaperMaterial: false
 					            }
 					        ]
 
@@ -475,22 +189,20 @@
 
 	        			}
 	        		break;
-
+	        		
 	        		case 'Option_CustomInfo1' :
-	        			$('#DeliveryInfo_CustomAddress_Name').parent().css('display','block');
+	        			$('#Form_RecordedAddress').attr('formstatus','CustomAddress');
 	        			ImportDeliveryInfo(TestData_Custom1);
 	        		break;
 
 	        		case 'Option_CustomInfo2' :
-	        			$('#DeliveryInfo_CustomAddress_Name').parent().css('display','block');
+	        			$('#Form_RecordedAddress').attr('formstatus','CustomAddress');
 	        			ImportDeliveryInfo(TestData_Custom2);
 	        		break;
 
 	        		case 'Option_AddNew' :
-	        			DeliveryAddNew();
+	        			DeliveryInfoAddNew(intBrowserW);
 	        		break;
-
-
 	        	}
 	        });
 
@@ -533,14 +245,22 @@
 		    		break;
 
 		    		case 'AddNewCompany':
-		    		CompanyInfoAddNew();
+		    		AddNewCompanyInfo(intBrowserW);
 		    		break;
+
 		    	}
-		    });
+		    })
 
 		    //客製checkbox
 		    $('.option_check').click(function(){
-		    	$(this).find('.icon_check').toggleClass('active')
+		    	$(this).find('.icon_check').toggleClass('active');
+
+		    	//紙袋
+		    	if ($('#Checkbox_Paperbag').find('.icon_check').hasClass('active')){
+		    		$('.number_paperbag span').css('display','inline');
+		    	} else{
+		    		$('.number_paperbag span').css('display','none');
+		    	}
 		    });
 
 
@@ -602,78 +322,43 @@
 						同訂購人
 					</div>
 					<div class="dropdown_option" id="Option_CustomInfo1">
-						常用地址1
+						成功路一段80號..
 					</div>
 					<div class="dropdown_option" id="Option_CustomInfo2">
-						常用地址2
+						得和路52號..
 					</div>
 					<div class="dropdown_option" id="Option_AddNew">
-						新增常用地址
+						另行配送
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="Form_RecordedAddress">
-			<div class="btn_edit" id="DeliveryInfo_BTNEdit" onclick="DeliveryInfoEdit();">修改</div>
-			<div class="cart_form_row" style="display: none;">
-				<div class="formTitle">常用地址名稱</div>
-				<div class="text" id="DeliveryInfo_CustomAddress_Name">常用地址1</div>
+		<div id="Form_RecordedAddress" formstatus="ImportPurchaseAddress">
+			<div class="btn_edit" id="DeliveryInfo_BTNEdit" onclick="DeliveryInfoEdit();" style="display:none;">修改</div>
+			<div class="btn_save" id="DeliveryInfo_BTNSave" style="display:none;">
+				<div class="checkbox_layout">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="checkbox_text">儲存地址</div>
+				</div>	
 			</div>
-			<div class="cart_form_row">
-				<div class="formTitle">收件人姓名</div>
-				<div class="text" id="DeliveryInfo_Name">劉學涵</div>
-			</div>
-			<div class="cart_form_row">
-				<div class="formTitle">收件人性別</div>
-				<div class="text" id="DeliveryInfo_Sex">女</div>
-			</div>
-			<div class="cart_form_row">
-				<div class="formTitle">收件人電話</div>
+			<div class="cart_form_row recorded_data">
+				<div class="text"><span id="DeliveryInfo_Name" style="margin-left:0;">劉學涵</span></div>
 				<div class="text" id="DeliveryInfo_Phone">0912345678</div>
-			</div>
-			<div class="cart_form_row form_Address">
-				<div class="formTitle">收件人地址</div>
 				<div class="text" id="DeliveryInfo_Address">234新北市永和區成功路一段80號15樓</div>
 				<div class="NoticeText">
 					*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。
 				</div>
-				<div class="checkbox_layout" id="BuildingGuardCollect">
-					<div class="option_check">
-						<div class="icon_check"></div>
-					</div>
-					<div class="checkbox_text">管理員可代收</div>
+				<div class="text" id="BuildingGuardCollect">✓&nbsp;管理員可代收
 				</div>
-			</div>
-			<div class="cart_form_row">
-				<div class="formTitle">希望配送時段</div>
-				<div class="text" id="DeliveryInfo_Time">上午(08~13時)</div>
-			</div>
-			<div class="cart_form_row">
-				<div class="formTitle">希望配送星期</div>
-				<div class="text" id="DeliveryInfo_Date">皆可</div>
-			</div>
-		</div>
-
-		
-		<div class="cart_form_row">
-			<div class="formTitle">環保選項</div>
-			<div class="checkbox_layout" id="ReuseBox">
-				<div class="option_check">
-					<div class="icon_check"></div>
+				<div class="text">希望於<span id="DeliveryInfo_Time">上午(08~13時)</span>配送</div>
+				<div class="text">希望於<span id="DeliveryInfo_Date">假日</span>配送</div>
+				<div class="text" id="ReuseBox">✓&nbsp;我愛地球，我選擇用乾淨堅固的二手紙箱出貨。
 				</div>
-				<div class="checkbox_text">我不介意用乾淨堅固的二手紙箱。</div>
-			</div>
-			<div class="checkbox_layout" id="ReusePaperMaterial">
-				<div class="option_check">
-					<div class="icon_check"></div>
-				</div>
-				<div class="checkbox_text">
-					我不介意用回收紙緩衝材(取代塑膠氣泡袋)。
+				<div class="text" id="ReusePaperMaterial">✓&nbsp;我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。
 					<a href="#">示意圖</a>
 				</div>
-			</div>
-			<div class="img" style="display: none;">
-				<img src="images/mobile/green_package.jpg">
 			</div>
 		</div>
 		<div class="cart_form_row">
@@ -682,10 +367,15 @@
 		</div>
 		<div class="cart_form_row">
 			<div class="checkbox_layout" >
-				<div class="option_check">
+				<div class="option_check" id="Checkbox_Paperbag">
 					<div class="icon_check"></div>
 				</div>
-				<div class="checkbox_text">請隨貨附提袋</div>
+				<div class="checkbox_text number_paperbag">
+					請隨貨附提袋
+					<span  style="display: none;">
+						<input type="number" name="" style="width:60px;">個
+					</span>
+				</div>
 			</div>
 		</div>
 		

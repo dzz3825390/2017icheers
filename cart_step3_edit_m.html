@@ -13,6 +13,7 @@
 	<link href="css_m/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="Scripts/all_m.js"></script>
+	<script type="text/javascript" src="Scripts/cart_step3_m.js"></script>
 	<script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
 	<!--[if lt IE 9]  //記得在前後加上 < > 註解
 	  <script>
@@ -28,6 +29,11 @@
 	![endif]-->
 
 	<script type="text/javascript">
+		//訂購人資料狀態 true:已記錄 false:可編輯狀態
+		var HasPurchaseInfo = true;
+
+		
+
 		$(document).ready(function(){
 			var intBrowserW = 0;
 
@@ -43,179 +49,220 @@
 				    intBrowserH = document.body.clientHeight;
 				}
 
-			
-		   
-		   
-		    
-		    
+			//收件人地址下拉初始寬度
+			//RecordedAddressSelectorWidth($('#DeliveryInfo_BTNEdit'));
 
-		    
-
-		    //年齡確認置中
-		    var YearCheckWidth = $('.cart_YearCheck_layout').width();
-		    var YearCheckPositionX = (intBrowserW - YearCheckWidth)/2;
-		    $('.cart_YearCheck_layout').css('margin-left',YearCheckPositionX);
-
-		    
-		    //年齡確認
-		    $('.cart_YearCheck_layout .checkbox').click(function(){
-		    	var isChecked = $(this).find('input[type=checkbox]').prop('checked');
-		    	if (isChecked) {
-		    		$(this).parent().parent().next().removeClass('cart_YearCheck_btn_unchecked');
-		    	} else {
-		    		$(this).parent().parent().next().addClass('cart_YearCheck_btn_unchecked');
-		    	}
-		    });
-
-		    
-		    //發票第二層radio box置中
-		    $('.invoice_radiobox_layout').each(function(){
-		    	var RadioBoxWidth = $(this).width();
-		    	var RowWidth = $(this).parent().width();
-		    	var RadioBoxPositionX = (RowWidth - RadioBoxWidth)/2;
-		    	$(this).css('margin-left',RadioBoxPositionX);
-		    });
-
-
-		    //發票第二層radio box文字置中
-		    $('.invoice_radiobox_layout span').each(function(){
-		    	var TextHeight = $(this).height();
-		    	$(this).css('height',TextHeight);
-		    });
+			//常用公司初始寬度
+			$('#RecordedCompany_Selector').css('width','100%');
+		
 
 		    //性別radio
-		    $('.Radio_Sexual').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active')
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   		} else {
-		   			//do nothing
-		   		}
-		    });
+		    SexualRadio();
 
 		    //貨運時間Radio
-		    $('.Radio_DeliveryTime').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active')
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   		} else {
-		   			//do nothing
-		   		}
+		    DeliveryTimeRadio();
+
+		    //發票radio
+		   	InvoiceUnitRadio();
+
+		    //修改訂購人資訊
+		    $('#PurchaseInfo_BTNEdit').click(function(){
+		    	PurchaseInfoEdit();
 		    });
 
-		    //發票寄送第二層Radio
-		    $('.Radio_invoice_unit').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active')
-		   		if (!isSelfClick) {
-		   			//其他配送地址 打開/收合
-		   			var AnotherAddress = $(this).attr('id');
-		   			if (AnotherAddress == 'invoice_AnotherAddress_2') {
-		   				Radiobox(this);
-		   				$(this).parent().next().slideDown(300);
-		   			} else if (AnotherAddress == 'invoice_AnotherAddress_3') {
-		   				Radiobox(this);
-		   				$(this).parent().parent().next().slideDown(300);
-		   			}
-		   			else {
-		   				Radiobox(this);
-		   			}
-		   			
-		   		} else {
-		   			//do nothing
-		   		}
+		    //修改常用公司資訊
+		    $('#CompanyInfo_BTNEdit').click(function(){
+		    	EditCompanyInfo();
 		    });
 
-		    //另行配送地址展開/收合
-		    $('.Radio_Delivery').on('click',function(){
-		    	var isAnotherAddress = $(this).attr('id');
-		    	if (isAnotherAddress == 'AnotherAddress') {
-		    		Radiobox(this);
-		    		$('#Form_AnotherAddress').slideDown(300);
-		    	} else {
-		    		Radiobox(this);
-		    		$('#Form_AnotherAddress').slideUp(300);
-		    	}
-		    });
 
-		    //電子發票、捐贈發票其他 打開/收合
-		    $('.Radio_invoice_unit').on('click',function () {
-		    	var isActive = $(this).hasClass('RadioBox_active');
-		    	if (isActive && $(this).attr('id') == 'invoice_donate_other') {
-		    		$('.invoice_hide').css('display','none');
-		    		$('.invoice_donate_other_input').slideDown(300);
-		    	} else if (isActive && $(this).attr('id') == 'electroic_invoice_phone'){
-		    		$('.invoice_hide').css('display','none');
-		    		$('.electroic_invoice_input_phone').slideDown(300);
-		    	} else if (isActive && $(this).attr('id') == 'electroic_invoice_idcard'){
-		    		$('.invoice_hide').css('display','none');
-		    		$('.electroic_invoice_input_idcard').slideDown(300);
-		    	} else {
-		    		
-		    	}
-		    });
 
 		    //匯款方式說明打開/收合
 		   	$('.Radio_Payment').on('click',function(){
 		   		var isSelfClick = $(this).hasClass('RadioBox_active')
 		   		if (!isSelfClick) {
 		   			Radiobox(this);
-		   			$('.Radio_Payment').next().css('display','none');
-		   			$(this).next().slideDown(300);
 		   		} else {
 		   			//do nothing
 		   		}
 		   		
 		   	});
 
-		   	//發票第一層
-		   	//先隱藏
-		   	$('.Radio_invoice').next().hide();
-		   	$('.Radio_invoice').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active')
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   			$('.invoice_hide').css('display','none');
-		   			$('.Radio_invoice_unit').removeClass('RadioBox_active');
-		   			$('.Radio_invoice').next().css('display','none');
-		   			$(this).next().slideDown(300);
+		   	//年齡確認視窗
+		   	PopWindow('#AgeConfrimWindow',intBrowserH,intBrowserW);
+
+		   	//老客戶刷卡/行動支付視窗
+		   	$('.btn_submit').click(function(){
+		   		PopWindow('#VipPassCreditCard',intBrowserH,intBrowserW);
+		   	});
+
+		   	//展開訂單明細
+		   	$('.BTN_Order_Detail_extend').click(function(){
+		   		
+		   		$(this).toggleClass('Extend');
+		   		
+		   		if($(this).hasClass('Extend')){
+		   			$('.order_detail').slideDown('fast');
 		   		} else {
-		   			//do nothing
+		   			$('.order_detail').slideUp('fast');
 		   		}
 		   	});
 
-		   	//二連發票
-		   	$('#invoice_AnotherAddress_2').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active');
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   			$(this).parent().next().slideDown(300);
-		   		} else {
-		   			//do nothing
+		   	//測試資料
+	        var TestData_Custom1 = [
+	            {
+	                Name:'李佳叡',
+	                Sex:'Male',
+	                OtherSexualText: '',
+	                Phone:'0912345678',
+	                Address:'234新北市永和區成功路一段82號',
+	                Time:'下午(14~18時)',
+	                Date:'假日',
+	                BuildingGuardCollect:true,
+	                ReuseBox:false,
+	                ReusePaperMaterial:false
+	            }
+	        ]
+	        var TestData_Custom2 = [
+	            {
+	                Name:'陳怡棻',
+	                Sex:'Female',
+	                OtherSexualText: '',
+	                Phone:'0965432189',
+	                Address:'234新北市永和區成功路一段84號',
+	                Time:'皆可',
+	                Date:'皆可',
+	                BuildingGuardCollect:false,
+	                ReuseBox:true,
+	                ReusePaperMaterial:true
+	            }
+	        ]
+
+	        //帶入/新增地址
+	        $('#RecordedAddress_Selector .dropdown_option').click(function(){
+	        	var ImportDataName = $(this).attr('id');
+	        	switch (ImportDataName){
+	        		case 'Option_PurchaseInfo':
+	        			$('#Form_RecordedAddress').attr('formstatus','ImportPurchaseAddress');
+	        			if (HasPurchaseInfo){
+	        				var TestData_Purchase = [
+					            {
+					                Name: $('#PurchaseInfo_Name').text(),
+					                Sex: $('#PurchaseInfo_Sex').text(),
+					                OtherSexualText: $('#PurchaseInfo_OtherSexualText').val(),
+					                Phone: $('#PurchaseInfo_Phone').text(),
+					                Address: $('#PurchaseInfo_Address').text(),
+					                //時間與日期不在訂購人資料，但若訂購人是已紀錄狀態則為非第一次下單，原則上會有上次的配送時間與日期的紀錄
+					                Time:'上午(08~13時)',
+					                Date:'平日',
+					                BuildingGuardCollect: false,
+					                ReuseBox: false,
+					                ReusePaperMaterial: true
+					            }
+					        ]
+
+					        ImportDeliveryInfo(TestData_Purchase);
+
+	        			} else {
+
+	        				//將地址串在一起
+	        				var PurchaseAddress = '';
+
+	        				PurchaseAddress = $('#PurchaseInfo_AddressDistrict').text().split(/[^0-9a-zA-Z]+/g)[0] + $('#PurchaseInfo_AddressCity').text() + $('#PurchaseInfo_AddressDistrict').text().substring(4,7) + $('#PurchaseInfo_AddressOther').val();
+
+	        				var TestData_Purchase = [
+					            {
+					                Name: $('#PurchaseInfo_Name').val(),
+					                Sex: $('#PurchaseInfo_Sex').find('.RadioBox_active').attr('sexual'),
+					                OtherSexualText: $('#PurchaseInfo_OtherSexualText').val(),
+					                Phone: $('#PurchaseInfo_Phone').val(),
+					                Address: PurchaseAddress,
+					                Time:'',
+					                Date:'',
+					                BuildingGuardCollect: false,
+					                ReuseBox: false,
+					                ReusePaperMaterial: false
+					            }
+					        ]
+
+					        ImportDeliveryInfo(TestData_Purchase);
+
+	        			}
+	        		break;
+	        		
+	        		case 'Option_CustomInfo1' :
+	        			$('#Form_RecordedAddress').attr('formstatus','CustomAddress');
+	        			ImportDeliveryInfo(TestData_Custom1);
+	        		break;
+
+	        		case 'Option_CustomInfo2' :
+	        			$('#Form_RecordedAddress').attr('formstatus','CustomAddress');
+	        			ImportDeliveryInfo(TestData_Custom2);
+	        		break;
+
+	        		case 'Option_AddNew' :
+	        			DeliveryInfoAddNew(intBrowserW);
+	        		break;
+	        	}
+	        });
+
+
+		    //測試資料-三聯式發票
+		    var TestData_CustonCompany1 = [
+		   		{
+		   			Name:'劉學涵',
+	                Sex:'女',
+	                Phone:'0987654321',
+	                AnotherAddress: true,
+	                Address:'234新北市永和區成功路一段80號',
+	                CompanyName:'佳釀股份有限公司',
+	                BAN:'29081831'
 		   		}
-		   	})
+		    ]
 
-		   	//三連發票
-		   	$('#invoice_AnotherAddress_3').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active');
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   			$(this).parent().next().slideDown(300);
-		   		} else {
-		   			//do nothing
+		    var TestData_CustonCompany2 = [
+		   		{
+		   			Name:'牛學行',
+	                Sex:'女',
+	                Phone:'0912345678',
+	                AnotherAddress: false,
+	                Address:'234新北市永和區成功路一段82號',
+	                CompanyName:'iCheers愛酒窩',
+	                BAN:'12345678'
 		   		}
-		   	});
+		    ]
 
-		   	//click invoice sample
-		   	$('.Radio_Sexual').eq(1).click();
-		   	$('.Radio_Payment').eq(0).click();
-		   	$('.Radio_invoice').eq(1).click();
-		   	$('.Radio_invoice_unit[name=invoice_unit2]').eq(0).click();
-		   
+		    $('#RecordedCompany_Selector .dropdown_option').click(function(){
+		    	var ImportDataName = $(this).attr('id');
 
-		  	//年齡確認視窗
-		   	$('.cart_YearCheck_btn').click(function(){
-		   		PopWindow('#AfterEdit',intBrowserH,intBrowserW);
-		   	});
+		    	switch (ImportDataName){
+		    		case 'CustomCompany1':
+		    		ImportCompanyInfo(TestData_CustonCompany1);
+		    		break;
+
+		    		case 'CustomCompany2':
+		    		ImportCompanyInfo(TestData_CustonCompany2);
+		    		break;
+
+		    		case 'AddNewCompany':
+		    		AddNewCompanyInfo(intBrowserW);
+		    		break;
+
+		    	}
+		    })
+
+		    //客製checkbox
+		    $('.option_check').click(function(){
+		    	$(this).find('.icon_check').toggleClass('active');
+
+		    	//紙袋
+		    	if ($('#Checkbox_Paperbag').find('.icon_check').hasClass('active')){
+		    		$('.number_paperbag span').css('display','inline');
+		    	} else{
+		    		$('.number_paperbag span').css('display','none');
+		    	}
+		    });
+
 
 		});
 
@@ -256,138 +303,114 @@
 
 <!--content-->
 <div class="content_layout">
-
+	<section class="step_option step3_option">
+		<div class="cart_step_row">
+			<div class="one_step">Step&nbsp;1</div>
+			<div class="icon_nextstep"></div>
+			<div class="one_step">Step&nbsp;2</div>
+			<div class="icon_nextstep"></div>
+			<div class="one_step active">Step&nbsp;3</div>
+			<div class="icon_nextstep"></div>
+			<div class="one_step">Step&nbsp;4</div>
+		</div>
+	</section>
 	
 	<!--基本資料填寫-->
 	<section class="cart_list_layout">
 		<div class="AllTitle_layout">
 			<div class="largeT">
-				修改收件資料
+				訂購人基本資料
 			</div>
 		</div>
 		<div class="cart_form_row">
-			<div class="formTitle">姓名</div>
-			<input type='text' value="劉學涵" />
+			<div class="text">
+				當有訂單相關問題時，
+				客服夥伴會依下列資訊與您聯繫，謝謝！
+				我們將妥善保管您的個資，僅供訂單聯繫之用，詳見<a href="#">隱私條款</a>。
+			</div>
 		</div>
-		<div class="cart_form_row">
-			<div class="formTitle">性別</div>
-			<div class="RadioBox Radio_Sexual" name='sex'>男性</div>
-			<div class="RadioBox Radio_Sexual" name='sex'>女性</div>
+		<div id="Form_PurchaseInfo">
+			
+			<div class="cart_form_row recorded_data">
+				<div class="text"><span id="PurchaseInfo_Name" style="margin-left:0;">劉學涵</span><span id="PurchaseInfo_Sex" sexual="Other">&nbsp;</span><span id="PurchaseInfo_OtherSexualText">aka寶嘉媽咪</span></div>
+				<div class="text" id="PurchaseInfo_Phone">0912345678</div>
+				<div class="text" id="PurchaseInfo_Address">234新北市永和區成功路一段80號15樓</div>
+			</div>
 		</div>
-		<div class="cart_form_row form_phone">
-			<div class="formTitle">連絡電話</div>
-			<input type='text' value="0912345678" />
-			<div class="center_text">或是</div>
-			<div class="dropdown ZoneCode">
-				<div class="dropdown_text"><span>區碼</span></div>
-				<div class="dropdown_extend">
-					<div class="dropdown_option">
-						02
+	</section>
+	<!--基本資料填寫 end-->
+
+	<!--商品配送訊息-->
+	<section class="cart_list_layout">
+		<div class="AllTitle_layout">
+			<div class="largeT">
+				收件人基本資料
+			</div>
+		</div>
+		<div class="cart_form_row form_Recorded">
+			<div class="dropdown" id="RecordedAddress_Selector" style="width: 215px;">
+				<div class="dropdown_text"><span>
+						成功路一段80號..
+					</span></div>
+				<div class="dropdown_extend" style="display: none;">
+					<div class="dropdown_option" id="Option_PurchaseInfo">
+						同訂購人
 					</div>
-					<div class="dropdown_option">
-						03
+					<div class="dropdown_option" id="Option_CustomInfo1">
+						成功路一段80號..
 					</div>
-					<div class="dropdown_option">
-						04
+					<div class="dropdown_option" id="Option_CustomInfo2">
+						得和路52號..
+					</div>
+					<div class="dropdown_option" id="Option_AddNew">
+						另行配送
 					</div>
 				</div>
 			</div>
-			<input type="text" class="ZoneCodeinput" placeholder="請輸入市話" />
-			<input type="text" class="ZoneCodeinput2" placeholder="請輸入分機"/>
 		</div>
-		<div class="cart_form_row form_Address">
-			<div class="formTitle">地址</div>
-			<div class="dropdown">
-				<div class="dropdown_text"><span>新北市</span></div>
-				<div class="dropdown_extend">
-					<div class="dropdown_option">
-						台北市
+		<div id="Form_RecordedAddress" formstatus="CustomAddress">
+			<div class="btn_edit" id="DeliveryInfo_BTNEdit" onclick="DeliveryInfoEdit();" style="display: none;">修改</div>
+			<div class="btn_save" id="DeliveryInfo_BTNSave" style="display: flex;">
+				<div class="checkbox_layout">
+					<div class="option_check">
+						<div class="icon_check"></div>
 					</div>
-					<div class="dropdown_option">
-						新北市
-					</div>
-					<div class="dropdown_option">
-						桃園市
-					</div>
-					<div class="dropdown_option">
-						台北市
-					</div>
-					<div class="dropdown_option">
-						新北市
-					</div>
-					<div class="dropdown_option">
-						桃園市
-					</div>
-					<div class="dropdown_option">
-						台北市
-					</div>
-					<div class="dropdown_option">
-						新北市
-					</div>
-					<div class="dropdown_option">
-						桃園市
-					</div>
-				</div>
+					<div class="checkbox_text">儲存地址</div>
+				</div>	
 			</div>
-			<div class="dropdown">
-				<div class="dropdown_text"><span>三重區</span></div>
-				<div class="dropdown_extend">
-					<div class="dropdown_option">
-						aaa
-					</div>
-					<div class="dropdown_option">
-						bbb
-					</div>
-					<div class="dropdown_option">
-						ccc
-					</div>
-				</div>
-			</div>
-			<input type='text' value="地址地址地址" />
-			<div class="NoticeText">
-				離島冷藏宅配訂單將統一收取200元運費，恕無法提供滿額免運費優惠，還請見諒，謝謝！
-			</div>
+			<div class="cart_form_row recorded_data"><div class="cart_form_row"><div class="formTitle">收件人大名</div><input id="DeliveryInfo_Name" type="text" name="" value="李佳叡"></div><div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual RadioBox_active" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual" name="sex" sexual="Female">小姐</div></div></div><div class="cart_form_row"><div class="formTitle">收件人連絡電話</div><input id="DeliveryInfo_Phone" type="text" name="" value="0912345678"></div><div class="cart_form_row form_Address"><div class="formTitle">收件人地址</div><div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>新北市</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">澎湖縣</div><div class="dropdown_option">連江縣</div><div class="dropdown_option">金門縣</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>234&nbsp;永和區</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value="成功路一段82號"></div><div class="NoticeText" style="display: none;">*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。</div><div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div></div><div class="cart_form_row"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverytime">下午(14~18時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div></div><div class="cart_form_row"><div class="formTitle">希望配送星期</div><div class="Radio_Delivery_row" id="DeliveryInfo_Date"><div class="RadioBox Radio_DeliveryTime" name="deliverydate">平日</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div></div></div><div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div><div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div><div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div></div></div>
 		</div>
 		<div class="cart_form_row">
 			<div class="formTitle">備註</div>
 			<textarea placeholder="可指定到貨日，但國定假日及周日恕無法配送喔！"></textarea>
 		</div>
-	</section>
-	<!--基本資料填寫 end-->
-
-
-	<!--付款方式-->
-	<section class="cart_sum_layout">
-		<div class="AllTitle_layout">
-			<div class="largeT">
-				付款方式
+		<div class="cart_form_row">
+			<div class="checkbox_layout">
+				<div class="option_check" id="Checkbox_Paperbag">
+					<div class="icon_check"></div>
+				</div>
+				<div class="checkbox_text number_paperbag">
+					請隨貨附提袋
+					<span style="display: none;">
+						<input type="number" name="" style="width:60px;">個
+					</span>
+				</div>
 			</div>
 		</div>
-		<div class="payment_infotext">
-			您所訂購商品包含[快速到貨]品項，建議您選擇以宅配貨到付款方式完成訂購及貨到時付款(全部訂單金額)，若刷卡/匯款等方式完成訂購及付款(全部訂單金額)，則需於今日結單時間<span>HH:MM</span>之前完成訂購及付款(全部訂單金額) ，方可以快速到貨方式進行出貨（逾時恕無法快速出貨），謝謝。
-		</div>
-		<div class="cart_form_row">
-			<div class="RadioBox Radio_Payment" name='payment'>匯款</div>
-			<div class="RadioBox Radio_Payment" name='payment'>刷卡/行動支付</div>
-			<div class="RadioBox Radio_Payment" name='payment'>宅配貨到付款</div>
-			<div class="Radio_infotext" style="display:none;">現金</div>
-		</div>
+		
 	</section>
-	<!--付款方式 end-->
+	<!--商品配送訊息 end-->
 
 	<!--發票寄送-->
 	<section class="cart_sum_layout">
 		<div class="AllTitle_layout">
 			<div class="largeT">
-				發票寄送
+				發票
 			</div>
-		</div>
-		<div class="payment_infotext">
-			我同意訂購人及收貨人皆已年滿18歲，並請在收貨時出示身分證件。若未攜帶身分證，無法辨識收貨人是否年滿18歲，恕不交貨。
 		</div>
 		<div class="cart_form_row form_invoice">
 			<div class="RadioBox Radio_invoice" name='invoice'>捐贈發票</div>
-			<div>
+			<div style="display:none;">
 				<div class="invoice_radiobox_layout">
 					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>伊甸<br/>基金會</span></div>
 					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>創世<br/>基金會</span></div>
@@ -397,15 +420,15 @@
 				<div class="invoice_donate_other_input invoice_hide" style="display: none;">
 					<div class="cart_form_row">
 						<input type="text" placeholder="請輸入機構代碼">
-						<a href="#">機構代碼查詢</a>
+						<a href="#" class="donate_code">機構代碼查詢</a>
 					</div>
 				</div>
 				
 				<div class="Radio_infotext">依據法令規定，已捐贈發票無法索回，若需要退換貨，該發票將予以作廢。</div>
 			</div>
-			<div class="RadioBox Radio_invoice" name='invoice'>二聯式電子發票</div>
+			<div class="RadioBox Radio_invoice RadioBox_active" name='invoice'>二聯式電子發票</div>
 			<div class="invoice_radiobox_layout">
-				<div class="RadioBox Radio_invoice_unit RadioBox_active" name="invoice_unit2"><span>隨商品寄出</span></div>
+				<div class="RadioBox Radio_invoice_unit RadioBox_active" name="invoice_unit2" id="invoice_SameAddress_2"><span>隨商品寄出</span></div>
 				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="invoice_AnotherAddress_2"><span>發票分開寄出</span></div>
 				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_phone"><span>手機<br/>條碼</span></div>
 				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_idcard"><span>自然人<br/>憑證</span></div>
@@ -461,66 +484,379 @@
 				</div>
 			</div>
 			<div class="RadioBox Radio_invoice" name='invoice'>三聯式電子發票</div>
-			<div class="invoice_hide">
-				<div class="cart_form_row">
-						<div class="formTitle">發票抬頭</div>
-						<input type='text' />
+			<div class="invoice_hide" style="display: none;">
+				<div class="cart_form_row form_Recorded">
+					<div class="dropdown" id="RecordedCompany_Selector">
+						<div class="dropdown_text"><span>選擇常用公司資料</span></div>
+						<div class="dropdown_extend">
+							<div class="dropdown_option" id="CustomCompany1">
+								佳釀股份有限公司
+							</div>
+							<div class="dropdown_option" id="CustomCompany2">
+								iCheers愛酒窩
+							</div>
+							<div class="dropdown_option" id="AddNewCompany">
+								新增常用公司
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="cart_form_row">
-						<div class="formTitle">統一編號</div>
-						<input type='text' />
+				<div id="Form_RecordedCompany" formstatus="New">
+					<div class="btn_edit" style="display: none;" id="CompanyInfo_BTNEdit">修改</div>
+					<div class="btn_save" id="CompanyInfo_BTNSave" style="display: none;">
+						<div class="checkbox_layout">
+							<div class="option_check">
+								<div class="icon_check"></div>
+							</div>
+							<div class="checkbox_text" style="width:auto;">儲存</div>
+						</div>
+					</div>
+					<div class="cart_form_row recorded_data">
+						<div class="cart_form_row">
+							<div class="formTitle">發票抬頭</div>
+							<input type='text' value="" id="CompanyIfo_CompanyName"/>
+						</div>
+						<div class="cart_form_row">
+							<div class="formTitle">統一編號</div>
+							<input type='text' value="" id="CompanyIfo_BAN"/>
+						</div>
+						<div class="invoice_radiobox_layout">
+							<div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_SameAddress_3"><span>隨商品寄出</span></div>
+							<div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_AnotherAddress_3"><span>發票分開寄出</span></div>
+						</div>
+						<div class="invoice_AnotherAddress invoice_hide" style="display: none;">
+							<div class="cart_form_row">
+									<div class="formTitle">發票收件人姓名</div>
+									<input type='text' id="CompanyInfo_Name" />
+							</div>
+							<div class="cart_form_row form_Address">
+								<div class="formTitle">發票收件人地址</div>
+								<div id="CompanyInfo_Address">
+									<div class="dropdown">
+										<div class="dropdown_text"><span>縣市</span></div>
+										<div class="dropdown_extend">
+											<div class="dropdown_option">
+												台北市
+											</div>
+											<div class="dropdown_option">
+												新北市
+											</div>
+											<div class="dropdown_option">
+												桃園市
+											</div>
+										</div>
+									</div>
+									<div class="dropdown">
+										<div class="dropdown_text"><span>鄉鎮區</span></div>
+										<div class="dropdown_extend">
+											<div class="dropdown_option">
+												aaa
+											</div>
+											<div class="dropdown_option">
+												bbb
+											</div>
+											<div class="dropdown_option">
+												ccc
+											</div>
+										</div>
+									</div>
+									<input type='text' placeholder="請輸入地址" />
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
 				</div>
-				<div class="invoice_radiobox_layout">
-					<div class="RadioBox Radio_invoice_unit" name="invoice_unit3"><span>隨商品寄出</span></div>
-					<div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_AnotherAddress_3"><span>發票分開寄出</span></div>
-				</div>
+				
 			</div>
 			
-			<div class="invoice_AnotherAddress invoice_hide" style="display: none;">
-				
-				<div class="cart_form_row">
-						<div class="formTitle">發票收件人姓名</div>
-						<input type='text' />
-				</div>
-				<div class="cart_form_row form_Address">
-					<div class="formTitle">發票收件人地址</div>
-					<div class="dropdown">
-						<div class="dropdown_text"><span>縣市</span></div>
-						<div class="dropdown_extend">
-							<div class="dropdown_option">
-								台北市
-							</div>
-							<div class="dropdown_option">
-								新北市
-							</div>
-							<div class="dropdown_option">
-								桃園市
-							</div>
-						</div>
-					</div>
-					<div class="dropdown">
-						<div class="dropdown_text"><span>鄉鎮區</span></div>
-						<div class="dropdown_extend">
-							<div class="dropdown_option">
-								aaa
-							</div>
-							<div class="dropdown_option">
-								bbb
-							</div>
-							<div class="dropdown_option">
-								ccc
-							</div>
-						</div>
-					</div>
-					<input type='text' placeholder="請輸入地址" />
-				</div>
-			</div>
+			
 		</div>
 	</section>
 	<!--發票寄送 end-->
 
-	<div class="cart_YearCheck_btn">
-		確認送出
+	<!--付款方式-->
+	<section class="cart_sum_layout">
+		<div class="AllTitle_layout">
+			<div class="largeT">
+				付款方式
+			</div>
+		</div>
+		
+		<div class="sum_detail">
+			<div class="row">
+				<div class="text">商品小計</div>
+				<div class="text">$&nbsp;2,500</div>
+			</div>
+			<div class="row">
+				<div class="text" id="EventDiscountInfo">活動折扣<span class="icon_info">i</span></div>
+				<div class="text">-&nbsp;$&nbsp;200</div>
+			</div>
+			<div class="row">
+				<div class="text">e-coupon優惠<a href="#" id="UseCoupon">使用</a><a href="#">清除</a></div>
+				<div class="text">$&nbsp;0</div>
+			</div>
+			<div class="row">
+				<div class="text">紅利折抵<a href="#" id="UseBouns">使用</a><a href="#">清除</a></div>
+				<div class="text">$&nbsp;0</div>
+			</div>
+			<div class="row">
+				<div class="text">運費<span class="icon_info" onclick="window.open('https://www.icheers.tw/iCheers/Content/HTML/Delivery_m.html');">?</span></div>
+				<div class="text">$&nbsp;200</div>
+			</div>
+			<div class="row">
+				<div class="text">總金額</div>
+				<div class="total">$&nbsp;200</div>
+			</div>
+		</div>
+		<div class="BTN_Order_Detail_extend">展開商品明細<i></i></div>
+		<div class="order_detail" style="display: none;">
+	        
+	        <div class="one_delivery_type">
+	        	<div class="row_title">
+	        		<div class="wine_info">
+	        			<span>快速到貨品項</span>
+	        		</div>
+	        		<div class="wine_number">數量</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;2,500</span>
+	        			</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;799</span>
+	        			</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;1,500</span>
+	        			</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        </div>
+
+	        <div class="one_delivery_type">
+	        	<div class="row_title">
+	        		<div class="wine_info">
+	        			<span>一般配送品項</span>
+	        		</div>
+	        		<div class="wine_number">數量</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;2,500</span>
+	        			</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;799</span>
+	        			</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;1,500</span>
+	        			</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        </div>
+
+	        <div class="one_delivery_type">
+	        	<div class="row_title">
+	        		<div class="wine_info">
+	        			<span>預購品項</span>
+	        		</div>
+	        		<div class="wine_number">數量</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;2,500</span>
+	        			</div>
+	        			<div class="wine_detail">預計到貨日&nbsp;&nbsp;2021/12</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;799</span>
+	        			</div>
+	        			<div class="wine_detail">預計到貨日&nbsp;&nbsp;2023/04</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;1,500</span>
+	        			</div>
+	        			<div class="wine_detail">預計到貨日&nbsp;&nbsp;2023/04</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        </div>
+
+	        <div class="one_delivery_type">
+	        	<div class="row_title">
+	        		<div class="wine_info">
+	        			<span>儲酒品項</span>
+	        		</div>
+	        		<div class="wine_number">數量</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;2,500</span>
+	        			</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;799</span>
+	        			</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;1,500</span>
+	        			</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        </div>
+    	</div>
+		<div class="cart_form_row payment">
+			<div class="RadioBox Radio_Payment RadioBox_active" name='payment'>匯款</div>
+			<div class="RadioBox Radio_Payment" name='payment'>刷卡/行動支付</div>
+			<div class="RadioBox Radio_Payment" name='payment'>宅配貨到付款(現金)</div>
+		</div>
+	</section>
+	<!--付款方式 end-->
+	
+
+	
+
+	<div class="btn_submit">
+		儲存修改
 	</div>
 
 
@@ -566,6 +902,66 @@
 </div>
 
 <div class="black_BG" id="black_BG02">
+	<!--活動折扣詳細資訊-->
+	<div class="PopWindow_layout" id="EventDiscountInfoWindow">
+		<div class="PopWindow_title">
+			活動折扣
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_content_text">
+				<div class="event_name">
+					波爾多紅酒任選二款(含以上)79折優惠
+				</div>
+				<div class="event_discount">
+					<span>-&nbsp;$&nbsp;200</span>
+				</div>
+			</div>
+			<div class="PopWindow_content_text">
+				<div class="event_name">
+					Domaine Geantet Pansiot任選六瓶 加碼送老酒開瓶器
+				</div>
+				<div class="event_discount">
+					<span>-&nbsp;$&nbsp;400</span>
+				</div>
+			</div>
+			<div class="PopWindow_content_text">
+				<div class="event_name">
+					Zenato Ripassa Valpolicella Superiore 買二送一超值優惠
+				</div>
+				<div class="event_discount">
+					<span>-&nbsp;$&nbsp;1,500</span>
+				</div>
+			</div>
+			<div class="PopWindow_content_text">
+				<div class="event_name">
+					波爾多紅酒任選二款(含以上)79折優惠
+				</div>
+				<div class="event_discount">
+					<span>-&nbsp;$&nbsp;200</span>
+				</div>
+			</div>
+			<div class="PopWindow_content_text">
+				<div class="event_name">
+					Domaine Geantet Pansiot任選六瓶 加碼送老酒開瓶器
+				</div>
+				<div class="event_discount">
+					<span>-&nbsp;$&nbsp;400</span>
+				</div>
+			</div>
+			<div class="PopWindow_content_text">
+				<div class="event_name">
+					Zenato Ripassa Valpolicella Superiore 買二送一超值優惠
+				</div>
+				<div class="event_discount">
+					<span>-&nbsp;$&nbsp;1,500</span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!--活動折扣詳細資訊 end-->
+
 	<!--使用bouns-->
 	<div class="PopWindow_layout" id="UseBounsWindow">
 		<div class="PopWindow_title">
@@ -600,43 +996,15 @@
 	</div>
 	<!--使用coupon end-->
 
-	<!--運費說明-->
-	<div class="PopWindow_layout" id="FreightInfoWindow">
-		<div class="PopWindow_title">
-			運費說明
-			<span class="CloseBTN"></span>
-		</div>
-		<div class="PopWindow_content">
-			<div class="PopWindow_content_text">折扣後商品總額</div>
-			<div class="FreightInfoRow">
-				<div><span>1,499</span>元以下</div>
-				<div>200元</div>
-			</div>
-			<div class="FreightInfoRow">
-				<div><span>1,500</span>元(含)以上</div>
-				<div>0元</div>
-			</div>
-			<div class="FreightInfo_notice">
-				*若有選購任一需運費商品，則不適用滿額  免運費之優惠。
-			</div>
-
-			<div class="FreightInfo_notice">
-				*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。
-			</div>
-			<div class="Popwindow_ConfirmBtn">回購物車</div>
-		</div>
-	</div>
-	<!--運費說明 end-->
-
 	<!--年齡確認-->
-	<div class="PopWindow_layout" id="AfterEdit">
+	<div class="PopWindow_layout" id="AgeConfrimWindow">
 		<div class="PopWindow_title">
-			修改完成！
+			請問您滿18歲了嗎
 			<span class="CloseBTN"></span>
 		</div>
 		<div class="PopWindow_content">
-			<div class="PopWindow_content_text">配送/付款資訊修改成功，訂購確認信已重寄至您的信箱，再請查收喔！</div>
-			<div class="Popwindow_ConfirmBtn">回首頁</div>
+			<div class="PopWindow_content_text">我同意訂購人及收貨人皆已年滿18歲，並請在收貨時出示身分證件。若未攜帶身分證，無法辨識是否年滿18歲，恕不交貨。</div>
+			<div class="Popwindow_ConfirmBtn">我已年滿十八歲</div>
 		</div>
 	</div>
 	<!--年齡確認 end-->
