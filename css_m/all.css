@@ -1275,6 +1275,11 @@ h4 {
 .SideMenu_Mode .icon.bottlemode {
   background-image: url(../images/mobile/bottlemode_icon.png);
 }
+@media screen and (min-width: 760px) {
+  .SideMenu_Mode {
+    font-size: 1.25rem;
+  }
+}
 
 .SideMenu_Export {
   width: 100%;
@@ -1296,6 +1301,11 @@ h4 {
   margin-right: 10px;
   margin-top: -1px;
 }
+@media screen and (min-width: 760px) {
+  .SideMenu_Export {
+    font-size: 1.25rem;
+  }
+}
 
 .SideMenu_OrderProgress {
   width: calc(100% - 30px);
@@ -1315,6 +1325,11 @@ h4 {
   margin-top: 10px;
   margin-right: 10px;
 }
+@media screen and (min-width: 760px) {
+  .SideMenu_OrderProgress {
+    font-size: 1.25rem;
+  }
+}
 
 .SideMenu_RecentView {
   width: calc(100% - 30px);
@@ -1333,6 +1348,11 @@ h4 {
   float: left;
   margin-top: 10px;
   margin-right: 10px;
+}
+@media screen and (min-width: 760px) {
+  .SideMenu_RecentView {
+    font-size: 1.25rem;
+  }
 }
 
 .SideMenu_GotoDesktop {
@@ -1360,6 +1380,11 @@ h4 {
   margin-right: 10px;
   padding: 0 3px;
   background-size: contain;
+}
+@media screen and (min-width: 760px) {
+  .SideMenu_GotoDesktop {
+    font-size: 1.25rem;
+  }
 }
 
 .SideMenu_OrderProgress {
@@ -2182,6 +2207,25 @@ h4 {
 .PopWindow_content .PopWindow_content_text:first-child {
   margin-top: 0;
 }
+.PopWindow_content .PopWindow_content_img {
+  width: 100%;
+  margin-top: 10px;
+}
+.PopWindow_content .PopWindow_content_img img {
+  width: 70%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.PopWindow_content .PopWindow_content_rentrule_text {
+  text-align: center;
+  color: #333;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+.PopWindow_content .PopWindow_content_rentrule_text b {
+  font-weight: bold;
+}
 .PopWindow_content .Popwindow_form {
   margin-top: 2rem;
 }
@@ -2387,6 +2431,9 @@ h4 {
 @media screen and (min-width: 760px) {
   .PopWindow_content {
     padding: 2rem;
+  }
+  .PopWindow_content .PopWindow_content_img img {
+    width: 50%;
   }
 }
 
@@ -11136,6 +11183,7 @@ h2.detail_Name_cn {
 @media screen and (min-width: 1024px) {
   .SearchResult {
     width: 60vw;
+    padding: 0 1.5rem;
     position: fixed;
     right: 0;
     padding-top: 0;
@@ -11144,6 +11192,7 @@ h2.detail_Name_cn {
 }
 
 .one_result_row {
+  font-family: 'Arial','Microsoft JhengHei';
   width: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -11159,167 +11208,48 @@ h2.detail_Name_cn {
 .one_result_row:last-child {
   border-bottom: none;
 }
-.one_result_row .date {
-  width: 100%;
-  font-size: 1rem;
-  color: #333;
-}
-.one_result_row .name {
-  width: 100%;
-  margin-top: 8px;
-}
-.one_result_row .name .name_cn {
+.one_result_row.result_count {
   font-size: 1rem;
   line-height: 1.5rem;
-  color: #333;
-}
-.one_result_row .name .name_en {
-  font-size: 1rem;
-  line-height: 1.25rem;
-  color: #333;
-  margin-top: 2px;
-}
-.one_result_row .text {
-  width: 70%;
-}
-.one_result_row .text .item {
-  font-size: 1rem;
-  color: #333;
-  margin-top: 8px;
-}
-.one_result_row .info {
-  width: 100%;
-  position: relative;
-  margin-top: 8px;
-}
-.one_result_row .info span {
-  font-size: 1rem;
-  color: #333;
-  margin-left: 5px;
-}
-.one_result_row .info span:first-child {
-  margin-left: 0;
-}
-.one_result_row .info span:after {
-  content: '';
-  width: 1px;
-  height: 10px;
-  background-color: #666;
-  position: relative;
-  top: -1px;
-  display: inline-block;
-  margin-left: 8px;
-}
-.one_result_row .info span:last-child:after {
-  display: none;
-}
-.one_result_row .price {
-  text-align: right;
-  width: 30%;
-  font-size: 1rem;
-  color: #333;
-  font-weight: bold;
-}
-.one_result_row .record {
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #cccccc;
-  font-size: 1rem;
-  margin-top: 16px;
-  color: #666;
-}
-.one_result_row .record .row {
-  width: 100%;
-  padding: 12px 0;
-  border-bottom: 1px solid #cccccc;
-  background-color: #fff;
-  display: flex;
-}
-.one_result_row .record .row:nth-child(even) {
-  background-color: #f9f9f9;
-}
-.one_result_row .record .row:last-child {
+  color: #999;
   border-bottom: none;
+  padding-bottom: 0;
+  justify-content: flex-start;
 }
-.one_result_row .record .row .text {
-  width: 40%;
-  padding-right: 24px;
-  text-align: right;
+.one_result_row.result_count span {
+  margin: 0 5px;
 }
-.one_result_row .record .row .storage {
-  color: #d30a0a;
+.one_result_row .no_result {
+  width: 100%;
+  font-size: 1.25rem;
+  color: #666;
   font-weight: bold;
-}
-.one_result_row .record .row .take {
-  color: #0b7b62;
-  font-weight: bold;
-}
-.one_result_row .record .row .text_r {
-  width: 60%;
   text-align: center;
 }
-.one_result_row .record .row a {
-  text-decoration: underline;
-  color: #296993;
+.one_result_row .wine_name_cn, .one_result_row .wine_name_en, .one_result_row .wine_other {
+  width: 100%;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  cursor: pointer;
+}
+.one_result_row .wine_name_en, .one_result_row .wine_other {
+  margin-top: 5px;
+}
+.one_result_row .highlight {
+  color: #ce0808;
 }
 @media screen and (min-width: 760px) {
-  .one_result_row {
-    padding-bottom: 28px;
-    margin-top: 32px;
-  }
-  .one_result_row .text {
-    width: 80%;
-  }
-  .one_result_row .text .item {
-    font-size: 1.375rem;
-    margin-top: 12px;
-  }
-  .one_result_row .date {
+  .one_result_row.result_count {
     font-size: 1.25rem;
+    line-height: 1.875rem;
   }
-  .one_result_row .name {
-    margin-top: 12px;
-  }
-  .one_result_row .name .name_cn {
+  .one_result_row .wine_name_cn, .one_result_row .wine_name_en, .one_result_row .wine_other {
     font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-  .one_result_row .name .name_en {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    margin-top: 6px;
-  }
-  .one_result_row .info {
-    margin-top: 8px;
-  }
-  .one_result_row .info span {
-    font-size: 1.25rem;
-    margin-left: 8px;
-  }
-  .one_result_row .info span:after {
-    height: 12px;
-    margin-left: 12px;
-  }
-  .one_result_row .price {
-    width: 20%;
-    font-size: 1.375rem;
-  }
-  .one_result_row .record {
-    font-size: 1.25rem;
-    margin-top: 24px;
-  }
-  .one_result_row .record .row {
-    padding: 16px 0;
-  }
-  .one_result_row .record .row .text {
-    padding-right: 32px;
+    line-height: 1.875rem;
   }
 }
 
-/*
-.cwc_storagerecord .one_result_row{
-	border-bottom: none;
-}*/
 .CWC .header {
   border-color: #904d06;
 }
@@ -11525,6 +11455,9 @@ h2.detail_Name_cn {
 @media screen and (min-width: 760px) {
   .detail_allyears .one_year {
     width: calc((100% - 30px)/7);
+    font-size: 1.25rem;
+    height: 50px;
+    line-height: 50px;
   }
   .detail_allyears .one_year:nth-child(5n+1) {
     margin-left: 5px;
@@ -11533,7 +11466,7 @@ h2.detail_Name_cn {
     margin-left: 0;
   }
   .detail_allyears .one_year.active {
-    line-height: 38px;
+    line-height: 50px;
   }
 }
 
@@ -11575,6 +11508,9 @@ h2.detail_Name_cn {
 @media screen and (min-width: 760px) {
   .detail_allcapacity .one_capacity {
     width: calc((100% - 30px)/7);
+    font-size: 1.25rem;
+    height: 50px;
+    line-height: 50px;
   }
   .detail_allcapacity .one_capacity:nth-child(5n+1) {
     margin-left: 5px;
@@ -11650,7 +11586,8 @@ h2.detail_Name_cn {
   }
   .detail_MoreInfo_layout .one_info_row .title {
     width: 100%;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
+    line-height: 1.65rem;
   }
   .detail_MoreInfo_layout .one_info_row .title em {
     height: 14px;
@@ -11658,8 +11595,8 @@ h2.detail_Name_cn {
   }
   .detail_MoreInfo_layout .one_info_row .text {
     width: 100%;
-    font-size: 1.125rem;
-    line-height: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.65rem;
   }
 }
 @media screen and (min-width: 1360px) {
@@ -11990,5 +11927,561 @@ h2.detail_Name_cn {
     box-sizing: border-box;
     float: none;
     margin-right: 0;
+  }
+}
+
+/*CWC窖藏異動的部分*/
+.one_result_bydate {
+  border-bottom: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.one_result_bydate .date {
+  font-size: 1.68rem;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+}
+.one_result_bydate .date:before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #333;
+  position: absolute;
+  top: 9px;
+  left: -16px;
+}
+.one_result_bydate .date:after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #333;
+  position: absolute;
+  top: 9px;
+  right: -16px;
+}
+.one_result_bydate .count_box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 16px;
+}
+.one_result_bydate .count_box .onebox {
+  width: calc(50% - 5px);
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  height: 80px;
+}
+.one_result_bydate .count_box .onebox .title {
+  background-color: #bfbfbf;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  height: 35px;
+  width: 100%;
+  line-height: 35px;
+}
+.one_result_bydate .count_box .onebox .count {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.one_result_bydate .count_box .shipped .count {
+  color: #333;
+}
+.one_result_bydate .count_box .storaged .count {
+  color: #ad0b0b;
+}
+.one_result_bydate .one_order {
+  width: 100%;
+  margin-top: 32px;
+}
+.one_result_bydate .one_order .order_number {
+  width: 100%;
+  display: block;
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: bold;
+}
+.one_result_bydate .one_order .one_wine {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.one_result_bydate .one_order .one_wine .wine_info {
+  width: calc(75% - 10px);
+  color: #666;
+  font-size: 1rem;
+}
+.one_result_bydate .one_order .one_wine .wine_info .name_cn {
+  line-height: 1.35rem;
+}
+.one_result_bydate .one_order .one_wine .wine_info .name_en {
+  margin-top: 6px;
+  line-height: 1.25rem;
+}
+.one_result_bydate .one_order .one_wine .wine_info .status {
+  margin-top: 6px;
+}
+.one_result_bydate .one_order .one_wine .wine_info .status span {
+  width: 1px;
+  height: 12px;
+  display: inline-block;
+  background-color: #ccc;
+  margin: 0 6px;
+}
+.one_result_bydate .one_order .one_wine .storaged_info {
+  width: 25%;
+  height: 80px;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+}
+.one_result_bydate .one_order .one_wine .storaged_info .title {
+  width: 100%;
+  height: 35px;
+  background-color: #bfbfbf;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 35px;
+  font-weight: bold;
+}
+.one_result_bydate .one_order .one_wine .storaged_info .count {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.25rem;
+}
+.one_result_bydate .one_order .one_wine .storaged .count {
+  color: #ad0b0b;
+}
+.one_result_bydate .one_order .one_wine .shipped .count {
+  color: #333;
+}
+.one_result_bydate .one_order .one_wine + .one_wine {
+  margin-top: 32px;
+}
+@media screen and (min-width: 760px) {
+  .one_result_bydate .date {
+    font-size: 2rem;
+  }
+  .one_result_bydate .date:before {
+    width: 8px;
+    height: 8px;
+    top: 11px;
+    left: -20px;
+  }
+  .one_result_bydate .date:after {
+    width: 8px;
+    height: 8px;
+    top: 11px;
+    right: -20px;
+  }
+  .one_result_bydate .count_box {
+    margin-top: 20px;
+  }
+  .one_result_bydate .count_box .onebox {
+    width: calc(50% - 8px);
+    height: 100px;
+  }
+  .one_result_bydate .count_box .onebox .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    height: 45px;
+    width: 100%;
+    line-height: 45px;
+  }
+  .one_result_bydate .count_box .onebox .count {
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+  .one_result_bydate .count_box .shipped .count {
+    color: #666;
+  }
+  .one_result_bydate .count_box .storaged .count {
+    color: #ad0b0b;
+  }
+  .one_result_bydate .one_order {
+    margin-top: 48px;
+  }
+  .one_result_bydate .one_order .order_number {
+    font-size: 1.5rem;
+  }
+  .one_result_bydate .one_order .one_wine {
+    margin-top: 24px;
+  }
+  .one_result_bydate .one_order .one_wine .wine_info {
+    width: calc(80% - 10px);
+    font-size: 1.25rem;
+  }
+  .one_result_bydate .one_order .one_wine .wine_info .name_cn {
+    line-height: 1.75rem;
+  }
+  .one_result_bydate .one_order .one_wine .wine_info .name_en {
+    line-height: 1.75rem;
+  }
+  .one_result_bydate .one_order .one_wine .wine_info .status {
+    margin-top: 6px;
+  }
+  .one_result_bydate .one_order .one_wine .wine_info .status span {
+    width: 1px;
+    height: 12px;
+    display: inline-block;
+    background-color: #ccc;
+    margin: 0 6px;
+  }
+  .one_result_bydate .one_order .one_wine .storaged_info {
+    width: 20%;
+    height: 100px;
+  }
+  .one_result_bydate .one_order .one_wine .storaged_info .title {
+    height: 45px;
+    font-size: 1.25rem;
+    line-height: 45px;
+  }
+  .one_result_bydate .one_order .one_wine .storaged_info .count {
+    height: 55px;
+    line-height: 55px;
+    font-size: 1.5rem;
+  }
+  .one_result_bydate .one_order .one_wine + .one_wine {
+    margin-top: 32px;
+  }
+}
+
+.one_result_bywine {
+  border-bottom: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.one_result_bywine .name_en {
+  width: 100%;
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+.one_result_bywine .name_cn {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #666;
+  width: 100%;
+  margin-top: 8px;
+}
+.one_result_bywine .status {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #666;
+  width: 100%;
+  margin-top: 6px;
+}
+.one_result_bywine .status span {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background-color: #cccccc;
+  margin: 0 6px;
+}
+.one_result_bywine .count_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.one_result_bywine .count_box .one_box {
+  width: calc((60% - 20px)/2);
+  height: 80px;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  box-sizing: border-box;
+}
+.one_result_bywine .count_box .one_box .title {
+  width: 100%;
+  height: 35px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  line-height: 35px;
+  background-color: #bfbfbf;
+}
+.one_result_bywine .count_box .one_box .count {
+  width: 100%;
+  height: 45px;
+  font-size: 1.5rem;
+  line-height: 45px;
+  text-align: center;
+  font-weight: bold;
+}
+.one_result_bywine .count_box .storaged {
+  color: #ad0b0b;
+}
+.one_result_bywine .count_box .shipped {
+  color: #666;
+}
+.one_result_bywine .count_box .in_stock {
+  width: 40%;
+  color: #333;
+}
+.one_result_bywine .one_date {
+  width: 100%;
+  margin-top: 32px;
+}
+.one_result_bywine .one_date .date {
+  width: 100%;
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: bold;
+}
+.one_result_bywine .one_date .one_order {
+  margin-top: 6px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.one_result_bywine .one_date .one_order .order_number {
+  font-size: 1rem;
+  color: #666;
+  line-height: 30px;
+  display: inline-block;
+}
+.one_result_bywine .one_date .one_order .count_box {
+  width: auto;
+  height: 30px;
+  margin-top: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+.one_result_bywine .one_date .one_order .count_box .title {
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #bfbfbf;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #bfbfbf;
+  box-sizing: border-box;
+}
+.one_result_bywine .one_date .one_order .count_box .count {
+  box-sizing: border-box;
+  height: 30px;
+  border: 1px solid #bfbfbf;
+  padding: 0 16px;
+  min-width: 60px;
+  line-height: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+.one_result_bywine .one_date .one_order .shipped .count {
+  color: #666;
+}
+.one_result_bywine .one_date .one_order .storaged .count {
+  color: #ad0b0b;
+}
+.one_result_bywine .one_date .one_order + .one_order {
+  margin-top: 10px;
+}
+@media screen and (min-width: 760px) {
+  .one_result_bywine .name_en {
+    font-size: 1.875rem;
+    line-height: 2.2rem;
+  }
+  .one_result_bywine .name_cn {
+    font-size: 1.625rem;
+    line-height: 2.4rem;
+    margin-top: 8px;
+  }
+  .one_result_bywine .status {
+    font-size: 1.625rem;
+    line-height: 2.4rem;
+    margin-top: 4px;
+  }
+  .one_result_bywine .status span {
+    height: 18px;
+    margin: 0 10px;
+  }
+  .one_result_bywine .count_box {
+    margin-top: 20px;
+  }
+  .one_result_bywine .count_box .one_box {
+    width: calc((100% - 20px)/3);
+    height: 100px;
+  }
+  .one_result_bywine .count_box .one_box .title {
+    height: 45px;
+    font-size: 1.25rem;
+    line-height: 45px;
+  }
+  .one_result_bywine .count_box .one_box .count {
+    height: 55px;
+    font-size: 1.75rem;
+    line-height: 55px;
+  }
+  .one_result_bywine .count_box .in_stock {
+    width: calc((100% - 20px)/3);
+  }
+  .one_result_bywine .one_date {
+    margin-top: 48px;
+  }
+  .one_result_bywine .one_date .date {
+    font-size: 1.5rem;
+  }
+  .one_result_bywine .one_date .one_order {
+    margin-top: 6px;
+    height: 40px;
+  }
+  .one_result_bywine .one_date .one_order .order_number {
+    font-size: 1.25rem;
+    color: #666;
+    line-height: 40px;
+    display: inline-block;
+  }
+  .one_result_bywine .one_date .one_order .count_box {
+    height: 40px;
+  }
+  .one_result_bywine .one_date .one_order .count_box .title {
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.25rem;
+  }
+  .one_result_bywine .one_date .one_order .count_box .count {
+    height: 40px;
+    padding: 0 16px;
+    min-width: 80px;
+    line-height: 40px;
+    font-size: 1.25rem;
+  }
+  .one_result_bywine .one_date .one_order .shipped .count {
+    color: #666;
+  }
+  .one_result_bywine .one_date .one_order .storaged .count {
+    color: #ad0b0b;
+  }
+  .one_result_bywine .one_date .one_order + .one_order {
+    margin-top: 16px;
+  }
+}
+
+/*CWC租金明細的部分*/
+.one_result_recipe {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.one_result_recipe .date {
+  width: 50%;
+  font-size: 1.125rem;
+  color: #333;
+  margin-top: 12px;
+  font-weight: bold;
+}
+.one_result_recipe .date .item {
+  font-weight: normal;
+  color: #666;
+}
+.one_result_recipe .price {
+  width: 50%;
+  text-align: right;
+  font-size: 1.125rem;
+  color: #333;
+  margin-top: 12px;
+  font-weight: bold;
+}
+.one_result_recipe .detail_info {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 20px;
+  display: none;
+}
+.one_result_recipe .detail_info .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.one_result_recipe .detail_info .row:first-child {
+  margin-top: 0;
+}
+.one_result_recipe .detail_info .row div {
+  width: 50%;
+  color: #999;
+  font-size: 1rem;
+}
+.one_result_recipe .detail_info .row a {
+  width: 100%;
+  display: inline-block;
+  color: #168ec0;
+  text-decoration: underline;
+  text-align: right;
+  font-size: 1rem;
+}
+.one_result_recipe .detail_info .row .unit {
+  text-align: left;
+}
+.one_result_recipe .detail_info .row .count {
+  text-align: center;
+}
+.one_result_recipe .detail_info .row .price {
+  text-align: right;
+  font-weight: normal;
+  color: #999;
+  font-size: 1rem;
+  margin-top: 0;
+}
+@media screen and (min-width: 760px) {
+  .one_result_recipe .date {
+    font-size: 1.25rem;
+  }
+  .one_result_recipe .price {
+    font-size: 1.25rem;
+  }
+  .one_result_recipe .detail_info .row {
+    margin-top: 16px;
+  }
+  .one_result_recipe .detail_info .row div {
+    font-size: 1.125rem;
+  }
+  .one_result_recipe .detail_info .row a {
+    font-size: 1.125rem;
+  }
+}
+
+.rent_info {
+  font-size: 1.125rem;
+  color: #666;
+  line-height: 1.5rem;
+}
+.rent_info span {
+  color: #c29c20;
+  font-weight: bold;
+  margin: 0 5px;
+}
+@media screen and (min-width: 760px) {
+  .rent_info {
+    font-size: 1.25rem;
+    line-height: 2rem;
   }
 }

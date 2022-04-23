@@ -101,6 +101,12 @@
 		   			
 		   		}		   		
 		   	});
+
+		   	//租金明細展開
+		   	$('.one_result_recipe').click(function(){
+		   		$('.detail_info').slideUp('fast');
+		   		$(this).find('.detail_info').slideDown('fast');
+		   	});
 		    
 		   
 		   
@@ -164,66 +170,137 @@
 	</section>
 
 	<section class="SearchResult">
-		<div class="one_result_row">
-			<div class="text">
-				<div class="date">2021/05</div>
-				<div class="item">租金</div>
-				
+		<div class="rent_info">
+			您目前租用<span>X</span>箱，剩餘儲存空間<span>6000</span>ml，每日租金為<span>$250</span>元。
+		</div>
+		<div class="one_result_row one_result_recipe">
+			<div class="date">2021/05&nbsp;<span class="item">租金</span></div> 
+			<div class="price">
+				NT$255
 			</div>
+			<div class="detail_info">
+				<div class="row">
+					<div class="unit">2單位&nbsp;&nbsp;25日</div>
+					<div class="price">$150</div>
+				</div>
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;3日</div>
+					<div class="price">$5</div>
+				</div>
+				<div class="row">
+					<a href="#">電子發票明細</a>
+				</div>
+			</div>
+		</div>
+		<div class="one_result_row one_result_recipe">
+			<div class="date">2021/04&nbsp;<span class="item">租金</span></div> 
 			<div class="price">
 				NT$55
 			</div>
-		</div>
-		<div class="one_result_row">
-			<div class="text">
-				<div class="date">2021/05</div>
-				<div class="item">租金</div>
-				
+			<div class="detail_info">
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;30日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<a href="#">電子發票明細</a>
+				</div>
 			</div>
+		</div>
+		<div class="one_result_row one_result_recipe">
+			<div class="date">2021/03&nbsp;<span class="item">租金</span></div> 
+			<div class="price">
+				NT$300
+			</div>
+			<div class="detail_info">
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;30日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;5日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;10日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;20日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;13日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<a href="#">電子發票明細</a>
+				</div>
+			</div>
+		</div>
+		<div class="one_result_row one_result_recipe">
+			<div class="date">2021/02&nbsp;<span class="item">租金</span></div> 
 			<div class="price">
 				NT$55
 			</div>
-		</div>
-		<div class="one_result_row">
-			<div class="text">
-				<div class="date">2021/05</div>
-				<div class="item">租金</div>
-				
+			<div class="detail_info">
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;30日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<a href="#">電子發票明細</a>
+				</div>
 			</div>
+		</div>
+		<div class="one_result_row one_result_recipe">
+			<div class="date">2021/01&nbsp;<span class="item">租金</span></div> 
 			<div class="price">
 				NT$55
 			</div>
-		</div>
-		<div class="one_result_row">
-			<div class="text">
-				<div class="date">2021/05</div>
-				<div class="item">租金</div>
-				
+			<div class="detail_info">
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;30日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<a href="#">電子發票明細</a>
+				</div>
 			</div>
+		</div>
+
+		<div class="one_result_row one_result_recipe">
+			<div class="date">2020/12&nbsp;<span class="item">租金</span></div> 
 			<div class="price">
 				NT$55
 			</div>
-		</div>
-		<div class="one_result_row">
-			<div class="text">
-				<div class="date">2021/05</div>
-				<div class="item">租金</div>
-				
+			<div class="detail_info">
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;30日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<a href="#">電子發票明細</a>
+				</div>
 			</div>
+		</div>
+
+		<div class="one_result_row one_result_recipe">
+			<div class="date">2020/11&nbsp;<span class="item">租金</span></div>  
 			<div class="price">
 				NT$55
 			</div>
-		</div>
-		<div class="one_result_row">
-			<div class="text">
-				<div class="date">2021/05</div>
-				<div class="item">租金</div>
-				
+			<div class="detail_info">
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;30日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<a href="#">電子發票明細</a>
+				</div>
 			</div>
-			<div class="price">
-				NT$55
-			</div>
 		</div>
+
 	</section>
 	
 </div>
@@ -292,6 +369,12 @@
 			</div>
 			<div class="SideMenu_OneOption">
 				匯出我的窖藏清單
+			</div>
+			<div class="SideMenu_OneOption">
+				更換綁定信用卡
+			</div>
+			<div class="SideMenu_OneOption">
+				修改發票設定
 			</div>
 			<div class="SideMenu_OneOption SideMenu_Filter">
 				篩選

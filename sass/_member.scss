@@ -1032,6 +1032,7 @@
 
 	@include pad-width1024{
     	width: 60vw;
+    	padding: 0 1.5rem;
 	    position: fixed;
 	    right: 0;
 	    padding-top: 0;
@@ -1040,6 +1041,7 @@
 }
 
 .one_result_row{
+	font-family: 'Arial','Microsoft JhengHei';
 	width: 100%;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1055,182 +1057,53 @@
     	border-bottom: none;
     }
 
-    & .date{
-    	width: 100%;
+    &.result_count{
     	font-size: 1rem;
-    	color: #333;	
-    }
-
-    & .name{
-    	width: 100%;
-    	margin-top: 8px;
-    	& .name_cn{
-    		font-size: 1rem;
-    		line-height: 1.5rem;
-    		color: #333;	
-    	}
-
-    	& .name_en{
-    		font-size: 1rem;
-    		line-height: 1.25rem;
-    		color: #333;
-    		margin-top: 2px;
-    	}
-    }
-
-    & .text{
-    	width: 70%;
-    	& .item{
-    		font-size: 1rem;
-    		color:#333;
-    		margin-top: 8px;
-    	}
-    }
-
-    & .info {
-    	width: 100%;
-    	position: relative;
-    	margin-top: 8px;
+    	line-height: 1.5rem;
+    	color:#999;
+    	border-bottom:none;
+    	padding-bottom: 0;
+    	justify-content: flex-start;
     	& span{
-    		font-size: 1rem;
-    		color: #333;
-    		margin-left: 5px;
-    		&:first-child{
-    			margin-left: 0;
-    		}
-   			&:after{
-   				content: '';
-   				width: 1px;
-   				height: 10px;
-   				background-color: #666;
-   				position: relative;
-   				top: -1px;
-   				display: inline-block;
-   				margin-left: 8px;
-   			}
-   			&:last-child:after{
-   				display: none;
-   			}
-   		}
-    }
-
-    & .price{
-    	text-align: right;
-    	width: 30%;
-    	font-size: 1rem;
-    	color: #333;
-    	font-weight: bold;
-    }
-
-    & .record{
-    	width: 100%;
-    	box-sizing: border-box;
-    	border: 1px solid #cccccc;
-    	font-size: 1rem;
-    	margin-top: 16px;
-    	color:#666;
-    	& .row{
-    		width: 100%;
-    		padding: 12px 0;
-    		border-bottom: 1px solid #cccccc;
-    		background-color: #fff;
-    		display: flex;
-    		&:nth-child(even){
-    			background-color: #f9f9f9;
-    		}
-
-    		&:last-child{
-    			border-bottom: none;
-    		}
-
-    		& .text{
-    			width: 40%;
-    			padding-right: 24px;
-    			text-align: right;
-    		}
-
-    		& .storage{
-	    		color: #d30a0a;
-	    		font-weight: bold;
-	    	}
-
-	    	& .take{
-	    		color: #0b7b62;
-	    		font-weight: bold;
-	    	}
-
-	    	& .text_r{
-	    		width: 60%;
-	    		text-align: center;
-	    	}
-
-	    	& a {
-	    		text-decoration: underline;
-	    		color: $LinkColor;
-	    	}
+    		margin: 0 5px;
     	}
-    }  
+    }
+
+    & .no_result{
+    	width: 100%;
+    	font-size: 1.25rem;
+    	color: #666;
+    	font-weight: bold;
+    	text-align: center;
+    }
+
+    & .wine_name_cn, .wine_name_en, .wine_other{
+    	width: 100%;
+    	color:#666;
+    	font-size: 1rem;
+    	line-height: 1.5rem;
+    	cursor: pointer;
+    }
+
+    & .wine_name_en, .wine_other{
+    	margin-top: 5px;
+    }
+
+    & .highlight{
+    	color: #ce0808;
+    }
 
     @include pad-width{
-    	padding-bottom: 28px;
-    	margin-top: 32px;
-
-    	& .text{
-    		width: 80%;
-    		& .item{
-    			font-size: 1.375rem;
-    			margin-top: 12px;
-    		}
+    	&.result_count{
+    		font-size: 1.25rem;
+	    	line-height: 1.875rem;
     	}
 
-    	& .date{
+    	& .wine_name_cn, .wine_name_en, .wine_other{
+
 	    	font-size: 1.25rem;
+	    	line-height: 1.875rem;
 	    }
-
-	    & .name{
-	    	margin-top: 12px;
-	    	& .name_cn{
-	    		font-size: 1.25rem;
-	    		line-height: 1.75rem;	
-	    	}
-
-	    	& .name_en{
-	    		font-size: 1.25rem;
-	    		line-height: 1.75rem;
-	    		margin-top: 6px;
-	    	}
-	    }
-
-	    & .info {
-	    	margin-top: 8px;
-	    	& span{
-	    		font-size: 1.25rem;
-	    		margin-left: 8px;
-	   			&:after{
-	   				height: 12px;
-	   				margin-left: 12px;
-	   			}
-	   		}
-	    }
-
-    	& .price{
-    		width: 20%;
-    		font-size: 1.375rem;
-    	}
-
-    	& .record{
-	    	font-size: 1.25rem;
-	    	margin-top: 24px;
-	    	& .row{
-	    		padding: 16px 0;
-	    		& .text{
-	    			padding-right: 32px;
-	    		}
-	    	}
-	    }  
     }
+
 }
-/*
-.cwc_storagerecord .one_result_row{
-	border-bottom: none;
-}*/

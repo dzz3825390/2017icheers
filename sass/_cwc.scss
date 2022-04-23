@@ -235,6 +235,9 @@
 	@include pad-width{
 		& .one_year{
 			width: calc((100% - 30px)/7);
+			font-size: 1.25rem;
+			height: 50px;
+			line-height: 50px;
 
 			&:nth-child(5n+1){
 				margin-left: 5px;
@@ -245,7 +248,7 @@
 			}
 
 			&.active{
-				line-height: 38px;
+				line-height: 50px;
 			}
 		}
 	}
@@ -291,6 +294,9 @@
 	@include pad-width{
 		& .one_capacity{
 			width: calc((100% - 30px)/7);
+			font-size: 1.25rem;
+			height: 50px;
+			line-height: 50px;
 
 			&:nth-child(5n+1){
 				margin-left: 5px;
@@ -376,7 +382,8 @@
 			flex-wrap: wrap;
 			& .title{
 				width: 100%;
-				font-size: 1.125rem;
+				font-size: 1.25rem;
+				line-height: 1.65rem;
 				& em{
 					height: 14px;
 					margin: 0 10px;
@@ -385,8 +392,8 @@
 
 			& .text{
 				width: 100%;
-				font-size: 1.125rem;
-				line-height: 1.5rem;
+				font-size: 1.25rem;
+				line-height: 1.65rem;
 			}
 		}
 	}
@@ -755,5 +762,650 @@
 				margin-right: 0;
 			}
 		}
+	}
+}
+
+/*CWC窖藏異動的部分*/
+.one_result_bydate{
+    border-bottom:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .date{
+    	font-size:1.68rem;
+    	color: #333;
+    	font-weight: bold;
+    	position: relative;
+    	&:before{
+    		content: '';
+    		display: block;
+    		width: 6px;
+    		height: 6px;
+    		border-radius: 50%;
+    		background-color: #333;
+    		position: absolute;
+    		top: 9px;
+    		left: -16px;
+    	}
+   		&:after{
+   			content: '';
+   			display: block;
+   			width: 6px;
+   			height: 6px;
+   			border-radius: 50%;
+   			background-color: #333;
+   			position: absolute;
+   			top: 9px;
+   			right: -16px;
+   		}
+   	}
+
+   	& .count_box{
+   		display:flex;
+   		justify-content: space-between;
+   		width:100%;
+   		margin-top:16px;
+   		& .onebox{
+   			width: calc(50% - 5px);
+   			box-sizing: border-box;
+   			border-radius: 5px;
+   			border: 1px solid #bfbfbf;
+   			height: 80px;
+   			& .title{
+   				background-color: #bfbfbf;
+   				color:#fff;
+   				font-size: 1rem;
+   				font-weight: bold;
+   				text-align: center;
+   				height: 35px;
+   				width: 100%;
+   				line-height: 35px;
+   			}
+
+   			& .count{
+   				width: 100%;
+   				height: 45px;
+   				line-height: 45px;
+   				text-align: center;
+   				font-size: 1.5rem;
+   				font-weight: bold;
+   			}
+   		}
+
+   		& .shipped{
+   			& .count{
+   				color:#333;
+   			}
+   		}
+
+   		& .storaged{
+   			& .count{
+   				color:#ad0b0b;
+   			}
+   		}
+   	}
+
+   	& .one_order{
+   		width: 100%;
+   		margin-top: 32px;
+   		& .order_number{
+   			width: 100%;
+
+   			display: block;
+   			font-size: 1.25rem;
+   			color:#333;
+   			font-weight: bold;
+   		}
+
+   		& .one_wine{
+   			margin-top: 16px;
+   			display: flex;
+   			justify-content: space-between;
+   			& .wine_info{
+   				width: calc(75% - 10px);
+   				color: #666;
+   				font-size: 1rem;
+   				& .name_cn{
+   					line-height: 1.35rem;
+   				}
+
+   				& .name_en{
+   					margin-top: 6px;
+   					line-height: 1.25rem;
+   				}
+
+   				& .status{
+   					margin-top: 6px;
+   					& span{
+   						width: 1px;
+   						height: 12px;
+   						display: inline-block;
+   						background-color: #ccc;
+   						margin: 0 6px;
+   					}
+   				}
+   			}
+
+   			& .storaged_info{
+   				width: 25%;
+   				height: 80px;
+   				border-radius: 5px;
+   				border: 1px solid #bfbfbf;
+   				& .title{
+   					width: 100%;
+   					height: 35px;
+   					background-color: #bfbfbf;
+   					color: #fff;
+   					font-size: 1rem;
+   					text-align: center;
+   					line-height: 35px;
+   					font-weight: bold;
+   				}
+
+   				& .count{
+   					width: 100%;
+   					height: 45px;
+   					line-height: 45px;
+   					font-weight: bold;
+   					text-align: center;
+   					font-size: 1.25rem;
+   				}
+   			}
+
+   			& .storaged{
+   				& .count{
+   					color: #ad0b0b;
+   				}
+   			}
+
+   			& .shipped{
+   				& .count{
+   					color: #333;
+   				}
+   			}
+   		}
+
+   		& .one_wine + .one_wine{
+   			margin-top: 32px;
+   		}
+   	}
+
+
+   	@include pad-width{
+   		& .date{
+   			font-size:2rem;
+   			&:before{
+	    		width: 8px;
+	    		height: 8px;
+	    		top: 11px;
+	    		left: -20px;
+	    	}
+	   		&:after{
+	   			width: 8px;
+	   			height: 8px;
+	   			top: 11px;
+	   			right: -20px;
+	   		}
+   		}
+
+   		& .count_box{
+	   		margin-top:20px;
+	   		& .onebox{
+	   			width: calc(50% - 8px);
+	   			height: 100px;
+	   			& .title{
+	   				font-size: 1.25rem;
+	   				font-weight: bold;
+	   				text-align: center;
+	   				height: 45px;
+	   				width: 100%;
+	   				line-height: 45px;
+	   			}
+
+	   			& .count{
+	   				width: 100%;
+	   				height: 55px;
+	   				line-height: 55px;
+	   				text-align: center;
+	   				font-size: 1.75rem;
+	   				font-weight: bold;
+	   			}
+	   		}
+
+	   		& .shipped{
+	   			& .count{
+	   				color:#666;
+	   			}
+	   		}
+
+	   		& .storaged{
+	   			& .count{
+	   				color:#ad0b0b;
+	   			}
+	   		}
+	   	}
+
+	   	& .one_order{
+	   		margin-top: 48px;
+	   		& .order_number{
+	   			font-size: 1.5rem;
+	   		}
+
+	   		& .one_wine{
+	   			margin-top: 24px;
+	   			& .wine_info{
+	   				width: calc(80% - 10px);
+	   				font-size: 1.25rem;
+	   				& .name_cn{
+	   					line-height: 1.75rem;
+	   				}
+
+	   				& .name_en{
+	   					line-height: 1.75rem;
+	   				}
+
+	   				& .status{
+	   					margin-top: 6px;
+	   					& span{
+	   						width: 1px;
+	   						height: 12px;
+	   						display: inline-block;
+	   						background-color: #ccc;
+	   						margin: 0 6px;
+	   					}
+	   				}
+	   			}
+
+	   			& .storaged_info{
+	   				width: 20%;
+	   				height: 100px;
+	   				& .title{
+	   					height: 45px;
+	   					font-size: 1.25rem;
+	   					line-height: 45px;
+	   				}
+
+	   				& .count{
+	   					height: 55px;
+	   					line-height: 55px;
+	   					font-size: 1.5rem;
+	   				}
+	   			}
+
+	   		}
+
+	   		& .one_wine + .one_wine{
+	   			margin-top: 32px;
+	   		}
+	   	}
+
+
+   	}
+}
+
+.one_result_bywine{
+	border-bottom:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .name_en{
+    	width: 100%;
+    	font-size: 1.25rem;
+    	color: #333;
+    	font-weight: bold;
+    	line-height: 1.5rem;
+    }
+
+    & .name_cn{
+    	font-size: 1rem;
+    	line-height: 1.5rem;
+    	color: #666;
+    	width: 100%;
+    	margin-top: 8px;
+    }
+
+    & .status{
+    	font-size: 1rem;
+    	line-height: 1.5rem;
+    	color: #666;
+    	width: 100%;
+    	margin-top: 6px;
+    	& span{
+    		display: inline-block;
+    		width: 1px;
+    		height: 12px;
+    		background-color: #cccccc;
+    		margin: 0 6px;
+    	}
+    }
+
+    & .count_box{
+    	width: 100%;
+    	display: flex;
+    	justify-content: space-between;
+    	margin-top: 16px;
+    	& .one_box{
+    		width: calc((60% - 20px)/2);
+    		height: 80px;
+    		border-radius: 5px;
+    		border: 1px solid #bfbfbf;
+    		box-sizing: border-box;
+    		& .title{
+    			width: 100%;
+    			height: 35px;
+    			font-size: 1rem;
+    			font-weight: bold;
+    			text-align: center;
+    			color:#fff;
+    			line-height: 35px;
+    			background-color: #bfbfbf;
+    		}
+
+    		& .count{
+    			width: 100%;
+    			height: 45px;
+    			font-size: 1.5rem;
+    			line-height: 45px;
+    			text-align: center;
+    			font-weight: bold;
+    		}
+    	}
+
+    	& .storaged{
+    		color: #ad0b0b;
+    	}
+
+    	& .shipped{
+    		color: #666;
+    	}
+
+    	& .in_stock{
+    		width: 40%;
+    		color: #333;
+    	}
+    }
+
+    & .one_date{
+    	width: 100%;
+    	margin-top: 32px;
+    	& .date{
+    		width: 100%;
+    		font-size: 1.25rem;
+    		color: #333;
+    		font-weight: bold;
+    	}
+
+    	& .one_order{
+    		margin-top: 6px;
+    		height: 30px;
+    		display: flex;
+    		justify-content: space-between;
+    		& .order_number{
+    			font-size: 1rem;
+    			color:#666;
+    			line-height: 30px;
+    			display: inline-block;
+    		}
+
+    		& .count_box{
+    			width: auto;
+    			height: 30px;
+    			margin-top: 0;
+    			display: flex;
+    			justify-content: flex-start;
+    			& .title{
+    				width: 60px;
+    				height: 30px;
+    				line-height: 30px;
+    				background-color: #bfbfbf;
+    				font-size: 1rem;
+    				color:#fff;
+    				font-weight: bold;
+    				text-align: center;
+    				border: 1px solid #bfbfbf;
+    				box-sizing: border-box;
+    			}
+
+    			& .count{
+    				box-sizing: border-box;
+    				height: 30px;
+    				border: 1px solid #bfbfbf;
+    				padding: 0 16px;
+    				min-width: 60px;
+    				line-height: 30px;
+    				font-size: 1rem;
+    				font-weight: bold;
+    				text-align: center;
+    			}
+    		}
+
+    		& .shipped{
+    			& .count{
+    				color:#666;
+    			}
+    		}
+
+    		& .storaged{
+    			& .count{
+    				color:#ad0b0b;
+    			}
+    		}
+    	}
+
+    	& .one_order + .one_order{
+    		margin-top: 10px;
+    	}
+    }
+
+    @include pad-width{
+    	& .name_en{
+	    	font-size: 1.875rem;
+	    	line-height: 2.2rem;
+	    }
+
+	    & .name_cn{
+	    	font-size: 1.625rem;
+	    	line-height: 2.4rem;
+	    	margin-top: 8px;
+	    }
+
+	    & .status{
+	    	font-size: 1.625rem;
+	    	line-height: 2.4rem;
+	    	margin-top: 4px;
+	    	& span{
+	    		height: 18px;
+	    		margin: 0 10px;
+	    	}
+	    }
+
+	    & .count_box{
+	    	margin-top: 20px;
+	    	& .one_box{
+	    		width: calc((100% - 20px)/3);
+	    		height: 100px;
+	    		& .title{
+	    			height: 45px;
+	    			font-size: 1.25rem;
+	    			line-height: 45px;
+	    		}
+
+	    		& .count{
+	    			height: 55px;
+	    			font-size: 1.75rem;
+	    			line-height: 55px;
+	    		}
+	    	}
+
+	    	& .in_stock{
+	    		width: calc((100% - 20px)/3);
+	    	}
+	    }
+
+	    & .one_date{
+	    	margin-top: 48px;
+	    	& .date{
+	    		font-size: 1.5rem;
+	    	}
+
+	    	& .one_order{
+	    		margin-top: 6px;
+	    		height: 40px;
+	    		& .order_number{
+	    			font-size: 1.25rem;
+	    			color:#666;
+	    			line-height: 40px;
+	    			display: inline-block;
+	    		}
+
+	    		& .count_box{
+	    			height: 40px;
+	    			& .title{
+	    				width: 80px;
+	    				height: 40px;
+	    				line-height: 40px;
+	    				font-size: 1.25rem;
+	    			}
+
+	    			& .count{
+	    				height: 40px;
+	    				padding: 0 16px;
+	    				min-width: 80px;
+	    				line-height: 40px;
+	    				font-size: 1.25rem;
+	    			}
+	    		}
+
+	    		& .shipped{
+	    			& .count{
+	    				color:#666;
+	    			}
+	    		}
+
+	    		& .storaged{
+	    			& .count{
+	    				color:#ad0b0b;
+	    			}
+	    		}
+	    	}
+
+	    	& .one_order + .one_order{
+	    		margin-top: 16px;
+	    	}
+	    }
+    }
+}
+
+/*CWC租金明細的部分*/
+.one_result_recipe{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap:wrap;
+	cursor: pointer;
+	& .date{
+		width: 50%;
+		font-size: 1.125rem;
+		color: #333;
+		margin-top: 12px;
+		font-weight: bold;
+		& .item{
+			font-weight: normal;
+			color:#666;
+		}
+	}
+
+	& .price{
+		width: 50%;
+		text-align: right;
+		font-size: 1.125rem;
+		color: #333;
+		margin-top: 12px;
+		font-weight: bold;
+	}
+
+	& .detail_info{
+		width: 100%;
+		box-sizing: border-box;
+		margin-top: 20px;
+		display: none;
+		& .row{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			margin-top: 12px;
+			&:first-child{
+				margin-top: 0;
+			}
+
+			& div{
+				width: 50%;
+				color: #999;
+				font-size: 1rem;
+			}
+
+			& a{
+				width: 100%;
+				display: inline-block;
+				color: #168ec0;
+				text-decoration: underline;
+				text-align: right;
+				font-size: 1rem;
+			}
+
+			& .unit{
+				text-align: left;
+			}
+
+			& .count{
+				text-align: center;
+			}
+
+			& .price{
+				text-align: right;
+				font-weight: normal;
+				color: #999;
+				font-size: 1rem;
+				margin-top: 0;
+			}
+		}
+	}
+
+	@include pad-width{
+		& .date{
+			font-size: 1.25rem;
+		}
+
+		& .price{
+			font-size: 1.25rem;
+		}
+
+		& .detail_info{
+			& .row{
+				margin-top: 16px;
+				& div{
+					font-size: 1.125rem;
+				}
+
+				& a{
+					font-size: 1.125rem;
+				}
+			}
+		}
+	}
+}
+
+.rent_info{
+	font-size: 1.125rem;
+	color: #666;
+	line-height: 1.5rem;
+	& span{
+		color: #c29c20;
+	    font-weight: bold;
+	    margin: 0 5px;
+	}
+
+	@include pad-width{
+		font-size: 1.25rem;
+		line-height: 2rem;
 	}
 }

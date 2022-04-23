@@ -370,6 +370,18 @@ $(document).ready(function(){
 		PopWindow('#FreightInfoWindow',intBrowserH,intBrowserW);
 	});
 
+	//租金說明
+	$('#RentRuleInfo').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#RentRuleInfoWindow',intBrowserH,intBrowserW);
+	});
+
+	//已租箱數
+	$('#RentQuota').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#RentQuotaWindow',intBrowserH,intBrowserW);
+	});
+
 
 	//送出確認信視窗
 	$('#OrderSubmit').click(function(){

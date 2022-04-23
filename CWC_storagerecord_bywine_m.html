@@ -28,6 +28,21 @@
 	![endif]-->
 
 	<script type="text/javascript">
+		function SearchConditionExtend() {
+			//check extend or not
+		    var IsExtend = $('.Order_SearchCondition_layout').hasClass('Order_SearchCondition_Open');
+		    //extneded
+		    if (IsExtend) {
+		    	//do nothing
+		    } 
+		    //not extend
+		    else {
+		    	$('.Order_SearchCondition_layout').addClass('Order_SearchCondition_Open');
+		    	$('.Order_SearchCondition_Extend').slideDown();
+		    	$('.Order_SearchCondition_layout').unbind('click');
+		    }
+		}
+
 		$(document).ready(function(){
 			var intBrowserW = 0;
 
@@ -43,8 +58,49 @@
 				    intBrowserH = document.body.clientHeight;
 				}
 
-		   
+			$('.SideMenu_Filter').click(function(){
+				$(this).next().slideToggle();
+			});
 
+			//查詢條件高度(1024up)
+		   	if (intBrowserW > 1023) {
+		   		var SearchConditionHeight = intBrowserH - 156;
+		   		$('.Order_SearchCondition_layout').css('height',SearchConditionHeight);
+		   	} else if (intBrowserW > 1360) {
+		   		var SearchConditionHeight = intBrowserH - 226;
+		   		$('.Order_SearchCondition_layout').css('height',SearchConditionHeight);
+		   	}
+
+		   	//查詢結果列表高度(1024up)
+		    if (intBrowserW > 1023) {
+		   		var SearchListHeight = intBrowserH - 156;
+		   		$('.SearchResult').css('height',SearchListHeight);
+		   	} else if (intBrowserW > 1360) {
+		   		var SearchListHeight = intBrowserH - 226;
+		   		$('.SearchResult').css('height',SearchListHeight);
+		   	}
+
+			//查詢條件展開
+		    $('.Order_SearchCondition_layout').click(function(){
+		    	SearchConditionExtend();
+		    });
+		    
+
+		    //查詢條件收合
+		   	$('.Order_SearchCondition_DownArrow').click(function(){
+		   		//check extend or not
+		   		var IsExtend = $('.Order_SearchCondition_layout').hasClass('Order_SearchCondition_Open');
+		   		//Extended
+		   		if (IsExtend){
+		   			$('.Order_SearchCondition_layout').removeClass('Order_SearchCondition_Open');
+		   			$('.Order_SearchCondition_Extend').slideUp('fast',function(){
+		   				$('.Order_SearchCondition_layout').bind('click',function(){
+		   					SearchConditionExtend();
+		   				});
+		   			});
+		   			
+		   		}		   		
+		   	});
 		    
 		   
 		   
@@ -88,184 +144,91 @@
 <!--header end-->
 
 <!--content-->
-<div class="content_layout">
-	<!--
-	<div class="GoToDesktop">
-		<div class="option" id="Tracking_list">
-			<div class="icon" style="background-image: url(images/mobile/icon_track.png);"></div>
-			<div class="text">追蹤酒款</div>
+<div class="content_layout cwc_storagerecord">
+	<section class="Order_SearchCondition_layout">
+		<div class="Order_SearchCondition_CloseTitle">
+			修改查詢條件
 		</div>
-		<div class="option" id="Order_progress">
-			<div class="icon" style="background-image: url(images/mobile/icon_orderprogress.png);"></div>
-			<div class="text">訂單查詢</div>
+		
+		<div class="Order_SearchCondition_Extend">
+			<div class="Order_SearchCondition_form_row">
+				<div class="formTitle">酒款名稱</div>
+				<input type='text' />
+			</div>
+			<div class="Order_SearchCondition_form_row form_OrderDate">
+				<div class="formTitle">日期</div>
+				<input type="date" name="">
+				<span>至</span>
+				<input type="date" name="">
+			</div>
+			<div class="Order_SearchCondition_btn">查詢</div>
 		</div>
-	</div>
-	-->
-	<!--搜尋條件-->
-	<section class="winelist_searchCondition_layout">
-		<!--20180626 add clear condition btn-->
-		<div class="winelist_searchCondition_Title">
-			篩選結果
-			<span class="winelist_searchCondition_clearBtn">清除全部</span>
-		</div>
-		<!--20180626 add clear condition btn end-->
-		<div class="winelist_searchCondition_text">
-			<span class="OneCondition">紅酒</span>
-			<span class="OneCondition">波爾多</span>
-		</div>
-	</section>
-	<!--搜尋條件 end-->
-
-	<section class="wine_bottle_list">
-		<div class="one_bottle">
-			<div class="info">
-				<div class="winename_CN">米斗羅酒莊 名丑山吉歐維榭粉</div>
-				<div class="winename_EN">Robert Mondavi, Woodbridge White Zinfandel</div>
-				<div class="wineinfo">
-					<span>2016</span>
-					<span>750ml</span>
-				</div>
-			</div>
-			<div class="price_and_number">
-				<div class="price">$1,234,567</div>
-				<div class="trend rise">
-					<strong>+21,230</strong>
-					<br/>
-					<span>(+8.7%)</span>
-				</div>
-				<div class="number">
-					<img src="images/mobile/icon_CWC_bottle_number.svg">
-					<span>x32</span>
-				</div>
-			</div>
-		</div>
-
-		<div class="one_bottle">
-			<div class="info">
-				<div class="winename_CN">米斗羅酒莊 名丑山吉歐維榭粉</div>
-				<div class="winename_EN">Robert Mondavi, Woodbridge White Zinfandel</div>
-				<div class="wineinfo">
-					<span>2016</span>
-					<span>750ml</span>
-				</div>
-			</div>
-			<div class="price_and_number">
-				<div class="price">$1,234,567</div>
-				<div class="trend drop">
-					<strong>-1,230</strong>
-					<br/>
-					<span>(-0.7%)</span>
-				</div>
-				<div class="number">
-					<img src="images/mobile/icon_CWC_bottle_number.svg">
-					<span>x25</span>
-				</div>
-			</div>
-		</div>
-
-		<div class="one_bottle">
-			<div class="info">
-				<div class="winename_CN">米斗羅酒莊 名丑山吉歐維榭粉</div>
-				<div class="winename_EN">Robert Mondavi, Woodbridge White Zinfandel</div>
-				<div class="wineinfo">
-					<span>2016</span>
-					<span>750ml</span>
-				</div>
-			</div>
-			<div class="price_and_number">
-				<div class="price">$1,234,567</div>
-				<div class="trend rise">
-					<strong>+21,230</strong>
-					<br/>
-					<span>(+8.7%)</span>
-				</div>
-				<div class="number">
-					<img src="images/mobile/icon_CWC_bottle_number.svg">
-					<span>x32</span>
-				</div>
-			</div>
-		</div>
-
-		<div class="one_bottle">
-			<div class="info">
-				<div class="winename_CN">米斗羅酒莊 名丑山吉歐維榭粉</div>
-				<div class="winename_EN">Robert Mondavi, Woodbridge White Zinfandel</div>
-				<div class="wineinfo">
-					<span>2016</span>
-					<span>750ml</span>
-				</div>
-			</div>
-			<div class="price_and_number">
-				<div class="price">$1,234,567</div>
-				<div class="trend rise">
-					<strong>+21,230</strong>
-					<br/>
-					<span>(+8.7%)</span>
-				</div>
-				<div class="number">
-					<img src="images/mobile/icon_CWC_bottle_number.svg">
-					<span>x32</span>
-				</div>
-			</div>
-		</div>
-		<div class="one_bottle">
-			<div class="info">
-				<div class="winename_CN">米斗羅酒莊 名丑山吉歐維榭粉</div>
-				<div class="winename_EN">Robert Mondavi, Woodbridge White Zinfandel</div>
-				<div class="wineinfo">
-					<span>2016</span>
-					<span>750ml</span>
-				</div>
-			</div>
-			<div class="price_and_number">
-				<div class="price">$1,234,567</div>
-				<div class="trend rise">
-					<strong>+21,230</strong>
-					<br/>
-					<span>(+8.7%)</span>
-				</div>
-				<div class="number">
-					<img src="images/mobile/icon_CWC_bottle_number.svg">
-					<span>x32</span>
-				</div>
-			</div>
-		</div><div class="one_bottle">
-			<div class="info">
-				<div class="winename_CN">米斗羅酒莊 名丑山吉歐維榭粉</div>
-				<div class="winename_EN">Robert Mondavi, Woodbridge White Zinfandel</div>
-				<div class="wineinfo">
-					<span>2016</span>
-					<span>750ml</span>
-				</div>
-			</div>
-			<div class="price_and_number">
-				<div class="price">$1,234,567</div>
-				<div class="trend rise">
-					<strong>+21,230</strong>
-					<br/>
-					<span>(+8.7%)</span>
-				</div>
-				<div class="number">
-					<img src="images/mobile/icon_CWC_bottle_number.svg">
-					<span>x32</span>
-				</div>
-			</div>
+		<div class="Order_SearchCondition_DownArrow">
+			<span class="DownArrow"></span>
 		</div>
 	</section>
 
-	<!--pagnation-->
-	<div class="pagination_layout">
-		<div class="pagination">
-		    <a href="">&laquo;</a>
-		    <a href="">&nbsp;</a>
-		    <a href="">&nbsp;</a>
-		    <a href="" class="active">1</a>
-		    <a href="">2</a>
-		    <a href="">3</a>
-		    <a href="">&raquo;</a>
+	<section class="SearchResult">
+
+		<div class="one_result_row one_result_bywine">
+			<div class="name_en">
+				Domaine Robert Sirugue, Vosne-Romanée
+			</div>
+			<div class="name_cn">
+				羅伯‧蒙岱維酒莊，那帕山谷系列 梅洛紅酒
+			</div>
+			<div class="status">
+				2018
+				<span></span>
+				750ml
+			</div>
+			<div class="count_box">
+				<div class="one_box shipped">
+					<div class="title">取出</div>
+					<div class="count">-20</div>
+				</div>
+				<div class="one_box storaged">
+					<div class="title">存入</div>
+					<div class="count">+5</div>
+				</div>
+				<div class="one_box in_stock">
+					<div class="title">目前庫存</div>
+					<div class="count">125</div>
+				</div>
+			</div>
+
+			<div class="one_date">
+				<div class="date">2021/12/31</div>
+				<div class="one_order">
+					<a href="#" class="order_number">W22030300033</a>
+					<div class="count_box storaged">
+						<div class="title">存入</div>
+						<div class="count">+5</div>
+					</div>
+				</div>
+				<div class="one_order">
+					<a href="#" class="order_number">C22030300033</a>
+					<div class="count_box shipped">
+						<div class="title">取出</div>
+						<div class="count">-10</div>
+					</div>
+				</div>				
+			</div>
+
+			<div class="one_date">
+				<div class="date">2021/08/02</div>
+				<div class="one_order">
+					<a href="#" class="order_number">W22030300033</a>
+					<div class="count_box storaged">
+						<div class="title">存入</div>
+						<div class="count">+5</div>
+					</div>
+				</div>			
+			</div>
 		</div>
-	</div>
-	<!--pagnation end-->
+
+	</section>
+	
 </div>
 <!--content end-->
 
@@ -319,7 +282,7 @@
 		<!--第一層-->
 		<div class="SideMenu_Detail" id="SideMenuDetailL1">
 			<div class="SideMenu_OneOption">
-				酒瓶模式
+				清單模式
 			</div>
 			<div class="SideMenu_OneOption">
 				租賃合約

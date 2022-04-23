@@ -1447,15 +1447,15 @@
 		</div>
 	</section>
 	<!--已綁定-->
-	<!--
+	
 	<section class="order_sum order_sum_storage" style="display:none;">
 		<div class="order_sum_row">
-			<div class="title">儲酒租金(/箱/天)</div>
+			<div class="title">儲酒租金(/箱/天)<span class="icon_info" id="RentRuleInfo">i</span></div>
 			<div class="number">$&nbsp;1</div>
 		</div>
 		<div class="order_sum_row">
-			<div class="title">已租箱數<span class="icon_info">?</span></div>
-			<div class="number">0</div>
+			<div class="title">已租箱數<span class="icon_info" id="RentQuota">?</span></div>
+			<div class="number">5</div>
 		</div>
 		<div class="order_sum_row">
 			<div class="title">新租箱數</div>
@@ -1465,11 +1465,12 @@
 			<div class="only_text">&#10004;&nbsp;已綁定信用卡</div>
 		</div>
 	</section>
-	--> 
+	 
 	<!--未綁定-->
+	<!--
 	<section class="order_sum order_sum_storage" style="display:none;">
 		<div class="order_sum_row">
-			<div class="title">儲酒租金(/箱/天)</div>
+			<div class="title">儲酒租金(/箱/天)<span class="icon_info" id="RentRuleInfo">?</span></div>
 			<div class="number">$&nbsp;1</div>
 		</div>
 		<div class="order_sum_row">
@@ -1482,7 +1483,7 @@
 			</div>
 		</div>
 	</section>
-
+	-->
 	<!--加價購-->
 	<div class="DeliveryType_title TitleType_Addon">
 		<div class="Large_title">加價優惠商品</div>	
@@ -1804,7 +1805,56 @@
 			<div class="PopWindow_content_text" style="text-align: center;">您已完成信用卡綁定</div>
 		</div>
 	</div>
-	<!--未綁定信用卡送出 end-->
+	<!--已綁定信用卡完成 end-->
+	
+	<!--租金規則說明-->
+	<div class="PopWindow_layout" id="RentRuleInfoWindow">
+		<div class="PopWindow_title">
+			儲酒租金收費規則
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_content_text" style="text-align: left;">
+				租金每天<span style="font-weight: bold;">3</span>元/箱，每次最少承租1箱、1天，逐日計算。
+			</div>
+			<div class="PopWindow_content_img">
+				<img src="images/mobile/img_box.png" />
+			</div>
+			<div class="PopWindow_content_rentrule_text">
+				<b>1箱&nbsp;=&nbsp;12瓶750ml</b>
+				<br/>
+				(1500ml以2瓶計)
+			</div>
+			<div class="PopWindow_content_text" style="text-align: left;color:#999;">
+				*每月1日結算自動扣繳上個月租金。
+				<br/>
+				*需綁定信用卡後才能啟用儲酒服務，信用卡僅供租金扣繳使用。
+			</div>
+		</div>
+	</div>
+	<!--租金規則說明 end-->
+
+	<!--已租箱數說明-->
+	<div class="PopWindow_layout" id="RentQuotaWindow">
+		<div class="PopWindow_title">
+			已租箱數
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_content_text" style="text-align: left;">
+				您目前租用了<span style="font-weight: bold;">5</span>箱、60瓶750ml的儲藏空間，目前已使用了<span style="font-weight: bold;">55</span>瓶750ml。
+			</div>
+			<div class="PopWindow_content_img">
+				<img src="images/mobile/img_box.png" />
+			</div>
+			<div class="PopWindow_content_rentrule_text">
+				<b>1箱&nbsp;=&nbsp;12瓶750ml</b>
+				<br/>
+				(1500ml以2瓶計)
+			</div>
+		</div>
+	</div>
+	<!--已租箱數說明 end-->
 
 	<!--刪除商品-->
 	<div class="PopWindow_layout" id="DeleteItemWindow">
