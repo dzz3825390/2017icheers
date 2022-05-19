@@ -2422,6 +2422,63 @@ h4 {
   background-color: #fff;
   border: 2px solid #8e6681;
 }
+.PopWindow_content .PopWindow_Creditcard_info {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.PopWindow_content .PopWindow_Creditcard_info .creditcard_img {
+  width: calc(130px/3);
+  height: 29px;
+  border: solid 1px #cccccc;
+  background-image: url(../images/mobile/letter_creditcard.jpg);
+}
+.PopWindow_content .PopWindow_Creditcard_info .creditcard_img.J {
+  background-position-x: calc((130px / 3) - 2px);
+}
+.PopWindow_content .PopWindow_Creditcard_info .creditcard_img.M {
+  background-position-x: calc((130px / 3)*2 - 2px);
+}
+.PopWindow_content .PopWindow_Creditcard_info .creditcard_img.V {
+  background-position-x: 0;
+}
+.PopWindow_content .PopWindow_Creditcard_info .creditcard_number {
+  color: #000;
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 1.5rem;
+}
+.PopWindow_content .PopWindow_Creditcard_info .creditcard_date {
+  color: #666;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+.PopWindow_content .PopWindow_ActiveCWC_progressbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.PopWindow_content .PopWindow_ActiveCWC_progressbar .text {
+  font-size: 1rem;
+  color: #999;
+}
+.PopWindow_content .PopWindow_ActiveCWC_progressbar .text.active {
+  font-weight: bold;
+  color: #000;
+}
+.PopWindow_content .PopWindow_ActiveCWC_progressbar .circle_arrow {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #cccccc;
+  color: #fff;
+  font-size: 0.875rem;
+  line-height: 16px;
+  text-align: center;
+  margin: 0 10px;
+}
 .PopWindow_content .PopWindow_noticetext {
   color: #B00808;
   font-size: 14px;

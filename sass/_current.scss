@@ -1903,6 +1903,67 @@ h4{
 		border: 2px solid #8e6681;
 	}
 
+	& .PopWindow_Creditcard_info{
+		margin-top: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		& .creditcard_img{
+			width: calc(130px/3);
+			height: 29px;
+			border: $BorderColor;
+			background-image: url(../images/mobile/letter_creditcard.jpg);
+			&.J{
+				background-position-x: calc((130px / 3) - 2px);
+			}
+			&.M{
+				background-position-x: calc((130px / 3)*2 - 2px);
+			}
+			&.V{
+				background-position-x: 0;
+			}
+		}
+
+		& .creditcard_number{
+			color:#000;
+			font-weight: bold;
+			margin-left: 10px;
+			font-size: 1.5rem;
+		}
+
+		& .creditcard_date{
+			color: #666;
+			font-size: 1rem;
+			margin-left: 10px;
+		}
+	}
+
+	& .PopWindow_ActiveCWC_progressbar{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		& .text{
+			font-size: 1rem;
+			color:#999;
+			&.active{
+				font-weight: bold;
+				color:#000;
+			}
+		}
+		& .circle_arrow{
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background-color: #cccccc;
+			color:#fff;
+			font-size: 0.875rem;
+			line-height: 16px;
+			text-align: center;
+			margin: 0 10px;
+		}
+	}
+
 	//20180614 add noticetext sample
 	& .PopWindow_noticetext{
 		color: $NoticeColor;

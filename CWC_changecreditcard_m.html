@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="iCheers愛酒窩">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="address=no">
+	<title>iCheers愛酒窩 ─ 讓你窩在家就能享受葡萄酒</title>
+	<link href="css_m/all.css" rel="stylesheet" type="text/css" />
+	<link href="css_m/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="Scripts/all_m.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+	<!--[if lt IE 9]  //記得在前後加上 < > 註解
+	  <script>
+	    document.createElement("header" );
+	    document.createElement("footer" );
+	    document.createElement("section"); 
+	    document.createElement("aside"  );
+	    document.createElement("nav"    );
+	    document.createElement("article"); 
+	    document.createElement("hgroup" ); 
+	    document.createElement("time"   );
+	  </script>
+	![endif]-->
+
+	<script type="text/javascript">
+		function SearchConditionExtend() {
+			//check extend or not
+		    var IsExtend = $('.Order_SearchCondition_layout').hasClass('Order_SearchCondition_Open');
+		    //extneded
+		    if (IsExtend) {
+		    	//do nothing
+		    } 
+		    //not extend
+		    else {
+		    	$('.Order_SearchCondition_layout').addClass('Order_SearchCondition_Open');
+		    	$('.Order_SearchCondition_Extend').slideDown();
+		    	$('.Order_SearchCondition_layout').unbind('click');
+		    }
+		}
+
+		$(document).ready(function(){
+			var intBrowserW = 0;
+
+			//瀏覽器內容高度
+			var intBrowserH = 0;
+
+			//#region 取得瀏覽器內容寬度/高度
+				if (document.documentElement) {
+				    intBrowserW = document.documentElement.clientWidth;
+				    intBrowserH = document.documentElement.clientHeight;
+				} else {
+				    intBrowserW = document.body.clientWidth;
+				    intBrowserH = document.body.clientHeight;
+				}
+
+			$('.SideMenu_Filter').click(function(){
+				$(this).next().slideToggle();
+			});
+
+			//查詢條件高度(1024up)
+		   	if (intBrowserW > 1023) {
+		   		var SearchConditionHeight = intBrowserH - 156;
+		   		$('.Order_SearchCondition_layout').css('height',SearchConditionHeight);
+		   	} else if (intBrowserW > 1360) {
+		   		var SearchConditionHeight = intBrowserH - 226;
+		   		$('.Order_SearchCondition_layout').css('height',SearchConditionHeight);
+		   	}
+
+		   	//查詢結果列表高度(1024up)
+		    if (intBrowserW > 1023) {
+		   		var SearchListHeight = intBrowserH - 156;
+		   		$('.SearchResult').css('height',SearchListHeight);
+		   	} else if (intBrowserW > 1360) {
+		   		var SearchListHeight = intBrowserH - 226;
+		   		$('.SearchResult').css('height',SearchListHeight);
+		   	}
+
+			//查詢條件展開
+		    $('.Order_SearchCondition_layout').click(function(){
+		    	SearchConditionExtend();
+		    });
+		    
+
+		    //查詢條件收合
+		   	$('.Order_SearchCondition_DownArrow').click(function(){
+		   		//check extend or not
+		   		var IsExtend = $('.Order_SearchCondition_layout').hasClass('Order_SearchCondition_Open');
+		   		//Extended
+		   		if (IsExtend){
+		   			$('.Order_SearchCondition_layout').removeClass('Order_SearchCondition_Open');
+		   			$('.Order_SearchCondition_Extend').slideUp('fast',function(){
+		   				$('.Order_SearchCondition_layout').bind('click',function(){
+		   					SearchConditionExtend();
+		   				});
+		   			});
+		   			
+		   		}		   		
+		   	});
+
+		   	//租金明細展開
+		   	$('.one_result_recipe').click(function(){
+		   		$('.detail_info').slideUp('fast');
+		   		$(this).find('.detail_info').slideDown('fast');
+		   	});
+
+		   	//V=Visa M=MasterCard J=JCB
+		   	var CardType = 'J';
+		   	PopWindow('#ChangeCreditcardWindow',intBrowserH,intBrowserW);
+		    $('.creditcard_img').addClass(CardType);
+		   
+		   
+
+		});
+
+
+	</script>
+</head>
+<body class="CWC">
+
+<!--假body-->
+<div class="wapper">
+
+<!--header-->
+<div class="header">
+	<header>
+		<h1>iCheers 愛酒窩</h1>
+	</header>
+	<!--side menu-->
+	<div class="menuBTN">
+		<a class="navicon-button uarr" id="menuBTN">
+			<div class="navicon"></div>
+		</a> 
+	</div>
+	<!--side menu end-->
+
+	<!--logo svg-->
+	<div class="logo">
+
+	</div>
+	<!--logo svg end-->
+
+	<!--mylist-->
+	<div class="mylist cwc_cart">
+		<span>9+</span>
+	</div>
+	<!--mylist end-->
+
+</div>
+<!--header end-->
+
+<!--content-->
+<div class="content_layout">
+	<section class="Order_SearchCondition_layout">
+		<div class="Order_SearchCondition_CloseTitle">
+			修改查詢條件
+		</div>
+		<div class="Order_SearchCondition_Extend">
+			<div class="Order_SearchCondition_form_row form_OrderDate">
+				<div class="formTitle">日期</div>
+				<input type="date" name="">
+				<span>至</span>
+				<input type="date" name="">
+			</div>
+			<div class="Order_SearchCondition_btn">查詢</div>
+		</div>
+		<div class="Order_SearchCondition_DownArrow">
+			<span class="DownArrow"></span>
+		</div>
+	</section>
+
+	<section class="SearchResult">
+		<div class="rent_info">
+			您目前租用<span>X</span>箱，剩餘儲存空間<span>6000</span>ml，每日租金為<span>$250</span>元。
+		</div>
+		<div class="one_result_row one_result_recipe">
+			<div class="date">2021/05&nbsp;<span class="item">租金</span></div> 
+			<div class="price">
+				NT$255
+			</div>
+			<div class="detail_info">
+				<div class="row">
+					<div class="unit">2單位&nbsp;&nbsp;25日</div>
+					<div class="price">$150</div>
+				</div>
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;3日</div>
+					<div class="price">$5</div>
+				</div>
+				<div class="row">
+					<a href="#">電子發票明細</a>
+				</div>
+			</div>
+		</div>
+		<div class="one_result_row one_result_recipe">
+			<div class="date">2021/04&nbsp;<span class="item">租金</span></div> 
+			<div class="price">
+				NT$55
+			</div>
+			<div class="detail_info">
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;30日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<a href="#">電子發票明細</a>
+				</div>
+			</div>
+		</div>
+		<div class="one_result_row one_result_recipe">
+			<div class="date">2021/03&nbsp;<span class="item">租金</span></div> 
+			<div class="price">
+				NT$300
+			</div>
+			<div class="detail_info">
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;30日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;5日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;10日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;20日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;13日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<a href="#">電子發票明細</a>
+				</div>
+			</div>
+		</div>
+		<div class="one_result_row one_result_recipe">
+			<div class="date">2021/02&nbsp;<span class="item">租金</span></div> 
+			<div class="price">
+				NT$55
+			</div>
+			<div class="detail_info">
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;30日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<a href="#">電子發票明細</a>
+				</div>
+			</div>
+		</div>
+		<div class="one_result_row one_result_recipe">
+			<div class="date">2021/01&nbsp;<span class="item">租金</span></div> 
+			<div class="price">
+				NT$55
+			</div>
+			<div class="detail_info">
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;30日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<a href="#">電子發票明細</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="one_result_row one_result_recipe">
+			<div class="date">2020/12&nbsp;<span class="item">租金</span></div> 
+			<div class="price">
+				NT$55
+			</div>
+			<div class="detail_info">
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;30日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<a href="#">電子發票明細</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="one_result_row one_result_recipe">
+			<div class="date">2020/11&nbsp;<span class="item">租金</span></div>  
+			<div class="price">
+				NT$55
+			</div>
+			<div class="detail_info">
+				<div class="row">
+					<div class="unit">1單位&nbsp;&nbsp;30日</div>
+					<div class="price">$55</div>
+				</div>
+				<div class="row">
+					<a href="#">電子發票明細</a>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	
+</div>
+<!--content end-->
+
+
+<div class="footer">
+	<div class="footer_option_row">
+		<div class="footer_option">
+			<div class="icon" style="background-image: url(images/mobile/contactus_icon.png);width: 17px;"></div>
+			<div class="text">聯絡我們</div>
+		</div>
+		<div class="footer_option">
+			<div class="icon" style="background-image: url(images/mobile/desktop_icon.png);width: 17px;"></div>
+			<div class="text">切換電腦版網站</div>
+		</div>
+	</div>
+</div>
+
+<div class="warning">
+	飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+</div>
+
+<div class="black_BG" id="black_BG02">
+
+	<div class="PopWindow_layout" id="ChangeCreditcardWindow">
+		<div class="PopWindow_title">
+			更換綁定卡片
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_content_text" style="text-align: center;">您目前綁定的卡片為</div>
+			<div class="PopWindow_Creditcard_info">
+				<div class="creditcard_img"></div>
+				<div class="creditcard_number">******5678</div>
+				<div class="creditcard_date">到期日&nbsp;08/27</div>
+			</div>
+			<div class="Popwindow_ConfirmBtn">更換卡片</div>
+			<div class="Popwindow_ConfirmBtnGray">暫不更換</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!--side menu-->
+<div class="black_BG" id="black_BG">
+	<div class="SideMenu_layout">
+		<!--頂端search row-->
+		<div class="SideMenu_SearchRow">
+			<div class="SideMenu_BackBTN">
+				<a class="navicon-button uarr open">
+					<div class="navicon"></div>
+				</a> 
+			</div>
+			<div class="SideMenu_SignInBTN"></div>
+			<div class="SideMenu_SearchInput">
+				<!--20180626 fix input type-->
+				<form action="" name="search" id="SearchInput">
+					<input type="search">
+				</form>
+				<span class="search_icon"></span>
+			</div>
+			<!--add auto complete sample max:4-->
+			<div class="SideMenu_AutoComplete">
+				<div class="OneResult"><span>au</span>to complete1</div>
+				<div class="OneResult"><span>au</span>to complete2</div>
+				<div class="OneResult"><span>au</span>to complete3</div>
+				<div class="OneResult"><span>au</span>to complete4</div>
+			</div>
+		</div>
+		<!--頂端search row end-->
+		<!--第一層-->
+		<div class="SideMenu_Detail" id="SideMenuDetailL1">
+			<div class="SideMenu_OneOption">
+				清單模式
+			</div>
+			<div class="SideMenu_OneOption">
+				租賃合約
+			</div>
+			<div class="SideMenu_OneOption">
+				租金明細
+			</div>
+			<div class="SideMenu_OneOption">
+				異動紀錄
+			</div>
+			<div class="SideMenu_OneOption">
+				匯出我的窖藏清單
+			</div>
+			<div class="SideMenu_OneOption">
+				更換綁定信用卡
+			</div>
+			<div class="SideMenu_OneOption">
+				修改發票設定
+			</div>
+			<div class="SideMenu_OneOption SideMenu_Filter">
+				篩選
+			</div>
+
+			<div style="display:none;">
+				<!--title-->
+				<div class="SideMenu_Detail_Title">類型</div>
+				<!--title-->
+				<div class="SideMenu_Detail_list">
+					紅酒 (16)
+				</div>
+				<div class="SideMenu_Detail_list">
+					白酒 (0)
+				</div>
+				<div class="SideMenu_Detail_list">
+					粉紅酒 (32)
+				</div>
+				<div class="SideMenu_Detail_list">
+					氣泡酒 (2)
+				</div>
+				<div class="SideMenu_Detail_list">
+					烈酒 (2)
+				</div>
+
+				<!--title-->
+				<div class="SideMenu_Detail_Title">產區</div>
+				<!--title-->
+				<div class="SideMenu_Detail_list">
+					法國 (16)
+				</div>
+				<div class="SideMenu_Detail_list">
+					義大利 (0)
+				</div>
+				<div class="SideMenu_Detail_list">
+					西班牙 (32)
+				</div>
+				<div class="SideMenu_Detail_list">
+					德國 (2)
+				</div>
+				<div class="SideMenu_Detail_list">
+					美國 (2)
+				</div>
+			</div>
+			<div class="SideMenu_GotoDesktop">
+				<span class="icon"></span>
+				切換為電腦版
+			</div>
+		</div>
+		<!--第一層-->
+	</div>
+</div>
+<!--side menu end-->
+
+</div>
+<!--假body-->
+
+</body>
+</html>

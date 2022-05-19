@@ -395,11 +395,30 @@ $(document).ready(function(){
 		PopWindow('#MailWindow_NoLinkCard',intBrowserH,intBrowserW);
 	});
 
-	//已綁定信用卡完成
+	//儲酒服務啟用
 	$('#BTN_LinkedCard').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
-		PopWindow('#MailWindow_LinkedCard',intBrowserH,intBrowserW);
+		PopWindow('#MailWindow_ActiveCWC01',intBrowserH,intBrowserW);
 	});
+
+	$('#ActiveCWC01_Next').click(function(){
+		$('#MailWindow_ActiveCWC01 .CloseBTN').click();
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#MailWindow_ActiveCWC02',intBrowserH,intBrowserW);
+	});
+
+	$('#ActiveCWC02_Next').click(function(){
+		$('#MailWindow_ActiveCWC02 .CloseBTN').click();
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#MailWindow_ActiveCWC03',intBrowserH,intBrowserW);
+	});
+
+
+	//已綁定信用卡完成
+	/*$('#BTN_LinkedCard').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#MailWindow_LinkedCard',intBrowserH,intBrowserW);
+	});*/
 
 
 	$('#PaymentCheck').click(function(){
