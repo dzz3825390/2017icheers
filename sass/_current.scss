@@ -1155,17 +1155,6 @@ h4{
 		@extend %clearfix;
 	}
 
-	& .icon{
-		display: inline-block;
-		width: 27px;
-		height: 18px;
-		background-image:url(../images/mobile/recentview_icon.png);
-		@extend %backgroundimagecover;
-		float: left;
-		margin-top: 10px;
-		margin-right: 10px;
-	}
-
 	@include pad-width{
 		font-size: 1.25rem;
 	}

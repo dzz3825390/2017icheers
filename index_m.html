@@ -160,13 +160,14 @@
 <div class="content_layout">
 	<!--go to desktop and newbie-->
 	<div class="GoToDesktop">
-		<div class="option" id="Tracking_list">
-			<div class="icon" style="background-image: url(images/mobile/icon_track.png);"></div>
-			<div class="text">追蹤酒款</div>
-		</div>
+		
 		<div class="option" id="CWC">
 			<div class="icon" style="background-image: url(images/mobile/cwc_icon.png);"></div>
 			<div class="text">線上酒窖</div>
+		</div>
+		<div class="option" id="Order_progress">
+			<div class="icon" style="background-image: url(images/mobile/icon_orderprogress.png);"></div>
+			<div class="text">訂單查詢</div>
 		</div>
 	</div>
 	<!--go to desktop and newbie end-->
@@ -601,8 +602,14 @@
 <!--icheers info-->
 <div class="iCheers_info_layout">
 	<div class="iCheers_info">
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_trackinglist.jpg);">
+			<span>追蹤酒款</span>
+		</div>
 		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_delivery_info.jpg);">
 			<span>滿額免運</span>
+		</div>
+		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_newbie.jpg);" id="Newbie">
+			<span>新手上路</span>
 		</div>
 		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_qualityGarentee.jpg);" id="Quality">
 			<span>品質宣言</span>
@@ -612,12 +619,6 @@
 		</div>
 		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_bouns.jpg);" id="BounsInfo">
 			<span>紅利好康</span>
-		</div>
-		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_aboutus.jpg);" id="AboutUs">
-			<span>關於我們</span>
-		</div>
-		<div class="iCheers_info_option" style="background-image: url(images/mobile/icheersInfo_contactus.jpg);">
-			<span>加入我們</span>
 		</div>
 	</div>
 </div>
@@ -1381,16 +1382,20 @@
 				</div>
 			</div>
 			<!--extend-->
-			<div class="SideMenu_OrderProgress">
-				<span class="icon"></span>
-				訂單查詢
-			</div>
 			<div class="SideMenu_RecentView">
-				<span class="icon"></span>
+				
 				近期瀏覽
 			</div>
+			<div class="SideMenu_RecentView">
+				
+				關於我們
+			</div>
+			<div class="SideMenu_RecentView">
+				
+				加入我們
+			</div>
 			<div class="SideMenu_GotoDesktop">
-				<span class="icon"></span>
+				
 				切換為電腦版
 			</div>
 		</div>

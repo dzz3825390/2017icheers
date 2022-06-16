@@ -91,7 +91,52 @@
 	}
 
 	& .checkbox_layout{
-		float: left;
+		margin-top:0;
+		& .checkbox{
+    		position: relative;
+    		margin: 0;
+    		width: 45px;
+    		height: 45px;
+    		& input[type=checkbox]{
+    			display: none;
+    		}
+
+    		& .checked{
+    			width: 45px;
+    			height: 45px;
+    			-moz-border-radius: 4px;
+    			-webkit-border-radius: 4px;
+    			border-radius: 4px;
+    			border: solid 1px #cccccc;
+    			background-color: #fff;
+    			position: absolute;
+    			top: 0;
+    			left: 0;
+    			right: 0;
+    			bottom: 0;
+    			margin: auto;
+    			display: block;
+    		}
+
+    		& input:checked + .checked:after{
+    			content: '';
+    			display: block;
+    			width: 31px;
+    			height: 23px;
+    			background-image: url(../images/mobile/icon_checked.png);
+    			position: absolute;
+    			top: 11px;
+    			left: 7px;
+    		}
+
+
+		}
+
+		& .checkbox_text{
+			font-size: 1.25rem;
+    		color: #666;
+    		margin-left: 10px;
+		}
 	}
 
 	& .dropdown{
