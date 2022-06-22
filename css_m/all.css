@@ -2476,6 +2476,18 @@ h4 {
   margin-top: 5px;
   line-height: 21px;
 }
+.PopWindow_content .PopWindow_ChoseCreditCard .one_option {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border: solid 1px #cccccc;
+  background-color: #fff;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.PopWindow_content .PopWindow_ChoseCreditCard .one_option:first-child {
+  margin-top: 0;
+}
 @media screen and (min-width: 760px) {
   .PopWindow_content {
     padding: 2rem;

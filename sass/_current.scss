@@ -1961,6 +1961,21 @@ h4{
 		line-height: 21px;
 	}
 
+	& .PopWindow_ChoseCreditCard{
+		& .one_option{
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			border: $BorderColor;
+			background-color: #fff;
+			margin-top: 1rem;
+			cursor: pointer;
+			&:first-child{
+				margin-top:0;
+			}
+		}
+	}
+
 	@include pad-width{
 		padding: 2rem;
 		& .PopWindow_content_img{

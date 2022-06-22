@@ -395,6 +395,12 @@ $(document).ready(function(){
 		PopWindow('#MailWindow_NoLinkCard',intBrowserH,intBrowserW);
 	});
 
+	//購物車運費說明
+	$('#DeliveryFeeRow .icon_info').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#DeliveryFeeInfo',intBrowserH,intBrowserW);
+	});
+
 	//儲酒服務啟用
 	$('#BTN_LinkedCard').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
