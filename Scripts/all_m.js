@@ -465,6 +465,12 @@ $(document).ready(function(){
 		PopWindow('#RegisterFinishedWindow',intBrowserH,intBrowserW);
 	});
 
+	//CWC窖藏配送數量>庫存數量且購物車裡面有同款酒時提醒視窗
+	$('.btn_getwine_comfirm').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#CWCNotEnoughWineNoticeWindow',intBrowserH,intBrowserW);
+	});
+
 	//PopWindow關閉
 	$('#black_BG02 .CloseBTN').click(function(){
 		//隱藏黑底
