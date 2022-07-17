@@ -1703,6 +1703,71 @@ h4{
 		&:first-child{
 			margin-top: 0;
 		}
+
+		& strong{
+			font-weight: bold;
+		}
+	}
+
+	.PopWindow_CWC_contract_h2{
+		color: #333;
+		font-size: 1rem;
+		font-weight: bold;
+		margin-top: 2rem;
+	}
+
+	& .PopWindow_CWC_contract_text{
+		color: #666;
+		font-size: 1rem;
+		margin-top: 1rem;
+		line-height: 1.75rem;
+		& input[type=text]{
+			height: 45px;
+			line-height: 45px;
+			margin-top: 0.5rem;
+			padding: 0 0.625rem;
+			box-sizing: border-box;
+			&::placeholder { 
+			  color: #cccccc;
+			  opacity: 1; 
+			}
+		}
+		& b{
+			font-weight: bold;
+		}
+		& sup{
+			vertical-align: super;
+			font-size: smaller;
+		}
+
+		& .highlight{
+			color: #c29c20;
+		}
+
+		& .textindent16{
+			width: calc(100% - 1rem);
+	    	margin-left: 1rem;
+	    	margin-top: 0.625rem;
+	    	display: flex;
+		}
+
+		& .textindent48{
+			width: calc(100% - 3rem);
+	    	margin-left: 3rem;
+	    	margin-top: 0.625rem;
+	    	display: flex;
+		}
+
+		& .textindent96{
+			width: calc(100% - 6rem);
+	    	margin-left: 6rem;
+	    	margin-top: 0.625rem;
+	    	display: flex;
+		}
+	}
+
+	& .PopWindow_CWC_contract_input{
+		margin-top: 0.625rem;
 	}
 
 	& .PopWindow_content_img{

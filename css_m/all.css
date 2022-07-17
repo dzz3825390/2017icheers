@@ -59,19 +59,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-.detail_bottleImg_layout, .detail_MoreInfo_layout, .detail_GroupProduct_layout, .detail_introduce_layout, .winelist_searchCondition_layout, .winelist_searchCondition_filter, .winelist_OneWine_layout, .step_option, .options, .DeliveryType_title, .cart_list_layout, .cart_sum_layout, .member_form, .CWC_cart_content .options_layout .delivery_count_sum {
+.detail_bottleImg_layout, .detail_MoreInfo_layout, .detail_GroupProduct_layout, .detail_introduce_layout, .winelist_searchCondition_layout, .winelist_searchCondition_filter, .winelist_OneWine_layout, .step_option, .options, .DeliveryType_title, .cart_list_layout, .cart_sum_layout, .member_form, .CWC_cart_content .options_layout .delivery_count_sum, .CWC_contract_h2, .CWC_contract_text {
   padding: 0 16px;
   box-sizing: border-box;
   background-color: #fff;
   position: relative;
 }
 @media screen and (min-width: 760px) {
-  .detail_bottleImg_layout, .detail_MoreInfo_layout, .detail_GroupProduct_layout, .detail_introduce_layout, .winelist_searchCondition_layout, .winelist_searchCondition_filter, .winelist_OneWine_layout, .step_option, .options, .DeliveryType_title, .cart_list_layout, .cart_sum_layout, .member_form, .CWC_cart_content .options_layout .delivery_count_sum {
+  .detail_bottleImg_layout, .detail_MoreInfo_layout, .detail_GroupProduct_layout, .detail_introduce_layout, .winelist_searchCondition_layout, .winelist_searchCondition_filter, .winelist_OneWine_layout, .step_option, .options, .DeliveryType_title, .cart_list_layout, .cart_sum_layout, .member_form, .CWC_cart_content .options_layout .delivery_count_sum, .CWC_contract_h2, .CWC_contract_text {
     padding: 0 32px;
   }
 }
 @media screen and (min-width: 1360px) {
-  .detail_bottleImg_layout, .detail_MoreInfo_layout, .detail_GroupProduct_layout, .detail_introduce_layout, .winelist_searchCondition_layout, .winelist_searchCondition_filter, .winelist_OneWine_layout, .step_option, .options, .DeliveryType_title, .cart_list_layout, .cart_sum_layout, .member_form, .CWC_cart_content .options_layout .delivery_count_sum {
+  .detail_bottleImg_layout, .detail_MoreInfo_layout, .detail_GroupProduct_layout, .detail_introduce_layout, .winelist_searchCondition_layout, .winelist_searchCondition_filter, .winelist_OneWine_layout, .step_option, .options, .DeliveryType_title, .cart_list_layout, .cart_sum_layout, .member_form, .CWC_cart_content .options_layout .delivery_count_sum, .CWC_contract_h2, .CWC_contract_text {
     padding: 0 40px;
   }
 }
@@ -2197,6 +2197,63 @@ h4 {
 }
 .PopWindow_content .PopWindow_content_text:first-child {
   margin-top: 0;
+}
+.PopWindow_content .PopWindow_content_text strong {
+  font-weight: bold;
+}
+.PopWindow_content .PopWindow_CWC_contract_h2 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+.PopWindow_content .PopWindow_CWC_contract_text {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 1rem;
+  line-height: 1.75rem;
+}
+.PopWindow_content .PopWindow_CWC_contract_text input[type=text] {
+  height: 45px;
+  line-height: 45px;
+  margin-top: 0.5rem;
+  padding: 0 0.625rem;
+  box-sizing: border-box;
+}
+.PopWindow_content .PopWindow_CWC_contract_text input[type=text]::placeholder {
+  color: #cccccc;
+  opacity: 1;
+}
+.PopWindow_content .PopWindow_CWC_contract_text b {
+  font-weight: bold;
+}
+.PopWindow_content .PopWindow_CWC_contract_text sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+.PopWindow_content .PopWindow_CWC_contract_text .highlight {
+  color: #c29c20;
+}
+.PopWindow_content .PopWindow_CWC_contract_text .textindent16 {
+  width: calc(100% - 1rem);
+  margin-left: 1rem;
+  margin-top: 0.625rem;
+  display: flex;
+}
+.PopWindow_content .PopWindow_CWC_contract_text .textindent48 {
+  width: calc(100% - 3rem);
+  margin-left: 3rem;
+  margin-top: 0.625rem;
+  display: flex;
+}
+.PopWindow_content .PopWindow_CWC_contract_text .textindent96 {
+  width: calc(100% - 6rem);
+  margin-left: 6rem;
+  margin-top: 0.625rem;
+  display: flex;
+}
+.PopWindow_content .PopWindow_CWC_contract_input {
+  margin-top: 0.625rem;
 }
 .PopWindow_content .PopWindow_content_img {
   width: 100%;
@@ -12584,5 +12641,93 @@ h2.detail_Name_cn {
   .rent_info {
     font-size: 1.25rem;
     line-height: 2rem;
+  }
+}
+
+.CWC_contract_title {
+  color: #333;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 1.25rem;
+  font-weight: bold;
+}
+@media screen and (min-width: 760px) {
+  .CWC_contract_title {
+    font-size: 2rem;
+    margin-top: 2.5rem;
+  }
+}
+
+.CWC_contract_h2 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+@media screen and (min-width: 760px) {
+  .CWC_contract_h2 {
+    font-size: 1.25rem;
+    margin-top: 4rem;
+  }
+}
+
+.CWC_contract_title + .CWC_contract_h2 {
+  margin-top: 40px;
+}
+
+.CWC_contract_text {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 0.625rem;
+  line-height: 1.75rem;
+}
+.CWC_contract_text b {
+  font-weight: bold;
+}
+.CWC_contract_text .highlight {
+  color: #c29c20;
+}
+.CWC_contract_text sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+.CWC_contract_text .textindent16 {
+  width: calc(100% - 1rem);
+  margin-left: 1rem;
+  margin-top: 0.625rem;
+  display: flex;
+}
+.CWC_contract_text .textindent48 {
+  width: calc(100% - 3rem);
+  margin-left: 3rem;
+  margin-top: 0.625rem;
+  display: flex;
+}
+.CWC_contract_text .textindent96 {
+  width: calc(100% - 6rem);
+  margin-left: 6rem;
+  margin-top: 0.625rem;
+  display: flex;
+}
+@media screen and (min-width: 760px) {
+  .CWC_contract_text {
+    font-size: 1.25rem;
+    margin-top: 0.875rem;
+    line-height: 2.25rem;
+  }
+  .CWC_contract_text .textindent16 {
+    width: calc(100% - 1.25rem);
+    margin-left: 1.25rem;
+    margin-top: 0.875rem;
+  }
+  .CWC_contract_text .textindent48 {
+    width: calc(100% - 3.75rem);
+    margin-left: 3.75rem;
+    margin-top: 0.875rem;
+  }
+  .CWC_contract_text .textindent96 {
+    width: calc(100% - 7.5rem);
+    margin-left: 7.5rem;
+    margin-top: 0.875rem;
   }
 }
