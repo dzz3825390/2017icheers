@@ -2445,7 +2445,7 @@
 .invoice_radiobox_layout{
 	margin: 1rem auto;
 	display: flex;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	justify-content: center;
 
 	& div.Radio_invoice_unit{
@@ -2486,6 +2486,26 @@
 		border-width: 2px;
 		& span{
 			color: #333;
+		}
+	}
+
+	& .invoice_radiobox_row{
+		width: 100%;
+		margin-top: 10px;
+		margin-bottom: 20px;
+		display: flex;
+
+		& .PopWindow_content_text{
+			width: calc(100% - 26px);
+			margin-left: 10px;
+			margin-top: -5px;
+		}
+
+		& .icon_check{
+			width: 16px;
+		    height: 16px;
+		    border: 1px solid #cccccc;
+		    border-radius: 3px;
 		}
 	}
 

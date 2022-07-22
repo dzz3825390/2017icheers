@@ -8680,7 +8680,7 @@ h2.detail_Name_cn {
 .invoice_radiobox_layout {
   margin: 1rem auto;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
 }
 .invoice_radiobox_layout div.Radio_invoice_unit {
@@ -8723,6 +8723,23 @@ h2.detail_Name_cn {
 }
 .invoice_radiobox_layout div.Radio_invoice_unit.RadioBox_active span {
   color: #333;
+}
+.invoice_radiobox_layout .invoice_radiobox_row {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+}
+.invoice_radiobox_layout .invoice_radiobox_row .PopWindow_content_text {
+  width: calc(100% - 26px);
+  margin-left: 10px;
+  margin-top: -5px;
+}
+.invoice_radiobox_layout .invoice_radiobox_row .icon_check {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
 }
 @media screen and (min-width: 760px) {
   .invoice_radiobox_layout div.Radio_invoice_unit {
