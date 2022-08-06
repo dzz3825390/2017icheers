@@ -253,6 +253,33 @@ function DropdownBind(){
 	
 	
 }
+
+//配送方式說明文字
+function DeliveryTypeInfoText(){
+	$('#DeliveryInfo_Type .dropdown_option').click(function(){
+		var InfoTextID ='#' + $(this).attr('id') + '_text';
+		switch($(this).attr('id')){
+			case 'DeliveryInfo_Type_SuperExpress':				
+				$('.DeliveryTypeInfoText').css('display','none');
+				$(InfoTextID).css('display','block');
+			break;
+
+			case 'DeliveryInfo_Type_Motocycle':
+				$('.DeliveryTypeInfoText').css('display','none');
+				$(InfoTextID).css('display','block');
+			break;
+
+			case 'DeliveryInfo_Type_SelfCollect':
+				$('.DeliveryTypeInfoText').css('display','none');
+				$(InfoTextID).css('display','block');
+			break;
+
+			case 'DeliveryInfo_Type_TCat':
+				$('.DeliveryTypeInfoText').css('display','none');
+			break;
+		}
+	});
+}
 	
 
 //修改訂購人資訊
@@ -364,23 +391,19 @@ function DeliveryInfoEdit (){
     //配送方式
    	switch (DeliveryInfo_Type){
    		case 'Motocycle':
-   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>機車當日配</span></div><div class="dropdown_extend" style="display: none;"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">機車當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件2HR內到貨</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div><div><div class="text" id="DeliveryInfo_TypeInfo" style="display:none;">(雙北特定區域、1400前)</div></div>');
-		break;
-
-   		case 'Car':
-   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>汽車當日配(需下樓自取)</span></div><div class="dropdown_extend" style="display: none;"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">機車當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件2HR內到貨</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text" id="DeliveryInfo_TypeInfo" style="display:none;">(雙北特定區域、1400前)</div></div>');
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>當日配，運費$200</span></div><div class="dropdown_extend"><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件，運費$300</div><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配，運費$200</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SuperExpress_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班時間（周一至周五09:00~17:00，國定假日除外）盡速出貨，歡迎備註說明，我們會盡力達成您的期望；若您於「非」上班時間下達需求，我們將於下一個工作日火速出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00前到貨；若您於「非」上班時間下達需求，將順延至下一個工作當日出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SelfCollect_text" style="display:none;text-align: left;">請於抵達前1小時來電，<br/>可預約時段：上班日11:00~12:00、16:00~18:00。<br/>地址：新北市汐止區中興路43號1樓 國揚矽谷大廳（開車可臨停在大廳對面）</div></div>');
 		break;
 
 		case 'T-cat':   			
-   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>宅配到府</span></div><div class="dropdown_extend" style="display: none;"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">機車當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件2HR內到貨</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text" id="DeliveryInfo_TypeInfo" style="display:none;">(雙北特定區域、1400前)</div></div>');
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>宅配到府</span></div><div class="dropdown_extend"><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件，運費$300</div><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配，運費$200</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SuperExpress_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班時間（周一至周五09:00~17:00，國定假日除外）盡速出貨，歡迎備註說明，我們會盡力達成您的期望；若您於「非」上班時間下達需求，我們將於下一個工作日火速出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00前到貨；若您於「非」上班時間下達需求，將順延至下一個工作當日出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SelfCollect_text" style="display:none;text-align: left;">請於抵達前1小時來電，<br/>可預約時段：上班日11:00~12:00、16:00~18:00。<br/>地址：新北市汐止區中興路43號1樓 國揚矽谷大廳（開車可臨停在大廳對面）</div></div>');
 		break;
 
 		case 'SuperExpress':
-   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>特急件2HR內到貨</span></div><div class="dropdown_extend" style="display: none;"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">機車當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件2HR內到貨</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text" id="DeliveryInfo_TypeInfo" style="display:none;">(雙北特定區域、1400前)</div></div>');
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>特急件，運費$300</span></div><div class="dropdown_extend"><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件，運費$300</div><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配，運費$200</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SuperExpress_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班時間（周一至周五09:00~17:00，國定假日除外）盡速出貨，歡迎備註說明，我們會盡力達成您的期望；若您於「非」上班時間下達需求，我們將於下一個工作日火速出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00前到貨；若您於「非」上班時間下達需求，將順延至下一個工作當日出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SelfCollect_text" style="display:none;text-align: left;">請於抵達前1小時來電，<br/>可預約時段：上班日11:00~12:00、16:00~18:00。<br/>地址：新北市汐止區中興路43號1樓 國揚矽谷大廳（開車可臨停在大廳對面）</div></div>');
 		break;
 
 		case 'SelfCollect':
-   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>自取</span></div><div class="dropdown_extend" style="display: none;"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">機車當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件2HR內到貨</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text" id="DeliveryInfo_TypeInfo" style="display:none;">(雙北特定區域、1400前)</div></div>');
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>預約自取</span></div><div class="dropdown_extend"><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件，運費$300</div><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配，運費$200</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SuperExpress_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班時間（周一至周五09:00~17:00，國定假日除外）盡速出貨，歡迎備註說明，我們會盡力達成您的期望；若您於「非」上班時間下達需求，我們將於下一個工作日火速出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00前到貨；若您於「非」上班時間下達需求，將順延至下一個工作當日出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SelfCollect_text" style="display:none;text-align: left;">請於抵達前1小時來電，<br/>可預約時段：上班日11:00~12:00、16:00~18:00。<br/>地址：新北市汐止區中興路43號1樓 國揚矽谷大廳（開車可臨停在大廳對面）</div></div>');
 		break;				
    	}
 
@@ -430,9 +453,9 @@ function DeliveryInfoEdit (){
 	    //環保包材
 	    
 	    if (DeliveryInfo_ReusePaperMaterial) {
-	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div>');
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="NoticeText" style="margin-bottom:32px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
 	    } else {
-	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div>');
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="NoticeText" style="margin-bottom:32px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
 	    }
    	}
 
@@ -440,6 +463,8 @@ function DeliveryInfoEdit (){
    	DeliveryTimeRadio();
    	CheckboxBind();
    	DropdownBind();
+   	//配送方式說明文字
+	DeliveryTypeInfoText();
 }
 
 //新增常用地址
@@ -462,7 +487,7 @@ function DeliveryInfoAddNew(intBrowserW){
     if (DeliveryInfo_FormStatus == 'NewCustomers') {
     	
     } else {
-	    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div><div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div><div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div></div>')
+	    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div><div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div><div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="NoticeText" style="margin-bottom:32px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>')
 
     }
 
@@ -488,7 +513,7 @@ function DeliveryInfoAddNewCWC(intBrowserW){
     $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" style="display:none;margin-top: 0;"><input type="text" name="sex" value="" id="DeliveryInfo_OtherSexualText"></div>');
     $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">收件人連絡電話</div><input id="DeliveryInfo_Phone" type="text" name="" value=""></div>');
     $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">收件人地址</div><div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>新北市</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">澎湖縣</div><div class="dropdown_option">連江縣</div><div class="dropdown_option">金門縣</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>234&nbsp;永和區</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value=""></div><div class="NoticeText" style="display: none;">*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。</div><div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div></div>');
-    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>宅配到府</span></div><div class="dropdown_extend"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">機車當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件2HR內到貨</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text" id="DeliveryInfo_TypeInfo" style="display:none;">(雙北特定區域、1400前)</div></div>');
+    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>宅配到府</span></div><div class="dropdown_extend"><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件，運費$300</div><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配，運費$200</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div>								<div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">預約自取</div></div></div></div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SuperExpress_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班時間（周一至周五09:00~17:00，國定假日除外）盡速出貨，歡迎備註說明，我們會盡力達成您的期望；若您於「非」上班時間下達需求，我們將於下一個工作日火速出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00前到貨；若您於「非」上班時間下達需求，將順延至下一個工作當日出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SelfCollect_text" style="display:none;text-align: left;">請於抵達前1小時來電，<br/>可預約時段：上班日11:00~12:00、16:00~18:00。<br/>地址：新北市汐止區中興路43號1樓 國揚矽谷大廳（開車可臨停在大廳對面）</div></div>');
 
     if (DeliveryInfo_FormStatus == 'NewCustomers') {
     	
@@ -501,6 +526,8 @@ function DeliveryInfoAddNewCWC(intBrowserW){
    	DeliveryTimeRadio();
    	CheckboxBind();
    	DropdownBind();
+   	//配送方式說明文字
+	DeliveryTypeInfoText();
 }
 
 
@@ -597,23 +624,23 @@ function ImportDeliveryInfo(data){
     //配送方式
    	switch (DeliveryInfo_Type){
    		case 'Motocycle':
-   			$('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Type" delivery_type="Motocycle">機車當日配</div>');
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Type" delivery_type="Motocycle">當日配，運費$200</div>');
    		break;
-
+   		/*
    		case 'Car':
    			$('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Type" delivery_type="Car">汽車當日配(需下樓自取)</div>');
 		break;
-
+		*/
 		case 'T-cat':   			
    			$('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Type" delivery_type="T-cat">宅配到府</div>');
 		break;
 
 		case 'SuperExpress':
-   			$('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Type" delivery_type="SuperExpress">特急件2HR內到貨</div>');
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Type" delivery_type="SuperExpress">特急件，運費$300</div>');
 		break;
 
 		case 'SelfCollect':
-   			$('#Form_RecordedAddress .recorded_data').append('<div class="text"  id="DeliveryInfo_Type" delivery_type="SelfCollect">自取</div>');
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="text"  id="DeliveryInfo_Type" delivery_type="SelfCollect">預約自取</div>');
 		break;				
    	}
     
