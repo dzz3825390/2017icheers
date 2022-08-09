@@ -8133,7 +8133,10 @@ h2.detail_Name_cn {
   margin-top: 0;
 }
 #Form_RecordedAddress .cart_form_row .text, #Form_RecordedCompany .cart_form_row .text {
-  color: #333;
+  font-size: 1rem;
+  color: #999;
+  line-height: 1.5rem;
+  margin-top: 8px;
 }
 #Form_RecordedAddress .recorded_data, #Form_RecordedCompany .recorded_data {
   margin-bottom: 40px;
