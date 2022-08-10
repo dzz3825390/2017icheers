@@ -453,9 +453,9 @@ function DeliveryInfoEdit (){
 	    //環保包材
 	    
 	    if (DeliveryInfo_ReusePaperMaterial) {
-	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
 	    } else {
-	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
 	    }
    	}
 
@@ -487,7 +487,7 @@ function DeliveryInfoAddNew(intBrowserW){
     if (DeliveryInfo_FormStatus == 'NewCustomers') {
     	
     } else {
-	    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div><div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div><div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>')
+	    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div><div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div><div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>')
 
     }
 
@@ -518,7 +518,7 @@ function DeliveryInfoAddNewCWC(intBrowserW){
     if (DeliveryInfo_FormStatus == 'NewCustomers') {
     	
     } else {
-	    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div><div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div><div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div></div>')
+	    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div><div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div><div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>')
 
     }
 

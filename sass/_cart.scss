@@ -1858,6 +1858,11 @@
 
 		& .recorded_data{
 			margin-top: 0;
+
+			& .text{
+				font-size: 1.375rem;
+    			line-height: 2.3rem;
+			}
 		}
 	}
 

@@ -8161,6 +8161,10 @@ h2.detail_Name_cn {
   #Form_RecordedAddress .recorded_data, #Form_RecordedCompany .recorded_data {
     margin-top: 0;
   }
+  #Form_RecordedAddress .recorded_data .text, #Form_RecordedCompany .recorded_data .text {
+    font-size: 1.375rem;
+    line-height: 2.3rem;
+  }
 }
 @media screen and (min-width: 1024px) {
   #Form_RecordedAddress .btn_edit, #Form_RecordedCompany .btn_edit {
