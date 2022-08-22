@@ -391,6 +391,150 @@ function DeliveryInfoEdit (){
     //配送方式
    	switch (DeliveryInfo_Type){
    		case 'Motocycle':
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>當日配</span></div><div class="dropdown_extend"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div></div></div></div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:block;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00前到貨；若您於「非」上班時間下達需求，將順延至下一個工作當日出貨。</div></div>');
+		break;
+
+		case 'T-cat':   			
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>宅配到府</span></div><div class="dropdown_extend"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div></div></div></div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00前到貨；若您於「非」上班時間下達需求，將順延至下一個工作當日出貨。</div></div>');
+		break;
+
+		case 'SuperExpress':
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>特急件，運費$300</span></div><div class="dropdown_extend"><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件，運費$300</div><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配，運費$200</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SuperExpress_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班時間（周一至周五09:00~17:00，國定假日除外）盡速出貨，歡迎備註說明，我們會盡力達成您的期望；若您於「非」上班時間下達需求，我們將於下一個工作日火速出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00前到貨；若您於「非」上班時間下達需求，將順延至下一個工作當日出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SelfCollect_text" style="display:none;text-align: left;">請於抵達前1小時來電，<br/>可預約時段：上班日11:00~12:00、16:00~18:00。<br/>地址：新北市汐止區中興路43號1樓 國揚矽谷大廳（開車可臨停在大廳對面）</div></div>');
+		break;
+
+		case 'SelfCollect':
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>預約自取</span></div><div class="dropdown_extend"><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件，運費$300</div><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配，運費$200</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SuperExpress_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班時間（周一至周五09:00~17:00，國定假日除外）盡速出貨，歡迎備註說明，我們會盡力達成您的期望；若您於「非」上班時間下達需求，我們將於下一個工作日火速出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00前到貨；若您於「非」上班時間下達需求，將順延至下一個工作當日出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SelfCollect_text" style="display:none;text-align: left;">請於抵達前1小時來電，<br/>可預約時段：上班日11:00~12:00、16:00~18:00。<br/>地址：新北市汐止區中興路43號1樓 國揚矽谷大廳（開車可臨停在大廳對面）</div></div>');
+		break;				
+   	}
+
+    //希望配送時段
+    if (DeliveryInfo_Time == '上午(08~13時)'){
+        $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div></div>');
+        
+    } else if (DeliveryInfo_Time == '下午(14~18時)') {
+        $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverytime">下午(14~18時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div></div>');
+   		
+    } else if (DeliveryInfo_Time == '皆可'){
+        $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverytime">皆可</div></div></div>');
+        
+    } else {
+    	$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div></div>');
+        
+    }
+
+   	//希望配送星期
+   	if (DeliveryInfo_Date == '平日'){
+   		$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">希望配送星期</div><div class="Radio_Delivery_row" id="DeliveryInfo_Date"><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">平日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div></div></div>');
+   		
+   	} else if (DeliveryInfo_Date == '假日'){
+   		$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">希望配送星期</div><div class="Radio_Delivery_row" id="DeliveryInfo_Date"><div class="RadioBox Radio_DeliveryTime" name="deliverydate">平日</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div></div></div>');        		
+   		
+   	} else if (DeliveryInfo_Date == '皆可'){
+   		$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">希望配送星期</div><div class="Radio_Delivery_row" id="DeliveryInfo_Date"><div class="RadioBox Radio_DeliveryTime" name="deliverydate">平日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">皆可</div></div></div>');        		        		
+   		
+   	} else {
+   		$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">希望配送星期</div><div class="Radio_Delivery_row" id="DeliveryInfo_Date"><div class="RadioBox Radio_DeliveryTime" name="deliverydate">平日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div></div></div>');        		        		   		
+   		
+   	}
+        	
+   	//環保選項
+   	if (DeliveryInfo_FormStatus == 'NewCustomers'){
+
+   	} else {
+   		$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div></div>')
+
+   		//紙箱
+   		if (DeliveryInfo_ReuseBox){
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div>');
+	    } else {
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div>');
+	    }
+
+	    //環保包材
+	    
+	    if (DeliveryInfo_ReusePaperMaterial) {
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
+	    } else {
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
+	    }
+   	}
+
+   	SexualRadio();
+   	DeliveryTimeRadio();
+   	CheckboxBind();
+   	DropdownBind();
+   	//配送方式說明文字
+	DeliveryTypeInfoText();
+}
+
+//修改收件人地址(CWC)
+function DeliveryInfoEditCWC (){
+	$('#DeliveryInfo_BTNEdit').css('display','none');
+	$('#DeliveryInfo_BTNSave').css('display','flex');
+	RecordedAddressSelectorWidth($('#DeliveryInfo_BTNSave'));
+
+	var DeliveryInfo_Name = $('#DeliveryInfo_Name').text();
+	var DeliveryInfo_Sex = $('#DeliveryInfo_Sex').attr('sexual');
+	var DeliveryInfo_OtherSexulText = $('#DeliveryInfo_OtherSexualText').text();
+	var DeliveryInfo_Type = $('#DeliveryInfo_Type').attr('delivery_type');
+	var DeliveryInfo_Phone = $('#DeliveryInfo_Phone').text();
+	var DeliveryInfo_Address_PostalCode = $('#DeliveryInfo_Address').text().split(/[^0-9a-zA-Z]+/g)[0];
+	var DeliveryInfo_Address_District = $('#DeliveryInfo_Address').text().substring(6,9);
+	var DeliveryInfo_Address_City = $('#DeliveryInfo_Address').text().substring(3,6);
+	var DeliveryInfo_Address_Other = $('#DeliveryInfo_Address').text().slice(9);
+	var DeliveryInfo_Time = $('#DeliveryInfo_Time').text();
+    var DeliveryInfo_Date = $('#DeliveryInfo_Date').text();    	
+    var DeliveryInfo_BuildingGuardCollect = $('#BuildingGuardCollect').text();
+    var DeliveryInfo_ReuseBox = $('#ReuseBox').text();
+    var DeliveryInfo_ReusePaperMaterial = $('#ReusePaperMaterial').text();
+
+    var DeliveryInfo_FormStatus = $('#Form_RecordedAddress').attr('formstatus');
+
+
+    //清空
+    $('#Form_RecordedAddress .recorded_data').text('');
+
+    //收件人姓名
+    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">收件人大名</div><input id="DeliveryInfo_Name" type="text" name="" value="'+DeliveryInfo_Name+'"></div>');
+
+    //收件人性別
+    if (DeliveryInfo_Sex == 'Male'){
+        $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual RadioBox_active" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual" name="sex" sexual="Female">小姐</div></div></div>');
+    } 
+    else if (DeliveryInfo_Sex == 'Female'){
+        $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual RadioBox_active" name="sex" sexual="Female">小姐</div></div></div>');    
+    }
+
+    //收件人電話
+    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">收件人連絡電話</div><input id="DeliveryInfo_Phone" type="text" name="" value="'+DeliveryInfo_Phone+'"></div>');
+
+    //收件人地址
+    if (DeliveryInfo_FormStatus == 'NewCustomers'){
+    	$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">收件人地址</div><div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>'+DeliveryInfo_Address_City+'</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">澎湖縣</div><div class="dropdown_option">連江縣</div><div class="dropdown_option">金門縣</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>'+DeliveryInfo_Address_PostalCode+'&nbsp;'+DeliveryInfo_Address_District+'</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value="'+DeliveryInfo_Address_Other+'"></div><div class="NoticeText">*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。</div><div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div>');
+	    
+    } else {
+    	//DeliveryInfo_BuildingGuardCollect=空字串帶表管理員代收未勾選
+    	if (DeliveryInfo_BuildingGuardCollect == ''){
+	    	$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">收件人地址</div><div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>'+DeliveryInfo_Address_City+'</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">澎湖縣</div><div class="dropdown_option">連江縣</div><div class="dropdown_option">金門縣</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>'+DeliveryInfo_Address_PostalCode+'&nbsp;'+DeliveryInfo_Address_District+'</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value="'+DeliveryInfo_Address_Other+'"></div><div class="NoticeText">*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。</div><div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div>');
+	    	
+	    } else {
+	    	$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">收件人地址</div><div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>'+DeliveryInfo_Address_City+'</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">澎湖縣</div><div class="dropdown_option">連江縣</div><div class="dropdown_option">金門縣</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>'+DeliveryInfo_Address_PostalCode+'&nbsp;'+DeliveryInfo_Address_District+'</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value="'+DeliveryInfo_Address_Other+'"></div><div class="NoticeText">*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。</div><div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div>');
+	    	
+	    	$('#BuildingGuardCollect .option_check').click();
+	    	
+	    }
+    }
+    
+    //離島運費顯示/隱藏
+    if (DeliveryInfo_Address_City == '澎湖縣' || DeliveryInfo_Address_City == '連江縣' || DeliveryInfo_Address_City == '金門縣') {
+        $('#DeliveryInfo_Address').next('.NoticeText').css('display','block');
+    } else {
+        $('#DeliveryInfo_Address').next('.NoticeText').css('display','none');
+    }
+
+    //配送方式
+   	switch (DeliveryInfo_Type){
+   		case 'Motocycle':
    			$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>當日配，運費$200</span></div><div class="dropdown_extend"><div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件，運費$300</div><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配，運費$200</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div><div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">自取</div></div></div></div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SuperExpress_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班時間（周一至周五09:00~17:00，國定假日除外）盡速出貨，歡迎備註說明，我們會盡力達成您的期望；若您於「非」上班時間下達需求，我們將於下一個工作日火速出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00前到貨；若您於「非」上班時間下達需求，將順延至下一個工作當日出貨。</div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SelfCollect_text" style="display:none;text-align: left;">請於抵達前1小時來電，<br/>可預約時段：上班日11:00~12:00、16:00~18:00。<br/>地址：新北市汐止區中興路43號1樓 國揚矽谷大廳（開車可臨停在大廳對面）</div></div>');
 		break;
 
@@ -467,6 +611,7 @@ function DeliveryInfoEdit (){
 	DeliveryTypeInfoText();
 }
 
+
 //新增常用地址
 function DeliveryInfoAddNew(intBrowserW){
 	$('#DeliveryInfo_BTNEdit').css('display','none');
@@ -483,10 +628,13 @@ function DeliveryInfoAddNew(intBrowserW){
     $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" style="display:none;margin-top: 0;"><input type="text" name="sex" value="" id="DeliveryInfo_OtherSexualText"></div>');
     $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">收件人連絡電話</div><input id="DeliveryInfo_Phone" type="text" name="" value=""></div>');
     $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">收件人地址</div><div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>新北市</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">澎湖縣</div><div class="dropdown_option">連江縣</div><div class="dropdown_option">金門縣</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>234&nbsp;永和區</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value=""></div><div class="NoticeText" style="display: none;">*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。</div><div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div></div>');
-
+    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row form_Address"><div class="formTitle">配送方式</div><div id="DeliveryInfo_Type"><div class="dropdown district"><div class="dropdown_text"><span>宅配到府</span></div><div class="dropdown_extend"><div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配</div><div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div></div></div></div><div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00前到貨；若您於「非」上班時間下達需求，將順延至下一個工作當日出貨。</div></div>');
     if (DeliveryInfo_FormStatus == 'NewCustomers') {
     	
     } else {
+    	$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div></div>');
+   		$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">希望配送星期</div><div class="Radio_Delivery_row" id="DeliveryInfo_Date"><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">平日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div></div></div>');
+
 	    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div><div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div><div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>')
 
     }
@@ -495,6 +643,7 @@ function DeliveryInfoAddNew(intBrowserW){
    	DeliveryTimeRadio();
    	CheckboxBind();
    	DropdownBind();
+   	DeliveryTypeInfoText();
 }
 
 //新增常用地址(CWC)
@@ -624,7 +773,7 @@ function ImportDeliveryInfo(data){
     //配送方式
    	switch (DeliveryInfo_Type){
    		case 'Motocycle':
-   			$('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Type" delivery_type="Motocycle">當日配，運費$200</div>');
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Type" delivery_type="Motocycle">當日配</div>');
    		break;
    		/*
    		case 'Car':
@@ -636,7 +785,7 @@ function ImportDeliveryInfo(data){
 		break;
 
 		case 'SuperExpress':
-   			$('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Type" delivery_type="SuperExpress">特急件，運費$300</div>');
+   			$('#Form_RecordedAddress .recorded_data').append('<div class="text" id="DeliveryInfo_Type" delivery_type="SuperExpress">特急件</div>');
 		break;
 
 		case 'SelfCollect':
@@ -675,7 +824,7 @@ function ImportDeliveryInfo(data){
 
 	}
 	
-        	
+    
 }
 
 //新增常用公司

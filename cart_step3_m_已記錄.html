@@ -118,6 +118,8 @@
 	                Address:'234新北市永和區成功路一段82號',
 	                Time:'下午(14~18時)',
 	                Date:'假日',
+	                //Motocycle Car T-cat SuperExpress SelfCollect
+	                DeliveryType:'Motocycle',
 	                BuildingGuardCollect:true,
 	                ReuseBox:false,
 	                ReusePaperMaterial:false
@@ -132,11 +134,14 @@
 	                Address:'234新北市永和區成功路一段84號',
 	                Time:'皆可',
 	                Date:'皆可',
+	                //Motocycle Car T-cat SuperExpress SelfCollect
+	                DeliveryType:'T-cat',
 	                BuildingGuardCollect:false,
 	                ReuseBox:true,
 	                ReusePaperMaterial:true
 	            }
 	        ]
+
 
 	        //帶入/新增地址
 	        $('#RecordedAddress_Selector .dropdown_option').click(function(){
@@ -387,6 +392,7 @@
 				</div>
 				<div class="text" id="BuildingGuardCollect">✓&nbsp;管理員可代收
 				</div>
+				<div class="text" id="DeliveryInfo_Type">當日配</div>
 				<div class="text">希望於<span id="DeliveryInfo_Time">上午(08~13時)</span>配送</div>
 				<div class="text">希望於<span id="DeliveryInfo_Date">假日</span>配送</div>
 				<div class="text" id="ReuseBox">✓&nbsp;我愛地球，我選擇用乾淨堅固的二手紙箱出貨。

@@ -105,6 +105,8 @@
 	                Address:'234新北市永和區成功路一段82號',
 	                Time:'下午(14~18時)',
 	                Date:'假日',
+	                //Motocycle Car T-cat SuperExpress SelfCollect
+	                DeliveryType:'Motocycle',
 	                BuildingGuardCollect:true,
 	                ReuseBox:false,
 	                ReusePaperMaterial:false
@@ -113,17 +115,20 @@
 	        var TestData_Custom2 = [
 	            {
 	                Name:'陳怡棻',
-	                Sex:'Other',
-	                OtherSexualText: '多色寶山大王',
+	                Sex:'Female',
+	                OtherSexualText: '',
 	                Phone:'0965432189',
 	                Address:'234新北市永和區成功路一段84號',
 	                Time:'皆可',
 	                Date:'皆可',
+	                //Motocycle Car T-cat SuperExpress SelfCollect
+	                DeliveryType:'T-cat',
 	                BuildingGuardCollect:false,
 	                ReuseBox:true,
 	                ReusePaperMaterial:true
 	            }
 	        ]
+
 
 	        //訂購人資料狀態 true:已記錄 false:可編輯狀態
 			var HasPurchaseInfo = false;
@@ -254,6 +259,9 @@
 		    		$('.number_paperbag span').css('display','none');
 		    	}
 		    });
+
+		    //配送方式說明文字
+		    DeliveryTypeInfoText();
 
 		});
 
@@ -415,6 +423,22 @@
 						<div class="icon_check"></div>
 					</div>
 					<div class="checkbox_text">管理員可代收</div>
+				</div>
+				<div class="cart_form_row form_Address">
+					<div class="formTitle">配送方式</div>
+					<div id="DeliveryInfo_Type">
+						<div class="dropdown district">
+							<div class="dropdown_text">
+								<span>宅配到府</span>
+							</div>
+							<div class="dropdown_extend">
+								<div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配</div>
+								<div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div>			
+							</div>
+						</div>
+					</div>
+					<div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00前到貨；若您於「非」上班時間下達需求，將順延至下一個工作當日出貨。</div>
+
 				</div>
 				<div class="cart_form_row"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div></div>
 
