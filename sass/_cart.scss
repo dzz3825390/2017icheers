@@ -1994,30 +1994,33 @@
 		justify-content: space-between;
 		flex-wrap: wrap;
 		margin-top: 10px;
-		& .Radio_Sexual{
-			padding: 0;
-			width: calc((100% - 1rem)/3);
-			height: 45px;
-			line-height: 45px;
-			font-size: 1rem;
-			text-align: center;
-		}
+		
+	}
+
+	& .Radio_Sexual{
+		padding: 0;
+		width: calc((100% - 1rem)/3);
+		height: 45px;
+		line-height: 45px;
+		font-size: 1rem;
+		text-align: center;
 	}
 
 	& .Radio_Delivery_row{
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		& .Radio_DeliveryTime{
-			padding: 0;
-			width: 100%;
-			height: 45px;
-			line-height: 45px;
-			font-size: 1rem;
-			text-align: center;
-			margin-top: 0.5rem;
-			margin-left:0;
-		}
+	}
+
+	& .Radio_DeliveryTime{
+		padding: 0;
+		width: 100%;
+		height: 45px;
+		line-height: 45px;
+		font-size: 1rem;
+		text-align: center;
+		margin-top: 0.5rem;
+		margin-left:0;
 	}
 
 	& #DeliveryInfo_Sex{
@@ -2142,7 +2145,7 @@
 		flex-wrap: wrap;
 	}
 
-	& #ReuseBox , #ReusePaperMaterial {
+	& .checkbox_layout_mutiRowText{
 		align-items: flex-start;
 		& .option_check{
 			margin-top: -6px;
@@ -2166,8 +2169,8 @@
 		}
 
 		& input{
-			height:50px;
-			line-height: 50px;
+			height:60px;
+			line-height: 60px;
 			font-size: 1.375rem;
 		}
 
@@ -2177,8 +2180,8 @@
 		}
 
 		& .RadioBox{
-			height: 50px;
-			line-height: 50px;
+			height: 60px;
+			line-height: 60px;
 			font-size: 1.375rem;
 		}
 
@@ -2230,12 +2233,13 @@
 			}
 		}
 
-		& #ReuseBox , #ReusePaperMaterial {
-			align-items: center;
+		& .checkbox_layout_mutiRowText{
+			align-items: flex-start;
 			& .option_check{
 				margin-top: 0;
 			}
 		}
+
 	}
 
 	@include pad-width1024{

@@ -8277,7 +8277,7 @@ h2.detail_Name_cn {
   flex-wrap: wrap;
   margin-top: 10px;
 }
-.cart_form_row .Radio_Sexual_row .Radio_Sexual {
+.cart_form_row .Radio_Sexual {
   padding: 0;
   width: calc((100% - 1rem)/3);
   height: 45px;
@@ -8290,7 +8290,7 @@ h2.detail_Name_cn {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.cart_form_row .Radio_Delivery_row .Radio_DeliveryTime {
+.cart_form_row .Radio_DeliveryTime {
   padding: 0;
   width: 100%;
   height: 45px;
@@ -8406,10 +8406,10 @@ h2.detail_Name_cn {
   display: flex;
   flex-wrap: wrap;
 }
-.cart_form_row #ReuseBox, .cart_form_row #ReusePaperMaterial {
+.cart_form_row .checkbox_layout_mutiRowText {
   align-items: flex-start;
 }
-.cart_form_row #ReuseBox .option_check, .cart_form_row #ReusePaperMaterial .option_check {
+.cart_form_row .checkbox_layout_mutiRowText .option_check {
   margin-top: -6px;
 }
 .cart_form_row #ReusePaperMaterial {
@@ -8427,8 +8427,8 @@ h2.detail_Name_cn {
     font-size: 1.25rem;
   }
   .cart_form_row input {
-    height: 50px;
-    line-height: 50px;
+    height: 60px;
+    line-height: 60px;
     font-size: 1.375rem;
   }
   .cart_form_row textarea {
@@ -8436,8 +8436,8 @@ h2.detail_Name_cn {
     font-size: 1.375rem;
   }
   .cart_form_row .RadioBox {
-    height: 50px;
-    line-height: 50px;
+    height: 60px;
+    line-height: 60px;
     font-size: 1.375rem;
   }
   .cart_form_row .NoticeText {
@@ -8477,10 +8477,10 @@ h2.detail_Name_cn {
   .cart_form_row .Radio_Sexual_row .Radio_Sexual {
     font-size: 1.375rem;
   }
-  .cart_form_row #ReuseBox, .cart_form_row #ReusePaperMaterial {
-    align-items: center;
+  .cart_form_row .checkbox_layout_mutiRowText {
+    align-items: flex-start;
   }
-  .cart_form_row #ReuseBox .option_check, .cart_form_row #ReusePaperMaterial .option_check {
+  .cart_form_row .checkbox_layout_mutiRowText .option_check {
     margin-top: 0;
   }
 }

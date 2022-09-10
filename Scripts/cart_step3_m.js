@@ -61,7 +61,7 @@ function InvoiceUnitRadio(){
 		   			
 			var RidaoType = $(this).attr('id');
 		   	switch(RidaoType){
-		   		case 'invoice_AnotherAddress_2':
+		   		/*case 'invoice_AnotherAddress_2':
 		   		Radiobox(this);
 		   		$('.invoice_hide').css('display','none');
 		   		$(this).parent().next().slideDown(300);
@@ -81,7 +81,7 @@ function InvoiceUnitRadio(){
 		   		case 'invoice_SameAddress_3':
 		   		Radiobox(this);
 		   		$(this).parent().next().slideUp(300);
-		   		break;
+		   		break;*/
 
 		   		case 'electroic_invoice_phone':
 		   		Radiobox(this);
@@ -445,17 +445,17 @@ function DeliveryInfoEdit (){
 
    		//紙箱
    		if (DeliveryInfo_ReuseBox){
-	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div>');
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout checkbox_layout_mutiRowText" id="ReuseBox"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div>');
 	    } else {
-	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div>');
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout checkbox_layout_mutiRowText" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div>');
 	    }
 
 	    //環保包材
 	    
 	    if (DeliveryInfo_ReusePaperMaterial) {
-	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout checkbox_layout_mutiRowText" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
 	    } else {
-	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout checkbox_layout_mutiRowText" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
 	    }
    	}
 
@@ -589,17 +589,17 @@ function DeliveryInfoEditCWC (){
 
    		//紙箱
    		if (DeliveryInfo_ReuseBox){
-	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div>');
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout checkbox_layout_mutiRowText" id="ReuseBox"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div>');
 	    } else {
-	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div>');
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout checkbox_layout_mutiRowText" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div>');
 	    }
 
 	    //環保包材
 	    
 	    if (DeliveryInfo_ReusePaperMaterial) {
-	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout checkbox_layout_mutiRowText" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
 	    } else {
-	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
+	        $('#Form_RecordedAddress .recorded_data #ECO_Options').append('<div class="checkbox_layout checkbox_layout_mutiRowText" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>');
 	    }
    	}
 
@@ -635,7 +635,7 @@ function DeliveryInfoAddNew(intBrowserW){
     	$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div></div>');
    		$('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row"><div class="formTitle">希望配送星期</div><div class="Radio_Delivery_row" id="DeliveryInfo_Date"><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">平日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div></div></div>');
 
-	    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div><div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div><div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>')
+	    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div><div class="checkbox_layout checkbox_layout_mutiRowText" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div><div class="checkbox_layout checkbox_layout_mutiRowText" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>')
 
     }
 
@@ -667,7 +667,7 @@ function DeliveryInfoAddNewCWC(intBrowserW){
     if (DeliveryInfo_FormStatus == 'NewCustomers') {
     	
     } else {
-	    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div><div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div><div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>')
+	    $('#Form_RecordedAddress .recorded_data').append('<div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div><div class="checkbox_layout checkbox_layout_mutiRowText" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div><div class="checkbox_layout checkbox_layout_mutiRowText" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div></div><div class="text" style="margin-bottom:32px;color:#999;margin-top:8px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>')
 
     }
 
@@ -844,13 +844,7 @@ function AddNewCompanyInfo(intBrowserW){
 	//統編
 	$('#Form_RecordedCompany .recorded_data').append('<div class="cart_form_row"><div class="formTitle">統一編號</div><input type="text" value="" id="CompanyIfo_BAN"></div>');
 
-	//寄送radio
-	$('#Form_RecordedCompany .recorded_data').append('<div class="invoice_radiobox_layout"><div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_SameAddress_3"><span>隨商品寄出</span></div><div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_AnotherAddress_3"><span>發票分開寄出</span></div></div>');
 
-	//分開寄送地址
-	$('#Form_RecordedCompany .recorded_data').append('<div class="invoice_AnotherAddress invoice_hide" style="display: none;"><div class="cart_form_row"><div class="formTitle">發票收件人姓名</div><input type="text" id="CompanyInfo_Name">	</div><div class="cart_form_row form_Address"><div class="formTitle">發票收件人地址</div>	<div id="CompanyInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>縣市</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>鄉鎮區</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" placeholder="請輸入地址"></div></div></div>');
-
-	InvoiceUnitRadio();
    	DropdownBind();
 }
 
@@ -861,13 +855,8 @@ function ImportCompanyInfo(data) {
 	$('#CompanyInfo_BTNSave').css('display','none');
 	RecordedCompanyInfoSelectorWidth($('#CompanyInfo_BTNEdit'));
 
-	var CompanyInfo_Name = data[0].Name;
-	var CompanyInfo_Sex = data[0].Sex;
-	var CompanyInfo_Phone = data[0].Phone;
-	var CompanyInfo_Address = data[0].Address;
 	var CompanyInfo_CompanyName = data[0].CompanyName;
 	var CompanyInfo_BAN = data[0].BAN;
-	var IsAnotherAddress = data[0].AnotherAddress;
 
 	//清空
 	$('#Form_RecordedCompany .recorded_data').text('');
@@ -878,17 +867,7 @@ function ImportCompanyInfo(data) {
 	//統編
 	$('#Form_RecordedCompany .recorded_data').append('<div class="text" id="CompanyInfo_BAN">'+CompanyInfo_BAN+'</div>');
 
-	//發票寄送
-	if (IsAnotherAddress) {
-		$('#Form_RecordedCompany .recorded_data').append('<div class="text" id="CompanyInfo_InvoiceDelivery" AnotherAddress="yes">發票分開寄送至</div>');
-		$('#Form_RecordedCompany .recorded_data').append('<div class="text" id="CompanyInfo_Name">'+CompanyInfo_Name+'&nbsp;收</div>');		
-		$('#Form_RecordedCompany .recorded_data').append('<div class="text" id="CompanyInfo_Address">'+CompanyInfo_Address+'</div>');		
-
-	} else {
-		$('#Form_RecordedCompany .recorded_data').append('<div class="text" id="CompanyInfo_InvoiceDelivery" AnotherAddress="no">發票隨商品寄出</div>');
-
-	}
-
+	DropdownBind();
 }
 
 
@@ -899,12 +878,6 @@ function EditCompanyInfo () {
 
 	var CompanyIfo_CompanyName = $('#CompanyIfo_CompanyName').text();
 	var CompanyIfo_BAN = $('#CompanyInfo_BAN').text();
-	var CompanyInfo_Name = $('#CompanyInfo_Name').text();
-	var IsAnotherAddress = $('#CompanyInfo_InvoiceDelivery').attr('anotheraddress');
-	var CompanyInfo_Address_PostalCode = $('#CompanyInfo_Address').text().split(/[^0-9a-zA-Z]+/g)[0];
-	var CompanyInfo_Address_District = $('#CompanyInfo_Address').text().substring(6,9);
-	var CompanyInfo_Address_City = $('#CompanyInfo_Address').text().substring(3,6);
-	var CompanyInfo_Address_Other = $('#CompanyInfo_Address').text().slice(9);
 
 	//清空
 	$('#Form_RecordedCompany .recorded_data').text('');
@@ -915,16 +888,6 @@ function EditCompanyInfo () {
 	//統編
 	$('#Form_RecordedCompany .recorded_data').append('<div class="cart_form_row"><div class="formTitle">統一編號</div><input type="text" value="'+CompanyIfo_BAN+'" id="CompanyIfo_BAN"></div>');
 
-	//發票寄送
-	if (IsAnotherAddress == 'yes'){
-		$('#Form_RecordedCompany .recorded_data').append('<div class="invoice_radiobox_layout"><div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_SameAddress_3"><span>隨商品寄出</span></div><div class="RadioBox Radio_invoice_unit RadioBox_active" name="invoice_unit3" id="invoice_AnotherAddress_3"><span>發票分開寄出</span></div></div>');
-		$('#Form_RecordedCompany .recorded_data').append('<div class="invoice_AnotherAddress invoice_hide"><div class="cart_form_row"><div class="formTitle">發票收件人姓名</div><input type="text" id="CompanyInfo_Name" value="'+CompanyInfo_Name+'"></div><div class="cart_form_row form_Address"><div class="formTitle">發票收件人地址</div><div id="CompanyInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>'+CompanyInfo_Address_City+'</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>'+CompanyInfo_Address_PostalCode+'&nbsp;'+CompanyInfo_Address_District+'</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" placeholder="請輸入地址" value="'+CompanyInfo_Address_Other+'"></div></div></div>');
 
-	} else {
-		$('#Form_RecordedCompany .recorded_data').append('<div class="invoice_radiobox_layout"><div class="RadioBox Radio_invoice_unit RadioBox_active" name="invoice_unit3" id="invoice_SameAddress_3"><span>隨商品寄出</span></div><div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_AnotherAddress_3"><span>發票分開寄出</span></div></div>');
-		$('#Form_RecordedCompany .recorded_data').append('<div class="invoice_AnotherAddress invoice_hide" style="display: none;"><div class="cart_form_row"><div class="formTitle">發票收件人姓名</div><input type="text" id="CompanyInfo_Name">	</div><div class="cart_form_row form_Address"><div class="formTitle">發票收件人地址</div>	<div id="CompanyInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>縣市</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>鄉鎮區</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" placeholder="請輸入地址"></div></div></div>');
-	}
-
-	InvoiceUnitRadio();
 	DropdownBind();
 }

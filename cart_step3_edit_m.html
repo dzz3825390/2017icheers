@@ -447,50 +447,14 @@
 				<div class="Radio_infotext">依據法令規定，已捐贈發票無法索回，若需要退換貨，該發票將予以作廢。</div>
 			</div>
 			<div class="RadioBox Radio_invoice RadioBox_active" name='invoice'>二聯式電子發票</div>
-			<div class="invoice_radiobox_layout">
-				<div class="RadioBox Radio_invoice_unit RadioBox_active" name="invoice_unit2" id="invoice_SameAddress_2"><span>隨商品寄出</span></div>
-				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="invoice_AnotherAddress_2"><span>發票分開寄出</span></div>
-				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_phone"><span>手機<br/>條碼</span></div>
-				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_idcard"><span>自然人<br/>憑證</span></div>
-			</div>
-			<div class="invoice_AnotherAddress invoice_hide" style="display: none;">
-				<div class="cart_form_row">
-						<div class="formTitle">發票收件人姓名</div>
-						<input type='text' />
-				</div>
-				<div class="cart_form_row form_Address">
-					<div class="formTitle">發票收件人地址</div>
-					<div class="dropdown">
-						<div class="dropdown_text"><span>縣市</span></div>
-						<div class="dropdown_extend">
-							<div class="dropdown_option">
-								台北市
-							</div>
-							<div class="dropdown_option">
-								新北市
-							</div>
-							<div class="dropdown_option">
-								桃園市
-							</div>
-						</div>
-					</div>
-					<div class="dropdown">
-						<div class="dropdown_text"><span>鄉鎮區</span></div>
-						<div class="dropdown_extend">
-							<div class="dropdown_option">
-								aaa
-							</div>
-							<div class="dropdown_option">
-								bbb
-							</div>
-							<div class="dropdown_option">
-								ccc
-							</div>
-						</div>
-					</div>
-					<input type='text' placeholder="請輸入地址" />
+			<div>
+				<div class="invoice_radiobox_layout">
+					<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_phone"><span>手機<br/>條碼</span></div>
+					<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_idcard"><span>自然人<br/>憑證</span></div>
+					<div class="RadioBox Radio_invoice_unit RadioBox_active" name="invoice_unit2" id="electroic_invoice_nocarries"><span>我沒有<br/>載具</span></div>
 				</div>
 			</div>
+
 			<div class="electroic_invoice_input_phone invoice_hide" style="display: none;">
 				<div class="cart_form_row">
 					<div class="formTitle">手機條碼</div>
@@ -501,6 +465,11 @@
 				<div class="cart_form_row">
 					<div class="formTitle">自然人憑證條碼</div>
 					<input type='text' />
+				</div>
+			</div>
+			<div class="electroic_invoice_input_nocarries invoice_hide">
+				<div class="cart_form_row">
+					<div class="Radio_infotext">發票將於出貨後開立並Email至您的信箱，您可透過<a href="#">財政部電子發票整合平台</a>查詢及兌獎，若有任何需要協助之處，歡迎連繫iCheers愛酒窩客服團隊。</div>
 				</div>
 			</div>
 			<div class="RadioBox Radio_invoice" name='invoice'>三聯式電子發票</div>
@@ -540,52 +509,12 @@
 							<div class="formTitle">統一編號</div>
 							<input type='text' value="" id="CompanyIfo_BAN"/>
 						</div>
-						<div class="invoice_radiobox_layout">
-							<div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_SameAddress_3"><span>隨商品寄出</span></div>
-							<div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_AnotherAddress_3"><span>發票分開寄出</span></div>
-						</div>
-						<div class="invoice_AnotherAddress invoice_hide" style="display: none;">
-							<div class="cart_form_row">
-									<div class="formTitle">發票收件人姓名</div>
-									<input type='text' id="CompanyInfo_Name" />
-							</div>
-							<div class="cart_form_row form_Address">
-								<div class="formTitle">發票收件人地址</div>
-								<div id="CompanyInfo_Address">
-									<div class="dropdown">
-										<div class="dropdown_text"><span>縣市</span></div>
-										<div class="dropdown_extend">
-											<div class="dropdown_option">
-												台北市
-											</div>
-											<div class="dropdown_option">
-												新北市
-											</div>
-											<div class="dropdown_option">
-												桃園市
-											</div>
-										</div>
-									</div>
-									<div class="dropdown">
-										<div class="dropdown_text"><span>鄉鎮區</span></div>
-										<div class="dropdown_extend">
-											<div class="dropdown_option">
-												aaa
-											</div>
-											<div class="dropdown_option">
-												bbb
-											</div>
-											<div class="dropdown_option">
-												ccc
-											</div>
-										</div>
-									</div>
-									<input type='text' placeholder="請輸入地址" />
-								</div>
-							</div>
+					</div>
+					<div class="cart_form_row">
+						<div class="NoticeText">
+							發票將於出貨後開立並Email至您的信箱，亦可至「訂單查詢」自行下載列印，恕不再提供紙本發票。
 						</div>
 					</div>
-					
 					
 				</div>
 				
@@ -628,6 +557,14 @@
 			<div class="row">
 				<div class="text">總金額</div>
 				<div class="total">$&nbsp;200</div>
+			</div>
+		</div>
+		<div class="cart_form_row">
+			<div class="checkbox_layout checkbox_layout_mutiRowText" style="align-items: flex-start;">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="checkbox_text">若此訂單發票金額發生變動，本人同意愛酒窩得對本次消費發票進行折讓作業以符合稅務法規。</div>
 			</div>
 		</div>
 		<div class="BTN_Order_Detail_extend">展開商品明細<i></i></div>
