@@ -122,7 +122,8 @@
 	                DeliveryType:'Motocycle',
 	                BuildingGuardCollect:true,
 	                ReuseBox:false,
-	                ReusePaperMaterial:false
+	                ReusePaperMaterial:false,
+	                LabelCheck:true
 	            }
 	        ]
 	        var TestData_Custom2 = [
@@ -138,7 +139,8 @@
 	                DeliveryType:'T-cat',
 	                BuildingGuardCollect:false,
 	                ReuseBox:true,
-	                ReusePaperMaterial:true
+	                ReusePaperMaterial:true,
+	                LabelCheck:false
 	            }
 	        ]
 
@@ -146,54 +148,6 @@
 	        $('#RecordedAddress_Selector .dropdown_option').click(function(){
 	        	var ImportDataName = $(this).attr('id');
 	        	switch (ImportDataName){
-	        		/*case 'Option_PurchaseInfo':
-	        			$('#Form_RecordedAddress').attr('formstatus','ImportPurchaseAddress');
-	        			if (HasPurchaseInfo){
-	        				var TestData_Purchase = [
-					            {
-					                Name: $('#PurchaseInfo_Name').text(),
-					                Sex: $('#PurchaseInfo_Sex').text(),
-					                OtherSexualText: $('#PurchaseInfo_OtherSexualText').val(),
-					                Phone: $('#PurchaseInfo_Phone').text(),
-					                Address: $('#PurchaseInfo_Address').text(),
-					                //時間與日期不在訂購人資料，但若訂購人是已紀錄狀態則為非第一次下單，原則上會有上次的配送時間與日期的紀錄
-					                Time:'上午(08~13時)',
-					                Date:'平日',
-					                BuildingGuardCollect: false,
-					                ReuseBox: false,
-					                ReusePaperMaterial: true
-					            }
-					        ]
-
-					        ImportDeliveryInfo(TestData_Purchase);
-
-	        			} else {
-
-	        				//將地址串在一起
-	        				var PurchaseAddress = '';
-
-	        				PurchaseAddress = $('#PurchaseInfo_AddressDistrict').text().split(/[^0-9a-zA-Z]+/g)[0] + $('#PurchaseInfo_AddressCity').text() + $('#PurchaseInfo_AddressDistrict').text().substring(4,7) + $('#PurchaseInfo_AddressOther').val();
-
-	        				var TestData_Purchase = [
-					            {
-					                Name: $('#PurchaseInfo_Name').val(),
-					                Sex: $('#PurchaseInfo_Sex').find('.RadioBox_active').attr('sexual'),
-					                OtherSexualText: $('#PurchaseInfo_OtherSexualText').val(),
-					                Phone: $('#PurchaseInfo_Phone').val(),
-					                Address: PurchaseAddress,
-					                Time:'',
-					                Date:'',
-					                BuildingGuardCollect: false,
-					                ReuseBox: false,
-					                ReusePaperMaterial: false
-					            }
-					        ]
-
-					        ImportDeliveryInfo(TestData_Purchase);
-
-	        			}
-	        		break;*/
-	        		
 	        		case 'Option_CustomInfo1' :
 	        			$('#Form_RecordedAddress').attr('formstatus','CustomAddress');
 	        			ImportDeliveryInfo(TestData_Custom1);
@@ -264,6 +218,15 @@
 		    		$('.number_paperbag span').css('display','inline');
 		    	} else{
 		    		$('.number_paperbag span').css('display','none');
+		    	}
+
+		    	//包裝說明文字
+		    	if ($(this).find('.icon_check').hasClass('active')){
+		    		$(this).parent().next('.Package_Info_extend').css('display','block');
+		    		//$('.Package_Info_extend').css('display','block');
+		    	} else{
+		    		$(this).parent().next('.Package_Info_extend').css('display','none');
+		    		//$('.Package_Info_extend').css('display','none');
 		    	}
 		    });
 
@@ -364,42 +327,50 @@
 								<span>宅配到府</span>
 							</div>
 							<div class="dropdown_extend">
-								<div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件，運費$300</div>
-								<div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配，運費$200</div>
-								<!--<div class="dropdown_option" id="DeliveryInfo_Type_Car">汽車當日配(需下樓自取)</div>-->
-								<div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div>								
-								<div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">預約自取</div>
+								<div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div>	
+								<div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配</div>
+								<div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件</div>
+								<div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">預約自取</div>		
 							</div>
+
 						</div>
 					</div>
-					<div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SuperExpress_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班時間（周一至周五09:00~17:00，國定假日除外）盡速出貨，歡迎備註說明，我們會盡力達成您的期望；若您於「非」上班時間下達需求，我們將於下一個工作日火速出貨。</div>
-					<div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">限雙北區域，付款方式僅限匯款/刷卡。<br/>將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00前到貨；若您於「非」上班時間下達需求，將順延至下一個工作當日出貨。</div>
-					<div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SelfCollect_text" style="display:none;text-align: left;">請於抵達前1小時來電，<br/>可預約時段：上班日11:00~12:00、16:00~18:00。<br/>地址：新北市汐止區中興路43號1樓 國揚矽谷大廳（開車可臨停在大廳對面）</div>
+					<div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00到貨；若已截單（超過當日14:00）將順延至下一個工作當日出貨。</div>
+					<div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SelfCollect_text" style="display:none;text-align: left;">請於抵達前1小時來電確認已備好貨，可預約時段：上班日11:00~12:00、16:00~18:00。地址：新北市汐止區中興路43號1樓 國揚矽谷大廳（開車可臨停在大廳對面</div>
+					<div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SuperExpress_text" style="display:none;text-align: left;">將於上班日（周一至周五，國定假日除外）火速出貨，歡迎備註說明，我們會盡力達成您的期望；若已截單（超過當日17:00）將順延至下個工作日急件出貨。特急件將加收運費$300，若滿免運門檻則加收$100。</div>
+
 				</div>
-				<div class="cart_form_row"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div></div>
-				<div class="cart_form_row"><div class="formTitle">希望配送星期</div><div class="Radio_Delivery_row" id="DeliveryInfo_Date"><div class="RadioBox Radio_DeliveryTime" name="deliverydate">平日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div></div></div>
+				<div class="cart_form_row"  id="DeliveryInfo_Time"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div></div>
+				<div class="cart_form_row"  id="DeliveryInfo_Date"><div class="formTitle">希望配送星期</div><div class="Radio_Delivery_row" id="DeliveryInfo_Date"><div class="RadioBox Radio_DeliveryTime" name="deliverydate">平日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div></div></div>
 				<div class="cart_form_row">
-					<div class="formTitle">環保選項</div>
-					<div class="checkbox_layout" id="ReuseBox">
-						<div class="option_check">
+					<div class="formTitle">包裝選項</div>
+					<div class="checkbox_layout" >
+						<div class="option_check Package_Info" id="Checkbox_Paperbag">
 							<div class="icon_check"></div>
 						</div>
-						<div class="checkbox_text">我不介意用乾淨堅固的二手紙箱。</div>
+						<div class="checkbox_text number_paperbag">
+							請隨貨附提袋
+							<span  style="display: none;">
+								<input type="number" name="" style="width:60px;">個
+							</span>
+						</div>
 					</div>
-					<div class="checkbox_layout" id="ReusePaperMaterial">
-						<div class="option_check">
+					<div class="text Package_Info_extend">敬請知悉：iCheers提袋為單入常規尺寸，若商品屬於下列情況，我們將<b style="color:#c20012">「不會」</b>隨貨附贈，恕不另行通知：1) 商品已有附贈原廠提袋、2)特殊瓶身無法裝入、3)禮盒型商品無法裝入。</div>
+					<div class="checkbox_layout checkbox_layout_mutiRowText">
+						<div class="option_check Package_Info" id="ReusePaperMaterial">
 							<div class="icon_check"></div>
 						</div>
 						<div class="checkbox_text">
-							我不介意用回收紙緩衝材(取代塑膠氣泡袋)。
+							我不介意用回收紙緩衝材（取代塑膠氣泡袋）。
 							<a href="#">示意圖</a>
 						</div>
 					</div>
-					<div class="img" style="display: none;">
-						<img src="images/mobile/green_package.jpg">
-					</div>
-					<div class="text" style="margin-bottom:32px;">
-						敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。
+					<div class="text Package_Info_extend">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>
+					<div class="checkbox_layout checkbox_layout_mutiRowText">
+						<div class="option_check" id="ReuseBox">
+							<div class="icon_check active"></div>
+						</div>
+						<div class="checkbox_text">我不介意用乾淨堅固的二手紙箱。</div>
 					</div>
 				</div>
 
@@ -411,20 +382,6 @@
 		<div class="cart_form_row">
 			<div class="formTitle">備註</div>
 			<textarea placeholder="可指定到貨日，但國定假日及周日恕無法配送喔！"></textarea>
-		</div>
-		<div class="cart_form_row">
-			<div class="checkbox_layout" >
-				<div class="option_check" id="Checkbox_Paperbag">
-					<div class="icon_check"></div>
-				</div>
-				<div class="checkbox_text number_paperbag">
-					請隨貨附提袋
-					<span  style="display: none;">
-						<input type="number" name="">個
-					</span>
-				</div>
-			</div>
-			<div class="text">敬請知悉：iCheers提袋為單入常規尺寸，若商品屬於下列情況，我們將<b style="color:#c20012">「不會」</b>隨貨附贈，恕不另行通知：1) 商品已有附贈原廠提袋、2)特殊瓶身無法裝入、3)禮盒型商品無法裝入。</div>
 		</div>
 		
 	</section>

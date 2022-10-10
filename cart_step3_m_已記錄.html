@@ -122,7 +122,8 @@
 	                DeliveryType:'Motocycle',
 	                BuildingGuardCollect:true,
 	                ReuseBox:false,
-	                ReusePaperMaterial:false
+	                ReusePaperMaterial:false,
+	                LabelCheck:true
 	            }
 	        ]
 	        var TestData_Custom2 = [
@@ -138,7 +139,8 @@
 	                DeliveryType:'T-cat',
 	                BuildingGuardCollect:false,
 	                ReuseBox:true,
-	                ReusePaperMaterial:true
+	                ReusePaperMaterial:true,
+	                LabelCheck:false
 	            }
 	        ]
 
@@ -161,8 +163,9 @@
 					                Time:'上午(08~13時)',
 					                Date:'平日',
 					                BuildingGuardCollect: false,
-					                ReuseBox: false,
-					                ReusePaperMaterial: true
+					                ReuseBox: true,
+					                ReusePaperMaterial: false,
+					                LabelCheck:true
 					            }
 					        ]
 
@@ -185,8 +188,9 @@
 					                Time:'',
 					                Date:'',
 					                BuildingGuardCollect: false,
-					                ReuseBox: false,
-					                ReusePaperMaterial: false
+					                ReuseBox: true,
+					                ReusePaperMaterial: false,
+					                LabelCheck:true
 					            }
 					        ]
 
@@ -265,6 +269,15 @@
 		    		$('.number_paperbag span').css('display','inline');
 		    	} else{
 		    		$('.number_paperbag span').css('display','none');
+		    	}
+
+		    	//包裝說明文字
+		    	if ($(this).find('.icon_check').hasClass('active')){
+		    		$(this).parent().next('.Package_Info_extend').css('display','block');
+		    		//$('.Package_Info_extend').css('display','block');
+		    	} else{
+		    		$(this).parent().next('.Package_Info_extend').css('display','none');
+		    		//$('.Package_Info_extend').css('display','none');
 		    	}
 		    });
 
@@ -395,31 +408,34 @@
 				<div class="text" id="DeliveryInfo_Type">當日配</div>
 				<div class="text">希望於<span id="DeliveryInfo_Time">上午(08~13時)</span>配送</div>
 				<div class="text">希望於<span id="DeliveryInfo_Date">假日</span>配送</div>
-				<div class="text" id="ReuseBox">✓&nbsp;我愛地球，我選擇用乾淨堅固的二手紙箱出貨。
-				</div>
-				<div class="text" id="ReusePaperMaterial">✓&nbsp;我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。
+				<div class="text" id="ReusePaperMaterial">✓&nbsp;我不介意用回收紙緩衝材（取代塑膠氣泡袋）。
 					<a href="#">示意圖</a>
 				</div>
+				<div class="text" id="ReuseBox">✓&nbsp;我不介意用乾淨堅固的二手紙箱。
+				</div>
+				<div class="text" id="LabelCheck">✓&nbsp;我不介意酒標有微小瑕疵。
+				</div>
+				<div class="checkbox_layout" >
+					<div class="option_check" id="Checkbox_Paperbag">
+						<div class="icon_check"></div>
+					</div>
+					<div class="checkbox_text number_paperbag">
+						請隨貨附提袋
+						<span  style="display: none;">
+							<input type="number" name="" style="width:60px;">個
+						</span>
+					</div>
+				</div>
+				<div class="text Package_Info_extend">敬請知悉：iCheers提袋為單入常規尺寸，若商品屬於下列情況，我們將<b style="color:#c20012">「不會」</b>隨貨附贈，恕不另行通知：1) 商品已有附贈原廠提袋、2)特殊瓶身無法裝入、3)禮盒型商品無法裝入。</div>
 			</div>
+
 		</div>
+		
 		<div class="cart_form_row">
 			<div class="formTitle">備註</div>
 			<textarea placeholder="可指定到貨日，但國定假日及周日恕無法配送喔！"></textarea>
 		</div>
-		<div class="cart_form_row">
-			<div class="checkbox_layout" >
-				<div class="option_check" id="Checkbox_Paperbag">
-					<div class="icon_check"></div>
-				</div>
-				<div class="checkbox_text number_paperbag">
-					請隨貨附提袋
-					<span  style="display: none;">
-						<input type="number" name="" style="width:60px;">個
-					</span>
-				</div>
-			</div>
-			<div class="text">敬請知悉：iCheers提袋為單入常規尺寸，若商品屬於下列情況，我們將<b style="color:#c20012">「不會」</b>隨貨附贈，恕不另行通知：1) 商品已有附贈原廠提袋、2)特殊瓶身無法裝入、3)禮盒型商品無法裝入。</div>
-		</div>
+		
 		
 	</section>
 	<!--商品配送訊息 end-->

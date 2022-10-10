@@ -632,154 +632,7 @@
 	}
 }
 
-.cart_list_BottleSoldOut{
-	& .group_wine{
-		& .bottle_img{
-			opacity: 0.4;
-		}
-		& .bottle_info{
-			& .name_en{
-				color: #d9d9d9;
-			}
 
-			& .name_cn{
-				color: #d9d9d9;
-			}
-
-			& .status{
-				color: #d9d9d9;
-				& span{
-					&:after{
-						background-color: #d9d9d9;
-					}
-				}
-			}
-		}
-	}
-
-	& .gropu_name{
-		opacity: 0.4;
-	}
-
-	& .bottle_img{
-		opacity: 0.4;
-	}
-
-	& .bottle_info{
-		& .name_en{
-			color: #d9d9d9;
-		}
-
-		& .name_cn{
-			color: #d9d9d9;
-		}
-
-		& .status{
-			color: #d9d9d9;
-			& span{
-				&:after{
-					background-color: #d9d9d9;
-				}
-			}
-			& .icon_nobonus{
-				opacity: 0.4;
-			}
-		}
-	}
-
-	& .count_price{
-
-		& .count{
-
-			& .text{
-				color: #d9d9d9;
-			}
-
-			& .icon_minus{
-				border: 1px solid #e6e6e6;
-				background-color: #f2f2f2;
-				&:after{
-					background-color: #d9d9d9;
-				}
-			}
-
-			& .bottle_number{
-				color: #d9d9d9;
-				border: 1px solid #e6e6e6;
-				background-color: #f2f2f2;
-			}
-
-			& .icon_plus{
-				border: 1px solid #e6e6e6;
-				background-color: #f2f2f2;
-				&:before{
-					background-color: #d9d9d9;
-				}
-				&:after{
-					background-color: #d9d9d9;
-				}
-			}
-		}
-
-		& .price{
-
-			& .text{
-				color: #d9d9d9;
-			}
-			& .bottle_price{
-				color: #d9d9d9;
-			}
-		}
-
-		& .delete_text{
-			height: 40px;
-			font-size: 1rem;
-			line-height: 40px;
-			color: #ea3333;
-			position: absolute;
-			bottom: -11px;
-			opacity: 1;
-		}
-	}
-
-	& .btn_group_wine_detail_extend{
-		opacity: 0.4;
-	}
-
-	@include phone-l{
-		& .count_price{
-			& .delete_text{
-				bottom: -40px;
-				right: 0;
-			}
-		}
-	}
-
-	
-
-	@include pad-width{
-		& .count_price{
-			& .delete_text{
-				height: 44px;
-				font-size: 1.375rem;
-				line-height: 44px;
-				left: 14px;
-			}
-		}
-		
-	}
-
-	@include pad-width-l{
-		& .count_price{
-			& .delete_text{
-				text-align: right;
-				right:0;
-				bottom: -16px;
-			}
-		}
-	}
-
-}
 
 .cart_list_event{
 	width: 100%;
@@ -984,6 +837,234 @@
 	    	}
 		}
 	}	
+}
+
+.cart_list_BottleSoldOut{
+	& .group_wine{
+		& .bottle_img{
+			opacity: 0.4;
+		}
+		& .bottle_info{
+			& .name_en{
+				color: #d9d9d9;
+			}
+
+			& .name_cn{
+				color: #d9d9d9;
+			}
+
+			& .status{
+				color: #d9d9d9;
+				& span{
+					&:after{
+						background-color: #d9d9d9;
+					}
+				}
+			}
+		}
+	}
+
+	& .gropu_name{
+		opacity: 0.4;
+	}
+
+	& .bottle_img{
+		opacity: 0.4;
+	}
+
+	& .bottle_info{
+		& .name_en{
+			color: #d9d9d9;
+		}
+
+		& .name_cn{
+			color: #d9d9d9;
+		}
+
+		& .status{
+			color: #d9d9d9;
+			& span{
+				&:after{
+					background-color: #d9d9d9;
+				}
+			}
+			& .icon_nobonus{
+				opacity: 0.4;
+			}
+		}
+	}
+
+	& .count_price{
+
+		& .count{
+
+			& .text{
+				color: #d9d9d9;
+			}
+
+			& .icon_minus{
+				border: 1px solid #e6e6e6;
+				background-color: #f2f2f2;
+				&:after{
+					background-color: #d9d9d9;
+				}
+			}
+
+			& .bottle_number{
+				color: #d9d9d9;
+				border: 1px solid #e6e6e6;
+				background-color: #f2f2f2;
+			}
+
+			& .icon_plus{
+				border: 1px solid #e6e6e6;
+				background-color: #f2f2f2;
+				&:before{
+					background-color: #d9d9d9;
+				}
+				&:after{
+					background-color: #d9d9d9;
+				}
+			}
+		}
+
+		& .price{
+
+			& .text{
+				color: #d9d9d9;
+			}
+			& .bottle_price{
+				color: #d9d9d9;
+			}
+		}
+
+		& .delete_text{
+			height: 40px;
+			font-size: 1rem;
+			line-height: 40px;
+			color: #ea3333;
+			position: absolute;
+			bottom: -11px;
+			opacity: 1;
+		}
+	}
+
+	& .gift_wine{
+		& .bottle_info{
+			& .name_en{
+				color: #d9d9d9;
+			}
+
+			& .name_cn{
+				color: #d9d9d9;
+			}
+
+			& .status{
+				color: #d9d9d9;
+				& span{
+					&:after{
+						background-color: #d9d9d9;
+					}
+				}
+				& .icon_nobonus{
+					opacity: 0.4;
+				}
+			}
+		}
+
+		& .count_price{
+
+			& .count{
+
+				& .text{
+					color: #d9d9d9;
+				}
+
+				& .icon_minus{
+					border: 1px solid #e6e6e6;
+					background-color: #f2f2f2;
+					&:after{
+						background-color: #d9d9d9;
+					}
+				}
+
+				& .bottle_number{
+					color: #d9d9d9;
+					border: 1px solid #e6e6e6;
+					background-color: #f2f2f2;
+				}
+
+				& .icon_plus{
+					border: 1px solid #e6e6e6;
+					background-color: #f2f2f2;
+					&:before{
+						background-color: #d9d9d9;
+					}
+					&:after{
+						background-color: #d9d9d9;
+					}
+				}
+			}
+
+			& .price{
+
+				& .text{
+					color: #d9d9d9;
+				}
+				& .bottle_price{
+					color: #d9d9d9;
+				}
+			}
+
+			& .delete_text{
+				height: 40px;
+				font-size: 1rem;
+				line-height: 40px;
+				color: #ea3333;
+				position: absolute;
+				bottom: -11px;
+				opacity: 1;
+			}
+		}
+	}
+
+	& .btn_group_wine_detail_extend{
+		opacity: 0.4;
+	}
+
+	@include phone-l{
+		& .count_price{
+			& .delete_text{
+				bottom: -40px;
+				right: 0;
+			}
+		}
+	}
+
+	
+
+	@include pad-width{
+		& .count_price{
+			& .delete_text{
+				height: 44px;
+				font-size: 1.375rem;
+				line-height: 44px;
+				left: 14px;
+			}
+		}
+		
+	}
+
+	@include pad-width-l{
+		& .count_price{
+			& .delete_text{
+				text-align: right;
+				right:0;
+				bottom: -16px;
+			}
+		}
+	}
+
 }
 
 .cart_list_BonusCoupon{
@@ -1800,7 +1881,7 @@
 		line-height: 45px;
 		cursor: pointer;
 		position: absolute;
-		top: -67px;
+		top: -75px;
 		right: 0;
 	}
 
@@ -1814,7 +1895,7 @@
 		line-height: 45px;
 		cursor: pointer;
 		position: absolute;
-		top: -67px;
+		top: -75px;
 		right: 0;
 		display: flex;
 		align-items: center;
@@ -1935,7 +2016,7 @@
 }
 
 .cart_form_row{
-	margin-top:1.25rem;
+	margin-top:1.75rem;
 	&:after{
 		@extend %clearfix;
 	}
@@ -2150,10 +2231,6 @@
 		& .option_check{
 			margin-top: -6px;
 		}
-	}
-
-	& #ReusePaperMaterial{
-		margin-top: 8px;
 	}
 
 	@include pad-width{
@@ -2898,4 +2975,21 @@
 		font-weight: bold;
 		color: $NoticeColor;
 	}
+}
+
+
+#DeliveryInfo_Type{
+	margin-bottom: 10px;
+	&:after{
+		content: '';
+		clear: both;
+		display: block;
+	}
+}
+
+.Package_Info_extend{
+	background-color: #f2f2f2;
+	padding:10px 16px;
+	box-sizing: border-box;
+	display: none;
 }
