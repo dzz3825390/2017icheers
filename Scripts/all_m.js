@@ -419,6 +419,8 @@ $(document).ready(function(){
 		PopWindow('#MailWindow_ActiveCWC03',intBrowserH,intBrowserW);
 	});
 
+	PopWindow('#DeliveryTypeMotocycleNotice',intBrowserH,intBrowserW);
+
 
 	//已綁定信用卡完成
 	/*$('#BTN_LinkedCard').click(function(){

@@ -162,6 +162,7 @@
 					                //時間與日期不在訂購人資料，但若訂購人是已紀錄狀態則為非第一次下單，原則上會有上次的配送時間與日期的紀錄
 					                Time:'上午(08~13時)',
 					                Date:'平日',
+					                DeliveryType:'T-cat',
 					                BuildingGuardCollect: false,
 					                ReuseBox: true,
 					                ReusePaperMaterial: false,
@@ -405,9 +406,6 @@
 				</div>
 				<div class="text" id="BuildingGuardCollect">✓&nbsp;管理員可代收
 				</div>
-				<div class="text" id="DeliveryInfo_Type">當日配</div>
-				<div class="text">希望於<span id="DeliveryInfo_Time">上午(08~13時)</span>配送</div>
-				<div class="text">希望於<span id="DeliveryInfo_Date">假日</span>配送</div>
 				<div class="text" id="ReusePaperMaterial">✓&nbsp;我不介意用回收紙緩衝材（取代塑膠氣泡袋）。
 					<a href="#">示意圖</a>
 				</div>
@@ -415,6 +413,27 @@
 				</div>
 				<div class="text" id="LabelCheck">✓&nbsp;我不介意酒標有微小瑕疵。
 				</div>
+				<div class="cart_form_row form_Address">
+					<div class="formTitle">配送方式</div>
+					<div id="DeliveryInfo_Type">
+						<div class="dropdown district">
+							<div class="dropdown_text">
+								<span>宅配到府</span>
+							</div>
+							<div class="dropdown_extend">
+								<div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div>	
+								<div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配</div>
+								<div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">預約自取</div>		
+							</div>
+
+						</div>
+					</div>
+					<div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00到貨；若已截單（超過當日14:00）將順延至下一個工作當日出貨。</div>
+					<div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SelfCollect_text" style="display:none;text-align: left;">請於抵達前1小時來電確認已備好貨，可預約時段：上班日11:00~12:00、16:00~18:00。地址：新北市汐止區中興路43號1樓 國揚矽谷大廳（開車可臨停在大廳對面</div>
+				</div>
+				<div class="cart_form_row" id="DeliveryInfo_Time"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div></div>
+
+				<div class="cart_form_row" id="DeliveryInfo_Date"><div class="formTitle">希望配送星期</div><div class="Radio_Delivery_row" id="DeliveryInfo_Date"><div class="RadioBox Radio_DeliveryTime" name="deliverydate">平日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div></div></div>
 				<div class="checkbox_layout" >
 					<div class="option_check" id="Checkbox_Paperbag">
 						<div class="icon_check"></div>
@@ -1008,6 +1027,23 @@
 		</div>
 	</div>
 	<!--修改訂購人資訊 end-->
+
+	<!--當日配提醒-->
+	<div class="PopWindow_layout" id="DeliveryTypeMotocycleNotice">
+		<div class="PopWindow_title">
+			當日配注意事項
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			
+			<div class="PopWindow_content_text">
+				您的訂單金額已超出當日配/特急件<em style="font-weight: bold;color:#B00808;">貨故最高賠償上限（5,000 元）</em>，若運送過程造成商品破損，超額部分我方將不予賠償，請問是否願意自行負擔貨物受損風險，繼續使用當日配/特急件配送服務？
+			</div>
+			<div class="Popwindow_ConfirmBtn">我願意</div>
+			<div class="Popwindow_ConfirmBtn">我不願意</div>
+		</div>
+	</div>
+	<!--當日配提醒 end-->
 
 	<!--Vip pass 刷卡/行動支付-->
 	<div class="PopWindow_layout" id="VipPassCreditCard">
