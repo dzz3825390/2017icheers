@@ -801,12 +801,104 @@
 		}
 	}
 
+	& .gift_soldout{
+		& .bottle_img{
+			opacity: 0.4;
+		}
+
+		& .bottle_info{
+			& .name_en{
+				color: #d9d9d9;
+			}
+
+			& .name_cn{
+				color: #d9d9d9;
+			}
+
+			& .status{
+				color: #d9d9d9;
+				& span{
+					&:after{
+						background-color: #d9d9d9;
+					}
+				}
+				& .icon_nobonus{
+					opacity: 0.4;
+				}
+			}
+		}
+
+		& .count_price{
+
+			& .count{
+
+				& .text{
+					color: #d9d9d9;
+				}
+
+				& .icon_minus{
+					border: 1px solid #e6e6e6;
+					background-color: #f2f2f2;
+					&:after{
+						background-color: #d9d9d9;
+					}
+				}
+
+				& .bottle_number{
+					color: #d9d9d9;
+					border: 1px solid #e6e6e6;
+					background-color: #f2f2f2;
+				}
+
+				& .icon_plus{
+					border: 1px solid #e6e6e6;
+					background-color: #f2f2f2;
+					&:before{
+						background-color: #d9d9d9;
+					}
+					&:after{
+						background-color: #d9d9d9;
+					}
+				}
+			}
+
+			& .price{
+
+				& .text{
+					color: #d9d9d9;
+				}
+				& .bottle_price{
+					color: #d9d9d9;
+				}
+			}
+
+			& .delete_text{
+				height: 40px;
+				font-size: 1rem;
+				line-height: 40px;
+				color: #ea3333;
+				position: absolute;
+				bottom: -11px;
+				opacity: 1;
+			}
+		}
+	}
+
 	@include phone-l{
 		& .gift_wine{
 	    	justify-content: flex-end;
 	    	& .bottle_info{
 	    		width: calc(100% - 70px - 14px);
 	    	}
+		}
+
+		& .gift_soldout{
+			& .count_price{
+				& .delete_text{
+					bottom: -40px;
+					right: 0;
+				}
+			}
 		}
 	}
 
@@ -826,6 +918,17 @@
 	    	& .bottle_info{
 	    		width: calc(100% - 135px - 18px);
 	    	}
+		}
+
+		.gift_soldout{
+			& .count_price{
+				& .delete_text{
+					height: 44px;
+					font-size: 1.375rem;
+					line-height: 44px;
+					left: 14px;
+				}
+			}
 		}
 	}
 
@@ -946,85 +1049,6 @@
 			position: absolute;
 			bottom: -11px;
 			opacity: 1;
-		}
-	}
-
-	& .gift_wine{
-		& .bottle_info{
-			& .name_en{
-				color: #d9d9d9;
-			}
-
-			& .name_cn{
-				color: #d9d9d9;
-			}
-
-			& .status{
-				color: #d9d9d9;
-				& span{
-					&:after{
-						background-color: #d9d9d9;
-					}
-				}
-				& .icon_nobonus{
-					opacity: 0.4;
-				}
-			}
-		}
-
-		& .count_price{
-
-			& .count{
-
-				& .text{
-					color: #d9d9d9;
-				}
-
-				& .icon_minus{
-					border: 1px solid #e6e6e6;
-					background-color: #f2f2f2;
-					&:after{
-						background-color: #d9d9d9;
-					}
-				}
-
-				& .bottle_number{
-					color: #d9d9d9;
-					border: 1px solid #e6e6e6;
-					background-color: #f2f2f2;
-				}
-
-				& .icon_plus{
-					border: 1px solid #e6e6e6;
-					background-color: #f2f2f2;
-					&:before{
-						background-color: #d9d9d9;
-					}
-					&:after{
-						background-color: #d9d9d9;
-					}
-				}
-			}
-
-			& .price{
-
-				& .text{
-					color: #d9d9d9;
-				}
-				& .bottle_price{
-					color: #d9d9d9;
-				}
-			}
-
-			& .delete_text{
-				height: 40px;
-				font-size: 1rem;
-				line-height: 40px;
-				color: #ea3333;
-				position: absolute;
-				bottom: -11px;
-				opacity: 1;
-			}
 		}
 	}
 
