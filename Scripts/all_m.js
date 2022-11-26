@@ -370,6 +370,12 @@ $(document).ready(function(){
 		PopWindow('#FreightInfoWindow',intBrowserH,intBrowserW);
 	});
 
+	//窖藏配送免運券說明
+	$('#CWCDeliveryFreeTicket').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#CWCDeliveryFreeTicketWindow',intBrowserH,intBrowserW);
+	});
+
 	//租金說明
 	$('#RentRuleInfo').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
