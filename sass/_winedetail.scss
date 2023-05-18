@@ -5,19 +5,36 @@
 	@extend %SectionLayout;
 }
 
+// 20230503 JOAN 調整酒瓶圖標籤
 .detail_bottle_img{
 	width: 100%;
 	height: 385px;
-	@extend %backgroundimagecontain;
+	// @extend %backgroundimagecontain;
 	position: relative;
 	@include pad-width{
 		height: 560px;
 	}
-
 	@include large-pad-width{
 		height: 700px;
-		background-position-x: 10%;
+		// background-position-x: 10%;
 	}
+}
+.detail_bottleImg_winebottle{
+	width: auto;
+	height: 100%;
+	display: block;
+	margin: 0 auto;
+
+	& img{
+		width: auto;
+		height: 100%;
+		display: block;
+		margin: 0 auto;
+		@include large-pad-width{
+			margin-left: 10%;
+		}
+	}
+	
 }
 
 .detail_bottleImg_status_layout{

@@ -268,7 +268,6 @@ $(document).ready(function(){
 				//console.log(isDropdownExtendScroll);
 				//console.log('scroll');
 			});
-			$(window).on('touchstart',function(){});
 			$(window).on('touchend.checkclick',function(e){
 				//須改js偵測是否為scroll 若操作方法為scroll則不關閉下拉選單
 				//使用變數承接e.target系列以便於巢狀內使用
@@ -293,7 +292,6 @@ $(document).ready(function(){
 						}
 						isDropdownExtendScroll = false;
 						$(window).off('touchend.checkclick');
-						$(window).off('touchstart');
 					}
 				},100);
 		

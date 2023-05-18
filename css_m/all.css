@@ -88,7 +88,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
 }
 
-.SideMenu_Mode .icon, .SideMenu_Export .icon, .SideMenu_TrackingList .icon, .addcart_normal button, .addcart_normal_withtext button:after, .addcart_fast button, .addcart_fast_withtext button:after, .addcart_preorder button, .addcart_preorder_withtext button:after, .addcart_soldout button, .addcart_soldout_withtext button:after, .detail_bottle_img, .detail_MoreInfo_OneInfo .awardbox .img, .winelist_allyear_extend .OneYearRow .tracking_list span, .About_BounsInfo .icon, .About_Newbie_CartIcons .CartIcons .Normal, .About_Newbie_CartIcons .CartIcons .Fast, .About_Newbie_CartIcons .CartIcons .Preorder, .wine_bottle_list .one_bottle_img {
+.SideMenu_Mode .icon, .SideMenu_Export .icon, .SideMenu_TrackingList .icon, .addcart_normal button, .addcart_normal_withtext button:after, .addcart_fast button, .addcart_fast_withtext button:after, .addcart_preorder button, .addcart_preorder_withtext button:after, .addcart_soldout button, .addcart_soldout_withtext button:after, .detail_MoreInfo_OneInfo .awardbox .img, .winelist_allyear_extend .OneYearRow .tracking_list span, .About_BounsInfo .icon, .About_Newbie_CartIcons .CartIcons .Normal, .About_Newbie_CartIcons .CartIcons .Fast, .About_Newbie_CartIcons .CartIcons .Preorder, .wine_bottle_list .one_bottle_img {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -3769,7 +3769,24 @@ h4 {
 @media screen and (min-width: 1360px) {
   .detail_bottle_img {
     height: 700px;
-    background-position-x: 10%;
+  }
+}
+
+.detail_bottleImg_winebottle {
+  width: auto;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+.detail_bottleImg_winebottle img {
+  width: auto;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1360px) {
+  .detail_bottleImg_winebottle img {
+    margin-left: 10%;
   }
 }
 
