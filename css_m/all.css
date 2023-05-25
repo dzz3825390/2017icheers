@@ -7203,6 +7203,11 @@ h2.detail_Name_cn {
   .cart_list_gift .gift_wine .bottle_info {
     width: calc(45% + 40px);
   }
+  .cart_list_gift .gift_soldout .count_price .delete_text {
+    text-align: right;
+    right: 0;
+    bottom: -16px;
+  }
 }
 
 .cart_list_BottleSoldOut .group_wine .bottle_img {

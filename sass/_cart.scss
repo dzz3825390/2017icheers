@@ -939,6 +939,15 @@
 	    		width: calc(45% + 40px);
 	    	}
 		}
+		.gift_soldout{
+			& .count_price{
+				& .delete_text{
+					text-align: right;
+					right: 0;
+					bottom: -16px;
+				}
+			}
+		}
 	}	
 }
 
