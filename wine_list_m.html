@@ -50,7 +50,7 @@
 			    	var BottleHeight = BottleWidth*3.2;
 			    	$(this).css('height',BottleHeight);
 			    	//隔壁的info欄也一樣高
-			    	$(this).next().css('height',BottleHeight);
+			    	// $(this).next().css('height',BottleHeight);
 			    });
 		    } else if (intBrowserW < 1366){
 		    	$('.winelist_OneWine_bottleImg').each(function(){
@@ -215,20 +215,52 @@
 					<span>卡斯提亞拉曼查</span>
 				</div>
 			</div>
-			
+			<!-- 20230602 JOAN 修改多重售價樣式 -->
 			<div class="bottle_price">
-				<div class="price_row">
+				<!-- 一般售價 -->
+				<!-- <div class="price_row">
 					<div class="addcart_normal">
 						<span><label>$</label>2,312,321</span>
 						<button></button>
 					</div>
-				</div>
-				<div class="price_row">
+				</div> -->
+				<!-- 快速到貨 -->
+				<!-- <div class="price_row">
 					<div class="addcart_fast">
 						<span><label>$</label>1,350</span>
 						<button></button>
 					</div>
+				</div> -->
+				<!-- 私密限定 -->
+				<div class="price_row">
+					<div class="addcart_vip">
+						<span>
+							<label class="__SecretLabel">私密限定</label>
+							<label>$</label>2,312,321
+						</span>
+						<button></button>
+					</div>
 				</div>
+				<!-- 私密限定 快速到貨 -->
+				<div class="price_row">
+					<div class="addcart_vip-fast">
+						<span>
+							<label class="__SecretLabel ">私密限定</label>
+							<label>$</label>1,350
+						</span>
+						<button class="__btn-disable"></button>
+					</div>
+				</div>
+				<!-- 私密限定 預購 -->
+				<!-- <div class="price_row">
+					<div class="addcart_vip-preorder">
+						<span>
+							<label class="__SecretLabel">私密限定</label>
+							<label>$</label>1,350
+						</span>
+						<button></button>
+					</div>
+				</div> -->
 			</div>
 			
 		</div>

@@ -12,6 +12,7 @@ $PreorderColor : #0071bc;
 $NormalColor : #cf3448;
 $NormalColor-black : #4d4d4d;
 $SoldColor : #929091;
+$DisableColor: #d9d9d9;
 
 //font color
 $TextColor: #666666;
@@ -29,9 +30,16 @@ $PadSecondTitleFontSize: 1.5rem;
 $padContentFontSize: 1.25rem;
 
 //mediaquery size
+$PhoneWith-Mini : 380px;
 $PadWidth : 760px;
 $PadWidth-L : 1020px;
 $LargePadWidth: 1360px;
+
+@mixin phone-width-Mini() {
+	@media screen and (max-width: $PhoneWith-Mini){
+		@content;
+	}
+}
 
 @mixin phone-l(){
 	@media screen and (orientation: landscape) {
@@ -253,6 +261,37 @@ $LargePadPadding : 40px;
 	}
 }
 
+@mixin SecretLabel {
+    position: relative;
+    z-index: 1;
+	display: inline-block;
+    line-height: 100%;
+    text-align: center;
+    color: #fff;
+    margin-right: 5px;
+    padding: 2px 3px;
+    vertical-align: middle;
+    font-size: 15px;
+	// font-weight: 500;
+	height: 36px;
+	line-height: 40px;
+	white-space:nowrap;
+	float: left;
+
+	&:before {
+		content: '';
+		background-color: #929697;
+		z-index: -1;
+		position: absolute;
+		top: 10px; right: 0; bottom: 0; left: 0;
+		transform: skew(-30deg);
+		height: 24px;
+	}
+
+
+}
+
+
 //Cart
 @mixin Cart_Wine_DetailInfo (){
 	width: 100%;
@@ -282,14 +321,16 @@ $LargePadPadding : 40px;
 			line-height: 1.3rem;
 			color: #666;
 		}
+		// 20230605 JOAN 修改多重售價樣式
 		& .status{
 			display: flex;
+			flex-wrap: wrap;
 			font-size: 1rem;
 			line-height: 1.3rem;
 			color: #666;
 			margin-top: 5px;
 			& span{
-				&:after{
+				&:not(:first-child)::before{
 					content: '';
 					display: inline-block;
 					width: 1px;
@@ -297,9 +338,7 @@ $LargePadPadding : 40px;
 					background-color: #999999;
 					margin:0 8px;
 				}
-				&:nth-child(3):after{
-					display: none;
-				}
+				
 			}
 			& .icon_nobonus{
 				width: 18px;
@@ -314,6 +353,17 @@ $LargePadPadding : 40px;
 				background-color: #999;
 				border-radius: 5px;
 				margin-right: 5px;
+			}
+
+			// 20230601 JOAN 調整價格樣式
+			& .cartlist_price{
+				margin-right: 8px;
+				white-space: nowrap;
+				display: inline-block;
+				
+				&:nth-last-child(2){
+					color: $DisableColor;
+				}
 			}
 		}
 
@@ -458,7 +508,7 @@ $LargePadPadding : 40px;
 				font-size: 1.375rem;
 				line-height: 1.85rem;
 				& span{
-					&:after{
+					& :not(:first-child)::before{
 						height: 18px;
 						margin:0 12px;
 					}
@@ -596,6 +646,16 @@ $LargePadPadding : 40px;
 			&.preorder{
 				color: $PreorderColor;
 			}
+		}
+		& .__SecretLabel{
+			@include SecretLabel;
+			line-height: 20px;
+			margin-right: 10px;
+			height: 20px;
+		}
+		& .__SecretLabel:before{
+			height: auto;
+			top: 0;right: 0;bottom: 0;left: 0;
 		}
 	}
 

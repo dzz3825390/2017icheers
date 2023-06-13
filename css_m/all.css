@@ -88,7 +88,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-repeat: no-repeat;
 }
 
-.SideMenu_Mode .icon, .SideMenu_Export .icon, .SideMenu_TrackingList .icon, .addcart_normal button, .addcart_normal_withtext button:after, .addcart_fast button, .addcart_fast_withtext button:after, .addcart_preorder button, .addcart_preorder_withtext button:after, .addcart_soldout button, .addcart_soldout_withtext button:after, .detail_MoreInfo_OneInfo .awardbox .img, .winelist_allyear_extend .OneYearRow .tracking_list span, .About_BounsInfo .icon, .About_Newbie_CartIcons .CartIcons .Normal, .About_Newbie_CartIcons .CartIcons .Fast, .About_Newbie_CartIcons .CartIcons .Preorder, .wine_bottle_list .one_bottle_img {
+.SideMenu_Mode .icon, .SideMenu_Export .icon, .SideMenu_TrackingList .icon, .addcart_normal button, .addcart_normal_withtext button:after, .addcart_vip button, .addcart_vip_withtext button:after, .addcart_fast button, .addcart_fast_withtext button:after, .addcart_vip-fast button, .addcart_vip-fast_withtext button:after, .addcart_preorder button, .addcart_vip-preorder button, .addcart_preorder_withtext button:after, .addcart_vip-preorder_withtext button:after, .addcart_soldout button, .addcart_soldout_withtext button:after, .detail_MoreInfo_OneInfo .awardbox .img, .winelist_allyear_extend .OneYearRow .tracking_list span, .About_BounsInfo .icon, .About_Newbie_CartIcons .CartIcons .Normal, .About_Newbie_CartIcons .CartIcons .Fast, .About_Newbie_CartIcons .CartIcons .Preorder, .wine_bottle_list .one_bottle_img {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -1571,6 +1571,161 @@ h4 {
   background-image: url(../images/mobile/addcart_icon_normal.png);
 }
 
+.addcart_vip {
+  float: right;
+  margin-top: 20px;
+}
+.addcart_vip span {
+  display: inline-block;
+  float: left;
+  color: #cf3448;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.875rem;
+  margin-right: 0.75rem;
+  position: relative;
+}
+.addcart_vip span label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
+@media screen and (min-width: 760px) {
+  .addcart_vip span {
+    font-size: 2.25rem;
+  }
+  .addcart_vip span label {
+    font-size: 1.5rem;
+  }
+}
+.addcart_vip span .__SecretLabel {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  margin-right: 5px;
+  padding: 2px 3px;
+  vertical-align: middle;
+  font-size: 15px;
+  height: 36px;
+  line-height: 40px;
+  white-space: nowrap;
+  float: left;
+  float: none;
+  position: absolute;
+  top: -35px;
+  right: 0;
+}
+.addcart_vip span .__SecretLabel:before {
+  content: '';
+  background-color: #929697;
+  z-index: -1;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: skew(-30deg);
+  height: 24px;
+}
+.addcart_vip button {
+  width: 40px;
+  height: 40px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  float: left;
+  border: none;
+  background-color: #cf3448;
+  background-image: url(../images/mobile/addcart_icon_normal.png);
+}
+
+.addcart_vip_withtext {
+  float: right;
+}
+.addcart_vip_withtext .__SecretpriceName {
+  display: none;
+}
+.addcart_vip_withtext .__SecretLabel {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  margin-right: 5px;
+  padding: 2px 3px;
+  vertical-align: middle;
+  font-size: 15px;
+  height: 36px;
+  line-height: 40px;
+  white-space: nowrap;
+  float: left;
+}
+.addcart_vip_withtext .__SecretLabel:before {
+  content: '';
+  background-color: #929697;
+  z-index: -1;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: skew(-30deg);
+  height: 24px;
+}
+.addcart_vip_withtext span {
+  display: inline-block;
+  float: left;
+  color: #cf3448;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.875rem;
+  margin-right: 0.75rem;
+}
+.addcart_vip_withtext span label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
+@media screen and (min-width: 760px) {
+  .addcart_vip_withtext span {
+    font-size: 2.25rem;
+  }
+  .addcart_vip_withtext span label {
+    font-size: 1.5rem;
+  }
+}
+.addcart_vip_withtext button {
+  width: auto;
+  height: 40px;
+  font-size: 1rem;
+  line-height: 40px;
+  color: #fff;
+  padding-left: 12px;
+  padding-right: 6px;
+  font-family: 'Arial','Microsoft JhengHei';
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  float: left;
+  border: none;
+  background-color: #cf3448;
+}
+.addcart_vip_withtext button:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  margin-right: -5px;
+  float: right;
+  background-image: url(../images/mobile/addcart_icon_normal.png);
+}
+
 .addcart_fast {
   float: right;
 }
@@ -1661,6 +1816,161 @@ h4 {
   background-image: url(../images/mobile/addcart_icon_fast.png);
 }
 
+.addcart_vip-fast {
+  float: right;
+  margin-top: 20px;
+}
+.addcart_vip-fast span {
+  display: inline-block;
+  float: left;
+  color: #ef9c00;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.875rem;
+  margin-right: 0.75rem;
+  position: relative;
+}
+.addcart_vip-fast span label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
+@media screen and (min-width: 760px) {
+  .addcart_vip-fast span {
+    font-size: 2.25rem;
+  }
+  .addcart_vip-fast span label {
+    font-size: 1.5rem;
+  }
+}
+.addcart_vip-fast span .__SecretLabel {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  margin-right: 5px;
+  padding: 2px 3px;
+  vertical-align: middle;
+  font-size: 15px;
+  height: 36px;
+  line-height: 40px;
+  white-space: nowrap;
+  float: left;
+  float: none;
+  position: absolute;
+  top: -35px;
+  right: 0;
+}
+.addcart_vip-fast span .__SecretLabel:before {
+  content: '';
+  background-color: #929697;
+  z-index: -1;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: skew(-30deg);
+  height: 24px;
+}
+.addcart_vip-fast button {
+  width: 40px;
+  height: 40px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  float: left;
+  border: none;
+  background-color: #ef9c00;
+  background-image: url(../images/mobile/addcart_icon_fast.png);
+}
+
+.addcart_vip-fast_withtext {
+  float: right;
+}
+.addcart_vip-fast_withtext .__SecretpriceName {
+  display: none;
+}
+.addcart_vip-fast_withtext .__SecretLabel {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  margin-right: 5px;
+  padding: 2px 3px;
+  vertical-align: middle;
+  font-size: 15px;
+  height: 36px;
+  line-height: 40px;
+  white-space: nowrap;
+  float: left;
+}
+.addcart_vip-fast_withtext .__SecretLabel:before {
+  content: '';
+  background-color: #929697;
+  z-index: -1;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: skew(-30deg);
+  height: 24px;
+}
+.addcart_vip-fast_withtext span {
+  display: inline-block;
+  float: left;
+  color: #ef9c00;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.875rem;
+  margin-right: 0.75rem;
+}
+.addcart_vip-fast_withtext span label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
+@media screen and (min-width: 760px) {
+  .addcart_vip-fast_withtext span {
+    font-size: 2.25rem;
+  }
+  .addcart_vip-fast_withtext span label {
+    font-size: 1.5rem;
+  }
+}
+.addcart_vip-fast_withtext button {
+  width: auto;
+  height: 40px;
+  font-size: 1rem;
+  line-height: 40px;
+  color: #fff;
+  padding-left: 12px;
+  padding-right: 6px;
+  font-family: 'Arial','Microsoft JhengHei';
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  float: left;
+  border: none;
+  background-color: #ef9c00;
+}
+.addcart_vip-fast_withtext button:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  margin-right: -5px;
+  float: right;
+  background-image: url(../images/mobile/addcart_icon_fast.png);
+}
+
 .addcart_preorder {
   float: right;
 }
@@ -1688,6 +1998,78 @@ h4 {
   }
 }
 .addcart_preorder button {
+  width: 40px;
+  height: 40px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  float: left;
+  border: none;
+  background-color: #0071bc;
+  background-image: url(../images/mobile/addcart_icon_preorder.png);
+}
+
+.addcart_vip-preorder {
+  float: right;
+  margin-top: 20px;
+}
+.addcart_vip-preorder span {
+  display: inline-block;
+  float: left;
+  color: #0071bc;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.875rem;
+  margin-right: 0.75rem;
+  position: relative;
+}
+.addcart_vip-preorder span label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
+@media screen and (min-width: 760px) {
+  .addcart_vip-preorder span {
+    font-size: 2.25rem;
+  }
+  .addcart_vip-preorder span label {
+    font-size: 1.5rem;
+  }
+}
+.addcart_vip-preorder span .__SecretLabel {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  margin-right: 5px;
+  padding: 2px 3px;
+  vertical-align: middle;
+  font-size: 15px;
+  height: 36px;
+  line-height: 40px;
+  white-space: nowrap;
+  float: left;
+  float: none;
+  position: absolute;
+  top: -35px;
+  right: 0;
+}
+.addcart_vip-preorder span .__SecretLabel:before {
+  content: '';
+  background-color: #929697;
+  z-index: -1;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: skew(-30deg);
+  height: 24px;
+}
+.addcart_vip-preorder button {
   width: 40px;
   height: 40px;
   -moz-border-radius: 4px;
@@ -1742,6 +2124,89 @@ h4 {
   background-color: #0071bc;
 }
 .addcart_preorder_withtext button:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  margin-right: -5px;
+  float: right;
+  background-image: url(../images/mobile/addcart_icon_preorder.png);
+}
+
+.addcart_vip-preorder_withtext {
+  float: right;
+}
+.addcart_vip-preorder_withtext .__SecretpriceName {
+  display: none;
+}
+.addcart_vip-preorder_withtext .__SecretLabel {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  margin-right: 5px;
+  padding: 2px 3px;
+  vertical-align: middle;
+  font-size: 15px;
+  height: 36px;
+  line-height: 40px;
+  white-space: nowrap;
+  float: left;
+}
+.addcart_vip-preorder_withtext .__SecretLabel:before {
+  content: '';
+  background-color: #929697;
+  z-index: -1;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: skew(-30deg);
+  height: 24px;
+}
+.addcart_vip-preorder_withtext span {
+  display: inline-block;
+  float: left;
+  color: #0071bc;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.875rem;
+  margin-right: 0.75rem;
+}
+.addcart_vip-preorder_withtext span label {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-right: 5px;
+}
+@media screen and (min-width: 760px) {
+  .addcart_vip-preorder_withtext span {
+    font-size: 2.25rem;
+  }
+  .addcart_vip-preorder_withtext span label {
+    font-size: 1.5rem;
+  }
+}
+.addcart_vip-preorder_withtext button {
+  width: auto;
+  height: 40px;
+  font-size: 1rem;
+  line-height: 40px;
+  color: #fff;
+  padding-left: 12px;
+  padding-right: 6px;
+  font-family: 'Arial','Microsoft JhengHei';
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  float: left;
+  border: none;
+  background-color: #0071bc;
+}
+.addcart_vip-preorder_withtext button:after {
   content: '';
   display: block;
   width: 35px;
@@ -1839,6 +2304,57 @@ h4 {
   margin-right: -5px;
   float: right;
   background-image: url(../images/mobile/addcart_icon_soldout.png);
+}
+
+.addcart_vip_withtext.DisablePrice .__SecretpriceName,
+.addcart_vip-preorder_withtext.DisablePrice .__SecretpriceName,
+.addcart_vip-fast_withtext.DisablePrice .__SecretpriceName {
+  display: block;
+  float: left;
+  margin-top: 16px;
+  margin-right: 6px;
+  color: #d9d9d9;
+}
+.addcart_vip_withtext.DisablePrice .__SecretLabel,
+.addcart_vip-preorder_withtext.DisablePrice .__SecretLabel,
+.addcart_vip-fast_withtext.DisablePrice .__SecretLabel {
+  display: none;
+}
+.addcart_vip_withtext.DisablePrice span,
+.addcart_vip-preorder_withtext.DisablePrice span,
+.addcart_vip-fast_withtext.DisablePrice span {
+  color: #d9d9d9;
+}
+.addcart_vip_withtext.DisablePrice button,
+.addcart_vip-preorder_withtext.DisablePrice button,
+.addcart_vip-fast_withtext.DisablePrice button {
+  background-color: #d9d9d9;
+  pointer-events: none;
+}
+
+.addcart_normal_withtext.DisablePrice span,
+.addcart_preorder_withtext.DisablePrice span,
+.addcart_fast_withtext.DisablePrice span {
+  color: #d9d9d9;
+}
+.addcart_normal_withtext.DisablePrice button,
+.addcart_preorder_withtext.DisablePrice button,
+.addcart_fast_withtext.DisablePrice button {
+  background-color: #d9d9d9;
+  pointer-events: none;
+}
+
+.detail_price_row .__btn-disable,
+.price_row .__btn-disable {
+  background-color: #d9d9d9;
+  pointer-events: none;
+}
+
+.__btn-disappear button {
+  display: none;
+}
+.__btn-disappear span {
+  margin-right: 0;
 }
 
 /***price end***/
@@ -3921,10 +4437,37 @@ h4 {
 }
 
 @media screen and (min-width: 1360px) {
-  .detail_addcartBtns {
+  .detail_bottleImg_layout .detail_addcartBtns {
     position: absolute;
     right: 40px;
-    bottom: 60px;
+    top: 500px;
+    width: 55%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    direction: rtl;
+    margin-top: 5px;
+    overflow: hidden;
+  }
+  .detail_bottleImg_layout .detail_addcartBtns > div {
+    width: 50%;
+    margin: 10px 0;
+  }
+}
+@media screen and (max-width: 380px) {
+  .detail_bottleImg_layout .detail_addcartBtns .detail_price_row {
+    display: flex;
+    flex-direction: column;
+  }
+  .detail_bottleImg_layout .detail_addcartBtns .detail_price_row div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .detail_bottleImg_layout .detail_addcartBtns .detail_price_row div label {
+    white-space: nowrap;
   }
 }
 
@@ -4285,6 +4828,8 @@ h2.detail_Name_cn {
   font-size: 1rem;
   color: #666;
   text-align: right;
+  position: relative;
+  bottom: -8px;
 }
 @media screen and (min-width: 760px) {
   .detail_stockstatus {
@@ -4553,6 +5098,7 @@ h2.detail_Name_cn {
   width: calc(77% - 1rem);
   position: relative;
   padding-left: 1rem;
+  display: flow-root;
 }
 .winelist_OneWine_Info .Name_En {
   font-size: 1.25rem;
@@ -5175,21 +5721,19 @@ h2.detail_Name_cn {
 }
 .cart_list_OneBottle .bottle_info .status {
   display: flex;
+  flex-wrap: wrap;
   font-size: 1rem;
   line-height: 1.3rem;
   color: #666;
   margin-top: 5px;
 }
-.cart_list_OneBottle .bottle_info .status span:after {
+.cart_list_OneBottle .bottle_info .status span:not(:first-child)::before {
   content: '';
   display: inline-block;
   width: 1px;
   height: 13px;
   background-color: #999999;
   margin: 0 8px;
-}
-.cart_list_OneBottle .bottle_info .status span:nth-child(3):after {
-  display: none;
 }
 .cart_list_OneBottle .bottle_info .status .icon_nobonus {
   width: 18px;
@@ -5203,6 +5747,14 @@ h2.detail_Name_cn {
   background-color: #999;
   border-radius: 5px;
   margin-right: 5px;
+}
+.cart_list_OneBottle .bottle_info .status .cartlist_price {
+  margin-right: 8px;
+  white-space: nowrap;
+  display: inline-block;
+}
+.cart_list_OneBottle .bottle_info .status .cartlist_price:nth-last-child(2) {
+  color: #d9d9d9;
 }
 .cart_list_OneBottle .bottle_info .expired_date {
   font-size: 1rem;
@@ -5324,7 +5876,7 @@ h2.detail_Name_cn {
     font-size: 1.375rem;
     line-height: 1.85rem;
   }
-  .cart_list_OneBottle .bottle_info .status span:after {
+  .cart_list_OneBottle .bottle_info .status span :not(:first-child)::before {
     height: 18px;
     margin: 0 12px;
   }
@@ -5451,6 +6003,44 @@ h2.detail_Name_cn {
 }
 .cart_list_OneBottle .count_price .price .bottle_price.preorder {
   color: #0071bc;
+}
+.cart_list_OneBottle .count_price .price .__SecretLabel {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  margin-right: 5px;
+  padding: 2px 3px;
+  vertical-align: middle;
+  font-size: 15px;
+  height: 36px;
+  line-height: 40px;
+  white-space: nowrap;
+  float: left;
+  line-height: 20px;
+  margin-right: 10px;
+  height: 20px;
+}
+.cart_list_OneBottle .count_price .price .__SecretLabel:before {
+  content: '';
+  background-color: #929697;
+  z-index: -1;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: skew(-30deg);
+  height: 24px;
+}
+.cart_list_OneBottle .count_price .price .__SecretLabel:before {
+  height: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .cart_list_OneBottle .count_price .delivery[style*="flex"] + .storage {
   margin-top: 12px;
@@ -5736,21 +6326,19 @@ h2.detail_Name_cn {
 }
 .cart_list_OneGroup .group_wine .bottle_info .status {
   display: flex;
+  flex-wrap: wrap;
   font-size: 1rem;
   line-height: 1.3rem;
   color: #666;
   margin-top: 5px;
 }
-.cart_list_OneGroup .group_wine .bottle_info .status span:after {
+.cart_list_OneGroup .group_wine .bottle_info .status span:not(:first-child)::before {
   content: '';
   display: inline-block;
   width: 1px;
   height: 13px;
   background-color: #999999;
   margin: 0 8px;
-}
-.cart_list_OneGroup .group_wine .bottle_info .status span:nth-child(3):after {
-  display: none;
 }
 .cart_list_OneGroup .group_wine .bottle_info .status .icon_nobonus {
   width: 18px;
@@ -5764,6 +6352,14 @@ h2.detail_Name_cn {
   background-color: #999;
   border-radius: 5px;
   margin-right: 5px;
+}
+.cart_list_OneGroup .group_wine .bottle_info .status .cartlist_price {
+  margin-right: 8px;
+  white-space: nowrap;
+  display: inline-block;
+}
+.cart_list_OneGroup .group_wine .bottle_info .status .cartlist_price:nth-last-child(2) {
+  color: #d9d9d9;
 }
 .cart_list_OneGroup .group_wine .bottle_info .expired_date {
   font-size: 1rem;
@@ -5885,7 +6481,7 @@ h2.detail_Name_cn {
     font-size: 1.375rem;
     line-height: 1.85rem;
   }
-  .cart_list_OneGroup .group_wine .bottle_info .status span:after {
+  .cart_list_OneGroup .group_wine .bottle_info .status span :not(:first-child)::before {
     height: 18px;
     margin: 0 12px;
   }
@@ -6031,6 +6627,44 @@ h2.detail_Name_cn {
 }
 .cart_list_OneGroup .count_price .price .bottle_price.preorder {
   color: #0071bc;
+}
+.cart_list_OneGroup .count_price .price .__SecretLabel {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  margin-right: 5px;
+  padding: 2px 3px;
+  vertical-align: middle;
+  font-size: 15px;
+  height: 36px;
+  line-height: 40px;
+  white-space: nowrap;
+  float: left;
+  line-height: 20px;
+  margin-right: 10px;
+  height: 20px;
+}
+.cart_list_OneGroup .count_price .price .__SecretLabel:before {
+  content: '';
+  background-color: #929697;
+  z-index: -1;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: skew(-30deg);
+  height: 24px;
+}
+.cart_list_OneGroup .count_price .price .__SecretLabel:before {
+  height: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .cart_list_OneGroup .count_price .delivery[style*="flex"] + .storage {
   margin-top: 12px;
@@ -6209,21 +6843,19 @@ h2.detail_Name_cn {
   }
   .cart_list_OneGroup .group_wine .bottle_info .status {
     display: flex;
+    flex-wrap: wrap;
     font-size: 1rem;
     line-height: 1.3rem;
     color: #666;
     margin-top: 5px;
   }
-  .cart_list_OneGroup .group_wine .bottle_info .status span:after {
+  .cart_list_OneGroup .group_wine .bottle_info .status span:not(:first-child)::before {
     content: '';
     display: inline-block;
     width: 1px;
     height: 13px;
     background-color: #999999;
     margin: 0 8px;
-  }
-  .cart_list_OneGroup .group_wine .bottle_info .status span:nth-child(3):after {
-    display: none;
   }
   .cart_list_OneGroup .group_wine .bottle_info .status .icon_nobonus {
     width: 18px;
@@ -6237,6 +6869,14 @@ h2.detail_Name_cn {
     background-color: #999;
     border-radius: 5px;
     margin-right: 5px;
+  }
+  .cart_list_OneGroup .group_wine .bottle_info .status .cartlist_price {
+    margin-right: 8px;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .cart_list_OneGroup .group_wine .bottle_info .status .cartlist_price:nth-last-child(2) {
+    color: #d9d9d9;
   }
   .cart_list_OneGroup .group_wine .bottle_info .expired_date {
     font-size: 1rem;
@@ -6359,7 +6999,7 @@ h2.detail_Name_cn {
     font-size: 1.375rem;
     line-height: 1.85rem;
   }
-  .cart_list_OneGroup .group_wine .bottle_info .status span:after {
+  .cart_list_OneGroup .group_wine .bottle_info .status span :not(:first-child)::before {
     height: 18px;
     margin: 0 12px;
   }
@@ -6591,6 +7231,44 @@ h2.detail_Name_cn {
 .cart_list_event_special .event_sum .count_price .price .bottle_price.preorder {
   color: #0071bc;
 }
+.cart_list_event_special .event_sum .count_price .price .__SecretLabel {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  margin-right: 5px;
+  padding: 2px 3px;
+  vertical-align: middle;
+  font-size: 15px;
+  height: 36px;
+  line-height: 40px;
+  white-space: nowrap;
+  float: left;
+  line-height: 20px;
+  margin-right: 10px;
+  height: 20px;
+}
+.cart_list_event_special .event_sum .count_price .price .__SecretLabel:before {
+  content: '';
+  background-color: #929697;
+  z-index: -1;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: skew(-30deg);
+  height: 24px;
+}
+.cart_list_event_special .event_sum .count_price .price .__SecretLabel:before {
+  height: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 .cart_list_event_special .event_sum .count_price .delivery[style*="flex"] + .storage {
   margin-top: 12px;
 }
@@ -6749,21 +7427,19 @@ h2.detail_Name_cn {
 }
 .cart_list_gift .gift_wine .bottle_info .status {
   display: flex;
+  flex-wrap: wrap;
   font-size: 1rem;
   line-height: 1.3rem;
   color: #666;
   margin-top: 5px;
 }
-.cart_list_gift .gift_wine .bottle_info .status span:after {
+.cart_list_gift .gift_wine .bottle_info .status span:not(:first-child)::before {
   content: '';
   display: inline-block;
   width: 1px;
   height: 13px;
   background-color: #999999;
   margin: 0 8px;
-}
-.cart_list_gift .gift_wine .bottle_info .status span:nth-child(3):after {
-  display: none;
 }
 .cart_list_gift .gift_wine .bottle_info .status .icon_nobonus {
   width: 18px;
@@ -6777,6 +7453,14 @@ h2.detail_Name_cn {
   background-color: #999;
   border-radius: 5px;
   margin-right: 5px;
+}
+.cart_list_gift .gift_wine .bottle_info .status .cartlist_price {
+  margin-right: 8px;
+  white-space: nowrap;
+  display: inline-block;
+}
+.cart_list_gift .gift_wine .bottle_info .status .cartlist_price:nth-last-child(2) {
+  color: #d9d9d9;
 }
 .cart_list_gift .gift_wine .bottle_info .expired_date {
   font-size: 1rem;
@@ -6898,7 +7582,7 @@ h2.detail_Name_cn {
     font-size: 1.375rem;
     line-height: 1.85rem;
   }
-  .cart_list_gift .gift_wine .bottle_info .status span:after {
+  .cart_list_gift .gift_wine .bottle_info .status span :not(:first-child)::before {
     height: 18px;
     margin: 0 12px;
   }
@@ -7029,6 +7713,44 @@ h2.detail_Name_cn {
 .cart_list_gift .gift_wine .count_price .price .bottle_price.preorder {
   color: #0071bc;
 }
+.cart_list_gift .gift_wine .count_price .price .__SecretLabel {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  margin-right: 5px;
+  padding: 2px 3px;
+  vertical-align: middle;
+  font-size: 15px;
+  height: 36px;
+  line-height: 40px;
+  white-space: nowrap;
+  float: left;
+  line-height: 20px;
+  margin-right: 10px;
+  height: 20px;
+}
+.cart_list_gift .gift_wine .count_price .price .__SecretLabel:before {
+  content: '';
+  background-color: #929697;
+  z-index: -1;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: skew(-30deg);
+  height: 24px;
+}
+.cart_list_gift .gift_wine .count_price .price .__SecretLabel:before {
+  height: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 .cart_list_gift .gift_wine .count_price .delivery[style*="flex"] + .storage {
   margin-top: 12px;
 }
@@ -7116,7 +7838,7 @@ h2.detail_Name_cn {
 .cart_list_gift .gift_soldout .bottle_info .status {
   color: #d9d9d9;
 }
-.cart_list_gift .gift_soldout .bottle_info .status span:after {
+.cart_list_gift .gift_soldout .bottle_info .status span :not(:first-child)::before {
   background-color: #d9d9d9;
 }
 .cart_list_gift .gift_soldout .bottle_info .status .icon_nobonus {
@@ -7222,7 +7944,7 @@ h2.detail_Name_cn {
 .cart_list_BottleSoldOut .group_wine .bottle_info .status {
   color: #d9d9d9;
 }
-.cart_list_BottleSoldOut .group_wine .bottle_info .status span:after {
+.cart_list_BottleSoldOut .group_wine .bottle_info .status span :not(:first-child)::before {
   background-color: #d9d9d9;
 }
 .cart_list_BottleSoldOut .gropu_name {
@@ -7240,7 +7962,7 @@ h2.detail_Name_cn {
 .cart_list_BottleSoldOut .bottle_info .status {
   color: #d9d9d9;
 }
-.cart_list_BottleSoldOut .bottle_info .status span:after {
+.cart_list_BottleSoldOut .bottle_info .status span :not(:first-child)::before {
   background-color: #d9d9d9;
 }
 .cart_list_BottleSoldOut .bottle_info .status .icon_nobonus {
@@ -7650,21 +8372,19 @@ h2.detail_Name_cn {
 }
 .cart_list_addon .addon_wine .bottle_info .status {
   display: flex;
+  flex-wrap: wrap;
   font-size: 1rem;
   line-height: 1.3rem;
   color: #666;
   margin-top: 5px;
 }
-.cart_list_addon .addon_wine .bottle_info .status span:after {
+.cart_list_addon .addon_wine .bottle_info .status span:not(:first-child)::before {
   content: '';
   display: inline-block;
   width: 1px;
   height: 13px;
   background-color: #999999;
   margin: 0 8px;
-}
-.cart_list_addon .addon_wine .bottle_info .status span:nth-child(3):after {
-  display: none;
 }
 .cart_list_addon .addon_wine .bottle_info .status .icon_nobonus {
   width: 18px;
@@ -7678,6 +8398,14 @@ h2.detail_Name_cn {
   background-color: #999;
   border-radius: 5px;
   margin-right: 5px;
+}
+.cart_list_addon .addon_wine .bottle_info .status .cartlist_price {
+  margin-right: 8px;
+  white-space: nowrap;
+  display: inline-block;
+}
+.cart_list_addon .addon_wine .bottle_info .status .cartlist_price:nth-last-child(2) {
+  color: #d9d9d9;
 }
 .cart_list_addon .addon_wine .bottle_info .expired_date {
   font-size: 1rem;
@@ -7799,7 +8527,7 @@ h2.detail_Name_cn {
     font-size: 1.375rem;
     line-height: 1.85rem;
   }
-  .cart_list_addon .addon_wine .bottle_info .status span:after {
+  .cart_list_addon .addon_wine .bottle_info .status span :not(:first-child)::before {
     height: 18px;
     margin: 0 12px;
   }
@@ -7814,9 +8542,6 @@ h2.detail_Name_cn {
     line-height: 1.85rem;
     margin-top: 6px;
   }
-}
-.cart_list_addon .addon_wine .bottle_info .status span:nth-child(2):after {
-  display: none;
 }
 .cart_list_addon .addon_wine .bottle_img {
   margin-left: 0;

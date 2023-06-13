@@ -227,6 +227,8 @@
 	width: calc(77% - 1rem);
 	position: relative;
 	padding-left: 1rem;
+	display: flow-root;
+
 	& .Name_En{
 		font-size: $PhoneTitleFontSize;
 		font-weight:bold;
@@ -286,7 +288,7 @@
 		}
 
 	}
-
+	
 	& .bottle_price{
 		margin-top: 1rem;
 		& .price_row{

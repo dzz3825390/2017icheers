@@ -151,12 +151,42 @@
 		top: 80px;
 	}
 }
-
-.detail_addcartBtns{
+// 20230605 JOAN 修改多重售價樣式 橫向大尺寸
+.detail_bottleImg_layout .detail_addcartBtns{
 	@include large-pad-width{
 		position:absolute;
 		right: 40px;
-		bottom: 60px;
+		top: 500px;
+		width: 55%;
+		height: 180px;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		// justify-content: flex-end;
+		align-items: flex-end;
+		direction: rtl;
+		margin-top: 5px;
+		overflow: hidden;
+		& > div{
+			width: 50%;
+			margin: 10px 0;
+		}
+	}
+	// JOAN 修正窄尺寸行動裝置破版問題
+	@include phone-width-Mini{
+		& .detail_price_row{
+			display: flex;
+			flex-direction: column;
+			
+			& div{
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: flex-end;
+				& label{
+					white-space: nowrap;
+				}
+			}
+		}
 	}
 }
 
@@ -530,6 +560,8 @@ h2.detail_Name_cn{
 	font-size: 1rem;
 	color: #666;
 	text-align: right;
+	position: relative;
+	bottom: -8px;
 	@include pad-width{
 		font-size: 1.3rem;
 	}

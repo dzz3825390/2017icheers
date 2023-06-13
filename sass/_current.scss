@@ -1295,7 +1295,7 @@ h4{
 //button end
 
 /***price***/
-
+// 20230602 JOAN 修改多重售價樣式
 .addcart_normal{
 	float: right;
 	& span{
@@ -1308,6 +1308,41 @@ h4{
 
 .addcart_normal_withtext{
 	float: right;
+	& span{
+		@include AddCartPrice ($NormalColor);
+	}
+	& button{
+		@include AddCartIconWithText ($NormalColor,url(../images/mobile/addcart_icon_normal.png));
+	}
+}
+// 20230601 JOAN 新增私密限定樣式
+.addcart_vip{
+	float: right;
+	margin-top: 20px;
+	
+	& span{
+		@include AddCartPrice ($NormalColor);
+		position: relative;
+
+		& .__SecretLabel{
+			@include SecretLabel;
+			float: none;
+			position: absolute;
+			top: -35px;right: 0;
+		}
+	}
+	& button{
+		@include AddCartIcon ($NormalColor,url(../images/mobile/addcart_icon_normal.png));
+	}
+}
+.addcart_vip_withtext{
+	float: right;
+	& .__SecretpriceName{
+		display: none;
+	}
+	& .__SecretLabel{
+		@include SecretLabel;
+	}
 	& span{
 		@include AddCartPrice ($NormalColor);
 	}
@@ -1335,11 +1370,62 @@ h4{
 		@include AddCartIconWithText ($FastColor,url(../images/mobile/addcart_icon_fast.png));
 	}
 }
+.addcart_vip-fast{
+	float: right;
+	margin-top: 20px;
+	& span{
+		@include AddCartPrice ($FastColor);
+		position: relative;
+
+		& .__SecretLabel{
+			@include SecretLabel;
+			float: none;
+			position: absolute;
+			top: -35px;right: 0;
+		}
+	}
+	& button{
+		@include AddCartIcon ($FastColor,url(../images/mobile/addcart_icon_fast.png));
+	}
+}
+.addcart_vip-fast_withtext{
+	float: right;
+	& .__SecretpriceName{
+		display: none;
+	}
+	& .__SecretLabel{
+		@include SecretLabel;
+	}
+	& span{
+		@include AddCartPrice ($FastColor);
+	}
+	& button{
+		@include AddCartIconWithText ($FastColor,url(../images/mobile/addcart_icon_fast.png));
+	}
+}
 
 .addcart_preorder{
 	float: right;
 	& span{
 		@include AddCartPrice ($PreorderColor);
+	}
+	& button{
+		@include AddCartIcon ($PreorderColor,url(../images/mobile/addcart_icon_preorder.png));
+	}
+}
+.addcart_vip-preorder{
+	float: right;
+	margin-top: 20px;
+	& span{
+		@include AddCartPrice ($PreorderColor);
+		position: relative;
+
+		& .__SecretLabel{
+			@include SecretLabel;
+			float: none;
+			position: absolute;
+			top: -35px;right: 0;
+		}
 	}
 	& button{
 		@include AddCartIcon ($PreorderColor,url(../images/mobile/addcart_icon_preorder.png));
@@ -1356,7 +1442,21 @@ h4{
 	}
 
 }
-
+.addcart_vip-preorder_withtext{
+	float: right;
+	& .__SecretpriceName{
+		display: none;
+	}
+	& .__SecretLabel{
+		@include SecretLabel;
+	}
+	& span{
+		@include AddCartPrice ($PreorderColor);
+	}
+	& button{
+		@include AddCartIconWithText ($PreorderColor,url(../images/mobile/addcart_icon_preorder.png));
+	}
+}
 .addcart_soldout{
 	float: right;
 	& span{
@@ -1377,6 +1477,52 @@ h4{
 	}
 }
 
+.addcart_vip_withtext.DisablePrice,
+.addcart_vip-preorder_withtext.DisablePrice,
+.addcart_vip-fast_withtext.DisablePrice
+{
+	& .__SecretpriceName{
+		display: block;
+		float: left;
+		margin-top: 16px;
+		margin-right: 6px;
+		color: $DisableColor;
+	}
+	& .__SecretLabel{
+		display: none;
+	}
+	& span{
+		color: $DisableColor;
+	}
+	& button{
+		background-color: $DisableColor;
+		pointer-events:none;
+	}
+}
+.addcart_normal_withtext.DisablePrice,
+.addcart_preorder_withtext.DisablePrice,
+.addcart_fast_withtext.DisablePrice{
+	& span{
+		color: $DisableColor;
+	}
+	& button{
+		background-color: $DisableColor;
+		pointer-events:none;
+	}
+}
+.detail_price_row .__btn-disable,
+.price_row .__btn-disable{
+	background-color: $DisableColor;
+	pointer-events:none;
+}
+.__btn-disappear{
+	& button{
+		display: none;
+	}
+	& span{
+		margin-right: 0;
+	}
+}
 
 /***price end***/
 

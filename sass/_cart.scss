@@ -299,9 +299,9 @@
 	}
 
 	& .count_price{
-		@include Cart_Wine_Count_Price{
-
-		}
+		@include Cart_Wine_Count_Price{}
+		
+		
 	}
 
 	& .event_notice{
@@ -340,6 +340,10 @@
 
 			}
 		}
+
+		
+		
+		
 	}
 
 	@include phone-l{
@@ -818,7 +822,7 @@
 			& .status{
 				color: #d9d9d9;
 				& span{
-					&:after{
+					& :not(:first-child)::before{
 						background-color: #d9d9d9;
 					}
 				}
@@ -968,7 +972,7 @@
 			& .status{
 				color: #d9d9d9;
 				& span{
-					&:after{
+					& :not(:first-child)::before{
 						background-color: #d9d9d9;
 					}
 				}
@@ -996,7 +1000,7 @@
 		& .status{
 			color: #d9d9d9;
 			& span{
-				&:after{
+				& :not(:first-child)::before{
 					background-color: #d9d9d9;
 				}
 			}
@@ -1450,9 +1454,9 @@
 	    	& .bottle_info{
 	    		& .status{
 	    			& span{
-		    			&:nth-child(2):after{
-							display: none;
-						}
+		    			// &:nth-child(2):after{
+						// 	display: none;
+						// }
 					}
 	    		}
 	    	}
